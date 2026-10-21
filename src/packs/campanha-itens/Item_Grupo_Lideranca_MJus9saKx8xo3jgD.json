@@ -1,0 +1,146 @@
+{
+  "name": "Grupo · Liderança",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtBeneficio": "lider"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Os jogadores escolheram um líder. Ele não manda em ninguém: a mesa decide o que significa ter um líder.</p><p><b>Benefício:</b> o grupo recebe <b>+1 em Iniciativa por membro</b>, dividido como quiserem (+1 para cada, +3/+2...).</p><p><b>Automação:</b> o efeito <b>Liderança</b> soma na Iniciativa a parte deste personagem, definida na macro Grupo · Montar o Grupo.</p>",
+      "unidentified": ""
+    },
+    "source": "Fim dos Tempos, Arco 1, Introdução, Regras para Grupos (p. 60)",
+    "tipo": "geral",
+    "subtipo": "Grupo · Fim dos Tempos",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "MJus9saKx8xo3jgD",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Liderança (Iniciativa)",
+      "img": "systems/tormenta20/icons/poderes/combate.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "fdtgrupo",
+          "fdtModo": "beneficio",
+          "fdtEscala": 0,
+          "fdtTipos": []
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.inic.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "HJWmlwS1FNFI5Qb2",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!MJus9saKx8xo3jgD.HJWmlwS1FNFI5Qb2"
+    }
+  ],
+  "_key": "!items!MJus9saKx8xo3jgD"
+}

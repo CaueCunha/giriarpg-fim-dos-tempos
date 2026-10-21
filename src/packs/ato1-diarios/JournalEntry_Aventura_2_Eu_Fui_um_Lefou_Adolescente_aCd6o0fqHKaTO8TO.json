@@ -1,0 +1,257 @@
+{
+  "name": "Aventura 2 · Eu Fui um Lefou Adolescente",
+  "folder": "8FUx10ybCbbQSCuU",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "_id": "aCd6o0fqHKaTO8TO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Ordem do espetáculo</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>@UUID[Actor.lgXIDQ16WdUVnJ5L]{Chupacabra da Tormenta} com Tylora (pule se o chupacabra já morreu na busca pelo circo)</li>\n\t\t\t\t\t<li>@UUID[Actor.FzbMuaX9YcrTF8pH]{X'illirienn, a Engolidora de Fogo}</li>\n\t\t\t\t\t<li>@UUID[Actor.LWsotBj7MX6GIsy2]{Bhuluk, o Anão com Barba de Insetos} (e o @UUID[Actor.42LRUcSnSMzRSqmq]{Enxame de Insetos Corrompidos})</li>\n\t\t\t\t\t<li>@UUID[Actor.dCEItmNOMOmqIZrA]{Gronko, o Faminto}</li>\n\t\t\t\t\t<li>@UUID[Actor.AgLCSloLrILvQiv7]{Gaspar, o Homem Mais Forte do Mundo}; duas rodadas depois, @UUID[Actor.i5Bus3GvmGWxhwXp]{Zardu, o Mestre do Picadeiro} (e a @UUID[Actor.YLlQSCByOk690gtD]{Cópia Ilusória de Zardu})</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>Efeitos de palco, tendas e guloseimas: @UUID[Actor.0ZwzPfYs139yLCkz]{Espetáculo de Prodígios e Horrores (palco e tendas)}.</p>\n\t\t\t\t<h2>Antes de cada atração</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Zardu apresenta a atração e o palco muda (uma rodada livre para os heróis se prepararem).</li>\n\t\t\t\t\t<li>Rode @UUID[Macro.yelu2LGf8mzhl15r]{Av2 · Um de Nós!}. Se a plateia estiver entretida e o grupo escolheu anular, pule.</li>\n\t\t\t\t\t<li>Ilusão ou Realidade: cada jogador declara o que acha do efeito do palco. Use @UUID[Macro.VR6SJ5lGgxvRoZuD]{Av2 · Teste do Circo} com +5 ou –5.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Automação</h2>\n\t\t\t\t<p>Ligue @UUID[Macro.8BegmrzAj4p6TRpe]{Av2 · Automação (liga/desliga)} no começo da sessão (vale só até recarregar a página, só no computador do Mestre). Ela cuida de:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Bhuluk: metade do dano e –2 no bônus de insetos a cada dano.</li>\n\t\t\t\t\t<li>Chupacabra: 1d6 de Tylora a cada dano; Tylora ferida/caída; Fúria (+2) quando ela cai.</li>\n\t\t\t\t\t<li>Início do turno do chupacabra: Drenar Sangue em quem estiver <i>agarrado</i> e o chicote de Tylora no alvo que você estiver mirando.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Outras macros: @UUID[Macro.Byzn9XPAVfF1Lev3]{Av2 · Enxames de Bhuluk}, @UUID[Macro.jksxIkBm4zEKDEqX]{Av2 · Mil Faces (Zardu)}, @UUID[Macro.u6P254BAtku01w0D]{Av2 · Convencer Gaspar}, @UUID[Macro.GiB4ya3qZwdE3i10]{Av2 · Redefinição de Caminhos} (tabela @UUID[RollTable.5IG6N20aj3oBV2u1]{Redefinição de Caminhos}).</p>\n\t\t\t\t<h2>Quem cai</h2>\n\t\t\t\t<p>Um turno para ser reanimado; depois, correntes rubras o levam para a plateia. Ninguém morre assim. Se for libertado, volta a sangrar.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "oJeKkD5bayfIexiO",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.oJeKkD5bayfIexiO"
+    },
+    {
+      "name": "As Cinco Tendas",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Ninguém é atacado nas tendas. Personagens podem ganhar vantagens:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>1. Vyrda, a Mulher Monstruosa:</b> libertada com gentileza, dá a @UUID[Item.6kvBuM43vJe0RrfR]{Seringa de Vyrda (Poção de Físico Divino)}. Teste social CD 15: @UUID[Item.bdEkQuuTdwOAtbjv]{Parceiro: Vyrda (Fortão iniciante)}.</li>\n\t\t\t\t\t<li><b>2. Os Híbridos Profanos:</b> a mosca de cabeça humana explica tudo; a plateia só quer ser entretida. Social CD 15: @UUID[Item.3vnFltninkDzgvzs]{Parceiro: Híbridos Profanos (Atirador iniciante)}. Plateia entretida: @UUID[Item.hynlxWR0GRo7tvIe]{Parceiro: Plateia Entretida (Combatente iniciante)} por um combate <i>ou</i> anula \"Um de Nós!\".</li>\n\t\t\t\t\t<li><b>3. Os Erros dos Deuses:</b> jarros com experimentos e vítimas. PJ morto aparece aqui num jarro. Depois de Gaspar, Ralphus se esconde aqui: @UUID[Item.ofKYzCWIK2sCHFPo]{Segredo de Ralphus (+5 contra ilusões de Zardu)}.</li>\n\t\t\t\t\t<li><b>4. Korek e Kerok:</b> Korek (não corrompido) quer ajudar, mas tudo que diz está errado; Kerok não quer colaborar, mas fala a verdade. Social CD 15 com Kerok: @UUID[Item.yLMCaLenVEUT5jrV]{Bênção de Kerok (+5 contra a Tormenta)}.</li>\n\t\t\t\t\t<li><b>5. Noirax, a Lady Tatuada:</b> nobre de Zakharov. Inteligência CD 10 nas tatuagens: recupera 1d4 PM (uma vez cada). Item <i>Tenda 5 · Tatuagens de Noirax</i> no Espetáculo.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "6AhnyEjtjlF8hplA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.6AhnyEjtjlF8hplA"
+    },
+    {
+      "name": "Handout · A Rima",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<blockquote><p><i>À noite não adormeça<br>Sonhe fora da cama<br>Não durma e nunca cresça<br>À noite o circo nos chama</i></p></blockquote>\n\t\t\t\t<p class=\"secret\">Não há nada de mágico na rima: é um ritual inventado por Zardu para que as crianças entreguem os pais. Se os heróis recitarem em círculo, entregam as crianças como vítimas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "7OmS9wsbWd74klkE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.7OmS9wsbWd74klkE"
+    },
+    {
+      "name": "Handout · Carta de Syvarian",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p><i>Cara senhora LeBlanc,</i></p>\n\t\t\t\t<p><i>A organização que represento tem interesse em adquirir suas terras. Estamos preparados para pagar uma quantia generosa, que iria devolver sua família ao status de nobreza que é seu direito. Uma quantia que garantiria esse status em qualquer lugar do Reinado.</i></p>\n\t\t\t\t<p><i>Entenda que, caso não aceite, haverá consequências.</i></p>\n\t\t\t\t<p><i>Aguardo sua resposta e sua colaboração.</i></p>\n\t\t\t\t<p><i>Cordialmente,<br>Syvarian</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Bt9bfKGgfoAA5v5u",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.Bt9bfKGgfoAA5v5u"
+    },
+    {
+      "name": "Handout · Página do Diário de Zardu",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><i>\"Este mundo já conhece o paraíso. Eles estão chegando aos poucos. Mas estão sendo combatidos. Os mortais, os tolos mortais não reconhecem a bênção que estão recebendo! Este é meu dever. Viajar por estes reinos ignorantes, estas terras atrasadas, e mostrar a maravilha da Tormenta. Mostrar a eles o que nós vimos quando fomos abençoados.\"</i></p>\n\t\t\t\t<p><i>\"Eu sei que tinha outra tarefa, mas ela não importa mais. Será que cada um de nós recebeu uma nova missão? Será que os outros conheceram suas missões como eu, numa iluminação súbita? Até hoje imagino onde cada um deles está. Nosso vínculo é eterno, pelo que vimos e pelo que vivemos.\"</i></p>\n\t\t\t\t<p><i>\"Syvarian veio me encontrar. Ele me disse que alguns indesejáveis deveriam ser retirados daqui, falou o nome da família LeBlanc. Pobre tolo, ele ainda pensa pequeno. Ainda está preso nas memórias que vivenciamos antes. Em nossas outras vidas. Mas há algo sagrado em nosso reencontro. Depois de tantos anos afastados, eu e ele nestas colinas ao mesmo tempo... Isso tem um significado.\"</i></p>\n\t\t\t\t<p><i>\"E o significado é só um. A Tormenta está chegando.\"</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "G5LZpoeZGDUHhGW7",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.G5LZpoeZGDUHhGW7"
+    },
+    {
+      "name": "Desfecho e Recompensas",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Com Zardu vencido, as ilusões somem: o Espetáculo é só uma cerca de madeira, um palco e bancos. Ralphus era o contrarregra. Os prodígios que sobraram fogem ou pedem clemência.</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>No peito de Zardu: @UUID[Item.lFuTLslQ31xgjEY2]{Relógio Parado e Quebrado}.</li>\n\t\t\t\t\t<li>Na casaca: a página do diário (handout).</li>\n\t\t\t\t\t<li>Na carroça: seis @UUID[Item.XmcxFoRxLSzRckX0]{Bola de Cristal de Zardu}.</li>\n\t\t\t\t\t<li>Gaspar devolvido: Mabel vira aliada para a vida toda (@UUID[Item.dMUc0aJ1bDcyZRai]{Parceiro: Mabel LeBlanc (Ajudante veterana)}; @UUID[Item.CSEHp5zofd9nhRM5]{Parceiro: Gaspar (Fortão veterano)} se forem cuidadosos com ele) e serve @UUID[Item.9RFBUNuDRCmDfM02]{Sopa LeBlanc}.</li>\n\t\t\t\t\t<li>Zardu levado vivo ao Forte amanhece morto (Vesper). Se Vesper já tiver partido, ele fala de forma confusa sobre a fuga da tripulação e os gog'magogues.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ytYruKb2M1hCxNqV",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.ytYruKb2M1hCxNqV"
+    }
+  ],
+  "_key": "!journal!aCd6o0fqHKaTO8TO"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Av3 · Cultistas Puristas",
+  "type": "RollTable",
+  "color": "#3a4a6b",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "_id": "lRdJWLxAFaGUjHdy",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!lRdJWLxAFaGUjHdy"
+}

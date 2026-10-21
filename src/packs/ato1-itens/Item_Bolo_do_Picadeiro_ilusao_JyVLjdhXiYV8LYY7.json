@@ -1,0 +1,119 @@
+{
+  "name": "Bolo do Picadeiro (ilusão)",
+  "type": "consumivel",
+  "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+  "folder": "tbwdQktgRMmoWWbK",
+  "flags": {
+    "world": {
+      "fdt": "a1guloseimas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Um pequeno bolinho com uma reprodução em finos detalhes do palco, incluindo Gronko e os personagens. <b>Cada personagem recupera 1d8+1 PV.</b> Role uma vez por personagem: mire cada um e use <b>Aplicar Cura</b>.</p><p><b>Ilusão ou realidade? (Varia)</b> Gaste uma <b>ação padrão</b> para morder e faça <b>Vontade CD 15</b>. Se passar, recebe o benefício; se falhar, gastou a ação e a guloseima em vão. Só existe uma dose.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Vontade CD 15 para aproveitar"
+    },
+    "rolls": [
+      {
+        "name": "Cura",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "1d8+1",
+            "curapv",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "_id": "JyVLjdhXiYV8LYY7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!JyVLjdhXiYV8LYY7"
+}

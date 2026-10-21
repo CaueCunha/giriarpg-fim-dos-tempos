@@ -1,0 +1,31 @@
+{
+  "name": "Templo · Escuridão do Templo",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/escuridao.webp",
+  "folder": "tVo1LVNAAWA3quhi",
+  "flags": {
+    "world": {
+      "fdt": "a1templo"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Templo do Vácuo · gerado por a1-templo-do-vacuo.js\n(async function macroEscuridao() {\n\t\tif (!canvas.scene) return ui.notifications.warn(\"Abra a cena do Templo.\");\n\t\tconst cena = canvas.scene;\n\t\tconst ativa = cena.getFlag(\"world\", \"fdtEscuridao\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Escuridão do Templo\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Dentro do Templo, luz mágica e mundana iluminam <b>metade</b> do normal e <b>visão no escuro e na penumbra não funcionam</b>. Escuridão está <b>${ativa ? \"LIGADA\" : \"desligada\"}</b> nesta cena.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"alternar\">${ativa ? \"Desligar\" : \"Ligar\"} a escuridão do Templo</option>\n\t\t\t\t\t<option value=\"tocha\">Acender tocha nos tokens selecionados (9m)</option>\n\t\t\t\t\t<option value=\"lampiao\">Acender lampião nos tokens selecionados (15m)</option>\n\t\t\t\t\t<option value=\"apagar\">Apagar a luz dos tokens selecionados</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Ligar guarda a luz e a visão de cada token e de cada luz da cena, e desligar restaura. Tokens colocados depois de ligar não são ajustados: rode de novo (desligar e ligar).</p>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst fator = cena.getFlag(\"world\", \"fdtEscuridao\") ? 0.5 : 1;\n\t\tif (res.acao === \"tocha\" || res.acao === \"lampiao\" || res.acao === \"apagar\") {\n\t\t\tconst raio = res.acao === \"tocha\" ? 9 : res.acao === \"lampiao\" ? 15 : 0;\n\t\t\tconst ups = canvas.tokens.controlled.map((t) => ({ _id: t.id, \"light.dim\": raio * fator, \"light.bright\": (raio / 2) * fator, \"light.color\": raio ? \"#ffb35c\" : null, \"light.animation.type\": raio ? \"torch\" : null }));\n\t\t\tif (!ups.length) return ui.notifications.warn(\"Selecione os tokens que carregam a luz.\");\n\t\t\treturn cena.updateEmbeddedDocuments(\"Token\", ups);\n\t\t}\n\t\tif (!ativa) {\n\t\t\tconst tokens = cena.tokens.map((t) => ({\n\t\t\t\t_id: t.id,\n\t\t\t\t\"flags.world.fdtLuz\": { dim: t.light.dim, bright: t.light.bright, range: t.sight.range, mode: t.sight.visionMode },\n\t\t\t\t\"light.dim\": t.light.dim / 2,\n\t\t\t\t\"light.bright\": t.light.bright / 2,\n\t\t\t\t\"sight.range\": 0,\n\t\t\t\t\"sight.visionMode\": \"basic\"\n\t\t\t}));\n\t\t\tconst luzes = cena.lights.map((l) => ({ _id: l.id, \"flags.world.fdtLuz\": { dim: l.config.dim, bright: l.config.bright }, \"config.dim\": l.config.dim / 2, \"config.bright\": l.config.bright / 2 }));\n\t\t\tawait cena.updateEmbeddedDocuments(\"Token\", tokens);\n\t\t\tif (luzes.length) await cena.updateEmbeddedDocuments(\"AmbientLight\", luzes);\n\t\t\tawait cena.update({ \"flags.world.fdtEscuridao\": { darkness: cena.environment.darknessLevel, global: cena.environment.globalLight.enabled }, \"environment.darknessLevel\": 1, \"environment.globalLight.enabled\": false });\n\t\t\tChatMessage.create({ content: \"<p><b>A escuridão do Templo do Vácuo</b> engole a luz: tochas e magias iluminam metade, e nenhum olho enxerga no escuro aqui. Quem está fora da luz fica <b>cego</b>.</p>\" });\n\t\t} else {\n\t\t\tconst tokens = cena.tokens.filter((t) => t.getFlag(\"world\", \"fdtLuz\")).map((t) => {\n\t\t\t\tconst o = t.getFlag(\"world\", \"fdtLuz\");\n\t\t\t\treturn { _id: t.id, \"light.dim\": o.dim, \"light.bright\": o.bright, \"sight.range\": o.range, \"sight.visionMode\": o.mode, \"flags.world.-=fdtLuz\": null };\n\t\t\t});\n\t\t\tconst luzes = cena.lights.filter((l) => l.getFlag(\"world\", \"fdtLuz\")).map((l) => {\n\t\t\t\tconst o = l.getFlag(\"world\", \"fdtLuz\");\n\t\t\t\treturn { _id: l.id, \"config.dim\": o.dim, \"config.bright\": o.bright, \"flags.world.-=fdtLuz\": null };\n\t\t\t});\n\t\t\tif (tokens.length) await cena.updateEmbeddedDocuments(\"Token\", tokens);\n\t\t\tif (luzes.length) await cena.updateEmbeddedDocuments(\"AmbientLight\", luzes);\n\t\t\tawait cena.update({ \"environment.darknessLevel\": ativa.darkness ?? 0, \"environment.globalLight.enabled\": ativa.global ?? false, \"flags.world.-=fdtEscuridao\": null });\n\t\t\tui.notifications.info(\"Escuridão do Templo desligada: luz e visão restauradas.\");\n\t\t}\n\t})();",
+  "_id": "JH7tVfaFG57eRNCp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!JH7tVfaFG57eRNCp"
+}

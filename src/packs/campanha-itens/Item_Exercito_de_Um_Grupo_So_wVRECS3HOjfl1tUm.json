@@ -1,0 +1,151 @@
+{
+  "name": "Exército de Um Grupo Só",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "exercito",
+      "fdtPre": "Treinado em Guerra"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Você pode gastar uma ação padrão e 2 PM para formar um bando com seus aliados com este poder, desde que cada um gaste uma ação padrão e 2 PM na mesma rodada. Enquanto estiverem formando um bando com você, os aliados não podem executar ações (exceto reações), mas cada um fornece +2 em seus testes de ataque. Quando você ataca, causa metade do dano mesmo que erre e, se acertar por 10 ou mais, seus aliados podem rolar o dano de um único ataque que poderiam fazer com uma ação padrão e somar ao dano do seu ataque (esse dano não é multiplicado em caso de acerto crítico). O bando se mantém até um personagem desfazer a formação (ação livre) ou ficar inconsciente, ou até o fim da cena.</p><p>Pré-requisito: treinado em Guerra.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> na janela de ataque do líder do bando aparece <b>Exército (bando)</b>: marque uma vez por aliado no bando (+2 cada). Errou: aplique metade do dano à mão. Acertou por 10+: os aliados rolam o dano deles e somam.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "action",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "wVRECS3HOjfl1tUm",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Exército de Um Grupo Só (bando, +2 por aliado)",
+      "img": "systems/tormenta20/icons/poderes/combate.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "fdtgrupo",
+          "fdtModo": "uso",
+          "fdtEscala": 0,
+          "fdtTipos": [
+            "attack"
+          ]
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 2,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": true,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "FAXnCHVkDH27BqCG",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!wVRECS3HOjfl1tUm.FAXnCHVkDH27BqCG"
+    }
+  ],
+  "_key": "!items!wVRECS3HOjfl1tUm"
+}

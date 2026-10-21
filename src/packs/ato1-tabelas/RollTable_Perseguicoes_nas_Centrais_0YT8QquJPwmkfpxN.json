@@ -1,0 +1,250 @@
+{
+  "name": "Perseguições nas Centrais",
+  "img": "icons/svg/falling.svg",
+  "folder": "8ASD32WCoXUtoHRE",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "tabelaPerseguicao"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Uma rolagem por rodada de perseguição. Obstáculo: todos testam; quem falha anda metade. Atalho: quem tenta e passa anda o dobro; quem falha anda metade. Qualquer falha causa 1d6 de dano (escorregão, topada, coice, sufocamento...).",
+  "_id": "0YT8QquJPwmkfpxN",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        6
+      ],
+      "weight": 6,
+      "name": "Nada",
+      "description": "",
+      "_id": "BwReEnEzVThXEfe9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.BwReEnEzVThXEfe9"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        8
+      ],
+      "weight": 2,
+      "name": "Obstáculo: pilha de pedras soltas bloqueia o caminho",
+      "description": "Obstáculo: Força CD 15.",
+      "_id": "ldnEfk3DQrwfWtyC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.ldnEfk3DQrwfWtyC"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 2,
+      "name": "Obstáculo: lama deixa o chão escorregadio",
+      "description": "Obstáculo: Acrobacia CD 20.",
+      "_id": "ML0G9k5frA7uUsCF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.ML0G9k5frA7uUsCF"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        12
+      ],
+      "weight": 2,
+      "name": "Obstáculo: pedras rolam",
+      "description": "Obstáculo: Reflexos CD 20.",
+      "_id": "wEOgaSW9ROK6rvH7",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.wEOgaSW9ROK6rvH7"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        14
+      ],
+      "weight": 2,
+      "name": "Obstáculo: nuvem de poeira obscurece a visão",
+      "description": "Obstáculo: Percepção CD 20.",
+      "_id": "cg3EHbOMsXDZDkzx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.cg3EHbOMsXDZDkzx"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        16
+      ],
+      "weight": 2,
+      "name": "Atalho: um trobo no qual se pode montar",
+      "description": "Atalho: Adestramento CD 20.",
+      "_id": "AwQGvGYqaW23NtNE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.AwQGvGYqaW23NtNE"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        18
+      ],
+      "weight": 2,
+      "name": "Atalho: caminho curto, mas bloqueado",
+      "description": "Atalho: Força CD 15.",
+      "_id": "WVGJbuExMgYSuxqr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.WVGJbuExMgYSuxqr"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        20
+      ],
+      "weight": 2,
+      "name": "Atalho: passagem labiríntica",
+      "description": "Atalho: Percepção CD 20.",
+      "_id": "M25QUxuUYUrogCE4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!0YT8QquJPwmkfpxN.M25QUxuUYUrogCE4"
+    }
+  ],
+  "_key": "!tables!0YT8QquJPwmkfpxN"
+}

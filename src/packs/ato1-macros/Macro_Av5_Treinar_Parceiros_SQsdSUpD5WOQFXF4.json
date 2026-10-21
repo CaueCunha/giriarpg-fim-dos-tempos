@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Treinar Parceiros",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/parceiros.webp",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroTreinar() {\n\t\tconst prof = canvas.tokens.controlled[0]?.actor;\n\t\tif (!prof) return ui.notifications.warn(\"Selecione o token do professor.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Treinando Parceiros\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Professor: <b>${prof.name}</b>. Pode treinar até <b>Carisma</b> NPCs por vez (Car ${prof.system.atributos?.car?.value ?? 0}).</p>\n\t\t\t\t<div class=\"form-group\"><label>Teste social</label><select name=\"social\">\n\t\t\t\t\t<option value=\"dipl\">Diplomacia</option><option value=\"conh\">Conhecimento</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia do tipo de parceiro</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"luta\">Luta (combatente, fortão)</option><option value=\"pont\">Pontaria (atirador)</option>\n\t\t\t\t\t<option value=\"cura\">Cura (médico)</option><option value=\"mist\">Misticismo (adepto, magivocador)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Quantos alunos</label><input type=\"number\" name=\"alunos\" value=\"1\" min=\"1\" max=\"10\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tconst dias = await new Roll(\"1d6\").evaluate();\n\t\trolls.push(dias);\n\t\tconst social = await new Roll(`1d20 + ${prof.system.pericias?.[res.social]?.value ?? 0}`).evaluate();\n\t\tconst tecnica = await new Roll(`1d20 + ${prof.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();\n\t\trolls.push(social, tecnica);\n\t\tlet html = `<h3>Treinando Parceiros</h3><p>Leva <b>${dias.total} dia(s)</b> (dia inteiro de trabalho).</p>\n\t\t\t<ul><li>${res.social === \"dipl\" ? \"Diplomacia\" : \"Conhecimento\"}: <b>${social.total}</b> (CD 20) ${social.total >= 20 ? \"✔️\" : \"❌\"}</li>\n\t\t\t<li>${res.pericia.toUpperCase()}: <b>${tecnica.total}</b> (CD 20) ${tecnica.total >= 20 ? \"✔️\" : \"❌\"}</li></ul>`;\n\t\tif (social.total < 20 || tecnica.total < 20) {\n\t\t\thtml += \"<p><b>O professor falhou:</b> os dias estão perdidos, ninguém vira parceiro.</p>\";\n\t\t} else {\n\t\t\thtml += \"<p>Testes de Inteligência dos alunos (CD 10):</p><ul>\";\n\t\t\tfor (let i = 1; i <= Number(res.alunos); i++) {\n\t\t\t\tconst r = await new Roll(\"1d20\").evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\thtml += `<li>Aluno ${i}: <b>${r.total}</b> ${r.total >= 10 ? \"✔️ vira parceiro iniciante\" : \"❌ não aprendeu\"}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Some o modificador de Inteligência do NPC ao resultado, se ele tiver ficha. Todo treinamento gera parceiros <b>iniciantes</b>.</p>\";\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "SQsdSUpD5WOQFXF4",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!SQsdSUpD5WOQFXF4"
+}

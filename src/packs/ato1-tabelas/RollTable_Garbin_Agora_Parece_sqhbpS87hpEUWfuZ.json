@@ -1,0 +1,358 @@
+{
+  "name": "Garbin Agora Parece...",
+  "img": "systems/tormenta20/icons/racas/hynne.webp",
+  "folder": "0fL2YH8HtFMjLueG",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal",
+      "fdtRole": "garbinGatal"
+    }
+  },
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "A cada olhar, Garbin é de outra raça. A macro Garbin Muda de Novo segue a ordem do livro; esta tabela é para sortear.",
+  "_id": "sqhbpS87hpEUWfuZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "um humano idoso, baixinho e gorducho, de barba branca e avental de couro",
+      "description": "",
+      "_id": "lrI6BsYNrx98FjY9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.lrI6BsYNrx98FjY9"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "um hynne, sem dúvida: os pés descalços e peludos aparecem por baixo do avental",
+      "description": "",
+      "_id": "77vxjF4XZyUBbRyx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.77vxjF4XZyUBbRyx"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "claramente um anão, com a barba trançada e um orgulho enorme do próprio martelo",
+      "description": "",
+      "_id": "dBBs1srnAD8Iojvh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.dBBs1srnAD8Iojvh"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "um elfo muito baixinho, de orelhas pontudas escondidas no gorro",
+      "description": "",
+      "_id": "RmsiYJJVzTPo42DP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.RmsiYJJVzTPo42DP"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "uma sílfide! As asinhas tremulam enquanto ela ajeita um laço de fita",
+      "description": "",
+      "_id": "a0tnVHiQwaJxobrH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.a0tnVHiQwaJxobrH"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "um minotauro bonachão, com o gorro enfiado entre os chifres",
+      "description": "",
+      "_id": "lTGbY3vjFrJX0U6Z",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.lTGbY3vjFrJX0U6Z"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "uma sereia, de cauda e tudo, sentada num balde, dando instruções",
+      "description": "",
+      "_id": "5nBgVHnJufos7X89",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.5nBgVHnJufos7X89"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "um goblin velhinho e risonho, remendando a própria barba",
+      "description": "",
+      "_id": "BSi0PrK0iae3Qk4P",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.BSi0PrK0iae3Qk4P"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "um kliren de óculos grossos, que corrige a sua técnica de embrulho",
+      "description": "",
+      "_id": "xPSi2HeyD2ZuEBau",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.xPSi2HeyD2ZuEBau"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "um qareen de olhos brilhantes, que garante que não pode realizar desejos (hoje)",
+      "description": "",
+      "_id": "b68TJREhDYR000FN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.b68TJREhDYR000FN"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "uma dahllan de cabelos de folha, com flores brotando no gorro",
+      "description": "",
+      "_id": "CiKEmnkTkZexCuay",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.CiKEmnkTkZexCuay"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "de novo um minotauro... ou era uma minotaura? Garbin ri e diz que tanto faz",
+      "description": "",
+      "_id": "csNTORgpus1M7Mfx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sqhbpS87hpEUWfuZ.csNTORgpus1M7Mfx"
+    }
+  ],
+  "_key": "!tables!sqhbpS87hpEUWfuZ"
+}

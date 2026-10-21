@@ -1,0 +1,31 @@
+{
+  "name": "Arco 2 · Lei & Ordem",
+  "type": "script",
+  "img": "icons/svg/book.svg",
+  "folder": "vYiUAjbpQVS3NNwV",
+  "flags": {
+    "world": {
+      "fdt": "a2av0"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 0 · gerado por a2-av0-valkaria.js\n(async function macroLeiOrdem() {\n\t\tconst ator = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"leiordem\");\n\t\tif (!ator) return ui.notifications.error(\"Não achei o ator \\\"Valkaria · Lei & Ordem\\\". Importe o Ato 2 do módulo Fim dos Tempos.\");\n\t\tconst lo = ator.system.resources.primary.value;\n\t\tconst provas = ator.system.resources.secondary.value;\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Lei & Ordem\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Lei &amp; Ordem: <b>${lo}</b>. Provas nesta aventura: <b>${provas}/5</b>.</p>\n\t\t\t\t<div class=\"form-group\"><label>O que aconteceu</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"sessao\">Fim de sessão (–1)</option>\n\t\t\t\t\t<option value=\"atividade\">Atividades em Valkaria</option>\n\t\t\t\t\t<option value=\"provas\">Provas entregues no fim do caso</option>\n\t\t\t\t\t<option value=\"novo\">Começar um novo caso (zera as provas)</option>\n\t\t\t\t\t<option value=\"ajuste\">Ajuste do livro ou do mestre</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Quantidade</label><input type=\"number\" name=\"qtd\" value=\"1\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Atividades: conte 1 por momento separado (vários personagens ao mesmo tempo contam 1). Ajuste: use número negativo para tirar.</p>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst qtd = Math.trunc(Number(res.qtd) || 0);\n\t\tlet novo = lo;\n\t\tlet novasProvas = provas;\n\t\tlet texto = \"\";\n\t\tif (res.acao === \"sessao\") { novo = lo - 1; texto = \"Mais uma sessão: a cidade fica um pouco mais tensa.\"; }\n\t\telse if (res.acao === \"atividade\") { novo = lo - Math.max(qtd, 1); texto = `Atividades em Valkaria: –${Math.max(qtd, 1)}. Enquanto os detetives se divertem, ninguém patrulha as ruas.`; }\n\t\telse if (res.acao === \"provas\") {\n\t\t\tconst validas = Math.max(0, Math.min(qtd, 5 - provas));\n\t\t\tnovasProvas = provas + validas;\n\t\t\tnovo = lo + validas;\n\t\t\ttexto = `Provas entregues ao Juiz de Khalmyr: +${validas}.` + (validas < qtd ? ` (O limite é 5 por aventura; ${qtd - validas} não contaram.)` : \"\");\n\t\t} else if (res.acao === \"novo\") { novasProvas = 0; texto = \"Novo caso aberto no Quadro de Casos.\"; }\n\t\telse { novo = lo + qtd; texto = `Ajuste: ${qtd >= 0 ? \"+\" : \"\"}${qtd}.`; }\n\t\tnovo = Math.max(0, novo);\n\t\tawait ator.update({ \"system.resources.primary.value\": novo, \"system.resources.secondary.value\": novasProvas });\n\t\tlet html = `<h3>Lei &amp; Ordem: ${lo} → <b>${novo}</b></h3><p>${texto}</p>`;\n\t\tif (novo === 0 && lo > 0) html += \"<p><b>Lei &amp; Ordem chegou a zero.</b> Valkaria transborda. Começa a Aventura 7.</p>\";\n\t\telse if (novo <= 5) html += \"<p>A tensão na cidade é palpável. Todos sentem que algo está para acontecer.</p>\";\n\t\tChatMessage.create({ content: html, speaker: ChatMessage.getSpeaker({ actor: ator }) });\n\t})();",
+  "_id": "suZkXwGugq65ZRFJ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!suZkXwGugq65ZRFJ"
+}

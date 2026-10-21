@@ -1,0 +1,333 @@
+{
+  "name": "Aventura 5 · A Noite dos Maníacos Aberrantes",
+  "folder": "yVLOOa51EL4ziuFK",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "_id": "8AT7BYpYs6jFKVPD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>@UUID[Actor.Z2pz6AAMqaqihL5q]{Syvarian, Oficial de Segurança da Roca} reuniu criminosos, cães do inferno, zumbis da Tormenta e lefeu para varrer as Colinas Centrais e derrubar o Forte Cabeça-de-Martelo. Os heróis precisam avisar e recrutar os NPCs que conheceram, preparar o Forte e sobreviver a <b>cinco ondas</b> até o amanhecer.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Corrida contra o relógio:</b> o @UUID[Item.guXLh4a5LXWp6RsM]{Pergaminho com as Ordens de Syvarian} dá o prazo (14 – 2d4 dias, de 12 a 6; os heróis só sabem se interrogarem um inimigo). Avisar e trazer NPCs.</li>\n\t\t\t\t\t<li><b>Construindo defesas:</b> defesas do Forte como pontos de mana e treino de parceiros (@UUID[Actor.1Ig7uC7zrTFSFn0U]{Forte Cabeça-de-Martelo (defesa e regras)}).</li>\n\t\t\t\t\t<li><b>Noite no inferno:</b> cinco ondas, das 18:00 às 05:00.</li>\n\t\t\t\t\t<li><b>Desfecho:</b> o que os capangas revelam e o caminho para Valkaria.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Actor.WKhYizkQR1za8vNW]{Bandoleiro de Syvarian} (ND 1/2), @UUID[Actor.jjmDsXv8eM9agSBZ]{Cão do Inferno} (ND 2), @UUID[Actor.KD2oRJGATzhl9nPv]{Irmão da Companhia} (ND 1), @UUID[Actor.w5ibeKAiJlACDYuO]{Bando Desesperado} (ND 4)</li>\n\t\t\t\t\t<li>@UUID[Actor.RfutZ5A9V30ErtbP]{Uktril (Formiga Aberrante)}, @UUID[Actor.Bq8QdlGjvPuiN51E]{Geraktril (Formiga Aberrante Maior)} e @UUID[Actor.gaHp1cY6B3SjEAff]{Reishid (Assassino Aberrante)} (lefeu da 4ª onda)</li>\n\t\t\t\t\t<li>@UUID[Actor.Z2pz6AAMqaqihL5q]{Syvarian, Oficial de Segurança da Roca} e @UUID[Actor.WwMrwTs1lzQr6AXa]{Torgo, Golem do Dr. Vesper} (ND 5 cada)</li>\n\t\t\t\t\t<li>Perigos: @UUID[Actor.nX9KC1MdcSdqpjCs]{2ª Onda · Bombardeio (perigo complexo)}, @UUID[Actor.YjapuNKxPUWTld2k]{Horda de Zumbis da Tormenta (3ª onda)}, @UUID[Actor.0BGYCuKEf1GVXPXJ]{Tentáculos Lefeu (4ª onda)}, @UUID[Actor.gU0rbmNJC42xhkDw]{Ygor, Autômato do Dr. Vesper}</li>\n\t\t\t\t\t<li>Abrigos: @UUID[Actor.qiHASxvBuGO1JFyb]{Abrigo · Ponta de Pedra}, @UUID[Actor.PxgXmQhgMrE3AyYo]{Abrigo · Darandell}, @UUID[Actor.y7D4tN1HRGQvUHW1]{Abrigo · Placidez}, @UUID[Actor.jqwPypGsq8DtxVns]{Abrigo · Dornbach}</li>\n\t\t\t\t\t<li>@UUID[Actor.v3mebQTk4A77xnnE]{LeBlanc Corrompido (zumbi da Tormenta)} (às 04:00)</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.VyUsxIdrFfrBOa1y]{Av5 · Noite no Inferno}: avança hora a hora e posta tudo o que acontece (ondas, NPCs e cenas).</li>\n\t\t\t\t\t<li>@UUID[Macro.kNu3dGDxqUo1Y2W2]{Av5 · Aproximação}: rola as sentinelas e diz quantas rodadas de antecedência o grupo tem.</li>\n\t\t\t\t\t<li>@UUID[Macro.feBZ3X54uy4myRSa]{Av5 · Preparar o Forte} e @UUID[Macro.SQsdSUpD5WOQFXF4]{Av5 · Treinar Parceiros}: a fase de preparação.</li>\n\t\t\t\t\t<li>@UUID[Macro.hFY8nnYN6vV4ei3q]{Av5 · Parceiros (ferimento e morte)}: o 1d6 de ferimento no fim da rodada e as mortes no fim da onda.</li>\n\t\t\t\t\t<li>@UUID[Macro.GotHpuxiA6vrnDok]{Av5 · Bombardeio (2ª onda)}, @UUID[Macro.npe3wwcUNiN2eYfD]{Av5 · Horda Zumbi (3ª onda)}, @UUID[Macro.Myek0SID0z4bKP0Q]{Av5 · Tentáculos Lefeu} e @UUID[Macro.Tvb4jJFFtTjMt5vY]{Av5 · Abrigos dos Inocentes}: os perigos de cada onda.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Dica do autor</h2>\n\t\t\t\t<p>A noite é longa e tem muitas partes móveis. Se ficar pesado, simplifique: uma só espécie de inimigo por onda, só o ataque mais forte de cada um, menos ações de NPC. O autor também cortou os PV dos cães do inferno pela metade na mesa original.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "o0lSSEcUl56HabW7",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.o0lSSEcUl56HabW7"
+    },
+    {
+      "name": "Handout · Ordens de Syvarian",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote><p><i>\"Todas as tropas estão convocadas. Passaremos por cada aldeia, cada casebre, cada buraco onde o povo destas Colinas se esconde e vamos matar todos. Convergimos ao alvo principal em duas semanas. Todos juntos, para que não reste ninguém vivo lá dentro. O Forte Cabeça-de-Martelo vai cair.</i></p>\n\t\t\t\t<p><i>Syvarian\"</i></p></blockquote>\n\t\t\t\t<p class=\"secret\">O pergaminho pode aparecer em qualquer lugar e momento: com Zardu (numa versão que o recrimina por não cumprir a missão), deixado por Torgo na cabine da Harpia, ou nas instruções que Lorelei recebeu para se juntar ao ataque.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "xpqE316CaU9h0DCu",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.xpqE316CaU9h0DCu"
+    },
+    {
+      "name": "Fase 1 · Recrutando os NPCs",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Toda a primeira parte é o grupo escolhendo quem avisar e trazer. Se os jogadores forem passivos, diga na cara que todos os NPCs das Colinas morrerão e que o Forte sozinho não aguenta. Grupos ativos chegam sozinhos à conclusão (ou com testes de Guerra, Conhecimento ou Inteligência).</p>\n\t\t\t\t<p><b>Aviso do autor:</b> a mesa original dividiu o grupo por duas sessões. Funcionou, mas por pouco. Duas sessões com gente esperando é o limite da paciência da maioria; combine antes como fazer isso não ficar maçante.</p>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><th>NPC</th><th>Como convencer</th></tr>\n\t\t\t\t\t<tr><td><b>Annabel</b> (Dahllan Daninhas)</td><td>Se é inimiga do grupo, não sai do carvalho (nem com 20 natural; só manda Grena levar Astelle). Neutra: sucesso automático se os heróis não tolerarem a rabugice dela e disserem que está se apegando mais à casa e à teimosia do que ao futuro de Astelle. Isso levará as irmãs a Valkaria, para Astelle estudar na Academia Arcana.</td></tr>\n\t\t\t\t\t<tr><td><b>Mabel LeBlanc</b></td><td>Se salvaram Gaspar, ela ouve qualquer coisa. Condição: levar toda a família. Bastien se recusa (precisa ser arrastado — qualquer dano faz Mabel desistir — ou convencido de que o Forte precisa dele). Clothilde precisa de garantias. Blanche precisa ser convencida pelos delírios dela.</td></tr>\n\t\t\t\t\t<tr><td><b>Gallobalt</b></td><td>Amizade ou cordialidade: aceitam na hora e todos (menos Alon) lutam. Se o grupo os hostilizou ou mexeu com o achbuld: bons testes sociais e, mesmo assim, só vão armados e com um herói como refém.</td></tr>\n\t\t\t\t\t<tr><td><b>Gormaggor</b></td><td>Não entende o pedido e nada nesta fase o afeta. Só algo <b>extraordinário</b>, que o mestre nunca teria imaginado, o faz eliminar uma onda inteira.</td></tr>\n\t\t\t\t\t<tr><td><b>Raguria</b></td><td>Aceita prontamente e é poderosa. Não convidada, escapa viva. Hostilizada, pode amaldiçoar o grupo.</td></tr>\n\t\t\t\t\t<tr><td><b>Arlo \"Olho de Leite\"</b></td><td>Muita interpretação e ótimos testes. Falar na língua dele (conspiração, o Reinado por trás de tudo) dá bônus.</td></tr>\n\t\t\t\t\t<tr><td><b>Mungo Joe</b></td><td>Aceita na hora. Levando o alambique, ele ajuda Belinda a fazer poções.</td></tr>\n\t\t\t\t\t<tr><td><b>Jonid, o Homem-Bode</b></td><td>Mais fácil do que parece: segue o grupo quase como animal domesticado.</td></tr>\n\t\t\t\t\t<tr><td><b>Erneshia</b></td><td>Aceita, mas insiste em levar os \"espécimes\" e as anotações sobre o Diabo das Colinas.</td></tr>\n\t\t\t\t\t<tr><td><b>Cletus Rigby</b></td><td>Recusa terminantemente. Com confiança já conquistada, boa interpretação e ótimos testes: convença-o de que a vitória dos vilões traz mais bagunça e intrusos.</td></tr>\n\t\t\t\t\t<tr><td><b>Nada Mais que a Verdade</b></td><td>Aceita e ainda avisa um NPC no lugar do grupo, com sucesso automático (exceto Gormaggor e Cletus).</td></tr>\n\t\t\t\t\t<tr><td><b>Elmer</b></td><td>Ótimos testes ou tentação com achbuld. No Forte, é um estorvo e elimina um parceiro. Livre do vício, vira extraordinário.</td></tr>\n\t\t\t\t\t<tr><td><b>Abner</b></td><td>Quase nenhum argumento: acha que foi Khalmyr que mandou os heróis.</td></tr>\n\t\t\t\t\t<tr><td><b>Quimby</b></td><td>Quer se salvar primeiro. Devotos de Hyninn ajudam, mas ainda exige testes. <b>Enganação nunca funciona</b>, nem com 20 natural: só sinceridade.</td></tr>\n\t\t\t\t</table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "QP1e1nnojHqDgwwB",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.QP1e1nnojHqDgwwB"
+    },
+    {
+      "name": "Fase 2 · Defesas e Parceiros",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Todas as regras de preparação estão no ator @UUID[Actor.1Ig7uC7zrTFSFn0U]{Forte Cabeça-de-Martelo (defesa e regras)}: construir defesas, treinar parceiros, consertar a paliçada, sentinelas e as ordens dos parceiros.</p>\n\t\t\t\t<h3>Resumo</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Defesas:</b> um teste de Ofício ou Guerra por dia e por personagem (que não faz mais nada). CD 20 = 1d4 de mana; +1d4 por cada 10 acima. O total paga magias que representam as defesas. Elas são mundanas: não podem ser anuladas como magia.</li>\n\t\t\t\t\t<li><b>Treino:</b> só NPCs com nome e com destaque anterior. Cada professor treina até Carisma alunos, por 1d6 dias. Professor: dois testes CD 20; aluno: Inteligência CD 10. Resultado: parceiro <b>iniciante</b>.</li>\n\t\t\t\t\t<li><b>Parceiros:</b> cada PJ comanda até 6 por rodada, uma ordem cada (Ajudar, Mover, Atacar). Fim da rodada: 1d6; se der ≤ parceiros usados, um é ferido. Fim da onda: um dado por ferido, ímpar morre.</li>\n\t\t\t\t\t<li><b>Salvar um parceiro:</b> tire de jogo permanentemente um parceiro médico antes de rolar a morte.</li>\n\t\t\t\t\t<li><b>Parceiro íntimo:</b> um por herói; pode repetir um tipo de bônus que outro parceiro já dá.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>A lista completa de parceiros do livro está na pasta de itens, um item por NPC, já com o poder de parceiro do compêndio do sistema.</p>\n\t\t\t\t<h3>Discurso de Belinda</h3>\n\t\t\t\t<blockquote><p><i>\"Quem diria que o roubo das minhas armas levaria a isso, hein? (...) Esta batalha não é só sobre invasores contra habitantes locais. É sobre parasitas contra gente que se esforça! E os parasitas sempre vão perder, porque são perdedores. Então, se tiverem que entregar a vida para defender o Forte... Não entreguem, vendam! E vendam bem caro! Um brinde! E não se preocupem, essa rodada é por conta da casa.\"</i></p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "dC5jKEwwJF1sG2Wh",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.dC5jKEwwJF1sG2Wh"
+    },
+    {
+      "name": "Fase 3 · As Cinco Ondas",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Use a macro @UUID[Macro.VyUsxIdrFfrBOa1y]{Av5 · Noite no Inferno} para avançar hora a hora.</p>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><th>Hora</th><th>O que acontece</th></tr>\n\t\t\t\t\t<tr><td><b>18:00</b></td><td><b>1ª onda (combate):</b> 40 bandoleiros, 4 cães do inferno, 4 irmãos da Companhia. 20 escalam (3 rodadas, desprevenidos), 20 abrem buracos em duplas; cada abertura solta um cão por rodada (até 4), depois os irmãos. <b>Vitória:</b> todos os cães e irmãos mais 30 bandoleiros.</td></tr>\n\t\t\t\t\t<tr><td><b>19:00</b></td><td>Discurso de Syvarian e as revelações sobre ele.</td></tr>\n\t\t\t\t\t<tr><td><b>20:00</b></td><td>Fermond tenta negociar; Isabrine o nocauteia se for exposto. Belinda oferece poções (noite inteira na oficina).</td></tr>\n\t\t\t\t\t<tr><td><b>21:00</b></td><td><b>2ª onda (perigo complexo):</b> bombardeio. Desarmar 4 explosivos em 5 rodadas.</td></tr>\n\t\t\t\t\t<tr><td><b>22:00</b></td><td>Nadine busca o @UUID[Item.6aZzDq6rEZuIDWfN]{Esconderijo de Nadine (22:00)} (estendido de Cavalgar CD 20, Cavalgar +8).</td></tr>\n\t\t\t\t\t<tr><td><b>23:00</b></td><td>Sopa LeBlanc: uma hora por grupo. Raguria e Mabel brigam; mediadas, cozinham em metade do tempo.</td></tr>\n\t\t\t\t\t<tr><td><b>00:00</b></td><td><b>3ª onda (perigo complexo):</b> a horda zumbi, 400 de dano. Nadine volta avisando (+1 rodada de preparo). Cuidado com o Homem-Bode.</td></tr>\n\t\t\t\t\t<tr><td><b>01:00</b></td><td>Alon desaparece (Investigação CD 18, 20 e 22; uma hora). Sem busca, os Gallobalt vão embora. @UUID[Item.keWQwGPvs6H9CHBj]{Chá de Raguria (01:00)} de Raguria.</td></tr>\n\t\t\t\t\t<tr><td><b>02:00</b></td><td>Moira reza: Religião 30 ou mais e ela vira paladina (11 PM, 3º nível, Compaixão e Caridade: 1 PM e movimento curam 2d6+1 em alcance curto). Com Mungo Joe, Belinda entrega poções de até 2º círculo.</td></tr>\n\t\t\t\t\t<tr><td><b>03:00</b></td><td><b>4ª onda (combate):</b> 6 bandos desesperados, 10 irmãos, 5 uktril, 3 geraktril, 2 reishid. Inimigos atacam os abrigos; tentáculos podem surgir.</td></tr>\n\t\t\t\t\t<tr><td><b>04:00</b></td><td>Os três LeBlanc enlouquecem. Morgan pede para morrer lutando (ou decide viver). Cletus dá um item mágico. Belinda traz Ygor.</td></tr>\n\t\t\t\t\t<tr><td><b>05:00</b></td><td><b>5ª onda (combate):</b> Syvarian e Torgo. Ygor explode e o Dr. Vesper se revela.</td></tr>\n\t\t\t\t</table>\n\t\t\t\t<h3>Aproximação (ondas 1 a 4)</h3>\n\t\t\t\t<p>Sentinela da esquerda vê o que vem da esquerda e da frente; a da direita, o que vem da direita e da frente. Guerra ou Percepção CD 20 (CD 25 na 4ª onda): 3 rodadas de antecedência; falha, 2; falha por 10 (ou 5 na 4ª), 1. Sentinela destacada não ativa defesas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "8n6CQklqlZPAxepB",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.8n6CQklqlZPAxepB"
+    },
+    {
+      "name": "Handout · Discurso de Syvarian (19:00)",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<blockquote><p><i>\"Vocês escolheram morrer. Todos aqui tiveram chance de ir embora. Tiveram chance de aceitar ouro em troca de suas terras miseráveis, de deixar este lugar que são incapazes de sequer compreender. Estas Colinas não pertencem mais aos dejetos que as infestaram durante séculos. Elas nunca pertenceram ao Reinado. Elas já são nossas. Por ouro ou por sangue, com acordos ou com cadáveres, as Colinas Centrais têm novos mestres. Soldados! Aventureiros! Esta é sua última chance. Deem as costas aos esfarrapados, canibais, loucos e isolacionistas! Parem de proteger essa escória. Permitirei que saiam em paz. Apenas... saiam.\"</i></p></blockquote>\n\t\t\t\t<h3>Revelações (testes durante a conversa)</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Guerra ou Intuição CD 20:</b> não se porta como criminoso; parece oficial treinado numa marinha muito avançada.</li>\n\t\t\t\t\t<li><b>Percepção ou Investigação CD 20:</b> semelhanças físicas muito específicas com Zardu (sem parentesco). Sucesso extraordinário: o Dr. Vesper tem as mesmas.</li>\n\t\t\t\t\t<li><b>Conhecimento ou Ofício (armeiro) CD 15:</b> o escafandro protege contra frio extremo e é vedado, sem deixar ar escapar.</li>\n\t\t\t\t\t<li><b>Intuição ou Religião CD 20:</b> chama os habitantes de escória, mas trata as Colinas em si com certa reverência.</li>\n\t\t\t\t\t<li><b>Intuição CD 20:</b> Torgo está sob comando dele, mas não o vê como autoridade; não são próximos.</li>\n\t\t\t\t\t<li><b>Guerra ou Intuição CD 20:</b> ele e os capangas estão confiantes demais; devem ter truques na manga.</li>\n\t\t\t\t\t<li><b>Misticismo CD 25:</b> o relógio na testa tem poder mágico e está ligado ao kliren.</li>\n\t\t\t\t\t<li><b>Conhecimento, Ofício (armeiro/engenhoqueiro) ou Percepção CD 30:</b> partes do escafandro e da arma lembram os inventos do Dr. Vesper.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Se o grupo matar ou ferir gravemente Syvarian agora, a 2ª onda começa imediatamente. Se só começarem um combate, a 2ª onda vem reforçada por Syvarian e Torgo.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "RULdZVLAjsCdtPYI",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.RULdZVLAjsCdtPYI"
+    },
+    {
+      "name": "Handout · Dr. Vesper (05:00)",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<blockquote>\n\t\t\t\t<p><i>\"Vocês relutam! Protegem o inferno que conhecem, sem saber que estou lhes oferecendo a felicidade eterna! Rendam-se e os perdoarei. Eu não os odeio. Não odeio ninguém. Eu amo todas as pessoas.\"</i></p>\n\t\t\t\t<p><i>\"Tudo se transforma e isso gera sofrimento. Tudo morre. Até mesmo um deus pode perder sua divindade. Foi isso que compreendi quando tive contato com o Cofre Encarnatório de Ganymere! Foi isso que senti ao viver as vidas de milhares de gnomos! Tudo decai, tudo se deteriora. Tudo tem fim, e o culpado é um só: o Tempo.\"</i></p>\n\t\t\t\t<p><i>\"Vocês veem os lefeu como insetoides, mas eu sou capaz de enxergar sua verdadeira forma! A Tormenta não é algo a ser reverenciado, é uma ferramenta! E vou usá-la para cumprir minha missão. A única missão que importa, a única batalha que deve ser travada.\"</i></p>\n\t\t\t\t<p><i>\"Conquistarei o fim da dor, o fim da morte, o fim da tristeza. O fim do fim.\"</i></p>\n\t\t\t\t<p><i>\"O fim do tempo.\"</i></p>\n\t\t\t\t</blockquote>\n\t\t\t\t<p>E Syvarian, se o grupo já tinha percebido que o Dr. Vesper era o vilão desde o começo:</p>\n\t\t\t\t<blockquote><p><i>\"Vocês estiveram na presença de um gênio e ignoraram isso! (...) O Dr. Vesper é o abençoado que vai salvar a Criação de seu maior inimigo, o visionário que vai arrastar Arton ao paraíso! Não importa quantos cadáveres precisem pavimentar a estrada para essa nova era! Não importa que eu mesmo morra! O Dr. Vesper triunfará!\"</i></p></blockquote>\n\t\t\t\t<p>Garanta que a imagem do Dr. Vesper revele tudo: o plano, o histórico e as motivações. É a hora do grande discurso vilanesco.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "oPAvb7H071MY0FEC",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.oPAvb7H071MY0FEC"
+    },
+    {
+      "name": "Desfecho",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li><b>Syvarian e Torgo:</b> a proposta é que morram. Capturados, os implantes os matam antes de revelarem qualquer coisa.</li>\n\t\t\t\t\t<li><b>Capangas:</b> muito mais fáceis e úteis de capturar. Revelam tudo com testes sociais opostos contra Intuição ou Vontade. Você pode decidir que há capangas que não participaram e se rendem ao ver os líderes caírem.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h3>O que os capangas sabem</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>São desesperados de Deheon, Zakharov, Ahlen e vizinhos, querendo entrar numa grande organização. Só os de pistola já eram da Companhia dos Irmãos.</li>\n\t\t\t\t\t<li>Syvarian era capitão (\"gêmeo\") da Companhia e subiu meteoricamente. Na mesma época, Paollus, o irmão mais velho, mudou radicalmente: de cauteloso para agressivo, e começou uma guerra contra a Casa Blasanov pelo achbuld. Syvarian ganhou autonomia enorme e a permissão inédita de operar fora de Valkaria.</li>\n\t\t\t\t\t<li>A equipe dele foi treinada em armas de fogo e sofreu experimentos nas mãos do Dr. Vesper. Vários capangas receberam implantes para coisas prosaicas, como ver no escuro.</li>\n\t\t\t\t\t<li>Todos estão apavorados com a Tormenta: nem os mais empedernidos estavam prontos para compactuar com a Tempestade Rubra. Alguns ficam aliviados de serem capturados.</li>\n\t\t\t\t\t<li>Ninguém sabe quem era Torgo nem de onde veio. Syvarian parecia já conhecê-lo, mas não eram íntimos; o golem falava diferente e parecia fora da cadeia de comando.</li>\n\t\t\t\t\t<li>Tudo aponta para envolvimento pesado da Companhia dos Irmãos, mas a organização parece estar sendo infiltrada. A tecnologia do Dr. Vesper é avançada demais, não é coisa de criminoso nem de Valkaria.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h3>Epílogo</h3>\n\t\t\t\t<p>Se o grupo não decidir ir a Valkaria sozinho, Belinda sugere: eles serão apadrinhados pelo primo dela, <b>Blixto Arting</b>. Ela também manda uma carta para a namorada <b>Felicia</b> e, se quiserem, dá contatos que compram os mosquetes e armas ilegais recolhidos como tesouro. Nada sugere pressa — os planos de Syvarian foram frustrados.</p>\n\t\t\t\t<p><b>Se todos morrerem:</b> Syvarian toma as Colinas Centrais e o plano do Dr. Vesper avança mais rápido. A campanha continua com outro grupo, que ouve falar do sacrifício heroico no Forte Cabeça-de-Martelo.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "wrYttqvQA8Soofz0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!8AT7BYpYs6jFKVPD.wrYttqvQA8Soofz0"
+    }
+  ],
+  "_key": "!journal!8AT7BYpYs6jFKVPD"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "FdT · O Grupo",
+  "type": "JournalEntry",
+  "color": "#3f6b4a",
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo"
+    }
+  },
+  "_id": "0xzBGC8iEdeP3zLZ",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!0xzBGC8iEdeP3zLZ"
+}

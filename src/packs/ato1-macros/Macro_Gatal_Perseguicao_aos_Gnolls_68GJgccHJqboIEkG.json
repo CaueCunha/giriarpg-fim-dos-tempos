@@ -1,0 +1,31 @@
+{
+  "name": "Gatal · Perseguição aos Gnolls",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/gnoll.png",
+  "folder": "zODnB58HDAdF5oB2",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Especial de Gatal · gerado por a1-especial-de-gatal.js\nconst DADOS = {\"amigos\":{\"halinn\":{\"nome\":\"Halinn, o Silvestre\",\"deus\":\"Allihanna\",\"perfil\":\"Um homem que gosta de viver na floresta, entre os animais. Odeia caçar, mas entende os ciclos da vida natural.\",\"presente\":\"flauta\"},\"yrma\":{\"nome\":\"Yrma, a Reguladora\",\"deus\":\"Khalmyr\",\"perfil\":\"Uma mulher que aprecia ordem e justiça. Quer o bem de todos, mas não a custo das leis.\",\"presente\":\"balanca\"},\"berent\":{\"nome\":\"Berent, o Umbroso\",\"deus\":\"Tenebra\",\"perfil\":\"Um homem esperto que ama a noite, a sedução e os truques. Tem seu lado perigoso, mas é divertido.\",\"presente\":\"alev\"},\"larsen\":{\"nome\":\"Larsen Pugnaz\",\"deus\":\"Arsenal\",\"perfil\":\"Uma pessoa determinada a vencer a todo custo, que aprecia a luta e despreza o derrotismo. Gosta de colecionar objetos.\",\"presente\":\"criadora\"},\"enoa\":{\"nome\":\"Enoa, a Pelágica\",\"deus\":\"Oceano\",\"perfil\":\"Uma mulher fascinada pelos mistérios e seres marinhos. Mantém-se longe de tudo e todos, parecendo sempre em calmaria profunda.\",\"presente\":\"copo\"},\"nan\":{\"nome\":\"Nan Hierofante\",\"deus\":\"Wynna\",\"perfil\":\"Uma pessoa que ama as artes arcanas acima de tudo, muito generosa e exuberante. Imprevisível, em geral é o centro das atenções.\",\"presente\":\"truque\"}},\"objetos\":[\"Manopla com sete dedos\",\"Sandália para um gigante\",\"Flores secas aromáticas\",\"Jarro cheio de dentes de todas as raças\",\"Manivela metálica\",\"Cabeça de boneca\",\"Balança mal ajustada\",\"Balde de ouro\",\"Engrenagens de bronze\",\"Dois tijolos\",\"Três peças de um quebra-cabeças de madeira\",\"Alfinete de segurança\",\"Lâmina de faca\",\"Papéis coloridos\",\"Pintura de um goblin\",\"Conjunto de costelas\",\"Cordas de alaúde\",\"Martelo pequeno\",\"Pavio muito longo\",\"Frasco de óleo alquímico (base para qualquer produto)\",\"Baú sem tampa\",\"Corneta amassada\",\"Títere com cordas\",\"Lentes de uma luneta\",\"Botões dourados\",\"Tesoura sem ponta\",\"Carga de pólvora\",\"Monte de gravetos\",\"Traje cerimonial de Tamu-ra cortado na metade\",\"Cartola feita de folhas trançadas\",\"Almofada felpuda\",\"Hélice de brinquedo\",\"Calças para um centauro\",\"Viveiro de insetos\",\"Mangusto empalhado\",\"Quatro molas\",\"Apito estridente\",\"Cachimbo sem fundo\",\"Duas ferraduras\",\"Ampulheta intacta, mas sem areia\",\"Tabuleiro de xadrez\",\"Tambor em miniatura\",\"Saquinho de pimenta moída\",\"Frigideira engordurada\",\"Frasco de tinta roxa\",\"Incenso malcheiroso\",\"Fivela com o símbolo de Azgher\",\"Roda de carroça\",\"Xícara delicada\",\"Pente de âmbar com metade dos dentes\",\"Agulha e linha\",\"Seis pregos\",\"Giz multicolorido\",\"Alvo para dardos\",\"Bolinhas de vidro\",\"Barra de sabão\",\"Corrente circular\",\"Chave decorada\",\"Cristal prismático\",\"Olho falso\",\"Pequeno sino\",\"Bengala espiralada\",\"Cera de abelha\",\"Prato de orquestra\",\"Coleira decorada\",\"Pistola sem partes funcionais (só cano e coronha)\",\"Frasco de cola\",\"Gravata borboleta berrante\",\"Colar de pérolas obviamente falsas\",\"Pequeno osso esculpido na forma de um pequeno osso\",\"Pote transparente com um mosquito morto\",\"Coleção de borboletas (1d12 borboletas)\",\"Cartaz de \\\"procurado\\\" com o retrato e o nome recortados (recompensa T$ 1.000)\",\"Pipa com estrutura de chumbo\",\"Cubo de pedra absolutamente perfeito\",\"Dois monóculos\",\"Escudo totalmente enferrujado\",\"Regador furado\",\"Ábaco barulhento\",\"Máscara de festa deluxe\",\"Bico de pato pintado de verde\",\"Haltere extremamente leve\",\"Bandeira com o desenho de uma montanha\",\"Pera de porcelana\",\"Vassoura obra-prima\",\"Gaiola de pássaros\",\"Placa onde se lê \\\"proibido usar perícias\\\"\",\"Baralho com 52 ases\",\"Dado de 6 faces, numeradas 23, 0, 814, 9, 5.309 e 6\",\"Parafuso de borracha\",\"Ânfora cheia de melado\",\"Espelho que distorce a imagem\",\"Lampião feito de açúcar\",\"Pele de urso\",\"Régua com marcações aleatórias\",\"Pó de meteoro\",\"Torneira emperrada\",\"Colher dupla\",\"Nabos em conserva\",\"Pá de pelúcia\"]};\n(async function macroPerseguicao(D) {\n\t\tconst ESTADO = \"fdtGatal\";\n\t\tconst i = game.user.getFlag(\"world\", `${ESTADO}.perseguicao`) ?? 0;\n\t\tconst chaves = Object.keys(D.amigos);\n\t\tif (i >= chaves.length) return ChatMessage.create({ content: \"<p>O rastro dos gnolls some de vez na neve. Mas, de algum jeito, a noite já foi salva: é Gatal.</p>\" });\n\t\tconst k = chaves[i];\n\t\tconst a = D.amigos[k];\n\t\tconst ini = Math.floor((i * 100) / 6) + 1;\n\t\tconst fim = Math.floor(((i + 1) * 100) / 6);\n\t\tconst objs = D.objetos.slice(ini - 1, fim).map((o, j) => `${ini + j}. ${o}`);\n\t\tawait game.user.setFlag(\"world\", `${ESTADO}.perseguicao`, i + 1);\n\t\tChatMessage.create({ content: `<h3>No rastro dos gnolls (${i + 1}/6)</h3>\n\t\t\t<p>As pegadas parecem frescas, mas os gnolls estão sempre um pouco mais à frente. No caminho, vocês encontram <b>${a.nome}</b>: ${a.perfil}</p>\n\t\t\t<p><i>\"Eu ia ganhar um presente de Gatal... mas destruíram a oficina do Garbin. Vou ficar sem nada este ano.\"</i></p>\n\t\t\t<p>Espalhados pela neve, objetos que os gnolls derrubaram na fuga: ${objs.join(\"; \")}.</p>\n\t\t\t<p style=\"font-size:0.85em\">Contingência <b>Sem Espírito Gatalino</b>: os jogadores podem fabricar o presente ali mesmo (simplifique a fabricação se precisar) e entregar na hora com a <i>Oficina de Gatal</i>.</p>` });\n\t})(DADOS);",
+  "_id": "68GJgccHJqboIEkG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!68GJgccHJqboIEkG"
+}

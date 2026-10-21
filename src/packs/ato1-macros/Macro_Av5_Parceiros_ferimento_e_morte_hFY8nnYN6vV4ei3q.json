@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Parceiros (ferimento e morte)",
+  "type": "script",
+  "img": "icons/svg/blood.svg",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroParceiros() {\n\t\tconst CHAVE = \"fdtParceiros\";\n\t\tconst estado = game.user.getFlag(\"world\", CHAVE) ?? { feridos: 0 };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Parceiros\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Feridos acumulados nesta onda: <b>${estado.feridos}</b>.</p>\n\t\t\t\t<div class=\"form-group\"><label>O que rolar</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"ferimento\">Fim da rodada: alguém se feriu?</option>\n\t\t\t\t\t<option value=\"morte\">Fim da onda: quem morreu?</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Parceiros usados nesta rodada</label><input type=\"number\" name=\"usados\" value=\"1\" min=\"0\" max=\"6\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Na área dos tentáculos (1d4)</label><input type=\"checkbox\" name=\"tentaculos\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Parceiros feridos (fim da onda)</label><input type=\"number\" name=\"feridos\" value=\"${estado.feridos}\" min=\"0\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tlet html = \"\";\n\t\tif (res.acao === \"ferimento\") {\n\t\t\tconst usados = Number(res.usados) || 0;\n\t\t\tconst r = await new Roll(res.tentaculos ? \"1d4\" : \"1d6\").evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ferido = r.total <= usados;\n\t\t\tif (ferido) estado.feridos += 1;\n\t\t\thtml = `<h3>Ferimento de parceiro</h3><p>${res.tentaculos ? \"1d4\" : \"1d6\"}: <b>${r.total}</b> contra ${usados} parceiro(s) usado(s). ${ferido ? \"<b>Um parceiro aleatório é ferido e sai de combate.</b>\" : \"Ninguém se feriu.\"}</p>\n\t\t\t\t<p>Feridos nesta onda: <b>${estado.feridos}</b>.</p>`;\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, estado);\n\t\t} else {\n\t\t\tconst n = Number(res.feridos) || 0;\n\t\t\thtml = `<h3>Fim da onda · chance de morte</h3><p>Um dado por parceiro ferido; <b>ímpar = morre</b>.</p><ul>`;\n\t\t\tlet mortos = 0;\n\t\t\tfor (let i = 1; i <= n; i++) {\n\t\t\t\tconst r = await new Roll(\"1d6\").evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst morreu = r.total % 2 === 1;\n\t\t\t\tif (morreu) mortos++;\n\t\t\t\thtml += `<li>Ferido ${i}: <b>${r.total}</b> ${morreu ? \"❌ morreu\" : \"✔️ sobreviveu (volta com cura)\"}</li>`;\n\t\t\t}\n\t\t\thtml += `</ul><p>Mortos: <b>${mortos}</b> de ${n}.</p>\n\t\t\t\t<p style=\"font-size:0.85em\">Antes de rolar, o grupo pode tirar de jogo um parceiro médico de vez para salvar um ferido da rolagem (ele não volta ao combate, mas não morre).</p>`;\n\t\t\testado.feridos = 0;\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, estado);\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "hFY8nnYN6vV4ei3q",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!hFY8nnYN6vV4ei3q"
+}

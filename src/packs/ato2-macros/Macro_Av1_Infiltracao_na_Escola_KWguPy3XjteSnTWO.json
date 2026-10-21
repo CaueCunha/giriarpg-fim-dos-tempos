@@ -1,0 +1,31 @@
+{
+  "name": "Av1 · Infiltração na Escola",
+  "type": "script",
+  "img": "icons/magic/perception/silhouette-stealth-shadow.webp",
+  "folder": "A9iOyGCQztgqYQhA",
+  "flags": {
+    "world": {
+      "fdt": "a2av1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 1 · gerado por a2-av1-stremtol.js\n(async function macroInfiltracao() {\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione os personagens que estão se esgueirando.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Infiltração na Escola\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Situação</label><select name=\"modo\">\n\t\t\t\t\t<option value=\"procurados\">Já foram vistos: os servos procuram juntos (Percepção +12)</option>\n\t\t\t\t\t<option value=\"escondidos\">Ninguém sabe deles: cada servo na sala percebe sozinho (+5)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Servos na sala</label><input type=\"number\" name=\"servos\" value=\"1\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };\n\t\tlet html = \"<h3>Infiltração na Escola</h3>\";\n\t\tconst percepcoes = res.modo === \"procurados\" ? [await rolar(\"1d20 + 12\")] : await Promise.all(Array.from({ length: Math.max(1, Number(res.servos) || 1) }, () => rolar(\"1d20 + 5\")));\n\t\thtml += `<p>Percepção dos servos: ${percepcoes.join(\", \")}.</p><ul>`;\n\t\tlet algumVisto = false;\n\t\tfor (const t of tokens) {\n\t\t\tconst f = await rolar(`1d20 + ${Number(t.actor.system.pericias?.furt?.value) || 0}`);\n\t\t\tconst visto = percepcoes.some((pp) => pp >= f);\n\t\t\talgumVisto ||= visto;\n\t\t\thtml += `<li>${t.name}: Furtividade ${f} ${visto ? \"<b>é visto!</b>\" : \"passa despercebido.\"}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tif (algumVisto) {\n\t\t\tconst chega = await rolar(\"1d6\");\n\t\t\thtml += `<p>Os servos atacam quem foi visto e chamam Madame Margebell, que chega em <b>${chega} rodada(s)</b>. Os outros podem fugir ou continuar escondidos.</p>`;\n\t\t}\n\t\thtml += \"<p style=\\\"font-size:0.85em\\\">Lembre: toda sala com quadros pede o teste de Vontade (macro <i>Pinturas Subliminares</i>).</p>\";\n\t\tChatMessage.create({ content: html, rolls, whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t})();",
+  "_id": "KWguPy3XjteSnTWO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!KWguPy3XjteSnTWO"
+}

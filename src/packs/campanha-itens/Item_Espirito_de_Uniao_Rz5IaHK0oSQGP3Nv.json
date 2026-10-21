@@ -1,0 +1,72 @@
+{
+  "name": "Espírito de União",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "espirito-uniao",
+      "fdtPre": "Exército de Um Grupo Só e outro poder de grupo"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Este poder só funciona se <b>todos</b> os membros do grupo o tiverem escolhido. No início da rodada, cada personagem com este poder pode gastar 2 PM. Se fizerem isso, até o fim da cena, esses personagens compartilham um total de PV igual à soma dos PV de cada um. Dano, recuperação e perda de vida são todos aplicados a esse total (após RD etc.). Se o total acabar, todos sofrem os efeitos de serem reduzidos a 0 PV ou menos (cada um ainda morre no seu limite individual). No fim da cena, divida os PV restantes igualmente.</p><p>Pré-requisitos: Exército de Um Grupo Só, outro poder de grupo.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> macro <b>Grupo · Ações de Grupo</b> → Espírito de União: <i>iniciar</i> gasta 2 PM de cada um e mostra o total; durante a cena aplique o dano em qualquer um deles (o total é a soma); <i>encerrar</i> divide igualmente o que sobrou. Só fica ativo se todos os membros do grupo tiverem o poder e estiverem na cena.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "Rz5IaHK0oSQGP3Nv",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!Rz5IaHK0oSQGP3Nv"
+}

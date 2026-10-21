@@ -1,0 +1,295 @@
+{
+  "name": "Aventura 4.5 · Plano 5 das Colinas Centrais",
+  "folder": "8NAbDbuEA4fs9a69",
+  "flags": {
+    "world": {
+      "fdt": "av45"
+    }
+  },
+  "_id": "wccAmNf7v5m1Q1kQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Mini aventura opcional, sem pressa, para o grupo respirar e fechar pontas soltas antes do fim do arco. @UUID[Actor.pP27Dz9NsKmeVfFv]{Malakias Andronicus} pede ajuda para achar a família que \"sumiu\". Na verdade ele morreu há 75 anos e foi erguido por um Mecanismo Necroaberrante que Torgo enterrou no cemitério de Ponta de Pedra. A família continua morta, menos @UUID[Actor.yPRdFLd5HptmyPrA]{Myrianthe Andronicus (cabeça falante)}, que seguiu os zumbis até um covil de Syvarian. Lá estão as ordens do ataque ao Forte: <b>ler o pergaminho começa a Aventura 5</b>.</p>\n\t\t\t\t<p>Pode acabar em minutos (cemitério, lápides, contar a Malakias) ou num curto combate. Tudo depende da curiosidade do grupo.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Normalidade:</b> a @UUID[Item.0D8pAtcSQMazhlCY]{Carta de Malakias} surge no quadro da Metais do Baixote. Nadine e Tarik comentam o velho sem pressa.</li>\n\t\t\t\t\t<li><b>Encontro nas Centrais:</b> role uma vez em @UUID[RollTable.SXGo9yFoHNuH9DK6]{Encontros nas Colinas Centrais} no caminho. Lembre que Malakias não tem pressa: dá para fazer turismo.</li>\n\t\t\t\t\t<li><b>Velho Ranzinza:</b> a casa da colina torta, abandonada há décadas.</li>\n\t\t\t\t\t<li><b>Investigação:</b> Ponta de Pedra, NPCs estudiosos, testes no velho, cemitério, @UUID[Item.sJMjUp7e46MXoU4P]{Mecanismo Necroaberrante (inativo)}, rastro.</li>\n\t\t\t\t\t<li><b>O covil dos mortos</b> e a cabeça de Myrianthe.</li>\n\t\t\t\t\t<li><b>Reencontro</b> (conclusão A ou B) e as @UUID[Item.b3A2qhThxQZKI9A7]{Ordens de Syvarian para Torgo}.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Actor.pP27Dz9NsKmeVfFv]{Malakias Andronicus} e @UUID[Actor.yPRdFLd5HptmyPrA]{Myrianthe Andronicus (cabeça falante)} (para a parte social).</li>\n\t\t\t\t\t<li>Conclusão B: @UUID[Actor.eUk2bNAEHiL7n6BE]{Malakias Corrompido (zumbi da Tormenta)} e @UUID[Actor.35MWy7AfPTbXSZrh]{Myrianthe Corrompida (zumbi da Tormenta)}.</li>\n\t\t\t\t\t<li>@UUID[Actor.9cJFP2lZjr0kzWXp]{Zumbi Defeituoso do Covil} (os dois deixados no covil).</li>\n\t\t\t\t\t<li>Pistas e CDs: @UUID[Actor.kkzBTmQmQgFFqULp]{O Mistério de Malakias (testes)}.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.MwL2I5rAYjY3Z54j]{Av4.5 · Examinar Malakias}: rola Conhecimento, Cura, Intuição ou Misticismo e sussurra ao Mestre o que se descobre.</li>\n\t\t\t\t\t<li>@UUID[Macro.6Tf0SRwwDx5CDE3N]{Av4.5 · Rastro dos Mortos}: o teste estendido de Sobrevivência até o covil, contando a interpretação com NPCs.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "UzF8uL3tBx69nMRE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.UzF8uL3tBx69nMRE"
+    },
+    {
+      "name": "Handout · Carta de Malakias",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote><p><i>\"Minha família sumiu! Todo mundo hoje em dia fala que tem bandidos aqui nas Colinas Centrais. Bandido sempre teve, mas pelo menos eram os nossos bandidos! Agora tem bandido de fora vindo pra cá? Onde já se viu? Não sei se os bandidos é que sumiram com a minha família, mas de qualquer forma ela sumiu. E o pessoal de Ponta de Pedra não ajuda em nada! No meu tempo os vizinhos se ajudavam! Agora parece que é cada um por si, não é? As pessoas não se ajudam, não querem saber umas das outras, é por isso que o mundo está desse jeito! A gente tenta ser solidário, mas agora precisa ser solidário sozinho, enquanto todo mundo está só preocupado consigo mesmo? Ah, não! Eles vão ver!\"</i></p>\n\t\t\t\t<p>(O papel está acabando, a letra vai ficando menor e mais espremida.)</p>\n\t\t\t\t<p><i>\"Enfim, a minha família sumiu. Venham ajudar.\"</i></p>\n\t\t\t\t<p><i>\"Malakias Andronicus, casa da colina torta, a oeste de Ponta de Pedra, vocês não têm como errar, é só seguir o caminho da Mata Seca...\"</i></p>\n\t\t\t\t<p>(O papel acaba.)</p></blockquote>\n\t\t\t\t<h3>O que dizem no Forte</h3>\n\t\t\t\t<p><b>Nadine:</b> <i>\"Eu conheço muita gente por aqui, principalmente nas aldeias vizinhas, e nunca ouvi falar desse sujeito! (...) Bem, mas o velho não pareceu ameaça nenhuma, então...\"</i></p>\n\t\t\t\t<p><b>Tarik:</b> <i>\"(...) Queria ajuda, mas também ficou sentado tagarelando, sem pressa nenhuma. Pareceu se importar com a família, mas não havia urgência em seu comportamento. Enfim, é um humano diferente.\"</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "xWRde8aZKAJ4j9Ib",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.xWRde8aZKAJ4j9Ib"
+    },
+    {
+      "name": "O Que Aconteceu de Verdade",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Malakias Andronicus morreu em <b>1345</b>, 75 anos atrás. Era casado com <b>Myrianthe</b> e teve os filhos <b>Ezekias</b> e <b>Mennonias</b>, a nora <b>Tankreda</b> e os netos <b>Lykurgos</b> e <b>Berta</b>.</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Myrianthe morreu de causas naturais alguns anos depois.</li>\n\t\t\t\t\t<li>Ezekias, Tankreda e Lykurgos morreram de peste.</li>\n\t\t\t\t\t<li>Mennonias foi embora com Berta, hoje uma senhora idosa em algum lugar fora das Centrais.</li>\n\t\t\t\t\t<li>Todos foram enterrados no cemitério de Ponta de Pedra.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Torgo, sob ordens de Syvarian, enterra <b>Mecanismos Necroaberrantes</b> nos cemitérios das Centrais: motores do Dr. Vesper que espalham energia negativa e corrupção da Tormenta, criando \"carne\" de matéria vermelha em volta dos ossos. Uma falha trouxe o espírito de Malakias junto: ele é um morto-vivo inteligente e confuso, que nunca viu as lápides.</p>\n\t\t\t\t<p>A colina do casal fica sobre um rico <b>veio de metal arco-íris</b>. Parte da divindade de Tilliann impregnou os espíritos deles, por isso a Tormenta não os tomou como aos outros.</p>\n\t\t\t\t<h3>Pistas extras</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Ponta de Pedra:</b> ninguém conhece Malakias. Com o grupo persuasivo (ou que já ajudou a aldeia), a velha <b>Vladimina</b> lembra vagamente de um velhinho chamado Malakias na infância dela. Outros nomes: Vyrmille, Clarence, Geraldine, Bort, Jannistra, Frellen.</li>\n\t\t\t\t\t<li><b>NPCs estudiosos</b> (Nada Mais que a Verdade, Edwina, Tanna-Toh) percebem que ele está deslocado no tempo, cada um com sua teoria.</li>\n\t\t\t\t\t<li><b>Irevash</b>, o fofoqueiro: \"não se mete na vida dos outros\" e já começa a contar segredos. Útil para passar qualquer pista que faltar.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ICt5225ghgw53oZ6",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.ICt5225ghgw53oZ6"
+    },
+    {
+      "name": "Eu Vejo NPCs Mortos",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Como Malakias reage à verdade depende de como o grupo conta:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Hostilidade</b> (inclusive clérigos e paladinos tentando afastá-lo ou libertá-lo): medo, tenta se proteger e, se não der, a fúria revela a Tormenta (use @UUID[Actor.eUk2bNAEHiL7n6BE]{Malakias Corrompido (zumbi da Tormenta)}).</li>\n\t\t\t\t\t<li><b>Paciência e sensibilidade:</b> fica pasmo e aos poucos aceita. Pergunta o que fazer. Talvez possa viver nas Centrais como um osteon, na casa antiga.</li>\n\t\t\t\t\t<li><b>Estudar o corpo dele:</b> medo e desconfiança, mas incluído no processo até se diverte. Pode abrir o próprio tórax para ver o que tem dentro (e ter uma bela surpresa lefeu).</li>\n\t\t\t\t\t<li><b>Tom trágico:</b> chocado, esquece tudo antes da morte e passa a tratar o grupo como a família dele. Contrariado nesse estado, a fúria revela a Tormenta.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h3>Contingência: o grupo não acha o covil</h3>\n\t\t\t\t<p>Malakias quer saber por que virou morto-vivo e pede para acharem Myrianthe. NPCs comentam mortos andando pelas Colinas. Ponta de Pedra contrata o grupo para descobrir quem remexeu o cemitério. Um NPC curioso sugere investigar o Mecanismo. Se mesmo assim o grupo ignorar, não force: os habitantes serão atacados sem aviso e a defesa do Forte ficará bem mais difícil.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "6SazfqQR8KuE0NqQ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.6SazfqQR8KuE0NqQ"
+    },
+    {
+      "name": "O Covil e Myrianthe",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Uma abertura pequena, uma caverna ampla e corredores largos: espaço de masmorra criado pelo Templo do Vácuo, usado por Syvarian como base (ele considera o Templo sagrado demais para criminosos). Sinais de acampamento, anotações dos bandidos e as ordens para Torgo. Três mortos-vivos ficaram: dois defeituosos e a cabeça de Myrianthe.</p>\n\t\t\t\t<blockquote><p><i>\"Parece que alguém achou esta caverna... Ah, vocês não são bandidos. Pelo menos não vou ficar falando sozinha pela eternidade.\"</i></p></blockquote>\n\t\t\t\t<h3>Perguntas e respostas</h3>\n\t\t\t\t<p><b>Quem é você?</b> <i>\"Meu nome é Myrianthe. Myrianthe Andronicus. Meu marido tinha muito orgulho de ter um sobrenome, sempre fazia questão de mencioná-lo para todos. Não parava de falar, mas eu gostava de ouvi-lo.\"</i></p>\n\t\t\t\t<p><b>O que aconteceu aqui?</b> <i>\"Exatamente o que parece. Eu morri. (...) acordei com frio, no meio da terra. (...) Havia dezenas de outros mortos se erguendo, mas nenhum como eu. (...) Uma espécie de homem enorme de armadura nos mandou segui-lo. (...) Vários dos outros mortos-vivos ficaram cada vez mais horrendos. Sua carne apodrecia. E eu... Não.\"</i></p>\n\t\t\t\t<p><b>Outro?</b> <i>\"O homem de armadura obedecia a alguém. Um tipo pomposo, parecia um militar. (...) Ele avaliou os mortos e decidiu que eu não servia. Quando estava frente a frente com ele, comecei a fazer perguntas. Ele ficou indignado, usou uma serra e cortou minha cabeça.\"</i></p>\n\t\t\t\t<p><b>Os nomes?</b> <i>\"O homem de armadura é Torgo. Seu chefe é Syvarian.\"</i></p>\n\t\t\t\t<p><b>Como é Syvarian?</b> Muito alto e muito magro, parece frágil mas é forte e rápido. Armadura de bronze com pedaços de tecido grosso, elmo redondo e enorme. E na testa <i>\"um redondo, uma coisa de vidro com uns palitinhos que às vezes se mexiam\"</i> (ela nunca viu um relógio; mostrando um, ela reconhece).</p>\n\t\t\t\t<p><b>O que mais?</b> Maligno e violento, fala o tempo todo na \"missão\". Promete uma recompensa a Torgo. Diz que Torgo não pode decepcionar a <i>\"tropalução... trapulissem... tripulação!\"</i></p>\n\t\t\t\t<p><b>É humano?</b> <i>\"É sim! Mas nunca vi um humano tão alto e tão magro.\"</i> Sotaque esquisito. (É um kliren. Mostrando a imagem de um kliren, ou Zardu, ela diz que é muito parecido; Zardu é um pouco mais jovem.)</p>\n\t\t\t\t<p><b>O que eles querem?</b> <i>\"Eles estavam falando de juntar um monte de mortos-vivos e atacar todas as Colinas Centrais! Disseram que é a hora, que não podem esperar mais! Falaram de uns aventureiros que estavam atrapalhando tudo...\"</i></p>\n\t\t\t\t<p><b>Por que você é diferente?</b> Não sabe. Os outros foram ficando mais burros; ela não. Parecia que estavam fazendo testes, e ficaram satisfeitos.</p>\n\t\t\t\t<p><b>E seu marido?</b> <i>\"Malakias? Coitado, morreu quase dez anos antes de mim! (...) graças a Lena ele continuou morto!\"</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "9MODHyv6lCAVO0Be",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.9MODHyv6lCAVO0Be"
+    },
+    {
+      "name": "Reencontro",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Contando sobre Malakias, Myrianthe fica muito triste. Reunindo os dois, escolha:</p>\n\t\t\t\t<h3>Conclusão A: O Amor Tudo Vence (recomendada pelo autor)</h3>\n\t\t\t\t<p>O \"erro\" é permanente: os dois são mortos-vivos inteligentes para sempre. Ficam felizes e entram na rotina de quem convive há décadas. Myrianthe explica tudo a Malakias de novo e de novo. Combina com o tema de reunir aliados contra Syvarian.</p>\n\t\t\t\t<h3>Conclusão B: Escatologia &amp; Sadismo</h3>\n\t\t\t\t<p>Um momento de felicidade, e então algo se quebra em Malakias: patas e antenas brotam da boca, ouvidos e olhos, o corpo se rompe em carapaça. Myrianthe grita e também eclode, com patas no pescoço e quelíceras na boca. Curto combate contra @UUID[Actor.eUk2bNAEHiL7n6BE]{Malakias Corrompido (zumbi da Tormenta)} e @UUID[Actor.35MWy7AfPTbXSZrh]{Myrianthe Corrompida (zumbi da Tormenta)}. Boa para grupos que querem o lado trágico da Tormenta e uma razão para vingança.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "MHBtQyrRdy6e99To",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.MHBtQyrRdy6e99To"
+    },
+    {
+      "name": "Handout · Ordens de Syvarian para Torgo",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<blockquote><p><i>\"Nossas táticas fracassaram. O tal grupo de aventureiros frustrou cada uma de nossas tentativas. Eles não sabem o que estão fazendo, não entendem o mal que provocam. Chega de subterfúgios, é hora de sangue. Construímos os Mecanismos Necroaberrantes para isso. Leve os mortos, espalhe a ordem a todas as bases. Todas as tropas estão convocadas. Passaremos por cada aldeia, cada casebre, cada buraco onde o povo destas Colinas se esconde e vamos matar todos. Convergimos ao alvo principal em duas semanas. Todos juntos, para que não reste ninguém vivo lá dentro. O Forte Cabeça-de-Martelo vai cair.</i></p>\n\t\t\t\t<p><i>Syvarian\"</i></p></blockquote>\n\t\t\t\t<p class=\"secret\">Ao ser lido, começa a corrida contra o relógio: role 14 – 2d4 dias até o ataque (os heróis só sabem o prazo interrogando um inimigo). Não há mais espaço para vagar livremente: o próximo passo é avisar e recolher os NPCs. Siga para a Aventura 5.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "3ddofqmxJeXzzGdN",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!wccAmNf7v5m1Q1kQ.3ddofqmxJeXzzGdN"
+    }
+  ],
+  "_key": "!journal!wccAmNf7v5m1Q1kQ"
+}

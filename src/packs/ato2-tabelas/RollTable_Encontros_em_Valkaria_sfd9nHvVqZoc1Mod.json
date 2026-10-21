@@ -1,0 +1,573 @@
+{
+  "name": "Encontros em Valkaria",
+  "img": "icons/svg/village.svg",
+  "folder": "e5EQqgZHnnjNDsN8",
+  "flags": {
+    "world": {
+      "fdt": "a2av0"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role sempre que o grupo se desloca pela cidade. Detalhes de cada encontro no livro (Introdução do Arco 2).",
+  "_id": "sfd9nHvVqZoc1Mod",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Gnuk e a Carroça de Lagarto Interno",
+      "description": "Pode explodir. Na terceira vez, ele doa a carroça, que cruza um hexágono em 5 minutos.",
+      "_id": "xLBGE07z0CP1mm2l",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.xLBGE07z0CP1mm2l"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Farboraff e Brungamm",
+      "description": "Chapeleiros rivais. Chapéus a T$ 50, cada um com +1 numa perícia.",
+      "_id": "cQs1nyuylZHO58eQ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.cQs1nyuylZHO58eQ"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Wynstar, o unicórnio burocrata",
+      "description": "Formulários com CD 20, ou multa de 20%.",
+      "_id": "UgH5CNWUYSNd08Qh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.UgH5CNWUYSNd08Qh"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Drelene, deusa sem portfólio",
+      "description": "Regras de devoção; +2 para converter fiéis.",
+      "_id": "Yy1AnrA5OuMENIzL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.Yy1AnrA5OuMENIzL"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Castelo do Sabor",
+      "description": "Fast-food do necromante Jorir, atendido por Melora. Quatro pratos com bônus; o vício custa –2 PM.",
+      "_id": "gsnI0GGXRunCHwmo",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.gsnI0GGXRunCHwmo"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Residência Paterfax",
+      "description": "Casa senciente. Base gratuita com +5 PM.",
+      "_id": "6DhcRsifDKMzEARW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.6DhcRsifDKMzEARW"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Galswell, o falso Klunc",
+      "description": "Atuação +10.",
+      "_id": "W2HYFips4fiunlmn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.W2HYFips4fiunlmn"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Elemental da Poluição",
+      "description": "3 testes CD 25 para ser entendido; tocá-lo pede Fortitude CD 20.",
+      "_id": "OKs9ygrILqk0kBIZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.OKs9ygrILqk0kBIZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Assalto ao Mercado do Ouro Tolo",
+      "description": "Dez bandidos. Rende até 3 provas e +3 Lei & Ordem.",
+      "_id": "zC0hV86Zhf0imtGZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.zC0hV86Zhf0imtGZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Bebê Corisco, ginete extremo",
+      "description": "Cinco testes de Cavalgar; aposta de T$ 500 para ganhar T$ 2.500.",
+      "_id": "cCl9F327jwWQtFvt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.cCl9F327jwWQtFvt"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Goblins da Gazeta do Reinado",
+      "description": "Tabela de entrevista; o melhor resultado é parecer desinteressante.",
+      "_id": "YOsZwRRgDzL4nqTX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.YOsZwRRgDzL4nqTX"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Orfanato das Pobres e Desgraçadas Crianças Infelizes",
+      "description": "Abençoado por Nimb.",
+      "_id": "lRuJjzQE6VIW22pj",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.lRuJjzQE6VIW22pj"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Yolana, nagah do Silêncio Aberrante",
+      "description": "Memética +15.",
+      "_id": "FX4WHmCEOcw5yRIM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.FX4WHmCEOcw5yRIM"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Depósito de Lixo",
+      "description": "Investigação por turno, tabela de itens e risco de infecção. Local fixo.",
+      "_id": "WW6FAC2MzB7YiZES",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.WW6FAC2MzB7YiZES"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Anatole, empresário de aventureiros",
+      "description": "Cobra T$ 10.000 mais 30%.",
+      "_id": "HCmcStXEWgwj8xBa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.HCmcStXEWgwj8xBa"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Avatar da Cidade",
+      "description": "Memória +15. Segredos de NPCs com CD 30, segredos da campanha com CD 35.",
+      "_id": "4W4GNAdAzA6DT5yX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.4W4GNAdAzA6DT5yX"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Clube de Cavalheiros",
+      "description": "Taverna de vilões famosos (Damien, Nefretum, Lorde Enxame, Lamashtu, Edauros, Ellen Redblade...). Atacar ali é suicídio. Local fixo.",
+      "_id": "B1ApvCbYJauEaLhk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.B1ApvCbYJauEaLhk"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Qualificatórias da Arena",
+      "description": "Cinco lutas, tabela de lutadores, Atuação CD 30 para Glamour. Libera a atividade Luta na Arena de Valkaria.",
+      "_id": "HJNP5neUE7PeLtEz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.HJNP5neUE7PeLtEz"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Justine, candidata a Dama Urbana",
+      "description": "Dos Telhados sem Sapé. Eleita com 500 pontos ou mais, dá –1 PM nos telhados.",
+      "_id": "ka3gX5Q9ZsLTCw0K",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.ka3gX5Q9ZsLTCw0K"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Tilliann, antigo Deus dos Gnomos",
+      "description": "Com 5 pedaços de metal arco-íris, concede o poder Procrastinação Criativa.",
+      "_id": "DR7nbRwPBjH91hFR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sfd9nHvVqZoc1Mod.DR7nbRwPBjH91hFR"
+    }
+  ],
+  "_key": "!tables!sfd9nHvVqZoc1Mod"
+}

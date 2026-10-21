@@ -1,0 +1,86 @@
+{
+  "name": "Medalhão da Gárgula",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/medalhao-de-prata.webp",
+  "system": {
+    "description": {
+      "value": "<p>A magia se esgotou quando Barnett encantou a gárgula e não volta. Mas as energias que restam podem ser usadas por quem conhece magia.</p><p>Um personagem <b>treinado em Misticismo</b> pode vesti-lo (ocupa 1 espaço). Quando usar uma habilidade mágica com custo em PM, pode gastar 1 carga para pagar 1 PM desse custo.</p><p><b>3 cargas.</b> Depois vira uma bijuteria mundana de T$ 50. Controle as cargas na quantidade do item.</p>",
+      "unidentified": ""
+    },
+    "qtd": 3,
+    "preco": 50,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "iFTvUWSb6CtwA8jl",
+  "flags": {
+    "world": {
+      "fdt": "a2av0"
+    }
+  },
+  "_id": "4aWtzJL1iLEbCf7X",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!4aWtzJL1iLEbCf7X"
+}

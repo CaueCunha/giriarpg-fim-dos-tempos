@@ -1,0 +1,330 @@
+{
+  "name": "Eventos da Perseguição (Valkaria)",
+  "img": "icons/svg/target.svg",
+  "folder": "e5EQqgZHnnjNDsN8",
+  "flags": {
+    "world": {
+      "fdt": "a2av0"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Uma vez por rodada. Obstáculo: todos testam; quem falha avança metade. Atalho: quem tenta e passa avança o dobro, quem falha avança metade. A macro Perseguição já rola isto.",
+  "_id": "JyK0I7Q2vF0eqOdb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        2
+      ],
+      "weight": 2,
+      "name": "Nenhum",
+      "description": "Nada acontece.",
+      "_id": "ojlmH30dwxDaVHcT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.ojlmH30dwxDaVHcT"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Pilha de caixotes",
+      "description": "Obstáculo: Força CD 15.",
+      "_id": "6B2GGbZZzahZa2aT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.6B2GGbZZzahZa2aT"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        5
+      ],
+      "weight": 2,
+      "name": "Multidão se interpõe",
+      "description": "Obstáculo: Intimidação CD 20.",
+      "_id": "a8mzNupR1LdbeFIe",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.a8mzNupR1LdbeFIe"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        7
+      ],
+      "weight": 2,
+      "name": "Carroça puxada por bois",
+      "description": "Obstáculo: Atletismo CD 20.",
+      "_id": "jhF6bGIkTCSQ9k62",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.jhF6bGIkTCSQ9k62"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        9
+      ],
+      "weight": 2,
+      "name": "Frutas derramadas no chão",
+      "description": "Obstáculo: Acrobacia CD 20.",
+      "_id": "lXrKqAPtsIr0AoO4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.lXrKqAPtsIr0AoO4"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        11
+      ],
+      "weight": 2,
+      "name": "Desabamento de marquise",
+      "description": "Obstáculo: Reflexos CD 22. Falha: também 5d6 de impacto.",
+      "_id": "DutcHhyKG2C63ZkU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.DutcHhyKG2C63ZkU"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        13
+      ],
+      "weight": 2,
+      "name": "Explosão de engenhoca goblin",
+      "description": "Obstáculo: Percepção CD 22. Falha: também –2 no próximo teste de Atletismo.",
+      "_id": "EuUFkFrfn5GokMcI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.EuUFkFrfn5GokMcI"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        15
+      ],
+      "weight": 2,
+      "name": "Dois NPCs carregando um vidro enorme",
+      "description": "Obstáculo: Acrobacia CD 22. Falha: também 2d6 de corte.",
+      "_id": "FojaK87CXdx8aCUk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.FojaK87CXdx8aCUk"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        17
+      ],
+      "weight": 2,
+      "name": "Bueiro se abre",
+      "description": "Obstáculo: Reflexos CD 25. Falha: cai no bueiro, 2d6 de impacto e perde uma rodada escalando.",
+      "_id": "LVgk8pzLhWts0OH4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.LVgk8pzLhWts0OH4"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        19
+      ],
+      "weight": 2,
+      "name": "Carrinho de bebê descontrolado",
+      "description": "Obstáculo: Acrobacia ou Reflexos CD 25 (esquivar ou pular) ou Força CD 15 (atropelar o carrinho e mandar a criança voando).",
+      "_id": "gBmPpIFaxAt0FdUU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.gBmPpIFaxAt0FdUU"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Atalho",
+      "description": "Atalho: Percepção ou Misticismo CD 20. Sucesso: além do movimento dobrado, +5 no teste de Atletismo.",
+      "_id": "QiV95BODwMvQV2Md",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JyK0I7Q2vF0eqOdb.QiV95BODwMvQV2Md"
+    }
+  ],
+  "_key": "!tables!JyK0I7Q2vF0eqOdb"
+}

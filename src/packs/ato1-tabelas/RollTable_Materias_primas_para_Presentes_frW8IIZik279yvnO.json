@@ -1,0 +1,2734 @@
+{
+  "name": "Matérias-primas para Presentes",
+  "img": "icons/svg/item-bag.svg",
+  "folder": "0fL2YH8HtFMjLueG",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal",
+      "fdtRole": "objetosGatal"
+    }
+  },
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Tudo o que sobrou inteiro na oficina de Garbin. Só estes objetos podem virar presentes (os amigos reconhecem materiais de fora). Cada presente usa no mínimo três.",
+  "_id": "frW8IIZik279yvnO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "1. Manopla com sete dedos",
+      "description": "",
+      "_id": "1MOMRak8U3n6B8ZE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.1MOMRak8U3n6B8ZE"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "2. Sandália para um gigante",
+      "description": "",
+      "_id": "yKb4ZeatTLBqEgOv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.yKb4ZeatTLBqEgOv"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "3. Flores secas aromáticas",
+      "description": "",
+      "_id": "NbiDiqMTww04pX77",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.NbiDiqMTww04pX77"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "4. Jarro cheio de dentes de todas as raças",
+      "description": "",
+      "_id": "PMrhX1MG4kmaPGOn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.PMrhX1MG4kmaPGOn"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "5. Manivela metálica",
+      "description": "",
+      "_id": "nhHkELeMnj6GEE4D",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.nhHkELeMnj6GEE4D"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "6. Cabeça de boneca",
+      "description": "",
+      "_id": "iuLiRHaB5eb40Q7U",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.iuLiRHaB5eb40Q7U"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "7. Balança mal ajustada",
+      "description": "",
+      "_id": "ZK5sCyvJ8DRnuM34",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.ZK5sCyvJ8DRnuM34"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "8. Balde de ouro",
+      "description": "",
+      "_id": "E9in1CPMY65CXn13",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.E9in1CPMY65CXn13"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "9. Engrenagens de bronze",
+      "description": "",
+      "_id": "hlw0NWWam48UEsKa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.hlw0NWWam48UEsKa"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "10. Dois tijolos",
+      "description": "",
+      "_id": "lYsCTvHOYZqn9YWN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.lYsCTvHOYZqn9YWN"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "11. Três peças de um quebra-cabeças de madeira",
+      "description": "",
+      "_id": "NQack0ImV08Qig9W",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.NQack0ImV08Qig9W"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "12. Alfinete de segurança",
+      "description": "",
+      "_id": "iJy5LmpF8bj2diIW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.iJy5LmpF8bj2diIW"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "13. Lâmina de faca",
+      "description": "",
+      "_id": "H0EEcETJZiHvsn4R",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.H0EEcETJZiHvsn4R"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "14. Papéis coloridos",
+      "description": "",
+      "_id": "PTU6XcR1TxvsjEDN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.PTU6XcR1TxvsjEDN"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "15. Pintura de um goblin",
+      "description": "",
+      "_id": "TCxz9MmeRaesWl6i",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.TCxz9MmeRaesWl6i"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "16. Conjunto de costelas",
+      "description": "",
+      "_id": "nqIfSM4evh58CNuN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.nqIfSM4evh58CNuN"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "17. Cordas de alaúde",
+      "description": "",
+      "_id": "rLhE8i9pHvBvyRBn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.rLhE8i9pHvBvyRBn"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "18. Martelo pequeno",
+      "description": "",
+      "_id": "JjPakWN6RlbTmfEK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.JjPakWN6RlbTmfEK"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "19. Pavio muito longo",
+      "description": "",
+      "_id": "qxdQNJZrtEkTOWFh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.qxdQNJZrtEkTOWFh"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "20. Frasco de óleo alquímico (base para qualquer produto)",
+      "description": "",
+      "_id": "5GehzDCHD1C7O0ZX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.5GehzDCHD1C7O0ZX"
+    },
+    {
+      "type": "text",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "name": "21. Baú sem tampa",
+      "description": "",
+      "_id": "4azSio1fcjogdSIt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.4azSio1fcjogdSIt"
+    },
+    {
+      "type": "text",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "name": "22. Corneta amassada",
+      "description": "",
+      "_id": "mFI8QxLGX77j54Ys",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.mFI8QxLGX77j54Ys"
+    },
+    {
+      "type": "text",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "name": "23. Títere com cordas",
+      "description": "",
+      "_id": "tpkZwP8giQo4A51a",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.tpkZwP8giQo4A51a"
+    },
+    {
+      "type": "text",
+      "range": [
+        24,
+        24
+      ],
+      "weight": 1,
+      "name": "24. Lentes de uma luneta",
+      "description": "",
+      "_id": "M5Nx9iU1CrtJSHcx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.M5Nx9iU1CrtJSHcx"
+    },
+    {
+      "type": "text",
+      "range": [
+        25,
+        25
+      ],
+      "weight": 1,
+      "name": "25. Botões dourados",
+      "description": "",
+      "_id": "0O2nOsoJIaqdE97F",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.0O2nOsoJIaqdE97F"
+    },
+    {
+      "type": "text",
+      "range": [
+        26,
+        26
+      ],
+      "weight": 1,
+      "name": "26. Tesoura sem ponta",
+      "description": "",
+      "_id": "NZRztnAmn7tmEkxP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.NZRztnAmn7tmEkxP"
+    },
+    {
+      "type": "text",
+      "range": [
+        27,
+        27
+      ],
+      "weight": 1,
+      "name": "27. Carga de pólvora",
+      "description": "",
+      "_id": "rCTZtUDGzlyvGhxH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.rCTZtUDGzlyvGhxH"
+    },
+    {
+      "type": "text",
+      "range": [
+        28,
+        28
+      ],
+      "weight": 1,
+      "name": "28. Monte de gravetos",
+      "description": "",
+      "_id": "viKUtgKuFlXKzMJh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.viKUtgKuFlXKzMJh"
+    },
+    {
+      "type": "text",
+      "range": [
+        29,
+        29
+      ],
+      "weight": 1,
+      "name": "29. Traje cerimonial de Tamu-ra cortado na metade",
+      "description": "",
+      "_id": "zFZFDzmCIlNuAbzh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.zFZFDzmCIlNuAbzh"
+    },
+    {
+      "type": "text",
+      "range": [
+        30,
+        30
+      ],
+      "weight": 1,
+      "name": "30. Cartola feita de folhas trançadas",
+      "description": "",
+      "_id": "S4AKQYBMiNgFZCtk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.S4AKQYBMiNgFZCtk"
+    },
+    {
+      "type": "text",
+      "range": [
+        31,
+        31
+      ],
+      "weight": 1,
+      "name": "31. Almofada felpuda",
+      "description": "",
+      "_id": "aqfUS7lLB2B7CHQw",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.aqfUS7lLB2B7CHQw"
+    },
+    {
+      "type": "text",
+      "range": [
+        32,
+        32
+      ],
+      "weight": 1,
+      "name": "32. Hélice de brinquedo",
+      "description": "",
+      "_id": "K5h26iDMgC6iDfRi",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.K5h26iDMgC6iDfRi"
+    },
+    {
+      "type": "text",
+      "range": [
+        33,
+        33
+      ],
+      "weight": 1,
+      "name": "33. Calças para um centauro",
+      "description": "",
+      "_id": "mTA9aiE5SM2fcMth",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.mTA9aiE5SM2fcMth"
+    },
+    {
+      "type": "text",
+      "range": [
+        34,
+        34
+      ],
+      "weight": 1,
+      "name": "34. Viveiro de insetos",
+      "description": "",
+      "_id": "hXEy1hGDFaWwPPlT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.hXEy1hGDFaWwPPlT"
+    },
+    {
+      "type": "text",
+      "range": [
+        35,
+        35
+      ],
+      "weight": 1,
+      "name": "35. Mangusto empalhado",
+      "description": "",
+      "_id": "SevGKnsCvyNhkgNM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.SevGKnsCvyNhkgNM"
+    },
+    {
+      "type": "text",
+      "range": [
+        36,
+        36
+      ],
+      "weight": 1,
+      "name": "36. Quatro molas",
+      "description": "",
+      "_id": "HfM3DQAb9KoXwH1M",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.HfM3DQAb9KoXwH1M"
+    },
+    {
+      "type": "text",
+      "range": [
+        37,
+        37
+      ],
+      "weight": 1,
+      "name": "37. Apito estridente",
+      "description": "",
+      "_id": "IQVzhOiCA2PhjCMt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.IQVzhOiCA2PhjCMt"
+    },
+    {
+      "type": "text",
+      "range": [
+        38,
+        38
+      ],
+      "weight": 1,
+      "name": "38. Cachimbo sem fundo",
+      "description": "",
+      "_id": "gILZ2tbh5SPws6Hs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.gILZ2tbh5SPws6Hs"
+    },
+    {
+      "type": "text",
+      "range": [
+        39,
+        39
+      ],
+      "weight": 1,
+      "name": "39. Duas ferraduras",
+      "description": "",
+      "_id": "j1IA1C6FtISYpXqG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.j1IA1C6FtISYpXqG"
+    },
+    {
+      "type": "text",
+      "range": [
+        40,
+        40
+      ],
+      "weight": 1,
+      "name": "40. Ampulheta intacta, mas sem areia",
+      "description": "",
+      "_id": "bpjvdiUOoPUlrSkb",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.bpjvdiUOoPUlrSkb"
+    },
+    {
+      "type": "text",
+      "range": [
+        41,
+        41
+      ],
+      "weight": 1,
+      "name": "41. Tabuleiro de xadrez",
+      "description": "",
+      "_id": "R8zSqEDHT8iasNbn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.R8zSqEDHT8iasNbn"
+    },
+    {
+      "type": "text",
+      "range": [
+        42,
+        42
+      ],
+      "weight": 1,
+      "name": "42. Tambor em miniatura",
+      "description": "",
+      "_id": "cHaAwpS26j37zouV",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.cHaAwpS26j37zouV"
+    },
+    {
+      "type": "text",
+      "range": [
+        43,
+        43
+      ],
+      "weight": 1,
+      "name": "43. Saquinho de pimenta moída",
+      "description": "",
+      "_id": "yXSxOoxBehp364by",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.yXSxOoxBehp364by"
+    },
+    {
+      "type": "text",
+      "range": [
+        44,
+        44
+      ],
+      "weight": 1,
+      "name": "44. Frigideira engordurada",
+      "description": "",
+      "_id": "WfMLf9Xh85kKGzdV",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.WfMLf9Xh85kKGzdV"
+    },
+    {
+      "type": "text",
+      "range": [
+        45,
+        45
+      ],
+      "weight": 1,
+      "name": "45. Frasco de tinta roxa",
+      "description": "",
+      "_id": "Xrp8gEETxJTKYStL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.Xrp8gEETxJTKYStL"
+    },
+    {
+      "type": "text",
+      "range": [
+        46,
+        46
+      ],
+      "weight": 1,
+      "name": "46. Incenso malcheiroso",
+      "description": "",
+      "_id": "d9c7GZ3TZz2zHLPJ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.d9c7GZ3TZz2zHLPJ"
+    },
+    {
+      "type": "text",
+      "range": [
+        47,
+        47
+      ],
+      "weight": 1,
+      "name": "47. Fivela com o símbolo de Azgher",
+      "description": "",
+      "_id": "kcffVUgSH2H6Ls3g",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.kcffVUgSH2H6Ls3g"
+    },
+    {
+      "type": "text",
+      "range": [
+        48,
+        48
+      ],
+      "weight": 1,
+      "name": "48. Roda de carroça",
+      "description": "",
+      "_id": "nAD7J9bt0F6nHdQf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.nAD7J9bt0F6nHdQf"
+    },
+    {
+      "type": "text",
+      "range": [
+        49,
+        49
+      ],
+      "weight": 1,
+      "name": "49. Xícara delicada",
+      "description": "",
+      "_id": "W2G0CuHSD6bi2YnY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.W2G0CuHSD6bi2YnY"
+    },
+    {
+      "type": "text",
+      "range": [
+        50,
+        50
+      ],
+      "weight": 1,
+      "name": "50. Pente de âmbar com metade dos dentes",
+      "description": "",
+      "_id": "cEgWGe7rts2lLCBD",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.cEgWGe7rts2lLCBD"
+    },
+    {
+      "type": "text",
+      "range": [
+        51,
+        51
+      ],
+      "weight": 1,
+      "name": "51. Agulha e linha",
+      "description": "",
+      "_id": "y0f4RQyf30TUR4iS",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.y0f4RQyf30TUR4iS"
+    },
+    {
+      "type": "text",
+      "range": [
+        52,
+        52
+      ],
+      "weight": 1,
+      "name": "52. Seis pregos",
+      "description": "",
+      "_id": "VdxkM73XlsTCnIiU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.VdxkM73XlsTCnIiU"
+    },
+    {
+      "type": "text",
+      "range": [
+        53,
+        53
+      ],
+      "weight": 1,
+      "name": "53. Giz multicolorido",
+      "description": "",
+      "_id": "aGDF1rc8dqRoEOBc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.aGDF1rc8dqRoEOBc"
+    },
+    {
+      "type": "text",
+      "range": [
+        54,
+        54
+      ],
+      "weight": 1,
+      "name": "54. Alvo para dardos",
+      "description": "",
+      "_id": "kBPjJli6xdKaMp0W",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.kBPjJli6xdKaMp0W"
+    },
+    {
+      "type": "text",
+      "range": [
+        55,
+        55
+      ],
+      "weight": 1,
+      "name": "55. Bolinhas de vidro",
+      "description": "",
+      "_id": "4AiBzOIlMbwSbAON",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.4AiBzOIlMbwSbAON"
+    },
+    {
+      "type": "text",
+      "range": [
+        56,
+        56
+      ],
+      "weight": 1,
+      "name": "56. Barra de sabão",
+      "description": "",
+      "_id": "0QEOSp2AUaBWqF4i",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.0QEOSp2AUaBWqF4i"
+    },
+    {
+      "type": "text",
+      "range": [
+        57,
+        57
+      ],
+      "weight": 1,
+      "name": "57. Corrente circular",
+      "description": "",
+      "_id": "y13xrSp43aW9N0Dg",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.y13xrSp43aW9N0Dg"
+    },
+    {
+      "type": "text",
+      "range": [
+        58,
+        58
+      ],
+      "weight": 1,
+      "name": "58. Chave decorada",
+      "description": "",
+      "_id": "fLwZ5WoeGxl0ziTX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.fLwZ5WoeGxl0ziTX"
+    },
+    {
+      "type": "text",
+      "range": [
+        59,
+        59
+      ],
+      "weight": 1,
+      "name": "59. Cristal prismático",
+      "description": "",
+      "_id": "uPQ0mOgwYtmDGYqY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.uPQ0mOgwYtmDGYqY"
+    },
+    {
+      "type": "text",
+      "range": [
+        60,
+        60
+      ],
+      "weight": 1,
+      "name": "60. Olho falso",
+      "description": "",
+      "_id": "Qau7YFDPUdnJwmlK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.Qau7YFDPUdnJwmlK"
+    },
+    {
+      "type": "text",
+      "range": [
+        61,
+        61
+      ],
+      "weight": 1,
+      "name": "61. Pequeno sino",
+      "description": "",
+      "_id": "edqQfc1MWe9X62YI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.edqQfc1MWe9X62YI"
+    },
+    {
+      "type": "text",
+      "range": [
+        62,
+        62
+      ],
+      "weight": 1,
+      "name": "62. Bengala espiralada",
+      "description": "",
+      "_id": "hm6Od8LRwlsLjdD2",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.hm6Od8LRwlsLjdD2"
+    },
+    {
+      "type": "text",
+      "range": [
+        63,
+        63
+      ],
+      "weight": 1,
+      "name": "63. Cera de abelha",
+      "description": "",
+      "_id": "0LeJMIeGgfH9pvgE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.0LeJMIeGgfH9pvgE"
+    },
+    {
+      "type": "text",
+      "range": [
+        64,
+        64
+      ],
+      "weight": 1,
+      "name": "64. Prato de orquestra",
+      "description": "",
+      "_id": "c516JhwxKv0LuPBp",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.c516JhwxKv0LuPBp"
+    },
+    {
+      "type": "text",
+      "range": [
+        65,
+        65
+      ],
+      "weight": 1,
+      "name": "65. Coleira decorada",
+      "description": "",
+      "_id": "C0r5fCfp5AYFTIQ7",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.C0r5fCfp5AYFTIQ7"
+    },
+    {
+      "type": "text",
+      "range": [
+        66,
+        66
+      ],
+      "weight": 1,
+      "name": "66. Pistola sem partes funcionais (só cano e coronha)",
+      "description": "",
+      "_id": "WvO7QtmelKFUB82a",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.WvO7QtmelKFUB82a"
+    },
+    {
+      "type": "text",
+      "range": [
+        67,
+        67
+      ],
+      "weight": 1,
+      "name": "67. Frasco de cola",
+      "description": "",
+      "_id": "DaK8xZ1NrrbHCylc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.DaK8xZ1NrrbHCylc"
+    },
+    {
+      "type": "text",
+      "range": [
+        68,
+        68
+      ],
+      "weight": 1,
+      "name": "68. Gravata borboleta berrante",
+      "description": "",
+      "_id": "D37okKogF4taa62O",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.D37okKogF4taa62O"
+    },
+    {
+      "type": "text",
+      "range": [
+        69,
+        69
+      ],
+      "weight": 1,
+      "name": "69. Colar de pérolas obviamente falsas",
+      "description": "",
+      "_id": "soLP6INMAk5N2uwc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.soLP6INMAk5N2uwc"
+    },
+    {
+      "type": "text",
+      "range": [
+        70,
+        70
+      ],
+      "weight": 1,
+      "name": "70. Pequeno osso esculpido na forma de um pequeno osso",
+      "description": "",
+      "_id": "H3mga82R32kSNhHG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.H3mga82R32kSNhHG"
+    },
+    {
+      "type": "text",
+      "range": [
+        71,
+        71
+      ],
+      "weight": 1,
+      "name": "71. Pote transparente com um mosquito morto",
+      "description": "",
+      "_id": "C0C2BclhsKHpLDNY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.C0C2BclhsKHpLDNY"
+    },
+    {
+      "type": "text",
+      "range": [
+        72,
+        72
+      ],
+      "weight": 1,
+      "name": "72. Coleção de borboletas (1d12 borboletas)",
+      "description": "",
+      "_id": "OicVELsHsWCMDsSC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.OicVELsHsWCMDsSC"
+    },
+    {
+      "type": "text",
+      "range": [
+        73,
+        73
+      ],
+      "weight": 1,
+      "name": "73. Cartaz de \"procurado\" com o retrato e o nome recortados (recompensa T$ 1.000)",
+      "description": "",
+      "_id": "Rkh7eCSZlDOqDhqs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.Rkh7eCSZlDOqDhqs"
+    },
+    {
+      "type": "text",
+      "range": [
+        74,
+        74
+      ],
+      "weight": 1,
+      "name": "74. Pipa com estrutura de chumbo",
+      "description": "",
+      "_id": "2j2bCAyBCIVi4WQN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.2j2bCAyBCIVi4WQN"
+    },
+    {
+      "type": "text",
+      "range": [
+        75,
+        75
+      ],
+      "weight": 1,
+      "name": "75. Cubo de pedra absolutamente perfeito",
+      "description": "",
+      "_id": "rYN5ja5LDqP2zyuk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.rYN5ja5LDqP2zyuk"
+    },
+    {
+      "type": "text",
+      "range": [
+        76,
+        76
+      ],
+      "weight": 1,
+      "name": "76. Dois monóculos",
+      "description": "",
+      "_id": "UTlbjHPsUlB6tCey",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.UTlbjHPsUlB6tCey"
+    },
+    {
+      "type": "text",
+      "range": [
+        77,
+        77
+      ],
+      "weight": 1,
+      "name": "77. Escudo totalmente enferrujado",
+      "description": "",
+      "_id": "rcodYEmsMpfDVmCz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.rcodYEmsMpfDVmCz"
+    },
+    {
+      "type": "text",
+      "range": [
+        78,
+        78
+      ],
+      "weight": 1,
+      "name": "78. Regador furado",
+      "description": "",
+      "_id": "rreHvkXetjnYKJDq",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.rreHvkXetjnYKJDq"
+    },
+    {
+      "type": "text",
+      "range": [
+        79,
+        79
+      ],
+      "weight": 1,
+      "name": "79. Ábaco barulhento",
+      "description": "",
+      "_id": "VlXZOOjWIje0LL82",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.VlXZOOjWIje0LL82"
+    },
+    {
+      "type": "text",
+      "range": [
+        80,
+        80
+      ],
+      "weight": 1,
+      "name": "80. Máscara de festa deluxe",
+      "description": "",
+      "_id": "vu2t7WUFATkCNqs4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.vu2t7WUFATkCNqs4"
+    },
+    {
+      "type": "text",
+      "range": [
+        81,
+        81
+      ],
+      "weight": 1,
+      "name": "81. Bico de pato pintado de verde",
+      "description": "",
+      "_id": "YNjMOvHpZMsvxcPy",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.YNjMOvHpZMsvxcPy"
+    },
+    {
+      "type": "text",
+      "range": [
+        82,
+        82
+      ],
+      "weight": 1,
+      "name": "82. Haltere extremamente leve",
+      "description": "",
+      "_id": "25O1l6ToN7qaSOYz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.25O1l6ToN7qaSOYz"
+    },
+    {
+      "type": "text",
+      "range": [
+        83,
+        83
+      ],
+      "weight": 1,
+      "name": "83. Bandeira com o desenho de uma montanha",
+      "description": "",
+      "_id": "bYcLaWcXzHdBCQeP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.bYcLaWcXzHdBCQeP"
+    },
+    {
+      "type": "text",
+      "range": [
+        84,
+        84
+      ],
+      "weight": 1,
+      "name": "84. Pera de porcelana",
+      "description": "",
+      "_id": "EdA8A1MWfFBCNf4v",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.EdA8A1MWfFBCNf4v"
+    },
+    {
+      "type": "text",
+      "range": [
+        85,
+        85
+      ],
+      "weight": 1,
+      "name": "85. Vassoura obra-prima",
+      "description": "",
+      "_id": "PNFlpDV0u93gco9X",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.PNFlpDV0u93gco9X"
+    },
+    {
+      "type": "text",
+      "range": [
+        86,
+        86
+      ],
+      "weight": 1,
+      "name": "86. Gaiola de pássaros",
+      "description": "",
+      "_id": "K0nOvjVy1kh2yMXP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.K0nOvjVy1kh2yMXP"
+    },
+    {
+      "type": "text",
+      "range": [
+        87,
+        87
+      ],
+      "weight": 1,
+      "name": "87. Placa onde se lê \"proibido usar perícias\"",
+      "description": "",
+      "_id": "4TU7qc6JEkEfQ2el",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.4TU7qc6JEkEfQ2el"
+    },
+    {
+      "type": "text",
+      "range": [
+        88,
+        88
+      ],
+      "weight": 1,
+      "name": "88. Baralho com 52 ases",
+      "description": "",
+      "_id": "IWBxzpo0R80IhVCW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.IWBxzpo0R80IhVCW"
+    },
+    {
+      "type": "text",
+      "range": [
+        89,
+        89
+      ],
+      "weight": 1,
+      "name": "89. Dado de 6 faces, numeradas 23, 0, 814, 9, 5.309 e 6",
+      "description": "",
+      "_id": "xQCdJR34hXwf8aQO",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.xQCdJR34hXwf8aQO"
+    },
+    {
+      "type": "text",
+      "range": [
+        90,
+        90
+      ],
+      "weight": 1,
+      "name": "90. Parafuso de borracha",
+      "description": "",
+      "_id": "fqQgbyWDPU1Gku6q",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.fqQgbyWDPU1Gku6q"
+    },
+    {
+      "type": "text",
+      "range": [
+        91,
+        91
+      ],
+      "weight": 1,
+      "name": "91. Ânfora cheia de melado",
+      "description": "",
+      "_id": "eI8ihOgtKzxGIoPa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.eI8ihOgtKzxGIoPa"
+    },
+    {
+      "type": "text",
+      "range": [
+        92,
+        92
+      ],
+      "weight": 1,
+      "name": "92. Espelho que distorce a imagem",
+      "description": "",
+      "_id": "gp0k19iTa0EvHHzG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.gp0k19iTa0EvHHzG"
+    },
+    {
+      "type": "text",
+      "range": [
+        93,
+        93
+      ],
+      "weight": 1,
+      "name": "93. Lampião feito de açúcar",
+      "description": "",
+      "_id": "oam1xkCtRlEpnX4R",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.oam1xkCtRlEpnX4R"
+    },
+    {
+      "type": "text",
+      "range": [
+        94,
+        94
+      ],
+      "weight": 1,
+      "name": "94. Pele de urso",
+      "description": "",
+      "_id": "d3GDKZrDQxyj1cS5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.d3GDKZrDQxyj1cS5"
+    },
+    {
+      "type": "text",
+      "range": [
+        95,
+        95
+      ],
+      "weight": 1,
+      "name": "95. Régua com marcações aleatórias",
+      "description": "",
+      "_id": "qqEel2MM8EwhXchs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.qqEel2MM8EwhXchs"
+    },
+    {
+      "type": "text",
+      "range": [
+        96,
+        96
+      ],
+      "weight": 1,
+      "name": "96. Pó de meteoro",
+      "description": "",
+      "_id": "7FDREDcsFBh6MjXd",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.7FDREDcsFBh6MjXd"
+    },
+    {
+      "type": "text",
+      "range": [
+        97,
+        97
+      ],
+      "weight": 1,
+      "name": "97. Torneira emperrada",
+      "description": "",
+      "_id": "VnwrxnTDHD4B40Bg",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.VnwrxnTDHD4B40Bg"
+    },
+    {
+      "type": "text",
+      "range": [
+        98,
+        98
+      ],
+      "weight": 1,
+      "name": "98. Colher dupla",
+      "description": "",
+      "_id": "A9wbUpcP0zbasfGf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.A9wbUpcP0zbasfGf"
+    },
+    {
+      "type": "text",
+      "range": [
+        99,
+        99
+      ],
+      "weight": 1,
+      "name": "99. Nabos em conserva",
+      "description": "",
+      "_id": "Pl6axYx2TiyNg4Ht",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.Pl6axYx2TiyNg4Ht"
+    },
+    {
+      "type": "text",
+      "range": [
+        100,
+        100
+      ],
+      "weight": 1,
+      "name": "100. Pá de pelúcia",
+      "description": "",
+      "_id": "0xoQccLGh3taHpKG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!frW8IIZik279yvnO.0xoQccLGh3taHpKG"
+    }
+  ],
+  "_key": "!tables!frW8IIZik279yvnO"
+}

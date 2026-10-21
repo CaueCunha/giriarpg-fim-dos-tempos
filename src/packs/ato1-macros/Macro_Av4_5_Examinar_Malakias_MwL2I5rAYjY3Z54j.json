@@ -1,0 +1,31 @@
+{
+  "name": "Av4.5 · Examinar Malakias",
+  "type": "script",
+  "img": "icons/svg/eye.svg",
+  "folder": "FK9B4CzVfO1W2DsM",
+  "flags": {
+    "world": {
+      "fdt": "av45"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4.5 · gerado por av45-plano-5.js\n(async function macroExaminar() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return ui.notifications.warn(\"Selecione os tokens de quem examina Malakias.\");\n\t\tconst TESTES = {\n\t\t\tconh: { nome: \"Conhecimento\", cd: 10, ok: \"Malakias cita acontecimentos que não poderia ter presenciado: fala de outra época.\" },\n\t\t\tcura: { nome: \"Cura\", cd: 25, ok: \"Ele não parece vivo: não respira de verdade, não tem batimentos, não dorme, não sua, não come nem bebe.\" },\n\t\t\tintu: { nome: \"Intuição\", cd: 20, ok: \"Não parece maligno, mas não age como quem perdeu a família. Algo nele sabe que não há motivo para se preocupar.\" },\n\t\t\tmist: { nome: \"Misticismo\", cd: 25, ok: \"Aura necromântica: Malakias é um morto-vivo.\", ok2: [35, \"É uma criatura da Tormenta.\"] }\n\t\t};\n\t\tconst opcoes = Object.entries(TESTES).map(([k, t]) => `<option value=\"${k}\">${t.nome} (CD ${t.cd})</option>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Examinar Malakias\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Teste</label><select name=\"pericia\">${opcoes}</select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Ele precisa deixar: estudar o corpo dele exige lábia, mas incluído no processo ele até se diverte.</p>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst t = TESTES[res.pericia];\n\t\tconst rolls = [];\n\t\tlet melhor = -99;\n\t\tlet html = `<h3>Examinar Malakias · ${t.nome}</h3><ul>`;\n\t\tfor (const a of atores) {\n\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tmelhor = Math.max(melhor, r.total);\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${r.total >= t.cd ? \"✔️\" : \"❌\"}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tif (melhor >= t.cd) {\n\t\t\thtml += `<p>${t.ok}</p>`;\n\t\t\tif (t.ok2 && melhor >= t.ok2[0]) html += `<p><b>${t.ok2[0]} ou mais:</b> ${t.ok2[1]}</p>`;\n\t\t} else html += \"<p>Nada de estranho... além do falatório sem fim.</p>\";\n\t\tChatMessage.create({ content: html, rolls, whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t})();",
+  "_id": "MwL2I5rAYjY3Z54j",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!MwL2I5rAYjY3Z54j"
+}

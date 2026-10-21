@@ -1,0 +1,183 @@
+{
+  "name": "Valkaria de Marzipã (ilusão)",
+  "type": "consumivel",
+  "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+  "folder": "tbwdQktgRMmoWWbK",
+  "flags": {
+    "world": {
+      "fdt": "a1guloseimas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma pequena reprodução da estátua de Valkaria feita em marzipã. A estátua sorri convidativamente. <b>+2 em testes de ataque e rolagens de dano até o final da cena.</b></p><p><b>Ilusão ou realidade? (Varia)</b> Gaste uma <b>ação padrão</b> para morder e faça <b>Vontade CD 15</b>. Se passar, recebe o benefício; se falhar, gastou a ação e a guloseima em vão. Só existe uma dose.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "scene",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Vontade CD 15 para aproveitar"
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "_id": "ou7z9IyfjdAzn46d",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Valkaria de Marzipã (+2 ataque e dano)",
+      "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "+2 em testes de ataque e rolagens de dano até o fim da cena.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a1guloseimas"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.modificadores.ataque.geral",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.modificadores.dano.geral",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "vPXEPG9kcW3GGFi8",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!ou7z9IyfjdAzn46d.vPXEPG9kcW3GGFi8"
+    }
+  ],
+  "_key": "!items!ou7z9IyfjdAzn46d"
+}

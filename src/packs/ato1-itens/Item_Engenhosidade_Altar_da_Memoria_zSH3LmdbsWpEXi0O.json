@@ -1,0 +1,144 @@
+{
+  "name": "Engenhosidade (Altar da Memória)",
+  "type": "poder",
+  "img": "icons/magic/control/mouth-smile-deception-purple.webp",
+  "flags": {
+    "world": {
+      "fdt": "a1templo"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Altar da Memória (Templo do Vácuo).</b> Quando faz um teste de perícia, você pode gastar <b>2 PM</b> para somar sua Inteligência no teste. Não vale para testes de ataque. Se receber esta habilidade de novo, o custo cai em –1 PM.</p><p>Marque o aprimoramento na janela de rolagem. A macro <i>Templo · Mecanismos › Altar da Memória</i> ajusta o bônus à Inteligência do personagem quando entrega o poder.</p><p class=\"fdt-ref\"><i>No sistema:</i> @UUID[Compendium.tormenta20.poderes.Item.5W1KPafxjV4C7EmB]{Engenhosidade (Kliren)}</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "gkKSDQe9UXLSZ8p1",
+  "_id": "zSH3LmdbsWpEXi0O",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.tormenta20.poderes.Item.5W1KPafxjV4C7EmB",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Engenhosidade (+Int)",
+      "img": "icons/magic/control/mouth-smile-deception-purple.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a1templo"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 2,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "skill"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "W4B9ixOrt3fOTxLo",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!zSH3LmdbsWpEXi0O.W4B9ixOrt3fOTxLo"
+    }
+  ],
+  "_key": "!items!zSH3LmdbsWpEXi0O"
+}

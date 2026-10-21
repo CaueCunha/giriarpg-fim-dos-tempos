@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Av4.5 · Plano 5 das Colinas Centrais",
+  "type": "Actor",
+  "color": "#4a5a3a",
+  "flags": {
+    "world": {
+      "fdt": "av45"
+    }
+  },
+  "_id": "o3xa74XGCZ1YYkJR",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!o3xa74XGCZ1YYkJR"
+}

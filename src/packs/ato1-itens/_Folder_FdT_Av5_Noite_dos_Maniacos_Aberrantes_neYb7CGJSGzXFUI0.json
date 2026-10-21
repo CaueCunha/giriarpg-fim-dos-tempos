@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Av5 · Noite dos Maníacos Aberrantes",
+  "type": "Item",
+  "color": "#5a2a4a",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "_id": "neYb7CGJSGzXFUI0",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!neYb7CGJSGzXFUI0"
+}

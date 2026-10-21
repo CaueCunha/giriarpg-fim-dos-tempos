@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Horda Zumbi (3ª onda)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/turba-de-zumbis.png",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroHorda() {\n\t\tconst horda = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"horda\");\n\t\tif (!horda) return ui.notifications.error(\"Ator da Horda não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst pv = horda.system.attributes.pv;\n\t\tconst tempestade = horda.effects.find((e) => e.name.startsWith(\"Tempestade Rubra\"));\n\t\tconst extra = tempestade && !tempestade.disabled ? 5 : 0;\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: `Horda Zumbi · ${pv.max - pv.value} de ${pv.max} de dano` },\n\t\t\tcontent: `\n\t\t\t\t<p>CDs desta onda: <b>${25 + extra}</b>${extra ? \" (Tempestade Rubra ativa)\" : \"\"}.</p>\n\t\t\t\t<div class=\"form-group\"><label>O que rolar</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"inicio\">Início do turno (Fortitude ou Vontade)</option>\n\t\t\t\t\t<option value=\"horda\">Ação da horda (1d4)</option>\n\t\t\t\t\t<option value=\"dano\">Registrar dano causado à horda</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Resistência</label><select name=\"save\">\n\t\t\t\t\t<option value=\"fort\">Fortitude</option><option value=\"vont\">Vontade</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Dano causado à horda</label><input type=\"number\" name=\"dano\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cd = 25 + extra;\n\t\tconst rolls = [];\n\t\tlet html = \"\";\n\t\tif (res.acao === \"dano\") {\n\t\t\tconst novo = Math.max(pv.value - (Number(res.dano) || 0), 0);\n\t\t\tawait horda.update({ \"system.attributes.pv.value\": novo });\n\t\t\tconst feito = pv.max - novo;\n\t\t\thtml = `<h3>Horda Zumbi</h3><p>Dano total na horda: <b>${feito} de ${pv.max}</b>.</p>`;\n\t\t\tif (feito >= pv.max) html += \"<p><b>A horda é repelida!</b> Os zumbis que sobraram recuam.</p>\";\n\t\t\telse if (feito >= pv.max / 2 && !extra) {\n\t\t\t\tif (tempestade) await tempestade.update({ disabled: false });\n\t\t\t\thtml += \"<p><b>Metade da horda caiu.</b> Syvarian invoca um vislumbre da Tempestade Rubra: os céus ficam avermelhados e <b>todas as dificuldades desta onda sobem +5</b> (CD 30).</p>\";\n\t\t\t}\n\t\t\thtml += \"<p style=\\\"font-size:0.85em\\\">Efeitos de área causam +50% de dano na horda. Os zumbis têm +10 em testes de resistência e são imunes a crítico, ácido, eletricidade, fogo, frio, luz, trevas, veneno, paralisia, cansaço, metabolismo e metamorfose.</p>\";\n\t\t} else if (res.acao === \"inicio\") {\n\t\t\thtml = `<h3>Loucura da Horda · início do turno</h3><p>${res.save === \"fort\" ? \"Fortitude\" : \"Vontade\"} CD ${cd}.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.[res.save]?.value ?? 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tif (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️</li>`; continue; }\n\t\t\t\tconst pm = a.system.attributes.pm;\n\t\t\t\tif (pm.value >= 2) {\n\t\t\t\t\tawait a.update({ \"system.attributes.pm.value\": pm.value - 2 });\n\t\t\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ❌ perde <b>2 PM</b> (ou, por escolha do jogador, um parceiro aleatório é ferido)</li>`;\n\t\t\t\t} else html += `<li>${a.name}: <b>${r.total}</b> ❌ sem PM: <b>perde 1 parceiro</b> automaticamente</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Parceiros feridos assim saem da cena e têm 50% de chance de morrer. <i>Coordenar Defensores</i> (Diplomacia, Guerra ou Vontade CD 10) ajuda nestes testes na rodada seguinte.</p>\";\n\t\t} else {\n\t\t\tconst r = await new Roll(\"1d4\").evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ACOES = {\n\t\t\t\t1: [\"Insanidade da Tormenta\", `Todos os personagens sofrem <b>–2 em testes</b> nesta rodada (Vontade CD ${cd} evita).`],\n\t\t\t\t2: [\"Enxame de Braços\", `Uma massa de membros se joga contra um defensor aleatório: fica <b>agarrado</b> e sofre <b>2d8+4 de impacto</b> (Fortitude ou Luta CD ${cd} reduz à metade e evita agarrar). Agarrado pode gastar a ação para repetir o teste; falhando, sofre o dano de novo.`],\n\t\t\t\t3: [\"Catapulta de Vísceras\", `Todos os defensores fazem <b>Guerra ou Reflexos CD ${cd}</b>, com os mesmos efeitos do teste de início de turno (2 PM ou um parceiro ferido).`],\n\t\t\t\t4: [\"Perseguir Parceiro\", `Um personagem aleatório faz <b>Luta, Pontaria ou Reflexos CD ${cd}</b> ou um parceiro aleatório é ferido. Falha por 5 ou mais: o parceiro é arrastado e <b>morto no fim da rodada</b>; qualquer personagem pode salvá-lo gastando a ação para Atacar ou Usar Habilidade. Se morrer, <b>cada personagem perde 1 PM</b>.`]\n\t\t\t};\n\t\t\tconst [nome, txt] = ACOES[r.total];\n\t\t\thtml = `<h3>Ação da Horda (1d4 = ${r.total})</h3><p><b>${nome}.</b> ${txt}</p>`;\n\t\t\tif (r.total === 2) {\n\t\t\t\tconst d = await new Roll(\"2d8+4[impacto]\").evaluate();\n\t\t\t\trolls.push(d);\n\t\t\t\thtml += `<p>Dano rolado: <b>${d.total}</b>.</p>`;\n\t\t\t}\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "npe3wwcUNiN2eYfD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!npe3wwcUNiN2eYfD"
+}

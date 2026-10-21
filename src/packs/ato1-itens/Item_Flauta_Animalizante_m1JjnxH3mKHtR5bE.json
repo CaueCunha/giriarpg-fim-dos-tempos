@@ -1,0 +1,105 @@
+{
+  "name": "Flauta Animalizante",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/flauta-mistica.webp",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal",
+      "fdtRole": "presente_flauta"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Presente de Halinn.</b> Uma flauta que faz uma criatura qualquer passar a se comportar, em termos de regras, como do tipo <b>animal</b> durante uma cena. Por exemplo, um lefeu fica vulnerável a habilidades contra animais.</p><p>Não funciona contra criaturas com ND maior que o nível de quem toca. <b>Um uso.</b></p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0.5,
+    "tipo": "",
+    "subtipo": "",
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": []
+  },
+  "folder": "PEQQhfxQ4rFzHQVA",
+  "_id": "m1JjnxH3mKHtR5bE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!m1JjnxH3mKHtR5bE"
+}

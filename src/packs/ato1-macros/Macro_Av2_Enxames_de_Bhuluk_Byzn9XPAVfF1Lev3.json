@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Enxames de Bhuluk",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/enxame-rubro.webp",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroEnxames() {\n\t\tconst papel = (t) => t.actor?.getFlag(\"world\", \"fdtRole\");\n\t\tconst bhuluk = canvas.tokens.controlled.find((t) => papel(t) === \"bhuluk\") ?? canvas.tokens.placeables.find((t) => papel(t) === \"bhuluk\");\n\t\tconst modelo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"enxame\");\n\t\tif (!bhuluk || !modelo) return ui.notifications.error(\"Coloque o token de Bhuluk na cena (e importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst r = await new Roll(\"1d4+1\").evaluate();\n\t\tconst gs = canvas.grid.size;\n\t\tconst offs = [[2, 0], [-2, 0], [0, 2], [0, -2], [2, 2], [-2, -2], [2, -2], [-2, 2]];\n\t\tconst docs = [];\n\t\tfor (let i = 0; i < r.total; i++) {\n\t\t\tconst [dx, dy] = offs[i];\n\t\t\tconst td = await modelo.getTokenDocument({ x: bhuluk.document.x + dx * gs, y: bhuluk.document.y + dy * gs, name: `Enxame ${i + 1}` });\n\t\t\tdocs.push(td.toObject());\n\t\t}\n\t\tawait canvas.scene.createEmbeddedDocuments(\"Token\", docs);\n\t\tChatMessage.create({ content: `<h3>Enxame!</h3><p>Bhuluk invoca <b>${r.total}</b> enxames de insetos corrompidos.</p>`, rolls: [r] });\n\t})();",
+  "_id": "Byzn9XPAVfF1Lev3",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Byzn9XPAVfF1Lev3"
+}

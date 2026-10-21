@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Um de Nós!",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/sussurros-insanos.webp",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroUmDeNos() {\n\t\tconst alvos = canvas.tokens.controlled.length\n\t\t\t? canvas.tokens.controlled.map((t) => t.actor).filter(Boolean)\n\t\t\t: canvas.tokens.placeables.filter((t) => t.actor?.type === \"character\" && t.actor.hasPlayerOwner).map((t) => t.actor);\n\t\tif (!alvos.length) return ui.notifications.warn(\"Selecione os tokens dos personagens (ou coloque-os na cena).\");\n\t\tconst bonusTormenta = (a) =>\n\t\t\t(a.items.some((i) => i.name.startsWith(\"Bênção de Kerok\")) ? 5 : 0) -\n\t\t\t(a.effects.some((e) => !e.disabled && e.name.startsWith(\"Pesadelos da Tormenta\")) ? 2 : 0);\n\t\tconst linhas = [];\n\t\tconst rolls = [];\n\t\tfor (const a of [...new Set(alvos)]) {\n\t\t\tconst mod = (a.system.pericias?.vont?.value ?? 0) + bonusTormenta(a);\n\t\t\tconst r = await new Roll(`1d20 + ${mod}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tlinhas.push({ a, total: r.total, falhou: r.total < 15, mod });\n\t\t}\n\t\tconst falhas = linhas.filter((l) => l.falhou).sort((x, y) => x.total - y.total);\n\t\tconst escolhido = falhas[0];\n\t\tconst empate = falhas.filter((l) => l.total === escolhido?.total).length > 1;\n\t\tlet html = `<h3>Um de Nós! Um de Nós!</h3><p>Vontade CD 15 (Kerok +5 e Sopa LeBlanc –2 já somados).</p><ul>`;\n\t\tfor (const l of linhas) html += `<li>${l.a.name}: <b>${l.total}</b> ${l.falhou ? \"❌\" : \"✔️\"}</li>`;\n\t\thtml += \"</ul>\";\n\t\tif (escolhido) {\n\t\t\thtml += `<p><b>${escolhido.a.name}</b> tirou o menor resultado e se junta à atração na próxima luta.${empate ? \" <i>Empate no menor resultado: o mestre escolhe.</i>\" : \"\"}</p>`;\n\t\t\tif (!empate) {\n\t\t\t\tawait escolhido.a.createEmbeddedDocuments(\"ActiveEffect\", [{\n\t\t\t\t\tname: \"Um de Nós! (aberração do circo)\",\n\t\t\t\t\timg: \"systems/tormenta20/icons/magias/sussurros-insanos.webp\",\n\t\t\t\t\ttype: \"base\",\n\t\t\t\t\tdescription: \"O personagem pertence à atração até o fim da luta. O mestre o controla.\",\n\t\t\t\t\tflags: { world: { fdt: \"av2\" } }\n\t\t\t\t}]);\n\t\t\t}\n\t\t} else html += \"<p>Ninguém cedeu ao circo desta vez.</p>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "yelu2LGf8mzhl15r",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!yelu2LGf8mzhl15r"
+}

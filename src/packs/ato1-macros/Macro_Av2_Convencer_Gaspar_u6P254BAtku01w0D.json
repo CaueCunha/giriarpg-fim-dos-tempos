@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Convencer Gaspar",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/maniaco-lefou.png",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroConvencerGaspar() {\n\t\tconst gaspar = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"gaspar\");\n\t\tconst zardu = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"zardu\");\n\t\tconst pj = canvas.tokens.controlled[0]?.actor;\n\t\tif (!gaspar || !zardu) return ui.notifications.error(\"Atores de Gaspar e Zardu não encontrados (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tif (!pj) return ui.notifications.warn(\"Selecione o token do personagem que está argumentando.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Convencer Gaspar\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Só vale com um argumento que Gaspar entenda: a mãe, os irmãos, o Herói Louco. Apelos à justiça ou à maldade de Zardu não funcionam.</p>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"dipl\">Diplomacia</option><option value=\"enga\">Enganação</option>\n\t\t\t\t\t<option value=\"inti\">Intimidação</option><option value=\"atua\">Atuação</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Bônus de ajuda (aliados que gastaram a ação padrão)</label><input type=\"number\" name=\"ajuda\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rp = await new Roll(`1d20 + ${pj.system.pericias[res.pericia].value} + ${Number(res.ajuda) || 0}`).evaluate();\n\t\tconst rz = await new Roll(`1d20 + ${zardu.system.pericias.enga.value}`).evaluate();\n\t\tconst venceu = rp.total > rz.total;\n\t\tconst atual = gaspar.system.resources.primary.value + (venceu ? 1 : 0);\n\t\tawait gaspar.update({ \"system.resources.primary.value\": Math.min(3, atual) });\n\t\tlet html = `<h3>Convencer Gaspar</h3><p>${pj.name}: <b>${rp.total}</b> × Zardu (Enganação): <b>${rz.total}</b></p>\n\t\t\t<p>${venceu ? \"✔️ Gaspar hesita...\" : \"❌ Zardu mantém Gaspar sob controle.\"} Vitórias: <b>${Math.min(3, atual)}/3</b></p>`;\n\t\tif (atual >= 3) {\n\t\t\thtml += `<p><b>Gaspar muda de lado e ataca Zardu!</b></p>`;\n\t\t\tfor (const t of gaspar.getActiveTokens(false, true)) await t.update({ disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY });\n\t\t}\n\t\tChatMessage.create({ content: html, rolls: [rp, rz] });\n\t})();",
+  "_id": "u6P254BAtku01w0D",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!u6P254BAtku01w0D"
+}

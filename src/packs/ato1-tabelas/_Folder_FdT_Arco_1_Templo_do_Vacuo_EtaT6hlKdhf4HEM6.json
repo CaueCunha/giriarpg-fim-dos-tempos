@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 1 · Templo do Vácuo",
+  "type": "RollTable",
+  "color": "#3a4a5a",
+  "flags": {
+    "world": {
+      "fdt": "a1templo"
+    }
+  },
+  "_id": "EtaT6hlKdhf4HEM6",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!EtaT6hlKdhf4HEM6"
+}

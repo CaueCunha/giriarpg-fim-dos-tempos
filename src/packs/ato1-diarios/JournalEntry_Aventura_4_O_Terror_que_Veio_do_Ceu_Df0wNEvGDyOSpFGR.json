@@ -1,0 +1,371 @@
+{
+  "name": "Aventura 4 · O Terror que Veio do Céu",
+  "folder": "hlsy8Z1eQ32BjfpE",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "_id": "Df0wNEvGDyOSpFGR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>@UUID[Actor.SQlKte25KcQ4ZljF]{Torgo, Golem do Dr. Vesper}, sob ordens diretas de Syvarian, quer expulsar os Gallobalt das Colinas para ficar com o achbuld que eles plantam. A bordo da Harpia, um gog'magogue escravizado e cego, ele ataca à noite com uma luz cegante, cães do inferno e bandoleiros de olhos de cristal. Vadrinne, a dahllan da família, carrega um implante que a controla.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>O aviso</b> de Nathanael Gallobalt no quadro do Forte.</li>\n\t\t\t\t\t<li><b>As Fazendas Gallobalt:</b> família, teorias e investigação (cabras, plantação, implante).</li>\n\t\t\t\t\t<li><b>O ataque</b>: a luz no céu, cães, bandoleiros e o Canhão de Fogo.</li>\n\t\t\t\t\t<li><b>A bordo da Harpia:</b> deques, cordames e Torgo na ponte de comando.</li>\n\t\t\t\t\t<li><b>Desfecho:</b> o destino da Harpia e as instruções de Syvarian.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Actor.BIBrlqoRIjISMj1M]{Bandoleiro da Harpia} (ND 1/2): 4 em solo, artilheiros, timoneira e 12 capangas dentro da nave (menos os artilheiros derrotados).</li>\n\t\t\t\t\t<li>@UUID[Actor.B9hKVMwv51kwaJDg]{Cão do Inferno} (ND 2): 2 em solo, 2 saltam na rodada 1, mais 2 dentro da nave.</li>\n\t\t\t\t\t<li>@UUID[Actor.SQlKte25KcQ4ZljF]{Torgo, Golem do Dr. Vesper} (ND 5) e o @UUID[Actor.QH79Hf1guU4ydTFj]{Canhão de Fogo da Harpia}.</li>\n\t\t\t\t\t<li>Perigos: @UUID[Actor.09VwePcbNA7yteDp]{Harpia, o Gog'magogue (perigos)}. Investigação: @UUID[Actor.1g7M7VqC7yguQXo8]{Fazendas Gallobalt (investigação)}.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.Cb8rb1PEgSsxclmE]{Av4 · Ataque do Céu}: avança as rodadas do ataque com a narração (luz, escadas, implante, Vadrinne).</li>\n\t\t\t\t\t<li>@UUID[Macro.WWRufCLKgWo3D8m4]{Av4 · Luz da Harpia}: marca cego, troca para ofuscado ou limpa nos tokens mirados (pula os imunes).</li>\n\t\t\t\t\t<li>@UUID[Macro.hZWJJOdMF1DyTBTp]{Av4 · Turno da Harpia}: Canhão de Fogo ou Bater das Nadadeiras nos alvos mirados, com teste, dano (com RD) e em chamas.</li>\n\t\t\t\t\t<li>@UUID[Macro.OA8Fme61GvE4e6Fn]{Av4 · Testes a Bordo}: piso, escadas, borda, cordames, túnel, leme e perseguição.</li>\n\t\t\t\t\t<li>@UUID[Macro.Ff4HBtGo0iLFXoo7]{Av4 · Cirurgia do Implante}: teste estendido de Cura para tirar o implante.</li>\n\t\t\t\t\t<li>@UUID[Macro.DVRLLIPXaQrhZebX]{Av4 · Elemental Elétrico (Torgo)}: cura Torgo quando ele sofre dano mágico de eletricidade.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "qwNLy15p6f15qTRx",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.qwNLy15p6f15qTRx"
+    },
+    {
+      "name": "Handout · Aviso de Nathanael",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote><p><i>\"É, não podemos mais resolver tudo sozinhos. Nossas cabras estão desaparecendo ou sendo trucidadas. Que tipo de desgraçado sem mãe faz isso com cabras? Nossas plantações estão sendo queimadas. Se puderem mandar alguém aqui para ajudar, vão mostrar que o pessoal daqui está errado sobre forasteiros. Mas não vão, né? Tudo bem, vamos continuar nos virando aqui, como sempre.</i></p>\n\t\t\t\t<p><i>Nathanael Gallobalt, Fazendas Gallobalt, depois da Pedra do Corcunda, a dois dias de viagem a norte se vocês não forem lerdos demais.\"</i></p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "C8rLjtIiGw6bfpEd",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.C8rLjtIiGw6bfpEd"
+    },
+    {
+      "name": "A Família Gallobalt",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li><b>Nathanael</b> e <b>Salisha</b>: irmãos suraggel que comandam a fazenda.</li>\n\t\t\t\t\t<li><b>Ritanna</b> (medusa) e <b>Haran</b> (osteon).</li>\n\t\t\t\t\t<li><b>Alon</b> (10 anos) e <b>Jansel</b> (18 anos).</li>\n\t\t\t\t\t<li><b>Vadrinne</b>: dahllan, irmã de Annabel (das Dahllan Daninhas). Carrega o implante.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Plantam <b>achbuld</b> atrás de um muro de pedra e guardam armas de fogo. Desconfiam de forasteiros e de autoridades.</p>\n\t\t\t\t<h3>Teorias</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Salisha:</b> é um demônio.</li>\n\t\t\t\t\t<li><b>Jansel:</b> é uma possessão.</li>\n\t\t\t\t\t<li><b>Nathanael:</b> é uma guilda rival.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Percepção ou Intuição: Alon está inquieto. Com 20 ou mais, nota Jansel e Vadrinne trocando um olhar.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ERf58T01lDZpzwSp",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.ERf58T01lDZpzwSp"
+    },
+    {
+      "name": "Investigação",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<table>\n\t\t\t\t\t<tr><th>Pista</th><th>Teste</th><th>Resultado</th></tr>\n\t\t\t\t\t<tr><td>Cabras mortas</td><td>Cura ou Investigação CD 25</td><td>Fogo, algo que as arremessou e espadas.</td></tr>\n\t\t\t\t\t<tr><td>Plantação</td><td>Investigação ou Sobrevivência CD 20</td><td>Botas e cães grandes.</td></tr>\n\t\t\t\t\t<tr><td>Cerca</td><td>Investigação ou Sobrevivência CD 25</td><td>Marcas de gazuas.</td></tr>\n\t\t\t\t\t<tr><td>Plantação</td><td>Misticismo CD 20</td><td>Aura infernal.</td></tr>\n\t\t\t\t\t<tr><td>Implante (retirar)</td><td>Cura, estendido, CD 25, 3 sucessos</td><td>Falha: complicações, retomar em 1d4+1 dias.</td></tr>\n\t\t\t\t\t<tr><td>Implante (examinar)</td><td>Ofício (engenhoqueiro) ou Misticismo CD 30 (+5 removido)</td><td>Ciência e magia; controla o corpo por períodos curtos, ligado aos olhos.</td></tr>\n\t\t\t\t\t<tr><td>Implante ligado</td><td>CD 25 / 30 / 35</td><td>Monitora / transmite / busca uma mente.</td></tr>\n\t\t\t\t</table>\n\t\t\t\t<p><b>Abordagem passiva:</b> o próximo ataque vem em 2d10 dias.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "EHOchUgjR47sk6Fx",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.EHOchUgjR47sk6Fx"
+    },
+    {
+      "name": "O Ataque",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<ol>\n\t\t\t\t\t<li><b>Rodada 1:</b> a luz desce (cego; ação de movimento ou 1 PM para ofuscado por 1 rodada). Só a Harpia age (Canhão de Fogo) e dois cães saltam. Em solo há 4 bandoleiros e 2 cães (Percepção CD 20 para notá-los).</li>\n\t\t\t\t\t<li><b>Rodada 2:</b> escadas de corda descem (Percepção CD 20 para vê-las). O implante de Vadrinne liga e ela caminha 5 rodadas até a plantação. Bandoleiros e cães passam a agir.</li>\n\t\t\t\t\t<li><b>Depois:</b> a Harpia usa Canhão e Nadadeiras uma vez por rodada cada. Escalar leva 2 rodadas, às cegas; a porta abaixa com Investigação CD 15 e uma ação padrão.</li>\n\t\t\t\t\t<li><b>Fuga:</b> quando a Harpia se afasta, o grupo tem 3 rodadas para alcançá-la (Atletismo, Acrobacia ou Cavalgar).</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>Ver a forma real da Harpia: 20 natural em Percepção (depois, CD 30).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "G0ytxr2laxjzq2BH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.G0ytxr2laxjzq2BH"
+    },
+    {
+      "name": "A Bordo da Harpia",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li>Piso escorregadio: Acrobacia CD 10 para equilíbrio.</li>\n\t\t\t\t\t<li>Escadas entre deques custam 4,5m; Acrobacia CD 12 desce de graça; falha por 5+ é queda com 1d6 de impacto.</li>\n\t\t\t\t\t<li>Empurrado por uma abertura: Reflexos CD 15 para se segurar.</li>\n\t\t\t\t\t<li>Timoneira no comando: desprevenidos pelo piso sofrem –2 em perícias.</li>\n\t\t\t\t\t<li>Armas de duas mãos sofrem –2.</li>\n\t\t\t\t\t<li>Túnel colapsado: três testes de Força CD 25. Cordames: dois de Atletismo CD 15, às cegas; falha por 10+ é queda (Reflexos CD 20 evita).</li>\n\t\t\t\t\t<li>Leme: Pilotagem CD 25.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Deques selados hermeticamente (Conhecimento percebe), com cobertura de cristal e o símbolo do relógio da tripulação. Plantas por toda a ponte de comando e na estufa. Dentro da nave: 2 cães e 12 capangas, espalhados. Torgo é visto no primeiro deque e foge pelos cordames; espera na ponte com a timoneira.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "BcQkqdeM1pmbYxXR",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.BcQkqdeM1pmbYxXR"
+    },
+    {
+      "name": "A Harpia",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Gog'magogue fêmea nascida em Arton (e de algum modo sabe que isso está errado). Foi cegada para não revelar de onde os vilões operam e é cortada todos os dias para que o sangue brilhe. Não conhece kliren, nomes nem objetivos dos \"bípedes\". Só quer liberdade e sente que deve subir cada vez mais.</p>\n\t\t\t\t<p>Quem fala com animais (ou Vadrinne) consegue contato. Quem entende de natureza nota que ela é viva e está em agonia.</p>\n\t\t\t\t<p>Se o grupo vencer e abandoná-la, ela foge às cegas, o mais alto e longe que puder.</p>\n\t\t\t\t<h3>Torgo, na ponte</h3>\n\t\t\t\t<blockquote><p><i>\"Malditos aventureiros! Não aprenderam a não meter o nariz onde não foram chamados? Sua mãe não ensinou pra vocês? Seus lorpas, bexiguentos! Inconvenientes! Podiam ter ficado quietinhos, deixado Syvarian fazer seu trabalho! Nem são daqui, o que vocês se importam com esses capiaus no meio do nada? Estamos fazendo um favor pra eles! Agora calem a boca, não aguento mais ouvir suas vozes! Vão morrer aqui mesmo e vou enterrá-los nessas Colinas, só pra vocês verem o que é bom pra tosse! Vão ficar a eternidade toda puxando as patas dos bodes! Eu juro por essa luz que me alumia!\"</i></p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "iGcgSdfsmoH0DWVy",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.iGcgSdfsmoH0DWVy"
+    },
+    {
+      "name": "Handout · Instruções de Syvarian",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<blockquote>\n\t\t\t\t<p><i>Torgo,</i></p>\n\t\t\t\t<p><i>Espero que estas instruções sejam cumpridas sem questionamentos e sem falhas. Você sabe o que está em jogo. Sabe o que tem a perder.</i></p>\n\t\t\t\t<p><i>Não demonstre clemência pelo gog'magogue. Não deixe ela saber o que é. Chame-a apenas pelo nome de \"Harpia\". Ela é mais inteligente do que aparenta. Quer fugir, mas só conhece Arton. A ignorância da criatura é a proteção de sua tripulação. Enquanto ela não souber onde é seu lar, vocês estarão seguros. Se ela se revoltar, pode acabar com todos vocês em um instante. Mantenha-a no escuro.</i></p>\n\t\t\t\t<p><i>É preciso abrir novos cortes todos os dias, antes que os antigos possam cicatrizar, para que ela continue fraca. Preserve o brilho. Use a superstição. Se qualquer um de nossos alvos conhecer a verdade, toda a missão pode estar perdida.</i></p>\n\t\t\t\t<p><i>Não negligencie as plantas. Você não precisa entender sua finalidade. Tudo que importa é que elas continuem fortes. São mais importantes que qualquer um de seus marujos. Use a druida sempre que for possível.</i></p>\n\t\t\t\t<p><i>A tripulação é descartável. Não hesite em sacrificá-los. Não são divinautas, receberam apenas o treinamento básico. Há centenas de parasitas como eles nas sarjetas de qualquer cidade, podemos sempre conseguir mais.</i></p>\n\t\t\t\t<p><i>Mate os Gallobalt apenas em último caso. Preserve tanto achbuld quanto possível. É a recompensa de nossos aliados. Enquanto houver achbuld e a família estiver viva, ninguém vai chamar nenhuma autoridade. Lembre-se do objetivo: intimidá-los e expulsá-los, fazer com que pareçam tolos com medo do céu.</i></p>\n\t\t\t\t<p><i>Você está dando um passo em direção a sua própria recompensa.</i></p>\n\t\t\t\t<p><i>Os ponteiros se movem, Torgo.</i></p>\n\t\t\t\t<p><i>Está chegando a hora do fim e do início.</i></p>\n\t\t\t\t<p><i>Syvarian</i></p>\n\t\t\t\t<p>(Um sinete com a imagem de um relógio completa a assinatura.)</p>\n\t\t\t\t</blockquote>\n\t\t\t\t<p>Item: @UUID[Item.DOaLWV4g1N78DeoS]{Instruções de Syvarian a Torgo}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "XCiyV6r6FP0O8YdV",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.XCiyV6r6FP0O8YdV"
+    },
+    {
+      "name": "Desfecho",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li><b>Vitória completa:</b> a Harpia é libertada e sobe ao éter divino (pode voltar mais tarde na campanha). Os Gallobalt ajudam o grupo na Aventura 5.</li>\n\t\t\t\t\t<li><b>Vitória parcial:</b> a Harpia foge às cegas; os ataques param, mas Torgo pode ter escapado.</li>\n\t\t\t\t\t<li><b>Bandoleiros capturados:</b> recrutados em Zakharov, trabalham em células; passaram por experimentos do Dr. Vesper mas não conseguem denunciá-lo.</li>\n\t\t\t\t\t<li><b>Torgo capturado:</b> se autodestrói (8d6, raio de 6m, uma rodada de aviso) antes de revelar algo.</li>\n\t\t\t\t\t<li>Tesouro: @UUID[Item.y4rak1jBxM82R67E]{Essência Abissal} dos cães, o @UUID[Item.pCZmG41tGs92uXpk]{Implante de Cristal de Vadrinne} e as instruções de Syvarian.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "xegL62aoX79RDas2",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!Df0wNEvGDyOSpFGR.xegL62aoX79RDas2"
+    }
+  ],
+  "_key": "!journal!Df0wNEvGDyOSpFGR"
+}

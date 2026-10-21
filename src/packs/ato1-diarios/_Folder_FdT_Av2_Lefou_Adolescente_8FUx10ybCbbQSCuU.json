@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Av2 · Lefou Adolescente",
+  "type": "JournalEntry",
+  "color": "#7a1020",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "_id": "8FUx10ybCbbQSCuU",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!8FUx10ybCbbQSCuU"
+}

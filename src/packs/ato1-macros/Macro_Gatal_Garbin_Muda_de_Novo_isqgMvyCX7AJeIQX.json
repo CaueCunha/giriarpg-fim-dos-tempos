@@ -1,0 +1,31 @@
+{
+  "name": "Gatal · Garbin Muda de Novo",
+  "type": "script",
+  "img": "systems/tormenta20/icons/racas/hynne.webp",
+  "folder": "zODnB58HDAdF5oB2",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Especial de Gatal · gerado por a1-especial-de-gatal.js\nconst DADOS = {\"garbin\":[[\"humano\",\"um humano idoso, baixinho e gorducho, de barba branca e avental de couro\"],[\"hynne\",\"um hynne, sem dúvida: os pés descalços e peludos aparecem por baixo do avental\"],[\"anao\",\"claramente um anão, com a barba trançada e um orgulho enorme do próprio martelo\"],[\"elfo\",\"um elfo muito baixinho, de orelhas pontudas escondidas no gorro\"],[\"silfide\",\"uma sílfide! As asinhas tremulam enquanto ela ajeita um laço de fita\"],[\"minotauro\",\"um minotauro bonachão, com o gorro enfiado entre os chifres\"],[\"sereia\",\"uma sereia, de cauda e tudo, sentada num balde, dando instruções\"],[\"goblin\",\"um goblin velhinho e risonho, remendando a própria barba\"],[\"kliren\",\"um kliren de óculos grossos, que corrige a sua técnica de embrulho\"],[\"qareen\",\"um qareen de olhos brilhantes, que garante que não pode realizar desejos (hoje)\"],[\"dahllan\",\"uma dahllan de cabelos de folha, com flores brotando no gorro\"],[\"minotauro\",\"de novo um minotauro... ou era uma minotaura? Garbin ri e diz que tanto faz\"]]};\n(async function macroGarbin(D) {\n\t\tconst ESTADO = \"fdtGatal\";\n\t\tconst i = game.user.getFlag(\"world\", `${ESTADO}.garbin`) ?? 0;\n\t\tconst [raca, txt] = D.garbin[i % D.garbin.length];\n\t\tconst img = `systems/tormenta20/icons/racas/${raca}.webp`;\n\t\tconst ator = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"garbin\");\n\t\tif (ator) await ator.update({ img, \"prototypeToken.texture.src\": img });\n\t\tconst tks = canvas.tokens.placeables.filter((t) => t.actor?.getFlag(\"world\", \"fdtRole\") === \"garbin\");\n\t\tif (tks.length) await canvas.scene.updateEmbeddedDocuments(\"Token\", tks.map((t) => ({ _id: t.id, \"texture.src\": img })));\n\t\tawait game.user.setFlag(\"world\", `${ESTADO}.garbin`, i + 1);\n\t\tChatMessage.create({ content: `<p>Vocês olham de novo para Garbin. Engraçado... agora Garbin é <b>${txt}</b>. Ninguém parece achar isso estranho, muito menos ele mesmo.</p>` });\n\t})(DADOS);",
+  "_id": "isqgMvyCX7AJeIQX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!isqgMvyCX7AJeIQX"
+}

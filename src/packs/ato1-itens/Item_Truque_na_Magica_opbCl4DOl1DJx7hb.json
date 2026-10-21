@@ -1,0 +1,105 @@
+{
+  "name": "Truque na Mágica",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/magias/criar-ilusao.webp",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal",
+      "fdtRole": "presente_truque"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Presente de Nan.</b> Um papel dobrado com um \"truque divertido para enganar seus amigos\". Permite que um conjurador arcano \"modifique\" uma magia arcana para que ela seja de outra escola: aprender uma magia que normalmente não poderia, receber uma magia adicional pela sua escola, somar bônus de uma escola na magia etc. <b>Um uso.</b></p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0.5,
+    "tipo": "",
+    "subtipo": "",
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": []
+  },
+  "folder": "PEQQhfxQ4rFzHQVA",
+  "_id": "opbCl4DOl1DJx7hb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!opbCl4DOl1DJx7hb"
+}

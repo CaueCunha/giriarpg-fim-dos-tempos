@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 1 · Colinas Centrais",
+  "type": "Actor",
+  "color": "#5a6a2a",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas"
+    }
+  },
+  "_id": "W5p7DK8n2tteU1HY",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!W5p7DK8n2tteU1HY"
+}

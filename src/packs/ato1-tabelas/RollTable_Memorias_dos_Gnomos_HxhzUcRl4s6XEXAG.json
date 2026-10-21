@@ -1,0 +1,169 @@
+{
+  "name": "Memórias dos Gnomos",
+  "img": "icons/svg/book.svg",
+  "folder": "EtaT6hlKdhf4HEM6",
+  "flags": {
+    "world": {
+      "fdt": "a1templo",
+      "fdtRole": "memoriasTemplo"
+    }
+  },
+  "formula": "1d5",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "O tributo do Salão Principal: cada um entrega uma memória querida e recebe uma destas. Invente outras à vontade.",
+  "_id": "HxhzUcRl4s6XEXAG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Memória 1",
+      "description": "Tecnologia mecanomágica. O cristal rosado sendo minerado e usado como parte integral desses mecanismos.",
+      "_id": "yWA2gcFHQy84o3Qx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!HxhzUcRl4s6XEXAG.yWA2gcFHQy84o3Qx"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Memória 2",
+      "description": "Animais nunca vistos em Arton: criaturas mecânicas que de alguma forma nascem naturalmente. A gravidez e o parto como construção de autômatos.",
+      "_id": "VoCrpw9Zru9zWfsC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!HxhzUcRl4s6XEXAG.VoCrpw9Zru9zWfsC"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Memória 3",
+      "description": "Uma sociedade guiada por exatidão, que \"domou\" a realidade com ela. Relógios por toda parte, marcando as horas com uma precisão que Arton não precisa.",
+      "_id": "Xa6VwHLzJbUUJLai",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!HxhzUcRl4s6XEXAG.Xa6VwHLzJbUUJLai"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Memória 4",
+      "description": "O nome que a raça tinha para si mesma: gnomos. Um povo que quase não fazia guerra, pacífico exceto pelos acidentes com suas invenções. Não tinham orgulho de si: tinham felicidade de ser quem eram.",
+      "_id": "CWt1srCexSVdR6Bh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!HxhzUcRl4s6XEXAG.CWt1srCexSVdR6Bh"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Memória 5",
+      "description": "A vida sob Tilliann, a criatividade e a manufatura como atos sagrados. A noite em que a queda foi sentida: o choque, a falta de inspiração, mecanismos complexos que de repente não funcionavam.",
+      "_id": "HfLlVjdsWAKt9zUq",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!HxhzUcRl4s6XEXAG.HfLlVjdsWAKt9zUq"
+    }
+  ],
+  "_key": "!tables!HxhzUcRl4s6XEXAG"
+}

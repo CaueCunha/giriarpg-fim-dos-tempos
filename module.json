@@ -1,0 +1,333 @@
+{
+  "id": "giriarpg-fim-dos-tempos",
+  "title": "Fim dos Tempos · Campanha (Tormenta20)",
+  "description": "<p>Conteúdo da campanha <b>Fim dos Tempos</b> para o sistema Tormenta20: ameaças, itens, diários, tabelas e macros do Ato 1 (Colinas Centrais) e do Ato 2 (Valkaria), além das regras de grupo. Importe pelo botão no topo da aba de Compêndios ou pela macro do compêndio Campanha.</p>",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Cauê",
+      "url": "https://github.com/CaueCunha"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "tormenta20",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.6.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/fdt.mjs"
+  ],
+  "styles": [
+    "styles/fdt.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "ato1-ameacas",
+      "label": "Ato 1 · Ameaças e NPCs",
+      "path": "packs/ato1-ameacas",
+      "type": "Actor",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato1"
+        }
+      }
+    },
+    {
+      "name": "ato1-itens",
+      "label": "Ato 1 · Itens",
+      "path": "packs/ato1-itens",
+      "type": "Item",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato1"
+        }
+      }
+    },
+    {
+      "name": "ato1-diarios",
+      "label": "Ato 1 · Diários",
+      "path": "packs/ato1-diarios",
+      "type": "JournalEntry",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato1"
+        }
+      }
+    },
+    {
+      "name": "ato1-tabelas",
+      "label": "Ato 1 · Tabelas",
+      "path": "packs/ato1-tabelas",
+      "type": "RollTable",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato1"
+        }
+      }
+    },
+    {
+      "name": "ato1-macros",
+      "label": "Ato 1 · Macros",
+      "path": "packs/ato1-macros",
+      "type": "Macro",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato1"
+        }
+      }
+    },
+    {
+      "name": "ato2-ameacas",
+      "label": "Ato 2 · Ameaças e NPCs",
+      "path": "packs/ato2-ameacas",
+      "type": "Actor",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato2"
+        }
+      }
+    },
+    {
+      "name": "ato2-itens",
+      "label": "Ato 2 · Itens",
+      "path": "packs/ato2-itens",
+      "type": "Item",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato2"
+        }
+      }
+    },
+    {
+      "name": "ato2-diarios",
+      "label": "Ato 2 · Diários",
+      "path": "packs/ato2-diarios",
+      "type": "JournalEntry",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato2"
+        }
+      }
+    },
+    {
+      "name": "ato2-tabelas",
+      "label": "Ato 2 · Tabelas",
+      "path": "packs/ato2-tabelas",
+      "type": "RollTable",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato2"
+        }
+      }
+    },
+    {
+      "name": "ato2-macros",
+      "label": "Ato 2 · Macros",
+      "path": "packs/ato2-macros",
+      "type": "Macro",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "ato2"
+        }
+      }
+    },
+    {
+      "name": "campanha-itens",
+      "label": "Campanha (o grupo e utilidades) · Itens",
+      "path": "packs/campanha-itens",
+      "type": "Item",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "campanha"
+        }
+      }
+    },
+    {
+      "name": "campanha-diarios",
+      "label": "Campanha (o grupo e utilidades) · Diários",
+      "path": "packs/campanha-diarios",
+      "type": "JournalEntry",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "campanha"
+        }
+      }
+    },
+    {
+      "name": "campanha-macros",
+      "label": "Campanha (o grupo e utilidades) · Macros",
+      "path": "packs/campanha-macros",
+      "type": "Macro",
+      "system": "tormenta20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {
+        "giriarpg-fim-dos-tempos": {
+          "ato": "campanha"
+        }
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Fim dos Tempos",
+      "sorting": "m",
+      "color": "#6b2f2f",
+      "packs": [],
+      "folders": [
+        {
+          "name": "Ato 1 · Colinas Centrais",
+          "sorting": "m",
+          "color": "#7a5a2a",
+          "packs": [
+            "ato1-ameacas",
+            "ato1-itens",
+            "ato1-diarios",
+            "ato1-tabelas",
+            "ato1-macros"
+          ]
+        },
+        {
+          "name": "Ato 2 · Valkaria",
+          "sorting": "m",
+          "color": "#2f4a6b",
+          "packs": [
+            "ato2-ameacas",
+            "ato2-itens",
+            "ato2-diarios",
+            "ato2-tabelas",
+            "ato2-macros"
+          ]
+        },
+        {
+          "name": "Campanha (o grupo e utilidades)",
+          "sorting": "m",
+          "color": "#3f6b4a",
+          "packs": [
+            "campanha-itens",
+            "campanha-diarios",
+            "campanha-macros"
+          ]
+        }
+      ]
+    }
+  ],
+  "flags": {
+    "giriarpg-fim-dos-tempos": {
+      "atos": {
+        "ato1": {
+          "rotulo": "Ato 1 · Colinas Centrais",
+          "packs": [
+            "ato1-ameacas",
+            "ato1-itens",
+            "ato1-diarios",
+            "ato1-tabelas",
+            "ato1-macros"
+          ]
+        },
+        "ato2": {
+          "rotulo": "Ato 2 · Valkaria",
+          "packs": [
+            "ato2-ameacas",
+            "ato2-itens",
+            "ato2-diarios",
+            "ato2-tabelas",
+            "ato2-macros"
+          ]
+        },
+        "campanha": {
+          "rotulo": "Campanha (o grupo e utilidades)",
+          "packs": [
+            "campanha-itens",
+            "campanha-diarios",
+            "campanha-macros"
+          ]
+        }
+      }
+    }
+  },
+  "url": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos",
+  "manifest": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/latest/download/module.json",
+  "download": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/download/v0.1.0/module.zip",
+  "readme": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos#readme",
+  "bugs": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/issues"
+}

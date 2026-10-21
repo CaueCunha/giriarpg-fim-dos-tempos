@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Lampião Mecanomágico",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/lampiao.webp",
+  "folder": "QMRoU9eSpVXibz3Y",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n(async function macroLampiao() {\n\t\tconst alvos = [...game.user.targets].map((t) => t.actor).filter(Boolean);\n\t\tif (!alvos.length) return ui.notifications.warn(\"Mire (target) os não humanos inteligentes em alcance longo.\");\n\t\tconst rolls = [];\n\t\tlet html = \"<h3>Lampião Mecanomágico</h3><p>Vontade CD 20 (efeito mental). Quem falhar tem uma ação de movimento decidida por quem usa o lampião nesta rodada.</p><ul>\";\n\t\tfor (const a of alvos) {\n\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.vont?.value ?? 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ok = r.total >= 20;\n\t\t\tconst efeito = a.effects.find((e) => e.getFlag(\"world\", \"fdtLampiao\"));\n\t\t\tif (!ok && !efeito) {\n\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [{\n\t\t\t\t\tname: \"Hipnotizado pelo Lampião\",\n\t\t\t\t\timg: \"systems/tormenta20/icons/itens/gerais/lampiao.webp\",\n\t\t\t\t\ttype: \"base\",\n\t\t\t\t\tdescription: \"Quem usa o lampião decide uma ação de movimento por rodada. Sem ações completas. Novo teste a cada rodada.\",\n\t\t\t\t\tflags: { world: { fdt: \"av3\", fdtLampiao: true } }\n\t\t\t\t}]);\n\t\t\t} else if (ok && efeito) await efeito.delete();\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${ok ? \"✔️ resiste nesta rodada\" : \"❌ hipnotizado\"}</li>`;\n\t\t}\n\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Passar não dá imunidade: rode de novo a cada rodada.</p>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "He2Fcb1qK7TOsqSC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!He2Fcb1qK7TOsqSC"
+}

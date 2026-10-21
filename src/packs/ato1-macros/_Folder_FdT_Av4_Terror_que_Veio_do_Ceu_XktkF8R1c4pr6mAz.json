@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Av4 · Terror que Veio do Céu",
+  "type": "Macro",
+  "color": "#6b3a3a",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "_id": "XktkF8R1c4pr6mAz",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!XktkF8R1c4pr6mAz"
+}

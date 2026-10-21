@@ -1,0 +1,31 @@
+{
+  "name": "Colinas · Alquimia do Quimby",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/bomba.webp",
+  "folder": "QEBlEPhFUUsip5P4",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Colinas Centrais · gerado por a1-encontros-colinas.js\n(async function macroQuimby() {\n\t\tconst tk = canvas.tokens.controlled.find((t) => t.actor);\n\t\tif (!tk) return ui.notifications.warn(\"Selecione o token de quem usa o produto do Quimby.\");\n\t\tconst user = tk.actor;\n\t\tconst itensQ = user.items.filter((i) => (i.getFlag(\"world\", \"fdtRole\") ?? \"\").startsWith(\"quimby_\"));\n\t\tif (!itensQ.length) return ui.notifications.warn(`${user.name} não tem nada do Quimby (arraste o item para a ficha).`);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Alquimia do Quimby\" },\n\t\t\tcontent: `<p>Alvos: os tokens <b>mirados</b> (sem alvo, o próprio usuário).</p><div class=\"form-group\"><label>Produto</label><select name=\"item\">${itensQ.map((i) => `<option value=\"${i.id}\">${i.name}</option>`).join(\"\")}</select></div>`,\n\t\t\tok: { label: \"Usar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst item = user.items.get(res.item);\n\t\tconst tipo = item.getFlag(\"world\", \"fdtRole\").replace(\"quimby_\", \"\");\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };\n\t\tconst d6 = (await rolar(\"1d6\")).total;\n\t\tconst funciona = d6 % 2 === 0;\n\t\tconst alvos = [...game.user.targets].map((t) => t.actor).filter(Boolean);\n\t\tconst cd = (Number(user.system.attributes.cd) || 10) + (Number(user.system.atributos?.des?.value) || 0);\n\t\tconst DANO = { acido: \"2d4[acido]\", fogo: \"1d6[fogo]\", granada: \"6d6[impacto]\" };\n\t\tlet html = `<h3>${item.name}</h3><p>1d6 = ${d6}: ${funciona ? \"✔️ <b>funciona!</b>\" : \"❌ <b>funciona ao contrário!</b>\"}</p><ul>`;\n\t\tif (DANO[tipo]) {\n\t\t\tconst atingidos = funciona ? (alvos.length ? alvos : []) : [user];\n\t\t\tif (funciona && !alvos.length) html += \"<li>Sem alvo mirado: role o dano à mão.</li>\";\n\t\t\tconst dano = await rolar(DANO[tipo]);\n\t\t\tfor (const a of atingidos) {\n\t\t\t\tconst salva = funciona ? (await rolar(`1d20 + ${Number(a.system.pericias?.refl?.value) || 0}`)).total : null;\n\t\t\t\tconst ok = salva !== null && salva >= cd;\n\t\t\t\tawait a.applyDamageV2(dano, ok ? 0.5 : 1);\n\t\t\t\tif (tipo === \"fogo\" && !ok && !a.statuses?.has(\"emchamas\")) await a.toggleStatusEffect(\"emchamas\", { active: true });\n\t\t\t\thtml += `<li>${a.name}: ${dano.total} de dano${salva !== null ? ` (Reflexos ${salva} contra CD ${cd}${ok ? \", metade\" : \"\"})` : \" (no próprio usuário!)\"}${tipo === \"fogo\" && !ok ? \", em chamas\" : \"\"}.</li>`;\n\t\t\t}\n\t\t} else {\n\t\t\tconst quem = alvos[0] ?? user;\n\t\t\tif (tipo === \"balsamo\") {\n\t\t\t\tconst r = await rolar(\"2d4\");\n\t\t\t\tconst { value: antes, max } = quem.system.attributes.pv;\n\t\t\t\tconst novo = funciona ? Math.min(max, antes + r.total) : antes - r.total;\n\t\t\t\tawait quem.update({ \"system.attributes.pv.value\": novo });\n\t\t\t\thtml += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PV` : `<b>sofre ${r.total} de dano</b> com o emplastro`}.</li>`;\n\t\t\t} else if (tipo === \"essencia\") {\n\t\t\t\tconst r = await rolar(\"1d4\");\n\t\t\t\tconst { value: antes, max } = quem.system.attributes.pm;\n\t\t\t\tconst novo = funciona ? Math.min(max, antes + r.total) : Math.max(0, antes - r.total);\n\t\t\t\tawait quem.update({ \"system.attributes.pm.value\": novo });\n\t\t\t\thtml += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PM` : `<b>perde ${antes - novo} PM</b> com o tônico`}.</li>`;\n\t\t\t}\n\t\t}\n\t\tconst qtd = (Number(item.system.qtd) || 1) - 1;\n\t\tif (qtd > 0) await item.update({ \"system.qtd\": qtd });\n\t\telse await item.delete();\n\t\tChatMessage.create({ content: `${html}</ul><p style=\"font-size:0.85em\">${qtd > 0 ? `Restam ${qtd}.` : \"Acabou.\"}</p>`, rolls });\n\t})();",
+  "_id": "nU38Nn9ww57qN15Y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!nU38Nn9ww57qN15Y"
+}

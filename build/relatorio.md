@@ -1,0 +1,205 @@
+# Relatório do build
+
+## Ato 1 · Colinas Centrais
+
+- `ato1-ameacas`: 97 documento(s), 8 pasta(s)
+- `ato1-itens`: 87 documento(s), 9 pasta(s)
+- `ato1-diarios`: 8 documento(s), 8 pasta(s)
+- `ato1-tabelas`: 13 documento(s), 6 pasta(s)
+- `ato1-macros`: 44 documento(s), 8 pasta(s)
+
+### Ligações com o sistema (120)
+
+| Dono | Item | Tipo | O que foi feito |
+|---|---|---|---|
+| Chupacabra da Tormenta | Mordida | arma | ficha do livro + origem no sistema |
+| Chupacabra da Tormenta | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Chupacabra da Tormenta | Drenar Sangue | poder | link para o sistema |
+| Chupacabra da Tormenta | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Bhuluk, o Anão com Barba de Insetos | Enxame | poder | link para o sistema |
+| Gronko, o Faminto | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Gronko, o Faminto | Engolir | poder | ficha do livro + origem no sistema |
+| Gaspar, o Homem Mais Forte do Mundo | Golpe Avassalador | poder | link para o sistema |
+| Gaspar, o Homem Mais Forte do Mundo | Anatomia Insana | poder | ficha do livro + origem no sistema |
+| Zardu, o Mestre do Picadeiro | Adaga | arma | ficha do livro + origem no sistema |
+| Zardu, o Mestre do Picadeiro | Engenhosidade | poder | ficha do livro + origem no sistema |
+| Zardu, o Mestre do Picadeiro | Ossos Frágeis | poder | ficha do livro + origem no sistema |
+| Capelã de Guerra Lorelei Wulff | Bênção | magia | magia do sistema + ficha do NPC |
+| Capelã de Guerra Lorelei Wulff | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Capelã de Guerra Lorelei Wulff | Soco de Arsenal | magia | link para o sistema |
+| Soldado de Lorelei | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Soldado de Lorelei | Besta Pesada | arma | ficha do livro + origem no sistema |
+| Soldado de Lorelei | Lutar em Formação | poder | ficha do livro + origem no sistema |
+| Soldado de Lorelei | Ódio Puro | poder | ficha do livro + origem no sistema |
+| Guarda de Dornbach | Espada Curta | arma | ficha do livro + origem no sistema |
+| Aldeão de Dornbach | Clava | arma | ficha do livro + origem no sistema |
+| Aldeão de Dornbach | Arco Curto | arma | ficha do livro + origem no sistema |
+| Zagar, Cobaia "Purificada" | Tacape | arma | ficha do livro + origem no sistema |
+| Bandoleiro da Harpia | Espada Longa | arma | ficha do livro + origem no sistema |
+| Bandoleiro da Harpia | Besta Leve | arma | ficha do livro + origem no sistema |
+| Bandoleiro da Harpia | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Cão do Inferno | Mordida | arma | ficha do livro + origem no sistema |
+| Torgo, Golem do Dr. Vesper | Pancada | arma | ficha do livro + origem no sistema |
+| Torgo, Golem do Dr. Vesper | Fúria | poder | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Pinças | arma | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Garras | arma | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Imunidades Aberrantes | poder | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Percepção Temporal | poder | ficha do livro + origem no sistema |
+| Malakias Corrompido (zumbi da Tormenta) | Visão Ampla | poder | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Pinças | arma | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Garras | arma | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Imunidades Aberrantes | poder | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Percepção Temporal | poder | ficha do livro + origem no sistema |
+| Myrianthe Corrompida (zumbi da Tormenta) | Visão Ampla | poder | ficha do livro + origem no sistema |
+| Zumbi Defeituoso do Covil | Fraqueza Zumbi | poder | ficha do livro + origem no sistema |
+| Zumbi Defeituoso do Covil | Mordida | arma | ficha do livro + origem no sistema |
+| Bandoleiro de Syvarian | Espada Longa | arma | ficha do livro + origem no sistema |
+| Bandoleiro de Syvarian | Besta Leve | arma | ficha do livro + origem no sistema |
+| Bandoleiro de Syvarian | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Cão do Inferno | Mordida | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Espada Curta | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Pistola | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Irmão da Companhia | Bomba | poder | link para o sistema |
+| Bando Desesperado | Espada Curta | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Arco Curto | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque em Bando | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Forma Coletiva | poder | ficha do livro + origem no sistema |
+| Syvarian, Oficial de Segurança da Roca | Engenhosidade | poder | ficha do livro + origem no sistema |
+| Syvarian, Oficial de Segurança da Roca | Ossos Frágeis | poder | ficha do livro + origem no sistema |
+| Torgo, Golem do Dr. Vesper | Pancada | arma | ficha do livro + origem no sistema |
+| Torgo, Golem do Dr. Vesper | Fúria | poder | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Pinças | arma | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Garras | arma | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Imunidades Aberrantes | poder | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Percepção Temporal | poder | ficha do livro + origem no sistema |
+| Uktril (Formiga Aberrante) | Visão Ampla | poder | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Pinças | arma | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Garras | arma | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Imunidades Aberrantes | poder | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Percepção Temporal | poder | ficha do livro + origem no sistema |
+| Geraktril (Formiga Aberrante Maior) | Visão Ampla | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Ataque em Movimento | poder | link para o sistema |
+| Reishid (Assassino Aberrante) | Ataque Reflexo | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Veneno | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Garras | arma | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Mordida | arma | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Adaga Aberrante | arma | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Percepção Temporal | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Imunidades Aberrantes | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Insanidade da Tormenta | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Sombra Rubra | poder | ficha do livro + origem no sistema |
+| Reishid (Assassino Aberrante) | Visão Ampla | poder | ficha do livro + origem no sistema |
+| LeBlanc Corrompido (zumbi da Tormenta) | Fraqueza Zumbi | poder | ficha do livro + origem no sistema |
+| LeBlanc Corrompido (zumbi da Tormenta) | Mordida | arma | ficha do livro + origem no sistema |
+| Tirano das Águas | Mordida | arma | ficha do livro + origem no sistema |
+| Tirano das Águas Barão | Mordida | arma | ficha do livro + origem no sistema |
+| Monstro da Ferrugem | Mordida | arma | ficha do livro + origem no sistema |
+| Cardume Carnívoro | Enxame (fim do turno) | poder | link para o sistema |
+| Estátua Animada | Pancada | arma | ficha do livro + origem no sistema |
+| Estátua Animada | Sopro | poder | ficha do livro + origem no sistema |
+| Estátua Animada | Imunidade a Magia | poder | ficha do livro + origem no sistema |
+| Estátua Animada com Besta | Pancada | arma | ficha do livro + origem no sistema |
+| Estátua Animada com Besta | Sopro | poder | ficha do livro + origem no sistema |
+| Estátua Animada com Besta | Imunidade a Magia | poder | ficha do livro + origem no sistema |
+| Ganchador do Templo | Sensibilidade a Luz | poder | ficha do livro + origem no sistema |
+| Ganchador do Templo | Mordida | arma | ficha do livro + origem no sistema |
+| Ganchador do Templo | Garras | arma | ficha do livro + origem no sistema |
+| Ganchador do Templo | Dilacerar | poder | ficha do livro + origem no sistema |
+| Ganchador do Templo | Quebrar Tudo! | poder | ficha do livro + origem no sistema |
+| Ganchador do Templo | Garras de Ganchador | tesouro | ficha do livro + origem no sistema |
+| Templo do Vácuo · Armadilhas | Runa de Proteção | poder | link para o sistema |
+| Gnoll Arruaceiro de Gatal | Lança | arma | ficha do livro + origem no sistema |
+| Gnoll Arruaceiro de Gatal | Mordida | arma | ficha do livro + origem no sistema |
+| Gnoll Arruaceiro de Gatal | Arco curto | arma | ficha do livro + origem no sistema |
+| Gnoll Arruaceiro de Gatal | Flechas | consumivel | ficha do livro + origem no sistema |
+| Arlo "Olho de Leite" | Mosquete | arma | ficha do livro + origem no sistema |
+| Jonid, o Homem-Bode | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Shanamarie, Sereia do Rio | Sono | magia | magia do sistema + ficha do NPC |
+| Shaylyne, Sereia do Rio | Hipnotismo | magia | magia do sistema + ficha do NPC |
+| Shadolenn, Sereia do Rio | Sono | magia | magia do sistema + ficha do NPC |
+| Cletus Rigby, o Mago Caipira | Bola de Fogo | magia | magia do sistema + ficha do NPC |
+| Recruta Purista Caipira | Lutar em Formação | poder | ficha do livro + origem no sistema |
+| Recruta Purista Caipira | Alabarda | arma | ficha do livro + origem no sistema |
+| Recruta Purista Caipira | Cota de malha | equipamento | ficha do livro + origem no sistema |
+| Aparição da Mina de Duas Pedras | Vulnerabilidade à Luz do Dia | poder | link para o sistema |
+| Aparição da Mina de Duas Pedras | Toque drenante | arma | link para o sistema |
+| (item) | Poção de Sono (estoque de Marwen) | consumivel | ficha do livro + origem no sistema |
+| (item) | Essência Abissal | consumivel | ficha do livro + origem no sistema |
+| (item) | Engenhosidade (Altar da Memória) | poder | ficha do livro + origem no sistema |
+
+### Avisos do Foundry simulado (0)
+
+
+## Ato 2 · Valkaria
+
+- `ato2-ameacas`: 14 documento(s), 2 pasta(s)
+- `ato2-itens`: 7 documento(s), 2 pasta(s)
+- `ato2-diarios`: 2 documento(s), 2 pasta(s)
+- `ato2-tabelas`: 2 documento(s), 2 pasta(s)
+- `ato2-macros`: 5 documento(s), 2 pasta(s)
+
+### Ligações com o sistema (37)
+
+| Dono | Item | Tipo | O que foi feito |
+|---|---|---|---|
+| Bandido Descarado | Espada Curta (×2) | arma | ficha do livro + origem no sistema |
+| Bandido Descarado | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Barnett | Espada Curta (×2) | arma | ficha do livro + origem no sistema |
+| Barnett | Besta Leve | arma | ficha do livro + origem no sistema |
+| Barnett | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Barnett | Evasão | poder | ficha do livro + origem no sistema |
+| Gárgula da Metrópole | Imobilidade | poder | link para o sistema |
+| Madame Margebell | Dom da Verdade | poder | ficha do livro + origem no sistema |
+| Madame Margebell | Bênção | magia | magia do sistema + ficha do NPC |
+| Madame Margebell | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Madame Margebell | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Madame Margebell | Oração | magia | magia do sistema + ficha do NPC |
+| Madame Margebell | Raio Solar | magia | magia do sistema + ficha do NPC |
+| Madame Margebell | Soco de Arsenal | magia | link para o sistema |
+| Anjo Aprisionado | Maça | arma | ficha do livro + origem no sistema |
+| Anjo Aprisionado | Evasão | poder | ficha do livro + origem no sistema |
+| Torzogh Meio-Machado | Machado Táurico (×2) | arma | ficha do livro + origem no sistema |
+| Torzogh Meio-Machado | Fúria | poder | ficha do livro + origem no sistema |
+| Ingwi | Espada Curta (×2) | arma | ficha do livro + origem no sistema |
+| Ingwi | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Ingwi | Veneno | poder | ficha do livro + origem no sistema |
+| Ingwi | Emboscar | poder | ficha do livro + origem no sistema |
+| Ingwi | Manto de Sombras | poder | link para o sistema |
+| Ingwi | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Thurab | Cimitarra (×2) | arma | ficha do livro + origem no sistema |
+| Thurab | Escudo Leve | arma | ficha do livro + origem no sistema |
+| Thurab | Desejos | poder | ficha do livro + origem no sistema |
+| Thurab | Espada Solar | poder | ficha do livro + origem no sistema |
+| Thurab | Arma Mágica | magia | magia do sistema + ficha do NPC |
+| Thurab | Bênção | magia | magia do sistema + ficha do NPC |
+| Thurab | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Thurab | Soco de Arsenal | magia | link para o sistema |
+| Nyrimm | Empatia Selvagem | poder | ficha do livro + origem no sistema |
+| Nyrimm | Adaga Mental | magia | magia do sistema + ficha do NPC |
+| Nyrimm | Armadura Arcana | magia | magia do sistema + ficha do NPC |
+| Nyrimm | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Nyrimm | Controlar Plantas | magia | magia do sistema + ficha do NPC |
+
+### Avisos do Foundry simulado (0)
+
+
+## Campanha (o grupo e utilidades)
+
+- `campanha-itens`: 23 documento(s), 1 pasta(s)
+- `campanha-diarios`: 1 documento(s), 1 pasta(s)
+- `campanha-macros`: 7 documento(s), 1 pasta(s)
+
+### Ligações com o sistema (0)
+
+| Dono | Item | Tipo | O que foi feito |
+|---|---|---|---|
+
+### Avisos do Foundry simulado (0)
+
+

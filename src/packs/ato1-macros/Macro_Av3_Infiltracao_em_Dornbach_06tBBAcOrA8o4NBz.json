@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Infiltração em Dornbach",
+  "type": "script",
+  "img": "icons/svg/mystery-man.svg",
+  "folder": "QMRoU9eSpVXibz3Y",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n(async function macroInfiltracao() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return ui.notifications.warn(\"Selecione os tokens de quem está se esgueirando.\");\n\t\tconst CHAVE = \"fdtInfiltracao\";\n\t\tconst estado = game.user.getFlag(\"world\", CHAVE) ?? { sucessos: 0, falhas: 0 };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Infiltração em Dornbach\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Progresso atual: <b>${estado.sucessos}</b> sucessos e <b>${estado.falhas}</b> falhas (meta: 5 antes de 3).</p>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"furt\">Furtividade</option><option value=\"enga\">Enganação (disfarce)</option>\n\t\t\t\t\t<option value=\"atle\">Atletismo (telhados)</option><option value=\"ades\">Adestramento (cães, CD 20)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Modificador extra</label><input type=\"number\" name=\"mod\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Zerar o progresso antes</label><input type=\"checkbox\" name=\"zerar\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.zerar) { estado.sucessos = 0; estado.falhas = 0; }\n\t\tconst cd = res.pericia === \"ades\" ? 20 : 15 + (atores.length - 1);\n\t\tconst rolls = [];\n\t\tlet html = `<h3>Infiltração em Dornbach</h3><p>CD ${cd}</p><ul>`;\n\t\tfor (const a of atores) {\n\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ok = r.total >= cd;\n\t\t\tif (ok) estado.sucessos++; else estado.falhas++;\n\t\t\tconst queda = res.pericia === \"atle\" && r.total <= cd - 5;\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${ok ? \"✔️\" : \"❌\"}${queda ? \" · cai do telhado (1d6 de impacto)\" : \"\"}</li>`;\n\t\t}\n\t\thtml += `</ul><p>Progresso: <b>${estado.sucessos}/5</b> sucessos, <b>${estado.falhas}/3</b> falhas.</p>`;\n\t\tif (estado.sucessos >= 5) html += \"<p><b>Sucesso!</b> Vocês veem e ouvem os primeiros acontecimentos da linha de tempo e sentem que algo estranho acontece no subsolo do salão.</p>\";\n\t\telse if (estado.falhas >= 3) html += \"<p><b>Descobertos!</b> Humanos são \\\"acolhidos\\\" com chifre de bode cozido em lama e escoltados para fora; não humanos são levados ao salão (armadilha de alçapão).</p>\";\n\t\tif (estado.sucessos >= 5 || estado.falhas >= 3) await game.user.unsetFlag(\"world\", CHAVE);\n\t\telse await game.user.setFlag(\"world\", CHAVE, estado);\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "06tBBAcOrA8o4NBz",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!06tBBAcOrA8o4NBz"
+}

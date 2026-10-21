@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Ritual de Purificação",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/orbe-cristalina.webp",
+  "folder": "QMRoU9eSpVXibz3Y",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n(async function macroRitual() {\n\t\tconst maquina = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"maquina\");\n\t\tif (!maquina) return ui.notifications.error(\"Ator da Máquina de Purificação não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst atual = maquina.system.resources.primary.value;\n\t\tconst FASES = [\n\t\t\t\"<b>Rodada 1.</b> Lorelei ergue os braços e entoa a oração: <i>\\\"Valkaria, remova a sujeira deste amaldiçoado! Um de seus filhos se oferece como ícone de sua perfeição! Que sua pele esconda a feiura, que seus ossos moldem a carne deformada, que sua mente elimine a depravação! Torne-o perfeito, minha mãe! Torne-o humano!\\\"</i>\",\n\t\t\t\"<b>Rodada 2.</b> Um relâmpago atinge o para-raios e líquido rubro verte da terra, sobe pelas lanças e cobre a gaiola. O <b>humano voluntário morre</b>, destroçado. A partir de agora, nem a morte de Lorelei para o ritual: destruam a máquina ou tirem a vítima.\",\n\t\t\t\"<b>Rodada 3.</b> A vítima começa a ser coberta de matéria sanguinolenta e <b>perde a primeira característica de raça</b> (na ordem do livro).\",\n\t\t\t\"<b>Rodada 4.</b> A vítima está toda coberta e <b>perde a segunda característica de raça</b>.\",\n\t\t\t\"<b>Rodada 5.</b> A vítima perde <b>todas as características de raça restantes</b> e cai desacordada com 0 PV, estabilizada. Agora é lefou (todos acham que é humana). Só um <i>Desejo</i> reverte.\"\n\t\t];\n\t\tif (atual >= 5) {\n\t\t\tconst ok = await foundry.applications.api.DialogV2.confirm({ window: { title: \"Ritual de Purificação\" }, content: \"<p>O ritual já terminou. Zerar o contador para um novo ritual?</p>\" });\n\t\t\tif (ok) await maquina.update({ \"system.resources.primary.value\": 0 });\n\t\t\treturn;\n\t\t}\n\t\tconst escolha = await foundry.applications.api.DialogV2.wait({\n\t\t\twindow: { title: `Ritual de Purificação · rodada ${atual} de 5` },\n\t\t\tcontent: \"<p>Avançar o ritual uma rodada, ou interromper (máquina destruída ou vítima retirada)?</p>\",\n\t\t\tbuttons: [\n\t\t\t\t{ action: \"avancar\", label: \"Avançar\", default: true },\n\t\t\t\t{ action: \"parar\", label: \"Interromper\" }\n\t\t\t]\n\t\t});\n\t\tif (escolha === \"parar\") {\n\t\t\tawait maquina.update({ \"system.resources.primary.value\": 0 });\n\t\t\treturn ChatMessage.create({ content: \"<h3>Ritual interrompido!</h3><p>A gaiola para de pulsar. O que a vítima já perdeu nas rodadas anteriores continua perdido.</p>\" });\n\t\t}\n\t\tif (escolha !== \"avancar\") return;\n\t\tconst nova = atual + 1;\n\t\tawait maquina.update({ \"system.resources.primary.value\": nova });\n\t\tChatMessage.create({ content: `<h3>Ritual de Purificação</h3><p>${FASES[nova - 1]}</p>` });\n\t})();",
+  "_id": "5SXzqmsEaIQ9Fh4E",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!5SXzqmsEaIQ9Fh4E"
+}

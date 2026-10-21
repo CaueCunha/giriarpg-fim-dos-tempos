@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Cirurgia do Implante",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/po-de-cristal.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroCirurgia() {\n\t\tconst medico = canvas.tokens.controlled[0]?.actor;\n\t\tif (!medico) return ui.notifications.warn(\"Selecione o token de quem faz a cirurgia.\");\n\t\tconst CHAVE = \"fdtCirurgia\";\n\t\tconst estado = game.user.getFlag(\"world\", CHAVE) ?? { sucessos: 0, falhas: 0 };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Cirurgia do Implante de Vadrinne\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Cura CD 25, teste estendido: <b>3 sucessos antes de 3 falhas</b>. Progresso: ${estado.sucessos} sucessos, ${estado.falhas} falhas.</p>\n\t\t\t\t<div class=\"form-group\"><label>Modificador extra</label><input type=\"number\" name=\"mod\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Zerar o progresso antes</label><input type=\"checkbox\" name=\"zerar\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.zerar) { estado.sucessos = 0; estado.falhas = 0; }\n\t\tconst r = await new Roll(`1d20 + ${medico.system.pericias?.cura?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();\n\t\tconst rolls = [r];\n\t\tif (r.total >= 25) estado.sucessos++; else estado.falhas++;\n\t\tlet html = `<h3>Cirurgia do Implante</h3><p>${medico.name}: Cura <b>${r.total}</b> (CD 25) ${r.total >= 25 ? \"✔️\" : \"❌\"}</p><p>Progresso: <b>${estado.sucessos}/3</b> sucessos, <b>${estado.falhas}/3</b> falhas.</p>`;\n\t\tif (estado.sucessos >= 3) html += \"<p><b>O cristal sai!</b> Examiná-lo: Ofício (engenhoqueiro) ou Misticismo CD 30, com +5 agora que foi removido.</p>\";\n\t\telse if (estado.falhas >= 3) {\n\t\t\tconst d = await new Roll(\"1d4+1\").evaluate();\n\t\t\trolls.push(d);\n\t\t\thtml += `<p><b>Complicações!</b> A vida de Vadrinne corre risco e a cirurgia é interrompida. Só pode ser retomada em <b>${d.total} dias</b>.</p>`;\n\t\t}\n\t\tif (estado.sucessos >= 3 || estado.falhas >= 3) await game.user.unsetFlag(\"world\", CHAVE);\n\t\telse await game.user.setFlag(\"world\", CHAVE, estado);\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "Ff4HBtGo0iLFXoo7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Ff4HBtGo0iLFXoo7"
+}

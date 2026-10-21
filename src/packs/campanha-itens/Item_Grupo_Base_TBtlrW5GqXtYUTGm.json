@@ -1,0 +1,71 @@
+{
+  "name": "Grupo · Base",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtBeneficio": "base"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Todos chamam a base de lar e se encontram nela quase todos os dias.</p><p><b>Benefício:</b> além dos próprios PM, quando estão <b>fisicamente na base</b>, os personagens dispõem dos <b>PM da base</b>: a soma dos PM de todos dividida pelo número de personagens (a média). Qualquer um pode gastar desses PM, mas só enquanto estiver na base. Os PM da base se recuperam à taxa de <b>1 por dia</b>.</p><p><b>Automação:</b> a macro <b>Grupo · PM da Base</b> guarda o total, recalcula o máximo, entrega PM ao personagem (como PM temporários, gastos primeiro pelo sistema) e recupera 1 por dia.</p>",
+      "unidentified": ""
+    },
+    "source": "Fim dos Tempos, Arco 1, Introdução, Regras para Grupos (p. 60)",
+    "tipo": "geral",
+    "subtipo": "Grupo · Fim dos Tempos",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "TBtlrW5GqXtYUTGm",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!TBtlrW5GqXtYUTGm"
+}

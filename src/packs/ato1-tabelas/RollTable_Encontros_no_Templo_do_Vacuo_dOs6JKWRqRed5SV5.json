@@ -1,0 +1,385 @@
+{
+  "name": "Encontros no Templo do Vácuo",
+  "img": "icons/svg/ruins.svg",
+  "folder": "EtaT6hlKdhf4HEM6",
+  "flags": {
+    "world": {
+      "fdt": "a1templo",
+      "fdtRole": "encontrosTemplo"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role ao entrar numa sala sem criaturas definidas, somando o nível de ruído do grupo (a macro Templo · Exploração faz isso e rola a reação).",
+  "_id": "dOs6JKWRqRed5SV5",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        5
+      ],
+      "weight": 1,
+      "name": "Nada",
+      "description": "",
+      "_id": "IiZgseUKByGmYT4z",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.IiZgseUKByGmYT4z"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        8
+      ],
+      "weight": 1,
+      "name": "1d6 tiranos das águas",
+      "description": "",
+      "_id": "O8g2aZKwMwtwJEOZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.O8g2aZKwMwtwJEOZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 1,
+      "name": "Monstro da ferrugem",
+      "description": "",
+      "_id": "6sQyfE0t8cta8DkE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.6sQyfE0t8cta8DkE"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        12
+      ],
+      "weight": 1,
+      "name": "1d6 mecanículos",
+      "description": "",
+      "_id": "E7jBLukHQ3J4vcz3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.E7jBLukHQ3J4vcz3"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        15
+      ],
+      "weight": 1,
+      "name": "1d6 tiranos das águas e 1 tirano das águas barão",
+      "description": "",
+      "_id": "VRizjVEv1D4h7kpc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.VRizjVEv1D4h7kpc"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        17
+      ],
+      "weight": 1,
+      "name": "1d2 estátuas animadas",
+      "description": "",
+      "_id": "JaIX9hSNBNb4WwBF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.JaIX9hSNBNb4WwBF"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        19
+      ],
+      "weight": 1,
+      "name": "Ameba gigante",
+      "description": "",
+      "_id": "dRbbsMY0UEqPtE3W",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.dRbbsMY0UEqPtE3W"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Ameba gigante e monstro da ferrugem",
+      "description": "",
+      "_id": "8koXre0CTeC0ZtWS",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.8koXre0CTeC0ZtWS"
+    },
+    {
+      "type": "text",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "name": "Ganchador",
+      "description": "",
+      "_id": "RECzstVL88TQNH4z",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.RECzstVL88TQNH4z"
+    },
+    {
+      "type": "text",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "name": "Ameba gigante, monstro da ferrugem e ganchador",
+      "description": "",
+      "_id": "MHpLDuW86Xau3ZoC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.MHpLDuW86Xau3ZoC"
+    },
+    {
+      "type": "text",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "name": "1d6 tiranos das águas e ameba gigante",
+      "description": "",
+      "_id": "SFDBsQ0AlSVv2vJm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.SFDBsQ0AlSVv2vJm"
+    },
+    {
+      "type": "text",
+      "range": [
+        24,
+        24
+      ],
+      "weight": 1,
+      "name": "1d6 tiranos das águas, 2 tiranos das águas barões e ameba gigante",
+      "description": "",
+      "_id": "XkyNI4PEsDfN8MDl",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.XkyNI4PEsDfN8MDl"
+    },
+    {
+      "type": "text",
+      "range": [
+        25,
+        99
+      ],
+      "weight": 1,
+      "name": "2 estátuas animadas e ganchador",
+      "description": "",
+      "_id": "GRMIbfkMUq7zOGHF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!dOs6JKWRqRed5SV5.GRMIbfkMUq7zOGHF"
+    }
+  ],
+  "_key": "!tables!dOs6JKWRqRed5SV5"
+}

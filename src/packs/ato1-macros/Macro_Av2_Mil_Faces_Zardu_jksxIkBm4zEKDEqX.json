@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Mil Faces (Zardu)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/duplicata-ilusoria.webp",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroMilFaces() {\n\t\tconst papel = (t) => t.actor?.getFlag(\"world\", \"fdtRole\");\n\t\tconst zarduTok = canvas.tokens.placeables.find((t) => papel(t) === \"zardu\");\n\t\tconst copias = canvas.tokens.placeables.filter((t) => papel(t) === \"zardu-copia\");\n\t\tconst modelo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"zardu-copia\");\n\t\tif (!zarduTok || !modelo) return ui.notifications.error(\"Coloque o token de Zardu na cena (e importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst gs = canvas.grid.size;\n\n\t\tif (!copias.length) {\n\t\t\t// Zardu some, surgem quatro cópias espalhadas.\n\t\t\tconst docs = [];\n\t\t\tfor (let i = 0; i < 4; i++) {\n\t\t\t\tconst dx = Math.floor(Math.random() * 11) - 5;\n\t\t\t\tconst dy = Math.floor(Math.random() * 11) - 5;\n\t\t\t\tconst td = await modelo.getTokenDocument({ x: zarduTok.document.x + dx * gs, y: zarduTok.document.y + dy * gs, name: \"Zardu\" });\n\t\t\t\tdocs.push(td.toObject());\n\t\t\t}\n\t\t\tawait canvas.scene.createEmbeddedDocuments(\"Token\", docs);\n\t\t\tawait zarduTok.document.update({ hidden: true });\n\t\t\treturn ChatMessage.create({ content: \"<h3>Mil Faces!</h3><p>Zardu desaparece e quatro Zardus surgem pelo palco. Quem sofrer dano some.</p><p><i>Mestre: selecione uma cópia atingida e rode a macro de novo para removê-la.</i></p>\" });\n\t\t}\n\n\t\tconst alvo = canvas.tokens.controlled.find((t) => papel(t) === \"zardu-copia\");\n\t\tif (alvo) await alvo.document.delete();\n\t\tconst restantes = canvas.tokens.placeables.filter((t) => papel(t) === \"zardu-copia\" && t.id !== alvo?.id);\n\t\tif (restantes.length === 1) {\n\t\t\tconst ultima = restantes[0];\n\t\t\tawait zarduTok.document.update({ x: ultima.document.x, y: ultima.document.y, hidden: false });\n\t\t\tawait ultima.document.delete();\n\t\t\tChatMessage.create({ content: \"<p>Só resta uma cópia... e ela é o <b>Zardu verdadeiro</b>!</p>\" });\n\t\t} else if (alvo) {\n\t\t\tChatMessage.create({ content: `<p>Um Zardu se desfaz em fumaça colorida. Restam <b>${restantes.length}</b>.</p>` });\n\t\t} else {\n\t\t\tui.notifications.info(`Restam ${restantes.length} cópias. Selecione a que sofreu dano e rode a macro.`);\n\t\t}\n\t})();",
+  "_id": "jksxIkBm4zEKDEqX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!jksxIkBm4zEKDEqX"
+}

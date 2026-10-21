@@ -1,0 +1,70 @@
+{
+  "name": "Parceiros que não ajudam",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/parceiros.webp",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Estes NPCs podem ir ao Forte, mas não viram parceiros:</p><p><ul><li>Andrisse</li><li>Blanche, Bastien, Clothilde e Pascal LeBlanc</li><li>Mungo Joe (fornece bebida à vontade)</li></ul></p><p><b>Parceiro íntimo:</b> um por herói. Pode dar o mesmo tipo de bônus que outro parceiro já está dando.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "Parceiros",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "neYb7CGJSGzXFUI0",
+  "_id": "e5nhIbRQCHZyNqdN",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!e5nhIbRQCHZyNqdN"
+}

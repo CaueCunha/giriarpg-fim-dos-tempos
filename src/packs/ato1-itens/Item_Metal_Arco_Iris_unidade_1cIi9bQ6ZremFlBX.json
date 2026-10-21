@@ -1,0 +1,87 @@
+{
+  "name": "Metal Arco-Íris (unidade)",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/metal-arco-iris.webp",
+  "folder": "h2HRLdKudw2invot",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "metal"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Minério nascido da essência de Tilliann, só encontrado nas Colinas Centrais. 1 unidade = arma leve; 2 = arma de uma mão; 4 = arma de duas mãos ou armadura leve; 8 = armadura pesada.</p><p>Armas de metal arco-íris causam +1 de dano do elemento a que o alvo é vulnerável (ou um sorteado com 1d6), ignorando resistências, ferem lefeu e somam +1 por elemento contra habitantes corrompidos das Centrais.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 1,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "_id": "1cIi9bQ6ZremFlBX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!1cIi9bQ6ZremFlBX"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Av1 · Os Aventureiros de Stremtol",
+  "type": "RollTable",
+  "color": "#5a4a6b",
+  "flags": {
+    "world": {
+      "fdt": "a2av1"
+    }
+  },
+  "_id": "AkqdsBflb1m2xajU",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!AkqdsBflb1m2xajU"
+}
