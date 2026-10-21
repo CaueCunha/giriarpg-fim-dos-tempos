@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Demais Habitantes",
+  "type": "script",
+  "img": "icons/svg/village.svg",
+  "folder": "QMRoU9eSpVXibz3Y",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n(async function macroHabitantes() {\n\t\tconst combat = game.combat;\n\t\tif (!combat) return ui.notifications.warn(\"Comece o combate antes.\");\n\t\t// Personagens jogadores em ordem de iniciativa (maior primeiro).\n\t\tconst pjs = combat.turns.filter((c) => c.actor?.type === \"character\");\n\t\tif (!pjs.length) return ui.notifications.warn(\"Nenhum personagem jogador no combate.\");\n\t\tconst estado = combat.getFlag(\"world\", \"fdtHabitantes\") ?? { proximo: pjs.length - 1, filhoUsado: false };\n\t\tconst alvoC = pjs[((estado.proximo % pjs.length) + pjs.length) % pjs.length];\n\t\tconst alvo = alvoC.actor;\n\n\t\tlet r = await new Roll(\"1d8\").evaluate();\n\t\tlet n = r.total;\n\t\tif (n === 4 && estado.filhoUsado) n = 5;\n\t\tif (n === 4) estado.filhoUsado = true;\n\t\tconst rolls = [r];\n\t\tconst teste = async (pericia, cd) => {\n\t\t\tconst t = await new Roll(`1d20 + ${alvo.system.pericias?.[pericia]?.value ?? 0}`).evaluate();\n\t\t\trolls.push(t);\n\t\t\treturn { ok: t.total >= cd, total: t.total };\n\t\t};\n\t\tconst dano = async (formula, mult) => {\n\t\t\tconst d = await new Roll(formula).evaluate();\n\t\t\trolls.push(d);\n\t\t\tif (mult > 0) await alvo.applyDamageV2(d, mult);\n\t\t\treturn d.total;\n\t\t};\n\t\tconst status = (id, ativo = true) => alvo.toggleStatusEffect?.(id, { active: ativo });\n\n\t\tlet txt = \"\";\n\t\tswitch (n) {\n\t\t\tcase 1: txt = \"<b>Intervenção de Orlo!</b> O NPC mais próximo pode se mover e atacar como reação.\"; break;\n\t\t\tcase 2: {\n\t\t\t\tconst s = await teste(\"refl\", 18);\n\t\t\t\tconst v = await dano(\"2d8[impacto]\", s.ok ? 0.5 : 1);\n\t\t\t\tif (!s.ok) await status(\"caido\");\n\t\t\t\ttxt = `<b>Coice!</b> Reflexos ${s.total} (CD 18) ${s.ok ? \"✔️ metade do dano\" : \"❌ dano total e caído\"}. Dano rolado: ${v}.`;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tcase 3: {\n\t\t\t\tconst s = await teste(\"fort\", 15);\n\t\t\t\tawait status(\"enjoado\");\n\t\t\t\ttxt = `<b>Dejetos!</b> Fortitude ${s.total} (CD 15): enjoado ${s.ok ? \"por 1 rodada\" : \"até o fim da cena\"}.`;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tcase 4: txt = \"<b>Filho corajoso!</b> Uma criança se lança contra o personagem. Ação padrão para afastá-la, ou 50% dos ataques acertam a criança (1 PV) até o fim da cena.\"; break;\n\t\t\tcase 5: {\n\t\t\t\tconst s = await teste(\"vont\", 15);\n\t\t\t\tif (!s.ok) await status(\"desprevenido\");\n\t\t\t\ttxt = `<b>Impropérios!</b> Vontade ${s.total} (CD 15) ${s.ok ? \"✔️ ignora\" : \"❌ desprevenido por 1 rodada\"}.`;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tcase 6: {\n\t\t\t\tconst s = await teste(\"refl\", 15);\n\t\t\t\tconst v = await dano(\"2d4[impacto]\", s.ok ? 0.5 : 1);\n\t\t\t\ttxt = `<b>Apedrejamento!</b> Reflexos ${s.total} (CD 15) ${s.ok ? \"✔️ metade\" : \"❌ dano total\"}. Dano rolado: ${v}.`;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tcase 7: {\n\t\t\t\tconst s = await teste(\"refl\", 15);\n\t\t\t\tif (!s.ok) {\n\t\t\t\t\tawait dano(\"1d6[corte]\", 1);\n\t\t\t\t\tawait status(\"caido\");\n\t\t\t\t}\n\t\t\t\ttxt = `<b>Vira-latas!</b> Reflexos ${s.total} (CD 15) ${s.ok ? \"✔️ escapa\" : \"❌ 1d6 de corte e caído\"}.`;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tdefault: txt = \"Nada acontece; os aldeões só observam.\";\n\t\t}\n\t\testado.proximo = (pjs.indexOf(alvoC) - 1 + pjs.length) % pjs.length;\n\t\tawait combat.setFlag(\"world\", \"fdtHabitantes\", estado);\n\t\tChatMessage.create({ content: `<h3>Demais Habitantes · ${alvo.name}</h3><p>${txt}</p><p style=\"font-size:0.85em\">Dano já aplicado com RD; condições marcadas no token.</p>`, rolls });\n\t})();",
+  "_id": "7ONPyDWWRXborIEN",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!7ONPyDWWRXborIEN"
+}

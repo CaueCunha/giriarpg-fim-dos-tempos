@@ -1,0 +1,72 @@
+{
+  "name": "Magia Comunitária",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "magia-comunitaria",
+      "fdtPre": ""
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma vez por rodada, quando você lança uma magia com alvo você ou 1 criatura, para cada aliado em alcance curto com este poder você pode pagar o custo da magia novamente para que ele também se beneficie do efeito. Se o efeito tiver duração sustentada, cada personagem afetado precisa pagar seu custo individualmente.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> nenhuma: mire (T) os aliados extras ao aplicar o efeito do card e gaste o custo de novo para cada um.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "hBpRaWITwqygPXX9",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!hBpRaWITwqygPXX9"
+}

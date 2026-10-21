@@ -1,0 +1,72 @@
+{
+  "name": "Corrente de Corpos",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "corrente-corpos",
+      "fdtPre": ""
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma vez por rodada, você pode entregar um item que esteja empunhando a qualquer aliado com este poder como uma ação livre. Para isso, vocês devem estar em alcance curto um do outro ou deve haver outros aliados com este poder entre os dois.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> nenhuma (arraste o item de uma ficha para a outra).</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "xIoIYFl4Pbu8fWdq",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!xIoIYFl4Pbu8fWdq"
+}

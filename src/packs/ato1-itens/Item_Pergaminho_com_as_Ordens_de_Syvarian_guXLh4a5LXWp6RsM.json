@@ -1,0 +1,86 @@
+{
+  "name": "Pergaminho com as Ordens de Syvarian",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/pergaminho.webp",
+  "system": {
+    "description": {
+      "value": "<p><i>\"Todas as tropas estão convocadas. Passaremos por cada aldeia, cada casebre, cada buraco onde o povo destas Colinas se esconde e vamos matar todos. Convergimos ao alvo principal em duas semanas. Todos juntos, para que não reste ninguém vivo lá dentro. O Forte Cabeça-de-Martelo vai cair. Syvarian\"</i></p><p>Pode aparecer em qualquer lugar: com Zardu (numa versão que o recrimina), deixado na cabine da Harpia por Torgo, ou nas instruções de Lorelei. <b>Dias até o ataque: 14 – 2d4</b> (12 a 6), e os heróis só sabem o prazo interrogando um inimigo.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "neYb7CGJSGzXFUI0",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "_id": "guXLh4a5LXWp6RsM",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!guXLh4a5LXWp6RsM"
+}

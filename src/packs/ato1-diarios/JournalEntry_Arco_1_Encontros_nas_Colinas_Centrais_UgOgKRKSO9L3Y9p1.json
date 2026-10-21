@@ -1,0 +1,1208 @@
+{
+  "name": "Arco 1 · Encontros nas Colinas Centrais",
+  "folder": "xsN9Oyp0iG9Zd19y",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "diarioColinas"
+    }
+  },
+  "_id": "UgOgKRKSO9L3Y9p1",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>A tabela de encontros</h2>\n\t\t\t<p>Sempre que os aventureiros deixarem o Forte Cabeça-de-Martelo, role 1d20 em @UUID[RollTable.UvZlts5xpABzEC6Y]{Encontros nas Colinas Centrais (detalhada)}: o grupo encontra um lugar ou habitante das Colinas. Em vez de uma rolagem por saída, pode ser uma por dia de viagem (um hexágono do mapa), ou outro padrão. Na mesa original, nem sempre houve rolagem, para não quebrar a narrativa.</p>\n\t\t\t<ul>\n\t\t\t\t<li><b>Personagens</b> viajam pelas Centrais e podem ser encontrados mais de uma vez.</li>\n\t\t\t\t<li><b>Locais</b> são fixos: achados, ficam \"descobertos\" (cole os adesivos e monte seu mapa). Exceções: Elmer e as sereias ficam parados; o Cemitério Errante surge em qualquer lugar.</li>\n\t\t\t\t<li><b>Aceite as rolagens.</b> Interferir na aleatoriedade tira a graça: as Centrais são imprevisíveis até para o Mestre.</li>\n\t\t\t\t<li>NPCs e lugares são vagos de propósito. Caracterize como quiser.</li>\n\t\t\t\t<li><b>Resultado inviável</b> (repetir um local ou NPC fixo): role em @UUID[RollTable.EAWjwrKQBewOH5T9]{Encontros Especiais (Cães das Colinas)} (os PJs da mesa original como NPCs, que não se conhecem).</li>\n\t\t\t\t<li><b>O Diabo das Colinas</b>, depois de avistado, reaparece em todo resultado par, além do resultado normal.</li>\n\t\t\t</ul>\n\t\t\t<h2>Macros</h2>\n\t\t\t<ul>\n\t\t\t\t<li>@UUID[Macro.8U2sY850QJRgEjZM]{Colinas · Encontro do Dia}: rola (ou usa um resultado escolhido), conta os dias, lembra o que já foi visto e descoberto, troca o inviável pelos Cães das Colinas, acrescenta o Diabo nos pares, obedece ao segredo de Fortunata e põe os tokens ocultos na cena. É a mesma que a <i>Busca pelo Templo</i> do Templo do Vácuo chama a cada dia.</li>\n\t\t\t\t<li>@UUID[Macro.QBwm8pMBAr7amF0K]{Colinas · Testes dos Encontros}: duelo de Tolbert, tiro de Arlo, doses de Mungo Joe, canto e furto das sereias, rabo do Ladrão, apostas de Fortunata, Nada Mais que a Verdade, cabana e ofensas de Cletus, sonho de Elmer e a traição de Chèvre e Timm.</li>\n\t\t\t\t<li>@UUID[Macro.dD6zkPCdw2WYPoZD]{Colinas · Bênçãos e Maldições}: Bênção e Perdição de Abner, maldição e ensopado de Raguria, cura do Homem-Bode, noites no Cemitério, a Moeda-Alma enterrada e as apostas de Ebenezer.</li>\n\t\t\t\t<li>@UUID[Macro.1H57reyNGb2G3v7g]{Colinas · Perseguição ao Diabo}: a perseguição com as regras do livro básico e os eventos das Centrais.</li>\n\t\t\t\t<li>@UUID[Macro.nU38Nn9ww57qN15Y]{Colinas · Alquimia do Quimby}: o 1d6 de cada produto fajuto.</li>\n\t\t\t</ul>\n\t\t\t<h2>Tabelas</h2>\n\t\t\t<p>@UUID[RollTable.UvZlts5xpABzEC6Y]{Encontros nas Colinas Centrais (detalhada)} · @UUID[RollTable.EAWjwrKQBewOH5T9]{Encontros Especiais (Cães das Colinas)} · @UUID[RollTable.0YT8QquJPwmkfpxN]{Perseguições nas Centrais} · @UUID[RollTable.Jdk9hy8YxFB4kgrI]{Histórias do Herói Louco} · @UUID[RollTable.fsVmJEMrcEGkHUoa]{Coisas que Ofendem Cletus Rigby}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Yxm3xPfOba953YUP",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.Yxm3xPfOba953YUP"
+    },
+    {
+      "name": "Tolbert",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p><b>1 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Bardo de duas moedas sobre os olhos (por baixo, só buracos vazios). Cada moeda é uma alma, e ele tem várias outras numa bolsa. Desafia os personagens para um <b>duelo musical</b>: aposta uma alma, o personagem aposta a própria.</p>\n\t\t<h3>Mecânica</h3><p>Três testes de Atuação opostos contra Tolbert (+15). Quem perde a alma a entrega como moeda: não pode ser ressuscitado e não vai a nenhum Reino dos Deuses. Quem ganha tem uma \"alma extra\" (pode vender a alma sem consequências). Enterrar a moeda ganha no Cemitério Errante dá +1 num atributo, como uma noite lá (acumula, mas não no mesmo atributo).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.kRMxvImZB3HwnAc3]{Tolbert, o Bardo das Almas}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Duelo musical.</p><p>@UUID[Item.IfiaPYPZc7ThR8ae]{Moeda-Alma de Tolbert}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "W9vmmnX5QZnG8oSa",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.W9vmmnX5QZnG8oSa"
+    },
+    {
+      "name": "Abner",
+      "type": "text",
+      "sort": 210,
+      "text": {
+        "content": "<p><b>2 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Adolescente qareen, pastor de Khalmyr totalmente fanático: quase tudo é \"uma bênção de Khalmyr\". Perturbado, mas inofensivo. Quer batizar os personagens sob Khalmyr.</p>\n\t\t<h3>Mecânica</h3><p>Abençoa quem é gentil ou concorda com ele; amaldiçoa e ameaça os hostis. Efeito básico de <b>Bênção</b> (+1 em ataque e dano) ou <b>Perdição</b> (–1), até o fim da próxima cena.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.ThkZfepnfDRpWywk]{Abner, Pastor de Khalmyr}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Bênçãos e Maldições → Abner.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "y6iL5OYiy1dpkjEi",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.y6iL5OYiy1dpkjEi"
+    },
+    {
+      "name": "Quimby Ulysses Arronax",
+      "type": "text",
+      "sort": 220,
+      "text": {
+        "content": "<p><b>3 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Anão vendedor de alquimia fajuta, numa carroça puxada por um gorloggh. Devoto de Hyninn: não engana além disso, mas solta \"nunca ouvi falar\" na conversa para achar outros devotos do Deus dos Ladrões.</p>\n\t\t<h3>Mecânica</h3><p>Todo item alquímico custa <b>metade do preço</b>. Ao usar, 1d6: par funciona; ímpar funciona ao contrário (ácido, fogo e granada atingem o usuário, bálsamo causa dano, essência drena PM). Para um devoto de Hyninn revelado, ele avisa dos itens e indica um depósito a algumas horas com dois bálsamos e duas essências de verdade (pede que reponha).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.0SNdTUS2lfoz6I6U]{Quimby Ulysses Arronax}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Itens do Quimby + macro Alquimia do Quimby.</p><h3>Produtos</h3><ul><li>@UUID[Item.9pUN7k6rGFir6vHC]{Água Feroz Limpa-Calhas do Quimby Limpinho! (ácido)}</li><li>@UUID[Item.uoXdhMwBcWsLIXKE]{Emplastro Milagroso Cura-Tudo do Dr. Quimby! (bálsamo restaurador)}</li><li>@UUID[Item.KuTrnuxiHhhciHfY]{Tônico Revigorante do Espírito e da Mente do Feiticeiro Quimby! (essência de mana)}</li><li>@UUID[Item.aWiPGxVoeg93jHrd]{Óleo Fulgurante Aquecedor de Fogueira do Professor Quimby! (fogo alquímico)}</li><li>@UUID[Item.0A0xX1Wl3NMoC1LM]{Estalinho Bangue-Bangue do Tio Quimby! (bomba)}</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "UT8905W8I5TrWUTh",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.UT8905W8I5TrWUTh"
+    },
+    {
+      "name": "Gormaggor",
+      "type": "text",
+      "sort": 230,
+      "text": {
+        "content": "<p><b>4 na tabela.</b> Fica sempre no mesmo lugar: depois de achado, marque no mapa.</p>\n\t\t<p>Gigante que parece uma colina. A criatura mais antiga e poderosa das Centrais (a única maravilha original), velho demais e cansado: dorme quase sempre, já se fundiu às colinas e tem um braço preso. Deixou cair o cachimbo (feito de dois carvalhos) e não tem energia para pegá-lo.</p>\n\t\t<h3>Mecânica</h3><p>Pôr o cachimbo na mão livre, enchê-lo (ele fuma quase qualquer planta) e acendê-lo conquista a amizade dele e uma fonte quase infinita (e tediosa) de informação: histórias do Herói Louco, o Diabo, o Cemitério. Lembra que \"há algum tempo\" o Herói Louco e o Rei Juiz passaram por ali. Com perspicácia: acordou quando a Tormenta começou a afetar as Colinas, e sente algo \"fazendo cócegas na terra\".</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.c6KpLK4Y0J5J3wOX]{Gormaggor, o Gigante-Colina}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Tabela Histórias do Herói Louco.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "hxP01BFrcQAS4DVg",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.hxP01BFrcQAS4DVg"
+    },
+    {
+      "name": "Raguria",
+      "type": "text",
+      "sort": 240,
+      "text": {
+        "content": "<p><b>5 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Bruxa caipira numa cabana afastada. Age como a \"bruxa má\" dos contos, mas não quer o mal dos personagens. Maligna, mas não perigosa se não for provocada. Conhece Cletus (não retribui a afeição dele) e sabe que \"algo ruim está se alastrando pelas Colinas\".</p>\n\t\t<h3>Mecânica</h3><p>Gentileza: um prato especial do livro básico (uma porção para cada) ou o <b>Ensopado de Rabo de Lagarto e Olho de Sapo</b> (+1 na CD de magias arcanas). Rudeza: <b>Rogar Maldição</b> num deles (não pode se comunicar nem lançar magias, –5 em todos os testes, metade do deslocamento, até o dia seguinte ou o fim da próxima cena relevante), e sai levitando e gargalhando.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.KBmL1goA1fDKU2L0]{Raguria, a Bruxa Caipira}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Bênçãos e Maldições → Raguria.</p><p>@UUID[Item.I4gzbvVbIlM8h6lC]{Ensopado de Rabo de Lagarto e Olho de Sapo}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ooW0a4f4pdet5348",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.ooW0a4f4pdet5348"
+    },
+    {
+      "name": "Arlo \"Olho de Leite\"",
+      "type": "text",
+      "sort": 250,
+      "text": {
+        "content": "<p><b>6 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Caolho de olho leitoso, isolado, obcecado com sobrevivência. Acha que o Reinado vem tirar seus direitos e que \"algo sujo\" contamina as Centrais. Usa armas de pólvora. Dá informações do jeito mais paranoico possível e pode ajudar na caça ao Diabo.</p>\n\t\t<h3>Mecânica</h3><p>Concurso de tiro: o personagem e Arlo fazem três testes de Pontaria (CD 15, 20 e 25). Mais sucessos vence (Arlo tem +10). Empate: a CD continua subindo +5.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.Hke1GATS4pHr7J0R]{Arlo \"Olho de Leite\"}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Concurso de tiro.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "D64v1ACkDxTO1e3V",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.D64v1ACkDxTO1e3V"
+    },
+    {
+      "name": "Mungo Joe",
+      "type": "text",
+      "sort": 260,
+      "text": {
+        "content": "<p><b>7 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Alambiqueiro caipira de chapelão, jardineira, sem camisa, descalço, desdentado e alegre. Vende uma dose da bebida fortíssima por T$ 1. Simpatia: a primeira é de graça e ele bebe junto.</p>\n\t\t<h3>Mecânica</h3><p>Cada dose: Fortitude CD 15 (+1 por dose anterior no mesmo dia). Passou: +1 PM temporário. Falhou: enjoado por uma cena; na segunda falha, inconsciente por 1d12 horas.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.3KcTXeTRYdG9brCy]{Mungo Joe, o Alambiqueiro}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Dose do Mungo Joe.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ZXS6IWxZ436QUsP5",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.ZXS6IWxZ436QUsP5"
+    },
+    {
+      "name": "Encontro de Puristas Caipiras",
+      "type": "text",
+      "sort": 270,
+      "text": {
+        "content": "<p><b>8 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Odiadores de não humanos que mal conhecem a ideologia purista, mas abraçaram tudo. Um pastor prega a \"palavra de Valkaria\". Humanos vistos são convidados; não humanos, atacados.</p>\n\t\t<h3>Mecânica</h3><p>Em combate, <b>8 recrutas puristas</b>. Não lutam até a morte: fogem se acharem que correm perigo (os não humanos têm \"vantagens injustas\"). Com eles, o panfleto (handout no diário).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.am2Dr5u76gGdkEKN]{Recruta Purista Caipira}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Encontro do Dia → colocar tokens.</p><p>Handout: <i>Panfleto dos Puristas Caipiras</i>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "X9v5paryHtqbZjCy",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.X9v5paryHtqbZjCy"
+    },
+    {
+      "name": "O Homem-Bode",
+      "type": "text",
+      "sort": 280,
+      "text": {
+        "content": "<p><b>9 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Druida alucinado que vive transformado em bode, com os bodes. Só se distingue de um bode com profundo conhecimento de animais ou flagrando-o ao acordar (volta à forma humana dormindo). Abordado, foge ou luta.</p>\n\t\t<h3>Mecânica</h3><p>Com extrema cautela e boas rolagens, conta que virou bode depois que a família morreu da \"doença misteriosa\" (mutações do Evento e corrupção da Tormenta). Nome: <b>Jonid</b>; família: Elmara, Savik e Diridda. Com sucesso extremo em testes sociais e boa interpretação, lança Curar Ferimentos (2d8+2) ou outra magia divina de 1º círculo.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.hX7Ew88E6Doz13VV]{Jonid, o Homem-Bode}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Bênçãos e Maldições → Curar Ferimentos.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "aOxx1zaI1g7lT9ZI",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.aOxx1zaI1g7lT9ZI"
+    },
+    {
+      "name": "A Cidade Fantasma de Duas Pedras",
+      "type": "text",
+      "sort": 290,
+      "text": {
+        "content": "<p><b>10 na tabela.</b> Local fixo: depois de descoberto, cole o adesivo no mapa.</p>\n\t\t<p>Comunidade mineradora fechada pela Guilda dos Mineradores de Yuvalin há mais de 10 anos (tábuas no portão, placas oficiais). Quinquilharias, esqueletos de quem desafiou a Guilda e uma mina selada só com tiras de madeira. Fantasmas medrosos (Zadok, Draslo, Emeline, Aurinda) tentam afastar visitantes com armas fantasmagóricas; conversando, contam o que houve.</p>\n\t\t<h3>Mecânica</h3><p>Procurando na aldeia: duas rolagens de dinheiro e uma de itens na Tabela 8–1 (sempre ND 1). Na mina, uma <b>aparição</b> e um veio de <b>metal arco-íris</b>. Minerar ali atrai a ira da Guilda (que pode se aliar à Irmandade no fim do arco).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.GnDBsckGOFhLX8b0]{Aparição da Mina de Duas Pedras}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Encontro do Dia → colocar tokens.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "qKhr9UgMPVcGWgwd",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.qKhr9UgMPVcGWgwd"
+    },
+    {
+      "name": "Ebenezer",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p><b>11 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Velho profeta herético de Thyatis. Oferece uma profecia para cada personagem, mas como aposta: se não se cumprir, Ebenezer errou e Thyatis lhe dá uma segunda chance; se se cumprir, o personagem terá de dar uma segunda chance a alguém. Ninguém é obrigado a aceitar.</p>\n\t\t<h3>Mecânica</h3><p>O Mestre decide a profecia, que se resolve dentro da aventura. Não se cumpriu: o personagem ganha <b>+20 para gastar</b> em testes na próxima aventura (+5 num, +2 noutro...). Cumpriu: o Mestre pode <b>rolar de novo cinco testes</b> contra ele até o fim do arco.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.VMzCO438hpB4fqeL]{Ebenezer, Profeta de Thyatis}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Bênçãos e Maldições → Aposta de Ebenezer.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "qzyqpqq7RrZEZ5b0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.qzyqpqq7RrZEZ5b0"
+    },
+    {
+      "name": "O Museu de Coisas Quase Vivas",
+      "type": "text",
+      "sort": 310,
+      "text": {
+        "content": "<p><b>12 na tabela.</b> Local fixo: depois de descoberto, cole o adesivo no mapa.</p>\n\t\t<p>Museu de taxidermia de três andares. Dona Erneshia, acolhedora, cobra T$ 1 (qualquer simpatia vale entrada grátis). Misturas de bichos e criaturas do folclore: o coelho chifrudo, o meia-perna, o Ladrão de Rabos, um \"homem-bode\" recriado... e muitas recriações do Diabo das Colinas, cuja história ela conta com alegria.</p>\n\t\t<h3>Mecânica</h3><p>Na caçada ao Diabo, Erneshia pode ir junto como <b>parceira ajudante mestre</b> (+4 em Atletismo, Percepção e Sobrevivência).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.FAjCeZ1oDrJSFDXn]{Dona Erneshia, Taxidermista}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Perseguição ao Diabo → com Erneshia.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Ay03mEGRktYzahLS",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.Ay03mEGRktYzahLS"
+    },
+    {
+      "name": "O Diabo das Colinas",
+      "type": "text",
+      "sort": 320,
+      "text": {
+        "content": "<p><b>13 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Mito verdadeiro: criatura do tamanho de um anão, cabeça desproporcional, bocarra de dentes afiados, sempre sorrindo. O sétimo filho amaldiçoado ainda no ventre de um minerador avarento: nasceu não humano, matou a família e fugiu com o ouro. Aparece para viajantes e os convida a persegui-lo.</p>\n\t\t<h3>Mecânica</h3><p>Quem o avista é perseguido para sempre: ele reaparece em todo <b>resultado par</b> desta tabela, além do resultado normal. Perseguição: o Diabo começa com 20 quadrados de vantagem e tem +17 em tudo; se abrir 50, some. Capturado, revela a riqueza e passa a ficar perto do covil com o pote de ouro (Tabela 8–1, dinheiro ND 7, ignorando 1 a 10).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.HMQOchQK6Ujzb7WB]{O Diabo das Colinas}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Perseguição ao Diabo.</p><p>Veja @UUID[RollTable.0YT8QquJPwmkfpxN]{Perseguições nas Centrais} e a macro @UUID[Macro.1H57reyNGb2G3v7g]{Colinas · Perseguição ao Diabo}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "bdk1S4uvw1sXia3C",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.bdk1S4uvw1sXia3C"
+    },
+    {
+      "name": "Shanamarie, Shaylyne e Shadolenn",
+      "type": "text",
+      "sort": 330,
+      "text": {
+        "content": "<p><b>14 na tabela.</b> Fica sempre no mesmo lugar: depois de achado, marque no mapa.</p>\n\t\t<p>Sereias do rio. Cantam para atrair aventureiros; quem se aproxima é roubado e, se resistir, afogado. Depois fogem nadando.</p>\n\t\t<h3>Mecânica</h3><p>Quem vê ou ouve: Vontade oposta à Atuação delas (+10). Falha não é magia: o personagem fica inclinado a se aproximar e acha que são amigáveis (Intuição também é oposta pela Atuação). Na aproximação, uma distrai (Atuação), outra lança Hipnotismo ou Sono (CD 14) e a terceira rouba (Furtividade e Ladinagem +10). Então nadam para longe (natação 12m).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.gIZ2gjbpKj4LSwpA]{Shanamarie, Sereia do Rio}, @UUID[Actor.bskZu7CfFdKtBEXI]{Shaylyne, Sereia do Rio}, @UUID[Actor.KPAd7OYZkLAXAOC0]{Shadolenn, Sereia do Rio}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Canto e furto das sereias.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "0H1BRX02xIPHZs6R",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.0H1BRX02xIPHZs6R"
+    },
+    {
+      "name": "Cletus Rigby",
+      "type": "text",
+      "sort": 340,
+      "text": {
+        "content": "<p><b>15 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Anão mago caipira, numa torre periclitante de cabanas sobre cabanas, entulhada como a casa de um acumulador. Odeia pessoas e é ranzinza; só conversa depois de ganhar confiança aos poucos. Quando o grupo chega, está transformado num <b>gato</b>: se ninguém mexer em nada, deixa-os em paz; se mexerem, vira anão e xinga (em casos extremos, ataca, e o grupo dificilmente vence). A casa fica sobre muito metal arco-íris.</p>\n\t\t<h3>Mecânica</h3><p>Entrar exige Fortitude CD 15 (o cheiro): falha deixa enjoado. Um arcanista ou bardo que ganhe a confiança dele e <b>nunca o tenha ofendido</b> aprende uma magia arcana de 1º círculo. Sabe que a Tormenta se infiltra na terra, mas não vai fazer nada (os outros não perceberam? Idiotas!). Não sabe nada dos vilões.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.voSEQWpSBcGOgbdw]{Cletus Rigby, o Mago Caipira}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Cabana / Ofensas.</p><p>Veja @UUID[RollTable.fsVmJEMrcEGkHUoa]{Coisas que Ofendem Cletus Rigby}.</p><ul><li>Chamá-lo de feiticeiro.</li><li>Chamá-lo de \"Rigby\".</li><li>Retirar qualquer item, por menor que seja, da cabana.</li><li>Falar a palavra \"choupana\".</li><li>Chamar as Colinas Centrais de montanhas.</li><li>Ter cabelo loiro.</li><li>Ter um animal batizado em homenagem a alguém famoso.</li><li>Cantar.</li><li>Pedir para ser curado.</li><li>Mencionar Abner ou Tolbert.</li><li>Falar mal de Raguria.</li><li>Falar sobre o clima.</li><li>Oferecer comida.</li><li>Dizer sim a ele três ou mais vezes seguidas.</li><li>Chamar um cajado de bastão.</li><li>Vestir a cor amarela.</li><li>Mencionar Doherimm.</li><li>Um erro de gramática à escolha do Mestre (\"para mim fazer\", \"esteje\", \"com nós\"...).</li><li>Qualquer coisa que o Mestre deseje (pode mudar no meio da conversa).</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "jngbsoMo2CxxuJCW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.jngbsoMo2CxxuJCW"
+    },
+    {
+      "name": "Nada Mais que a Verdade Reston",
+      "type": "text",
+      "sort": 350,
+      "text": {
+        "content": "<p><b>16 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Devota fundamentalista de Tanna-Toh compilando uma etnografia das Colinas. Pede que os heróis contem suas histórias e registra tudo. Não pode mentir e sofre até para omitir. Saiu de uma comunidade apocalíptica de fanáticos (hoje só esqueletos) com a desculpa da etnografia, e precisou fazê-la de verdade.</p>\n\t\t<h3>Mecânica</h3><p>Testes de Inteligência (+4) contra CD 10, 15 ou 20 para saber qualquer coisa da região. Já ouviu boatos do Cemitério Errante (não acredita) e conhece histórias do Herói Louco. Tem o <b>pergaminho do Evento</b> (handout): não dá, mas deixa copiar. Família: Nunca Esconderei Nada de Meus Irmãos (pai), A Mentira Faz a Deusa Chorar (mãe), Toda a Verdade (irmã).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.YBs2fAcA3Q9CsKYF]{Nada Mais que a Verdade Reston}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Nada Mais que a Verdade sabe?.</p><p>Handout: <i>O Pergaminho do Evento</i>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "yMkk6vTDdHrfdf9l",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.yMkk6vTDdHrfdf9l"
+    },
+    {
+      "name": "O Ladrão de Rabos",
+      "type": "text",
+      "sort": 360,
+      "text": {
+        "content": "<p><b>17 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Mito verdadeiro: parece um cão sem pelos com vários rabos (de gambá, de cobra, de coiote...). Visto só de longe: fica mais distante, sem se mexer, quando alguém se aproxima. Só deixa ladrões chegarem perto (e, por eles, os colegas). Entidade que sussurra na mente e rouba rabos para dominar criaturas.</p>\n\t\t<h3>Mecânica</h3><p>Um \"ladrão\" (a critério do Mestre) pode roubar um rabo: Ladinagem oposta à Percepção dele (+10). Roubado, ele implora e concede um <b>desejo</b> em troca: surge em até uma semana, distorcido de forma inofensiva (literal demais, ou primitivo/caipira). Na mesa original, roubou o rabo do minotauro Arius e o controlou em certos momentos.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.AMWuwxsj6nQgTsPy]{O Ladrão de Rabos}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Roubar um rabo.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "nNiCsF3yOnFx01VS",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.nNiCsF3yOnFx01VS"
+    },
+    {
+      "name": "Elmer",
+      "type": "text",
+      "sort": 370,
+      "text": {
+        "content": "<p><b>18 na tabela.</b> Fica sempre no mesmo lugar: depois de achado, marque no mapa.</p>\n\t\t<p>O dragão mendigo: peludo, comprido, asas de morcego e oito membros. Quer um tesouro, mas é preguiçoso e não é feroz. Pede moedas contando que é o único do seu tipo. Viciado em achbuld.</p>\n\t\t<h3>Mecânica</h3><p>Com moedas e simpatia, fala da plantação de achbuld dos Gallobalt (e tenta arrancar mais). Generosidade demais: vira uma peste que segue o grupo. Fazê-lo sonhar com algo específico (Atuação, Diplomacia ou outra perícia) e tomar achbuld com ele leva o personagem ao sonho, de onde pode trazer um objeto: até duas melhorias, ou 1d10 × 100 Tibares. Nada mágico nem riquezas enormes.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.XiH3vjKAWVsr4k8k]{Elmer, o Dragão Mendigo}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Sonho de Elmer.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "CuSmiqLsKpOZDexi",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.CuSmiqLsKpOZDexi"
+    },
+    {
+      "name": "Fortunata",
+      "type": "text",
+      "sort": 380,
+      "text": {
+        "content": "<p><b>19 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Jogadora e clériga de Nimb (talvez um avatar do Deus do Caos). Propõe Wyrt, mas aposta em qualquer coisa, sobretudo no resultado das aventuras. Prefere apostar segredos a dinheiro. Diz que Ebenezer \"não passa de um charlatão\" e aposta na caçada ao Diabo, se houver.</p>\n\t\t<h3>Mecânica</h3><p>Jogatina +15. Na 1ª derrota, conta o segredo do tabuleiro. Na 2ª, conta do Cemitério Errante: quem ouve fica desorientado e \"perde\" algumas horas, e na próxima rolagem da tabela o grupo pode achar o Cemitério automaticamente. Depois disso, histórias do Herói Louco.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.hSmaBUFV40Wzlzol]{Fortunata, Clériga de Nimb}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Testes dos Encontros → Aposta com Fortunata.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "qdvGaFRbUPjE3ZUg",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.qdvGaFRbUPjE3ZUg"
+    },
+    {
+      "name": "O Cemitério Errante",
+      "type": "text",
+      "sort": 390,
+      "text": {
+        "content": "<p><b>20 na tabela.</b> Surge em qualquer lugar, quantas vezes for.</p>\n\t\t<p>Local de luto pela divindade de Tilliann. Tumbas simples feitas por mortais e, no centro, uma tumba enorme de manufatura excepcional, com lápide lisa. Tristeza, melancolia e paz: uma saudade de algo que não se conhece. Pode surgir em qualquer lugar, várias vezes.</p>\n\t\t<h3>Mecânica</h3><p><b>10 unidades de metal arco-íris</b> no chão (arma leve 1, uma mão 2, duas mãos ou armadura leve 4, armadura pesada 8). Dormir ali: não recupera PM, mas +1 num atributo por uma semana; a segunda noite torna o bônus permanente. Quem é enterrado ali não vai aos Reinos dos Deuses; a energia passa à família. Um PJ enterrado não ressuscita, mas o próximo personagem do jogador ganha +1 num atributo.</p>\n\t\t\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Bênçãos e Maldições → Noite no Cemitério.</p><p>@UUID[Item.1cIi9bQ6ZremFlBX]{Metal Arco-Íris (unidade)} (10 unidades no chão).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "0POvF0TUANdDhddE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.0POvF0TUANdDhddE"
+    },
+    {
+      "name": "Aylarianna Purpúrea (Ayla)",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><b>Encontro especial 1.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>A fada mais honesta de Arton: caixeira-viajante alquimista. Bálsamos e venenos funcionam; elixir de crescer cabelo e poção de sumir verruga, não. Escondida desde que um cliente insatisfeito a acusou (a culpada é a \"irmã gêmea\" que ela \"tem\").</p>\n\t\t<h3>Mecânica</h3><p>Recruta revendedores para o <b>Empório Purpúrea</b> (funil invertido, não pirâmide!): kit de cosméticos de T$ 50 e T$ 10 por mês (pagos a Belinda, no Forte). O revendedor recruta NPCs (Diplomacia ou, francamente, Enganação), que compram dele o kit e pagam T$ 10 por mês até perceberem o golpe.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.6m392KtHfAT9IcCh]{Aylarianna Purpúrea (Ayla)}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "4XbeAHnw8BlIGsT0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.4XbeAHnw8BlIGsT0"
+    },
+    {
+      "name": "Ignis Crae",
+      "type": "text",
+      "sort": 510,
+      "text": {
+        "content": "<p><b>Encontro especial 2.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>Golem de metal, paladino de Thyatis desde o nascimento, fundador da Ordem da Cavalaria da Redenção, que oferece recomeço a quem está no fundo do poço.</p>\n\t\t<h3>Mecânica</h3><p>Parceiro <b>guardião veterano</b> (+3 na Defesa) enquanto achar que o grupo segue os preceitos de Thyatis. Num rumo sombrio (vício, roubo, corrupção), tenta recrutá-los para a Ordem: serve de penitência a devotos que quebraram suas Obrigações & Restrições.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.LicpKc2xZPzEwtbD]{Ignis Crae, Paladino de Thyatis}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "isuLdhnL3kFIBcVv",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.isuLdhnL3kFIBcVv"
+    },
+    {
+      "name": "Kirzanaath \"Kiki\" Odello",
+      "type": "text",
+      "sort": 520,
+      "text": {
+        "content": "<p><b>Encontro especial 3.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>Medusa barda atrás de histórias, cerveja e fama. Esconde a raça até confiar. Teme virar monstruosa e quer saber o que houve com a mãe (obcecada por um tema que nem ela conhecia, fugiu com a filha e foi levada por desconhecidos). Cozinheira e boa em \"ler\" pessoas.</p>\n\t\t<h3>Mecânica</h3><p>Parceira <b>ajudante veterana</b> (+2 em Atuação, Investigação e Ofício [cozinheiro]). Conta qualquer história do Herói Louco e prepara qualquer prato especial do livro básico sem custo. Fala da mãe e entra em negação.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.ob8MDggtdu7FrYoZ]{Kirzanaath \"Kiki\" Odello}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "22gwwXhk9htdSDsy",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.22gwwXhk9htdSDsy"
+    },
+    {
+      "name": "Rexthor",
+      "type": "text",
+      "sort": 530,
+      "text": {
+        "content": "<p><b>Encontro especial 4.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>O campeão das profundezas: dos Ermos Púrpuras, escravizado e posto nas arenas de Wynlla, libertado por uma aposta de uma mulher misteriosa ao sobreviver ao Abismo. Confia nas \"Deusas\" da Sorte, do Azar e do Caos (Nimb). Ingênuo, leal e bondoso por trás da fachada de exercícios, lutas e indecência.</p>\n\t\t<h3>Mecânica</h3><p>Parceiro <b>fortão veterano</b>. Pode desafiar um combatente do grupo (sobretudo se houver magos) para um duelo \"amigável\": Defesa 18, 30 PV, +4 em resistências, Luta +10, 1d8+4 de impacto (a ficha dele já tem isso).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.5LgGScpqGqUqbsIG]{Rexthor, Campeão das Profundezas}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "bpmZ0OrQHGJMGUxf",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.bpmZ0OrQHGJMGUxf"
+    },
+    {
+      "name": "Arius Gorgonius Dubitatius",
+      "type": "text",
+      "sort": 540,
+      "text": {
+        "content": "<p><b>Encontro especial 5.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>Minotauro nobre de Tiberus, mago, filósofo e devoto de Tanna-Toh. Afastado pelo pai para uma legião longínqua, partiu atrás de conhecimento e só volta quando provar que a força não é o único poder. Dois metros, cabelos loiros trançados, postura encurvada, inseguro e empolgado com saber novo.</p>\n\t\t<h3>Mecânica</h3><p>Dá qualquer informação ou pista à escolha do Mestre (Herói Louco, Templo do Vácuo, espaço de masmorra) e decifra idiomas desconhecidos, como a língua dos gnomos.</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.hzxjgdPud0cWpB85]{Arius Gorgonius Dubitatius}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "cGyuGroEFdtYVkf3",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.cGyuGroEFdtYVkf3"
+    },
+    {
+      "name": "Chèvre e Timm",
+      "type": "text",
+      "sort": 550,
+      "text": {
+        "content": "<p><b>Encontro especial 6.</b> Pode acompanhar o grupo por uma ou mais sessões como parceiro.</p>\n\t\t<p>Caçadores de recompensas. Chèvre: sátiro malandro, envenenador, infiltrador e ladrão, com uma flauta-zarabatana de dardos envenenados. Timm: mago humano pomposo e enigmático, obcecado por fogo, que some numa explosão de chamas e fumaça. Põem o contrato acima de tudo.</p>\n\t\t<h3>Mecânica</h3><p>Chèvre é parceiro <b>perseguidor veterano</b>; Timm, <b>destruidor (fogo) veterano</b>. No fim de qualquer interação, 50% de chance de trair o grupo (levam algo que o grupo precisa ou um NPC): disputa de Iniciativa do grupo contra a dupla (+10).</p>\n\t\t<p><b>Fichas:</b> @UUID[Actor.nx9pyRODKisJHepZ]{Chèvre, o Sátiro}, @UUID[Actor.8enjVH3BMQ5mLkaZ]{Timm, o Piromante}</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "CiSQB5vWI3psFA8I",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.CiSQB5vWI3psFA8I"
+    },
+    {
+      "name": "Perseguições nas Centrais",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Regras do livro básico (perseguições, capítulo 6): cada participante faz um teste de Atletismo por rodada e avança esse número de quadrados (±2 para cada 1,5m de deslocamento acima ou abaixo de 9m). Correr dura 1 + Constituição rodadas; depois, Fortitude CD 15 (+1 por teste anterior) por rodada, e quem falha fica fatigado e sai.</p>\n\t\t\t<p>Obstáculos: todos testam, e quem falha anda metade. Atalhos: quem tenta e passa anda o dobro; quem falha anda metade. Nas Centrais, <b>qualquer falha causa 1d6 de dano</b>.</p>\n\t\t\t<table><tr><th>1d20</th><th>Resultado</th></tr><tr><td>1–6</td><td>Nada</td></tr><tr><td>7–8</td><td>Obstáculo: pilha de pedras soltas bloqueia o caminho (Força CD 15)</td></tr><tr><td>9–10</td><td>Obstáculo: lama deixa o chão escorregadio (Acrobacia CD 20)</td></tr><tr><td>11–12</td><td>Obstáculo: pedras rolam (Reflexos CD 20)</td></tr><tr><td>13–14</td><td>Obstáculo: nuvem de poeira obscurece a visão (Percepção CD 20)</td></tr><tr><td>15–16</td><td>Atalho: um trobo no qual se pode montar (Adestramento CD 20)</td></tr><tr><td>17–18</td><td>Atalho: caminho curto, mas bloqueado (Força CD 15)</td></tr><tr><td>19–20</td><td>Atalho: passagem labiríntica (Percepção CD 20)</td></tr></table>\n\t\t\t<p><b>Diabo das Colinas:</b> começa com 20 quadrados de vantagem, +17 em todas as perícias relevantes, some se abrir 50.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "NXoRY7sGOQA9N94x",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.NXoRY7sGOQA9N94x"
+    },
+    {
+      "name": "Handout · Panfleto dos Puristas Caipiras",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<blockquote><p>Irmãos,</p>\n\t\t\t<p>Nós não estamos sós! Existe um lugar para nós nas Colinas Centrais! Os puristas estão chegando e vocês finalmente terão o lugar que merecem aqui! Em todas as partes nós perdemos território, precisamos nos curvar para os não humanos, mas não aqui! Aqui nós seremos os chefes!</p>\n\t\t\t<p>Valkaria é a líder do Panteão e nós, seus filhos, somos líderes naturais das outras raças! Está no sangue dos humanos liderar, conquistar, mandar, assim como está no sangue dos não humanos obedecer!</p>\n\t\t\t<p>As Colinas Centrais são nossas! Nós estávamos aqui desde sempre e agora cada vez mais este lugar está infestado de não humanos! Que direito eles têm de estar aqui? Só vivem nestas terras por nossa bondade! Nós vamos tomar posse do que é nosso! Nós vamos ser senhores dos outros e tudo vai ficar bem! Chega de ter medo de orcs, gnolls e anões!</p>\n\t\t\t<p>Espalhem a palavra dos puristas e aguardem o dia em que tomaremos controle! Enquanto isso, suas ordens são simples! Organizem-se, consigam armas, chamem outros humanos corajosos!</p>\n\t\t\t<p>As Colinas serão nossas!</p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "weK8WZa5mf6lHjEw",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.weK8WZa5mf6lHjEw"
+    },
+    {
+      "name": "Handout · O Pergaminho do Evento",
+      "type": "text",
+      "sort": 810,
+      "text": {
+        "content": "<blockquote><p><b>Relatto d'O Evennto</b><br>Assín como ouvvído e reggist'rado por Da Bocca Abennsoada Soh Brotta a Verddade Reston no Anno 1037 Appohs a Chegadda de Nóssos Señôres Élfos.</p>\n\t\t\t<p>O Herói Lôuco chegôu às Colinnas Centraes ppela primêira Vez pôuco anntes que istto tuddo acontecêsse. Naonn sabbemos por qque êle vêio ppara cah, enbóra os sábeos espec'culem quê foe mêsmo para fujjir. Sse o Herói Lôuco sseguio os Refujjiádos at'teh êste Continnent abennsoado pêlos Deoses ou se appenas corrêu para onnde o Rey Juíz naonn pudés-se achallo naonn sabbemos. Sabbemos quê o Herói Lôuco vivêo nest'Tas Colinnas ppor um Tennpo Longo e as pesôas da regiaonn apprenderan quê êle éra um Herói. Naonn sabbemos se o Bixxo Bruxxo esttava con êle Mas sabbemos quê a Gerreira Distantt naonn esttava maes.</p>\n\t\t\t<p>O Rey Juíz Encont'trou o Herói Lôuco e entaonn</p>\n\t\t\t<p><i>(o pergaminho está totalmente riscado a partir daqui, chegando a estar um pouco rasgado e esfiapado)</i></p>\n\t\t\t<p>Appohs êste Evennto o Herói Lôuco nunnca maes fôi o mêsmo e as Colinnas Centraes tanbenn naonn. As Bennsaonns e Maldissaonns quê coñecêmmos commessaraonn depoes d'Istto.</p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "KiRsavdeBwF33QMJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.KiRsavdeBwF33QMJ"
+    },
+    {
+      "name": "Handout · Histórias do Herói Louco",
+      "type": "text",
+      "sort": 820,
+      "text": {
+        "content": "<p class=\"secret\">Herói Louco = Tilliann; Guerreira Distante = Valkaria; Bicho Bruxo = Kallyadranoch; Rei Juiz = Khalmyr; Larápio Ligeiro = Hyninn. Mantenha vago e fora de ordem para não entregar a Revolta dos Três.</p>\n\t\t\t<h3>O Buquê</h3><p>O Herói Louco era apaixonado pela Guerreira Distante, como quase todo mundo naquela época. Mas ela sempre ficava longe: quanto mais ele se aproximava, mais ela se afastava. Ele pensou num presente que ela pudesse achar depois, com uma carta de amor. O Bicho Bruxo sugeriu um buquê, mas o maior buquê do mundo. Sem saber qual era o tamanho a superar, o Herói Louco colheu todas as flores do mundo, e depois as outras plantas, até o mundo virar um deserto. O Rei Juiz, furioso, bateu na cabeça dele com a espada. O buquê caiu e, como tinha todas as plantas do mundo, se espalhou pelo mundo todo. A Guerreira Distante nunca soube que o Herói Louco tinha tentado fazer um buquê para ela.</p><h3>Os Filhos</h3><p>Um dia o Herói Louco teve filhos. Eram muitos e estavam sempre com fome. O Bicho Bruxo sugeriu fechá-los numa caverna enquanto ele buscava comida, e o Herói Louco derrubou umas pedras na entrada. No caminho, encontrou o Rei Juiz, que o convidou para um passeio; sem querer contar a verdade, ele aceitou. Quando o passeio acabou, já tinha esquecido o que ia fazer. Ao lembrar, correu à caverna: na fome, os filhos tinham devorado uns aos outros. O Rei Juiz puniu os filhos canibais, transformando-os em monstros. O Herói Louco ficou triste, mas pelo menos agora eram menos filhos, mais fáceis de cuidar.</p><h3>A Cabeça</h3><p>Uma vez o Herói Louco fez algo errado e o Rei Juiz cortou a cabeça dele. A cabeça rolou para longe, e o corpo foi procurá-la. Por sorte, ela parou bem perto dos pés da Guerreira Distante, que não a viu chegar e por isso não se afastou. A cabeça ficou muito feliz e criava coragem para declarar seu amor quando os filhos da Guerreira Distante viram aquilo e a levaram embora, porque sabiam que ela queria ficar longe. A cabeça ficou muito triste, mas então o corpo a achou, e pelo menos os dois continuaram juntos.</p><h3>Atrás da Porta</h3><p>Uma vez o Herói Louco achou uma colina que ninguém nunca tinha visto. Atrás dela, só um vale vazio. Pensou que seria um bom presente para a Guerreira Distante: se ela queria ficar longe, poderia ficar ali, onde ninguém ia. Como não conseguia chegar perto dela, o Bicho Bruxo deu uma ideia: ele guardaria a colina e o Herói Louco desenharia um caminho no chão até o presente. Ela seguiu o caminho, mas o Bicho Bruxo disse que o presente era dele, sem mencionar o Herói Louco, e fugiu. A Guerreira Distante foi ao vale antes que o Herói Louco pudesse desmentir. Ele ficou desolado, mas pelo menos ela estava feliz.</p><h3>A Casa</h3><p>Uma vez o Herói Louco lembrou por que vagava havia tanto tempo: tinha saído para comprar comida para os filhos. Tinha esquecido que tinha filhos, então fazia sentido não lembrar da compra. Mas não sabia mais o caminho de casa. Tentou perguntar à Guerreira Distante, que estava longe demais para ouvir, e não lembrava de mais ninguém. Vagando, encontrou o Rei Juiz, que ficou furioso: que tipo de pai esquece que tem filhos? Bateu nele como punição, e isso o fez andar ainda mais devagar. Ele nunca chegou em casa. De qualquer forma, a casa já tinha sido destruída e os filhos estavam mortos. Pelo menos ele não lembrava deles, então não ficou triste.</p><h3>A Coisa</h3><p>Certa vez o Herói Louco percebeu que tinha esquecido uma coisa, mas, como tinha esquecido, não lembrava o que era. A Guerreira Distante estava ainda mais longe que de costume e não ouviu. O Rei Juiz, como sempre, estava furioso com ele e não ajudou. Então veio o Larápio Ligeiro e disse que conhecia um lugar escondido onde ficavam as coisas escondidas; talvez a coisa estivesse lá. O Herói Louco procurou, mas nunca soube se tinha achado, porque não sabia o que era. O Rei Juiz olhou feio para o Larápio Ligeiro, mas, por alguma razão, não bateu nele como sempre batia no Herói Louco.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Fn5EWNbH2C3aquuC",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!UgOgKRKSO9L3Y9p1.Fn5EWNbH2C3aquuC"
+    }
+  ],
+  "_key": "!journal!UgOgKRKSO9L3Y9p1"
+}

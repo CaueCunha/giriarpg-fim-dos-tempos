@@ -1,0 +1,168 @@
+{
+  "name": "Canapé Açucarado (ilusão)",
+  "type": "consumivel",
+  "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+  "folder": "tbwdQktgRMmoWWbK",
+  "flags": {
+    "world": {
+      "fdt": "a1guloseimas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Bolachinhas doces com uma rodela de berinjela e um pedacinho de caramelo por cima. <b>Até o final da cena, pode rolar novamente um teste qualquer recém-realizado.</b></p><p><b>Ilusão ou realidade? (Varia)</b> Gaste uma <b>ação padrão</b> para morder e faça <b>Vontade CD 15</b>. Se passar, recebe o benefício; se falhar, gastou a ação e a guloseima em vão. Só existe uma dose.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "scene",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Vontade CD 15 para aproveitar"
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "_id": "B59CnH5pRcqKVpsR",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Canapé Açucarado (rolar de novo 1 teste)",
+      "img": "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Uma vez até o fim da cena, role de novo um teste qualquer recém-realizado. Apague o efeito depois de usar.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a1guloseimas"
+        }
+      },
+      "system": {
+        "changes": [],
+        "onuse": false,
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "TpbWlGyOoiOuTcah",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!B59CnH5pRcqKVpsR.TpbWlGyOoiOuTcah"
+    }
+  ],
+  "_key": "!items!B59CnH5pRcqKVpsR"
+}

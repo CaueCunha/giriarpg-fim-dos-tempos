@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Abrigos dos Inocentes",
+  "type": "script",
+  "img": "icons/svg/village.svg",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroAbrigos() {\n\t\tconst abrigos = game.actors.filter((a) => a.getFlag(\"world\", \"fdtRole\") === \"abrigo\");\n\t\tif (!abrigos.length) return ui.notifications.error(\"Atores de abrigo não encontrados (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst opcoes = abrigos.map((a) => `<option value=\"${a.id}\">${a.name} · ${a.system.attributes.pv.value} PV</option>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Abrigos dos Inocentes\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Abrigo</label><select name=\"id\">${opcoes}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>O que rolar</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"tocha\">Tocha: 1d6 de dano e +1 foco de incêndio</option>\n\t\t\t\t\t<option value=\"incendio\">Queima dos focos de incêndio (1d6 cada)</option>\n\t\t\t\t\t<option value=\"apagar\">Apagar um foco</option>\n\t\t\t\t\t<option value=\"apagarTodos\">Apagar todos os focos (efeito de área)</option>\n\t\t\t\t\t<option value=\"dano\">Dano direto no abrigo</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Dano direto</label><input type=\"number\" name=\"dano\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst abrigo = abrigos.find((a) => a.id === res.id);\n\t\tconst rolls = [];\n\t\tconst focos = abrigo.system.resources.secondary;\n\t\tlet dano = 0;\n\t\tlet txt = \"\";\n\t\tif (res.acao === \"tocha\") {\n\t\t\tconst d = await new Roll(\"1d6\").evaluate();\n\t\t\trolls.push(d);\n\t\t\tdano = d.total;\n\t\t\tawait abrigo.update({ \"system.resources.secondary.value\": focos.value + 1 });\n\t\t\ttxt = `Tocha atirada: <b>${dano}</b> de dano e <b>+1 foco de incêndio</b> (agora ${focos.value + 1}).`;\n\t\t} else if (res.acao === \"incendio\") {\n\t\t\tif (!focos.value) return ChatMessage.create({ content: `<h3>${abrigo.name}</h3><p>Nenhum foco de incêndio aceso.</p>` });\n\t\t\tconst d = await new Roll(`${focos.value}d6`).evaluate();\n\t\t\trolls.push(d);\n\t\t\tdano = d.total;\n\t\t\ttxt = `<b>${focos.value}</b> foco(s) de incêndio: <b>${dano}</b> de dano de fogo nesta rodada.`;\n\t\t} else if (res.acao === \"apagar\" || res.acao === \"apagarTodos\") {\n\t\t\tconst novo = res.acao === \"apagar\" ? Math.max(focos.value - 1, 0) : 0;\n\t\t\tawait abrigo.update({ \"system.resources.secondary.value\": novo });\n\t\t\ttxt = res.acao === \"apagar\" ? `Um foco apagado. Restam <b>${novo}</b>.` : \"<b>Todos os focos apagados</b> por um efeito de área.\";\n\t\t} else {\n\t\t\tdano = Number(res.dano) || 0;\n\t\t\ttxt = `<b>${dano}</b> de dano no abrigo.`;\n\t\t}\n\t\tlet html = `<h3>${abrigo.name}</h3><p>${txt}</p>`;\n\t\tif (dano) {\n\t\t\tconst pv = abrigo.system.attributes.pv;\n\t\t\tconst resto = pv.value - dano;\n\t\t\tawait abrigo.update({ \"system.attributes.pv.value\": Math.max(resto, 0) });\n\t\t\tif (resto <= 0) {\n\t\t\t\tconst mortos = Math.min(-resto, abrigo.system.resources.primary.value);\n\t\t\t\tif (mortos > 0) await abrigo.update({ \"system.resources.primary.value\": abrigo.system.resources.primary.value - mortos });\n\t\t\t\thtml += `<p><b>O abrigo caiu!</b> Os atacantes entram e cada ponto de dano mata um inocente${mortos ? `: <b>${mortos} morto(s)</b> nesta rodada` : \"\"}. Restam <b>${abrigo.system.resources.primary.value}</b> inocentes.</p>`;\n\t\t\t} else html += `<p>O abrigo fica com <b>${resto} de 100 PV</b>. Enquanto tiver 1 PV, os inocentes não podem ser atacados.</p>`;\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "Tvb4jJFFtTjMt5vY",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Tvb4jJFFtTjMt5vY"
+}

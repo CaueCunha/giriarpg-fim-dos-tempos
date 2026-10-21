@@ -1,0 +1,304 @@
+{
+  "name": "Reações dos Encontros (Templo do Vácuo)",
+  "img": "icons/svg/terror.svg",
+  "folder": "EtaT6hlKdhf4HEM6",
+  "flags": {
+    "world": {
+      "fdt": "a1templo",
+      "fdtRole": "reacoesTemplo"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "1d6 + o Carisma do personagem mais próximo (o menor, se houver empate). Diálogo ativo antes de ser notado: teste social, cada 5 pontos vale um resultado. Ganchador e monstro da ferrugem fogem nos resultados de diálogo; estátuas, amebas, cardumes e a cocatriz atacam direto (resultado 0).",
+  "_id": "O2bQZbwCH02UQ0L0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        -99,
+        0
+      ],
+      "weight": 1,
+      "name": "Ataca instantaneamente, lutando até a morte.",
+      "description": "",
+      "_id": "pH2RNkNcDrEQtlUs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.pH2RNkNcDrEQtlUs"
+    },
+    {
+      "type": "text",
+      "range": [
+        1,
+        2
+      ],
+      "weight": 1,
+      "name": "Ataca, mas foge se estiver perdendo.",
+      "description": "",
+      "_id": "jTCjDTGyIRqOccvG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.jTCjDTGyIRqOccvG"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        4
+      ],
+      "weight": 1,
+      "name": "Ataca se houver algo a ganhar (como tesouro). Foge se estiver perdendo.",
+      "description": "",
+      "_id": "JP6YYv6ZSNxFGu2j",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.JP6YYv6ZSNxFGu2j"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Ameaça. O grupo tem uma rodada para reagir (preparar-se ou tentar acabar com as hostilidades).",
+      "description": "",
+      "_id": "bPIItnb68jBXXV5H",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.bPIItnb68jBXXV5H"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Ameaça de longe. O grupo tem duas rodadas para reagir.",
+      "description": "",
+      "_id": "zCbyyCxSkc4whRkx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.zCbyyCxSkc4whRkx"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Evita o grupo. É visto de longe, mas não toma atitude nenhuma.",
+      "description": "",
+      "_id": "AkejDH1GgMAB9wsE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.AkejDH1GgMAB9wsE"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Mostra-se receoso, mas não hostil. Sente-se ameaçado, mas pode colaborar se abordado.",
+      "description": "",
+      "_id": "4LMz4wT23VeK3uRY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.4LMz4wT23VeK3uRY"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Mostra-se não hostil. Não se sente ameaçado e pode arranjar colaboração com sua facção se abordado.",
+      "description": "",
+      "_id": "UAKk27bhN2fEgE4w",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.UAKk27bhN2fEgE4w"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Pede ajuda contra outras facções. Com boa interação, pode arranjar colaboração com sua facção.",
+      "description": "",
+      "_id": "XiQuH1TnQGiOH60s",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.XiQuH1TnQGiOH60s"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        99
+      ],
+      "weight": 1,
+      "name": "Oferece ajuda contra outras facções.",
+      "description": "",
+      "_id": "L2c1jaI9ya5RNPyO",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!O2bQZbwCH02UQ0L0.L2c1jaI9ya5RNPyO"
+    }
+  ],
+  "_key": "!tables!O2bQZbwCH02UQ0L0"
+}

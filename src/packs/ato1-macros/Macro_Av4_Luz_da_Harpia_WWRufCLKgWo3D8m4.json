@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Luz da Harpia",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/luz.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroLuz() {\n\t\tconst alvos = game.user.targets.size ? [...game.user.targets] : canvas.tokens.controlled;\n\t\tif (!alvos.length) return ui.notifications.warn(\"Mire ou selecione os tokens dentro da luz.\");\n\t\tconst escolha = await foundry.applications.api.DialogV2.wait({\n\t\t\twindow: { title: \"Luz da Harpia\" },\n\t\t\tcontent: `<p>${alvos.length} token(s). O que aconteceu?</p>`,\n\t\t\tbuttons: [\n\t\t\t\t{ action: \"cegar\", label: \"Cegar\", default: true },\n\t\t\t\t{ action: \"proteger\", label: \"Protegeu os olhos (ofuscado)\" },\n\t\t\t\t{ action: \"limpar\", label: \"Saiu da luz\" }\n\t\t\t]\n\t\t});\n\t\tif (!escolha) return;\n\t\tconst nomes = [];\n\t\tfor (const t of alvos) {\n\t\t\tconst a = t.actor;\n\t\t\tif (!a) continue;\n\t\t\tif (escolha === \"cegar\" && a.system.tracos?.ic?.value?.includes(\"ofuscado\")) {\n\t\t\t\tnomes.push(`${a.name} (imune)`);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tawait a.toggleStatusEffect(\"cego\", { active: escolha === \"cegar\" });\n\t\t\tawait a.toggleStatusEffect(\"ofuscado\", { active: escolha === \"proteger\" });\n\t\t\tnomes.push(a.name);\n\t\t}\n\t\tconst msg = { cegar: \"fica <b>cego</b> pela luz\", proteger: \"protege os olhos e fica <b>ofuscado</b> por 1 rodada (ação de movimento ou 1 PM)\", limpar: \"sai da luz\" }[escolha];\n\t\tChatMessage.create({ content: `<h3>Luz da Harpia</h3><p>${nomes.join(\", \")}: ${msg}.</p>` });\n\t})();",
+  "_id": "WWRufCLKgWo3D8m4",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!WWRufCLKgWo3D8m4"
+}

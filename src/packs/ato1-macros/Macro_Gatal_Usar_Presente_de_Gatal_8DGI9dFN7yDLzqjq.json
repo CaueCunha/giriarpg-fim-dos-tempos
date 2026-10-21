@@ -1,0 +1,31 @@
+{
+  "name": "Gatal · Usar Presente de Gatal",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/flauta-mistica.webp",
+  "folder": "zODnB58HDAdF5oB2",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Especial de Gatal · gerado por a1-especial-de-gatal.js\n(async function macroUsar() {\n\t\tconst tk = canvas.tokens.controlled.find((t) => t.actor);\n\t\tif (!tk) return ui.notifications.warn(\"Selecione o token de quem usa o presente.\");\n\t\tconst itens = tk.actor.items.filter((i) => (i.getFlag(\"world\", \"fdtRole\") ?? \"\").startsWith(\"presente_\"));\n\t\tif (!itens.length) return ui.notifications.warn(`${tk.name} não tem presentes de Gatal.`);\n\t\tconst op = itens.map((i) => `<option value=\"${i.id}\">${i.name}</option>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Usar Presente de Gatal\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Presente</label><select name=\"item\">${op}</select></div>`,\n\t\t\tok: { label: \"Usar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst item = tk.actor.items.get(res.item);\n\t\tconst role = item.getFlag(\"world\", \"fdtRole\");\n\t\tlet html = `<h3>${item.name}</h3>`;\n\t\tif (role === \"presente_criadora\") {\n\t\t\tconst usos = (item.getFlag(\"world\", \"fdtUsos\") ?? 3) - 1;\n\t\t\tconst parte = [\"o machado\", \"a ponta de lança\", \"o martelo\"][Math.max(0, usos)];\n\t\t\thtml += `<p>${tk.name} rola de novo um teste. ${usos > 0 ? `<b>${parte[0].toUpperCase() + parte.slice(1)}</b> da alabarda se desfaz em purpurina. Restam ${usos} rerrolagem(ns).` : \"A última parte se desintegra: <b>a Criadora de Meios acabou.</b>\"}</p>`;\n\t\t\tif (usos > 0) await item.setFlag(\"world\", \"fdtUsos\", usos);\n\t\t\telse await item.delete();\n\t\t} else {\n\t\t\tconst qtd = (Number(item.system.qtd) || 1) - 1;\n\t\t\tconst efeitos = {\n\t\t\t\tpresente_flauta: \"Uma criatura (ND até o nível de quem toca) passa a contar como <b>animal</b> por uma cena.\",\n\t\t\t\tpresente_balanca: \"Os pratinhos se inclinam e mostram o rumo mais bondoso e justo.\",\n\t\t\t\tpresente_alev: \"A vela acende... e espalha <b>escuridão</b> por até uma hora.\",\n\t\t\t\tpresente_copo: \"Quem \\\"bebe\\\" do copo de ar respira sob a água por até uma hora.\",\n\t\t\t\tpresente_truque: \"A magia arcana escolhida passa a contar como de outra escola.\"\n\t\t\t};\n\t\t\thtml += `<p>${efeitos[role] ?? \"\"} ${qtd > 0 ? `Restam ${qtd} uso(s).` : \"Foi o último uso.\"}</p>`;\n\t\t\tif (qtd > 0) await item.update({ \"system.qtd\": qtd });\n\t\t\telse await item.delete();\n\t\t}\n\t\tChatMessage.create({ content: html });\n\t})();",
+  "_id": "8DGI9dFN7yDLzqjq",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!8DGI9dFN7yDLzqjq"
+}

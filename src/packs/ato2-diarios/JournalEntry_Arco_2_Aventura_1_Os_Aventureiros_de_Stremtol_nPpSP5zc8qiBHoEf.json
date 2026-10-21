@@ -1,0 +1,333 @@
+{
+  "name": "Arco 2 · Aventura 1 · Os Aventureiros de Stremtol",
+  "folder": "HWBLdKsiFvflBSrf",
+  "flags": {
+    "world": {
+      "fdt": "a2av1"
+    }
+  },
+  "_id": "nPpSP5zc8qiBHoEf",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>@UUID[Actor.JnwvBb99tUUvwzMF]{Torzogh Meio-Machado}, líder dos Mata-Malvados, contrata a Guarda: acha que a ex-companheira Aldanna foi \"raptada\" pelo marido, o conde Osmont. Ninguém acredita. Em Stremtol, uma vizinhança \"normal\" demais, o grupo descobre que Aldanna e outros cônjuges passaram pela <b>Escola de Etiqueta e Bom Comportamento</b> de @UUID[Actor.r3DKOoWKUkgm8QsY]{Madame Margebell}, que apaga \"anormalidades\" com pinturas subliminares baseadas na pesquisa de Ghorskander.</p>\n\t\t\t\t<p><b>Nível presumido:</b> 4 personagens de nível 7. Dá um nível e até 5 de Lei &amp; Ordem (@UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}).</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Normalidade</b> na Guarita da Praia (Ulnsariann e Throgarimm brigando; não é gancho).</li>\n\t\t\t\t\t<li><b>Caminho para a taverna</b>: role na tabela Encontros em Valkaria se for o primeiro caso.</li>\n\t\t\t\t\t<li><b>Taverna do Esqueleto Gordo</b>: Torzogh, os Mata-Malvados, Mavorn e Engill.</li>\n\t\t\t\t\t<li><b>Bem-vindos a Stremtol</b>: investigação casa a casa (@UUID[Actor.mqoK6CXrEt2GKtDE]{Vizinhança de Stremtol (pistas)} e @UUID[Macro.yQ3fWTCSA7QA5BWZ]{Av1 · Investigar Stremtol}).</li>\n\t\t\t\t\t<li><b>Volta às Aulas</b>: a escola, os servos e Margebell.</li>\n\t\t\t\t\t<li><b>Escola de Duros Golpes</b>: o passeio pelas galerias e as pinturas (@UUID[Macro.FMKMqDlG4HnDEYA7]{Av1 · Pinturas Subliminares}).</li>\n\t\t\t\t\t<li><b>Punindo os Bagunceiros</b>: @UUID[Actor.r3DKOoWKUkgm8QsY]{Madame Margebell} e quatro @UUID[Actor.lLBsD3k84N74a5sS]{Anjo Aprisionado}.</li>\n\t\t\t\t\t<li><b>Desfecho</b>, provas e pagamento.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.yQ3fWTCSA7QA5BWZ]{Av1 · Investigar Stremtol}: escolha a casa e a perícia; rola para os tokens selecionados (ou use um resultado já rolado) e sussurra as pistas que a CD alcança.</li><li>@UUID[Macro.FMKMqDlG4HnDEYA7]{Av1 · Pinturas Subliminares}: a cada sala com quadros, Vontade CD 15 (+2 por teste) para os selecionados. Distribui os bilhetes secretos aos donos dos personagens nas três primeiras falhas e depois avisa a perda de habilidades e os estágios finais.</li><li>@UUID[Macro.KWguPy3XjteSnTWO]{Av1 · Infiltração na Escola}: Furtividade contra os servos, procurando juntos (+12) ou um a um; se alguém for visto, rola em quantas rodadas Margebell chega.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "u4W6HJYSFAEGU6Pg",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.u4W6HJYSFAEGU6Pg"
+    },
+    {
+      "name": "Fases 0 a 2 · Guarita e Esqueleto Gordo",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h3>Normalidade</h3>\n\t\t\t\t<p>Ulnsariann e Throgarimm chegam de uma tocaia que durou a noite: o elfo prendeu ladrões no flagra, o anão queria segui-los até o receptador. Pedem a opinião dos novatos enquanto patrulheiros trazem os presos. Não é gancho.</p>\n\t\t\t\t<h3>A Taverna do Esqueleto Gordo</h3>\n\t\t\t\t<p>Prédio atarracado de dois andares, telhado pontudo, duas chaminés; placa de um esqueleto barrigudo mastigando um pernil. Eclética e acolhedora, com famílias jantando. O taverneiro <b>Mavorn</b> e o filho <b>Engill</b> contam a quem quiser ouvir como os Mata-Malvados salvaram o garoto de mortos-vivos há mais de 10 anos e ganharam mesa, cama e comida de graça (Engill deu o nome ao grupo).</p>\n\t\t\t\t<blockquote><p><i>\"Vocês são da Guarda? E são aventureiros? Parece que finalmente a boa fortuna nos trouxe algo que não seja um tapa na cara! Sentem-se, comam, bebam e ouçam nossa história! Já derrotamos muitos vilões, mas hoje quem precisa de ajuda somos nós!\"</i></p></blockquote>\n\t\t\t\t<p><b>Os Mata-Malvados:</b> @UUID[Actor.JnwvBb99tUUvwzMF]{Torzogh Meio-Machado} (bárbaro, líder), @UUID[Actor.jPMtJLnsfyiUZReH]{Ingwi} (elfa ladina), @UUID[Actor.AFaOSkFUaStc9IXW]{Thurab} (qareen clérigo de Azgher, rosto coberto) e @UUID[Actor.z9RjIoB3cGns1O4h]{Nyrimm} (dahllan bruxa). Um grupo comum de Valkaria, do nível dos heróis.</p>\n\t\t\t\t<h3>O que se descobre com o mínimo interesse</h3>\n\t\t\t\t<ul><li>Aldanna é caçadora e ajudou a fundar o grupo. Sua única queixa era morar em Valkaria; preferia os ermos.</li><li>Há três anos, no Império de Tauron, o grupo salvou de escravistas o nobre valkariano <b>Osmont Elbannise</b>, que se apaixonou por Aldanna. Ela não parecia retribuir, mas casou com ele.</li><li>Viveram separados por um tempo e brigavam muito por ela passar tempo fora. Numa visita, ela anunciou de repente a aposentadoria.</li><li>Ela não parecia apaixonada; parece ter cedido à insistência dele.</li><li>Os Mata-Malvados não são mais tão jovens e nenhum tem plano para a velhice.</li><li>Osmont é um conde muito rico. Ingwi acha que Aldanna trocou um grupo sem futuro pela segurança.</li><li>Nyrimm garante que ela não está enfeitiçada. Aldanna não tem família: nada de chantagem.</li><li>Osmont deixou as cortes e foi morar com ela em <b>Stremtol</b>, região próspera e pacata. Ela virou dona de casa.</li><li>Ela recebeu os ex-colegas e parecia feliz, uma anfitriã perfeita. O javali Aníbal, o arco e o equipamento dela não estavam em lugar nenhum.</li><li>Os outros se recusam a interferir; para eles, \"salvá-la\" seria vilania. Concordaram em chamar a Guarda para provar que não há nada errado e seguir em frente.</li><li>Torzogh e Aldanna foram um casal (1411–1415) e continuaram amigos. Ele demorou anos para aceitar a saída do minotauro Cirius.</li></ul>\n\t\t\t\t<p><b>No quarto de Torzogh:</b> um retrato malfeito dos Mata-Malvados jovens, com Cirius, Aldanna e o javali Aníbal. Torzogh e Aldanna lado a lado, sem pose de casal.</p>\n\t\t\t\t<p><b>Linha do tempo:</b> 1408 grupo formado · 1411 Torzogh e Aldanna juntos · 1412 Cirius sai · 1414 Torzogh aceita · 1415 separação · 1417 salvam Osmont · 1418 Aldanna e Osmont casal · 1419 casamento · 1420 Aldanna sai do grupo.</p>\n\t\t\t\t<h3>Investigando a esmo</h3>\n\t\t\t\t<p>Contratante antigo em Valkaria: uma velha guerreira aposentada que confirma tudo. Servos dos Elbannise fofocam sobre o casal e a amizade de Osmont com os <b>Ronchetillon</b>. Boatos sobre uma aventureira mediana: Investigação CD 30 revela algo sobre Stremtol.</p>\n\t\t\t\t<h3>Contingência: Nada para Ser Visto Aqui</h3>\n\t\t\t\t<p>Se desistirem, encerre: sem nível nem Lei &amp; Ordem. Se quiserem prender Torzogh, não há provas, só indícios de obsessão; os Mata-Malvados ficam do lado dele, a menos que convencidos. Para continuar depois, Osmont agradece e convida o grupo para jantar em Stremtol.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "5WBaA0fUWimUmRwe",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.5WBaA0fUWimUmRwe"
+    },
+    {
+      "name": "Fase 3 · Bem-vindos a Stremtol",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>No extremo do Refúgio da Felicidade, depois de terrenos nobres com exércitos particulares (o distintivo abre caminho), surge uma aldeia em miniatura: casas novas, grandes e bonitas mas não opulentas, em volta de uma praça, com cercados, grama recém-cortada, cheiro de biscoitos, portas abertas, vizinhos conversando. Um subúrbio de filme. Acima de tudo, \"normal\".</p>\n\t\t\t\t<p>Deixe os jogadores conduzirem. Lembre que há nobres ali e que todos podem ser vítimas. Conversar ou entrar escondido funcionam igualmente. Use @UUID[Macro.yQ3fWTCSA7QA5BWZ]{Av1 · Investigar Stremtol} ou a lista de pistas por casa abaixo.</p>\n\t\t\t\t<h3>Por que as CDs são tão altas?</h3>\n\t\t\t\t<p>As \"informações especiais\" podem ser percebidas só observando, ao entrar: as CDs altas simulam sacadas geniais. Conversando é bem mais fácil, e boas ideias dispensam testes.</p>\n\t\t\t\t<h3>Moradores (de dia)</h3>\n\t\t\t\t<ul><li><b>Osmont e Aldanna Elbannise:</b> ele passa o dia em reuniões no Bairro do Recomeço e volta no fim da tarde; ela cuida da casa. Se souberem que o grupo vem dos Mata-Malvados, Osmont convoca reunião ao chegar.</li><li><b>Inagar e Albert:</b> casa vazia de dia (trabalham na Guilda dos Contadores, que serve quase só aos Ronchetillon). Inagar, ex-mago, é aprendiz 25 anos mais velho que os outros; Albert, contador, é ciumento e não o deixa sozinho.</li><li><b>Illydna e Alvuriell:</b> de dia só o goblin, vestido para um baile, sem fazer nada, diante de uma mesa farta preparada há horas. Ela é serva dos Ronchetillon e o trata como um incapaz.</li><li><b>Remont e Ysmenne Ronchetillon:</b> sempre em casa, acolhedores, contam a história completando as frases um do outro. Ysmenne era cavaleira da família.</li><li><b>Hugo, Rosa e o bebê Luka:</b> casa de camponês, teto de sapé, plantação. Sempre trabalhando, humildes demais.</li></ul>\n\t\t\t\t<h3>Stremtol (informações gerais)</h3><ul><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção, Intuição CD 15:</b> Os moradores estão inquietos com a presença dos heróis, mas são receptivos à Guarda.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> Os primeiros moradores foram Remont e Ysmenne Ronchetillon.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> A vizinhança é nova: a primeira casa foi construída há menos de 5 anos.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> Todos os moradores são famílias e casais relativamente jovens.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> A área é tecnicamente dos Ronchetillon, cedida a cada morador para construir a casa. Em termos legais, os moradores são vassalos deles.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> A família Elbannise (de Osmont) tem laços antigos de amizade com os Ronchetillon.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> Só algumas famílias são aceitas em Stremtol. O critério é misterioso; não basta \"ser nobre\".</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> Periodicamente há reuniões da vizinhança na casa dos Ronchetillon. Parece uma comunidade unida, embora pequena.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> Há uma clara intenção de tornar Stremtol diferente das regiões nobres: arquitetura, roupas e jeito de falar lembram uma aldeia. Não há servos.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> A vizinhança não exclui não humanos.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> Nenhum morador mantém laços próximos com a família fora da vizinhança.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Guerra CD 25:</b> Não há nenhum tipo de guarda ou exército particular em Stremtol.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Religião CD 25:</b> Todas as famílias cultuam Khalmyr, mas não há nenhum clérigo na vizinhança.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Misticismo, Religião CD 25:</b> Não há iluminação mágica, runas de proteção, bênçãos nem defesas arcanas ou divinas na vizinhança.</li><li><b>Diplomacia, Enganação, Investigação CD 30:</b> As reuniões acontecem toda semana, mas às vezes há mais de uma por semana (não se sabe em que casos).</li><li><b>Diplomacia, Enganação, Investigação CD 30:</b> Nunca houve apresentações de bardos. Alguns moradores já apresentaram uma peça ou cantaram para os outros.</li><li><b>Diplomacia, Enganação, Investigação, Religião CD 30:</b> Embora Khalmyr seja um deus guerreiro, os moradores não acreditam em vingança nem em justiça violenta: preferem perdoar, quase como devotos de Thyatis.</li><li><b>Misticismo CD 35:</b> Não há nada mágico acontecendo aqui, mas nada bloqueia a magia.</li><li><b>Sobrevivência CD 35:</b> Nenhum monstro passou por aqui nos últimos meses ou anos.</li><li><b>Intuição CD 35:</b> Todos aqui são felizes e parecem se amar muito.</li><li><b>Ofício CD 35:</b> As casas foram construídas com técnicas humanas, sem apoio mágico ou divino, nem trabalho de monstros ou golens.</li><li><b>Intuição CD 40:</b> Há uma divisão: cada casa parece ter um morador de um \"lado\" e outro do \"outro lado\". Não são rivais; é só identificação com um grupo.</li></ul><h3>Osmont e Aldanna Elbannise</h3><ul><li><b>Sem teste:</b> Na parede está a cabeça empalhada do javali Aníbal, o antigo companheiro animal de Aldanna (reconhecível pela pintura no quarto de Torzogh).</li><li><b>Religião CD 15:</b> Há um pequeno altar a Khalmyr, simples e humilde, feito para a própria família conduzir os rituais, como em aldeias sem clérigo.</li><li><b>Investigação CD 20:</b> Exceto pela cabeça do javali, não há nenhum resquício da antiga vida de Aldanna: nenhuma arma, armadura ou lembrança.</li><li><b>Investigação CD 25:</b> Há objetos de interesse de Osmont (negócios, heráldica, um retrato dele jovem), mas nada de Aldanna além de roupas e utensílios domésticos.</li><li><b>Sem teste:</b> Aldanna é absolutamente sincera em tudo (qualquer teste de Intuição). Não esconde nada nem parece forçada.</li><li><b>Sem teste:</b> Ela fez parte dos Mata-Malvados por anos, mas vê isso como \"uma brincadeira juvenil\". Prefere se concentrar no futuro.</li><li><b>Sem teste:</b> Teve um relacionamento com Torzogh e terminaram amigavelmente. Tem carinho por ele e gostaria que ele largasse a vida de aventureiro para \"crescer\".</li><li><b>Sem teste:</b> De início resistiu a Osmont e, casada, ainda \"teimou\" na vida de aventureira. Tem vergonha disso e é grata a ele por tê-la \"ajudado a crescer\".</li><li><b>Intuição CD 20:</b> Ela vê aventureiros com condescendência; respeita um pouco o grupo por ser da Guarda, mas acha a postura deles um pouco ridícula.</li><li><b>Intuição CD 25:</b> Fica desconfortável ao falar de habilidades especiais, magia e poderes, e mais ainda ao vê-los em ação: medo e vergonha.</li><li><b>Guerra, Intuição CD 30:</b> De alguma forma, Aldanna perdeu ou esqueceu suas habilidades. Não sabe mais nem disparar um arco.</li><li><b>Inteligência CD 20:</b> Há uma lacuna de alguns meses entre as brigas com Osmont e a mudança para Stremtol que ela não menciona.</li><li><b>Intuição CD 25:</b> Ela não esconde o período \"vazio\": é como se não existisse. Questionada, sorri e diz que \"ficou se preparando\". Não lembra detalhes; acha que foi o nervosismo.</li><li><b>Intuição CD 25:</b> Aldanna é genuinamente feliz.</li><li><b>Intuição CD 30:</b> Aldanna está sempre feliz, como se fosse incapaz de sentir tristeza, raiva, medo ou qualquer emoção forte.</li></ul><h3>Inagar e Albert</h3><ul><li><b>Investigação CD 20:</b> Há um alçapão coberto por um tapete na sala. Leva a um porão com vários baús cheios de grimórios.</li><li><b>Misticismo CD 20:</b> Os grimórios são bastante avançados.</li><li><b>Investigação, Percepção CD 15:</b> Não há nenhum livro na casa além dos grimórios escondidos.</li><li><b>Sem teste:</b> Inagar tem muita vergonha do passado de mago, um gatilho para Albert. Quando perguntam da vida anterior, desconversa.</li><li><b>Sem teste:</b> Inagar não tem medo de Albert, mas não quer ferir os sentimentos dele, então escolhe bem as palavras (ou seja, o tempo todo).</li><li><b>Intuição CD 25:</b> Inagar não fala do passado para não magoar Albert.</li><li><b>Percepção CD 20:</b> Os dois não fazem nada separados.</li><li><b>Intuição CD 20:</b> Inagar é muito mais inteligente do que deixa transparecer, muito acima de um aprendiz de mais de 30 anos.</li><li><b>Intuição CD 25:</b> Inagar tem vergonha de ser só um aprendiz na Guilda dos Contadores.</li><li><b>Intuição CD 20:</b> Os dois realmente se amam, mas Albert é muito inseguro.</li><li><b>Intuição CD 25:</b> Inagar é feliz, mas a felicidade não condiz com a vida dele: comportamento de infeliz, sentimento de feliz.</li></ul><h3>Illydna e Alvuriell</h3><ul><li><b>Investigação, Percepção CD 15:</b> Há muitas roupas luxuosas para Alvuriell, mas Illydna tem só três vestidos simples de serva.</li><li><b>Sem teste:</b> A casa não é feita para alguém da estatura de um goblin: Alvuriell mal alcança as prateleiras.</li><li><b>Conhecimento, Investigação, Percepção CD 20:</b> Há pergaminhos de canções e poesias élficas e até uma lira élfica. Alvuriell não tem nada em termos de diversão ou interesses.</li><li><b>Intuição CD 20:</b> A elfa sente, acima de tudo, pena do goblin.</li><li><b>Sem teste:</b> Os dois sempre dizem que Illydna \"salvou\" Alvuriell.</li><li><b>Sem teste:</b> O goblin fala sem vergonha do passado de ladrão, frisando como estava errado e como Illydna lhe deu tudo.</li><li><b>Diplomacia, Enganação CD 30:</b> O nome original de Alvuriell era Grug.</li><li><b>Nobreza, Percepção CD 20:</b> Alvuriell tem maneirismos de quem aprendeu etiqueta numa escola, não em casa.</li></ul><h3>Remont e Ysmenne Ronchetillon</h3><ul><li><b>Sem teste:</b> Uma porta dentro da casa está sempre fechada (tranca comum, de boa qualidade).</li><li><b>Ladinagem CD 20:</b> Atrás da porta fechada há um pequeno escritório com os cinco <b>Dossiês do Aluno</b> (handout no diário).</li><li><b>Sem teste:</b> Embora seja a casa de um alto nobre, não há ornamentos nem flâmulas com o brasão dos Ronchetillon.</li><li><b>Sem teste:</b> Há uma sala com cinco cadeiras em semicírculo, mesinhas e uma prateleira de bebidas. Parece uma sala de reuniões.</li><li><b>Diplomacia, Enganação, Intuição CD 25:</b> Ysmenne não sabe o que há atrás da porta, só que é \"assunto de Remont\".</li><li><b>Diplomacia, Enganação, Percepção CD 25:</b> As reuniões da vizinhança acontecem na sala das cinco cadeiras.</li><li><b>Diplomacia, Enganação, Percepção CD 30:</b> Os participantes das reuniões são só Remont, Osmont, Albert, Illydna e Hugo.</li><li><b>Diplomacia, Enganação, Intuição CD 30:</b> Ysmenne sai de casa quando há reunião, para deixar os convidados à vontade. Em geral visita Aldanna ou Rosa.</li><li><b>Diplomacia, Enganação, Intuição CD 30:</b> Ysmenne não sabe o que é discutido nas reuniões, nem por que ela e os outros não são convidados.</li><li><b>Intuição CD 30:</b> Nunca ocorreu a Ysmenne perguntar o que é discutido ou por que ela não pode ouvir.</li><li><b>Nobreza CD 25:</b> Ysmenne tem maneirismos de etiqueta aprendidos numa escola depois de adulta, não naturais.</li><li><b>Nobreza CD 25:</b> Os maneirismos de Ysmenne são os mesmos de Aldanna, Inagar, Alvuriell e Rosa.</li></ul><h3>Hugo, Rosa e Luka</h3><ul><li><b>Sem teste:</b> Nenhum dos dois parece saber cuidar da casa ou da plantação.</li><li><b>Ofício CD 20:</b> Embora humilde, a casa usa os mesmos materiais caros das outras.</li><li><b>Ofício CD 25:</b> A casa é mais que humilde: é antiquada, quase falsa, como se alguém imitasse uma casa pobre.</li><li><b>Nobreza, Ofício CD 20:</b> Hugo e Rosa vestem roupas de camponeses, mas limpas e bem costuradas demais. Parecem fantasias.</li><li><b>Conhecimento CD 15:</b> Os dois usam um vocabulário atípico para gente tão simples.</li><li><b>Nobreza CD 15:</b> Os dois têm maneirismos de etiqueta que lembram nobres.</li><li><b>Nobreza CD 25:</b> Rosa tem os mesmos maneirismos dos outros: parece ter aprendido numa escola.</li><li><b>Nobreza CD 20:</b> Hugo parece ter nascido nobre.</li><li><b>Nobreza CD 30:</b> Hugo é um alto nobre de Valkaria (o conde Labonnet).</li><li><b>Misticismo CD 25:</b> A pele de Rosa tem marcas de uso de magia e ela tem uma espécie de aura mágica.</li><li><b>Misticismo CD 30:</b> As marcas e a aura de Rosa são típicas de necromancia.</li><li><b>Conhecimento, Investigação, Misticismo CD 35:</b> Rosa é a notória necromante <b>Rozaryth Dez Caveiras</b>, capturada por aventureiros há cerca de dois anos.</li><li><b>Intuição CD 25:</b> Rosa realmente não lembra do passado. Perguntar o que fazia antes de Hugo soa absurdo para ela.</li></ul>\n\t\t\t\t<p class=\"secret\"><b>Aníbal:</b> para comemorar a nova vida, Aldanna preparou o javali para o jantar e o serviu a Osmont na primeira refeição na casa nova.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "YVCUlQ130vmGgJe5",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.YVCUlQ130vmGgJe5"
+    },
+    {
+      "name": "Handout · Dossiês do Aluno",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p><i>Cinco tomos bem encadernados no escritório trancado de Remont, todos com o símbolo de Khalmyr e o título</i> Dossiê do Aluno<i>. Na folha de rosto, o nome de um morador e um carimbo: Escola de Etiqueta e Bom Comportamento de Madame Margebell. Letra caprichosa.</i></p>\n\t\t\t\t<h3>Aldanna</h3>\n\t\t\t\t<p><b>Passado:</b> aventureira. Especializada em viver nos ermos e derramar sangue.<br><b>Principais desafios:</b> acha-se especial. Ideias heroicas. Acostumada à vida na floresta. Tem apego perverso a um animal. Mesmo casada, quer continuar sendo anormal. Cercada de outros anormais.<br><b>Resultados:</b> livre de comportamentos desviantes após dois meses de treinamento. Mantive suas memórias, mas atreladas a sentimentos de vergonha e imaturidade. Noções de etiqueta, culinária e serviços domésticos vinculadas à sensação de maturidade. Opiniões conflitantes com as do marido extraídas.<br><b>Recomendações:</b> nenhum objeto que possa lembrá-la da vida anormal. Aulas de reforço se demonstrar vontade de sair da vizinhança.</p>\n\t\t\t\t<h3>Inagar</h3>\n\t\t\t\t<p><b>Passado:</b> mago treinado desde a juventude.<br><b>Principais desafios:</b> contato com magia arcana em períodos de formação. Solitário e antissocial, pode passar noites inteiras pesquisando. Acha-se inteligente. Gosta de ler. Curioso.<br><b>Resultados:</b> aversão por magia alcançada após um mês. Mantive suas memórias, atreladas a gatilhos de humilhação e vergonha. Dependência emocional do marido obtida após três meses. Plenamente socializado, livre de pensamento excessivo.<br><b>Recomendações:</b> manter os grimórios por perto para garantir um nível basal de vergonha. Para evitar o ressurgimento dos hábitos antissociais, proibir solidão por mais de alguns minutos.</p>\n\t\t\t\t<h3>Alvuriell</h3>\n\t\t\t\t<p><b>Passado:</b> ladrão. Vida às margens da sociedade.<br><b>Principais desafios:</b> por ser um goblin, é preciso reformular sua mente em níveis fundamentais. Seu histórico de sobrevivência leva a pensamentos independentes.<br><b>Resultados:</b> reconhecimento da anormalidade da própria raça alcançado após um mês. Nova personalidade moldada em quatro meses. Mantido em um patamar infantil, mentalidade adulta considerada supérflua para seu novo cotidiano. O nome requisitado foi implantado, mas ainda existe memória do nome anterior.<br><b>Recomendações:</b> é um incapaz, portanto deve ser tratado com piedade. Mantê-lo longe de qualquer decisão ou tarefa.</p>\n\t\t\t\t<h3>Ysmenne</h3>\n\t\t\t\t<p><b>Passado:</b> cavaleira da família Ronchetillon. Acostumada a glória. Veterana de batalhas.<br><b>Principais desafios:</b> seu histórico leva a pensamentos de orgulho. Sua posição provoca noções de heroísmo. Comportamento anormal incentivado por tradições.<br><b>Resultados:</b> primeiro sucesso total. Tornada indefesa após seis meses. Amor por Remont obtido após mais dois meses. Pensamentos de lealdade e dever para a família convertidos em servidão ao marido. Usei a memória de seus juramentos para torná-la incapaz de desobedecer.<br><b>Recomendações:</b> mantê-la longe de qualquer atividade física. Todo ato de coragem deve ser imediatamente punido. Caso haja reincidência, trazer para aulas de reforço.</p>\n\t\t\t\t<h3>Rosa</h3>\n\t\t\t\t<p><b>Passado:</b> necromante, criminosa, vilã. Acostumada à companhia de mortos-vivos.<br><b>Principais desafios:</b> a aluna tem desvios fundamentais de caráter. Seu contato com magia deixou marcas indeléveis. Sua notoriedade pode levar a reconhecimento e conflito de personalidades.<br><b>Resultados:</b> memória totalmente apagada e nova personalidade básica implantada após quatro meses. Moralidade mantida num nível primitivo. Remoção de habilidades e conhecimentos desnecessários, incluindo alfabetização. Inseri conhecimentos de bons modos, culinária e tarefas domésticas. Nome anormal trocado.<br><b>Recomendações:</b> cotidiano extremamente simples, ligado a uma vida pastoril. Uma gravidez seria ideal. Caso demonstre volta a comportamentos vilanescos, recomendo execução. Deixei-a incapaz de se defender.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "vtj2mmR3PLQPmkhJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.vtj2mmR3PLQPmkhJ"
+    },
+    {
+      "name": "Respostas em Stremtol",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Ninguém em Stremtol tem habilidades, equipamento ou guarda-costas: descobrir a escola é fácil. Construa com o grupo como isso acontece.</p>\n\t\t\t\t<h3>Violência ou intimidação</h3>\n\t\t\t\t<p>Os moradores só podem se render ou morrer. Lembre que os Mata-Malvados chamaram a Guarda justamente para não resolver na força, e que atacar um nobre tem repercussões. Veja a contingência abaixo.</p>\n\t\t\t\t<h3>Reunião da vizinhança</h3>\n\t\t\t\t<p>Se o grupo se fizer notar e ficar algumas horas, Remont, Osmont, Albert, Illydna e Hugo se reúnem na sala das cinco cadeiras assim que tiverem privacidade. Sem barreiras mágicas, Furtividade funciona. Remont lidera e tenta arrancar de Osmont o que Aldanna disse; Illydna e Albert têm medo; Hugo se sente moralmente superior (\"eliminou uma ameaça\"). Concordam em fingir que está tudo bem e Remont se oferece para pagar \"aulas de reforço\": é aqui que aparecem a escola e o nome de Madame Margebell.</p>\n\t\t\t\t<h3>Interrogatório</h3>\n\t\t\t\t<p>As vítimas são <b>incapazes</b> de falar das \"aulas\", nem por magia. Os outros podem revelar (Diplomacia, Enganação ou Intimidação) o nome da escola, a vida anterior de uma vítima ou os Dossiês. Ninguém sabe como a lavagem funciona.</p>\n\t\t\t\t<h3>Infiltração</h3>\n\t\t\t\t<p>A casa de Remont é a mais útil: destaque a porta fechada. Ao fim, o grupo deve saber o que aconteceu, o nome da escola e que ela fica no Refúgio da Felicidade, talvez o nome de Margebell. Não os métodos.</p>\n\t\t\t\t<h3>Salvando à força</h3>\n\t\t\t\t<p>Nenhuma vítima quer sair. Só arrastadas. Coagidas a depor, defendem os cônjuges: os heróis ficam contra todos, até quem querem ajudar.</p>\n\t\t\t\t<h3>Contingência: Bandidos contra o Crime</h3>\n\t\t\t\t<p>Ataques ou ameaças sérias fazem os moradores revelarem tudo, mas os Ronchetillon ficam sabendo. O grupo enfrenta Margebell normalmente, mas a família abafa tudo: nenhum tribunal aceita o caso e, se viva, ela fica impune. <b>Sem Lei &amp; Ordem por este caso</b> (o nível vem mesmo assim). Os Mata-Malvados ficam sob vigilância e nunca mais se aproximam de Aldanna. O pagamento fica a seu critério. Não é punição: é uma história sobre a corrupção do sistema.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "we0O948UECFcPbDn",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.we0O948UECFcPbDn"
+    },
+    {
+      "name": "Fases 4 a 6 · A Escola",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>No Refúgio da Felicidade, a poucas horas de Stremtol: construção sóbria e discreta atrás de um muro alto, porta de ferro fundido, jardim impecável, casa grande e funcional. Poucos fora da elite a conhecem. Se quiser, role um encontro no caminho.</p>\n\t\t\t\t<p>Ao bater a aldrava, uma serva sorridente (@UUID[Actor.8Zk0CJ4GOiNI0YlJ]{Servo da Escola}) abre: <i>\"Sejam bem-vindos à Escola de Etiqueta e Bom Comportamento de Madame Margebell. Por favor, queiram me acompanhar. Peço para que me informem de qualquer coisa que eu possa fazer para tornar sua visita mais agradável.\"</i> Um jardineiro e um mordomo têm exatamente o mesmo sorriso; o mordomo se oferece para guardar casacos e armas.</p>\n\t\t\t\t<p>Saguão de granito e mármore, enorme símbolo de Khalmyr e o lema <b>\"Bondade é normalidade\"</b>. Sala de espera com chá, biscoitos e <b>três pinturas</b> (as primeiras mensagens; ainda não peça testes).</p>\n\t\t\t\t<h3>A Professora de Normalidade</h3>\n\t\t\t\t<p><i>\"Muito prazer. Sou Margebell, diretora da Escola de Etiqueta e Bom Comportamento. Desejavam ter comigo?\"</i></p>\n\t\t\t\t<ul><li>Despreza os heróis (Intuição contra a Nobreza dela nota o sorriso falso). Tem mais apreço por clérigos e devotos de Khalmyr.</li><li>Responde tudo, mostra a escola e sugere que fiquem uma temporada para aprender boas maneiras (\"uma introdução aos modos da capital\").</li><li>Não nega nada: Aldanna casou por vontade própria e só aprendeu a aceitar; Rosa e Alvuriell deixaram o crime; Inagar aprendeu a amar; Ysmenne subiu socialmente. <i>\"Mais importante que tudo isso, agora todos eles são normais.\"</i></li><li>Acusada, diz que é um mal-entendido e convida para conhecer as instalações.</li><li>Nunca ataca primeiro. Atacada, foge para as galerias. Um ataque imediato e brutal é o jeito mais eficiente de derrotá-la, mas o grupo dificilmente desvenda o mistério.</li></ul>\n\t\t\t\t<h3>Escondidos na escola</h3>\n\t\t\t\t<p>Use @UUID[Macro.KWguPy3XjteSnTWO]{Av1 · Infiltração na Escola}. Se foram vistos, os servos procuram juntos (+12); encontrados, são atacados e Margebell chega em 1d6 rodadas. Se ninguém sabe deles, cada servo testa sozinho.</p>\n\t\t\t\t<h3>Escola de Duros Golpes</h3>\n\t\t\t\t<p>Tudo preciso, discreto, limpo. Belas pinturas em todas as paredes e, em várias salas, <b>estátuas de anjos em tamanho real</b>, pintadas com perfeição (descreva-as!). Margebell guia o grupo por todas as galerias e, na central, convida a se matricular. Se recusarem, ataca.</p>\n\t\t\t\t<p><b>Descobrir as mensagens:</b> Conhecimento ou Nobreza CD 30 nota elementos dispostos com significado; <i>Compreensão</i> revela que há mensagens, mas não quais; só Atuação, Ofício (pintor) ou parecido CD 30 revela palavras escritas que a mente absorve.</p>\n\t\t\t\t<h3>Salas e quadros</h3>\n\t\t\t\t<ul><li><b>Primeiro andar:</b> Sala de Estar (4), Sala de Jantar (6, mesa sempre posta), Sala de Música (3, piano), Crochê e Trabalhos Manuais (5), Cachimbos e Bebidas (4), Cozinha Elegante (2, falsa), Sala de Limpeza (4), Sala de Aula (8), Sala de Dança (8), Berçário (4, boneco no berço).</li><li><b>Segundo andar:</b> Quarto Principal (sem quadros; trancado, Ladinagem CD 25; óculos de reserva numa gaveta trancada) e cinco Quartos dos Alunos (3 cada).</li></ul>\n\t\t\t\t<h3>As pinturas</h3>\n\t\t\t\t<p>Todas têm mensagens subliminares: OBEDEÇA · VOCÊ É IGUAL A TODOS · CONFORMIDADE É FELICIDADE · HEROÍSMO É SANGUINOLÊNCIA · ACEITE SEU LUGAR · VIVA E MORRA SEM OFENDER. Só não é afetado quem não usa a visão ou usa os óculos de Margebell.</p>\n\t\t\t\t<ul><li>Cada sala com quadros: <b>Vontade CD 15, +2 por teste</b> (efeito mental; imunes testam com +5). Cada jogador controla os próprios testes se o grupo se separar.</li><li>As três primeiras falhas: um bilhete secreto cada (não é controle mental, só como o personagem se sente; ele não estranha).</li><li>Depois: perde uma habilidade por falha (classe em ordem decrescente de nível, alfabética no empate; devoção; origem; raça).</li><li>Sem habilidades: 1ª falha, só uma ação padrão ou de movimento por rodada; 2ª, paralisado (mesmo imune); 3ª, começa a concordar com Margebell.</li><li>A conversão completa leva meses: só acontece se o personagem for abandonado na escola.</li></ul>\n\t\t\t\t<p><b>Temas de quadros:</b> uma senhora elegante numa cadeira; crianças num campo florido; moças e rapazes cavalgando; um baile; uma família em volta do pai; um cavalheiro corpulento de casaca.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "HppS01uGz20r4xuU",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.HppS01uGz20r4xuU"
+    },
+    {
+      "name": "Fase 6 · Punindo os Bagunceiros",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Margebell quer o grupo na escola o máximo possível: conta seus sucessos, convida para jantar (mais quadros) e, quando os julga \"domados\", oferece aulas grátis. Quando o grupo se mostrar hostil (voz de prisão, ordem de fechar), ela luta até a morte.</p>\n\t\t\t\t<blockquote><p><i>\"Como ousam? Como têm coragem de falar isso dentro de um reduto de Khalmyr, de um dos únicos lugares que busca ensinar as pessoas a serem normais? Observem Stremtol e vejam a felicidade que criei! Acham que seria melhor manter um criminoso à solta, deixar que uma necromante continuasse com suas artes profanas? Acham que deveríamos tolerar caçadores e magos em nossa sociedade? Acham adequado que uma cavaleira continue trajando armaduras e portando armas após o casamento? Desejam preservar os excessos da nobreza, celebrar sua vida decadente? Tudo isso são chiliques infantis de quem só quer parecer especial! Eu presto um serviço indispensável à sociedade, fazendo todos se encaixarem com perfeição! Khalmyr me inspirou e eu estou criando normalidade! Até mesmo tive a benevolência de oferecê-la a vocês!\"</i></p>\n\t\t\t\t<p><i>\"O Deus da Justiça vai castigar os anormais que vêm interromper nosso trabalho! Sintam o julgamento de Khalmyr!\"</i></p></blockquote>\n\t\t\t\t<h3>Encontro</h3>\n\t\t\t\t<ul><li>@UUID[Actor.r3DKOoWKUkgm8QsY]{Madame Margebell} (ND 7) e quatro @UUID[Actor.lLBsD3k84N74a5sS]{Anjo Aprisionado} (ND 5).</li><li>Os anjos alçam voo e projetam o <b>campo de 3m</b> em volta dela: ninguém entra, nada de fora a afeta; ela age normalmente. Dura até o último anjo cair. Ligue o efeito \"Protegida pelo campo dos anjos\" na ficha dela.</li><li>Ela fica no campo lançando magias e fortalecendo os anjos (Bênção, Oração, Cólera Divina).</li></ul>\n\t\t\t\t<h3>A história de Margebell</h3>\n\t\t\t\t<p><b>Com conversa:</b> criada numa família comum, ordenada num templo, passou a ter enjoo físico de aventureiros celebrados e impunes. Largou o templo sem largar a fé: os mortais não entendem Khalmyr, e o mundo deveria ser antes de tudo ordeiro. Foi governanta dos Ronchetillon por anos, juntou uma pequena fortuna e partiu para sua missão.</p>\n\t\t\t\t<p><b>Com interrogatório:</b> comprava prisioneiros de carcereiros para experimentos que só destruíam personalidades. Até que um \"gênio\" discreto, sem rosto nem nome, trouxe pergaminhos sobre mensagens subliminares em imagens e as lentes que as bloqueiam. Um ano depois ela tinha o primeiro sucesso (uma cultista virou serva). Os Ronchetillon financiaram a escola: Remont amava Ysmenne, cavaleira da família \"não boa o bastante\", que foi a primeira aluna. Depois financiaram Stremtol. Os alunos seguintes eram ligados aos Ronchetillon. Ela quer apresentar o programa ao alto clero de Khalmyr. Por último, prendeu celestiais como estátuas. O cavalheiro voltou uma vez, levou uma cópia do método e sumiu.</p>\n\t\t\t\t<section class=\"secret\"><h3>O que realmente aconteceu</h3>\n\t\t\t\t<p>Ghorskander, o oficial médico da Roca, precisava afetar a mente dos artonianos. Ouviu falar da sacerdotisa que comprava prisioneiros, entregou-lhe a pesquisa sem mostrar o rosto e deixou que ela a completasse. Depois levou o método pronto: reprogramação de personalidade <b>sem magia</b>, irreversível e indetectável.</p>\n\t\t\t\t<p>Ele ensinou criminosos menores ligados à Companhia dos Irmãos a pôr as mensagens em pichações, anúncios, brasões, murais de deuses e da Rainha-Imperatriz. Os aventureiros da capital estão perdendo seus poderes. Para proteger os próprios capangas, usou o cristal rosado (que burla o bloqueio da Rocha Cinzenta) nas lentes e em implantes.</p></section>\n\t\t\t\t<h3>Contingência: Vamos Limpar Valkaria</h3>\n\t\t\t\t<p>Com os óculos, o grupo vê mensagens pela cidade (\"OBEDEÇA\", \"CORAGEM É MALDADE\"...). Apagar tudo é longo e tedioso: melhor contratar ou convencer NPCs. Investigar os autores dá pouco (criminosos ligados à Companhia, artistas pagos por nobres, Avatares do Futuro Eterno). Mas a iniciativa tem consequências positivas na Aventura 7.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Xg0Y4sfXjgArsXe1",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.Xg0Y4sfXjgArsXe1"
+    },
+    {
+      "name": "Fase 7 · Desfecho, Provas e Pagamento",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p>Derrotada Margebell, resta coletar provas e apresentá-las a Mathilda. Stremtol é desfeita e a Igreja de Khalmyr anula os casamentos das vítimas, mas elas entendem o que houve e continuam sentindo o mesmo. Não há \"resposta certa\": deixe os jogadores darem ideias.</p>\n\t\t\t\t<ul><li>Nenhum Ronchetillon ou outro nobre é punido: não há provas de que sabiam dos procedimentos. As famílias abafam e condenam a professora em público.</li><li>Illydna e Albert podem ser punidos (e merecem), mas deve ficar claro o gosto de injustiça por serem os únicos bodes expiatórios.</li><li>Aldanna pode voltar aos Mata-Malvados, mas terá de reaprender tudo (do 1º nível) e esquecer a doutrinação, o que leva anos.</li></ul>\n\t\t\t\t<h3>Provas (até 5 de Lei &amp; Ordem)</h3>\n\t\t\t\t<ul><li>Os Dossiês do Aluno (@UUID[Item.ZsklsRoBWCP2QSiH]{Dossiês do Aluno (5 tomos)}).</li><li>Uma pintura e um par de óculos (@UUID[Item.m5vGhf8rsy2ryjO2]{Pintura Subliminar}, @UUID[Item.Sc9LkDPG2Arw0hah]{Óculos de Margebell}).</li><li>Um servo sem personalidade nem memória.</li><li>As anotações de Madame Margebell (@UUID[Item.lTqc0mm77NrGli9A]{Anotações de Madame Margebell}).</li><li>Uma testemunha confiável (um dos maridos ou esposas de Stremtol).</li></ul>\n\t\t\t\t<p>Registre com a macro <i>Arco 2 · Lei &amp; Ordem</i> (opção \"Provas entregues\").</p>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Se Aldanna for posta em segurança (voltando ou não ao grupo), Torzogh paga: níveis 8 ou 9, T$ 12.000; nível 10, T$ 24.000; nível 11, T$ 32.000.</p>\n\t\t\t\t<h3>Se o caso não for resolvido</h3>\n\t\t\t\t<p>Na Aventura 7, cada PJ perde as duas últimas habilidades ativáveis que ganhou (as mensagens subliminares de Ghorskander funcionam).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "rPc0pJTaMPDCpn4e",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!nPpSP5zc8qiBHoEf.rPc0pJTaMPDCpn4e"
+    }
+  ],
+  "_key": "!journal!nPpSP5zc8qiBHoEf"
+}

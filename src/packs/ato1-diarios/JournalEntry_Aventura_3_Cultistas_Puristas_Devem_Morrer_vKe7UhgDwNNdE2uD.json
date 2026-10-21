@@ -1,0 +1,295 @@
+{
+  "name": "Aventura 3 · Cultistas Puristas Devem Morrer",
+  "folder": "LcF9DLwcNpcOc44L",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "_id": "vKe7UhgDwNNdE2uD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>A criminosa de guerra @UUID[Actor.u5apt4uO35WdsG5B]{Capelã de Guerra Lorelei Wulff} se esconde no subsolo do salão comunal de Dornbach. Virou clériga de Aharadak achando que cultua Valkaria e, com uma máquina e ciência trazidas por Torgo (o homem de mantos escuros, agente do Dr. Vesper), \"purifica\" não humanos em \"humanos\" (lefou). Já transformou @UUID[Actor.gfwJVyhN4tz8mV7H]{Zagar, Cobaia \"Purificada\"} e raptou a dahllan Andrisse com o @UUID[Item.QtHk83TAYrxIZD8n]{Lampião Mecanomágico}.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Normalidade:</b> Edwina conta a Nadine uma história do Herói Louco no salão da Metais do Baixote.</li>\n\t\t\t\t\t<li><b>Encontro nas Centrais</b> (opcional) a caminho do carvalho oco.</li>\n\t\t\t\t\t<li><b>As Dahllan Daninhas:</b> tiro de besta de aviso, Annabel hostil, Grena chamou o grupo, Astelle solta verdades constrangedoras.</li>\n\t\t\t\t\t<li><b>Dornbach:</b> investigação, infiltração, ataque frontal ou \"bater na porta\". Linha de tempo a partir do meio-dia.</li>\n\t\t\t\t\t<li><b>Ritual</b> à meia-noite e desfecho.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Actor.u5apt4uO35WdsG5B]{Capelã de Guerra Lorelei Wulff} (ND 4) e dois @UUID[Actor.kST1GvZ3FiSoUJqk]{Soldado de Lorelei} (ND 2)</li>\n\t\t\t\t\t<li>Seis @UUID[Actor.lZbFrWROlkwtZvrB]{Guarda de Dornbach} (Delmond, Marwen e mais quatro) e @UUID[Actor.L0HHqGMFyQ9UaeWU]{Aldeão de Dornbach} (Ishtob, Volko, Zebedinna, Myrilla...)</li>\n\t\t\t\t\t<li>@UUID[Actor.gfwJVyhN4tz8mV7H]{Zagar, Cobaia \"Purificada\"} e a @UUID[Actor.Coqcuvdq6H3vfMyJ]{Máquina de Purificação}</li>\n\t\t\t\t\t<li>Perigos e testes: @UUID[Actor.9b3t9es98pUwbdPJ]{Aldeia de Dornbach (perigos e testes)}</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Combatentes de Dornbach: duas alternativas</h2>\n\t\t\t\t<p><b>Alternativa 1:</b> cada guarda e aldeão é um token.</p>\n\t\t\t\t<p><b>Alternativa 2 (recomendada pelo livro):</b> só Lorelei e os soldados são tokens. Cada um recebe uma dupla de ajudantes: ligue o efeito <i>Ajudantes de Dornbach: dois (+5)</i> na ficha. Um ataque ou efeito com dano derruba um ajudante (área não pega os dois); troque para o efeito de +2, e desligue com os dois derrubados. Use a Defesa e as resistências das fichas de guarda e aldeão.</p>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.7ONPyDWWRXborIEN]{Av3 · Demais Habitantes}: no fim de cada rodada. Começa pelo último na iniciativa e sobe; rola a tabela @UUID[RollTable.d7MveDRRGAGX5IlM]{Demais Habitantes de Dornbach}, os testes do alvo, aplica dano (com RD) e condições.</li>\n\t\t\t\t\t<li>@UUID[Macro.5SXzqmsEaIQ9Fh4E]{Av3 · Ritual de Purificação}: avança as 5 rodadas do ritual com a narração de cada uma.</li>\n\t\t\t\t\t<li>@UUID[Macro.06tBBAcOrA8o4NBz]{Av3 · Infiltração em Dornbach}: conta o teste estendido (5 sucessos antes de 3 falhas).</li>\n\t\t\t\t\t<li>@UUID[Macro.He2Fcb1qK7TOsqSC]{Av3 · Lampião Mecanomágico}: Vontade CD 20 nos alvos mirados e marca quem ficou hipnotizado.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "XtCqEI13XP7yK8Ya",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.XtCqEI13XP7yK8Ya"
+    },
+    {
+      "name": "Handout · Aviso no Quadro",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote><p><i>\"A aldeia de Dornbach está escondendo criminosos de guerra puristas! Não sabemos quem eles são ou o que planejam, mas isso é do interesse direto do Exército do Reinado. Nós mesmas já sofremos com eles e há muitos não humanos em risco nas Colinas Centrais. Venham falar conosco, podemos dar detalhes. Dornbach precisa ser investigada!</i></p>\n\t\t\t\t<p><i>Grena, no grande carvalho oco, a dois dias de viagem a noroeste do Forte Cabeça-de-Martelo\"</i></p></blockquote>\n\t\t\t\t<p class=\"secret\"><b>Isabrine:</b> desconfia das \"Dahllan Daninhas\" e aconselha ficar longe. <b>Moira:</b> acha que merecem ajuda, nem que seja para apaziguar uma briga de vizinhos.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "t1JEoVKpMxfWhy5H",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.t1JEoVKpMxfWhy5H"
+    },
+    {
+      "name": "As Dahllan Daninhas",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Vivem num carvalho oco do tamanho de uma torre, sem folhas mas florindo na primavera (sinal de Allihanna), no topo de uma colina cultivada. Filhas da dríade Granúlia.</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Annabel</b>, a mais velha: hostil, teimosa, quase paranoica, aliada feroz se ganharem sua confiança. Resume as Colinas Centrais.</li>\n\t\t\t\t\t<li><b>Grena</b>: chamou o grupo, tenta colaborar e desculpar a irmã.</li>\n\t\t\t\t\t<li><b>Astelle</b>, a caçula estudiosa: revela verdades constrangedoras (Andrisse era protegida demais e muito ingênua).</li>\n\t\t\t\t\t<li><b>Andrisse</b>: a desaparecida, presa sob o salão comunal e sofrendo lavagem cerebral.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Servos de Allihanna, druidas e aventureiros ligados à natureza ganham a simpatia delas com mais facilidade.</p>\n\t\t\t\t<h3>O que elas dizem (e o que é verdade)</h3>\n\t\t\t\t<table>\n\t\t\t\t\t<tr><th>Afirmação</th><th>Verdade</th></tr>\n\t\t\t\t\t<tr><td>Dornbach sempre deu problemas; querem o carvalho e nos ver longe.</td><td><b>Parcial.</b> Temiam Granúlia mas nunca agiram. São mais intolerantes que o resto das Centrais e, desde Lorelei, se comportam bem demais.</td></tr>\n\t\t\t\t\t<tr><td>Estão escondendo puristas: o único não humano sumiu, há pegadas fundas, barulho de construção à noite e Andrisse sumiu.</td><td><b>Verdade.</b> Zagar foi transformado, as pegadas são de Torgo, o barulho é a máquina.</td></tr>\n\t\t\t\t\t<tr><td>O Reinado nunca faz nada porque Dornbach é de humanos.</td><td><b>Falso.</b> O Exército levaria a sério se elas não tivessem tantas acusações falsas (ataque que era festival, culto a Sszzaas, maldição nas plantações).</td></tr>\n\t\t\t\t\t<tr><td>Andrisse simplesmente desapareceu.</td><td><b>Verdade.</b> Há cerca de duas semanas ela viu o brilho do lampião e seguiu hipnotizada até Dornbach.</td></tr>\n\t\t\t\t\t<tr><td>Andrisse nunca se afastaria, conhece os perigos.</td><td><b>Falso.</b> Foi tão protegida que não conhece nada do mundo.</td></tr>\n\t\t\t\t</table>\n\t\t\t\t<p><b>Se o grupo der as costas:</b> a missão falha (Vesper ganha apoio de nobres racistas em Valkaria) ou Astelle foge de casa para pedir ajuda pessoalmente.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "gX8grWPAeX9wKBSk",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.gX8grWPAeX9wKBSk"
+    },
+    {
+      "name": "Construções de Dornbach",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li><b>Oficina de Delmond:</b> ferreiro e a aprendiz Braya, ambos puristas. Pistas: nenhum sinal de que ele é inventor, talheres mordidos pelos dentes de Zagar, elos de corrente descartados.</li>\n\t\t\t\t\t<li><b>Chifre de Bode:</b> taverna famosa pelo chifre de bode cozido em lama. Marwen (racista \"condescendente\", pode trocar de lado), Ungus (fanático) e Zagar. Pistas: @UUID[Item.vBjMM0wNPUdYOdtK]{Poção de Sono (estoque de Marwen)} atrás do balcão, o comportamento de Zagar, o quarto dele com roupas que não servem e o desenho de Lylla.</li>\n\t\t\t\t\t<li><b>Salão Comunal:</b> ancião Orlo (purista convicto), Deron, Catagran e Bernice. Ishtob, Volko, Zebedinna e Myrilla ficam \"fazendo hora\". Investigação/Ladinagem: armadilha de poço. Ofício (pedreiro): há um subsolo. Investigação: pratos e talheres sobrando (alguém escondido come ali). Enganação razoável faz os anciões mostrarem as visões puristas.</li>\n\t\t\t\t\t<li><b>Moinho:</b> Brixon e Arsace, racistas discretos que odeiam forasteiros. @UUID[Item.JYW4vdeCK0x8JPON]{Panfleto de Ódio da Guerra Artoniana} num baú.</li>\n\t\t\t\t\t<li><b>Templo do Panteão:</b> fechado com tábuas, símbolos externos apagados há pouco, medalhões dos deuses riscados. Os aldeões contam versões diferentes de um \"ataque de orcs\".</li>\n\t\t\t\t\t<li><b>Casas:</b> simples, nada surpreendente. Sem mercado, só uma praça perto do salão onde se vende grão.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "H9w0FOCpEXmYRn73",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.H9w0FOCpEXmYRn73"
+    },
+    {
+      "name": "Linha de Tempo do Ritual",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<table>\n\t\t\t\t\t<tr><td><b>12:00</b></td><td>O grupo chega. Dois aldeões \"guerreiros\" vão avisar Lorelei (Intuição CD 25 para notar).</td></tr>\n\t\t\t\t\t<tr><td><b>13:00</b></td><td>Marwen convida para a taverna (sem veneno ainda) e manda Zagar trabalhar. Um aldeão vigia o grupo.</td></tr>\n\t\t\t\t\t<tr><td><b>14:00</b></td><td>Delmond convida não humanos para \"conhecer o salão\" (armadilha). Com mais de dois, separa: alguns vão ao salão, outros para longe, onde Lorelei espera com o lampião. Oferece \"aprimorar as armas\".</td></tr>\n\t\t\t\t\t<tr><td><b>15:00</b></td><td>Lorelei interroga quem está preso no subsolo. Dá para ver a máquina sendo montada e falar com Andrisse na cela ao lado. Aldeões fazem de tudo para manter o resto do grupo longe do salão.</td></tr>\n\t\t\t\t\t<tr><td><b>16:00</b></td><td>Com hostilidade aberta, Lorelei tenta o ritual (em último caso). Lança Sono por pergaminho nos prisioneiros e tira os equipamentos.</td></tr>\n\t\t\t\t\t<tr><td><b>17:00</b></td><td>Delmond é chamado ao salão (problema na máquina). Equipamentos dos presos vão para a oficina, sob o entulho. Um clérigo do grupo é chamado para missa, batismos e casamentos (1 a 3 horas).</td></tr>\n\t\t\t\t\t<tr><td><b>18:00</b></td><td>Máquina pronta. Lorelei discursa aos prisioneiros. Soldados e guerreiros prontos no subsolo.</td></tr>\n\t\t\t\t\t<tr><td><b>19:00</b></td><td>Jantar grátis com Poção de Sono (Vontade CD 19). Se o grupo entregou as armas e mostrou hostilidade, Delmond as quebra (ou aldeões se armam com elas). Lorelei reza.</td></tr>\n\t\t\t\t\t<tr><td><b>20:00</b></td><td>Marwen insiste para dormirem e pede as armaduras \"para polir\". Janelas dos quartos com Tranca Arcana. Lorelei chama Torgo magicamente (primeira vez que o nome aparece).</td></tr>\n\t\t\t\t\t<tr><td><b>21:00</b></td><td>Portas trancadas por fora. Torgo chega (a pé, ou numa luz cegante do gog'magogue). Lorelei sobe para recebê-lo. Chance de fuga.</td></tr>\n\t\t\t\t\t<tr><td><b>22:00</b></td><td>A máquina sobe. Se houver hostilidade e alguém trancado, ateiam fogo à taverna: chance de Marwen trocar de lado com bons argumentos.</td></tr>\n\t\t\t\t\t<tr><td><b>23:00</b></td><td>Todos na praça. Os aldeões darão a vida para deter os heróis.</td></tr>\n\t\t\t\t\t<tr><td><b>00:00</b></td><td>O ritual começa: Andrisse, depois outros NPCs, depois os heróis. Torgo não interfere e vai embora quando o combate esquenta.</td></tr>\n\t\t\t\t\t<tr><td><b>01:00</b></td><td>Sem interferência, o ritual está completo e Lorelei chora agradecendo a \"Valkaria\".</td></tr>\n\t\t\t\t</table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "e7299jEMp81ACG1v",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.e7299jEMp81ACG1v"
+    },
+    {
+      "name": "O Ritual de Purificação",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Grande magia divina auxiliada pela @UUID[Actor.Coqcuvdq6H3vfMyJ]{Máquina de Purificação}. Só funciona em terra maculada pela Tormenta (nas Centrais); em outros lugares mata as vítimas. Precisa de uma vítima não humana presa na gaiola e de um <b>humano voluntário</b> ao lado dela.</p>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Lorelei entoa a oração.</li>\n\t\t\t\t\t<li>Relâmpago e sangue: o humano morre. A partir daqui, a morte de Lorelei não para o ritual.</li>\n\t\t\t\t\t<li>A vítima perde a 1ª característica de raça.</li>\n\t\t\t\t\t<li>Perde a 2ª característica de raça.</li>\n\t\t\t\t\t<li>Perde as restantes, cai com 0 PV estabilizada. Só um Desejo reverte.</li>\n\t\t\t\t</ol>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Para parar: destruir a máquina ou tirar a vítima da gaiola.</li>\n\t\t\t\t\t<li>Jogar Lorelei na gaiola não funciona: ela é lefou, não humana.</li>\n\t\t\t\t\t<li>Se Lorelei morrer, Delmond tenta o ritual com 50% de chance; na falha o humano morre e nada acontece à vítima.</li>\n\t\t\t\t\t<li>Funciona com humanoides, monstros (exceto lefou) e espíritos. Sílfides são destruídas. Não afeta mortos-vivos nem construtos.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "aPV2dRFePJV1AMan",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.aPV2dRFePJV1AMan"
+    },
+    {
+      "name": "Desfecho",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<ul>\n\t\t\t\t\t<li>Lorelei prefere morrer a ser presa e tenta se matar se puder. Pode tentar se sacrificar para \"purificar\" um não humano (e ter uma péssima surpresa).</li>\n\t\t\t\t\t<li>Interrogada: conhece o nome Torgo (que apareceu como uma grande luz no céu, como o sumiço dos criminosos na Aventura 1) e diz que <b>Syvarian</b> é um comandante de média patente que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde.</li>\n\t\t\t\t\t<li>Metade da aldeia colaborou com a Supremacia e com o culto à Tormenta (crimes de morte). Muitos fogem, outros pedem clemência ou fingem que nada aconteceu.</li>\n\t\t\t\t\t<li>Annabel quer executar os aldeões e ataca quem foi violento com ela; Grena ou os heróis conseguem detê-la.</li>\n\t\t\t\t\t<li>O @UUID[Item.QtHk83TAYrxIZD8n]{Lampião Mecanomágico} vale T$ 300 em matéria-prima.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "3SsCGk6v72bLnTiV",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vKe7UhgDwNNdE2uD.3SsCGk6v72bLnTiV"
+    }
+  ],
+  "_key": "!journal!vKe7UhgDwNNdE2uD"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Uma Mão Lava a Outra",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "uma-mao-lava",
+      "fdtPre": "Mão Amiga"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quando faz um teste de perícia, você pode gastar 1 PM para rolar novamente esse teste. Você pode usar este poder um número de vezes por cena igual ao total de membros do grupo com este poder. Este poder não funciona em cenas de combate.</p><p>Pré-requisito: Mão Amiga.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> card com o custo de 1 PM; role o teste de novo. A sincronização diz quantos usos por cena o grupo tem.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 1,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "9GCAO04skkBVOjDT",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!9GCAO04skkBVOjDT"
+}

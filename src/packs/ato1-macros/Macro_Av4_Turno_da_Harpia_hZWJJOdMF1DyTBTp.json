@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Turno da Harpia",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/explosao-de-chamas.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroTurnoHarpia() {\n\t\tconst alvos = [...game.user.targets].map((t) => t.actor).filter(Boolean);\n\t\tif (!alvos.length) return ui.notifications.warn(\"Mire (target) as criaturas no cone ou na linha.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Turno da Harpia\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"canhao\">Canhão de Fogo (linha 30m, Ref CD 20)</option>\n\t\t\t\t\t<option value=\"nadadeiras\">Bater das Nadadeiras (cone 9m, Fort CD 20)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Nadadeiras: alvos voando (–5)</label><input type=\"checkbox\" name=\"voando\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Nadadeiras: quem falhou bate em algo</label><input type=\"checkbox\" name=\"colide\" checked></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tlet html = \"\";\n\t\tif (res.acao === \"canhao\") {\n\t\t\tconst dano = await new Roll(\"4d6[fogo]\").evaluate();\n\t\t\trolls.push(dano);\n\t\t\thtml = `<h3>Canhão de Fogo</h3><p>Linha de 30m: <b>${dano.total}</b> de fogo. Reflexos CD 20 reduz à metade e evita em chamas.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst ok = r.total >= 20;\n\t\t\t\tawait a.applyDamageV2(dano, ok ? 0.5 : 1);\n\t\t\t\tif (!ok && !a.effects.some((e) => e.getFlag(\"world\", \"fdtChamas\"))) {\n\t\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [{\n\t\t\t\t\t\tname: \"Incendiado (em chamas)\",\n\t\t\t\t\t\timg: \"icons/magic/fire/flame-burning-embers-yellow.webp\",\n\t\t\t\t\t\ttype: \"base\",\n\t\t\t\t\t\tstatuses: [\"emchamas\"],\n\t\t\t\t\t\tdescription: \"1d6 de fogo no início de cada turno. Ação padrão para apagar.\",\n\t\t\t\t\t\tflags: { world: { fdt: \"av4\", fdtChamas: true } },\n\t\t\t\t\t\tsystem: { changes: [{ key: \"danoContinuo\", value: \"1d6[fogo]\", type: \"custom\", phase: \"initial\", priority: null }] }\n\t\t\t\t\t}]);\n\t\t\t\t}\n\t\t\t\thtml += `<li>${a.name}: Reflexos <b>${r.total}</b> ${ok ? \"✔️ metade\" : \"❌ dano total e em chamas\"}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t} else {\n\t\t\tconst pen = res.voando ? -5 : 0;\n\t\t\thtml = \"<h3>Bater das Nadadeiras</h3><p>Cone de 9m. Ataques à distância no cone sofrem –5, chamas se apagam, névoa e fumaça se dispersam e avançar em direção à Harpia é terreno difícil.</p><ul>\";\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.fort?.value ?? 0} + ${pen}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst ok = r.total >= 20;\n\t\t\t\tlet extra = \"\";\n\t\t\t\tif (!ok && res.colide) {\n\t\t\t\t\tconst d = await new Roll(\"1d6[impacto]\").evaluate();\n\t\t\t\t\trolls.push(d);\n\t\t\t\t\tawait a.applyDamageV2(d, 1);\n\t\t\t\t\textra = `, bate e sofre ${d.total} de impacto`;\n\t\t\t\t}\n\t\t\t\thtml += `<li>${a.name}: Fortitude <b>${r.total}</b> ${ok ? \"✔️ empurrado só 3m, sem dano\" : `❌ empurrado 6m${extra}`}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Mova os tokens à mão, para longe da Harpia.</p>\";\n\t\t}\n\t\tChatMessage.create({ content: html + \"<p style=\\\"font-size:0.85em\\\">Dano já aplicado com RD.</p>\", rolls });\n\t})();",
+  "_id": "hZWJJOdMF1DyTBTp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!hZWJJOdMF1DyTBTp"
+}

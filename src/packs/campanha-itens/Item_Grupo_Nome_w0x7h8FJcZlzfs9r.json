@@ -1,0 +1,228 @@
+{
+  "name": "Grupo · Nome",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtBeneficio": "nome"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>O grupo tem um nome que funciona em Arton, e todos se identificam como membros (brasão, grito de guerra e lema são opcionais).</p><p><b>Benefício:</b> a ação <b>ajudar</b> concede <b>+1 de bônus adicional</b> entre os membros do grupo.</p><p>Lembrete da regra de ajudar: cada ajudante testa contra CD 10 e concede +1, mais +1 a cada 10 pontos acima da CD (+2 com 20, +3 com 30).</p><p><b>Automação:</b> na janela de rolagem de perícias e ataques aparece <b>Ajuda de membro do grupo</b>. Marque uma vez por ajudante que passou; cada marca soma +2 (+1 da ajuda e +1 do grupo). Se o ajudante tirou 20 ou mais, some o +1 extra à mão.</p>",
+      "unidentified": ""
+    },
+    "source": "Fim dos Tempos, Arco 1, Introdução, Regras para Grupos (p. 60)",
+    "tipo": "geral",
+    "subtipo": "Grupo · Fim dos Tempos",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "w0x7h8FJcZlzfs9r",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Ajuda de membro do grupo (+2 por ajudante)",
+      "img": "systems/tormenta20/icons/poderes/combate.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "fdtgrupo",
+          "fdtModo": "uso",
+          "fdtEscala": 0,
+          "fdtTipos": [
+            "skill"
+          ]
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 2,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "skill"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": true,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "AvGjxbipZ2AFq2RG",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!w0x7h8FJcZlzfs9r.AvGjxbipZ2AFq2RG"
+    },
+    {
+      "name": "Ajuda de membro do grupo no ataque (+2 por ajudante)",
+      "img": "systems/tormenta20/icons/poderes/combate.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "fdtgrupo",
+          "fdtModo": "uso",
+          "fdtEscala": 0,
+          "fdtTipos": [
+            "attack"
+          ]
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "ataque",
+            "value": 2,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": true,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "NhRohKDC2LHGU19x",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!w0x7h8FJcZlzfs9r.NhRohKDC2LHGU19x"
+    }
+  ],
+  "_key": "!items!w0x7h8FJcZlzfs9r"
+}

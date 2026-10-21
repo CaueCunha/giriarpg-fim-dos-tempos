@@ -1,0 +1,1342 @@
+{
+  "name": "Harpia, o Gog'magogue (perigos)",
+  "type": "npc",
+  "img": "systems/tormenta20/icons/magias/raio-solar.webp",
+  "folder": "nwwpB8FdDEkZwYiT",
+  "flags": {
+    "world": {
+      "fdt": "av4",
+      "fdtRole": "harpia"
+    }
+  },
+  "prototypeToken": {
+    "name": "Harpia",
+    "actorLink": true,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.pv"
+    },
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/tormenta20/icons/magias/raio-solar.webp"
+    },
+    "sight": {
+      "enabled": true
+    }
+  },
+  "system": {
+    "atributos": {
+      "for": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "des": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "con": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "int": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "sab": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "car": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      }
+    },
+    "attributes": {
+      "nd": "5",
+      "cd": 20,
+      "pv": {
+        "value": 1,
+        "max": 1,
+        "temp": 0,
+        "min": 0
+      },
+      "pm": {
+        "value": 0,
+        "max": 0,
+        "temp": 0,
+        "min": 0
+      },
+      "defesa": {
+        "base": 10,
+        "bonus": [],
+        "outros": 0,
+        "atributo": "des",
+        "pda": 0,
+        "value": 10,
+        "condi": 0
+      },
+      "movement": {
+        "walk": {
+          "base": 9,
+          "bonus": []
+        },
+        "climb": {
+          "base": 0,
+          "bonus": []
+        },
+        "burrow": {
+          "base": 0,
+          "bonus": []
+        },
+        "swim": {
+          "base": 0,
+          "bonus": []
+        },
+        "fly": {
+          "base": 0,
+          "bonus": []
+        },
+        "hover": false,
+        "unit": "m",
+        "tags": []
+      },
+      "sentidos": {
+        "value": [],
+        "custom": ""
+      },
+      "conjuracao": "sab",
+      "carga": {
+        "value": 0,
+        "atributo": "for",
+        "base": 10,
+        "bonus": [],
+        "limit": 0,
+        "max": 0,
+        "pct": 0,
+        "encumbered": false
+      },
+      "nivel": {
+        "value": 0,
+        "xp": {
+          "value": 0,
+          "pct": 0,
+          "proximo": 0
+        }
+      },
+      "treino": 0
+    },
+    "detalhes": {
+      "tipo": "ani",
+      "raca": "",
+      "role": "special",
+      "tesouro": "Nenhum.",
+      "resistencias": "",
+      "ataquescac": "",
+      "ataquesad": "",
+      "equipamento": "",
+      "biography": {
+        "value": "<p><b>Ator de apoio, não vai para o mapa como combatente.</b> Cada item é um perigo da Harpia com a CD e os botões de efeito. Mire os personagens antes de clicar nos botões do card.</p><p>Gog'magogue fêmea nascida em Arton, cega pelos captores e cortada todos os dias para que o sangue brilhante cegue os inimigos. Não tem nome; os \"bípedes\" a chamam de Harpia. Só deseja liberdade e sente que deve subir, cada vez mais alto.</p><p>Na primeira rodada da iniciativa, só a Harpia (o canhão) age e dois cães saltam. Bandoleiros e cães agem a partir da segunda rodada. Use a macro <i>Ataque do Céu</i> para avançar as rodadas.</p>",
+        "public": ""
+      },
+      "origem": "",
+      "divindade": "",
+      "movimento": ""
+    },
+    "tracos": {
+      "tamanho": "med",
+      "ic": {
+        "value": [],
+        "custom": ""
+      },
+      "idiomas": {
+        "value": [
+          "comum"
+        ],
+        "custom": ""
+      },
+      "profArmaduras": {
+        "value": [],
+        "custom": ""
+      },
+      "profArmas": {
+        "value": [],
+        "custom": ""
+      },
+      "resistencias": {
+        "dano": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perda": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "acido": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "corte": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "eletricidade": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "essencia": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "fogo": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "frio": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "impacto": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "luz": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "psiquico": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perfuracao": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "trevas": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        }
+      }
+    },
+    "dinheiro": {
+      "tc": 0,
+      "tl": 0,
+      "to": 0,
+      "tp": 0
+    },
+    "modificadores": {
+      "custoPM": 0,
+      "atributos": {
+        "for": [],
+        "des": [],
+        "con": [],
+        "int": [],
+        "sab": [],
+        "car": [],
+        "fisicos": [],
+        "mentais": [],
+        "geral": []
+      },
+      "ataque": {
+        "geral": [],
+        "cac": [],
+        "ad": []
+      },
+      "cura": {
+        "geral": [],
+        "mag": [],
+        "alq": []
+      },
+      "dano": {
+        "ad": [],
+        "alq": [],
+        "cac": [],
+        "geral": [],
+        "mag": []
+      },
+      "pericias": {
+        "geral": [],
+        "resistencia": [],
+        "semataque": [],
+        "ataque": [],
+        "atr": {
+          "for": [],
+          "des": [],
+          "con": [],
+          "int": [],
+          "sab": [],
+          "car": []
+        }
+      }
+    },
+    "pericias": {
+      "acro": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": false
+      },
+      "ades": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "atle": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "atua": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cava": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "conh": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cura": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "dipl": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "enga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "fort": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "con",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "furt": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": true
+      },
+      "guer": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "inic": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inti": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "intu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inve": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "joga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "ladi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": true,
+        "size": false
+      },
+      "luta": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "mist": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "nobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "perc": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "pilo": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "pont": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "refl": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "reli": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "sobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "vont": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "alfa": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "alqu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arme": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arte": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cozi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "enge": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": true,
+        "size": false
+      }
+    },
+    "resources": {
+      "primary": {
+        "value": 0,
+        "max": 10,
+        "label": "Rodada do ataque"
+      },
+      "secondary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceSecondary"
+      },
+      "tertiary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceTertiary"
+      },
+      "deathsave": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceDeathSave"
+      },
+      "shadow": {
+        "value": 0,
+        "max": 5,
+        "label": "T20.ResourceShadow"
+      },
+      "catarse": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceCatarse"
+      }
+    }
+  },
+  "_id": "09VwePcbNA7yteDp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "items": [
+    {
+      "name": "Luz Cegante",
+      "type": "poder",
+      "img": "systems/tormenta20/icons/magias/luz.webp",
+      "flags": {
+        "world": {
+          "fdt": "av4"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>O sangue brilhante da Harpia deixa <b>cego</b> quem está na área. Uma <b>ação de movimento ou 1 PM</b> para proteger os olhos reduz para <b>ofuscado</b> por 1 rodada.</p><p>Ver a forma real dela exige 20 natural em Percepção; depois do primeiro contato, CD 30. Bandoleiros, cães e Torgo não são afetados. Dentro da nave, o brilho não incomoda mais.</p><p>Use a macro <i>Luz da Harpia</i> ou os botões abaixo.</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "eJ4ttlVi7HSNGoSl",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [
+        {
+          "name": "Cego",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av4"
+            }
+          },
+          "system": {
+            "changes": [],
+            "onuse": false,
+            "abilityUse": {
+              "types": [],
+              "names": [],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "en5hdproc1yH1b3x",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!09VwePcbNA7yteDp.eJ4ttlVi7HSNGoSl.en5hdproc1yH1b3x"
+        },
+        {
+          "name": "Ofuscado",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av4"
+            }
+          },
+          "system": {
+            "changes": [],
+            "onuse": false,
+            "abilityUse": {
+              "types": [],
+              "names": [],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "HjZSvhT2MY3UXIHE",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!09VwePcbNA7yteDp.eJ4ttlVi7HSNGoSl.HjZSvhT2MY3UXIHE"
+        }
+      ],
+      "_key": "!actors.items!09VwePcbNA7yteDp.eJ4ttlVi7HSNGoSl"
+    },
+    {
+      "name": "Bater das Nadadeiras",
+      "type": "poder",
+      "img": "systems/tormenta20/icons/magias/sopro-das-uivantes.webp",
+      "flags": {
+        "world": {
+          "fdt": "av4"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p><b>Uma vez por rodada.</b> Cone de 9m. Ataques à distância no cone sofrem –5; chamas se apagam; névoa e fumaça se dispersam; mover-se em direção à Harpia conta como terreno difícil.</p><p>Criaturas no cone são <b>empurradas 6m</b> e sofrem <b>1d6 de impacto</b> se baterem em algo. <b>Fortitude CD 20</b> reduz o empurrão à metade e evita o dano. Criaturas voando sofrem –5 no teste.</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "free",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "Cone de 9m",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": "Fortitude CD 20 reduz à metade e evita o dano"
+        },
+        "rolls": [
+          {
+            "name": "Colisão",
+            "key": "dano0",
+            "type": "dano",
+            "parts": [
+              [
+                "1d6",
+                "impacto",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "dLdJhGXDkmgRDRhw",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!09VwePcbNA7yteDp.dLdJhGXDkmgRDRhw"
+    },
+    {
+      "name": "Canhão de Fogo",
+      "type": "poder",
+      "img": "systems/tormenta20/icons/magias/explosao-de-chamas.webp",
+      "flags": {
+        "world": {
+          "fdt": "av4"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p><b>Uma vez por rodada.</b> Linha de 30m: <b>4d6 de fogo</b> e em chamas (Reflexos CD 20 reduz à metade e evita em chamas). O canhão tem 40 PV e RD 10 (ator próprio).</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "free",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "Linha de 30m",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": "Reflexos CD 20 reduz à metade e evita em chamas"
+        },
+        "rolls": [
+          {
+            "name": "Fogo",
+            "key": "dano0",
+            "type": "dano",
+            "parts": [
+              [
+                "4d6",
+                "fogo",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "DIXVf1NAbr4ffnOb",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [
+        {
+          "name": "Incendiado (em chamas)",
+          "img": "icons/magic/fire/flame-burning-embers-yellow.webp",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "1d6 de fogo no início de cada turno. Ação padrão para apagar.",
+          "statuses": [
+            "emchamas"
+          ],
+          "flags": {
+            "world": {
+              "fdt": "av4"
+            }
+          },
+          "system": {
+            "changes": [
+              {
+                "key": "danoContinuo",
+                "value": "1d6[fogo]",
+                "type": "custom",
+                "phase": "initial",
+                "priority": null
+              }
+            ],
+            "onuse": false,
+            "abilityUse": {
+              "types": [],
+              "names": [],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "pZ5Ss7nNQlknTBrA",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!09VwePcbNA7yteDp.DIXVf1NAbr4ffnOb.pZ5Ss7nNQlknTBrA"
+        }
+      ],
+      "_key": "!actors.items!09VwePcbNA7yteDp.DIXVf1NAbr4ffnOb"
+    },
+    {
+      "name": "Escadas de Corda e Escalada",
+      "type": "poder",
+      "img": "systems/tormenta20/icons/itens/gerais/corda.webp",
+      "flags": {
+        "world": {
+          "fdt": "av4"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Na segunda rodada a Harpia desce escadas de corda. Ver as escadas: <b>Percepção CD 20</b>. Escalar leva 2 rodadas, às cegas. Defensores chutam quem sobe.</p><p>A porta da nave: <b>Investigação CD 15</b> para achar como abaixar; abaixar é uma ação padrão.</p><p>Quando a Harpia se afasta, há <b>3 rodadas</b> para alcançá-la (Atletismo, Acrobacia ou Cavalgar). Boas ideias continuam valendo depois disso.</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "cgWrlWIQJAUvCdYb",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!09VwePcbNA7yteDp.cgWrlWIQJAUvCdYb"
+    },
+    {
+      "name": "Regras a Bordo",
+      "type": "poder",
+      "img": "icons/svg/hazard.svg",
+      "flags": {
+        "world": {
+          "fdt": "av4"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p><b>Piso escorregadio</b> (Acrobacia CD 10 para equilíbrio).</p><p><b>Escadas entre deques:</b> custam 4,5m. Para descer de graça, Acrobacia CD 12; falha por 5 ou mais é queda com 1d6 de impacto.</p><p><b>Aberturas:</b> quem for empurrado para fora faz Reflexos CD 15 para se segurar.</p><p><b>Timoneira:</b> enquanto comanda, desprevenidos pelo piso sofrem –2 em perícias.</p><p><b>Espaço apertado:</b> armas de duas mãos sofrem –2 no ataque.</p><p><b>Túnel colapsado:</b> três testes de Força CD 25. <b>Cordames:</b> dois testes de Atletismo CD 15, às cegas; falha por 10 ou mais é queda (Reflexos CD 20 evita).</p><p><b>Leme:</b> Pilotagem CD 25 para assumir, sob ataque constante.</p><p>Use a macro <i>Testes a Bordo</i>.</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [
+          {
+            "name": "Queda da escada",
+            "key": "dano0",
+            "type": "dano",
+            "parts": [
+              [
+                "1d6",
+                "impacto",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "o1liuBMVokGDgDbx",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!09VwePcbNA7yteDp.o1liuBMVokGDgDbx"
+    }
+  ],
+  "effects": [],
+  "_key": "!actors!09VwePcbNA7yteDp"
+}

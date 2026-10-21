@@ -1,0 +1,72 @@
+{
+  "name": "Escudo Vivo",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "escudo-vivo",
+      "fdtPre": ""
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quando mais de um personagem com este poder for afetado por dano em área, você pode gastar 2 PM para sofrer o dano no lugar desses aliados que estejam em alcance curto. Cada um faz um teste de resistência normalmente. Você sofre todo o dano que seus aliados sofreriam de acordo com seus testes de resistência. Suas próprias imunidades e RD se aplicam normalmente.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> card com o custo de 2 PM. Aplique no seu token a soma do dano dos aliados.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "reaction",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "short",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "QW62HHabSg0QR1IA",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!QW62HHabSg0QR1IA"
+}

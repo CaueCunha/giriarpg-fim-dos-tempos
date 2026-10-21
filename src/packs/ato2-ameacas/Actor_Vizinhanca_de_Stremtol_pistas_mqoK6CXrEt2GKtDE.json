@@ -1,0 +1,1166 @@
+{
+  "name": "Vizinhança de Stremtol (pistas)",
+  "type": "npc",
+  "img": "icons/svg/village.svg",
+  "folder": "dFUqC2yA37mT8WyT",
+  "flags": {
+    "world": {
+      "fdt": "a2av1",
+      "fdtRole": "stremtol"
+    }
+  },
+  "prototypeToken": {
+    "name": "Stremtol",
+    "actorLink": false,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.pv"
+    },
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/village.svg"
+    },
+    "sight": {
+      "enabled": true
+    }
+  },
+  "system": {
+    "atributos": {
+      "for": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "des": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "con": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "int": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "sab": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "car": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      }
+    },
+    "attributes": {
+      "nd": "7",
+      "cd": 20,
+      "pv": {
+        "value": 1,
+        "max": 1,
+        "temp": 0,
+        "min": 0
+      },
+      "pm": {
+        "value": 0,
+        "max": 0,
+        "temp": 0,
+        "min": 0
+      },
+      "defesa": {
+        "base": 10,
+        "bonus": [],
+        "outros": 0,
+        "atributo": "des",
+        "pda": 0,
+        "value": 10,
+        "condi": 0
+      },
+      "movement": {
+        "walk": {
+          "base": 9,
+          "bonus": []
+        },
+        "climb": {
+          "base": 0,
+          "bonus": []
+        },
+        "burrow": {
+          "base": 0,
+          "bonus": []
+        },
+        "swim": {
+          "base": 0,
+          "bonus": []
+        },
+        "fly": {
+          "base": 0,
+          "bonus": []
+        },
+        "hover": false,
+        "unit": "m",
+        "tags": []
+      },
+      "sentidos": {
+        "value": [],
+        "custom": ""
+      },
+      "conjuracao": "sab",
+      "carga": {
+        "value": 0,
+        "atributo": "for",
+        "base": 10,
+        "bonus": [],
+        "limit": 0,
+        "max": 0,
+        "pct": 0,
+        "encumbered": false
+      },
+      "nivel": {
+        "value": 0,
+        "xp": {
+          "value": 0,
+          "pct": 0,
+          "proximo": 0
+        }
+      },
+      "treino": 0
+    },
+    "detalhes": {
+      "tipo": "hum",
+      "raca": "",
+      "role": "special",
+      "tesouro": "Nenhum.",
+      "resistencias": "",
+      "ataquescac": "",
+      "ataquesad": "",
+      "equipamento": "",
+      "biography": {
+        "value": "<p><b>Ator de apoio, não vai para o mapa.</b> Cada item é uma casa com as pistas e CDs do livro. A macro <i>Investigar Stremtol</i> rola e sussurra o que cada resultado revela.</p><p>Cada teste revela uma informação; bons testes podem revelar mais, e boas ideias ou interpretação podem revelar várias sem teste. O objetivo é perceberem que algo está errado, não exatamente o quê.</p>",
+        "public": ""
+      },
+      "origem": "",
+      "divindade": "",
+      "movimento": ""
+    },
+    "tracos": {
+      "tamanho": "med",
+      "ic": {
+        "value": [],
+        "custom": ""
+      },
+      "idiomas": {
+        "value": [
+          "comum"
+        ],
+        "custom": ""
+      },
+      "profArmaduras": {
+        "value": [],
+        "custom": ""
+      },
+      "profArmas": {
+        "value": [],
+        "custom": ""
+      },
+      "resistencias": {
+        "dano": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perda": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "acido": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "corte": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "eletricidade": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "essencia": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "fogo": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "frio": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "impacto": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "luz": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "psiquico": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perfuracao": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "trevas": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        }
+      }
+    },
+    "dinheiro": {
+      "tc": 0,
+      "tl": 0,
+      "to": 0,
+      "tp": 0
+    },
+    "modificadores": {
+      "custoPM": 0,
+      "atributos": {
+        "for": [],
+        "des": [],
+        "con": [],
+        "int": [],
+        "sab": [],
+        "car": [],
+        "fisicos": [],
+        "mentais": [],
+        "geral": []
+      },
+      "ataque": {
+        "geral": [],
+        "cac": [],
+        "ad": []
+      },
+      "cura": {
+        "geral": [],
+        "mag": [],
+        "alq": []
+      },
+      "dano": {
+        "ad": [],
+        "alq": [],
+        "cac": [],
+        "geral": [],
+        "mag": []
+      },
+      "pericias": {
+        "geral": [],
+        "resistencia": [],
+        "semataque": [],
+        "ataque": [],
+        "atr": {
+          "for": [],
+          "des": [],
+          "con": [],
+          "int": [],
+          "sab": [],
+          "car": []
+        }
+      }
+    },
+    "pericias": {
+      "acro": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": false
+      },
+      "ades": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "atle": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "atua": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cava": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "conh": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cura": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "dipl": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "enga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "fort": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "con",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "furt": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": true
+      },
+      "guer": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "inic": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inti": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "intu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inve": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "joga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "ladi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": true,
+        "size": false
+      },
+      "luta": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "mist": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "nobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "perc": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "pilo": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "pont": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "refl": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "reli": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "sobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "vont": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "alfa": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "alqu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arme": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arte": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cozi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "enge": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": true,
+        "size": false
+      }
+    },
+    "resources": {
+      "primary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourcePrimary"
+      },
+      "secondary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceSecondary"
+      },
+      "tertiary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceTertiary"
+      },
+      "deathsave": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceDeathSave"
+      },
+      "shadow": {
+        "value": 0,
+        "max": 5,
+        "label": "T20.ResourceShadow"
+      },
+      "catarse": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceCatarse"
+      }
+    }
+  },
+  "_id": "mqoK6CXrEt2GKtDE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "items": [
+    {
+      "name": "Stremtol (informações gerais)",
+      "type": "poder",
+      "img": "icons/svg/village.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção, Intuição CD 15:</b> Os moradores estão inquietos com a presença dos heróis, mas são receptivos à Guarda.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> Os primeiros moradores foram Remont e Ysmenne Ronchetillon.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> A vizinhança é nova: a primeira casa foi construída há menos de 5 anos.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza, Percepção CD 15:</b> Todos os moradores são famílias e casais relativamente jovens.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> A área é tecnicamente dos Ronchetillon, cedida a cada morador para construir a casa. Em termos legais, os moradores são vassalos deles.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> A família Elbannise (de Osmont) tem laços antigos de amizade com os Ronchetillon.</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> Só algumas famílias são aceitas em Stremtol. O critério é misterioso; não basta \"ser nobre\".</li><li><b>Diplomacia, Enganação, Furtividade, Investigação, Nobreza CD 20:</b> Periodicamente há reuniões da vizinhança na casa dos Ronchetillon. Parece uma comunidade unida, embora pequena.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> Há uma clara intenção de tornar Stremtol diferente das regiões nobres: arquitetura, roupas e jeito de falar lembram uma aldeia. Não há servos.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> A vizinhança não exclui não humanos.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza CD 25:</b> Nenhum morador mantém laços próximos com a família fora da vizinhança.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Guerra CD 25:</b> Não há nenhum tipo de guarda ou exército particular em Stremtol.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Religião CD 25:</b> Todas as famílias cultuam Khalmyr, mas não há nenhum clérigo na vizinhança.</li><li><b>Diplomacia, Enganação, Investigação, Nobreza, Misticismo, Religião CD 25:</b> Não há iluminação mágica, runas de proteção, bênçãos nem defesas arcanas ou divinas na vizinhança.</li><li><b>Diplomacia, Enganação, Investigação CD 30:</b> As reuniões acontecem toda semana, mas às vezes há mais de uma por semana (não se sabe em que casos).</li><li><b>Diplomacia, Enganação, Investigação CD 30:</b> Nunca houve apresentações de bardos. Alguns moradores já apresentaram uma peça ou cantaram para os outros.</li><li><b>Diplomacia, Enganação, Investigação, Religião CD 30:</b> Embora Khalmyr seja um deus guerreiro, os moradores não acreditam em vingança nem em justiça violenta: preferem perdoar, quase como devotos de Thyatis.</li><li><b>Misticismo CD 35:</b> Não há nada mágico acontecendo aqui, mas nada bloqueia a magia.</li><li><b>Sobrevivência CD 35:</b> Nenhum monstro passou por aqui nos últimos meses ou anos.</li><li><b>Intuição CD 35:</b> Todos aqui são felizes e parecem se amar muito.</li><li><b>Ofício CD 35:</b> As casas foram construídas com técnicas humanas, sem apoio mágico ou divino, nem trabalho de monstros ou golens.</li><li><b>Intuição CD 40:</b> Há uma divisão: cada casa parece ter um morador de um \"lado\" e outro do \"outro lado\". Não são rivais; é só identificação com um grupo.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "xzZYHiksxd5NuUDo",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.xzZYHiksxd5NuUDo"
+    },
+    {
+      "name": "Osmont e Aldanna Elbannise",
+      "type": "poder",
+      "img": "icons/svg/door-closed.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Sem teste:</b> Na parede está a cabeça empalhada do javali Aníbal, o antigo companheiro animal de Aldanna (reconhecível pela pintura no quarto de Torzogh).</li><li><b>Religião CD 15:</b> Há um pequeno altar a Khalmyr, simples e humilde, feito para a própria família conduzir os rituais, como em aldeias sem clérigo.</li><li><b>Investigação CD 20:</b> Exceto pela cabeça do javali, não há nenhum resquício da antiga vida de Aldanna: nenhuma arma, armadura ou lembrança.</li><li><b>Investigação CD 25:</b> Há objetos de interesse de Osmont (negócios, heráldica, um retrato dele jovem), mas nada de Aldanna além de roupas e utensílios domésticos.</li><li><b>Sem teste:</b> Aldanna é absolutamente sincera em tudo (qualquer teste de Intuição). Não esconde nada nem parece forçada.</li><li><b>Sem teste:</b> Ela fez parte dos Mata-Malvados por anos, mas vê isso como \"uma brincadeira juvenil\". Prefere se concentrar no futuro.</li><li><b>Sem teste:</b> Teve um relacionamento com Torzogh e terminaram amigavelmente. Tem carinho por ele e gostaria que ele largasse a vida de aventureiro para \"crescer\".</li><li><b>Sem teste:</b> De início resistiu a Osmont e, casada, ainda \"teimou\" na vida de aventureira. Tem vergonha disso e é grata a ele por tê-la \"ajudado a crescer\".</li><li><b>Intuição CD 20:</b> Ela vê aventureiros com condescendência; respeita um pouco o grupo por ser da Guarda, mas acha a postura deles um pouco ridícula.</li><li><b>Intuição CD 25:</b> Fica desconfortável ao falar de habilidades especiais, magia e poderes, e mais ainda ao vê-los em ação: medo e vergonha.</li><li><b>Guerra, Intuição CD 30:</b> De alguma forma, Aldanna perdeu ou esqueceu suas habilidades. Não sabe mais nem disparar um arco.</li><li><b>Inteligência CD 20:</b> Há uma lacuna de alguns meses entre as brigas com Osmont e a mudança para Stremtol que ela não menciona.</li><li><b>Intuição CD 25:</b> Ela não esconde o período \"vazio\": é como se não existisse. Questionada, sorri e diz que \"ficou se preparando\". Não lembra detalhes; acha que foi o nervosismo.</li><li><b>Intuição CD 25:</b> Aldanna é genuinamente feliz.</li><li><b>Intuição CD 30:</b> Aldanna está sempre feliz, como se fosse incapaz de sentir tristeza, raiva, medo ou qualquer emoção forte.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "ja4Khw2TN3RbAhyy",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.ja4Khw2TN3RbAhyy"
+    },
+    {
+      "name": "Inagar e Albert",
+      "type": "poder",
+      "img": "icons/svg/door-closed.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Investigação CD 20:</b> Há um alçapão coberto por um tapete na sala. Leva a um porão com vários baús cheios de grimórios.</li><li><b>Misticismo CD 20:</b> Os grimórios são bastante avançados.</li><li><b>Investigação, Percepção CD 15:</b> Não há nenhum livro na casa além dos grimórios escondidos.</li><li><b>Sem teste:</b> Inagar tem muita vergonha do passado de mago, um gatilho para Albert. Quando perguntam da vida anterior, desconversa.</li><li><b>Sem teste:</b> Inagar não tem medo de Albert, mas não quer ferir os sentimentos dele, então escolhe bem as palavras (ou seja, o tempo todo).</li><li><b>Intuição CD 25:</b> Inagar não fala do passado para não magoar Albert.</li><li><b>Percepção CD 20:</b> Os dois não fazem nada separados.</li><li><b>Intuição CD 20:</b> Inagar é muito mais inteligente do que deixa transparecer, muito acima de um aprendiz de mais de 30 anos.</li><li><b>Intuição CD 25:</b> Inagar tem vergonha de ser só um aprendiz na Guilda dos Contadores.</li><li><b>Intuição CD 20:</b> Os dois realmente se amam, mas Albert é muito inseguro.</li><li><b>Intuição CD 25:</b> Inagar é feliz, mas a felicidade não condiz com a vida dele: comportamento de infeliz, sentimento de feliz.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "YXWnHaHSRhAs7Y4v",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.YXWnHaHSRhAs7Y4v"
+    },
+    {
+      "name": "Illydna e Alvuriell",
+      "type": "poder",
+      "img": "icons/svg/door-closed.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Investigação, Percepção CD 15:</b> Há muitas roupas luxuosas para Alvuriell, mas Illydna tem só três vestidos simples de serva.</li><li><b>Sem teste:</b> A casa não é feita para alguém da estatura de um goblin: Alvuriell mal alcança as prateleiras.</li><li><b>Conhecimento, Investigação, Percepção CD 20:</b> Há pergaminhos de canções e poesias élficas e até uma lira élfica. Alvuriell não tem nada em termos de diversão ou interesses.</li><li><b>Intuição CD 20:</b> A elfa sente, acima de tudo, pena do goblin.</li><li><b>Sem teste:</b> Os dois sempre dizem que Illydna \"salvou\" Alvuriell.</li><li><b>Sem teste:</b> O goblin fala sem vergonha do passado de ladrão, frisando como estava errado e como Illydna lhe deu tudo.</li><li><b>Diplomacia, Enganação CD 30:</b> O nome original de Alvuriell era Grug.</li><li><b>Nobreza, Percepção CD 20:</b> Alvuriell tem maneirismos de quem aprendeu etiqueta numa escola, não em casa.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "EnJBNTUdCYa9PRBP",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.EnJBNTUdCYa9PRBP"
+    },
+    {
+      "name": "Remont e Ysmenne Ronchetillon",
+      "type": "poder",
+      "img": "icons/svg/door-closed.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Sem teste:</b> Uma porta dentro da casa está sempre fechada (tranca comum, de boa qualidade).</li><li><b>Ladinagem CD 20:</b> Atrás da porta fechada há um pequeno escritório com os cinco <b>Dossiês do Aluno</b> (handout no diário).</li><li><b>Sem teste:</b> Embora seja a casa de um alto nobre, não há ornamentos nem flâmulas com o brasão dos Ronchetillon.</li><li><b>Sem teste:</b> Há uma sala com cinco cadeiras em semicírculo, mesinhas e uma prateleira de bebidas. Parece uma sala de reuniões.</li><li><b>Diplomacia, Enganação, Intuição CD 25:</b> Ysmenne não sabe o que há atrás da porta, só que é \"assunto de Remont\".</li><li><b>Diplomacia, Enganação, Percepção CD 25:</b> As reuniões da vizinhança acontecem na sala das cinco cadeiras.</li><li><b>Diplomacia, Enganação, Percepção CD 30:</b> Os participantes das reuniões são só Remont, Osmont, Albert, Illydna e Hugo.</li><li><b>Diplomacia, Enganação, Intuição CD 30:</b> Ysmenne sai de casa quando há reunião, para deixar os convidados à vontade. Em geral visita Aldanna ou Rosa.</li><li><b>Diplomacia, Enganação, Intuição CD 30:</b> Ysmenne não sabe o que é discutido nas reuniões, nem por que ela e os outros não são convidados.</li><li><b>Intuição CD 30:</b> Nunca ocorreu a Ysmenne perguntar o que é discutido ou por que ela não pode ouvir.</li><li><b>Nobreza CD 25:</b> Ysmenne tem maneirismos de etiqueta aprendidos numa escola depois de adulta, não naturais.</li><li><b>Nobreza CD 25:</b> Os maneirismos de Ysmenne são os mesmos de Aldanna, Inagar, Alvuriell e Rosa.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "TO6RUFcAiw2iIAIi",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.TO6RUFcAiw2iIAIi"
+    },
+    {
+      "name": "Hugo, Rosa e Luka",
+      "type": "poder",
+      "img": "icons/svg/door-closed.svg",
+      "flags": {
+        "world": {
+          "fdt": "a2av1"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<ul><li><b>Sem teste:</b> Nenhum dos dois parece saber cuidar da casa ou da plantação.</li><li><b>Ofício CD 20:</b> Embora humilde, a casa usa os mesmos materiais caros das outras.</li><li><b>Ofício CD 25:</b> A casa é mais que humilde: é antiquada, quase falsa, como se alguém imitasse uma casa pobre.</li><li><b>Nobreza, Ofício CD 20:</b> Hugo e Rosa vestem roupas de camponeses, mas limpas e bem costuradas demais. Parecem fantasias.</li><li><b>Conhecimento CD 15:</b> Os dois usam um vocabulário atípico para gente tão simples.</li><li><b>Nobreza CD 15:</b> Os dois têm maneirismos de etiqueta que lembram nobres.</li><li><b>Nobreza CD 25:</b> Rosa tem os mesmos maneirismos dos outros: parece ter aprendido numa escola.</li><li><b>Nobreza CD 20:</b> Hugo parece ter nascido nobre.</li><li><b>Nobreza CD 30:</b> Hugo é um alto nobre de Valkaria (o conde Labonnet).</li><li><b>Misticismo CD 25:</b> A pele de Rosa tem marcas de uso de magia e ela tem uma espécie de aura mágica.</li><li><b>Misticismo CD 30:</b> As marcas e a aura de Rosa são típicas de necromancia.</li><li><b>Conhecimento, Investigação, Misticismo CD 35:</b> Rosa é a notória necromante <b>Rozaryth Dez Caveiras</b>, capturada por aventureiros há cerca de dois anos.</li><li><b>Intuição CD 25:</b> Rosa realmente não lembra do passado. Perguntar o que fazia antes de Hugo soa absurdo para ela.</li></ul>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "DiG5rsszq63OgalC",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!mqoK6CXrEt2GKtDE.DiG5rsszq63OgalC"
+    }
+  ],
+  "effects": [],
+  "_key": "!actors!mqoK6CXrEt2GKtDE"
+}

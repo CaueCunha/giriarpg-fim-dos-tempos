@@ -1,0 +1,2230 @@
+{
+  "name": "Capelã de Guerra Lorelei Wulff",
+  "type": "npc",
+  "img": "systems/tormenta20/icons/ameacas/capelao-de-guerra.png",
+  "folder": "QQ99QFt1qm9NREnR",
+  "flags": {
+    "world": {
+      "fdt": "av3",
+      "fdtRole": "lorelei"
+    }
+  },
+  "prototypeToken": {
+    "name": "Lorelei Wulff",
+    "actorLink": true,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "attributes.pv"
+    },
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/tormenta20/icons/ameacas/capelao-de-guerra.png"
+    },
+    "sight": {
+      "enabled": true
+    }
+  },
+  "system": {
+    "atributos": {
+      "for": {
+        "base": 5,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "des": {
+        "base": 1,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "con": {
+        "base": 4,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "int": {
+        "base": 0,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "sab": {
+        "base": 3,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      },
+      "car": {
+        "base": 2,
+        "bonus": 0,
+        "racial": 0,
+        "value": 0
+      }
+    },
+    "attributes": {
+      "nd": "4",
+      "cd": 18,
+      "pv": {
+        "value": 110,
+        "max": 110,
+        "temp": 0,
+        "min": 0
+      },
+      "pm": {
+        "value": 24,
+        "max": 24,
+        "temp": 0,
+        "min": 0
+      },
+      "defesa": {
+        "base": 20,
+        "bonus": [],
+        "outros": 0,
+        "atributo": "des",
+        "pda": 0,
+        "value": 10,
+        "condi": 0
+      },
+      "movement": {
+        "walk": {
+          "base": 6,
+          "bonus": []
+        },
+        "climb": {
+          "base": 0,
+          "bonus": []
+        },
+        "burrow": {
+          "base": 0,
+          "bonus": []
+        },
+        "swim": {
+          "base": 0,
+          "bonus": []
+        },
+        "fly": {
+          "base": 0,
+          "bonus": []
+        },
+        "hover": false,
+        "unit": "m",
+        "tags": []
+      },
+      "sentidos": {
+        "value": [],
+        "custom": ""
+      },
+      "conjuracao": "sab",
+      "carga": {
+        "value": 0,
+        "atributo": "for",
+        "base": 10,
+        "bonus": [],
+        "limit": 0,
+        "max": 0,
+        "pct": 0,
+        "encumbered": false
+      },
+      "nivel": {
+        "value": 0,
+        "xp": {
+          "value": 0,
+          "pct": 0,
+          "proximo": 0
+        }
+      },
+      "treino": 0
+    },
+    "detalhes": {
+      "tipo": "mon",
+      "raca": "lefou",
+      "role": "solo",
+      "tesouro": "Nenhum.",
+      "resistencias": "Imune a medo; resistência a magia divina +5; resistência a Tormenta +10.",
+      "ataquescac": "Martelo de guerra cruel +15 (1d8+13, x3).",
+      "ataquesad": "",
+      "equipamento": "Armadura completa, escudo leve, martelo de guerra cruel, símbolo sagrado, lampião mecanomágico, pergaminhos de Sono.",
+      "biography": {
+        "value": "<p>Criminosa de guerra da Supremacia Purista escondida em Dornbach. Virou clériga de Aharadak achando que cultua Valkaria e quer \"purificar\" não humanos, transformando-os em \"humanos\" (na verdade lefou). Ela mesma já é lefou e não sabe.</p><p>Lança magias como clériga de 5º nível (CD 18). Prefere morrer a ser capturada; se tiver chance, se mata. Interrogada, fala com orgulho do experimento e da religião.</p><p><b>Sabe:</b> o nome \"Torgo\" (que surgiu para ela numa grande luz no céu) e que <b>Syvarian</b> é um comandante, oficial de média patente, que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde.</p>",
+        "public": ""
+      },
+      "origem": "",
+      "divindade": "",
+      "movimento": ""
+    },
+    "tracos": {
+      "tamanho": "med",
+      "ic": {
+        "value": [
+          "medo"
+        ],
+        "custom": ""
+      },
+      "idiomas": {
+        "value": [
+          "comum"
+        ],
+        "custom": ""
+      },
+      "profArmaduras": {
+        "value": [],
+        "custom": ""
+      },
+      "profArmas": {
+        "value": [],
+        "custom": ""
+      },
+      "resistencias": {
+        "dano": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perda": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "acido": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "corte": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "eletricidade": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "essencia": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "fogo": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "frio": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "impacto": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "luz": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "psiquico": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "perfuracao": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        },
+        "trevas": {
+          "value": 0,
+          "base": 0,
+          "bonus": [],
+          "excecao": 0,
+          "imunidade": false,
+          "vulnerabilidade": false,
+          "danoPorDado": false
+        }
+      }
+    },
+    "dinheiro": {
+      "tc": 0,
+      "tl": 0,
+      "to": 0,
+      "tp": 0
+    },
+    "modificadores": {
+      "custoPM": 0,
+      "atributos": {
+        "for": [],
+        "des": [],
+        "con": [],
+        "int": [],
+        "sab": [],
+        "car": [],
+        "fisicos": [],
+        "mentais": [],
+        "geral": []
+      },
+      "ataque": {
+        "geral": [],
+        "cac": [],
+        "ad": []
+      },
+      "cura": {
+        "geral": [],
+        "mag": [],
+        "alq": []
+      },
+      "dano": {
+        "ad": [],
+        "alq": [],
+        "cac": [],
+        "geral": [],
+        "mag": []
+      },
+      "pericias": {
+        "geral": [],
+        "resistencia": [],
+        "semataque": [],
+        "ataque": [],
+        "atr": {
+          "for": [],
+          "des": [],
+          "con": [],
+          "int": [],
+          "sab": [],
+          "car": []
+        }
+      }
+    },
+    "pericias": {
+      "acro": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": false
+      },
+      "ades": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "atle": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "atua": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cava": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "conh": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cura": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "dipl": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "enga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "fort": {
+        "treinado": false,
+        "outros": 4,
+        "custom": false,
+        "label": "",
+        "atributo": "con",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "furt": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": true,
+        "size": true
+      },
+      "guer": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "inic": {
+        "treinado": false,
+        "outros": 2,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inti": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "intu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "inve": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "joga": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "car",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "ladi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": true,
+        "size": false
+      },
+      "luta": {
+        "treinado": false,
+        "outros": 8,
+        "custom": false,
+        "label": "",
+        "atributo": "for",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "mist": {
+        "treinado": false,
+        "outros": 2,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "nobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "perc": {
+        "treinado": false,
+        "outros": 2,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "pilo": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "pont": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "refl": {
+        "treinado": false,
+        "outros": 4,
+        "custom": false,
+        "label": "",
+        "atributo": "des",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "reli": {
+        "treinado": false,
+        "outros": 2,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "sobr": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "vont": {
+        "treinado": false,
+        "outros": 10,
+        "custom": false,
+        "label": "",
+        "atributo": "sab",
+        "st": false,
+        "pda": false,
+        "size": false
+      },
+      "alfa": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "alqu": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arme": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "arte": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "cozi": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": false,
+        "size": false
+      },
+      "enge": {
+        "treinado": false,
+        "outros": 0,
+        "custom": false,
+        "label": "",
+        "atributo": "int",
+        "st": true,
+        "pda": true,
+        "size": false
+      }
+    },
+    "resources": {
+      "primary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourcePrimary"
+      },
+      "secondary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceSecondary"
+      },
+      "tertiary": {
+        "value": 0,
+        "max": 0,
+        "label": "T20.ResourceTertiary"
+      },
+      "deathsave": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceDeathSave"
+      },
+      "shadow": {
+        "value": 0,
+        "max": 5,
+        "label": "T20.ResourceShadow"
+      },
+      "catarse": {
+        "value": 0,
+        "max": 3,
+        "label": "T20.ResourceCatarse"
+      }
+    }
+  },
+  "_id": "u5apt4uO35WdsG5B",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "items": [
+    {
+      "name": "Martelo de Guerra Cruel",
+      "type": "arma",
+      "img": "systems/tormenta20/icons/itens/equipamentos/martelo-de-guerra.webp",
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "",
+          "unidentified": ""
+        },
+        "equipado": 1,
+        "qtd": 1,
+        "criticoM": 20,
+        "criticoX": 3,
+        "alcance": "",
+        "proficiencia": "simples",
+        "proposito": "corpo-a-corpo",
+        "empunhadura": "uma",
+        "rolls": [
+          {
+            "name": "Ataque",
+            "key": "ataque0",
+            "type": "ataque",
+            "parts": [
+              [
+                "1d20",
+                "",
+                ""
+              ],
+              [
+                "luta",
+                "for",
+                ""
+              ],
+              [
+                "0",
+                "",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          },
+          {
+            "name": "Dano",
+            "key": "dano1",
+            "type": "dano",
+            "parts": [
+              [
+                "1d8+13",
+                "impacto",
+                ""
+              ],
+              [
+                "",
+                "",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "equipado2": {
+          "type": "hand",
+          "slot": 0
+        },
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "carregado": true,
+        "espacos": 0,
+        "peso": 0,
+        "preco": 0,
+        "pv": {
+          "value": 0,
+          "max": 0
+        },
+        "rd": 0,
+        "ativacao": {
+          "custo": 0,
+          "condicao": "",
+          "execucao": "passive",
+          "qtd": "",
+          "special": ""
+        },
+        "consume": {
+          "amount": 0,
+          "mpMultiplier": false,
+          "target": "",
+          "type": ""
+        },
+        "upgrades": {
+          "itemType": [],
+          "improvement": [],
+          "material": [],
+          "enchantment": [],
+          "curse": [],
+          "innovation": [],
+          "melhoria1": "",
+          "melhoria2": "",
+          "melhoria3": "",
+          "melhoria4": "",
+          "materialEspecial1": "",
+          "encanto1": "",
+          "encanto2": "",
+          "encanto3": "",
+          "enableAutoUpgrades": true
+        },
+        "ataques": 0,
+        "tipoUso": "sim",
+        "propriedades": {},
+        "size": "normal"
+      },
+      "_id": "WH5VR5Aj5pEVj8Di",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!u5apt4uO35WdsG5B.WH5VR5Aj5pEVj8Di"
+    },
+    {
+      "name": "Bênção",
+      "type": "magia",
+      "img": "systems/tormenta20/icons/magias/bencao.webp",
+      "effects": [
+        {
+          "_id": "6QEP3M43sF2G2tPH",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.OTsBw84Ci2IKPStn",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Bênção",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "alvo",
+                "value": "1 cadáver",
+                "priority": 0,
+                "type": "override",
+                "phase": "initial"
+              },
+              {
+                "key": "duracao",
+                "value": "1 semana",
+                "priority": 0,
+                "type": "override",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": false,
+              "custo": 1,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>muda o alvo para 1 cadáver e a duração para 1 semana. O cadáver não se decompõe nem pode ser transformado em morto-vivo.</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.1AULmUEKqAqnK3q0.6QEP3M43sF2G2tPH"
+        },
+        {
+          "_id": "HF92qjBQE5LopCTx",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.OTsBw84Ci2IKPStn",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Bênção",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.modificadores.ataque.geral",
+                "value": 1,
+                "priority": 0,
+                "type": "add",
+                "phase": "initial"
+              },
+              {
+                "key": "system.modificadores.dano.geral",
+                "value": 1,
+                "priority": 0,
+                "type": "add",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": true,
+              "custo": 2,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>aumenta os bônus em +1 (bônus máximo limitado pelo círculo máximo de magia que você pode lançar).</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.1AULmUEKqAqnK3q0.HF92qjBQE5LopCTx"
+        },
+        {
+          "name": "Bênção de Lorelei",
+          "img": "systems/tormenta20/icons/magias/bencao.webp",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av3"
+            }
+          },
+          "system": {
+            "changes": [
+              {
+                "key": "system.modificadores.ataque.geral",
+                "value": "2",
+                "type": "add",
+                "phase": "initial",
+                "priority": null
+              },
+              {
+                "key": "system.modificadores.dano.geral",
+                "value": "2",
+                "type": "add",
+                "phase": "initial",
+                "priority": null
+              }
+            ],
+            "onuse": false,
+            "abilityUse": {
+              "types": [],
+              "names": [],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "Qm61HPf7zu4BEmY6",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.1AULmUEKqAqnK3q0.Qm61HPf7zu4BEmY6"
+        }
+      ],
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<div class=\"fdt-nota\"><p><b>Nesta ficha (Fim dos Tempos):</b></p><p><b>Padrão, 3 PM.</b> Aliados em alcance curto recebem <b>+2 em ataque e dano</b> até o fim da cena. Mire os aliados e use o botão do efeito.</p></div><hr><p style=\"text-align:justify\">Abençoa seus aliados, que recebem +1 em testes de ataque e rolagens de dano. Bênção anula Perdição.</p>",
+          "unidentified": ""
+        },
+        "source": "Tormenta20 — Edição Jogo do Ano, p. 182",
+        "ativacao": {
+          "execucao": "action",
+          "custo": 3,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "duracao": {
+          "value": 0,
+          "units": "scene",
+          "special": ""
+        },
+        "range": {
+          "value": null,
+          "units": ""
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null,
+          "mpMultiplier": false
+        },
+        "efeito": "",
+        "alcance": "short",
+        "alvo": "Aliados",
+        "area": "",
+        "resistencia": {
+          "pericia": "",
+          "atributo": "sab",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "tipo": "div",
+        "circulo": 1,
+        "preparada": true,
+        "escola": "enc",
+        "chatFlavor": "",
+        "origin": "",
+        "tags": [],
+        "chatGif": "",
+        "rolltags": [],
+        "automationtags": [],
+        "equipado2": {
+          "slot": 0,
+          "type": ""
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.tormenta20.magias.Item.OTsBw84Ci2IKPStn",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_id": "1AULmUEKqAqnK3q0",
+      "_key": "!actors.items!u5apt4uO35WdsG5B.1AULmUEKqAqnK3q0"
+    },
+    {
+      "name": "Curar Ferimentos",
+      "type": "magia",
+      "img": "systems/tormenta20/icons/magias/curar-ferimentos.webp",
+      "effects": [
+        {
+          "_id": "BfFXMlK4FIZCxVrl",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.soVAGPRWQmKxOrPm",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Curar Ferimentos",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "alvo",
+                "value": "1 morto-vivo",
+                "priority": null,
+                "type": "override",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": false,
+              "custo": null,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>muda o alvo para 1 morto-vivo. Em vez do normal, causa 1d8 pontos de dano de luz (Vontade reduz à metade).</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx.BfFXMlK4FIZCxVrl"
+        },
+        {
+          "_id": "OnIEHODVMzqz3KEP",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.soVAGPRWQmKxOrPm",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Curar Ferimentos",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "dano",
+                "value": "1d8+1",
+                "priority": null,
+                "type": "custom",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": true,
+              "custo": 1,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>aumenta a cura em +1d8+1.</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx.OnIEHODVMzqz3KEP"
+        },
+        {
+          "_id": "0RHzBvVIP8Vbm1V9",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.soVAGPRWQmKxOrPm",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Curar Ferimentos",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": false,
+              "custo": 2,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>também remove uma condição de cansaço do alvo.</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx.0RHzBvVIP8Vbm1V9"
+        },
+        {
+          "_id": "UHpDuzZUHuMc6f4e",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.soVAGPRWQmKxOrPm",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Curar Ferimentos",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "alcance",
+                "value": "curto",
+                "priority": null,
+                "type": "override",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": false,
+              "custo": 2,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>muda o alcance para curto.</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx.UHpDuzZUHuMc6f4e"
+        },
+        {
+          "_id": "Y3ohFtoHUnhJASQF",
+          "flags": {
+            "tormenta20": {}
+          },
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "origin": "Compendium.tormenta20.magias.soVAGPRWQmKxOrPm",
+          "transfer": false,
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "name": "Curar Ferimentos",
+          "img": "icons/svg/upgrade.svg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "alcance",
+                "value": "curto",
+                "priority": null,
+                "type": "override",
+                "phase": "initial"
+              },
+              {
+                "key": "alvo",
+                "value": "criaturas escolhidas",
+                "priority": null,
+                "type": "override",
+                "phase": "initial"
+              }
+            ],
+            "targets": [],
+            "status": null,
+            "onuse": true,
+            "abilityUse": {
+              "description": "",
+              "automatic": false,
+              "aumenta": false,
+              "custo": 5,
+              "names": [],
+              "types": [
+                "self"
+              ]
+            },
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "disposition": []
+            }
+          },
+          "description": "<p>muda o alcance para curto e o alvo para criaturas escolhidas.</p>",
+          "statuses": [],
+          "sort": 0,
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx.Y3ohFtoHUnhJASQF"
+        }
+      ],
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<div class=\"fdt-nota\"><p><b>Nesta ficha (Fim dos Tempos):</b></p><p><b>Padrão, 5 PM.</b> Uma criatura adjacente cura <b>6d8+6 PV</b>. Use Aplicar Cura no alvo.</p></div><hr><p>Você canaliza luz que recupera 2d8+2 pontos de vida na criatura tocada. Curar Ferimentos anula Infligir Ferimentos. Truque: muda o alvo para 1 morto-vivo. Em vez do normal, causa 1d8 pontos de dano de luz (Vontade reduz à metade).</p>",
+          "unidentified": ""
+        },
+        "source": "Tormenta20 — Edição Jogo do Ano, p. 189",
+        "ativacao": {
+          "execucao": "action",
+          "custo": 5,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "range": {
+          "value": null,
+          "units": ""
+        },
+        "consume": {
+          "type": "",
+          "target": "",
+          "amount": null,
+          "mpMultiplier": false
+        },
+        "efeito": "",
+        "alcance": "touch",
+        "alvo": "1 criatura",
+        "area": "",
+        "resistencia": {
+          "pericia": "",
+          "atributo": "sab",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [
+          {
+            "name": "Cura",
+            "key": "dano0",
+            "type": "dano",
+            "parts": [
+              [
+                "6d8+6",
+                "curapv",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "tipo": "div",
+        "circulo": 1,
+        "preparada": true,
+        "escola": "evo",
+        "chatFlavor": "",
+        "origin": "",
+        "tags": [],
+        "chatGif": "",
+        "rolltags": [],
+        "automationtags": [],
+        "equipado2": {
+          "slot": 0,
+          "type": ""
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.tormenta20.magias.Item.soVAGPRWQmKxOrPm",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_id": "F9spkJ2pXsRnTEmx",
+      "_key": "!actors.items!u5apt4uO35WdsG5B.F9spkJ2pXsRnTEmx"
+    },
+    {
+      "name": "Soco de Arsenal",
+      "type": "magia",
+      "img": "systems/tormenta20/icons/magias/soco-do-mestre.webp",
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p><b>Padrão, 5 PM.</b> Uma criatura em alcance médio sofre <b>5d6+5 de impacto</b> e é empurrada 3m para trás (Fortitude reduz à metade e evita o empurrão).</p><p class=\"fdt-ref\"><i>No sistema:</i> @UUID[Compendium.tormenta20.ameacas.Actor.2kweWiPEjdPB3zkv.Item.W49k1LMMJIxCwAnI]{Soco de Arsenal (Capelão de Guerra)}</p>",
+          "unidentified": ""
+        },
+        "tipo": "div",
+        "circulo": 2,
+        "escola": "evo",
+        "preparada": true,
+        "ativacao": {
+          "execucao": "action",
+          "custo": 5,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "medium",
+        "alvo": "1 criatura",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": "Fortitude reduz à metade e evita o empurrão"
+        },
+        "rolls": [
+          {
+            "name": "Impacto",
+            "key": "dano0",
+            "type": "dano",
+            "parts": [
+              [
+                "5d6+5",
+                "impacto",
+                ""
+              ]
+            ],
+            "versatil": "",
+            "adaptavel": ""
+          }
+        ],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "consume": {
+          "amount": 0,
+          "mpMultiplier": false,
+          "target": "",
+          "type": ""
+        },
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": "",
+        "equipado2": {
+          "slot": 0,
+          "type": ""
+        }
+      },
+      "_id": "lCSYVus6FKl6e40R",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [],
+      "_key": "!actors.items!u5apt4uO35WdsG5B.lCSYVus6FKl6e40R"
+    },
+    {
+      "name": "Lampião Mecanomágico",
+      "type": "poder",
+      "img": "systems/tormenta20/icons/itens/gerais/lampiao.webp",
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Engenhoca do Dr. Vesper entregue por Torgo. Afeta qualquer <b>não humano inteligente em alcance longo</b>: <b>Vontade CD 20</b> (efeito mental). Na falha, quem usa o lampião decide uma ação de movimento da vítima por rodada. A vítima ainda faz a ação padrão, mas não pode fazer ações completas. Não dá para obrigá-la a outra coisa além de se mover.</p><p>A vítima testa de novo a cada rodada; passar não a deixa imune. <b>Use a macro <i>Lampião Mecanomágico</i></b> (a CD 20 do lampião é diferente da CD 18 de Lorelei).</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "free",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "long",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "KaftnTNlm14S7w52",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [
+        {
+          "name": "Hipnotizado pelo Lampião",
+          "img": "systems/tormenta20/icons/itens/gerais/lampiao.webp",
+          "type": "base",
+          "transfer": false,
+          "disabled": false,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "Quem usa o lampião decide uma ação de movimento por rodada. Sem ações completas. Vontade CD 20 a cada rodada.",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av3"
+            }
+          },
+          "system": {
+            "changes": [],
+            "onuse": false,
+            "abilityUse": {
+              "types": [],
+              "names": [],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "tbpIvYk5AuQcvn9n",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.KaftnTNlm14S7w52.tbpIvYk5AuQcvn9n"
+        }
+      ],
+      "_key": "!actors.items!u5apt4uO35WdsG5B.KaftnTNlm14S7w52"
+    },
+    {
+      "name": "Resistências da Capelã",
+      "type": "poder",
+      "img": "icons/svg/shield.svg",
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "description": {
+          "value": "<p>Imune a medo. <b>+5</b> contra magia divina e <b>+10</b> contra efeitos da Tormenta: marque o aprimoramento certo na janela da rolagem de resistência.</p><p><b>Ajudantes (Alternativa 2):</b> ligue o efeito <i>Ajudantes de Dornbach</i> na aba de efeitos quando dois aldeões a estiverem ajudando.</p>",
+          "unidentified": ""
+        },
+        "tipo": "ability",
+        "subtipo": "",
+        "ativacao": {
+          "execucao": "passive",
+          "custo": 0,
+          "qtd": "",
+          "condicao": "",
+          "special": ""
+        },
+        "alcance": "none",
+        "area": "",
+        "duracao": {
+          "value": 0,
+          "units": "inst",
+          "special": ""
+        },
+        "resistencia": {
+          "pericia": "",
+          "atributo": "",
+          "bonus": 0,
+          "txt": ""
+        },
+        "rolls": [],
+        "source": "",
+        "origin": "",
+        "tags": [],
+        "rolltags": [],
+        "automationtags": [],
+        "chatFlavor": "",
+        "chatGif": "",
+        "range": {
+          "units": "",
+          "value": 0
+        },
+        "efeito": ""
+      },
+      "_id": "Q8kGXr7FOGShniSo",
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "effects": [
+        {
+          "name": "Resistência a magia divina (+5)",
+          "img": "systems/tormenta20/icons/magias/bencao.webp",
+          "type": "base",
+          "transfer": true,
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av3"
+            }
+          },
+          "system": {
+            "changes": [
+              {
+                "key": "roll",
+                "value": 5,
+                "type": "add",
+                "phase": "initial",
+                "priority": null
+              }
+            ],
+            "onuse": true,
+            "abilityUse": {
+              "types": [
+                "skill"
+              ],
+              "names": [
+                "Fortitude",
+                "Reflexos",
+                "Vontade"
+              ],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "4NgszxB348yubuKd",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.Q8kGXr7FOGShniSo.4NgszxB348yubuKd"
+        },
+        {
+          "name": "Resistência a Tormenta (+10)",
+          "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+          "type": "base",
+          "transfer": true,
+          "disabled": true,
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "description": "",
+          "statuses": [],
+          "flags": {
+            "world": {
+              "fdt": "av3"
+            }
+          },
+          "system": {
+            "changes": [
+              {
+                "key": "roll",
+                "value": 10,
+                "type": "add",
+                "phase": "initial",
+                "priority": null
+              }
+            ],
+            "onuse": true,
+            "abilityUse": {
+              "types": [
+                "skill"
+              ],
+              "names": [
+                "Fortitude",
+                "Reflexos",
+                "Vontade"
+              ],
+              "automatic": false,
+              "aumenta": false,
+              "custo": 0,
+              "description": ""
+            },
+            "identifier": "",
+            "targets": [],
+            "status": null,
+            "aura": {
+              "isAura": false,
+              "range": 0,
+              "behaviors": null
+            },
+            "upgrade": {
+              "type": null,
+              "itemType": []
+            }
+          },
+          "_id": "XqmlvFyivKUsNSWo",
+          "origin": null,
+          "tint": "#ffffff",
+          "start": null,
+          "showIcon": 1,
+          "folder": null,
+          "sort": 0,
+          "_stats": {
+            "coreVersion": "14.366",
+            "systemId": "tormenta20",
+            "systemVersion": "1.6.4",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "exportSource": null
+          },
+          "_key": "!actors.items.effects!u5apt4uO35WdsG5B.Q8kGXr7FOGShniSo.XqmlvFyivKUsNSWo"
+        }
+      ],
+      "_key": "!actors.items!u5apt4uO35WdsG5B.Q8kGXr7FOGShniSo"
+    }
+  ],
+  "effects": [
+    {
+      "name": "Ajudantes de Dornbach: dois (+5)",
+      "img": "systems/tormenta20/icons/ameacas/recruta-supremacista.png",
+      "type": "base",
+      "transfer": false,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Alternativa 2 do livro: uma dupla de aldeões ajuda este combatente. Desligue quando um ajudante for derrubado e ligue o de +2.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.modificadores.ataque.geral",
+            "value": "5",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.modificadores.dano.geral",
+            "value": "5",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "V9rJPoaImwabasWt",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!actors.effects!u5apt4uO35WdsG5B.V9rJPoaImwabasWt"
+    },
+    {
+      "name": "Ajudantes de Dornbach: um (+2)",
+      "img": "systems/tormenta20/icons/ameacas/recruta-supremacista.png",
+      "type": "base",
+      "transfer": false,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Sobrou um ajudante. Desligue quando ele também for derrubado.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av3"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.modificadores.ataque.geral",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.modificadores.dano.geral",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "szZiYBwIlCYcC0qw",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!actors.effects!u5apt4uO35WdsG5B.szZiYBwIlCYcC0qw"
+    }
+  ],
+  "_key": "!actors!u5apt4uO35WdsG5B"
+}

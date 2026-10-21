@@ -1,0 +1,196 @@
+{
+  "name": "Histórias do Herói Louco",
+  "img": "icons/svg/book.svg",
+  "folder": "8ASD32WCoXUtoHRE",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "tabelaHistorias"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Contadas por Gormaggor, Raguria, Nada Mais que a Verdade, Kiki, Fortunata e quase qualquer caipira. Quase ninguém conta em ordem: misture e invente apócrifas para esconder a Revolta dos Três.",
+  "_id": "Jdk9hy8YxFB4kgrI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "O Buquê",
+      "description": "O Herói Louco era apaixonado pela Guerreira Distante, como quase todo mundo naquela época. Mas ela sempre ficava longe: quanto mais ele se aproximava, mais ela se afastava. Ele pensou num presente que ela pudesse achar depois, com uma carta de amor. O Bicho Bruxo sugeriu um buquê, mas o maior buquê do mundo. Sem saber qual era o tamanho a superar, o Herói Louco colheu todas as flores do mundo, e depois as outras plantas, até o mundo virar um deserto. O Rei Juiz, furioso, bateu na cabeça dele com a espada. O buquê caiu e, como tinha todas as plantas do mundo, se espalhou pelo mundo todo. A Guerreira Distante nunca soube que o Herói Louco tinha tentado fazer um buquê para ela.",
+      "_id": "syGyGKHUyauN1MSB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.syGyGKHUyauN1MSB"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Os Filhos",
+      "description": "Um dia o Herói Louco teve filhos. Eram muitos e estavam sempre com fome. O Bicho Bruxo sugeriu fechá-los numa caverna enquanto ele buscava comida, e o Herói Louco derrubou umas pedras na entrada. No caminho, encontrou o Rei Juiz, que o convidou para um passeio; sem querer contar a verdade, ele aceitou. Quando o passeio acabou, já tinha esquecido o que ia fazer. Ao lembrar, correu à caverna: na fome, os filhos tinham devorado uns aos outros. O Rei Juiz puniu os filhos canibais, transformando-os em monstros. O Herói Louco ficou triste, mas pelo menos agora eram menos filhos, mais fáceis de cuidar.",
+      "_id": "sLFaCFMsIM9nuZ72",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.sLFaCFMsIM9nuZ72"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "A Cabeça",
+      "description": "Uma vez o Herói Louco fez algo errado e o Rei Juiz cortou a cabeça dele. A cabeça rolou para longe, e o corpo foi procurá-la. Por sorte, ela parou bem perto dos pés da Guerreira Distante, que não a viu chegar e por isso não se afastou. A cabeça ficou muito feliz e criava coragem para declarar seu amor quando os filhos da Guerreira Distante viram aquilo e a levaram embora, porque sabiam que ela queria ficar longe. A cabeça ficou muito triste, mas então o corpo a achou, e pelo menos os dois continuaram juntos.",
+      "_id": "4H5wJFglKiDzFlD9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.4H5wJFglKiDzFlD9"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Atrás da Porta",
+      "description": "Uma vez o Herói Louco achou uma colina que ninguém nunca tinha visto. Atrás dela, só um vale vazio. Pensou que seria um bom presente para a Guerreira Distante: se ela queria ficar longe, poderia ficar ali, onde ninguém ia. Como não conseguia chegar perto dela, o Bicho Bruxo deu uma ideia: ele guardaria a colina e o Herói Louco desenharia um caminho no chão até o presente. Ela seguiu o caminho, mas o Bicho Bruxo disse que o presente era dele, sem mencionar o Herói Louco, e fugiu. A Guerreira Distante foi ao vale antes que o Herói Louco pudesse desmentir. Ele ficou desolado, mas pelo menos ela estava feliz.",
+      "_id": "i9hmRNIBh0d9VQZv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.i9hmRNIBh0d9VQZv"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "A Casa",
+      "description": "Uma vez o Herói Louco lembrou por que vagava havia tanto tempo: tinha saído para comprar comida para os filhos. Tinha esquecido que tinha filhos, então fazia sentido não lembrar da compra. Mas não sabia mais o caminho de casa. Tentou perguntar à Guerreira Distante, que estava longe demais para ouvir, e não lembrava de mais ninguém. Vagando, encontrou o Rei Juiz, que ficou furioso: que tipo de pai esquece que tem filhos? Bateu nele como punição, e isso o fez andar ainda mais devagar. Ele nunca chegou em casa. De qualquer forma, a casa já tinha sido destruída e os filhos estavam mortos. Pelo menos ele não lembrava deles, então não ficou triste.",
+      "_id": "pOQ4e5LQHAAV5Sip",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.pOQ4e5LQHAAV5Sip"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "A Coisa",
+      "description": "Certa vez o Herói Louco percebeu que tinha esquecido uma coisa, mas, como tinha esquecido, não lembrava o que era. A Guerreira Distante estava ainda mais longe que de costume e não ouviu. O Rei Juiz, como sempre, estava furioso com ele e não ajudou. Então veio o Larápio Ligeiro e disse que conhecia um lugar escondido onde ficavam as coisas escondidas; talvez a coisa estivesse lá. O Herói Louco procurou, mas nunca soube se tinha achado, porque não sabia o que era. O Rei Juiz olhou feio para o Larápio Ligeiro, mas, por alguma razão, não bateu nele como sempre batia no Herói Louco.",
+      "_id": "z3OSY38iAKGcIZOq",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Jdk9hy8YxFB4kgrI.z3OSY38iAKGcIZOq"
+    }
+  ],
+  "_key": "!tables!Jdk9hy8YxFB4kgrI"
+}

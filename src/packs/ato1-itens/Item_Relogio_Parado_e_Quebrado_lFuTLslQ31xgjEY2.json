@@ -1,0 +1,86 @@
+{
+  "name": "Relógio Parado e Quebrado",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/engrenagens.webp",
+  "system": {
+    "description": {
+      "value": "<p>Encravado no peito de Zardu, como uma peça mecânica imbuída nele. É bem avançado e já foi mágico. Nada mais pode ser descoberto.</p><p>Só personagens de culturas muito tecnológicas (Salistick, Sternachten, Valkaria...) têm alguma chance de reconhecer o tipo de objeto.</p><p><i>Pista da tripulação da Roca.</i></p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "Ad4nkA1Q9s0ELfVB",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "_id": "lFuTLslQ31xgjEY2",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!lFuTLslQ31xgjEY2"
+}

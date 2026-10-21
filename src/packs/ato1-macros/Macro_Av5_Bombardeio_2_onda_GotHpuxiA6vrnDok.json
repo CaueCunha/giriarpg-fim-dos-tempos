@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Bombardeio (2ª onda)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/bomba.webp",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroBombardeio() {\n\t\tconst onda = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"bombardeio\");\n\t\tif (!onda) return ui.notifications.error(\"Ator do Bombardeio não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst rodada = onda.system.resources.primary.value;\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: `Bombardeio · rodada ${rodada} de 5` },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>O que rolar</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"inicio\">Início do turno: bombas e disparos (Reflexos)</option>\n\t\t\t\t\t<option value=\"desarmar\">Desarmar um explosivo (Ladinagem CD 25)</option>\n\t\t\t\t\t<option value=\"carregar\">Carregar o explosivo para longe (Força CD 15)</option>\n\t\t\t\t\t<option value=\"detonar\">Fim da 5ª rodada: detonar os que sobraram</option>\n\t\t\t\t\t<option value=\"zerar\">Zerar o contador de rodadas</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perto de um explosivo (CD 25, perfuração)</label><input type=\"checkbox\" name=\"perto\"></div>\n\t\t\t\t<div class=\"form-group\"><label>CD extra naquele explosivo (acelerado)</label><input type=\"number\" name=\"extra\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Explosivos ainda armados (detonar)</label><input type=\"number\" name=\"armados\" value=\"4\" min=\"0\" max=\"4\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") return onda.update({ \"system.resources.primary.value\": 0 });\n\t\tconst rolls = [];\n\t\tlet html = \"\";\n\t\tif (res.acao === \"inicio\") {\n\t\t\tawait onda.update({ \"system.resources.primary.value\": Math.min(rodada + 1, 5) });\n\t\t\tconst cd = res.perto ? 25 : 20;\n\t\t\tconst tipo = res.perto ? \"perfuracao\" : \"impacto\";\n\t\t\thtml = `<h3>Bombardeio · rodada ${Math.min(rodada + 1, 5)} de 5</h3><p>Reflexos CD ${cd}.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tif (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️ se desvia</li>`; continue; }\n\t\t\t\tconst d = await new Roll(`4d6[${tipo}]`).evaluate();\n\t\t\t\trolls.push(d);\n\t\t\t\tawait a.applyDamageV2(d, 1);\n\t\t\t\tconst perdeAcao = r.total <= cd - 10;\n\t\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ❌ ${d.total} de ${tipo}${perdeAcao ? \" e <b>perde a ação</b>\" : \"\"}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t} else if (res.acao === \"desarmar\" || res.acao === \"carregar\") {\n\t\t\tconst desarmar = res.acao === \"desarmar\";\n\t\t\tconst cd = (desarmar ? 25 : 15) + (Number(res.extra) || 0);\n\t\t\tconst pericia = desarmar ? \"ladi\" : null;\n\t\t\thtml = `<h3>${desarmar ? \"Desarmar\" : \"Carregar\"} o explosivo</h3><p>${desarmar ? \"Ladinagem\" : \"Força\"} CD ${cd}</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst bonus = desarmar ? (a.system.pericias?.[pericia]?.value ?? 0) : (a.system.atributos?.for?.value ?? 0);\n\t\t\t\tconst r = await new Roll(`1d20 + ${bonus}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst falhaPor = cd - r.total;\n\t\t\t\tlet txt = r.total >= cd ? (desarmar ? \"✔️ um sucesso (3 desarmam)\" : \"✔️ levou o explosivo para longe: desarmado\") : \"❌\";\n\t\t\t\tif (r.total < cd && !desarmar) {\n\t\t\t\t\tif (falhaPor >= 10) txt += \" <b>detonou o explosivo!</b>\";\n\t\t\t\t\telse if (falhaPor >= 5) txt += \" acelerou o detonador: +2 na CD deste explosivo\";\n\t\t\t\t\telse txt += \" não conseguiu erguer\";\n\t\t\t\t}\n\t\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${txt}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Até dois personagens por explosivo por rodada. Ajudar: Ladinagem CD 10.</p>\";\n\t\t} else {\n\t\t\tconst n = Number(res.armados) || 0;\n\t\t\thtml = `<h3>Detonação</h3><p><b>${n}</b> explosivo(s) não desarmado(s): cada um destrói <b>8 quadrados</b> da paliçada.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst ok = r.total >= 20;\n\t\t\t\tlet total = 0;\n\t\t\t\tfor (let i = 0; i < n; i++) {\n\t\t\t\t\tconst d = await new Roll(\"10d6[impacto]\").evaluate();\n\t\t\t\t\trolls.push(d);\n\t\t\t\t\tawait a.applyDamageV2(d, ok ? 0.5 : 1);\n\t\t\t\t\ttotal += d.total;\n\t\t\t\t}\n\t\t\t\thtml += `<li>${a.name}: Reflexos <b>${r.total}</b> (CD 20) ${ok ? \"✔️ metade\" : \"❌ total\"} de ${total}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Só quem está adjacente aos explosivos sofre o dano. Dano já aplicado com RD.</p>\";\n\t\t\tawait onda.update({ \"system.resources.primary.value\": 0 });\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "GotHpuxiA6vrnDok",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!GotHpuxiA6vrnDok"
+}

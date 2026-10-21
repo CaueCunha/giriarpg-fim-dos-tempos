@@ -1,0 +1,31 @@
+{
+  "name": "Av4.5 · Rastro dos Mortos",
+  "type": "script",
+  "img": "icons/svg/target.svg",
+  "folder": "FK9B4CzVfO1W2DsM",
+  "flags": {
+    "world": {
+      "fdt": "av45"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4.5 · gerado por av45-plano-5.js\n(async function macroRastro() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst CHAVE = \"fdtRastro\";\n\t\tconst estado = game.user.getFlag(\"world\", CHAVE) ?? { sucessos: 0, falhas: 0 };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Rastro dos Mortos\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Sobrevivência CD 20, teste estendido: <b>5 sucessos</b>. Progresso: ${estado.sucessos} sucessos, ${estado.falhas} falhas.</p>\n\t\t\t\t<div class=\"form-group\"><label>O que aconteceu</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"rolar\">Rolar Sobrevivência (tokens selecionados)</option>\n\t\t\t\t\t<option value=\"interpretacao\">Boa interpretação com um NPC (conta um sucesso)</option>\n\t\t\t\t\t<option value=\"converter\">Interpretação + sucesso social (vira uma falha em sucesso)</option>\n\t\t\t\t\t<option value=\"zerar\">Zerar o progresso</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Modificador extra</label><input type=\"number\" name=\"mod\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") return game.user.unsetFlag(\"world\", CHAVE);\n\t\tconst rolls = [];\n\t\tlet html = \"<h3>Rastro dos Mortos</h3>\";\n\t\tif (res.acao === \"rolar\") {\n\t\t\tif (!atores.length) return ui.notifications.warn(\"Selecione quem segue o rastro.\");\n\t\t\thtml += \"<ul>\";\n\t\t\tfor (const a of atores) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.sobr?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst ok = r.total >= 20;\n\t\t\t\tif (ok) estado.sucessos++; else estado.falhas++;\n\t\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${ok ? \"✔️\" : \"❌\"}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t} else if (res.acao === \"interpretacao\") {\n\t\t\testado.sucessos++;\n\t\t\thtml += \"<p>Um morador do caminho viu os mortos passarem: conta como um sucesso.</p>\";\n\t\t} else if (estado.falhas > 0) {\n\t\t\testado.falhas--;\n\t\t\testado.sucessos++;\n\t\t\thtml += \"<p>A conversa rendeu: uma falha vira sucesso.</p>\";\n\t\t}\n\t\thtml += `<p>Progresso: <b>${estado.sucessos}/5</b> sucessos (${estado.falhas} falha(s)).</p>`;\n\t\tif (estado.sucessos >= 5) {\n\t\t\thtml += \"<p><b>O covil!</b> Uma abertura pequena leva a uma caverna ampla e corredores largos demais para serem naturais.</p>\";\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else {\n\t\t\thtml += \"<p style=\\\"font-size:0.85em\\\">O livro não dá limite de falhas: cada falha custa tempo. Role na tabela de encontros pelo caminho.</p>\";\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, estado);\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "6Tf0SRwwDx5CDE3N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!6Tf0SRwwDx5CDE3N"
+}

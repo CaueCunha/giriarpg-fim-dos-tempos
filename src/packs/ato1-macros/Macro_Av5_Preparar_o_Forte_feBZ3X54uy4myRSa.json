@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Preparar o Forte",
+  "type": "script",
+  "img": "icons/svg/hazard.svg",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroPreparar() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Preparar o Forte\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Cada PJ ou NPC treinado em Ofício ou Guerra faz um teste por dia (e não faz mais nada naquele dia). CD 20 gera 1d4 de mana; cada 10 acima, +1d4.</p>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"ofi0\">Ofício</option><option value=\"guer\">Guerra</option>\n\t\t\t\t\t<option value=\"furt\">Furtividade (coberturas)</option><option value=\"ladi\">Ladinagem (armadilhas)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Bônus fixo (se o token não tiver a perícia na ficha)</label><input type=\"number\" name=\"bonus\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tlet dados = 0;\n\t\tlet html = \"<h3>Construindo Defesas</h3><ul>\";\n\t\tconst lista = atores.length ? atores : [null];\n\t\tfor (const a of lista) {\n\t\t\tconst bonus = a ? (a.system.pericias?.[res.pericia]?.value ?? 0) : Number(res.bonus) || 0;\n\t\t\tconst r = await new Roll(`1d20 + ${bonus}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst d = r.total >= 20 ? 1 + Math.floor((r.total - 20) / 10) : 0;\n\t\t\tdados += d;\n\t\t\thtml += `<li>${a ? a.name : \"Teste\"}: <b>${r.total}</b> → ${d ? `${d}d4` : \"nada\"}</li>`;\n\t\t}\n\t\tif (dados) {\n\t\t\tconst mana = await new Roll(`${dados}d4`).evaluate();\n\t\t\trolls.push(mana);\n\t\t\thtml += `</ul><p>Orçamento deste dia: <b>${dados}d4 = ${mana.total} pontos de mana</b>.</p>\n\t\t\t\t<p style=\"font-size:0.85em\">Some os d4 de todos os dias antes de rolar, se preferir. Gaste o total em magias que representem as defesas (ex.: Muralha Elemental). As defesas são mundanas: não podem ser anuladas como magia.</p>`;\n\t\t} else html += \"</ul><p>Nenhum sucesso: nenhum ponto de mana neste dia.</p>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "feBZ3X54uy4myRSa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!feBZ3X54uy4myRSa"
+}

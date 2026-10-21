@@ -1,0 +1,447 @@
+{
+  "name": "Arco 2 · Aventura 0 · Chegada a Valkaria",
+  "folder": "2vyeLyk2i3kwT8PE",
+  "flags": {
+    "world": {
+      "fdt": "a2av0"
+    }
+  },
+  "_id": "F2pQco7kNcYpG9JD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>O grupo chega a Valkaria com a @UUID[Item.f5eRFtYQU6TuqanT]{Carta de Belinda para Blixto}, conhece @UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting} na Metais do Baixote e é levado à Guarita da Praia, onde a @UUID[Actor.7xlqREDzVMs1EKJ9]{Xerife Mathilda Nolt} os testa com um caso simples: capturar seis bandidos que tomaram uma rua mercantil. Termina com o juramento de detetives e o Quadro de Casos.</p>\n\t\t\t\t<p><b>Não dá nível nem Lei &amp; Ordem.</b> É uma vitrine dos novos locais e NPCs, com uma cena de ação curta.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Chegada</b> à cidade e à Metais do Baixote. Se quiser, role uma vez em @UUID[RollTable.sfd9nHvVqZoc1Mod]{Encontros em Valkaria}, mas é melhor ir direto.</li>\n\t\t\t\t\t<li><b>Justiça, Dever e Dinheiro:</b> Blixto, a Guarita da Praia, Mathilda e o regulamento.</li>\n\t\t\t\t\t<li><b>Primeiro Caso:</b> @UUID[Actor.X0CIaY8KyV3b4eF3]{Bandido Descarado} ×5, @UUID[Actor.zMaYKBGMtXGrDyWi]{Barnett} e a @UUID[Actor.qVN1XdpnTG6UhqQj]{Gárgula da Metrópole}, com perseguição.</li>\n\t\t\t\t\t<li><b>Juramento</b> e o @UUID[Item.FOQMZNroAEzseixU]{Distintivo da Guarda de Valkaria}.</li>\n\t\t\t\t\t<li><b>Desfecho:</b> o Quadro de Casos.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Para o arco todo</h2>\n\t\t\t\t<ul><li>@UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem} guarda o contador (começa em 20). Use @UUID[Macro.suZkXwGugq65ZRFJ]{Arco 2 · Lei & Ordem} no fim de cada sessão, a cada atividade e ao entregar provas.</li><li>@UUID[RollTable.sfd9nHvVqZoc1Mod]{Encontros em Valkaria}: role sempre que o grupo se desloca.</li><li>@UUID[Macro.sF5xQDSgTkY6qmRF]{Arco 2 · Perseguição} serve para qualquer perseguição do arco (selecione os perseguidores, marque os fugitivos como alvo). Usa @UUID[RollTable.JyK0I7Q2vF0eqOdb]{Eventos da Perseguição (Valkaria)}.</li><li>As páginas <i>Lei &amp; Ordem e Provas</i>, <i>Atividades em Valkaria</i> e <i>Moradias</i> podem ser mostradas aos jogadores (o autor diz que o texto das regras não tem spoilers).</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Pub7pO5km1eTXwbf",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.Pub7pO5km1eTXwbf"
+    },
+    {
+      "name": "Handout · Carta de Belinda",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p><i>Destinatário: Blixto Arting<br>Metais do Baixote, Cidade da Praia, Valkaria</i></p>\n\t\t\t\t<blockquote><p><i>\"Caro primo, vim até as Colinas Centrais para provar que posso ser uma comerciante e ferreira tão boa quanto você. Não consegui ainda, mas Tibar me abençoou com as ferramentas certas para fazer isso. Descobri o metal arco-íris, um material que só existe aqui, com uma história francamente inacreditável. Mas esta carta não é sobre isso. Quando disse que as Centrais me deram as ferramentas certas, não estava falando só do metal. Falo também de um grupo de aventureiros.</i></p>\n\t\t\t\t<p><i>Eles têm futuro. Podem não parecer, podem ter a cara e o jeito de quem vai levá-lo à falência, podem começar a brigar entre si antes que terminem de se apresentar, mas são bons. E vão precisar de uma base de operações, de algum apoio, de ajuda para montar de novo suas vidas. É aí que você entra.</i></p>\n\t\t\t\t<p><i>Eles são bons investimentos. Talvez o defendam de um ataque de lontras fantasmas assassinas, talvez façam propaganda das suas armas. De qualquer forma, vão render dividendos. E lembre-se: lucro para mim é sagrado! Tibar confia nesses moleques.</i></p>\n\t\t\t\t<p><i>Até a próxima,<br>Belinda Arting</i></p>\n\t\t\t\t<p><i>Metais do Baixote Forja &amp; Armazém, Forte Cabeça-de-Martelo, Colinas Centrais\"</i></p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "9umDPwx0svXtxwwD",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.9umDPwx0svXtxwwD"
+    },
+    {
+      "name": "Fase 0 · Chegada",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>A aventura começa numa das maiores mudanças na vida dos heróis. Descreva Valkaria como quiser: a campanha enfatiza o lado perigoso, sujo, movimentado e moderno da capital.</p>\n\t\t\t\t<h3>Pontos para narrar</h3>\n\t\t\t\t<ul><li>Na viagem, o \"mundo real\" volta: ninguém mais anda com arma de fogo, o grupo atrai olhares, aparecem estradas e aldeias.</li><li>Uma montanha no horizonte... que é uma estátua. A deusa anuncia a capital.</li><li>Mais de um dia atravessando a periferia, um oceano de gente. Em Valkaria, é como se os outros não existissem.</li><li>Horas na fila do portão com comerciantes, peregrinos, nobres, turistas, imigrantes e talvez vilões. Ninguém é barrado.</li><li>Dentro das muralhas, um mundo de retalhos de outros mundos. Só lembra o Mundo de Tilliann, das memórias dos gnomos.</li></ul>\n\t\t\t\t<p>O destino é a matriz da <b>Metais do Baixote</b>, na Cidade da Praia. Enfatize o cansaço, que não conhecem nada e que hospedagem na metrópole é cara.</p>\n\t\t\t\t<h3>Contingência: Perdidos em Valkaria</h3>\n\t\t\t\t<p><b>Recomendado:</b> diga com franqueza que neste início é melhor focar na Metais e nos NPCs principais; haverá tempo para o resto.</p>\n\t\t\t\t<p><b>Mais sutil:</b> tudo existe em Valkaria, mas ninguém sabe onde. Sem mapas, placas ou endereços; ruas de dois metros, sem planejamento; distâncias em horas ou dias. Use a demora para se preparar, role pelo menos uma vez em @UUID[RollTable.sfd9nHvVqZoc1Mod]{Encontros em Valkaria} e ofereça atividades.</p>\n\t\t\t\t<h3>A Metais do Baixote</h3>\n\t\t\t\t<p>Uma fortaleza comercial que ocupa mais de um quarteirão: várias entradas (a primeira é de serviço e eles são gentilmente expulsos; a segunda dá num salão de forjas), loja lotada, taverna, área de testes de armas. Mencionando Belinda, são levados a uma figura baixa e frenética, deixando um rastro de fumaça de charuto.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "pxKAT9fmRQcgGss0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.pxKAT9fmRQcgGss0"
+    },
+    {
+      "name": "Fase 1 · Justiça, Dever e Dinheiro",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<h3>Blixto</h3>\n\t\t\t\t<blockquote><p><i>\"Se minha prima escreveu isso sobre vocês, só pode significar uma de duas coisas. Ou ela foi enfeitiçada ou são bons mesmo! Podem começar se provando agora. Vamos, não fiquem parados, venham atrás de mim! Não posso deixar o trabalho se acumular desse jeito!\"</i></p></blockquote>\n\t\t\t\t<ul><li>Aventureiros são <b>investimento</b>. Não contrata nem tem missões, mas apadrinha.</li><li>Bom coração, mas \"salvar o mundo\" é vago: se o mundo inteiro está em risco, outros heróis também sabem. Pergunta do que precisam e aonde querem chegar.</li><li>Tem relação próxima com a Guarda, em especial a Guarita da Praia. Explica a Guarda e o papel dos patrocinadores.</li><li>Para vigiar vilões ligados ao crime e às irmandades, o melhor é trabalhar com a Guarda. <b>Enfatize isso.</b> Se não colar, diga aos jogadores com franqueza que o arco envolve uma parceria com a Guarda.</li><li>A criminalidade cresce: as irmandades estão ousadas, quase em guerra aberta, e alguns ostentam o brasão.</li><li>A Cidade da Praia é território da Companhia dos Irmãos. A Metais nunca foi extorquida, mas há semanas Irmãos passam na frente várias vezes por dia ou ficam parados olhando.</li><li>A Casa Blasanov já fez incursões no bairro, deixando cadáveres de Irmãos e de inocentes.</li><li>Não sabe quase nada da Companhia e não consegue detectar vilões como a tripulação da Roca.</li><li>Oferece dicas e um lugar para dormir; manda alguém ajudar a achar moradia (por conta de cada um).</li><li>Quem tiver um <b>negócio</b> retoma de onde parou nas Colinas, com ajuda dele.</li><li>Apresenta o grupo à Xerife Mathilda Nolt.</li></ul>\n\t\t\t\t<h3>A Guarita da Praia</h3>\n\t\t\t\t<p>Parece um mosteiro: prédio largo e baixo, cortado por canais, com espelho d'água, colunas decoradas e alcovas de meditação. Mas é colorido e barulhento: roupas penduradas, patrulheiros comendo na porta, cidadãos entrando e saindo como donos, gritos de suspeitos e vítimas. Janelas reforçadas, porta como portão de castelo.</p>\n\t\t\t\t<p>O escritório de Mathilda tem prateleiras de laboratório alquímico, colecionador de bizarrias ou assassino serial, tudo rotulado: \"Provas\", \"Referências\", \"Reagentes\". <i>\"Trouxe novas vítimas?\"</i></p>\n\t\t\t\t<p>Mathilda explica as regras e aceita testar o grupo pela recomendação de Blixto. Os guardas veteranos sentem que \"algo\" vai acontecer em alguns meses. O grupo é convidado (ou intimado) a ser <b>detetive temporário</b>, se provar competência.</p>\n\t\t\t\t<p>Escolha dois ou três NPCs da guarita para interagir (boas opções: Dra. Zymni, Saeba e Finley). Ao longo disso Mathilda explica o Quadro de Casos e então oferece uma missão rápida de teste.</p>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Sem salário: a cada aventura o grupo recebe do NPC que fez a queixa o equivalente ao tesouro de uma aventura normal. É só uma mudança estética, como o velhinho da taverna que paga para investigar os bandidos.</p>\n\t\t\t\t<h3>Não Saia do Regulamento!</h3>\n\t\t\t\t<p>Estético, não limitante. Nenhum tipo de personagem é vetado e os métodos continuam livres; Mathilda só se importa com o resultado:</p>\n\t\t\t\t<ul><li>Trazer os culpados vivos sempre que possível.</li><li>Evitar ferir inocentes (mentir, enganar ou intimidar um pouco está fora do controle dela).</li><li>Pelo menos tentar não causar dano à cidade e à propriedade.</li><li>Usar o distintivo o mínimo possível.</li><li>Cidadãos podem barrar a entrada de um guarda; para se infiltrar, métodos normais de aventureiro.</li><li><b>A regra mais importante: coletar provas.</b></li></ul>\n\t\t\t\t<p>Diga aos jogadores que não precisam imitar policiais de filmes nem mudar o jeito de jogar. A Guarda os limita tanto quanto o Exército do Reinado nas Colinas. A única diferença real é a coleta de provas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "uyuG51GgJJr2xlGu",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.uyuG51GgJJr2xlGu"
+    },
+    {
+      "name": "Elenco da Guarita da Praia",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><b>@UUID[Actor.7xlqREDzVMs1EKJ9]{Xerife Mathilda Nolt}</b>: clériga de Tanna-Toh, não mente, cadeirante desde um atentado cujo mandante desconhece (suspeita de guardas corruptos).</p>\n\t\t\t\t<p><b>Dra. Zymni</b>: trog legista, achada no ovo por aventureiros de Salistick e criada por cientistas. Curiosa, à vontade com cadáveres, humor inapropriado. Come no anexo de autópsias.</p>\n\t\t\t\t<p><b>Ulnsariann e Throgarimm</b>: elfo e anão, ousado e cauteloso, nobre e plebeu. Brigam o tempo todo e se recusam a trabalhar separados. Métodos pouco convencionais, mas dão resultado.</p>\n\t\t\t\t<p><b>Saeba</b>: tamuraniano vestido de samurai, mas age sozinho e cheio de truques: o \"Guarda Ninja\". Entrou na Guarda para vingar a irmã mais nova, morta por uma irmandade.</p>\n\t\t\t\t<p><b>Hannah</b>: aasimar apegada demais à justiça, intolerante com criminosos e com qualquer infração obscura. Leal à Guarda.</p>\n\t\t\t\t<p><b>Finley</b>: o detetive mais jovem, entusiasmado, ingênuo e verde. Já foi enganado por criminosos (houve pelo menos uma fuga). Mathilda tem pena dele.</p>\n\t\t\t\t<p><b>Tullia Blasanov</b>: lefou da família criminosa Blasanov, que sempre a rejeitou. Sofre preconceito duplo e sabe que traz perigo à guarita.</p>\n\t\t\t\t<p><b>Berthun</b>: veterano que poderia ser Xerife, mas dorme em serviço, se atrasa e aparece ferido. Todos acham que é bêbado. <span class=\"secret\">Na verdade é o vigilante mascarado <b>Curandeiro</b>, que caça os criminosos que escapam das investigações.</span></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "KVXQsSKzkqKRAO0j",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.KVXQsSKzkqKRAO0j"
+    },
+    {
+      "name": "Fase 2 · Primeiro Caso",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Seis criminosos se instalaram numa rua mercantil perto da guarita: pequenos roubos, extorsão, mercadoria roubada barata, incomodando todo mundo. Não são de nenhuma irmandade, mas querem \"mostrar serviço\" para entrar numa. <b>Todos devem ser capturados</b>; se um escapar, vai continuar infernizando os mercadores. Mathilda prefere que ninguém morra, mas é melhor um pouco de sangue do que deixar como está.</p>\n\t\t\t\t<h3>Pare em Nome da Lei!</h3>\n\t\t\t\t<p>A rua é movimentada, colorida, cheia de sotaques e cheiro de especiarias. Os bandidos se exibem. O grupo tem liberdade total (emboscada, disfarce, fingir querer entrar no bando, atacar de longe...). Os bandidos vigiam: preparativos à vista pedem Furtividade ou Enganação contra Percepção ou Intuição.</p>\n\t\t\t\t<h3>Encontro: Grupo Descarado</h3>\n\t\t\t\t<ul><li>Cinco @UUID[Actor.X0CIaY8KyV3b4eF3]{Bandido Descarado}: dois lutam (concentrando num herói ameaçador mas não invulnerável), três fogem em direções diferentes.</li><li>@UUID[Actor.zMaYKBGMtXGrDyWi]{Barnett}: move-se e ativa o medalhão. A @UUID[Actor.qVN1XdpnTG6UhqQj]{Gárgula da Metrópole} desce de um prédio e o carrega voando.</li></ul>\n\t\t\t\t<h3>Perseguição</h3>\n\t\t\t\t<p>Use @UUID[Macro.sF5xQDSgTkY6qmRF]{Arco 2 · Perseguição}: selecione os perseguidores, marque os fugitivos como alvo (T) e rode <i>Iniciar</i>. Depois uma vez por rodada.</p>\n\t\t\t\t<ul><li><b>Vantagem inicial:</b> conforme as ideias do grupo. Disfarçados ou se esgueirando, talvez nenhuma. Voz de prisão de longe, 10 ou mais quadrados.</li><li><b>Escapam</b> se percorrerem <b>80 quadrados (120 m)</b> antes de alcançados: bueiros, becos, esconderijos do submundo. Correm por telhados e jogam obstáculos.</li><li><b>Corrida:</b> Atletismo, avança quadrados iguais ao resultado; ±2 por 1,5 m de deslocamento acima ou abaixo de 9 m. Corre por 1 + Constituição rodadas; depois Fortitude CD 15 (+1 por teste), falha = fatigado e fora. A macro faz tudo isso.</li><li><b>Gárgula:</b> Atletismo +14 na perseguição (já com voo e o peso de Barnett). Com 20+ de dano de uma fonte, Fortitude CD = dano ou derruba Barnett (opção na macro).</li><li><b>Barnett carregado:</b> no início de cada rodada, atira para atrapalhar um perseguidor em alcance médio (opção na macro).</li></ul>\n\t\t\t\t<h3>Os bandidos</h3>\n\t\t\t\t<p><b>Barnett</b>, o \"cérebro\": franzino e arrogante. <b>Jaylyn, Nok, Abrott e Fredda</b>: bandidos comuns, traiçoeiros, sem lealdade entre si. <b>Gullna</b>, os músculos: a menos esperta, totalmente leal a Barnett.</p>\n\t\t\t\t<p>Capturados, são só canalhas aproveitando o clima de insegurança. Sonham com a Companhia, mas não têm contato. <b>Deixe claro que não é gancho.</b></p>\n\t\t\t\t<p>Tesouro: o @UUID[Item.4aWtzJL1iLEbCf7X]{Medalhão da Gárgula}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "BAdtPpTLiwlN1tWM",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.BAdtPpTLiwlN1tWM"
+    },
+    {
+      "name": "Fase 3 · Juramento",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Deixe claro que tudo foi rápido demais e que é estranho aceitar desconhecidos sem treinamento: é o quanto a capital precisa de guardas. O mesmo acontece em várias guaritas.</p>\n\t\t\t\t<p>Cerimônia rápida, sem que o resto pare: gritos, suspeitos acorrentados passando, a Xerife interrompida para decidir algo. Mathilda empurra a cadeira até o centro; os detetives fazem silêncio, cheios de respeito por ela.</p>\n\t\t\t\t<blockquote><p><i>\"Eu juro, por Khalmyr e pela Rainha-Imperatriz<br>\n\t\t\t\tDefender a cidade, e o povo acima dela<br>\n\t\t\t\tHonrar meus companheiros, e a lei acima deles<br>\n\t\t\t\tBuscar em todos os casos a verdade, e a justiça acima disso<br>\n\t\t\t\tZelar pela ordem, e pela vida acima de tudo<br>\n\t\t\t\tColocar o dever acima de mim mesmo<br>\n\t\t\t\tE, acima do dever, o bem\"</i></p></blockquote>\n\t\t\t\t<p>Um patrulheiro entrega os distintivos de latão (@UUID[Item.FOQMZNroAEzseixU]{Distintivo da Guarda de Valkaria}): um amassado, dois com manchas de sangue. Mathilda sorri: <i>\"Bem-vindos ao moedor de carne, detetives.\"</i></p>\n\t\t\t\t<h3>Contingência: O Crime Compensa</h3>\n\t\t\t\t<ul><li>Se o grupo capturou pelo menos um, já basta: Mathilda explica que sucesso total é raro na Guarda.</li><li>Estender a cena: achar o esconderijo ou esperar que reapareçam roubando em outro lugar.</li><li>Se falharem totalmente, Saeba ou Berthun intercedem, querendo um favor em troca.</li><li>Não \"roube\" para o grupo vencer. Uma falha é história emergente; melhor Blixto garantir a entrada (talvez com dinheiro) do que direcionar combates.</li></ul>\n\t\t\t\t<h3>Fase 4 · Desfecho</h3>\n\t\t\t\t<p>Encerre no juramento ou apresente o resto da guarita. Ao lado da mesa central está o <b>Quadro de Casos</b> (próxima página). Lembre aos jogadores que você precisa de tempo para preparar o caso escolhido.</p>\n\t\t\t\t<p>Eles não precisam se reportar todo dia: são aventureiros com um patrono fixo. Estão livres para explorar, achar moradia, vasculhar a Metais...</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "9xisv4xnExAi2tkJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.9xisv4xnExAi2tkJ"
+    },
+    {
+      "name": "Handout · Quadro de Casos",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p><i>Pergaminhos pregados no quadro ao lado da mesa central da Guarita da Praia.</i></p>\n\t\t\t\t<h3>1</h3>\n\t\t\t\t<blockquote><p><i>\"Nossa colega foi capturada e está em cárcere privado! Se ela estivesse na torre de um necromante, no fundo de uma masmorra ou no covil de um troll, saberíamos o que fazer. Mas ela está presa aqui mesmo na cidade e estamos de mãos amarradas! Precisamos que a Guarda a traga de volta em segurança. Quando Valkaria ficou mais perigosa que os ermos?\"</i></p>\n\t\t\t\t<p>Torzogh Meio-Machado, na Taverna do Esqueleto Gordo</p></blockquote>\n\t\t\t\t<h3>2</h3>\n\t\t\t\t<blockquote><p><i>\"Temos informações sobre a venda de mercadorias ilegais, imorais, irreligiosas e indecentes que acontecerá na próxima vez que Vectora atracar em Valkaria! Não podemos falar mais agora, mas é de interesse da Guarda e de todo o Reinado! Pelo menos esperamos que a Guarda de Valkaria ainda tenha algum interesse em preservar a segurança e a pureza dos cidadãos da capital, e que ainda reste algum respeito pela integridade dos artonianos neste Reinado em farrapos!\"</i></p>\n\t\t\t\t<p>Sociedade Pontifícia de Intercessão Moral Artoniana (SPIMA), segundo andar da casa verde na Rua dos Facóceros</p></blockquote>\n\t\t\t\t<h3>3</h3>\n\t\t\t\t<blockquote><p><i>\"Tenho um trabalho especial para quem estiver disposto a arriscar a pele sem nenhuma recompensa. Coisa interna. Apenas saibam que, depois que ouvirem sobre o caso, precisam resolvê-lo imediatamente. Quem pegar a missão vai entender.\"</i></p>\n\t\t\t\t<p>Xerife Mathilda Nolt, aqui mesmo na guarita</p></blockquote>\n\t\t\t\t<h3>4</h3>\n\t\t\t\t<blockquote><p><i>\"Não aguento mais brigas de taverna! Se fossem só brigas, eu até acharia normal... Ou quase. Mas é praticamente uma batalha campal toda noite! Eu me esforço para trazer os melhores bardos e oferecer as melhores cervejas anãs, mas só atraio malucos e bandidos! Preciso de ajuda para limpar a taverna, e rápido!\"</i></p>\n\t\t\t\t<p>Click, Taverna Terceira Opção</p></blockquote>\n\t\t\t\t<h3>5</h3>\n\t\t\t\t<blockquote><p><i>\"Estou sendo acusado de atos inomináveis. Sou inocente, mas cada vez mais pessoas estão convencidas de minha culpa e meu tormento de todas as noites se torna ainda pior. Uma mortalha de mentiras recai sobre mim... E até mesmo a alma mais afeita às trevas pode sucumbir sob a noite perene do ódio.\"</i></p>\n\t\t\t\t<p>Vladmir Mors, na Mansão do Sono e Suplício, na Baixa Vila de Lena<br>PS: venham depois do pôr do sol</p></blockquote>\n\t\t\t\t<h3>6</h3>\n\t\t\t\t<blockquote><p><i>\"Há um assassino serial à solta e ninguém se importa! Um massacre sem solução, vítimas totalmente descartadas por suas famílias, pela nobreza e pelas autoridades. Não interessa o que todos digam, eu sei o que vi e sei que a morte brutal de todos os meus amigos permanece impune. O Baile da Primavera está cancelado até que alguém tome uma atitude.\"</i></p>\n\t\t\t\t<p>Duquesa Alfraye Oppulak de Trylon e Foltomett, vocês sabem muito bem onde me encontrar</p>\n\t\t\t\t<p>Escrito logo abaixo, numa letra diferente: <i>\"Esqueça esse caso! É insolúvel porque é a fantasia de uma nobre desocupada! Está aqui há mais de dois anos e ninguém chegou nem perto de resolvê-lo.\"</i> Throgarimm</p>\n\t\t\t\t<p>(O pergaminho está bastante amassado e sujo, como se já tivesse passado por diversas mãos.)</p></blockquote>\n\t\t\t\t<section class=\"secret\"><h3>Para o mestre</h3>\n\t\t\t\t<ul><li>1 = Aventura 1 (Os Aventureiros de Stremtol). 2 = Av2 (Conexão Vectora). 3 = Av3 (Fuga da Rocha Cinzenta). 4 = Av4 (Massacre na Taverna dos Maníacos). 5 = Av5 (Túneis Famintos). 6 = Av6 (Baile de Debutantes Sangrento).</li><li>A Av2 só pode ser escolhida quando Vectora atracar: role 1d6 depois de cada aventura; chega no 6, e o limiar cai 1 por aventura.</li><li>Ordem presumida de nível: Av1 e Av2 no 7, Av3 e Av4 no 8, Av5 no 9, Av6 no 10. Ajuste ±1 nos testes e ±10 PV por nível de diferença.</li><li>Versão curta do arco: só Av1, 3, 4 e 5.</li><li>Av1 + Av5 liberam a Mini 1 (Ploigoníada); Av3 + Av6 liberam a Mini 2 (Paollus).</li></ul></section>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "7SxRAUSaCeHz1F44",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.7SxRAUSaCeHz1F44"
+    },
+    {
+      "name": "Lei & Ordem e Provas",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<p>Desde que pisam em Valkaria, os aventureiros notam que a violência e o caos estão prestes a estourar. <b>Lei &amp; Ordem</b> mede o senso de comunidade, o respeito às leis, a confiança nas autoridades, a tranquilidade do povo, a capacidade dos heróis de manter os vilões sob controle e a prosperidade da cidade. Quando chegar a zero, algo vai acontecer: guerra urbana, saques, crime ostensivo, omissão da Guarda... ou pior.</p>\n\t\t\t\t<ul><li>Começa em <b>20</b> e cai <b>1 por sessão</b>. Não é culpa de vocês: não dá para resolver todos os crimes de Valkaria.</li><li>Cada <b>Atividade em Valkaria</b> custa 1 (vários personagens ao mesmo tempo custam 1; em momentos separados, multiplica).</li><li>Cada <b>prova</b> entregue no fim de um caso do quadro rende +1, até <b>5 por caso</b>. Testemunhos juntos contam como uma prova; evidências materiais em geral contam uma a uma.</li><li>Só os casos do Quadro rendem Lei &amp; Ordem. Missões pessoais e o teste de entrada (esta aventura) não.</li><li>Vinte sessões não bastam para tudo: escolham os casos mais importantes.</li></ul>\n\t\t\t\t<p>Provas são relatos de testemunhas, evidências físicas, análises de peritos (arcanistas, inventores), confissões, cadáveres de vítimas, pistas na cena do crime: o que demonstre a um Juiz de Khalmyr que o suspeito preso ou morto era culpado e que o caso foi resolvido. Cada caso sugere provas, mas tragam suas próprias ideias.</p>\n\t\t\t\t<p>Valor atual: veja @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "0WEz7PenrZGEbuPF",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.0WEz7PenrZGEbuPF"
+    },
+    {
+      "name": "Atividades em Valkaria",
+      "type": "text",
+      "sort": 1000,
+      "text": {
+        "content": "<p>Cada atividade dura 8 horas, dá um bônus que vale por uma aventura e custa tibares e <b>1 de Lei &amp; Ordem</b>. Só uma por personagem por dia. Não é preciso \"achar\" a atividade, a não ser as semanais.</p>\n\t\t\t\t<table><tr><th>Atividade</th><th>Bônus</th><th>T$</th></tr><tr><td>Atelier de Esculturas das Medusas</td><td>Numa cena à escolha, +5 em Furtividade se ficar parado.</td><td>100</td></tr><tr><td>Aula Aberta</td><td>+2 numa perícia de Inteligência à escolha.</td><td>100</td></tr><tr><td>Aula de Magia</td><td>Conhece uma magia arcana adicional de 1º círculo.</td><td>100</td></tr><tr><td>Autópsia Extraplanar</td><td>+2 em Cura, +2 em Misticismo.</td><td>50</td></tr><tr><td>Baile da Corte</td><td>+2 em Diplomacia, +2 em Nobreza.</td><td>50</td></tr><tr><td>Baile do Populacho</td><td>+2 em Enganação, +2 em Fortitude.</td><td>50</td></tr><tr><td>Banho de Sol com os Trogs</td><td>Um uso de Mau Cheiro (ou um uso sem custo, se já tiver).</td><td>150</td></tr><tr><td>Banquete Hynne</td><td>+2 em Constituição.</td><td>150</td></tr><tr><td>Briga de Rua</td><td>+1 em Força, +1 em Destreza.</td><td>150</td></tr><tr><td>Briga de Taverna</td><td>+2 em Guerra, +1d4 PV temporários.</td><td>100</td></tr><tr><td>Cassino</td><td>Pode rolar de novo um único teste.</td><td>150</td></tr><tr><td>Causos dos Osteon</td><td>Um uso de Lendas e Histórias (ou um uso sem custo, se já tiver).</td><td>100</td></tr><tr><td>Circo (animais)</td><td>+2 em Adestramento, +2 em Fortitude.</td><td>50</td></tr><tr><td>Circo (palhaços)</td><td>+2 em Enganação, +2 em Ladinagem.</td><td>50</td></tr><tr><td>Circo (trapézio)</td><td>+2 em Atletismo, +2 em Reflexos.</td><td>50</td></tr><tr><td>Competição de Queda de Braço</td><td>+1 em Força, +2 em Intimidação.</td><td>100</td></tr><tr><td>Competição de Tiro ao Alvo</td><td>+1 em Pontaria, +2 em Percepção.</td><td>100</td></tr><tr><td>Corrida</td><td>Deslocamento +3m.</td><td>100</td></tr><tr><td>Corrida de Bigas</td><td>+2 em Pilotagem; o veículo recebe +3m de deslocamento.</td><td>100</td></tr><tr><td>Corrida de Cavalos</td><td>+2 em Cavalgar; +3m de deslocamento montado.</td><td>100</td></tr><tr><td>Degustação de Cervejas Anãs</td><td>+2 em Guerra, resistência a magia +1.</td><td>100</td></tr><tr><td>Degustação de Vinhos Élficos</td><td>+2 em Percepção, +1 na CD de magias.</td><td>100</td></tr><tr><td>Discurso da Rainha-Imperatriz (1×/semana, no Palácio)</td><td>+2 em Carisma.</td><td>150</td></tr><tr><td>Discussão Filosófica</td><td>+1 em Inteligência, +1 em Sabedoria.</td><td>150</td></tr><tr><td>Duelo de Bardos</td><td>+2 em Atuação, +2 em Iniciativa.</td><td>50</td></tr><tr><td>Duelo de Espadachins</td><td>+1 em Luta, +2 em Iniciativa.</td><td>100</td></tr><tr><td>Espetáculo de Bardos Arruaceiros</td><td>1d6 PV temporários.</td><td>100</td></tr><tr><td>Espetáculo de Bardos Dançantes</td><td>+1 em Destreza, +2 em Enganação.</td><td>100</td></tr><tr><td>Espetáculo de Bardos Refinados</td><td>+1 em Carisma, +2 em Conhecimento.</td><td>100</td></tr><tr><td>Espetáculo de Bardos Rurais</td><td>+2 em Fortitude, +2 em Vontade.</td><td>100</td></tr><tr><td>Espetáculo de Mago de Rua</td><td>+2 em Misticismo, resistência a magia arcana +1.</td><td>50</td></tr><tr><td>Festa Ilegal</td><td>+2 em Furtividade, +2 em Investigação.</td><td>50</td></tr><tr><td>Galeria de Arte Contemporânea</td><td>+2 em Enganação, +2 em Percepção.</td><td>50</td></tr><tr><td>Galeria de Arte Tradicional</td><td>+2 em Conhecimento, +2 em Ofício.</td><td>50</td></tr><tr><td>Hospitalidade Goblin</td><td>+5 em Fortitude contra venenos e doenças.</td><td>100</td></tr><tr><td>Jardinagem com as Dahllan</td><td>Dorme ao relento e recupera PV e PM como em quarto confortável.</td><td>100</td></tr><tr><td>Jejum com os Suraggel</td><td>+2 na CD de magias divinas.</td><td>100</td></tr><tr><td>Leilão</td><td>+2 em Intuição, +2 em Ofício (qualquer).</td><td>50</td></tr><tr><td>Leilão Ilegal</td><td>+2 em Furtividade, +2 em Intuição, +2 em Ladinagem.</td><td>100</td></tr><tr><td>Luta de Arena Menor</td><td>+2 em Cura, +2 em Atuação.</td><td>50</td></tr><tr><td>Luta em Arena Ilegal</td><td>+2 em Furtividade, +2 em Intimidação.</td><td>50</td></tr><tr><td>Meditação com Guru</td><td>+1 em Sabedoria, +2 em Misticismo.</td><td>100</td></tr><tr><td>Missa na Catedral de Valkaria (1×/semana)</td><td>Conhece uma magia divina adicional do maior círculo que pode lançar.</td><td>150</td></tr><tr><td>Narguilés Qareen</td><td>+2 na CD de magias arcanas.</td><td>100</td></tr><tr><td>Noite Romântica</td><td>+1 em Constituição, +1 em Carisma.</td><td>150</td></tr><tr><td>Ópera Anã</td><td>+1 em Inteligência, +2 em Fortitude.</td><td>150</td></tr><tr><td>Palestra na Academia Arcana (1×/semana)</td><td>Conhece uma magia arcana adicional do maior círculo que pode lançar.</td><td>150</td></tr><tr><td>Pregação do Fim do Mundo</td><td>+2 em Religião, resistência a magia divina +1.</td><td>50</td></tr><tr><td>Pregar Peças com as Sílfides</td><td>Imunidade a um único efeito de ilusão à escolha.</td><td>150</td></tr><tr><td>Refeição em Taverna</td><td>+2 em Diplomacia, +1d4 PM temporários.</td><td>100</td></tr><tr><td>Restaurante de Luxo</td><td>+2 em Nobreza, +1d4 PM temporários.</td><td>100</td></tr><tr><td>Rezar na Igreja</td><td>Conhece uma magia divina adicional de 1º círculo.</td><td>100</td></tr><tr><td>Sarau no Cemitério</td><td>+2 em Furtividade, +2 em Intimidação.</td><td>50</td></tr><tr><td>Serviço Voluntário (desastre)</td><td>+1 em Destreza, +2 em Sobrevivência.</td><td>100</td></tr><tr><td>Serviço Voluntário (escola)</td><td>+1 em Inteligência, +2 em Diplomacia.</td><td>100</td></tr><tr><td>Serviço Voluntário (guarda)</td><td>+1 em Força, +2 em Investigação.</td><td>100</td></tr><tr><td>Serviço Voluntário (hospital)</td><td>+1 em Carisma, +2 em Cura.</td><td>100</td></tr><tr><td>Serviço Voluntário (masmorra)</td><td>+1 em Sabedoria, +2 em Ladinagem.</td><td>100</td></tr><tr><td>Serviço Voluntário (refeitório)</td><td>+1 em Constituição, +2 em Vontade.</td><td>100</td></tr><tr><td>Teatro (comédia)</td><td>+2 em Ladinagem, +2 em Atuação.</td><td>50</td></tr><tr><td>Teatro (tragédia)</td><td>+2 em Nobreza, +2 em Atuação.</td><td>50</td></tr><tr><td>Termas com as Sereias</td><td>Imunidade a um único efeito mental à escolha.</td><td>150</td></tr><tr><td>Teste de Invento</td><td>+2 em Conhecimento, +1d4 PM temporários.</td><td>150</td></tr><tr><td>Treinamento Militar Minotauro</td><td>Ignora uma única condição de cansaço.</td><td>50</td></tr><tr><td>Treino Esportivo</td><td>+1 em Destreza, +2 em Atletismo.</td><td>100</td></tr><tr><td>Luta na Arena de Valkaria (1×/semana; só quem passou nas qualificatórias)</td><td>+2 em Força, +2 em Luta.</td><td>—</td></tr></table>\n\t\t\t\t<h3>Atividades em Vectora (só enquanto o Mercado nas Nuvens estiver atracado)</h3>\n\t\t\t\t<table><tr><th>Atividade</th><th>Efeito</th><th>T$</th></tr><tr><td>Audiência com Vectorius</td><td>Quem sabe o que o maior arquimago de Arton tem a oferecer? Recebe o grupo todo junto.</td><td>5.000</td></tr><tr><td>Celebração na Dança de Marah</td><td>Recupera 2 de Lei & Ordem (ganho real de 1).</td><td>1.000</td></tr><tr><td>Cirurgia no Grêmio dos Médicos Monstros</td><td>Rerrola um atributo físico; fica com o maior. Permanente.</td><td>1.000</td></tr><tr><td>Compra de Livros na Biblioteca das Respostas</td><td>Revela um material escrito da campanha ou uma pista aprovada pelo mestre.</td><td>200</td></tr><tr><td>Estadia no Hotel Reinos dos Deuses</td><td>Recuperação de estadia luxuosa (triplo do normal).</td><td>250</td></tr><tr><td>Leilão de Itens Mágicos</td><td>Compra qualquer item mágico do livro básico pelo preço normal.</td><td>500</td></tr><tr><td>Passeio de Balão</td><td>+5 em Sobrevivência ou Investigação para se orientar em Valkaria.</td><td>150</td></tr><tr><td>Passeio de Grifo</td><td>Localiza um lugar fixo da tabela de Encontros em Valkaria.</td><td>200</td></tr><tr><td>Treinamento com Herói Lendário</td><td>Troca um poder permanentemente.</td><td>1.000</td></tr><tr><td>Turismo Planar</td><td>Rerrola um atributo mental; fica com o maior. Permanente.</td><td>1.000</td></tr></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "1g4Z3FKceTPeXS09",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.1g4Z3FKceTPeXS09"
+    },
+    {
+      "name": "Moradias",
+      "type": "text",
+      "sort": 1100,
+      "text": {
+        "content": "<p>Em vez de aluguel e custo de vida, quem quer uma casa paga uma porcentagem de todo tesouro ou lucro que receber. Os valores presumem uma moradia por personagem; vários PJs podem dividir (cinco pagando 20% cada têm um palacete no Recomeço). NPCs que morem junto não pagam.</p>\n\t\t\t\t<table><tr><th>Moradia</th><th>% dos ganhos</th></tr><tr><td>Apartamento na Cidade da Praia</td><td>10%</td></tr><tr><td>Casa na Cidade da Praia ou apartamento em bairros \"normais\"</td><td>20%</td></tr><tr><td>Apartamento ruim no Bairro do Recomeço ou casa em bairros \"normais\"</td><td>30%</td></tr><tr><td>Apartamento bom no Bairro do Recomeço ou mansão na Cidade da Praia</td><td>40%</td></tr><tr><td>Casa no Bairro do Recomeço, apartamento no Refúgio da Felicidade ou mansão em bairros \"normais\"</td><td>50%</td></tr><tr><td>Casa no Refúgio da Felicidade</td><td>60%</td></tr><tr><td>Mansão no Bairro do Recomeço</td><td>70%</td></tr><tr><td>Palacete, fortaleza, torre ou pequeno castelo na Cidade da Praia, ou mansão no Refúgio da Felicidade</td><td>80%</td></tr><tr><td>Palacete, fortaleza, torre ou pequeno castelo em bairros \"normais\"</td><td>90%</td></tr><tr><td>Palacete, fortaleza, torre ou pequeno castelo no Bairro do Recomeço ou no Refúgio da Felicidade</td><td>100%</td></tr></table>\n\t\t\t\t<p>Se o grupo todo morar junto, a moradia usa as regras de bases do Arco 1 (com Heróis de Arton, os custos da base somam ao aluguel). Quem tem negócio com o ativo Alojamentos não paga moradia.</p>\n\t\t\t\t<p>Amontoados num apartamento na Cidade da Praia: sem penalidade, mas sem conforto nem privacidade, longe das áreas nobres. Um palacete no Recomeço não dá bônus, mas o endereço impressiona e abre portas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "uhZmeiNE43vDHUg9",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!F2pQco7kNcYpG9JD.uhZmeiNE43vDHUg9"
+    }
+  ],
+  "_key": "!journal!F2pQco7kNcYpG9JD"
+}

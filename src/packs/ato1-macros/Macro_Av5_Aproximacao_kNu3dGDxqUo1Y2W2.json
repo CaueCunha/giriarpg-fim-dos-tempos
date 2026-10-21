@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Aproximação",
+  "type": "script",
+  "img": "icons/svg/eye.svg",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroAproximacao() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return ui.notifications.warn(\"Selecione os tokens das sentinelas.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Aproximação da onda\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Onda</label><select name=\"onda\">\n\t\t\t\t\t<option value=\"20\">1ª, 2ª ou 3ª onda (CD 20)</option>\n\t\t\t\t\t<option value=\"25\">4ª onda (CD 25)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"guer\">Guerra</option><option value=\"perc\">Percepção</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Nadine voltou a salvo (3ª onda, +1 rodada)</label><input type=\"checkbox\" name=\"nadine\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cd = Number(res.onda);\n\t\tconst margem = cd === 25 ? 5 : 10;\n\t\tconst rolls = [];\n\t\tlet melhor = 0;\n\t\tlet html = `<h3>Aproximação</h3><p>${res.pericia === \"guer\" ? \"Guerra\" : \"Percepção\"} CD ${cd}</p><ul>`;\n\t\tfor (const a of atores) {\n\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tmelhor = Math.max(melhor, r.total);\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b></li>`;\n\t\t}\n\t\tlet rodadas = melhor >= cd ? 3 : melhor <= cd - margem ? 1 : 2;\n\t\tif (res.nadine) rodadas += 1;\n\t\thtml += `</ul><p>Melhor resultado: <b>${melhor}</b> → <b>${rodadas} rodada(s)</b> de antecedência.</p>\n\t\t\t<p style=\"font-size:0.85em\">Nessas rodadas valem ações normais, ataques (alcance médio) e ações completas para ativar defesas (Guerra ou Ofício engenhoqueiro). Sentinela destacada não ativa defesa.</p>`;\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "kNu3dGDxqUo1Y2W2",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!kNu3dGDxqUo1Y2W2"
+}

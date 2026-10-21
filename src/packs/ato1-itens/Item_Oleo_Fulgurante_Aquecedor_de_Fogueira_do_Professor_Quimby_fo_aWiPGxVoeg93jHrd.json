@@ -1,0 +1,105 @@
+{
+  "name": "Óleo Fulgurante Aquecedor de Fogueira do Professor Quimby! (fogo alquímico)",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/fogo-alquimico.webp",
+  "folder": "h2HRLdKudw2invot",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "quimby_fogo"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>\"O maior avanço alquímico da Academia Arcana para dar uma faísca a mais nas noites frias de acampamento!\"</i></p><p><b>Normal:</b> 1d6 de fogo e em chamas numa criatura em alcance curto (Reflexos reduz à metade e evita as chamas).</p><p><b>Alquimia fajuta:</b> metade do preço. A cada uso, 1d6: par funciona; ímpar, ao contrário (o dano cai no usuário, o bálsamo fere, a essência drena PM). Use a macro <i>Colinas · Alquimia do Quimby</i> com o token de quem usa selecionado (e o alvo mirado).</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 5,
+    "peso": 0.5,
+    "espacos": 0.5,
+    "tipo": "",
+    "subtipo": "",
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": []
+  },
+  "_id": "aWiPGxVoeg93jHrd",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!aWiPGxVoeg93jHrd"
+}

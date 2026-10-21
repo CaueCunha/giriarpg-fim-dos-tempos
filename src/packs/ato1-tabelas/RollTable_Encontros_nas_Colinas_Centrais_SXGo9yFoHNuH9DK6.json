@@ -1,0 +1,573 @@
+{
+  "name": "Encontros nas Colinas Centrais",
+  "img": "icons/svg/village.svg",
+  "folder": "EkMM4o6KFbKDayNG",
+  "flags": {
+    "world": {
+      "fdt": "av45"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role ao sair do Forte, ou uma vez por dia de viagem. Personagens podem se repetir; locais, uma vez achados, ficam no mapa. Detalhes de cada um no livro (p. 32).",
+  "_id": "SXGo9yFoHNuH9DK6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Tolbert",
+      "description": "Bardo que transforma almas em moedas.",
+      "_id": "zSIvcBkXp25sI6uF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.zSIvcBkXp25sI6uF"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Abner",
+      "description": "Adolescente qareen, pastor fanático de Khalmyr. Tudo é \"uma bênção de Khalmyr\"; quer batizar os heróis.",
+      "_id": "EPCTCddLBJuQuCU5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.EPCTCddLBJuQuCU5"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Quimby Ulysses Arronax",
+      "description": "Anão devoto de Hyninn que vende alquimia fajuta: funciona com 1d6 par, efeito reverso com ímpar.",
+      "_id": "4VyNEbPt4IumKZbX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.4VyNEbPt4IumKZbX"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Gormaggor",
+      "description": "Gigante das colinas que conheceu o Herói Louco. Dorme por décadas.",
+      "_id": "nxODH126a6CxPAn3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.nxODH126a6CxPAn3"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Raguria",
+      "description": "Bruxa caipira: pratos especiais e maldições.",
+      "_id": "nb2CFBTNxayE1adT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.nb2CFBTNxayE1adT"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Arlo \"Olho de Leite\"",
+      "description": "Caçador paranoico das armas de pólvora, preparado para quando \"ELES\" chegarem.",
+      "_id": "VZX5iX05jMoAVyW9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.VZX5iX05jMoAVyW9"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Mungo Joe",
+      "description": "Alambiqueiro.",
+      "_id": "fqfONebedu4qqDZl",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.fqfONebedu4qqDZl"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Encontro de Puristas Caipiras",
+      "description": "Patrulha purista.",
+      "_id": "wURazP1jUqbDwmUv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.wURazP1jUqbDwmUv"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "O Homem-Bode",
+      "description": "Jonid, druida enlutado que perdeu a família.",
+      "_id": "e0z7AzDI8nPT41uu",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.e0z7AzDI8nPT41uu"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "A Cidade Fantasma de Duas Pedras",
+      "description": "Mina fechada pela Guilda, com fantasmas e um veio de metal arco-íris. Local fixo.",
+      "_id": "d1con7t76KePZ0GK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.d1con7t76KePZ0GK"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Ebenezer",
+      "description": "Profeta herético de Thyatis que faz apostas.",
+      "_id": "K5VCuQGPioGYcDQP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.K5VCuQGPioGYcDQP"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "O Museu de Coisas Quase Vivas",
+      "description": "Museu da taxidermista e criptozoóloga Dona Erneshia. Local fixo.",
+      "_id": "MYJEkOs3SDSFWcoU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.MYJEkOs3SDSFWcoU"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "O Diabo das Colinas",
+      "description": "Aparição amaldiçoada; vale uma perseguição com pote de ouro.",
+      "_id": "yIKkD5qBq7OuXuJ5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.yIKkD5qBq7OuXuJ5"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Shanamarie, Shaylyne e Shadolenn",
+      "description": "As sereias. Ficam paradas.",
+      "_id": "L4SJtmmN01IZAlz3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.L4SJtmmN01IZAlz3"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Cletus Rigby",
+      "description": "Anão mago caipira e vingativo, com uma lista de ofensas. Ama Raguria.",
+      "_id": "XoGmVnzmChwpMG7H",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.XoGmVnzmChwpMG7H"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Nada Mais que a Verdade Reston",
+      "description": "Devota de Tanna-Toh que não mente. Guarda o pergaminho apagado do \"Evento\".",
+      "_id": "wXQfPbyKaCditNPN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.wXQfPbyKaCditNPN"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "O Ladrão de Rabos",
+      "description": "Entidade que distorce desejos.",
+      "_id": "kGv4HjZ2u2A35ubK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.kGv4HjZ2u2A35ubK"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Elmer",
+      "description": "Dragão mendigo viciado em achbuld. Fica parado.",
+      "_id": "5tyuGaovflNSKMO5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.5tyuGaovflNSKMO5"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Fortunata",
+      "description": "Clériga de Nimb.",
+      "_id": "sAT0jbyFT9DoDiK3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.sAT0jbyFT9DoDiK3"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "O Cemitério Errante",
+      "description": "Muda de lugar e guarda o luto de Tilliann (10 unidades de metal arco-íris). Uma noite ali impede recuperar PM e dá +1 num atributo por uma semana; a segunda noite torna o bônus permanente.",
+      "_id": "xJYf1PcpdBRdvYnI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SXGo9yFoHNuH9DK6.xJYf1PcpdBRdvYnI"
+    }
+  ],
+  "_key": "!tables!SXGo9yFoHNuH9DK6"
+}

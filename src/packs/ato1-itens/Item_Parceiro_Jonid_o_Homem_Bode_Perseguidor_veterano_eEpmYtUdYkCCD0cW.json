@@ -1,0 +1,269 @@
+{
+  "name": "Parceiro: Jonid, o Homem-Bode (Perseguidor veterano)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/parceiros.webp",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>+2 em Percepção e Sobrevivência e o poder Sentidos Aguçados. <b>Cuidado:</b> na 3ª onda ele abre a porta para os zumbis achando que são a família dele (Intuição CD 20 para notar, Iniciativa CD 20 para impedir).</p><hr><p style=\"text-align:justify\">Um caçador, animal farejador ou outro especialista em localizar alvos.</p><p style=\"text-align:justify\">Iniciante: +2 em Percepção e Sobrevivência.</p><p style=\"text-align:justify\">Veterano: você pode usar Sentidos Aguçados.</p><p style=\"text-align:justify\">Mestre: você pode usar Percepção às Cegas.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 261",
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "efeito": "",
+    "alcance": "none",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "geral",
+    "subtipo": "Parceiros",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "neYb7CGJSGzXFUI0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_id": "eEpmYtUdYkCCD0cW",
+  "effects": [
+    {
+      "origin": "Item.0MvC3jJCv0311Ysr",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "m7UZIRlvVtwBlPVD",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Perseguidor Iniciante",
+      "img": "icons/environment/settlement/wagon-black.webp",
+      "type": "base",
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.perc.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          },
+          {
+            "key": "system.pericias.sobr.bonus",
+            "value": 2,
+            "priority": null,
+            "type": "add",
+            "phase": "initial"
+          }
+        ],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": null,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "identifier": "",
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!eEpmYtUdYkCCD0cW.m7UZIRlvVtwBlPVD"
+    },
+    {
+      "origin": "Item.0MvC3jJCv0311Ysr",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "3DvmnKj4AL13YFBw",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Perseguidor Veterano",
+      "img": "icons/environment/settlement/wagon-black.webp",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "identifier": "",
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!eEpmYtUdYkCCD0cW.3DvmnKj4AL13YFBw"
+    },
+    {
+      "origin": "Item.0MvC3jJCv0311Ysr",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "CAfyGMGxJfedHejS",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Perseguidor Mestre",
+      "img": "icons/environment/settlement/wagon-black.webp",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "identifier": "",
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!eEpmYtUdYkCCD0cW.CAfyGMGxJfedHejS"
+    }
+  ],
+  "_key": "!items!eEpmYtUdYkCCD0cW"
+}

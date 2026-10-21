@@ -1,0 +1,182 @@
+{
+  "name": "FdT · O Grupo",
+  "folder": "0xzBGC8iEdeP3zLZ",
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtRole": "grupo"
+    }
+  },
+  "_id": "IK2RJH57EJguNl2N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Ficha do Grupo",
+      "type": "text",
+      "text": {
+        "content": "<p>O grupo ainda não foi montado. Rode @UUID[Macro.i4T1V0alckHJf6d8]{Grupo · Montar o Grupo}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "3IXA9Jep0K8KsbCt",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!IK2RJH57EJguNl2N.3IXA9Jep0K8KsbCt"
+    },
+    {
+      "name": "Regras para Grupos (Fim dos Tempos)",
+      "type": "text",
+      "text": {
+        "content": "<p><i>Fim dos Tempos, Arco 1, Introdução, Regras para Grupos (p. 60).</i> Se o grupo tiver um nome, um líder e uma base, recebe benefícios:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Nome:</b> a ação ajudar concede +1 de bônus adicional entre os membros. @UUID[Item.w0x7h8FJcZlzfs9r]{Grupo · Nome}</li>\n\t\t\t\t\t<li><b>Líder:</b> +1 em Iniciativa por membro, dividido como quiserem. @UUID[Item.MJus9saKx8xo3jgD]{Grupo · Liderança}</li>\n\t\t\t\t\t<li><b>Base:</b> na base, todos dispõem dos PM da base (média dos PM do grupo), que se recuperam 1 por dia. @UUID[Item.TBtlrW5GqXtYUTGm]{Grupo · Base}</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Use @UUID[Macro.i4T1V0alckHJf6d8]{Grupo · Montar o Grupo} quando o grupo escolher nome, líder e base. Ela coloca os benefícios na ficha de cada membro. @UUID[Macro.z0gfCLmf5OcEeZYB]{Grupo · PM da Base} cuida dos PM da base.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "KR8Jyqc7xr4EDYW9",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!IK2RJH57EJguNl2N.KR8Jyqc7xr4EDYW9"
+    },
+    {
+      "name": "Poderes de Grupo (Heróis de Arton)",
+      "type": "text",
+      "text": {
+        "content": "<p><i>Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95).</i> São poderes gerais com bônus maiores, mas só funcionam se outro personagem jogador com o mesmo poder estiver na cena. NPCs e parceiros não contam. Se um membro morrer, o jogador pode trocar o poder entre aventuras.</p>\n\t\t\t\t<p><b>Jogador ausente:</b> o livro sugere que o personagem conte para o pré-requisito se estiver em risco na sessão (pode morrer ou sofrer consequências).</p>\n\t\t\t\t<table><tr><th>Poder</th><th>Pré-requisito</th><th>Automação</th></tr><tr><td>@UUID[Item.qBYKRQBuHEECreJ9]{Abrir a Guarda}</td><td>Treinado em Luta ou Pontaria</td><td>card com o custo de 2 PM. Depois, ataque normalmente com a arma.</td></tr><tr><td>@UUID[Item.GNFxUehT8ZveJish]{Ajuda do Amador}</td><td>-</td><td>role a perícia escolhida (CD 10). Se passar, mire (T) os aliados com este poder e clique em aplicar no card: +1 em ataques por 1 rodada. Com 20 ou mais, edite para +2 (30 ou mais, +3).</td></tr><tr><td>@UUID[Item.lZBT4E0yff0lIU82]{Apontar Fraqueza}</td><td>-</td><td>na janela de ataque aparece <b>Apontar Fraqueza</b> (2 PM): marcado, a margem de ameaça vira 1, então qualquer acerto é crítico. Use uma vez por cena.</td></tr><tr><td>@UUID[Item.iKKbneVETk5e2dMa]{Barragem de Golpes}</td><td>-</td><td>na janela de ataque aparece <b>Barragem de Golpes</b>. Marque uma vez para cada dano que os aliados com o poder já causaram ao alvo nesta cena (+1 por marca, até o seu nível).</td></tr><tr><td>@UUID[Item.C4z0sVGIgf0jWRq3]{Bode Expiatório}</td><td>-</td><td>nenhuma (narrativo).</td></tr><tr><td>@UUID[Item.rWZo6o5va3mPMLla]{Bote Coletivo}</td><td>Treinado em Iniciativa</td><td>a sincronização põe na Iniciativa o número de aliados com o poder na cena. Na primeira rodada, marque <b>Bote Coletivo (1ª rodada)</b> na janela de perícia, de ataque ou de magia/poder (soma o mesmo bônus no teste ou na CD).</td></tr><tr><td>@UUID[Item.rSLWFpCNBZ0jGh93]{Conforto Familiar}</td><td>-</td><td>macro <b>Grupo · Ações de Grupo</b> → Conforto Familiar: marque quem dormiu junto e ela dá os PV e PM temporários.</td></tr><tr><td>@UUID[Item.4MVpSQLBHunwLAWC]{Conselhos Salvadores}</td><td>-</td><td>macro <b>Grupo · Ações de Grupo</b> → Conselhos Salvadores: escolhe o aliado e a resistência, rola com o valor dele e gasta seus 2 PM.</td></tr><tr><td>@UUID[Item.xIoIYFl4Pbu8fWdq]{Corrente de Corpos}</td><td>-</td><td>nenhuma (arraste o item de uma ficha para a outra).</td></tr><tr><td>@UUID[Item.oqSlFCHgY9Ri3gvh]{Defesa do Mártir}</td><td>-</td><td>card com o custo de 2 PM. Aplique o dano no seu token em vez do aliado.</td></tr><tr><td>@UUID[Item.7HDI9G6q04UphbTw]{Dinheiro Atrai Dinheiro}</td><td>-</td><td>a sincronização (e a macro Ações → Dinheiro Atrai Dinheiro) diz o total: +5% por personagem com o poder na cena. Some à rolagem de tesouro.</td></tr><tr><td>@UUID[Item.QW62HHabSg0QR1IA]{Escudo Vivo}</td><td>-</td><td>card com o custo de 2 PM. Aplique no seu token a soma do dano dos aliados.</td></tr><tr><td>@UUID[Item.Rz5IaHK0oSQGP3Nv]{Espírito de União}</td><td>Exército de Um Grupo Só e outro poder de grupo</td><td>macro <b>Grupo · Ações de Grupo</b> → Espírito de União: <i>iniciar</i> gasta 2 PM de cada um e mostra o total; durante a cena aplique o dano em qualquer um deles (o total é a soma); <i>encerrar</i> divide igualmente o que sobrou. Só fica ativo se todos os membros do grupo tiverem o poder e estiverem na cena.</td></tr><tr><td>@UUID[Item.wVRECS3HOjfl1tUm]{Exército de Um Grupo Só}</td><td>Treinado em Guerra</td><td>na janela de ataque do líder do bando aparece <b>Exército (bando)</b>: marque uma vez por aliado no bando (+2 cada). Errou: aplique metade do dano à mão. Acertou por 10+: os aliados rolam o dano deles e somam.</td></tr><tr><td>@UUID[Item.hBpRaWITwqygPXX9]{Magia Comunitária}</td><td>-</td><td>nenhuma: mire (T) os aliados extras ao aplicar o efeito do card e gaste o custo de novo para cada um.</td></tr><tr><td>@UUID[Item.pfHHXhGWOff4xkpP]{Mão Amiga}</td><td>-</td><td>nenhuma (tempo entre aventuras).</td></tr><tr><td>@UUID[Item.AIqAVkmKHeQGMeo1]{Parede de Escudos}</td><td>-</td><td>efeito <b>Parede de Escudos</b> na aba de efeitos da ficha: ligue enquanto a parede estiver formada (+5 Defesa e RD 5) e desligue quando sair dela.</td></tr><tr><td>@UUID[Item.zAiEU49qC8MudFLn]{Presença Luminosa}</td><td>-</td><td>macro <b>Grupo · Ações de Grupo</b> → Presença Luminosa: gasta 2 PM de cada participante e dá a cada um, até o fim da cena, o bônus que iguala suas perícias de Carisma às maiores do grupo.</td></tr><tr><td>@UUID[Item.rnkhdvU7LGOkDwD7]{Saúde Coletiva}</td><td>-</td><td>na janela de magia, poder ou consumível de cura aparece <b>Saúde Coletiva</b>: marque quando o alvo tiver o poder (+2 por dado).</td></tr><tr><td>@UUID[Item.9GCAO04skkBVOjDT]{Uma Mão Lava a Outra}</td><td>Mão Amiga</td><td>card com o custo de 1 PM; role o teste de novo. A sincronização diz quantos usos por cena o grupo tem.</td></tr></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ZufFm4EpKZEOQTac",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!IK2RJH57EJguNl2N.ZufFm4EpKZEOQTac"
+    },
+    {
+      "name": "Como usar",
+      "type": "text",
+      "text": {
+        "content": "<ol>\n\t\t\t\t\t<li>@UUID[Macro.i4T1V0alckHJf6d8]{Grupo · Montar o Grupo}: nome, líder, base, membros e a divisão da Iniciativa.</li>\n\t\t\t\t\t<li>@UUID[Macro.ZFRiA8PcQu6oD7i4]{Grupo · Dar Poderes de Grupo}: quando um PJ escolher um poder de grupo (no lugar de um poder geral), marque o PJ e o poder. Ela confere os pré-requisitos.</li>\n\t\t\t\t\t<li>@UUID[Macro.ttGeW35XUZbD15EC]{Grupo · Sincronizar Cena}: no começo de cada cena (ou ligue o modo automático da sessão). Liga os efeitos de quem tem parceiro de poder na cena e desliga o resto. Também diz no chat o que está ativo.</li>\n\t\t\t\t\t<li>@UUID[Macro.rr5M5q6p3IBnx9d9]{Grupo · Ações de Grupo}: Conselhos Salvadores, Presença Luminosa, Conforto Familiar, Espírito de União e Dinheiro Atrai Dinheiro.</li>\n\t\t\t\t\t<li>Os demais poderes usam o card (custo em PM) e os <b>Efeitos de Uso</b> na janela de rolagem (abra a janela sem Shift).</li>\n\t\t\t\t</ol>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "An1loB3nMcFJHxKo",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!IK2RJH57EJguNl2N.An1loB3nMcFJHxKo"
+    }
+  ],
+  "_key": "!journal!IK2RJH57EJguNl2N"
+}

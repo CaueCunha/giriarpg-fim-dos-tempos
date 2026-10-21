@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Redefinição de Caminhos",
+  "type": "script",
+  "img": "icons/svg/door-exit.svg",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroRedefinicao() {\n\t\tconst tabela = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"av2\" && t.name === \"Redefinição de Caminhos\");\n\t\tif (!tabela) return ui.notifications.error(\"Tabela não encontrada (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return tabela.draw();\n\t\tfor (const a of atores) await tabela.draw({ messageData: { speaker: ChatMessage.getSpeaker({ actor: a }) } });\n\t})();",
+  "_id": "GiB4ya3qZwdE3i10",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!GiB4ya3qZwdE3i10"
+}

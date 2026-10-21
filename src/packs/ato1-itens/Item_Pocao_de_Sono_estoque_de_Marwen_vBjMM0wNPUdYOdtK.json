@@ -1,0 +1,104 @@
+{
+  "name": "Poção de Sono (estoque de Marwen)",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/pocao.webp",
+  "folder": "vjIDJML2tMEBHMXS",
+  "sort": 0,
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Seis poções escondidas atrás do balcão da Chifre de Bode. Marwen as mistura na comida (Vontade CD 19 evita).</p><hr><p>Um cansaço místico recai sobre o alvo. Se falhar na resistência, ele fica inconsciente e caído ou, se estiver envolvido em combate ou outra situação perigosa, fica exausto por 1 rodada, depois fatigado. Em ambos os casos, se passar, o alvo fica fatigado por 1d4 rodadas.</p><p class=\"fdt-ref\"><i>No sistema:</i> @UUID[Compendium.tormenta20.pocoes.Item.vjRcygbwo7vx4gOG]{Poção de Sono}</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 207",
+    "carregado": true,
+    "peso": 0.5,
+    "espacos": 0.5,
+    "qtd": 6,
+    "preco": 30,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "scene",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "touch",
+    "alvo": "1 criatura de ND 2 ou menor",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "sab",
+      "bonus": 0,
+      "txt": "Vontade parcial"
+    },
+    "rolls": [],
+    "tipo": "potion",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": [],
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "itemType": [],
+      "improvement": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "materialEspecial1": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": "",
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.tormenta20.pocoes.Item.vjRcygbwo7vx4gOG",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_id": "vBjMM0wNPUdYOdtK",
+  "effects": [],
+  "_key": "!items!vBjMM0wNPUdYOdtK"
+}

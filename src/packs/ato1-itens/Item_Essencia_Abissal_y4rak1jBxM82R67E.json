@@ -1,0 +1,104 @@
+{
+  "name": "Essência Abissal",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/essencia-abissal.webp",
+  "system": {
+    "description": {
+      "value": "<p>Extraída dos cães do inferno: 1d4 doses por cão (Ofício alquimista ou Misticismo CD 17).</p><hr><p style=\"text-align:justify\">Um líquido espesso, produzido através do sangue de criaturas demoníacas. Aumenta os dados de dano de magias de fogo em uma categoria — d4 para d6, d6 para d8, d8 para d10 e d10 para d12 (o máximo).</p><p class=\"fdt-ref\"><i>No sistema:</i> @UUID[Compendium.tormenta20.equipamentos.Item.wvhGMjj9dIItdm7P]{Essência Abissal}</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 161",
+    "carregado": true,
+    "peso": 0.1,
+    "espacos": 0.5,
+    "qtd": 1,
+    "preco": 150,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "alchemy",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "subtipo": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": [],
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "itemType": [],
+      "improvement": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "materialEspecial1": "",
+      "enableAutoUpgrades": true
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.tormenta20.equipamentos.Item.wvhGMjj9dIItdm7P",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "folder": "QmwkoNO8E8wHKJnG",
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  },
+  "_id": "y4rak1jBxM82R67E",
+  "effects": [],
+  "_key": "!items!y4rak1jBxM82R67E"
+}

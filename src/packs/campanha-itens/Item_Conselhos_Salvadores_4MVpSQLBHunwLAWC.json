@@ -1,0 +1,72 @@
+{
+  "name": "Conselhos Salvadores",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "conselhos-salvadores",
+      "fdtPre": ""
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Você pode gastar 2 PM para fazer um teste de resistência usando o valor de perícia de um aliado em alcance curto que tenha este poder.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> macro <b>Grupo · Ações de Grupo</b> → Conselhos Salvadores: escolhe o aliado e a resistência, rola com o valor dele e gasta seus 2 PM.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "reaction",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "short",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "4MVpSQLBHunwLAWC",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!4MVpSQLBHunwLAWC"
+}

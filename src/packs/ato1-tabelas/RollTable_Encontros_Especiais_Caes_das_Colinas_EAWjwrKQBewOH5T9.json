@@ -1,0 +1,196 @@
+{
+  "name": "Encontros Especiais (Cães das Colinas)",
+  "img": "systems/tormenta20/icons/racas/silfide.webp",
+  "folder": "8ASD32WCoXUtoHRE",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "tabelaEspeciais"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Os PJs da mesa original como NPCs. Role quando a tabela normal der um resultado inviável (repetir um local ou NPC fixo). Eles não se conhecem nem formam um grupo.",
+  "_id": "EAWjwrKQBewOH5T9",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Aylarianna Purpúrea (Ayla)",
+      "description": "A fada mais honesta de Arton: caixeira-viajante alquimista. Bálsamos e venenos funcionam; elixir de crescer cabelo e poção de sumir verruga, não. Escondida desde que um cliente insatisfeito a acusou (a culpada é a \"irmã gêmea\" que ela \"tem\"). <b>Mecânica:</b> Recruta revendedores para o <b>Empório Purpúrea</b> (funil invertido, não pirâmide!): kit de cosméticos de T$ 50 e T$ 10 por mês (pagos a Belinda, no Forte). O revendedor recruta NPCs (Diplomacia ou, francamente, Enganação), que compram dele o kit e pagam T$ 10 por mês até perceberem o golpe.",
+      "_id": "lVdQEbupPJyFGs8p",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.lVdQEbupPJyFGs8p"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Ignis Crae",
+      "description": "Golem de metal, paladino de Thyatis desde o nascimento, fundador da Ordem da Cavalaria da Redenção, que oferece recomeço a quem está no fundo do poço. <b>Mecânica:</b> Parceiro <b>guardião veterano</b> (+3 na Defesa) enquanto achar que o grupo segue os preceitos de Thyatis. Num rumo sombrio (vício, roubo, corrupção), tenta recrutá-los para a Ordem: serve de penitência a devotos que quebraram suas Obrigações & Restrições.",
+      "_id": "vl3ZDihy4Ym1S5Y3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.vl3ZDihy4Ym1S5Y3"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Kirzanaath \"Kiki\" Odello",
+      "description": "Medusa barda atrás de histórias, cerveja e fama. Esconde a raça até confiar. Teme virar monstruosa e quer saber o que houve com a mãe (obcecada por um tema que nem ela conhecia, fugiu com a filha e foi levada por desconhecidos). Cozinheira e boa em \"ler\" pessoas. <b>Mecânica:</b> Parceira <b>ajudante veterana</b> (+2 em Atuação, Investigação e Ofício [cozinheiro]). Conta qualquer história do Herói Louco e prepara qualquer prato especial do livro básico sem custo. Fala da mãe e entra em negação.",
+      "_id": "OANhAlN38UlgiKwz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.OANhAlN38UlgiKwz"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Rexthor",
+      "description": "O campeão das profundezas: dos Ermos Púrpuras, escravizado e posto nas arenas de Wynlla, libertado por uma aposta de uma mulher misteriosa ao sobreviver ao Abismo. Confia nas \"Deusas\" da Sorte, do Azar e do Caos (Nimb). Ingênuo, leal e bondoso por trás da fachada de exercícios, lutas e indecência. <b>Mecânica:</b> Parceiro <b>fortão veterano</b>. Pode desafiar um combatente do grupo (sobretudo se houver magos) para um duelo \"amigável\": Defesa 18, 30 PV, +4 em resistências, Luta +10, 1d8+4 de impacto (a ficha dele já tem isso).",
+      "_id": "SeM8yjX7OysitGrG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.SeM8yjX7OysitGrG"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Arius Gorgonius Dubitatius",
+      "description": "Minotauro nobre de Tiberus, mago, filósofo e devoto de Tanna-Toh. Afastado pelo pai para uma legião longínqua, partiu atrás de conhecimento e só volta quando provar que a força não é o único poder. Dois metros, cabelos loiros trançados, postura encurvada, inseguro e empolgado com saber novo. <b>Mecânica:</b> Dá qualquer informação ou pista à escolha do Mestre (Herói Louco, Templo do Vácuo, espaço de masmorra) e decifra idiomas desconhecidos, como a língua dos gnomos.",
+      "_id": "8edUNKNaHFLP5KQz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.8edUNKNaHFLP5KQz"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Chèvre e Timm",
+      "description": "Caçadores de recompensas. Chèvre: sátiro malandro, envenenador, infiltrador e ladrão, com uma flauta-zarabatana de dardos envenenados. Timm: mago humano pomposo e enigmático, obcecado por fogo, que some numa explosão de chamas e fumaça. Põem o contrato acima de tudo. <b>Mecânica:</b> Chèvre é parceiro <b>perseguidor veterano</b>; Timm, <b>destruidor (fogo) veterano</b>. No fim de qualquer interação, 50% de chance de trair o grupo (levam algo que o grupo precisa ou um NPC): disputa de Iniciativa do grupo contra a dupla (+10).",
+      "_id": "8NWId8vfoNhlxIw4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!EAWjwrKQBewOH5T9.8NWId8vfoNhlxIw4"
+    }
+  ],
+  "_key": "!tables!EAWjwrKQBewOH5T9"
+}

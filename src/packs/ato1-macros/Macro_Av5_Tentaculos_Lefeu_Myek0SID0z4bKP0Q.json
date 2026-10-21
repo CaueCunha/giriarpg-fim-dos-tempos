@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Tentáculos Lefeu",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/otyugh.png",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroTentaculos() {\n\t\tconst tent = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"tentaculos\");\n\t\tif (!tent) return ui.notifications.error(\"Ator dos Tentáculos não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Tentáculos Lefeu\" },\n\t\t\tcontent: `\n\t\t\t\t<p>Tentáculos: <b>${tent.system.attributes.pv.value} de ${tent.system.attributes.pv.max} PV</b> (somem com 200 de dano).</p>\n\t\t\t\t<div class=\"form-group\"><label>O que rolar</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"surgir\">Surgem nesta rodada? (1d4, surge no 1)</option>\n\t\t\t\t\t<option value=\"agarrar\">Resistir a agarrar (Luta CD 25)</option>\n\t\t\t\t\t<option value=\"dano\">Dano em quem está agarrado</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Dentro do fosso (dano dobrado, CD 30)</label><input type=\"checkbox\" name=\"fosso\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tlet html = \"\";\n\t\tif (res.acao === \"surgir\") {\n\t\t\tconst r = await new Roll(\"1d4\").evaluate();\n\t\t\trolls.push(r);\n\t\t\thtml = `<h3>Tentáculos Lefeu</h3><p>1d4: <b>${r.total}</b> — ${r.total === 1 ? \"<b>os tentáculos surgem do fosso!</b> Todos os efeitos valem já nesta rodada, em 6 quadrados ao redor do poço.\" : \"nada acontece nesta rodada.\"}</p>`;\n\t\t} else if (res.acao === \"agarrar\") {\n\t\t\tconst cd = res.fosso ? 30 : 25;\n\t\t\thtml = `<h3>Agarrar dos Tentáculos</h3><p>Luta CD ${cd}.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${a.system.pericias?.luta?.value ?? 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst ok = r.total >= cd;\n\t\t\t\tawait a.toggleStatusEffect(\"agarrado\", { active: !ok });\n\t\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${ok ? \"✔️ escapa\" : \"❌ agarrado\"}</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p style=\\\"font-size:0.85em\\\">Atacar o tentáculo também solta: Defesa 23, Fort +12, Ref +11 e 25 PV por tentáculo.</p>\";\n\t\t} else {\n\t\t\tconst mult = res.fosso ? 2 : 1;\n\t\t\thtml = `<h3>Dano dos Tentáculos</h3><p>Fim do turno de quem está agarrado${res.fosso ? \", dentro do fosso (dobro)\" : \"\"}.</p><ul>`;\n\t\t\tfor (const a of alvos) {\n\t\t\t\tconst d = await new Roll(`${2 * mult}d6[impacto] + ${2 * mult}d6[acido]`).evaluate();\n\t\t\t\trolls.push(d);\n\t\t\t\tawait a.applyDamageV2(d, 1);\n\t\t\t\thtml += `<li>${a.name}: <b>${d.total}</b> (impacto e ácido, já com RD)</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "Myek0SID0z4bKP0Q",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Myek0SID0z4bKP0Q"
+}

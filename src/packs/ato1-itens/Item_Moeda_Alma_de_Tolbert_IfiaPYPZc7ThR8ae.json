@@ -1,0 +1,87 @@
+{
+  "name": "Moeda-Alma de Tolbert",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/joia-familia.webp",
+  "folder": "h2HRLdKudw2invot",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "moedaAlma"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma moeda que é uma alma, ganha num duelo musical contra Tolbert. Uma \"alma extra\": o personagem pode vender a alma sem consequências (o Mestre decide o que mais isso significa).</p><p>Enterrada no Cemitério Errante, aumenta um atributo em +1, como uma noite lá (acumula com o bônus de dormir no Cemitério, mas não no mesmo atributo).</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "_id": "IfiaPYPZc7ThR8ae",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!IfiaPYPZc7ThR8ae"
+}

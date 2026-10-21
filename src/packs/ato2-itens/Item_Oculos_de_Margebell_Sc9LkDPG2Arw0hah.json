@@ -1,0 +1,86 @@
+{
+  "name": "Óculos de Margebell",
+  "type": "tesouro",
+  "img": "icons/svg/eye.svg",
+  "system": {
+    "description": {
+      "value": "<p>Lentes finas de <b>cristal rosado</b>. Quem as usa não é afetado pelas mensagens subliminares e consegue lê-las.</p><p>Percepção ou Investigação CD 25 nota o matiz rosado; Conhecimento ou Misticismo CD 30 identifica algo de fora de Arton (o mesmo material do implante de Vadrinne nas Colinas).</p><p>Usados pela cidade, revelam pichações e murais com mensagens: \"OBEDEÇA\", \"VOCÊ É IGUAL A TODOS\", \"CORAGEM É MALDADE\". Junto com uma pintura, são <b>prova</b>.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "qgvFhyRMUQ3B4hEc",
+  "flags": {
+    "world": {
+      "fdt": "a2av1"
+    }
+  },
+  "_id": "Sc9LkDPG2Arw0hah",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!Sc9LkDPG2Arw0hah"
+}

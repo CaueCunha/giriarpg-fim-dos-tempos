@@ -1,0 +1,27 @@
+{
+  "_id": "02uyqGnHJcpUPjHi",
+  "name": "FdT · Importar conteúdo do módulo",
+  "type": "script",
+  "img": "icons/svg/download.svg",
+  "scope": "global",
+  "command": "// Abre a janela de importação do módulo Fim dos Tempos.\ngame.modules.get(\"giriarpg-fim-dos-tempos\")?.api?.abrirImportador();",
+  "folder": null,
+  "flags": {
+    "world": {
+      "fdt": "fdtcampanha",
+      "fdtRole": "importador"
+    }
+  },
+  "_key": "!macros!02uyqGnHJcpUPjHi",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "name": "Arco 1 · Especial de Gatal",
+  "folder": "DCAjLg1RNJlYXkPd",
+  "flags": {
+    "world": {
+      "fdt": "a1gatal"
+    }
+  },
+  "_id": "1xurRaF1gzWZmxEw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Aventura de humor, <b>fora da cronologia</b> e quase apócrifa, sem nível definido. Ótima para as festas de fim de ano, quando ninguém tem tempo de preparar nada; outro jogador pode até mestrar. Decida se o que acontece aqui vale para o resto da campanha.</p>\n\t\t\t\t<p>Numa nevasca milagrosa, o grupo acha a oficina destruída de @UUID[Actor.7tnEByKnEqnH9JF5]{Garbin, o Mascate (Fada Madrinha)}. Gnolls quebraram todos os presentes de Gatal. Faltam 5 horas para a meia-noite, quando seis amigos virão buscá-los. O grupo precisa fabricar seis presentes com as bugigangas que sobraram e entregá-los. Os amigos são deuses disfarçados; quem for agradado retribui com um presente mágico.</p>\n\t\t\t\t<p><b>Não há vilão.</b> O grupo resolve um problema, não destrói um inimigo.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Normalidade:</b> estrada, cair da noite, nevasca (não importa se é inverno ou se ali neva: é um milagre de Gatal, e eles estão despreparados). A cabana em estado deplorável e um velhinho no chão.</li>\n\t\t\t\t\t<li><b>Cancelaram o Gatal!</b> Garbin explica tudo: são 19h; à meia-noite em ponto os amigos batem à porta. Não adianta ir atrás dos gnolls.</li>\n\t\t\t\t\t<li><b>Ajudantes de Fada Madrinha:</b> a fabricação (regras na página própria).</li>\n\t\t\t\t\t<li><b>Então É Gatal:</b> a entrega, com teste social. Fabricação + entrega precisam somar <b>80</b>.</li>\n\t\t\t\t\t<li><b>Epílogo:</b> Garbin some; um gato preto voa com um saco cor-de-rosa.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.YGU0n5Azn46PKnYV]{Gatal · Oficina de Gatal}: o relógio de cada personagem, a fabricação (CD, ajudas, objetos estragados), a entrega com os bônus e os presentes de volta direto na ficha.</li>\n\t\t\t\t\t<li>@UUID[Macro.isqgMvyCX7AJeIQX]{Gatal · Garbin Muda de Novo}: a cada uso, Garbin é de outra raça (e o token muda).</li>\n\t\t\t\t\t<li>@UUID[Macro.68GJgccHJqboIEkG]{Gatal · Perseguição aos Gnolls}: a contingência Sem Espírito Gatalino.</li>\n\t\t\t\t\t<li>@UUID[Macro.8DGI9dFN7yDLzqjq]{Gatal · Usar Presente de Gatal}: gasta os usos dos presentes (e a alabarda que se desfaz).</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Tabelas</h2>\n\t\t\t\t<p>@UUID[RollTable.frW8IIZik279yvnO]{Matérias-primas para Presentes} (a lista dos 100 objetos) e @UUID[RollTable.sqhbpS87hpEUWfuZ]{Garbin Agora Parece...}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "uvHlGlT1uLvRe22o",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.uvHlGlT1uLvRe22o"
+    },
+    {
+      "name": "Handout · Ajudantes de Fada Madrinha",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote>\n\t\t\t\t<p><i>Era véspera de Gatal<br>E pelo meio da estrada<br>Vinham cinco aventureiros<br>Entre eles, uma fada</i></p>\n\t\t\t\t<p><i>O vento soprava forte<br>A neve caía amiúde<br>Se não achassem abrigo,<br>Fariam teste de Fortitude</i></p>\n\t\t\t\t<p><i>Precisavam de oito horas<br>De descanso sem combate<br>Notaram uma cabana<br>A oficina de um mascate</i></p>\n\t\t\t\t<p><i>Bateram na porta humilde<br>Porque era melhor que morrer<br>De dentro surgiu uma voz<br>Eis um novo NPC!</i></p>\n\t\t\t\t<p><i>Não encontro aleatório<br>Isto é um beco sem saída<br>Vocês veem um velhinho<br>Com zero pontos de vida</i></p>\n\t\t\t\t<p><i>Em volta, tudo quebrado<br>No chão seus produtos jazem<br>E agora eu pergunto:<br>\"Então? O que vocês fazem?\"</i></p>\n\t\t\t\t</blockquote>\n\t\t\t\t<p class=\"secret\">\"Cinco aventureiros, entre eles uma fada\" é o grupo original (Ayla é sílfide). Troque pelo seu grupo, se quiser.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "PS8JCNdFjyYv13xE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.PS8JCNdFjyYv13xE"
+    },
+    {
+      "name": "Garbin e a Oficina",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Prateleiras quebradas, objetos jogados no chão, marcas de machado nas paredes, vidro quebrado, mesa estilhaçada, ferramentas destruídas. E, no centro, @UUID[Actor.7tnEByKnEqnH9JF5]{Garbin, o Mascate (Fada Madrinha)}.</p>\n\t\t\t\t<p>Ele fabrica presentes de Gatal por encomenda. Os presentes são para os amigos dos clientes, como manda a tradição; os clientes moram longe, então os amigos passam na oficina para buscar. <i>Parece complicado demais? Não pense nisso, não podemos perder tempo, é quase dia de Gatal!</i></p>\n\t\t\t\t<p>Estava tudo pronto, ele descansava com um vinho quente, quando os gnolls atacaram: quebraram os presentes, bagunçaram tudo, espancaram o pobre ancião e fugiram. A neve já apagou as pegadas. Garbin não pode fabricar nada, está ferido demais (nem poções nem magias resolvem). <b>Só os aventureiros podem salvar o Gatal!</b></p>\n\t\t\t\t<h3>Você ainda acredita em Fada Madrinha?</h3>\n\t\t\t\t<p>A descrição básica lembra o Papai Noel, para dar um ícone reconhecível (muitos jogadores não sabem que no Gatal quem dá presentes é a Fada Madrinha). No fim, ela aparece como um <b>gato preto</b>, porque todo mundo associa Gatal a gatos. A Fada Madrinha pode ter qualquer aparência.</p>\n\t\t\t\t<h3>O que é Gatal?</h3>\n\t\t\t\t<p>Um feriado que pode ou não existir entre as fadas da Pondsmânia (talvez seja invenção da alquimista Aylarianna Purpúrea). É celebrado no dia 25 do Gato Pintado, um mês feérico, mas o feriado é móvel. O tema é a <b>amizade</b>, mais que a família: os amigos se reúnem em volta de uma mesa e comemoram amizade eterna. A Fada Madrinha surge com um saco cor-de-rosa e dá presentes; não importa ser bom ou mau: havendo amizade, há presentes.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "EgcAOC9u5j4mROAR",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.EgcAOC9u5j4mROAR"
+    },
+    {
+      "name": "Handout · A Lista de Garbin",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Garbin não conhece os amigos pessoalmente, mas tem a lista dos nomes e das personalidades:</p>\n\t\t\t\t<ul><li><b>Halinn, o Silvestre.</b> Um homem que gosta de viver na floresta, entre os animais. Odeia caçar, mas entende os ciclos da vida natural.</li><li><b>Yrma, a Reguladora.</b> Uma mulher que aprecia ordem e justiça. Quer o bem de todos, mas não a custo das leis.</li><li><b>Berent, o Umbroso.</b> Um homem esperto que ama a noite, a sedução e os truques. Tem seu lado perigoso, mas é divertido.</li><li><b>Larsen Pugnaz.</b> Uma pessoa determinada a vencer a todo custo, que aprecia a luta e despreza o derrotismo. Gosta de colecionar objetos.</li><li><b>Enoa, a Pelágica.</b> Uma mulher fascinada pelos mistérios e seres marinhos. Mantém-se longe de tudo e todos, parecendo sempre em calmaria profunda.</li><li><b>Nan Hierofante.</b> Uma pessoa que ama as artes arcanas acima de tudo, muito generosa e exuberante. Imprevisível, em geral é o centro das atenções.</li></ul>\n\t\t\t\t<p>Eles chegam <b>à meia-noite em ponto</b>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ucL0C7wZgZCcnCup",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.ucL0C7wZgZCcnCup"
+    },
+    {
+      "name": "Fabricação dos Presentes",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Garbin tem todas as oficinas, bancadas e laboratórios, mas só em versões normais. Os <b>objetos</b> são só os que sobraram (@UUID[RollTable.frW8IIZik279yvnO]{Matérias-primas para Presentes}); os amigos conhecem a fama de Garbin e rejeitam materiais de fora. As ferramentas dos próprios personagens podem ser usadas.</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Mínimo de três objetos</b> por presente (menos parece lixo passado adiante). Mais objetos melhoram o presente.</li>\n\t\t\t\t\t<li><b>Tempo:</b> 1 hora, mais 1 hora por objeto além do terceiro. São 5 horas (das 19h à meia-noite) para 6 presentes.</li>\n\t\t\t\t\t<li><b>CD 25</b>, +2 por objeto além do terceiro.</li>\n\t\t\t\t\t<li><b>Ajuda:</b> cada hora a mais que um personagem gasta no mesmo presente permite outro teste de ajuda, cumulativo. Quem faz o teste pode ajudar a si mesmo assim. (Ajuda: CD 10, +1 e mais +1 a cada 10 acima.)</li>\n\t\t\t\t\t<li><b>Falha:</b> a primeira não estraga nada; a segunda no mesmo presente estraga um objeto aleatório; falhar por 5 ou mais estraga todos os objetos.</li>\n\t\t\t\t\t<li><b>Perícias</b> à escolha dos jogadores, desde que façam sentido (Ofício [culinária] para cozinhar um prato). Seja generoso. Magias e habilidades podem melhorar a manufatura, mas não inserir elementos (nada de presente feito de ilusão).</li>\n\t\t\t\t\t<li>Os jogadores sabem quando passam; peça que anotem o valor.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p class=\"secret\">A macro conta as horas de cada personagem; o relógio é o de quem mais trabalhou. Ajudantes gastam o tempo do presente mais as horas extras (inferido).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "FqgsK1DGBkBmD6kc",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.FqgsK1DGBkBmD6kc"
+    },
+    {
+      "name": "Então É Gatal",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Os seis amigos chegam ao mesmo tempo, à meia-noite. São deuses do Panteão; interprete como mortais extremamente excêntricos, sem raça definida, com roupas, maneirismos e postura muito parecidos com a representação normal do deus, mas não idênticos.</p>\n\t\t\t\t<table><tr><th>Amigo</th><th>Na verdade</th><th>Retribui com</th></tr>\n\t\t\t\t<tr><td>@UUID[Actor.2IGsW2fHKhDVsRqL]{Halinn, o Silvestre}</td><td>Allihanna</td><td>@UUID[Item.m1JjnxH3mKHtR5bE]{Flauta Animalizante}</td></tr><tr><td>@UUID[Actor.WjxvrJAYeMtHJpYE]{Yrma, a Reguladora}</td><td>Khalmyr</td><td>@UUID[Item.gyKusCiVbrAUSnwV]{Balança Moral}</td></tr><tr><td>@UUID[Actor.YLNKO9ueWsFzOdU2]{Berent, o Umbroso}</td><td>Tenebra</td><td>@UUID[Item.jWcEpEekiaTkrHwk]{Alev, a Vela de Escuridão}</td></tr><tr><td>@UUID[Actor.leiHKEqtFq2we2SJ]{Larsen Pugnaz}</td><td>Arsenal</td><td>@UUID[Item.19JxkjNxmHZc1xY1]{Criadora de Meios}</td></tr><tr><td>@UUID[Actor.6QKHfxGYgJ7a6X2H]{Enoa, a Pelágica}</td><td>Oceano</td><td>@UUID[Item.Fzx5kVF9EAgPnHFr]{Copo de Ar}</td></tr><tr><td>@UUID[Actor.gvCUmAepgLz2zGE1]{Nan Hierofante}</td><td>Wynna</td><td>@UUID[Item.opbCl4DOl1DJx7hb]{Truque na Mágica}</td></tr></table>\n\t\t\t\t<h3>A entrega</h3>\n\t\t\t\t<p>Um teste de perícia social por presente (seis ações separadas: um só personagem pode fazer todos, e os outros ajudam). Magias e habilidades valem. Não é situação tática, sem rodadas. Bônus:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>+5 por objeto além do terceiro.</li>\n\t\t\t\t\t<li>+5 se o presente combinar com o amigo (a critério do Mestre).</li>\n\t\t\t\t\t<li>+5 se o grupo mostrar muito espírito gatalino (acolhedores, dizendo \"Feliz Gatal!\").</li>\n\t\t\t\t\t<li>+5 se prepararam os presentes de um jeito especial (meias, laços de fita, uma cerimônia ou festinha).</li>\n\t\t\t\t</ul>\n\t\t\t\t<p><b>Fabricação + entrega precisam somar 80.</b> Parece alto, mas o grupo quase certamente consegue se entrar no espírito: um teste com +30 não é incomum. Cada amigo agradado dá seu presente.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "qjG4EOAumxJiJFHx",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.qjG4EOAumxJiJFHx"
+    },
+    {
+      "name": "Os Presentes dos Amigos",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<h3>Flauta Animalizante</h3><p><b>Presente de Halinn.</b> Uma flauta que faz uma criatura qualquer passar a se comportar, em termos de regras, como do tipo <b>animal</b> durante uma cena. Por exemplo, um lefeu fica vulnerável a habilidades contra animais.</p><p>Não funciona contra criaturas com ND maior que o nível de quem toca. <b>Um uso.</b></p><h3>Balança Moral</h3><p><b>Presente de Yrma.</b> Uma pequena balança que, quando consultada, mostra o rumo mais bondoso e justo numa decisão: o que mais beneficia o bem comum e menos causa dano. Essencialmente, um juiz moral infalível. <b>Um uso.</b></p><h3>Alev, a Vela de Escuridão</h3><p><b>Presente de Berent.</b> Uma vela que causa escuridão em vez de luz. <b>Cinco usos</b>, cada um dura no máximo uma hora (a quantidade conta os usos).</p><h3>Copo de Ar</h3><p><b>Presente de Enoa.</b> Literalmente um copo de ar. Quem \"bebe\" dele pode respirar sob a água. <b>Cinco usos</b>, cada um dura no máximo uma hora (a quantidade conta os usos).</p><h3>Truque na Mágica</h3><p><b>Presente de Nan.</b> Um papel dobrado com um \"truque divertido para enganar seus amigos\". Permite que um conjurador arcano \"modifique\" uma magia arcana para que ela seja de outra escola: aprender uma magia que normalmente não poderia, receber uma magia adicional pela sua escola, somar bônus de uma escola na magia etc. <b>Um uso.</b></p><h3>Criadora de Meios</h3><p><b>Presente de Larsen.</b> Uma alabarda que permite <b>rolar de novo três testes</b>. Cada uso faz uma parte dela se desintegrar: o martelo, a ponta de lança, o machado.</p><p>Use a macro <i>Gatal · Usar Presente de Gatal</i> com o token do portador selecionado: ela conta as rerrolagens e desfaz a arma no fim.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "X2tJzAGafFvju1Xg",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.X2tJzAGafFvju1Xg"
+    },
+    {
+      "name": "Contingência e Epílogo",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<h3>Contingência: Sem Espírito Gatalino</h3>\n\t\t\t\t<p>Se os jogadores insistirem em perseguir os gnolls ou curar Garbin como numa aventura tradicional:</p>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>A mais simples</b> (talvez frustrante): dizer que a proposta não é combate nem tática, mas uma brincadeira com os famosos \"especiais de Natal\".</li>\n\t\t\t\t\t<li><b>A mais divertida:</b> uma trilha sempre no rastro dos gnolls, sem nunca alcançá-los. No caminho, os seis amigos, um por um, contam que queriam um presente. Perto de cada um, uma parte da lista de objetos para fabricar o presente dele. Simplifique a fabricação. Use @UUID[Macro.68GJgccHJqboIEkG]{Gatal · Perseguição aos Gnolls} (ela divide os 100 objetos em seis partes, por ordem: inferido).</li>\n\t\t\t\t</ol>\n\t\t\t\t<h3>Epílogo</h3>\n\t\t\t\t<p>Os amigos vão embora; Garbin também não está mais ali. Um barulho lá em cima: pela janela, um <b>gato preto</b> voa pelo céu, carregando um saco cor-de-rosa cheio de presentes.</p>\n\t\t\t\t<blockquote><p><i>Vá, Ignis! Vá, Arius!<br>Vocês sabem: \"é horrível!\"<br>Vá Ayla, Rexthor, Kiki!<br>Um dia subirão de nível!</i></p>\n\t\t\t\t<p><i>A campanha continua<br>Só depois do nascimento<br>Mas antes do nível 20<br>Não acaba Fim dos Tempos</i></p>\n\t\t\t\t<p><i>Talvez haja um TPK<br>Ou um jogo presencial<br>Por enquanto, boa noite<br>E a todos feliz Gatal!</i></p></blockquote>\n\t\t\t\t<p class=\"secret\">Os nomes da primeira estrofe são o grupo original. Troque por Balthazar, Felix, Hanna, Rak e Tariq, se quiser.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Nx4bnG1qKHNvxki2",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.Nx4bnG1qKHNvxki2"
+    },
+    {
+      "name": "Handout · O Que Sobrou na Oficina",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<p>Só estes objetos podem virar presentes:</p><ol><li>Manopla com sete dedos</li><li>Sandália para um gigante</li><li>Flores secas aromáticas</li><li>Jarro cheio de dentes de todas as raças</li><li>Manivela metálica</li><li>Cabeça de boneca</li><li>Balança mal ajustada</li><li>Balde de ouro</li><li>Engrenagens de bronze</li><li>Dois tijolos</li><li>Três peças de um quebra-cabeças de madeira</li><li>Alfinete de segurança</li><li>Lâmina de faca</li><li>Papéis coloridos</li><li>Pintura de um goblin</li><li>Conjunto de costelas</li><li>Cordas de alaúde</li><li>Martelo pequeno</li><li>Pavio muito longo</li><li>Frasco de óleo alquímico (base para qualquer produto)</li><li>Baú sem tampa</li><li>Corneta amassada</li><li>Títere com cordas</li><li>Lentes de uma luneta</li><li>Botões dourados</li><li>Tesoura sem ponta</li><li>Carga de pólvora</li><li>Monte de gravetos</li><li>Traje cerimonial de Tamu-ra cortado na metade</li><li>Cartola feita de folhas trançadas</li><li>Almofada felpuda</li><li>Hélice de brinquedo</li><li>Calças para um centauro</li><li>Viveiro de insetos</li><li>Mangusto empalhado</li><li>Quatro molas</li><li>Apito estridente</li><li>Cachimbo sem fundo</li><li>Duas ferraduras</li><li>Ampulheta intacta, mas sem areia</li><li>Tabuleiro de xadrez</li><li>Tambor em miniatura</li><li>Saquinho de pimenta moída</li><li>Frigideira engordurada</li><li>Frasco de tinta roxa</li><li>Incenso malcheiroso</li><li>Fivela com o símbolo de Azgher</li><li>Roda de carroça</li><li>Xícara delicada</li><li>Pente de âmbar com metade dos dentes</li><li>Agulha e linha</li><li>Seis pregos</li><li>Giz multicolorido</li><li>Alvo para dardos</li><li>Bolinhas de vidro</li><li>Barra de sabão</li><li>Corrente circular</li><li>Chave decorada</li><li>Cristal prismático</li><li>Olho falso</li><li>Pequeno sino</li><li>Bengala espiralada</li><li>Cera de abelha</li><li>Prato de orquestra</li><li>Coleira decorada</li><li>Pistola sem partes funcionais (só cano e coronha)</li><li>Frasco de cola</li><li>Gravata borboleta berrante</li><li>Colar de pérolas obviamente falsas</li><li>Pequeno osso esculpido na forma de um pequeno osso</li><li>Pote transparente com um mosquito morto</li><li>Coleção de borboletas (1d12 borboletas)</li><li>Cartaz de \"procurado\" com o retrato e o nome recortados (recompensa T$ 1.000)</li><li>Pipa com estrutura de chumbo</li><li>Cubo de pedra absolutamente perfeito</li><li>Dois monóculos</li><li>Escudo totalmente enferrujado</li><li>Regador furado</li><li>Ábaco barulhento</li><li>Máscara de festa deluxe</li><li>Bico de pato pintado de verde</li><li>Haltere extremamente leve</li><li>Bandeira com o desenho de uma montanha</li><li>Pera de porcelana</li><li>Vassoura obra-prima</li><li>Gaiola de pássaros</li><li>Placa onde se lê \"proibido usar perícias\"</li><li>Baralho com 52 ases</li><li>Dado de 6 faces, numeradas 23, 0, 814, 9, 5.309 e 6</li><li>Parafuso de borracha</li><li>Ânfora cheia de melado</li><li>Espelho que distorce a imagem</li><li>Lampião feito de açúcar</li><li>Pele de urso</li><li>Régua com marcações aleatórias</li><li>Pó de meteoro</li><li>Torneira emperrada</li><li>Colher dupla</li><li>Nabos em conserva</li><li>Pá de pelúcia</li></ol>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "HI3jjGosUaaBWi68",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!1xurRaF1gzWZmxEw.HI3jjGosUaaBWi68"
+    }
+  ],
+  "_key": "!journal!1xurRaF1gzWZmxEw"
+}

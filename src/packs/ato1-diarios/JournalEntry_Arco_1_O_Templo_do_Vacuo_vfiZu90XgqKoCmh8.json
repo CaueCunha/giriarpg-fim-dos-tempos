@@ -1,0 +1,371 @@
+{
+  "name": "Arco 1 · O Templo do Vácuo",
+  "folder": "jtLzQWhw2M30ah3t",
+  "flags": {
+    "world": {
+      "fdt": "a1templo"
+    }
+  },
+  "_id": "vfiZu90XgqKoCmh8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Masmorra opcional em algum ponto das Colinas Centrais, de dificuldade fixa (pensada para o 5º ou 6º nível). Quando Tilliann perdeu a divindade, os clérigos gnomos <b>Fremdak e Zonzibor</b> fizeram contato com Hyninn, descobriram o <b>espaço de masmorra</b> e vieram até o lugar onde o deus caiu para construir um templo de luto. Só quem \"pensa como um gnomo\" chega à recompensa. O Templo se rearma, invoca criaturas e \"aprende\": o desafio que era \"recitar dogmas de Tilliann\" hoje é \"contar uma história do Herói Louco\". Não há nenhuma imagem de Tilliann: altares e murais têm um vazio no lugar dele.</p>\n\t\t\t\t<p>Não é obrigatório. Dá pistas sobre as Colinas (é um templo a Tilliann; a Revolta dos Três), sugere temas da campanha e dá itens. O grupo pode entrar, explorar um pedaço, sair e voltar.</p>\n\t\t\t\t<h2>Estilo anos 70</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Carga, rações e <b>tochas</b> contadas de verdade. Nada de \"meu caçador provavelmente teria uma corda\". Divida a contabilidade entre os jogadores (um cuida das tochas, outro das rações...).</li>\n\t\t\t\t\t<li>Encontros devem ser <b>vencidos</b>, não necessariamente combatidos. Os habitantes não atacam sozinhos: têm objetivos e uma tabela de reações.</li>\n\t\t\t\t\t<li>Enigmas são para os <b>jogadores</b>. Se o jogador da bárbara decifrou o código, deixe-o falar.</li>\n\t\t\t\t\t<li>O grupo define o próprio objetivo (segredos das Colinas, Tilliann, riquezas, um gancho de histórico).</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Sequência de rolagens</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Ao entrar numa sala sem criaturas definidas: @UUID[Macro.qgUbBQXm1QetU9OA]{Templo · Exploração} (1d20 + ruído em @UUID[RollTable.dOs6JKWRqRed5SV5]{Encontros no Templo do Vácuo}).</li>\n\t\t\t\t\t<li>Ela já rola a reação em @UUID[RollTable.O2bQZbwCH02UQ0L0]{Reações dos Encontros (Templo do Vácuo)} e pode pôr os tokens na cena, ocultos.</li>\n\t\t\t\t\t<li>Conduza o encontro normalmente. Uma cena dura 2 salas ou 6 corredores: a macro avisa quando as tochas se apagam.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Actor.Wr9MrRPdvCJGoUhL]{Tirano das Águas}, @UUID[Actor.9GoTIYM8HIcB4TVL]{Tirano das Águas Barão} (ligue uma Mutação Rubra), @UUID[Actor.hvCFUwPO7kfprjJM]{Mecanículo}, @UUID[Actor.txCSa5kkTobw43lG]{Monstro da Ferrugem}, @UUID[Actor.ksE0ntQSEm99C3Kt]{Cardume Carnívoro}, @UUID[Actor.nnmQLi2IMQrAFhKG]{Cocatriz}.</li>\n\t\t\t\t\t<li>@UUID[Actor.v1841gFiuend6FSn]{Ameba Gigante Jovem}, @UUID[Actor.6WFKNI9jVM7XBVD1]{Ameba Gigante Adulta}, @UUID[Actor.uBbtgQs84GDVgWnF]{Ganchador do Templo}.</li>\n\t\t\t\t\t<li>@UUID[Actor.r8bHzQxV3ZsNTAqG]{Estátua Animada} e @UUID[Actor.aGFFOfi76gEp3BFZ]{Estátua Animada com Besta}: golem de ferro com uma ação por rodada. Fortes demais de propósito.</li>\n\t\t\t\t\t<li>@UUID[Actor.Snw5y6xE2QSmMl6c]{Autômato Ferreiro Arruinado (Estátua Executora)}, @UUID[Actor.oTNmJmXHC2wDqJC0]{Porta de Ferro Pesada} e @UUID[Actor.gpCyCV9BIBsEEQ7y]{Templo do Vácuo · Armadilhas}.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>@UUID[Macro.isa1d1IMJKYDGDov]{Templo · Busca pelo Templo}: o teste estendido para achar o Templo (7 sucessos), a entrada e o encontro do dia.</li>\n\t\t\t\t\t<li>@UUID[Macro.qgUbBQXm1QetU9OA]{Templo · Exploração}: ruído, salas e corredores, encontro, reação, tokens e duração das tochas.</li>\n\t\t\t\t\t<li>@UUID[Macro.JH7tVfaFG57eRNCp]{Templo · Escuridão do Templo}: luz pela metade e sem visão no escuro na cena; acende tochas e lampiões.</li>\n\t\t\t\t\t<li>@UUID[Macro.w9xweakfEwbvjz3Q]{Templo · Armadilhas}: as 11 armadilhas, com resistência, dano, perda de PV e condições.</li>\n\t\t\t\t\t<li>@UUID[Macro.FBWvTwWI1jIDF3w9]{Templo · Testes do Templo}: corda da cratera, rio, fôlego, desabamento, fossos, tumbas e os testes de pista.</li>\n\t\t\t\t\t<li>@UUID[Macro.GbvoXON8xSrHMulb]{Templo · Criaturas}: frenesi, vômito cáustico, bicada petrificante, ferrugem, cardume e amebas.</li>\n\t\t\t\t\t<li>@UUID[Macro.R7IhJ28yiX72Lp6C]{Templo · Mecanismos e Altares}: as duas alavancas, o tributo de memórias, as quatro perguntas, a forja e o Altar da Memória.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "g23DXg6nDFgPrAvO",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.g23DXg6nDFgPrAvO"
+    },
+    {
+      "name": "Como Chegar",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h3>Ouvir falar</h3>\n\t\t\t\t<p>Ninguém tem mapa. Os vilões consideram o lugar quase sagrado e os bandidos preferem extorquir. Quase todos respondem a verdade se perguntados sobre ruínas, mas poucos se oferecem. Quem conhece:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Tolbert</b>, <b>Ebenezer</b>, <b>Edwina</b>, <b>Doran Derinarion</b>.</li>\n\t\t\t\t\t<li><b>Quimby Ulysses Arronax</b>: só conta a um devoto de Hyninn.</li>\n\t\t\t\t\t<li><b>Gormaggor</b>: viu o Templo ser construído, mas lembra mal; exige paciência e testes sociais.</li>\n\t\t\t\t\t<li><b>Cletus Rigby</b>: dá informações erradas se for irritado.</li>\n\t\t\t\t\t<li><b>Nada Mais que a Verdade Reston</b>: pode até se voluntariar.</li>\n\t\t\t\t\t<li><b>Fortunata</b>: cobra um segredo em troca.</li>\n\t\t\t\t\t<li><b>Tarik</b>: quer explorar, mas não tem condições.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>NPCs com ótima relação ou informação valiosa podem dar bônus num teste ou um sucesso automático (reserve para Gormaggor e Cletus bem apaziguados). Se o grupo ignorar o Templo e isso o incomodar, crie um grupo de aventureiros sumido lá dentro e um pedido de ajuda do único que escapou.</p>\n\t\t\t\t<h3>Achar</h3>\n\t\t\t\t<p>Teste estendido de <b>Sobrevivência</b>, 7 sucessos, CD 15 +2 por teste. Outras perícias valem, mas nenhuma repete (só Sobrevivência). Cada teste leva meio dia; cada falha custa <b>1d8 PV</b> (quedas, fadiga) que só o descanso cura. Todo dia, um encontro nas Colinas. Use @UUID[Macro.isa1d1IMJKYDGDov]{Templo · Busca pelo Templo}.</p>\n\t\t\t\t<h3>Entradas (role 1d3)</h3>\n\t\t\t\t<p><b>Entrada A:</b> porta estreita entre duas colinas que parecem cair uma sobre a outra. Ladinagem CD 20 para destrancar. Lá dentro, a sala se fecha e desce: é um elevador (ruído 3) até a Área de Entrada A. Pula as primeiras salas.</p><p><b>Entrada B:</b> caverna estreita (todos menos os menores andam abaixados) com uma porta de pedra no fundo. Não há chave: Ladinagem CD 25 para arrombar, e a fechadura solta a agulha com peçonha. Leva a uma parte avançada, mais perto dos tesouros e dos perigos.</p><p><b>Entrada C:</b> túnel escondido por rochas desabadas, quase em linha reta para baixo. Sem porta: um tapete vermelho para invasores. Começa do começo da masmorra.</p>\n\t\t\t\t<p>Cada entrada extra custa mais um sucesso. Conhecimento, Ofício (engenheiro) ou Sobrevivência CD 20 revelam as particularidades. A exploração \"otimizada\": C primeiro, voltar à superfície, depois A e, se precisar, B.</p>\n\t\t\t\t<p>Há ainda duas saídas secretas que se descobrem lá dentro: o túnel da Área Desabada (Nível 2, Sala 5), que leva direto ao Nível 2, e o túnel entre raízes do Nível 3 (Sala 3), que vai dar num bosque.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "cRJEAJLSicDhUpdM",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.cRJEAJLSicDhUpdM"
+    },
+    {
+      "name": "Regras da Masmorra",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<h3>Luz e escuridão</h3>\n\t\t\t\t<p>Luz mágica e mundana iluminam <b>metade</b> do normal; <b>visão no escuro e na penumbra não funcionam</b> (truque de Hyninn). Tocha: 9m, vira 4,5m. Lampião: 15m, vira 7,5m. Precisam ser empunhados (uma ação de movimento para deixar num ponto fixo). Quem está fora da luz fica cego (desprevenido, lento, sem Percepção para observar, –5 em perícias de For e Des, todos com camuflagem total). Não descreva nada além da luz. @UUID[Macro.JH7tVfaFG57eRNCp]{Templo · Escuridão do Templo} faz isso na cena.</p>\n\t\t\t\t<p>Para efeitos de duração <b>cena</b>: <b>2 salas ou 6 corredores</b> (ou combinações, como 1 sala e 3 corredores). Uma tocha dura uma cena.</p>\n\t\t\t\t<h3>Ruído</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>0:</b> parado, Furtividade, magia Silêncio.</li>\n\t\t\t\t\t<li><b>1:</b> sussurrar, meio deslocamento, destrancar, desarmar, guardar ou sacar equipamento, vestir armadura leve.</li>\n\t\t\t\t\t<li><b>2:</b> voz normal, deslocamento normal, vestir armadura pesada.</li>\n\t\t\t\t\t<li><b>3:</b> discussão, risada, combate, correr, o elevador da Entrada A.</li>\n\t\t\t\t\t<li><b>4:</b> berrar, música para o grupo ouvir, bater escudos (sempre proposital).</li>\n\t\t\t\t\t<li><b>5:</b> desabamento, chamar atenção de propósito.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Cada armadura pesada, criatura Grande ou montaria sobe <b>+1</b>. Cada nível alerta os habitantes num raio de <b>9m</b>, só por espaços abertos (portas e paredes param o som). Ao chegar, Conhecimento, Ofício (arquiteto ou engenheiro) ou Sobrevivência CD 15 revelam que o ruído atrai monstros.</p>\n\t\t\t\t<h3>Encontros</h3>\n\t\t\t\t<p>Criaturas com lugar fixo (tiranos no rio, mecanículos na estátua...) sempre estão lá, se vivas. Fora disso, em toda sala sem criaturas definidas, role 1d20 + ruído em @UUID[RollTable.dOs6JKWRqRed5SV5]{Encontros no Templo do Vácuo}.</p>\n\t\t\t\t<h3>Reações</h3>\n\t\t\t\t<p>1d6 + Carisma do personagem mais próximo (o menor, em empate) em @UUID[RollTable.O2bQZbwCH02UQ0L0]{Reações dos Encontros (Templo do Vácuo)}. Se o grupo notou primeiro e dialogou ativamente: teste social, cada 5 pontos vale um resultado (5 ou menos = 0, 6 a 10 = 1...). Tiranos e mecanículos usam a tabela normalmente; o ganchador e o monstro da ferrugem fogem nos resultados de diálogo; estátuas e criaturas sem mente atacam (resultado 0).</p>\n\t\t\t\t<p><i>Ferramentas, não algemas:</i> o bandido joga uma bolsa de ouro aos tiranos que \"atacam se houver algo a ganhar\". E agora? Eles entendem dinheiro? Pedem mais? Não há resposta fixa: cada encontro deve ser resolvido, não necessariamente combatido.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "DydzmLoCFUokQ9cK",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.DydzmLoCFUokQ9cK"
+    },
+    {
+      "name": "Nível 1",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<h3>Sala 1 · Área de Entrada C</h3><p>Sala quadrada com quatro pilares, chão regular.</p>\n\t\t\t\t<h3>Sala 2 · Área de Entrada A</h3><p>Acesso por uma passagem estreita (Pequenos passam; Médios, Acrobacia CD 15; Grandes não passam) ou pelos corredores. Depois de usado, o elevador volta para cima.</p>\n\t\t\t\t<h3>Sala 3 · Altar e Oferendas</h3><p>Altar vazio para Tilliann, rodeado de oferendas: tesouros e itens, mas nenhuma moeda reconhecível hoje. Ossos de exploradores.</p><p><b>Armadilha: Pêndulo de Teto</b> (ND 1). 1d12+10 de corte; Reflexos CD 25 evita. Dispara ao mexer nos tesouros ou no altar. Detectar Investigação 25; desarmar Ladinagem 20.</p><p><b>Tesouro:</b> ND 2.</p>\n\t\t\t\t<h3>Sala 4 · Sala Alagada</h3><p>A correnteza destruiu tudo. Investigação CD 15: restos de metal enferrujado; Percepção ou Conhecimento CD 15: partes de coisas humanoides. Ao norte, escadaria curta que sobe.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p>Se os tiranos estiverem caçando o grupo, emboscam aqui (não sofrem o terreno difícil): mova quatro tiranos de outras áreas.</p><p>Perto da escada, um aventureiro morto com um @UUID[Item.6HXg0sEjBipSRjQV]{Diário do Aventureiro Morto}.</p>\n\t\t\t\t<h3>Sala 5 · Cratera e Rio Subterrâneo</h3><p>Um rombo enorme para o rio, que ruge lá embaixo. Descer pelo rio leva direto ao Nível 2, mas os tiranos só atacam quem entra na água (o rio é território deles).</p><p><b>Corda:</b> Atletismo ou Acrobacia CD 15 para Médios. A corda faz Fortitude +3 contra CD 10 (+1 por Médio depois do primeiro) a cada Médio; falha, ela parte. Reflexos CD 15 para não cair no rio (cair: 1d6 e ataque dos tiranos e do cardume). Pequenos não testam; Grandes partem a corda. Use <i>Testes › Corda</i>.</p><p><b>Monstros:</b> três tiranos das águas, um cardume carnívoro.</p>\n\t\t\t\t<h3>Sala 6 · Covil da Ferrugem</h3><p>Detritos, pó de ferrugem e um monte de lixo onde o monstro dorme. Restos de mecanículos: das primeiras pistas da existência deles.</p><p><b>Monstro:</b> monstro da ferrugem.</p>\n\t\t\t\t<h3>Sala 7 · Antessala do Mecanismo de Segurança</h3><p>Ossos esmagados, itens arruinados, chão manchado de sangue. Percepção, Investigação ou Sobrevivência CD 15: nenhum osso é de criatura Pequena. Os gnomos deixavam o equipamento para trás antes de passar (gesto de reverência).</p><p><b>Armadilha: Teto Esmagador</b> (ND 4). 8d6 de impacto numa área de 3m de lado; Reflexos CD 25 reduz à metade. Ativada por peso: qualquer criatura maior que Pequena, ou Pequena com mais de 4 espaços de equipamento. Detectar Investigação 20; desarmar Ladinagem 20.</p>\n\t\t\t\t<h3>Sala 8 · Mecanismo de Segurança</h3><p>Atrás de uma porta de ferro trancada: sala limpa e bem conservada, local sagrado (Religião percebe). Oferendas, um baú e um mecanismo com duas alavancas, a última medida contra invasões ou revolta dos mecanículos.</p><p><b>Alavanca 1</b> (baixo-relevo de mecanículo e caveira): 4d6 mecanículos despertam na Sala da Estátua, se dividem e caçam qualquer criatura viva, com +5 em ataque e Defesa, lutando até a morte. Não volta antes de uma hora. Medida suicida para os gnomos.</p><p><b>Alavanca 2</b> (onda e gotas): válvulas por todo o Templo. Mecanículos ativos caem para 10 PV e sofrem –5 em tudo; os tiranos ganham +3 em ataque e Defesa; todo o Nível 1 fica alagado.</p><p><b>Porta:</b> @UUID[Actor.oTNmJmXHC2wDqJC0]{Porta de Ferro Pesada} (derrubar é ruído 5). Os tiranos não atacam aqui (conhecem a antessala), mas podem ficar de tocaia; os mecanículos atacam. <b>Tesouro:</b> ND 3. Use @UUID[Macro.R7IhJ28yiX72Lp6C]{Templo · Mecanismos e Altares}.</p>\n\t\t\t\t<h3>Salas 9 e 10 · Posto de Guarda dos Tiranos</h3><p>Vazias e alagadas; os tiranos vigiam os mecanículos e os intrusos. Da Sala 7, Percepção CD 10 os vê (e eles não atacam: pista da armadilha). Investigação CD 20 na Sala 9: túnel alagado até a Sala 11.</p><p><b>Monstros:</b> três tiranos das águas, um barão.</p>\n\t\t\t\t<h3>Sala 11 · Sala de Reparos</h3><p>Bigorna ladeada por dois autômatos de gnomos ferreiros (parecem um misto de anão e hynne). Um mecanículo na bigorna recupera <b>1d8+1 PV por rodada</b>. Um golem também pode se deitar ali; equipamentos de metal são consertados. Os autômatos não distinguem objeto de criatura viva: enganar um inimigo para a bigorna causa 1d8+1 por rodada. Investigação CD 20: túnel até a Sala 9.</p>\n\t\t\t\t<h3>Sala 12 · Entrada dos Tiranos</h3><p>Fosso cavado pelos tiranos até o Nível 2; sempre há ao menos três de guarda, e é para cá que fogem. Descer: Atletismo CD 15 (falha volta; pesos e cordas ajudam), surgindo na Sala 13 do Nível 2. Há uma escada de mão esquecida.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstros:</b> dois tiranos das águas, um barão.</p>\n\t\t\t\t<h3>Corredores Sudoeste</h3><p>Feitos para levar invasores ao coração do nível antes da hora. Um desabamento antigo fechou a passagem da Entrada C ao corredor sul: removê-lo é Atletismo estendido (CD 15 +2, 5 sucessos antes de 3 falhas; boas ideias, como Transmutar Objetos, valem sucessos automáticos), ruído 3 (2 com cuidado). O ganchador ataca quem remove as pedras.</p><p>A ameba gigante jovem circula aqui, sempre para a direita, uma volta por vez. O ganchador sabe evitá-la.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstros:</b> ganchador, ameba gigante jovem.</p>\n\t\t\t\t<h3>Sala 13 · Altar Vazio</h3><p>Um grande altar feito vazio, inquietante para devotos. Duas estátuas animadas dão um passo à frente e falam em gnômico antigo (Conhecimento CD 20 ou Compreensão): <i>\"Para passar, conte uma história do Herói Louco.\"</i> As palavras \"Herói Louco\" soam em valkar moderno, como outra gravação: as estátuas adaptam a fala à época.</p><p>Quem conta a história não é incomodado; as estátuas se ajoelham e se prostram para o altar vazio (a primeira prova de que o Herói Louco era um deus). Quem não conta é atacado. Elas não saem da sala nem perseguem, e lembram dos invasores por um dia. Não deixam passar pelos corredores sudoeste até o Salão Principal, mas um desabamento na Sala 5 contorna isso.</p><p><b>Monstros:</b> duas estátuas animadas.</p>\n\t\t\t\t<h3>Corredores para o Salão Principal</h3><p>Guardados por mecanículos e por uma armadilha que os próprios mecanículos colocaram quando notaram uma falha no corredor (ela só detecta criaturas vivas).</p><p><b>Armadilha: Runa de Proteção</b> (ND 2). 6d6 de eletricidade em todas as criaturas a até 3m; Reflexos CD 20 reduz à metade (quem ativou não tem direito ao teste). Só detecta criaturas vivas; os mecanículos não a ativam. Detectar Investigação 25; desarmar Ladinagem 25.</p><p><b>Monstros:</b> cinco mecanículos.</p>\n\t\t\t\t<h3>Sala 14 · Salão Principal</h3><p>O maior salão do nível, muito danificado pela água. Uma enorme cabeça de gnomo de pedra, com uma expressão de grande tristeza, guardada por quatro estátuas animadas. Duas portas de ferro trancadas.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p>A cabeça fala em gnômico: <i>\"Aquele que deseja prosseguir por estes corredores deve pagar o tributo. Entregue uma de suas lembranças mais caras e receba uma das nossas.\"</i> Cada um narra uma memória importante, que some da mente dele (os outros lembram de ter ouvido), e recebe uma memória gnômica. Mentira e magia não enganam (só Desejo).</p><p><b>Pacto de Hyninn:</b> devoto com Religião CD 20 nota a marca do deus e entrega a memória sem revelá-la ao grupo.</p><p>Quando todas as criaturas inteligentes pagam, a cabeça se abre: escadaria para o Nível 2. Recusar e forçar: as quatro estátuas atacam até cada um pagar (narrar leva uma rodada). A voz é ouvida em toda a masmorra, mas ninguém vem. Use @UUID[Macro.R7IhJ28yiX72Lp6C]{Templo · Mecanismos e Altares} › tributo e @UUID[RollTable.HxhzUcRl4s6XEXAG]{Memórias dos Gnomos}.</p><p><b>Monstros:</b> quatro estátuas animadas.</p>\n\t\t\t\t<h3>Sala 15 · Antessala do Salão Principal</h3><p>Proteção do salão e antiga entrada dos construtores. Um baú entreaberto cheio de riquezas (ilusão, Vontade CD 18) e uma armadilha no piso. Basta passar ao largo do centro e não tocar no baú. Na parede, com tinta preta: <i>\"Não puxe as alavancas. Homens-peixe cruéis.\"</i></p><p><b>Armadilha: Fosso Triplo</b> (ND 4). Queda de 18m: 12d6 de impacto; Reflexos CD 20 evita. Para escalar de volta: três sucessos seguidos em Atletismo CD 20. Quem cai chega ao Nível 3 (Sala 3). Detectar a armadilha pode revelar que o fosso é uma passagem para o nível mais fundo. Detectar Investigação 20; desarmar Ladinagem 20.</p><p><b>Armadilha: Gás Venenoso</b> (ND 3). Perda de 1d12 PV por veneno por rodada durante 2d4 rodadas; Fortitude CD 20 reduz à metade. O ouro do baú é ilusão (Vontade CD 18 para notar). Detectar Investigação 25; desarmar Ladinagem 25.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "5Cka20XoEMldeiYg",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.5Cka20XoEMldeiYg"
+    },
+    {
+      "name": "Nível 2",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Mais danificado que o Nível 1; o rio se ouve o tempo todo. Ao chegar pela cabeça, role 1d6: par, a ameba adulta vai da Sala 2 para a 3; ímpar, vem para a Sala 1 (circula em sentido anti-horário e volta). Ela pode trancar a passagem.</p>\n\t\t\t\t<h3>Sala 1 · Chegada</h3><p>Ligeiramente elevada, com escada para a próxima. Vazia. Ao sul, uma passagem desabada para uma caverna natural.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstro:</b> ameba gigante adulta (de passagem).</p>\n\t\t\t\t<h3>Sala 2 · Primeira Sala Alagada</h3><p>Porta aberta para a Sala 3; fechar e barrar a ameba é fácil.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstro:</b> ameba gigante adulta.</p>\n\t\t\t\t<h3>Sala 3 · Emboscada dos Tiranos</h3><p>Os tiranos tentam atrair o grupo para a Sala 4. Quem tem linha de visão vê os tesouros dela. Intuição ou Sobrevivência CD 20: os tiranos não ligam para os objetos (já os teriam pegado).</p><p><b>Monstros:</b> dois tiranos das águas.</p>\n\t\t\t\t<h3>Sala 4 · Armadilha de Afogamento</h3><p>Riquezas e moedas espalhadas pelo chão (a sala se encheu e esvaziou muitas vezes) e ossos de aventureiros.</p><p><b>Armadilha: Sala Alagada (Armadilha de Afogamento)</b> (ND 3). Uma rodada depois que o primeiro entra, a porta de ferro se fecha e a sala se enche em 1d4 rodadas. Depois disso: prender o fôlego (1 + Con rodadas, então Fortitude CD 15 +1 por teste; falha = inconsciente e perde 1d6 PV por rodada). Lutar lá dentro: –5 em testes de For, Des e Con e na Defesa; magia em condição ruim. A porta abre depois de uma hora e há 1d4 rodadas até rearmar. Ativada ao passar pela porta (mecanismo mágico). Detectar Investigação 25; desarmar Ladinagem 25.</p><p>Dá para evitar movendo o tesouro com magia ou ficando intangível. <i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente. <b>Porta:</b> @UUID[Actor.oTNmJmXHC2wDqJC0]{Porta de Ferro Pesada}. <b>Monstros:</b> dois tiranos (podem entrar junto e lutar sem penalidade). <b>Tesouro:</b> ND 3 (2 rolagens em dinheiro).</p>\n\t\t\t\t<h3>Sala 5 · Área Desabada</h3><p>Um desabamento abriu a parede entre a Sala 4 e uma caverna, um pouco elevada. Um túnel sobe por uma hora até uma passagem bloqueada: uma hora de trabalho cria uma entrada direta para o Nível 2. Na parede: <i>\"Esqueça a escadaria. Resolva o enigma ou volte para casa.\"</i></p><p><b>Armadilha: Fosso Profundo</b> (ND 1/2). Queda de 6m: 4d6 de impacto; Reflexos CD 20 evita. Atletismo CD 20 para escalar de volta. Detectar Investigação 20; desarmar Ladinagem 20.</p>\n\t\t\t\t<h3>Sala 6 · Rio Subterrâneo</h3><p>Não deveria ser acessível; o desgaste abriu passagens (daí o alagamento e a infestação). Corre de sul para norte. Cair ou mergulhar no rio pula o tributo, mas é invasão: os tiranos atacam na hora.</p><p>Nadar: ação de movimento e Atletismo CD 20 por rodada. Passa: avança metade do deslocamento. Falha por até 5: boia parado. Por 6 a 10: levado 1d6 quadrados. Por 11 ou mais: afunda e é levado 1d6. Uma segunda ação de movimento dá outro teste. Submerso: prende o fôlego (1 + Con rodadas, depois Fortitude CD 15 +1). Use <i>Testes › Rio</i> e <i>Prender o fôlego</i>.</p><p>Primeiro, só dois tiranos e um cardume atacam; com mais gente no rio, ou se o personagem estiver vencendo, vêm todos. O extremo norte termina num túnel cheio de água: quase morte certa, e quem sobrevive sai onde o Mestre quiser nas Centrais.</p><p><b>Monstros:</b> nove tiranos das águas, três barões, quatro cardumes.</p>\n\t\t\t\t<h3>Sala 7 · Passagem Desabada</h3><p>Criada por um desabamento. Os tiranos perseguem o grupo até aqui, mas não entram na Sala 11.</p>\n\t\t\t\t<h3>Sala 8 · Sala de Reparos Arruinada</h3><p>Só um autômato ferreiro continua de pé, fora de controle: golpeia o que está na bigorna e quem estiver por perto (@UUID[Actor.Snw5y6xE2QSmMl6c]{Autômato Ferreiro Arruinado (Estátua Executora)}). A bigorna funciona; dá para atrair inimigos para cá. @UUID[Item.lGDskECLY1nzYk3w]{Livro Semidestruído (história do Herói Louco)}: uma história do Herói Louco.</p><p><b>Armadilha: Estátua Executora</b> (ND 3). 1d12+10 mais 1d12+10 de impacto (esmagamento); dois testes de Reflexos CD 25, cada um evita um dos danos. Detectar Investigação 20; desarmar Ladinagem 20.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p>\n\t\t\t\t<h3>Sala 9 · Escritório</h3><p>Quase tudo saqueado ou mofado: os gnomos pesquisavam como fazer os outros mortais lembrarem de Tilliann. Resta uma mesa redonda de leitura que é também o enigma para o Nível 3: <b>20 tabuletas</b> e três espaços no centro (veja a página do enigma). Colocar Valkaria, Tilliann e Kallyadranoch abre a passagem (ruído 4).</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p>\n\t\t\t\t<h3>Sala 10 · Ninho da Cocatriz</h3><p>Um ninho de detritos e restos de aventureiros. A cocatriz, extremamente territorial, ataca quem entra.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstro:</b> cocatriz.</p>\n\t\t\t\t<h3>Sala 11 · Túmulos</h3><p>Duas tumbas com lápides em gnômico (Fremdak e Zonzibor, se decifradas). Há um espelho na frente de cada uma, e eles refletem as tumbas <b>contrárias</b>: basta inverter os espelhos para abrir. Ladinagem não funciona; à força é Força CD 25 ou 100 de dano, e um mecanismo estraga o tesouro (três tentativas arruínam o de uma tumba).</p><p>Dentro: ossos gnômicos, equipamento estragado, @UUID[Item.SeTCSQjF8kVLDEt1]{Tabuletas dos Túmulos de Fremdak e Zonzibor}, gemas e instrumentos de ofício. Duas paredes desabadas: uma dá no rio, logo antes de ele sumir num túnel; outra na caverna da Sala 7. <i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente. <b>Tesouro:</b> ND 4 (1 rolagem em dinheiro), @UUID[Item.uz8Vzj7CLDTKysLK]{Kit de Ofício (engenhoqueiro) e Gazua dos Túmulos}.</p>\n\t\t\t\t<h3>Sala 12 · Escadaria</h3><p>Escadaria em espiral para o Nível 3 e, ao norte, uma plataforma com um baú (fechado, sem tranca). Feita para aniquilar tolos: os aprovados passam pela Sala 9. Duas estátuas animadas atacam na hora; passar correndo e descer não é perseguido (saída esperta), mas poucos aguentam as uma ou duas rodadas necessárias. A estátua persegue até o Altar Mecânico e para ali.</p><p><b>Armadilha: Símbolo do Atordoamento</b> (ND 5). Criaturas em alcance curto ficam atordoadas por 1d6 rodadas; Fortitude CD 25 evita. Com o grupo atordoado, as duas estátuas atacam um a um até todos morrerem. Detectar Investigação 30; desarmar Ladinagem 30.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p><p><b>Monstros:</b> duas estátuas animadas. <b>Tesouro:</b> ND 4 (1 rolagem em dinheiro).</p>\n\t\t\t\t<h3>Sala 13 · Passagem</h3><p>Antiga antecâmara dos túmulos, destruída pelo desabamento que a ligou à caverna.</p><p><i>Chão alagado:</i> terreno difícil; Acrobacia CD 10 a cada movimento para se mover normalmente.</p>\n\t\t\t\t<h3>Sala 14 · Altar Mecânico</h3><p>O centro do nível, elevado: dois autômatos de gnomos muito elaborados, uma bigorna e alavancas. Religião ou devotos percebem a liturgia: a manufatura é sagrada aqui.</p><p><b>A Forja:</b> Conhecimento, Ofício (engenhoqueiro) ou Ladinagem CD 20 para entender as alavancas (armas, itens, tamanhos). Fabrica <b>qualquer item com até três aprimoramentos</b>, fornecendo materiais especiais pelo espaço de masmorra (menos metal arco-íris). <b>1d6 itens</b> no total, depois para. Deixe claro que é um grande feito. Use <i>Mecanismos › Forja</i>.</p><p>Restos de aventureiros mortos há pouco: um deles tem o @UUID[Item.Ftzf0IT1aAJWaKas]{Mapa para uma Masmorra em Sambúrdia}.</p><p><b>Armadilha: Desabamento do Teto</b> (ND 6). 15d6 de impacto em todas as criaturas numa área de 6m. O teto cai em três fases (uma por degrau): um teste de Iniciativa CD 20 por fase para escapar. Quem falha nos três faz Reflexos CD 30 para reduzir à metade. Detectar Investigação 25; desarmar Ladinagem 25.</p><p><b>Monstros:</b> cinco mecanículos. <b>Tesouro:</b> ND 5.</p><p><i>Na mesa original</i> o autor cortou os mecanículos: seria só contar rodadas contra o golem provocador, e já passava da meia-noite. Adapte por diversão e tempo, não para salvar ou punir.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "hi6FtollfVA7Aa46",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.hi6FtollfVA7Aa46"
+    },
+    {
+      "name": "Nível 3",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<h3>Entradas do Nível 3</h3><p><b>Sala 1</b> (pela passagem da Sala 9): cortada por um braço do rio, pontes caídas. Mecanículos e estátuas com bestas atacam na hora, falando por cima umas das outras em gnômico. Se o grupo cruzar o rio sob os tiros, elas largam as bestas e puxam espadas.</p><p><b>Sala 2</b>: pela escadaria em espiral da Sala 12 e um túnel longo.</p><p><b>Sala 3</b>: quem caiu do Fosso Triplo (provavelmente muito ferido). Uma passagem desabada leva a um túnel longo até um bosque, escondido em raízes: dá para sair e voltar direto ao Nível 3.</p>\n\t\t\t\t<h3>Sala 4 · Salão da Memória</h3><p>Não testa nem ensina: garante que quem chega entenda o que viveu. Murais dos 20 deuses da época da Revolta dos Três; onde deveria estar Tilliann, um vazio notável. Hyninn aparece em cores berrantes, como intruso. Khalmyr pune Valkaria, Kallyadranoch e Tilliann (a lacuna), nas Colinas Centrais; Valkaria vai de deusa ativa a estátua suplicante.</p><p>As estátuas repetem quatro perguntas em gnômico, sem parar de atacar. Cada resposta gasta uma <b>ação padrão</b>. Aceite qualquer variação que mostre entendimento (até conhecimento do cenário dos jogadores). Com a última certa, estátuas e mecanículos param na hora.</p><p><b>\"O que é este lugar?\"</b> Um templo a Tilliann, o Deus dos Gnomos, que perdeu a divindade como punição pela Revolta dos Três.</p><p><b>\"Quem construiu tudo isto?\"</b> Fremdak e Zonzibor, dois gnomos.</p><p><b>\"Quem está sendo cultuado nos altares vazios?\"</b> Tilliann: os altares vazios são locais de culto e de luto por sua divindade perdida.</p><p><b>\"Qual a função deste lugar?\"</b> Garantir que a memória de Tilliann e da raça gnômica seja preservada.</p><p>Use @UUID[Macro.R7IhJ28yiX72Lp6C]{Templo · Mecanismos e Altares} › resposta certa. <b>Monstros:</b> oito mecanículos, doze estátuas animadas (com bestas), três cardumes no rio.</p>\n\t\t\t\t<h3>O Altar da Memória</h3><p>Numa plataforma, inscrições e diagramas arcanos guardados por duas estátuas gigantes que não atacam e falam a língua dos vencedores.</p><p><i>\"Vitoriosos, sejam bem-vindos ao Altar da Memória. O Templo do Vácuo guarda a memória de uma raça condenada e a lembrança de um deus que não é mais. Vocês, que venceram o Templo, agora são os guardiões de nossa dor esquecida.\"</i></p><p><i>\"Fremdak e Zonzibor, os arquitetos do Templo, deixaram aqui mais do que suas almas, pois a alma é pouco mais que uma casca sem um deus para recebê-la. Eles deixaram suas memórias, sua engenhosidade, sua inteligência, sua esperteza e seu amor. Dois de vocês podem ser agraciados com o poder das mentes dos arquitetos.\"</i></p><p><b>No máximo dois personagens, uma vez só:</b> rolam de novo um atributo mental com 4d6 sem o menor dado (abaixo de 10 é ignorado), +2 em Inteligência ou +1 em Carisma (Sabedoria sem bônus), e ganham <b>Engenhosidade</b> dos kliren. Em troca, recebem pedaços das memórias de Fremdak, Zonzibor ou de ambos, sobretudo depois da queda de Tilliann.</p><p><b>Conversão (inferida):</b> o livro usa a escala antiga de 3 a 18. A macro converte o total para o Tormenta20 atual com (total – 10) ÷ 2, arredondado para baixo, e pergunta antes de trocar o valor. @UUID[Item.zSH3LmdbsWpEXi0O]{Engenhosidade (Altar da Memória)}.</p>\n\t\t\t\t<h3>Saída</h3><p>Atrás do altar, portas duplas se abrem para um túnel natural. Em uma hora, o grupo emerge a uns <b>dois dias de viagem</b> de onde deveria estar: mais uma prova do espaço de masmorra. Podem voltar depois por riquezas e inimigos que ficaram, mas o prêmio principal só existe uma vez.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "6jKAkYsjDL2SWFWM",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.6jKAkYsjDL2SWFWM"
+    },
+    {
+      "name": "Enigma das Tabuletas",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p><b>Para o Mestre.</b> O autor desenhou cada tabuleta com hidrocor em no máximo 1 minuto, sem referência, e não permitiu rolagens nem esclarecimentos: os jogadores precisam só identificar os Três. Desenhe também, se puder (rasgue o papel ou use a mão inábil se for artista).</p>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Um gato, um rato e um cachorro (Allihanna).</li>\n\t\t\t\t\t<li>Uma moeda de ouro (Azgher).</li>\n\t\t\t\t\t<li>Uma cobra com braços fortes (Divina Serpente).</li>\n\t\t\t\t\t<li>Um arco e flecha (Glórienn).</li>\n\t\t\t\t\t<li><b>Uma boca cheia de dentes afiados (Kallyadranoch).</b></li>\n\t\t\t\t\t<li>Um canhão (Keenn).</li>\n\t\t\t\t\t<li>Uma coroa (Khalmyr).</li>\n\t\t\t\t\t<li>Um bebê (Lena).</li>\n\t\t\t\t\t<li>Uma katana (Lin-Wu).</li>\n\t\t\t\t\t<li>Uma bandeira branca (Marah).</li>\n\t\t\t\t\t<li>Uma gosma com chifres e cara de má (Megalokk).</li>\n\t\t\t\t\t<li>Uma borboleta numa ventania (Nimb).</li>\n\t\t\t\t\t<li>Uma vara de pescar (Oceano).</li>\n\t\t\t\t\t<li>Uma boca com uma língua bifurcada (Sszzaas).</li>\n\t\t\t\t\t<li>Uma lupa (Tanna-Toh).</li>\n\t\t\t\t\t<li>Um grupo de estrelas (Tenebra).</li>\n\t\t\t\t\t<li>Uma mão saindo de um túmulo (Thyatis).</li>\n\t\t\t\t\t<li><b>Uma tabuleta em branco (Tilliann).</b></li>\n\t\t\t\t\t<li><b>Uma mochila cheia de coisas (Valkaria).</b></li>\n\t\t\t\t\t<li>Um relâmpago e um arco-íris (Wynna).</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>Resolvido, os jogadores devem ter certeza de que tudo nas Colinas diz respeito à Revolta dos Três e de que estão num templo a Tilliann. A história completa só no Nível 3.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "PPuAGFdGnEFX1hH7",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.PPuAGFdGnEFX1hH7"
+    },
+    {
+      "name": "Handouts · Anotações de Kizadrinni",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p class=\"secret\">O autor esqueceu de pôr no livro um NPC com tudo sobre o espaço de masmorra; as anotações eram da mãe de Kiki, da mesa original. Faça da pesquisadora uma NPC cujos pergaminhos aparecem em lugares estratégicos, ou troque por alguém ligado ao histórico de um PJ. A terceira é achada dentro do Templo.</p>\n\t\t\t\t<h3>Anotações 1</h3>\n\t\t\t\t<blockquote><p><i>\"É claro que sempre existiram estruturas subterrâneas. E nenhuma cultura, até onde sabemos, deixou de ter masmorras. Mas existe algo estranho, uma diferença entre os escritos mais antigos, de antes da Grande Batalha, e tudo que veio depois. Mais ou menos a partir do ano 650 começa a haver relatos de lugares subterrâneos onde as coisas são diferentes. (...) Depois de 650 os exploradores descrevem labirintos subterrâneos tomados por bizarria, cheios de armadilhas improváveis e criaturas raras. Talvez eu tenha descoberto o primeiro registro que pondera 'por que a aranha gigante nunca atacou os gnolls da sala ao lado, mas atacou os aventureiros assim que surgiram?'. (...) Os registros falam de corredores repletos de armadilhas que nunca eram ativadas pelos habitantes da masmorra, de portas trancadas há séculos, atrás das quais viviam guardiões sem fonte de comida, sem qualquer atividade em suas vidas a não ser esperar por aventureiros. O que significa isso? Por que a mudança?</i></p>\n\t\t\t\t<p><i>O mundo parece funcionar de forma ligeiramente diferente nas masmorras. É um espaço hostil onde cada coisa parece feita para matar, mas de uma forma astuta, quase como um jogo. É quase como se um lugar pudesse ter uma intenção. Quase como se a masmorra odiasse os exploradores. Por enquanto estou chamando este fenômeno de 'espaço de masmorra' (...) Uma das primeiras masmorras relatadas com estas características está num lugar desolado, um fim de mundo conhecido como Colinas Centrais. Mais precisamente no nordeste da região. É possível que eu precise entrar lá pessoalmente. Mas, por razões óbvias, evitarei isso ao máximo.\"</i></p></blockquote>\n\t\t\t\t<h3>Anotações 2</h3>\n\t\t\t\t<blockquote><p><i>\"De tudo que estudei nesses anos, nunca pensei que teologia fosse o mais importante. Se soubesse, teria me dedicado mais. Existe um quebra-cabeça, mas as peças não se encaixam. O espaço de masmorra é domínio de Hyninn. Mas como explicar tudo que não faz parte dos dogmas normais do Deus dos Ladrões? Hyninn pode ser letal, eu sabia disso. Mas ele não é um corruptor. Hyninn não se deleita na degradação. Transformar uma pessoa em um monstro não parece o tipo de peça que o deus pregaria. (...) Isso não é roubar, é destruir. Já me ocorreu que possa ser um plano sszzaazita. Corrupção e, é claro, serpentes. É quase óbvio demais. (...) O que há de intrínseco nelas vem de Hyninn, não de Sszzaas. Existe algo ou alguém distorcendo tudo isso de dentro. Resta saber o que é.\"</i></p></blockquote>\n\t\t\t\t<h3>Anotações 3 (dentro da masmorra)</h3>\n\t\t\t\t<blockquote><p><i>\"Antes que os corredores desta masmorra me aprisionem, deixo esta mensagem para quem vier aqui depois de nós. Eu ainda sou eu e, se nada mais sobrar de mim exceto a ferocidade, que sobre isto. Você não está num lugar natural. O espaço de masmorra é arquitetura mística. É o subterrâneo mítico. (...) O evento que transformou a Criação e deu origem ao espaço de masmorra foi a ascensão de Hyninn. E todos nós que vagamos pelas masmorras, exploradores e monstros errantes, somos sacrifícios ao Deus dos Ladrões. (...) Ele comprou poções de uma fada, mas foi enganado. Eram poções falsificadas. Matar através da enganação: a marca de Hyninn. O resto de meu grupo foi embora, mas eu decidi ficar. (...) Estou passando por uma transformação lenta, cumprindo o destino de minha família e me tornando o que eu sabia que iria me tornar. Mas por enquanto ainda sou eu. Pesquisadora, estudiosa, mãe. Quem quer que leia isto, lembre do meu nome e saiba que fui tudo isso, mesmo que um dia não seja mais. Eu sou Kizadrinni Odello e não sou um monstro errante. Pelo menos não ainda.\"</i></p></blockquote>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "htN3ie9SXZ5fXD37",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.htN3ie9SXZ5fXD37"
+    },
+    {
+      "name": "Handouts · Achados",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<h3>A última página do diário (Nível 1, Sala 4)</h3>\n\t\t\t\t<blockquote><p><i>\"Nós nos preparamos como normal. Trouxemos tochas, cordas, armas. Eu nunca imaginei que entender o que eles falam seria tão importante. Todos os outros morreram. Tentei aguentar acordado até conseguir achar a saída, mas estou exausto. Preciso dormir algumas horas. Assim que acordar vou continuar. Sei que estou perto. A masmorra nos venceu, mas vou reunir outro grupo para voltar outro dia. E dessa vez trarei um sábio.\"</i></p></blockquote>\n\t\t\t\t<h3>Na parede da Antessala (Nível 1, Sala 15)</h3>\n\t\t\t\t<blockquote><p><i>\"Não puxe as alavancas. Homens-peixe cruéis.\"</i></p></blockquote>\n\t\t\t\t<h3>Na parede da Área Desabada (Nível 2, Sala 5)</h3>\n\t\t\t\t<blockquote><p><i>\"Esqueça a escadaria. Resolva o enigma ou volte para casa.\"</i></p></blockquote>\n\t\t\t\t<h3>As tabuletas dos túmulos (com Compreensão)</h3>\n\t\t\t\t<blockquote><p><i>\"Parabéns, você provou ser mesmo esperto! A partir de agora, os espertos não constroem... Eles roubam!\"</i></p>\n\t\t\t\t<p><i>\"Parabéns, você provou ser mesmo engenhoso! O que é mais engenhoso? Criar algo ou enganar quem criou? Acho que você sabe a resposta!\"</i></p></blockquote>\n\t\t\t\t<h3>Memórias dos gnomos (o tributo)</h3>\n\t\t\t\t<p>Narre de modo que os jogadores entendam o Mundo de Tilliann antes e durante a queda: um lugar coberto de construções, animais mecânicos fabricados uns pelos outros, o cristal rosado, tecnologia parecida com a kliren que já viram, o nome \"gnomos\" e o vazio quando o deus caiu.</p>\n\t\t\t\t<ol><li>Tecnologia mecanomágica. O cristal rosado sendo minerado e usado como parte integral desses mecanismos.</li><li>Animais nunca vistos em Arton: criaturas mecânicas que de alguma forma nascem naturalmente. A gravidez e o parto como construção de autômatos.</li><li>Uma sociedade guiada por exatidão, que \"domou\" a realidade com ela. Relógios por toda parte, marcando as horas com uma precisão que Arton não precisa.</li><li>O nome que a raça tinha para si mesma: gnomos. Um povo que quase não fazia guerra, pacífico exceto pelos acidentes com suas invenções. Não tinham orgulho de si: tinham felicidade de ser quem eram.</li><li>A vida sob Tilliann, a criatividade e a manufatura como atos sagrados. A noite em que a queda foi sentida: o choque, a falta de inspiração, mecanismos complexos que de repente não funcionavam.</li></ol>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "JWo7GaWs99aOjBgB",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!vfiZu90XgqKoCmh8.JWo7GaWs99aOjBgB"
+    }
+  ],
+  "_key": "!journal!vfiZu90XgqKoCmh8"
+}

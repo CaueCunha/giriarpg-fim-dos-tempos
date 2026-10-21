@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Ataque do Céu",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/raio-solar.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroAtaqueDoCeu() {\n\t\tconst harpia = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"harpia\");\n\t\tif (!harpia) return ui.notifications.error(\"Ator da Harpia não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst atual = harpia.system.resources.primary.value;\n\t\tconst FASES = [\n\t\t\t\"<b>Rodada 1 · Aproximação.</b> Uma luz cegante surge no céu e desce sobre a fazenda. Todos na área ficam <b>cegos</b> (ação de movimento ou 1 PM para reduzir a ofuscado por 1 rodada). Só a Harpia age: <b>Canhão de Fogo</b>. <b>Dois cães do inferno</b> saltam. Quatro bandoleiros e dois cães já estão em solo (Percepção CD 20 para notá-los).\",\n\t\t\t\"<b>Rodada 2 · Escadas.</b> A Harpia desce as escadas de corda (Percepção CD 20 para vê-las). <b>O implante de Vadrinne liga</b>: ela começa a caminhar até a plantação (5 rodadas). Bandoleiros e cães agem a partir de agora. A Harpia usa Canhão e Nadadeiras.\",\n\t\t\t\"<b>Rodada 3.</b> Vadrinne avança (faltam 4 rodadas). Quem subir a escada leva 2 rodadas, às cegas, e enfrenta os chutes dos defensores.\",\n\t\t\t\"<b>Rodada 4.</b> Vadrinne avança (faltam 3 rodadas).\",\n\t\t\t\"<b>Rodada 5.</b> Vadrinne avança (faltam 2 rodadas).\",\n\t\t\t\"<b>Rodada 6.</b> Vadrinne avança (falta 1 rodada).\",\n\t\t\t\"<b>Rodada 7.</b> Vadrinne chega à plantação. Se os bandoleiros não derrubarem os heróis no convés, recuam para dentro da nave. Quando a Harpia começar a se afastar, o grupo tem <b>3 rodadas</b> para alcançá-la.\"\n\t\t];\n\t\tconst escolha = await foundry.applications.api.DialogV2.wait({\n\t\t\twindow: { title: `Ataque do Céu · rodada ${atual}` },\n\t\t\tcontent: \"<p>Avançar o ataque uma rodada, ou zerar o contador?</p>\",\n\t\t\tbuttons: [\n\t\t\t\t{ action: \"avancar\", label: \"Avançar\", default: true },\n\t\t\t\t{ action: \"zerar\", label: \"Zerar\" }\n\t\t\t]\n\t\t});\n\t\tif (escolha === \"zerar\") return harpia.update({ \"system.resources.primary.value\": 0 });\n\t\tif (escolha !== \"avancar\") return;\n\t\tconst nova = atual + 1;\n\t\tawait harpia.update({ \"system.resources.primary.value\": Math.min(nova, harpia.system.resources.primary.max || 10) });\n\t\tconst txt = FASES[nova - 1] ?? `<b>Rodada ${nova}.</b> A Harpia continua: Canhão de Fogo e Bater das Nadadeiras, uma vez cada. A luz continua cegando quem está fora da nave.`;\n\t\tChatMessage.create({ content: `<h3>O Terror que Veio do Céu</h3><p>${txt}</p>` });\n\t})();",
+  "_id": "Cb8rb1PEgSsxclmE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Cb8rb1PEgSsxclmE"
+}

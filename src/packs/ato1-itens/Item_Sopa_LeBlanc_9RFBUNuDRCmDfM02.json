@@ -1,0 +1,594 @@
+{
+  "name": "Sopa LeBlanc",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+  "system": {
+    "description": {
+      "value": "<p>Antiga receita da família LeBlanc, feita com a água do poço. Revigorante, espessa e com ingredientes variados até demais.</p><p><b>+1 em um atributo à escolha por um dia</b> (clique em um dos seis botões de atributo do card).</p><p>Mas o poço está contaminado pela Tormenta: quem toma tem pesadelos com a Tempestade Rubra e sofre <b>–2 para resistir a efeitos da Tormenta</b> (clique também em <i>Pesadelos</i>).</p><p>Tomar a sopa <b>10 vezes</b> acaba com os pesadelos e concede um <b>poder da Tormenta</b> permanente (conta para a penalidade em Carisma).</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 1,
+      "units": "day",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "espacos": 0,
+    "peso": 0,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "folder": "Ad4nkA1Q9s0ELfVB",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "_id": "9RFBUNuDRCmDfM02",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Sopa LeBlanc (+1 Força)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.for.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "ETVAGXptFRTUoqDl",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.ETVAGXptFRTUoqDl"
+    },
+    {
+      "name": "Sopa LeBlanc (+1 Destreza)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.des.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "tefPvbgEudYwoBRH",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.tefPvbgEudYwoBRH"
+    },
+    {
+      "name": "Sopa LeBlanc (+1 Constituição)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.con.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "Brt3L70S6kBOqvw6",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.Brt3L70S6kBOqvw6"
+    },
+    {
+      "name": "Sopa LeBlanc (+1 Inteligência)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.int.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "Tdc5Z7KDR69CF1Hu",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.Tdc5Z7KDR69CF1Hu"
+    },
+    {
+      "name": "Sopa LeBlanc (+1 Sabedoria)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.sab.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "j2tYgkdtjvqbDajC",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.j2tYgkdtjvqbDajC"
+    },
+    {
+      "name": "Sopa LeBlanc (+1 Carisma)",
+      "img": "systems/tormenta20/icons/itens/gerais/panela.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.car.bonus",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "wszaTsR0gc3s8Vsh",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.wszaTsR0gc3s8Vsh"
+    },
+    {
+      "name": "Pesadelos da Tormenta (Sopa LeBlanc)",
+      "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "–2 para resistir a efeitos da Tormenta. As macros do circo descontam sozinhas; nas outras rolagens, lembre de tirar 2.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "6yR3Eog5A1DVOn7G",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!9RFBUNuDRCmDfM02.6yR3Eog5A1DVOn7G"
+    }
+  ],
+  "_key": "!items!9RFBUNuDRCmDfM02"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Testes a Bordo",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/corda.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroBordo() {\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return ui.notifications.warn(\"Selecione os tokens dos personagens.\");\n\t\tconst SIT = {\n\t\t\tpiso: { nome: \"Equilíbrio no piso escorregadio\", pericia: \"acro\", cd: 10 },\n\t\t\tescada: { nome: \"Descer a escada entre deques\", pericia: \"acro\", cd: 12 },\n\t\t\tborda: { nome: \"Segurar-se na borda (empurrado para fora)\", pericia: \"refl\", cd: 15 },\n\t\t\tcordame: { nome: \"Cordames (às cegas)\", pericia: \"atle\", cd: 15 },\n\t\t\tqueda: { nome: \"Evitar a queda do cordame\", pericia: \"refl\", cd: 20 },\n\t\t\ttunel: { nome: \"Desbloquear túnel colapsado\", pericia: \"atle\", cd: 25, atributo: \"for\" },\n\t\t\tleme: { nome: \"Assumir o leme\", pericia: \"pilo\", cd: 25 },\n\t\t\talcancar: { nome: \"Alcançar a Harpia que foge\", pericia: \"atle\", cd: 15 }\n\t\t};\n\t\tconst opcoes = Object.entries(SIT).map(([k, s]) => `<option value=\"${k}\">${s.nome} (CD ${s.cd})</option>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Testes a Bordo da Harpia\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Situação</label><select name=\"sit\">${opcoes}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia no lugar (opcional)</label><select name=\"troca\">\n\t\t\t\t\t<option value=\"\">A da situação</option><option value=\"acro\">Acrobacia</option><option value=\"atle\">Atletismo</option>\n\t\t\t\t\t<option value=\"cava\">Cavalgar</option><option value=\"pilo\">Pilotagem</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Timoneira no comando (–2 se desprevenido)</label><input type=\"checkbox\" name=\"timoneira\" checked></div>\n\t\t\t\t<div class=\"form-group\"><label>Modificador extra</label><input type=\"number\" name=\"mod\" value=\"0\"></div>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst s = SIT[res.sit];\n\t\tconst rolls = [];\n\t\tlet html = `<h3>${s.nome}</h3><p>CD ${s.cd}</p><ul>`;\n\t\tfor (const a of atores) {\n\t\t\tconst per = res.troca || s.pericia;\n\t\t\tconst valor = s.atributo ? (a.system.atributos?.[s.atributo]?.value ?? 0) : (a.system.pericias?.[per]?.value ?? 0);\n\t\t\tconst desprev = a.statuses?.has?.(\"desprevenido\");\n\t\t\tconst pen = res.timoneira && desprev ? -2 : 0;\n\t\t\tconst r = await new Roll(`1d20 + ${valor} + ${pen} + ${Number(res.mod) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ok = r.total >= s.cd;\n\t\t\tconst falhaPor = s.cd - r.total;\n\t\t\tlet txt = ok ? \"✔️\" : \"❌\";\n\t\t\tswitch (res.sit) {\n\t\t\t\tcase \"piso\": {\n\t\t\t\t\tconst treinado = a.system.pericias?.acro?.treinado;\n\t\t\t\t\tif (ok) txt += \" avança metade do deslocamento\";\n\t\t\t\t\telse if (falhaPor >= 5) { txt += \" cai\"; await a.toggleStatusEffect(\"caido\", { active: true }); }\n\t\t\t\t\telse txt += \" não avança\";\n\t\t\t\t\tif (!treinado) { txt += \" · desprevenido (não treinado)\"; await a.toggleStatusEffect(\"desprevenido\", { active: true }); }\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tcase \"escada\": {\n\t\t\t\t\tif (ok) txt += \" desce sem gastar deslocamento\";\n\t\t\t\t\telse if (falhaPor >= 5) {\n\t\t\t\t\t\tconst d = await new Roll(\"1d6[impacto]\").evaluate();\n\t\t\t\t\t\trolls.push(d);\n\t\t\t\t\t\tawait a.applyDamageV2(d, 1);\n\t\t\t\t\t\tawait a.toggleStatusEffect(\"caido\", { active: true });\n\t\t\t\t\t\ttxt += ` cai: ${d.total} de impacto e caído`;\n\t\t\t\t\t} else txt += \" gasta 4,5m de deslocamento\";\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tcase \"cordame\":\n\t\t\t\t\ttxt += ok ? \" avança (2 sucessos atravessam)\" : falhaPor >= 10 ? \" <b>cai!</b> Role Reflexos CD 20 (situação seguinte)\" : \" não progride\";\n\t\t\t\t\tbreak;\n\t\t\t\tcase \"queda\": txt += ok ? \" se agarra\" : \" despenca da nave\"; break;\n\t\t\t\tcase \"borda\": txt += ok ? \" se segura na beirada\" : \" cai da nave\"; break;\n\t\t\t\tcase \"tunel\": txt += ok ? \" um sucesso (3 desbloqueiam)\" : \" não move os escombros\"; break;\n\t\t\t\tcase \"leme\": txt += ok ? \" assume o leme, sob ataque constante\" : \" a timoneira mantém o controle\"; break;\n\t\t\t\tcase \"alcancar\": txt += ok ? \" alcança a nave\" : \" fica para trás\"; break;\n\t\t\t}\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${txt}${pen ? \" (–2 timoneira)\" : \"\"}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tif (res.sit === \"alcancar\") html += \"<p style=\\\"font-size:0.85em\\\">A CD 15 é sugestão: o livro só diz Atletismo, Acrobacia ou Cavalgar, com 3 rodadas antes de a nave ficar longe demais.</p>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "OA8Fme61GvE4e6Fn",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!OA8Fme61GvE4e6Fn"
+}

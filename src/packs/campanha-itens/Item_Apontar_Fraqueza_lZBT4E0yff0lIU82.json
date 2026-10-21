@@ -1,0 +1,151 @@
+{
+  "name": "Apontar Fraqueza",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/combate.webp",
+  "folder": "wG2ATLpqXJ5SODtV",
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "world": {
+      "fdt": "fdtgrupo",
+      "fdtPoder": "apontar-fraqueza",
+      "fdtPre": ""
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quando você faz um acerto crítico, cada aliado com este poder pode gastar 2 PM em seu primeiro ataque contra o mesmo alvo nessa rodada. Se acertar, o ataque é um crítico. Cada personagem só pode fazer um acerto crítico dessa forma por cena.</p><p><i>Poder de grupo: só funciona se outro personagem jogador com este mesmo poder estiver na cena. NPCs, parceiros e efeitos que emprestam poderes não contam.</i></p><p><b>Automação:</b> na janela de ataque aparece <b>Apontar Fraqueza</b> (2 PM): marcado, a margem de ameaça vira 1, então qualquer acerto é crítico. Use uma vez por cena.</p>",
+      "unidentified": ""
+    },
+    "source": "Heróis de Arton, cap. 1, Poderes de Grupo (p. 92-95)",
+    "tipo": "geral",
+    "subtipo": "Grupo",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "lZBT4E0yff0lIU82",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Apontar Fraqueza (acerto vira crítico)",
+      "img": "systems/tormenta20/icons/poderes/combate.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "fdtgrupo",
+          "fdtModo": "uso",
+          "fdtEscala": 0,
+          "fdtTipos": [
+            "attack"
+          ]
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "criticoM",
+            "value": "1",
+            "type": "override",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 2,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "LJ1MazS72eV0NDHL",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!lZBT4E0yff0lIU82.LJ1MazS72eV0NDHL"
+    }
+  ],
+  "_key": "!items!lZBT4E0yff0lIU82"
+}

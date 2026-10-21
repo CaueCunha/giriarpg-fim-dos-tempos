@@ -1,0 +1,547 @@
+{
+  "name": "Coisas que Ofendem Cletus Rigby",
+  "img": "systems/tormenta20/icons/racas/anao.webp",
+  "folder": "8ASD32WCoXUtoHRE",
+  "flags": {
+    "world": {
+      "fdt": "a1colinas",
+      "fdtRole": "tabelaOfensas"
+    }
+  },
+  "formula": "1d19",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Quem ofende Cletus nunca aprende magia com ele. A lista é só o começo.",
+  "_id": "fsVmJEMrcEGkHUoa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Chamá-lo de feiticeiro.",
+      "description": "",
+      "_id": "7FkF01OCHBqRqVWX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.7FkF01OCHBqRqVWX"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Chamá-lo de \"Rigby\".",
+      "description": "",
+      "_id": "ReYOtA1BQ3ZWuhFd",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.ReYOtA1BQ3ZWuhFd"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Retirar qualquer item, por menor que seja, da cabana.",
+      "description": "",
+      "_id": "xiaDH2cFNoNBArvn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.xiaDH2cFNoNBArvn"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Falar a palavra \"choupana\".",
+      "description": "",
+      "_id": "mOy2mhvSz3gwAjy7",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.mOy2mhvSz3gwAjy7"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Chamar as Colinas Centrais de montanhas.",
+      "description": "",
+      "_id": "UIrowz5z9qVmcaD4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.UIrowz5z9qVmcaD4"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Ter cabelo loiro.",
+      "description": "",
+      "_id": "fMgXZ7gDweAXVRN6",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.fMgXZ7gDweAXVRN6"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Ter um animal batizado em homenagem a alguém famoso.",
+      "description": "",
+      "_id": "CQESvU4fU0zQTp0E",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.CQESvU4fU0zQTp0E"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Cantar.",
+      "description": "",
+      "_id": "lnGjm41j5R33uYAX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.lnGjm41j5R33uYAX"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Pedir para ser curado.",
+      "description": "",
+      "_id": "w5hMghXmR0TjwOHm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.w5hMghXmR0TjwOHm"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Mencionar Abner ou Tolbert.",
+      "description": "",
+      "_id": "dYdFyiPGVNpwegNH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.dYdFyiPGVNpwegNH"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Falar mal de Raguria.",
+      "description": "",
+      "_id": "oMaGTbpzyBt5eHuR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.oMaGTbpzyBt5eHuR"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Falar sobre o clima.",
+      "description": "",
+      "_id": "qxxLmMt2INEE4mXs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.qxxLmMt2INEE4mXs"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Oferecer comida.",
+      "description": "",
+      "_id": "SGs7sVeneXZUiN6e",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.SGs7sVeneXZUiN6e"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Dizer sim a ele três ou mais vezes seguidas.",
+      "description": "",
+      "_id": "YvESlFljlpHYNUUT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.YvESlFljlpHYNUUT"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Chamar um cajado de bastão.",
+      "description": "",
+      "_id": "q2e9Ws5u82gMc9GI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.q2e9Ws5u82gMc9GI"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Vestir a cor amarela.",
+      "description": "",
+      "_id": "hglt9Gg3wHblFejn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.hglt9Gg3wHblFejn"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Mencionar Doherimm.",
+      "description": "",
+      "_id": "dpfOjCfxoQPmYDkW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.dpfOjCfxoQPmYDkW"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Um erro de gramática à escolha do Mestre (\"para mim fazer\", \"esteje\", \"com nós\"...).",
+      "description": "",
+      "_id": "C0N8HNvEGG8rfuYe",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.C0N8HNvEGG8rfuYe"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Qualquer coisa que o Mestre deseje (pode mudar no meio da conversa).",
+      "description": "",
+      "_id": "FoDm7gh972DRhRoK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!fsVmJEMrcEGkHUoa.FoDm7gh972DRhRoK"
+    }
+  ],
+  "_key": "!tables!fsVmJEMrcEGkHUoa"
+}

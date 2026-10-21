@@ -1,0 +1,249 @@
+{
+  "name": "Demais Habitantes de Dornbach",
+  "img": "icons/svg/village.svg",
+  "folder": "lRdJWLxAFaGUjHdy",
+  "flags": {
+    "world": {
+      "fdt": "av3"
+    }
+  },
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "No fim da 1ª rodada, aplique ao último personagem na iniciativa; a cada rodada seguinte, ao próximo em ordem decrescente.",
+  "_id": "d7MveDRRGAGX5IlM",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Intervenção de Orlo",
+      "description": "O líder da vila incita os defensores contra o personagem. O NPC mais próximo pode se mover e atacá-lo como reação.",
+      "_id": "50w3kHtCbJSE3Agb",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.50w3kHtCbJSE3Agb"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Coice",
+      "description": "O personagem leva um coice de cavalo: 2d8 de impacto e fica caído (Reflexos CD 18 reduz à metade e evita caído).",
+      "_id": "b3HDTnZLUgKtX1sW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.b3HDTnZLUgKtX1sW"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Dejetos",
+      "description": "De uma janela, um aldeão atira... dejetos. O personagem fica enjoado até o fim da cena (Fortitude CD 15 reduz para 1 rodada).",
+      "_id": "1HSyX38qflq40MGP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.1HSyX38qflq40MGP"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Filho corajoso",
+      "description": "Uma criança de 7 anos se lança contra o personagem. Ele gasta uma ação padrão para afastá-la; senão, até o fim da cena todos os seus ataques têm 50% de chance de acertar a criança (1 PV). Só acontece uma vez; se sair de novo, use o resultado 5.",
+      "_id": "F8YYjbtRU6agE4p7",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.F8YYjbtRU6agE4p7"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Impropérios",
+      "description": "Xingamentos carregados de ódio: o personagem fica desprevenido por uma rodada (Vontade CD 15 evita).",
+      "_id": "88AkWq7DDeZ5wACU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.88AkWq7DDeZ5wACU"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Apedrejamento",
+      "description": "Aldeões atiram pedras: 2d4 de impacto (Reflexos CD 15 reduz à metade).",
+      "_id": "CIEo2Nz7GwLRaIPq",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.CIEo2Nz7GwLRaIPq"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Vira-latas",
+      "description": "Um cão vadio ataca: 1d6 de corte e caído (Reflexos CD 15 evita).",
+      "_id": "E5lVPo1O3fb5n3rP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.E5lVPo1O3fb5n3rP"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Nada acontece",
+      "description": "Os aldeões só observam.",
+      "_id": "HadxRR2JwYIe8IPg",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!d7MveDRRGAGX5IlM.HadxRR2JwYIe8IPg"
+    }
+  ],
+  "_key": "!tables!d7MveDRRGAGX5IlM"
+}

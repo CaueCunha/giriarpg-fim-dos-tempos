@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Elemental Elétrico (Torgo)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/relampago.webp",
+  "folder": "XktkF8R1c4pr6mAz",
+  "flags": {
+    "world": {
+      "fdt": "av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(async function macroElemental() {\n\t\tconst torgo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"torgo\");\n\t\tif (!torgo) return ui.notifications.error(\"Torgo não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Elemental Elétrico\" },\n\t\t\tcontent: `<p>Dano <b>mágico de eletricidade</b> que Torgo sofreria (antes da RD):</p>\n\t\t\t\t<div class=\"form-group\"><label>Dano</label><input type=\"number\" name=\"dano\" value=\"0\" autofocus></div>`,\n\t\t\tok: { label: \"Absorver\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cura = Math.floor((Number(res.dano) || 0) / 2);\n\t\tconst pv = torgo.system.attributes.pv;\n\t\tawait torgo.update({ \"system.attributes.pv.value\": Math.min(pv.value + cura, pv.max) });\n\t\tChatMessage.create({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \\\"Com carga elétrica\\\" do Olhar).</p>` });\n\t})();",
+  "_id": "DVRLLIPXaQrhZebX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!DVRLLIPXaQrhZebX"
+}

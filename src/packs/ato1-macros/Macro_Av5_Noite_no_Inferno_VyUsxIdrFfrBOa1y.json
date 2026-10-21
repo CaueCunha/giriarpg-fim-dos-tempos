@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Noite no Inferno",
+  "type": "script",
+  "img": "icons/svg/clockwork.svg",
+  "folder": "wBj7v5GL5wqlxDBx",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(async function macroNoite() {\n\t\tconst forte = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"forte\");\n\t\tif (!forte) return ui.notifications.error(\"Ator do Forte não encontrado (importe o conteúdo do módulo Fim dos Tempos).\");\n\t\tconst HORAS = [\n\t\t\t[\"18:00\", \"<b>1ª Onda · Invasão de Bandoleiros</b> (combate). 40 bandoleiros, 4 cães do inferno e 4 irmãos da Companhia. 20 escalam a paliçada (3 rodadas, desprevenidos), 20 abrem buracos em duplas. No início de cada rodada, cada abertura solta um cão (até 4); depois os irmãos, 1 por rodada por abertura. <b>Vitória:</b> derrotar todos os cães e irmãos mais 30 bandoleiros.\"],\n\t\t\t[\"19:00\", \"<b>Discurso de Syvarian.</b> Ele aparece de escafandro completo, fora do alcance, tira o elmo e revela o relógio na testa. Deixe o grupo conversar e arrancar revelações com testes (veja o diário). Matá-lo ou feri-lo gravemente agora começa a 2ª onda na hora.\"],\n\t\t\t[\"20:00\", \"<b>Fermond</b> tenta uma \\\"aliança de elites\\\" com Syvarian. Exposto aos soldados, Isabrine o nocauteia (conta como ferido). <b>Belinda</b> oferece preparar poções se ficar a noite inteira na oficina em segurança.\"],\n\t\t\t[\"21:00\", \"<b>2ª Onda · Bombardeio</b> (perigo complexo). Vespas lefeu carregando bandoleiros e <b>4 explosivos</b> na paliçada, programados para 5 rodadas. Use a macro <i>Bombardeio</i>.\"],\n\t\t\t[\"22:00\", \"<b>Nadine</b> revela o esconderijo dela (poções e essências) e se oferece para buscá-lo a cavalo: estendido de Cavalgar CD 20, com Cavalgar +8.\"],\n\t\t\t[\"23:00\", \"<b>Mabel</b> anuncia a sopa LeBlanc: precisa da cozinha sem ataques. Uma hora por grupo (cada PJ + parceiros = um grupo). Com Raguria no Forte, as duas brigam; mediada, a dupla cozinha em metade do tempo ou faz um prato especial.\"],\n\t\t\t[\"00:00\", \"<b>3ª Onda · Horda de Zumbis</b> (perigo complexo). Objetivo: <b>400 de dano</b> à horda. Nadine volta avisando (mais uma rodada de preparo se chegar a salvo). Cuidado com o Homem-Bode abrindo a porta. Use a macro <i>Horda Zumbi</i>.\"],\n\t\t\t[\"01:00\", \"<b>Alon Gallobalt desaparece</b> procurando uma arma nos depósitos: três testes de Investigação (CD 18, 20 e 22), uma hora inteira. Sem busca, todos os Gallobalt vão embora do Forte. <b>Raguria</b> oferece o \\\"chazinho\\\" (2d4 essências de mana).\"],\n\t\t\t[\"02:00\", \"<b>Moira reza.</b> Com dois PJs ou mais rezando, teste de Religião (+1 por NPC rezando, +3 se houver paladino no grupo). <b>30 ou mais:</b> Khalmyr ouve e Moira vira paladina (11 PM, paladina de Khalmyr de 3º nível, Compaixão e Caridade: 1 PM e uma ação de movimento curam 2d6+1 PV em alcance curto). Com Mungo Joe e o alambique, Belinda sai com uma poção de até 2º círculo para cada PJ.\"],\n\t\t\t[\"03:00\", \"<b>4ª Onda · Última Cartada</b> (combate). 6 bandos desesperados, 10 irmãos da Companhia, 5 uktril, 3 geraktril e 2 reishid. Os inimigos procuram os abrigos dos aldeões (Percepção CD 20). Tentáculos lefeu podem surgir do fosso (1d4, no 1).\"],\n\t\t\t[\"04:00\", \"<b>Bastien, Clothilde e Blanche enlouquecem</b> e viram zumbis da Tormenta; Gaspar ataca, mas pode ser apaziguado. Se os heróis protegeram os LeBlanc e os três foram treinados, Vontade CD 20 por cada um evita. <b>Morgan</b> pede para morrer lutando, ou (se houver amizade) decide viver e se aposentar. <b>Cletus</b> presenteia um item mágico. <b>Belinda</b> entrega as poções e traz <b>Ygor</b>.\"],\n\t\t\t[\"05:00\", \"<b>5ª Onda · Tudo ou Nada</b> (combate). Syvarian e Torgo com alguns capangas. Sem sentinelas nem aproximação. Ygor explode no momento em que os heróis estiverem mais juntos (8d6, raio de 3m, Reflexos CD 25) e a imagem do Dr. Vesper revela todo o plano.\"]\n\t\t];\n\t\tconst atual = forte.system.resources.primary.value;\n\t\tconst escolha = await foundry.applications.api.DialogV2.wait({\n\t\t\twindow: { title: `Noite no Inferno · ${atual ? HORAS[atual - 1][0] : \"antes das 18:00\"}` },\n\t\t\tcontent: \"<p>Avançar uma hora da noite, repetir a hora atual ou zerar?</p>\",\n\t\t\tbuttons: [\n\t\t\t\t{ action: \"avancar\", label: \"Avançar uma hora\", default: true },\n\t\t\t\t{ action: \"repetir\", label: \"Repetir esta hora\" },\n\t\t\t\t{ action: \"zerar\", label: \"Zerar\" }\n\t\t\t]\n\t\t});\n\t\tif (escolha === \"zerar\") return forte.update({ \"system.resources.primary.value\": 0 });\n\t\tif (!escolha) return;\n\t\tconst i = escolha === \"repetir\" ? Math.max(atual, 1) : Math.min(atual + 1, HORAS.length);\n\t\tawait forte.update({ \"system.resources.primary.value\": i });\n\t\tconst [hora, txt] = HORAS[i - 1];\n\t\tChatMessage.create({ content: `<h3>Noite no Inferno · ${hora}</h3><p>${txt}</p>` });\n\t})();",
+  "_id": "VyUsxIdrFfrBOa1y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!VyUsxIdrFfrBOa1y"
+}

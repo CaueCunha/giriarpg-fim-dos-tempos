@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Teste do Circo",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/explosao-caleidoscopica.webp",
+  "folder": "NGeEsa9DWEll8oqg",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroTesteDoCirco() {\n\t\tconst alvos = canvas.tokens.controlled.length\n\t\t\t? canvas.tokens.controlled.map((t) => t.actor).filter(Boolean)\n\t\t\t: canvas.tokens.placeables.filter((t) => t.actor?.type === \"character\" && t.actor.hasPlayerOwner).map((t) => t.actor);\n\t\tif (!alvos.length) return ui.notifications.warn(\"Selecione os tokens (ou coloque os personagens na cena).\");\n\t\tconst PRESETS = {\n\t\t\tlivre: { nome: \"Teste livre\", pericia: \"vont\", cd: 15, pm: \"\", tormenta: false, zardu: false },\n\t\t\tcolmeia: { nome: \"Ato 3 · Zumbido das Colmeias (insanidade)\", pericia: \"vont\", cd: 15, pm: \"1d4\", tormenta: true, zardu: false },\n\t\t\tchupa: { nome: \"Insanidade da Tormenta (Chupacabra)\", pericia: \"vont\", cd: 14, pm: \"1d4\", tormenta: true, zardu: false },\n\t\t\tpesos: { nome: \"Ato 5 · Pesos de Ferro (Acrobacia)\", pericia: \"acro\", cd: 15, pm: \"\", tormenta: false, zardu: false },\n\t\t\tbombas: { nome: \"Bombas Ilusórias de Zardu\", pericia: \"refl\", cd: 20, pm: \"\", tormenta: false, zardu: true },\n\t\t\tburaco: { nome: \"Meu Palco: Buraco / Palhaço Sinistro\", pericia: \"vont\", cd: 20, pm: \"\", tormenta: false, zardu: true },\n\t\t\tguloseima: { nome: \"Guloseima de Gronko\", pericia: \"vont\", cd: 15, pm: \"\", tormenta: false, zardu: false },\n\t\t\tplateia: { nome: \"Sentado na plateia (Redefinição 6)\", pericia: \"vont\", cd: 15, pm: \"\", tormenta: false, zardu: false }\n\t\t};\n\t\tconst opt = (o) => Object.entries(o).map(([k, v]) => `<option value=\"${k}\">${v.nome ?? v}</option>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Teste do Circo\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Situação</label><select name=\"preset\">${opt(PRESETS)}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>Ilusão ou Realidade?</label><select name=\"ir\">\n\t\t\t\t\t<option value=\"0\">Não se aplica / não escolheu</option>\n\t\t\t\t\t<option value=\"5\">Acertou (+5)</option>\n\t\t\t\t\t<option value=\"-5\">Errou (–5)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia (vazio = da situação)</label><select name=\"pericia\">\n\t\t\t\t\t<option value=\"\">—</option><option value=\"vont\">Vontade</option><option value=\"refl\">Reflexos</option>\n\t\t\t\t\t<option value=\"fort\">Fortitude</option><option value=\"acro\">Acrobacia</option><option value=\"int\">Inteligência (atributo)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>CD (vazio = da situação)</label><input type=\"number\" name=\"cd\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Kerok (+5) e Sopa LeBlanc (–2) entram nos efeitos da Tormenta; Ralphus (+5) nas ilusões de Zardu. Quem acertar que as bombas são ilusão pode trocar para Vontade.</p>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst preset = PRESETS[res.preset];\n\t\tconst pericia = res.pericia || preset.pericia;\n\t\tconst cd = Number(res.cd) || preset.cd;\n\t\tconst ir = Number(res.ir) || 0;\n\t\tconst rolls = [];\n\t\tlet html = `<h3>${preset.nome}</h3><p>${pericia.toUpperCase()} CD ${cd}${ir ? ` · Ilusão ou Realidade ${ir > 0 ? \"+5\" : \"–5\"}` : \"\"}</p><ul>`;\n\t\tfor (const a of [...new Set(alvos)]) {\n\t\t\tlet mod = pericia === \"int\" ? (a.system.atributos?.int?.value ?? 0) : (a.system.pericias?.[pericia]?.value ?? 0);\n\t\t\tconst extras = [];\n\t\t\tif (preset.tormenta && a.items.some((i) => i.name.startsWith(\"Bênção de Kerok\"))) { mod += 5; extras.push(\"Kerok +5\"); }\n\t\t\tif (preset.tormenta && a.effects.some((e) => !e.disabled && e.name.startsWith(\"Pesadelos da Tormenta\"))) { mod -= 2; extras.push(\"Sopa –2\"); }\n\t\t\tif (preset.zardu && a.items.some((i) => i.name.startsWith(\"Segredo de Ralphus\"))) { mod += 5; extras.push(\"Ralphus +5\"); }\n\t\t\tmod += ir;\n\t\t\tconst r = await new Roll(`1d20 + ${mod}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tconst ok = r.total >= cd;\n\t\t\tlet extra = \"\";\n\t\t\tif (!ok && preset.pm) {\n\t\t\t\tconst pr = await new Roll(preset.pm).evaluate();\n\t\t\t\trolls.push(pr);\n\t\t\t\tconst pm = a.system.attributes.pm;\n\t\t\t\tconst novo = Math.max(0, pm.value - pr.total);\n\t\t\t\tawait a.update({ \"system.attributes.pm.value\": novo });\n\t\t\t\textra = ` · perdeu <b>${pr.total} PM</b> (${pm.value} → ${novo})`;\n\t\t\t\tif (novo === 0 && res.preset === \"chupa\") {\n\t\t\t\t\tawait a.toggleStatusEffect?.(\"confuso\", { active: true });\n\t\t\t\t\textra += \" · <b>confuso</b>\";\n\t\t\t\t}\n\t\t\t}\n\t\t\thtml += `<li>${a.name}: <b>${r.total}</b> ${ok ? \"✔️\" : \"❌\"}${extras.length ? ` <i>(${extras.join(\", \")})</i>` : \"\"}${extra}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "VR6SJ5lGgxvRoZuD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!VR6SJ5lGgxvRoZuD"
+}

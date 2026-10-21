@@ -1,0 +1,119 @@
+{
+  "name": "Gorad em Barra (realidade)",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/gorad.webp",
+  "folder": "tbwdQktgRMmoWWbK",
+  "flags": {
+    "world": {
+      "fdt": "a1guloseimas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma deliciosa barra de gorad, na qual alguém deu uma generosa mordida. <b>Recupera 1d4 PM.</b></p><p><b>Ilusão ou realidade? (Varia)</b> Gaste uma <b>ação padrão</b> para morder e faça <b>Vontade CD 15</b>. Se passar, recebe o benefício; se falhar, gastou a ação e a guloseima em vão. Só existe uma dose.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Vontade CD 15 para aproveitar"
+    },
+    "rolls": [
+      {
+        "name": "PM recuperados",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "1d4",
+            "curapm",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "_id": "T6OiPDB8OuhEtT2w",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!T6OiPDB8OuhEtT2w"
+}

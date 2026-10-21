@@ -1,0 +1,148 @@
+{
+  "name": "Segredo de Ralphus (+5 contra ilusões de Zardu)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/diario.webp",
+  "flags": {
+    "world": {
+      "fdt": "av2"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Tenda 3, depois de vencer Gaspar.</b> Ralphus está escondido entre os jarros; qualquer teste social o convence a contar que tudo no circo é ilusão.</p><p><b>+5 para resistir às ilusões de Zardu.</b> Marque o aprimoramento na rolagem; as macros do circo já somam sozinhas.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "Ad4nkA1Q9s0ELfVB",
+  "_id": "ofKYzCWIK2sCHFPo",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Segredo de Ralphus (+5 ilusões)",
+      "img": "systems/tormenta20/icons/itens/gerais/diario.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 5,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "skill"
+          ],
+          "names": [
+            "Fortitude",
+            "Reflexos",
+            "Vontade"
+          ],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "YfDRVi5IOXTI5Nxb",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!ofKYzCWIK2sCHFPo.YfDRVi5IOXTI5Nxb"
+    }
+  ],
+  "_key": "!items!ofKYzCWIK2sCHFPo"
+}
