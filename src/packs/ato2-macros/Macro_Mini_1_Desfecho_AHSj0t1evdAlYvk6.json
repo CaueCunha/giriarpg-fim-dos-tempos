@@ -1,0 +1,31 @@
+{
+  "name": "Mini 1 · Desfecho",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/gemas-preciosas.webp",
+  "folder": "VoP5yNFLRc5qcoqs",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n(async function macroDesfecho() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Ruas de Cobiça · Desfecho\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Resultado</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"vitoria\">O Cobrador foi derrotado e Blixto está salvo</option>\n\t\t\t\t\t<option value=\"derrota\">Blixto não foi salvo (demora, derrota ou desistência)</option>\n\t\t\t\t\t<option value=\"tesouro\">Calcular um tesouro com o bônus de 10% da Metais</option>\n\t\t\t\t\t<option value=\"preco\">Calcular um preço com o aumento de 20%</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Valor (T$)</label><input type=\"number\" name=\"valor\" value=\"100\" min=\"0\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst v = Number(res.valor) || 0;\n\t\tconst estado = game.user.getFlag(\"world\", \"fdtMini1\");\n\t\tif (res.acao === \"vitoria\" || res.acao === \"derrota\") await game.user.setFlag(\"world\", \"fdtMini1\", res.acao);\n\t\tconst TXT = {\n\t\t\tvitoria: \"<p>Sem o construto burocrático, a Ploigoníada não tem como cobrar a \\\"dívida\\\": os heróis estão livres. Blixto fica muito grato e, mais importante, a Metais do Baixote está salva.</p><p><b>Efeitos de vitória:</b> a Metais passa a financiar as aventuras do grupo. <b>Todo tesouro, de qualquer fonte, aumenta 10%</b> até o fim do arco, cortesia do Baixote em pessoa.</p>\",\n\t\t\tderrota: \"<p>A Metais do Baixote é tomada pela Ploigoníada. Em questão de horas, todos os recursos do império comercial são vendidos e o dinheiro vai magicamente para os cofres da guilda do éter.</p><p><b>Efeitos de derrota:</b> com a falta de oferta, <b>todo item comprado em Valkaria custa 20% a mais</b> até o fim do arco. Serviços e alimentação não são afetados.</p>\",\n\t\t\ttesouro: `<p>Tesouro de T$ ${v} com o bônus da Metais: <b>T$ ${Math.round(v * 1.1)}</b>.${estado !== \"vitoria\" ? \" (O desfecho registrado não é vitória.)\" : \"\"}</p>`,\n\t\t\tpreco: `<p>Preço de T$ ${v} com o aumento: <b>T$ ${Math.round(v * 1.2)}</b>.${estado !== \"derrota\" ? \" (O desfecho registrado não é derrota.)\" : \"\"}</p>`\n\t\t};\n\t\tChatMessage.create({ content: `<h3>Ruas de Cobiça</h3>${TXT[res.acao]}<p style=\"font-size:0.85em\">Completar Ruas de Cobiça não rende nível nem pagamento.</p>` });\n\t})();",
+  "_id": "AHSj0t1evdAlYvk6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!AHSj0t1evdAlYvk6"
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Macarrão de Yuvalin",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/macarrao-de-mineiro.webp",
+  "folder": "iCDqx60IYdnmDhD0",
+  "sort": 400000,
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "comida-3"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Comida especial da Ploigoníada.</b> Consumir é uma <b>ação completa</b>. Desfaz-se 3 rodadas depois de cair.</p><hr><p>Originário de uma cidade mineradora na fronteira com as montanhas. Seus habitantes criaram este prato reforçado (macarrão, bacon e creme de leite!) para encarar suas árduas jornadas de trabalho nas minas. Delicioso, o prato se espalhou por outras cidades e reinos. Você recebe +5 PV temporários.</p>",
+      "unidentified": ""
+    },
+    "source": "Tormenta20 — Edição Jogo do Ano, p. 162",
+    "carregado": true,
+    "peso": 0.5,
+    "espacos": 0.5,
+    "qtd": 1,
+    "preco": 6,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "execucao": "full",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "range": {
+      "value": null,
+      "units": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null,
+      "mpMultiplier": false
+    },
+    "efeito": "",
+    "alcance": "none",
+    "alvo": "",
+    "area": "",
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "tipo": "food",
+    "chatFlavor": "",
+    "origin": "",
+    "tags": [],
+    "subtipo": "",
+    "chatGif": "",
+    "upgrades": {
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "material": [],
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "itemType": [],
+      "improvement": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "materialEspecial1": "",
+      "enableAutoUpgrades": true
+    },
+    "rolltags": [],
+    "automationtags": []
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_id": "UGmxJhEuucHhFB5H",
+  "effects": [
+    {
+      "origin": "Item.TUM3FVy5jefA7T9h",
+      "tint": "#ffffff",
+      "flags": {
+        "tormenta20": {}
+      },
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": "sceneEnd",
+        "expired": false
+      },
+      "disabled": false,
+      "_id": "Imygu998xev3Al9Z",
+      "transfer": false,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Macarrão de Mineiro",
+      "img": "systems/tormenta20/icons/itens/gerais/macarrao-de-mineiro.webp",
+      "type": "base",
+      "system": {
+        "changes": [],
+        "targets": [],
+        "status": null,
+        "onuse": false,
+        "abilityUse": {
+          "description": "",
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "names": [],
+          "types": []
+        },
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "identifier": "",
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "description": "",
+      "statuses": [],
+      "sort": 0,
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!UGmxJhEuucHhFB5H.Imygu998xev3Al9Z"
+    }
+  ],
+  "_key": "!items!UGmxJhEuucHhFB5H"
+}

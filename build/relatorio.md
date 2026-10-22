@@ -140,13 +140,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 92 documento(s), 8 pasta(s)
-- `ato2-itens`: 75 documento(s), 8 pasta(s)
-- `ato2-diarios`: 8 documento(s), 8 pasta(s)
-- `ato2-tabelas`: 16 documento(s), 8 pasta(s)
-- `ato2-macros`: 43 documento(s), 8 pasta(s)
+- `ato2-ameacas`: 99 documento(s), 9 pasta(s)
+- `ato2-itens`: 95 documento(s), 9 pasta(s)
+- `ato2-diarios`: 9 documento(s), 9 pasta(s)
+- `ato2-tabelas`: 19 documento(s), 9 pasta(s)
+- `ato2-macros`: 47 documento(s), 9 pasta(s)
 
-### Ligações com o sistema (145)
+### Ligações com o sistema (162)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -293,8 +293,25 @@
 | Ghorskander | Evasão | poder | ficha do livro + origem no sistema |
 | Torgo (Arco 2) | Pancada (×2) | arma | ficha do livro + origem no sistema |
 | Torgo (Arco 2) | Fúria | poder | ficha do livro + origem no sistema |
+| Guerreiro Capanga | Marreta | arma | ficha do livro + origem no sistema |
+| Clérigo Capanga | Martelo de Guerra | arma | ficha do livro + origem no sistema |
+| Clérigo Capanga | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Caçador Capanga | Arco Longo | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Espada Curta | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Adaga | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Ladino Capanga | Evasão | poder | ficha do livro + origem no sistema |
+| Mago Capanga | Raio Arcano | poder | ficha do livro + origem no sistema |
+| Cavaleiro Capanga | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Cavaleiro Capanga | Chifres | arma | ficha do livro + origem no sistema |
+| Cobrador da Ploigoníada | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Cobrador da Ploigoníada | Disfarce Ilusório | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Imobilizar | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Silêncio | magia | magia do sistema + ficha do NPC |
 | (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
 | (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
+| (item) | Gorad Quente | consumivel | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 

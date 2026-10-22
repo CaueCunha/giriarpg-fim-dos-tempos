@@ -1,0 +1,134 @@
+{
+  "name": "Coxa de Trobo Assada",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/carnes.webp",
+  "system": {
+    "description": {
+      "value": "<p>Uma coxa enorme, ainda quente. <b>Cura 1d6 PM e 1d6 PV.</b></p><p><b>Comida especial da Ploigoníada.</b> Consumir é uma <b>ação completa</b>. Desfaz-se 3 rodadas depois de cair.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "ativacao": {
+      "execucao": "full",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [
+      {
+        "name": "Cura",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "1d6",
+            "curapv",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Mana",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d6",
+            "curapm",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "folder": "iCDqx60IYdnmDhD0",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "comida-8"
+    }
+  },
+  "_id": "a7vwH1gc4AfZnxTs",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!a7vwH1gc4AfZnxTs"
+}

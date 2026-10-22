@@ -1,0 +1,250 @@
+{
+  "name": "Comidas Especiais",
+  "img": "systems/tormenta20/icons/itens/gerais/refeicao-comum.webp",
+  "folder": "szBcYbZlcylduX0a",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "comidas"
+    }
+  },
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Um capanga derrotado tem 20% de chance (1 ou 2 em 1d10) de deixar cair uma destas comidas. Consumir é uma ação completa; desfazem-se em 3 rodadas.",
+  "_id": "z7GxigBAlWiyFG7V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "document",
+      "documentUuid": "Item.qqy4RSkxgt1yFqca",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Batata Valkariana",
+      "img": "systems/tormenta20/icons/itens/gerais/batata-ambiciosa.webp",
+      "description": "",
+      "_id": "9oBM30VAil4f6mBM",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.9oBM30VAil4f6mBM"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.6D2OmJI2MFdZbqr1",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Gorad Quente",
+      "img": "systems/tormenta20/icons/itens/gerais/gorad-quente.webp",
+      "description": "",
+      "_id": "Xig0LQ1aujioaiDc",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.Xig0LQ1aujioaiDc"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.UGmxJhEuucHhFB5H",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Macarrão de Yuvalin",
+      "img": "systems/tormenta20/icons/itens/gerais/macarrao-de-mineiro.webp",
+      "description": "",
+      "_id": "sikgQp2DauKpQtbm",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.sikgQp2DauKpQtbm"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.QfkY7YKBBHLQKrrM",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Doppelganger",
+      "img": "systems/tormenta20/icons/itens/gerais/refeicao-comum.webp",
+      "description": "",
+      "_id": "wRnovXjPjf6OQkYg",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.wRnovXjPjf6OQkYg"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.AZ4nOLhF2GJGu9ox",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Batata do Castelo",
+      "img": "systems/tormenta20/icons/itens/gerais/batata-ambiciosa.webp",
+      "description": "",
+      "_id": "VCL7OIlXWFgDHujF",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.VCL7OIlXWFgDHujF"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.AZSlA6Bgh5oZPNix",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Cestinha Uivante",
+      "img": "systems/tormenta20/icons/itens/gerais/leite.webp",
+      "description": "",
+      "_id": "SgrIBeKTwmu8wJCe",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.SgrIBeKTwmu8wJCe"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.H3VIsCwfQOBY9WBV",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Alqui-Fruta",
+      "img": "systems/tormenta20/icons/itens/gerais/bebida-comum.webp",
+      "description": "",
+      "_id": "vNcElHslSWVMpXfV",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.vNcElHslSWVMpXfV"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.a7vwH1gc4AfZnxTs",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Coxa de Trobo Assada",
+      "img": "systems/tormenta20/icons/itens/gerais/carnes.webp",
+      "description": "",
+      "_id": "eOUYkcrQAD5LJyQd",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!z7GxigBAlWiyFG7V.eOUYkcrQAD5LJyQd"
+    }
+  ],
+  "_key": "!tables!z7GxigBAlWiyFG7V"
+}

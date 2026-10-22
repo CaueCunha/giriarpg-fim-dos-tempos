@@ -1,0 +1,219 @@
+{
+  "name": "Arco 2 · Mini-Aventura 1 · Ruas de Cobiça",
+  "folder": "xWfc5M6owHEXfUUp",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "_id": "tEFnJjkUwi90VpFu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<p><b>Gancho:</b> se os heróis completarem as Aventuras 1 e 5, conhecem a base dos planos de Ghorskander (controle mental dos valkarianos e o Mecano-Lagarto-Terror) e atraem a atenção da Ploigoníada. Assim que completarem as duas, conduza a cena em que recebem a mensagem: @UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting} foi raptado!</p>\n\t\t\t\t<p><b>Nível presumido:</b> 4 personagens de nível 9. <b>Recompensa:</b> não rende nível nem pagamento, mas talvez seja a missão mais lucrativa do arco.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Os Inimigos dos Inimigos:</b> a Ploigoníada e o Cobrador.</li><li><b>Fase 1 · Levado!:</b> o pergaminho de luz e o resgate impossível.</li><li><b>Fase 2 · Andar e Bater:</b> a rua coberta cheia de aventureiros-capangas.</li><li><b>Fase 3 · O Chefão Final:</b> o Cobrador no galpão.</li><li><b>Fase 4 · Desfecho:</b> efeitos de vitória ou de derrota.</li></ul>\n\t\t\t\t<h2>Criaturas</h2>\n\t\t\t\t<ul><li>@UUID[Actor.2pzeZIBYxlZ2FYXn]{Guerreiro Capanga} (ND 5)</li><li>@UUID[Actor.ZGMfWX8fC9hS1Y9z]{Clérigo Capanga} (ND 5)</li><li>@UUID[Actor.ywYmsZHsmJRGFPzf]{Caçador Capanga} (ND 5)</li><li>@UUID[Actor.8DbOLnCuku1sAwMx]{Ladino Capanga} (ND 5)</li><li>@UUID[Actor.meHNfCxbj5FlaonJ]{Mago Capanga} (ND 5)</li><li>@UUID[Actor.LuJ9AM4Zz5rSjmSN]{Cavaleiro Capanga} (ND 5)</li><li>@UUID[Actor.QPl8RGhdXHxC5daH]{Cobrador da Ploigoníada} (ND 9)</li></ul>\n\t\t\t\t<h2>Macros e tabelas</h2>\n\t\t\t\t<ul><li>@UUID[Macro.tyrfHsUgfLskikDu]{Mini 1 · Mensagem da Ploigoníada}: mostra o pergaminho, controla o prazo de 12 horas e os testes sobre o contrato.</li><li>@UUID[Macro.EiTl4mGiTzFjajqK]{Mini 1 · Andar e Bater}: monta os grupos (com itens especiais), rola as comidas dos derrotados e dá itens especiais a quem os apanha.</li><li>@UUID[Macro.DFuaTGhepCj5VSRE]{Mini 1 · Cobrador em Combate}: cura acelerada, Ler Seus Direitos, Negar Recurso, Imobilizar, Silêncio, Analisar Suspeito e falas.</li><li>@UUID[Macro.AHSj0t1evdAlYvk6]{Mini 1 · Desfecho}: registra vitória ou derrota e calcula os +10% de tesouro ou os +20% de preço.</li><li>@UUID[RollTable.XpScdqP1KDUxnZYt]{Aventureiros-Capangas}, @UUID[RollTable.B5xQVMhQgCx1haaQ]{Itens Especiais da Ploigoníada} e @UUID[RollTable.z7GxigBAlWiyFG7V]{Comidas Especiais}.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Nq0XQvy3kSasA2f7",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!tEFnJjkUwi90VpFu.Nq0XQvy3kSasA2f7"
+    },
+    {
+      "name": "Fases 0 e 1 · A Ploigoníada e o Resgate",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h2>Os inimigos dos inimigos</h2>\n\t\t\t\t<p>A tripulação da Roca trabalhava para a <b>Ploigoníada</b>, a gigantesca corporação mercante que domina parte do éter divino, antes de se rebelar. Para os mercadores do éter, são culpados do pior crime possível: privar a corporação de seus lucros. Os experimentos do Dr. Vesper e o assassinato da Capitã Ygda poderiam ser perdoados se o dinheiro continuasse fluindo. Foi uma fuga das naves da Ploigoníada que fez a Roca naufragar no Mundo de Aharadak.</p>\n\t\t\t\t<p>A guilda continuou contabilizando a dívida e localizou a Roca. Mas mandar tropas a Arton não é economicamente viável: a viagem etérea é caríssima, fere os gog'magogues, e soldados de outro mundo seriam vistos como invasão. Por sorte (ou azar dos heróis), todo contrato da Ploigoníada é selado por magia, e o da Roca tinha uma cláusula que invoca um guardião em caso de quebra: um <b>Cobrador</b>.</p>\n\t\t\t\t<p>O Cobrador surgiu em Valkaria. Não localizou Ghorskander (protegido por magia), então achou quem considera mais próximo do oficial médico: os personagens. Percebeu que eles não podem pagar e raptou quem talvez possa: Blixto, dono da Metais do Baixote. Tomou uma rua inteira do <b>Altar de Heróis</b>, reduto de aventureiros aposentados e fracassados, contratou vários deles como seguranças e ocupou um galpão, onde Blixto está amarrado e amordaçado.</p>\n\t\t\t\t<h2>Levado!</h2>\n\t\t\t\t<blockquote><p>Os últimos dias foram cheios de investigações, perseguições e batalhas. Vocês chegam em casa ansiosos por relaxar um pouco, colocar os pensamentos em ordem, tentar entender o que acontece em Valkaria. [...] Então um brilho surge no meio da sala.</p></blockquote>\n\t\t\t\t<p>Use @UUID[Macro.tyrfHsUgfLskikDu]{Mini 1 · Mensagem da Ploigoníada} para mostrar o pergaminho de luz: <b>T$ 50.000.000,00 em 12 horas</b>, ou Blixto morre e a Metais é confiscada. Qualquer teste de Misticismo, Religião, Nobreza ou similar revela o mesmo: o valor é exagerado de propósito, para \"forçar\" o confisco, de um jeito tecnicamente legal e \"ordeiro\". A Ploigoníada precisa cumprir a letra da lei para continuar invocando Cobradores (um construto divino da ordem nunca compactuaria com uma organização criminosa).</p>\n\t\t\t\t<h3>Planos criativos</h3>\n\t\t\t\t<p>Falsificar dinheiro, manipular o mercado de arte, trabalhar para a Ploigoníada ou se aliar a ela contra a Roca: você pode permitir, mas aí precisa planejar ou improvisar uma aventura nova. Esta mini-aventura considera que o prazo não basta para burlar um contrato da Ploigoníada. Resta ir ao endereço e lutar.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ydxWznI0mcfnTcFK",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!tEFnJjkUwi90VpFu.ydxWznI0mcfnTcFK"
+    },
+    {
+      "name": "Fase 2 · Andar e Bater",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Menos uma rua do que um beco: ladeada por prédios, uma linha reta que desemboca no galpão, coberta por um teto (era palco de uma feira). <b>Uma vez dentro, só dá para ir em frente.</b></p>\n\t\t\t\t<p>A rua está guarnecida pelos aventureiros-capangas. A menos que os heróis mostrem o dinheiro que teoricamente vieram trazer, são atacados.</p>\n\t\t\t\t<ul><li>Cada grupo tem <b>personagens + 2</b> capangas, em qualquer combinação de tipos.</li><li><b>4 grupos</b> se o nível médio for 9, mais 1 grupo por nível acima de 9.</li><li>Não enxameiam todos de uma vez: postam-se ao longo da rua para atrasar o grupo e forçá-lo a gastar recursos. Um capanga ataca quem chegar a <b>5 quadrados</b>; quem corre na frente \"chama\" os inimigos.</li><li>Passados todos os grupos, a porta do galpão abre sem teste.</li></ul>\n\t\t\t\t<p>Macro: @UUID[Macro.EiTl4mGiTzFjajqK]{Mini 1 · Andar e Bater}. Capangas: @UUID[Actor.2pzeZIBYxlZ2FYXn]{Guerreiro Capanga}, @UUID[Actor.ZGMfWX8fC9hS1Y9z]{Clérigo Capanga}, @UUID[Actor.ywYmsZHsmJRGFPzf]{Caçador Capanga}, @UUID[Actor.8DbOLnCuku1sAwMx]{Ladino Capanga}, @UUID[Actor.meHNfCxbj5FlaonJ]{Mago Capanga}, @UUID[Actor.LuJ9AM4Zz5rSjmSN]{Cavaleiro Capanga}.</p>\n\t\t\t\t<h2>Itens especiais</h2>\n\t\t\t\t<p>Poderosos mas efêmeros, trazidos pelo construto para este combate. Em média um a cada cinco capangas tem um (@UUID[RollTable.B5xQVMhQgCx1haaQ]{Itens Especiais da Ploigoníada}). <b>Cinco usos</b> cada (contando os dos capangas). Largado e não apanhado por 3 rodadas, ou sem ser empunhado por 3 rodadas, se desfaz; não pode ser guardado. <b>Um item por personagem</b> (medida de segurança da Ploigoníada contra mau uso do equipamento da empresa). Quem empunha usa as próprias estatísticas, modificadas pelo item.</p>\n\t\t\t\t<ul><li>@UUID[Item.F6CvR1N6C4xdFT32]{Espada Exagerada}</li><li>@UUID[Item.ZpL54EoitKbuAmpG]{Faca Veloz}</li><li>@UUID[Item.oWgczlGv7s9YUo4F]{Escudo Bloqueador}</li><li>@UUID[Item.HKQhlI52XFGb9rkr]{Tijolo}</li><li>@UUID[Item.kJdgf4eAdotzC19r]{Chicote da Rasteira}</li><li>@UUID[Item.rpCCad6yTgfh40PD]{Besta Maldosa}</li><li>@UUID[Item.ko65MWO162VdADqB]{Maça Exagerada}</li><li>@UUID[Item.FFhjw6RRlyOCdfY0]{Tomo Fumegante}</li><li>@UUID[Item.0tEOpWDqcbC82vnW]{Pergaminho Piedoso}</li><li>@UUID[Item.q3hGcIe45QMfGjEo]{Varinha Repetitiva}</li><li>@UUID[Item.2CurZxDiY13pEwo0]{Aspersório Cheiroso}</li><li>@UUID[Item.GziqG3fDMPSzAUrq]{Escudo Esbodegado}</li></ul>\n\t\t\t\t<h2>Comidas especiais</h2>\n\t\t\t\t<p>Parece estranho que capangas carreguem lanches, mas as regras de contratação terceirizada da Ploigoníada devem obrigar. Cada capanga derrotado tem <b>20%</b> (1 ou 2 em 1d10) de deixar cair uma comida (@UUID[RollTable.z7GxigBAlWiyFG7V]{Comidas Especiais}). Comer é uma <b>ação completa</b>; desfazem-se 3 rodadas depois de cair (provavelmente contenção de custos).</p>\n\t\t\t\t<ul><li>@UUID[Item.qqy4RSkxgt1yFqca]{Batata Valkariana}</li><li>@UUID[Item.6D2OmJI2MFdZbqr1]{Gorad Quente}</li><li>@UUID[Item.UGmxJhEuucHhFB5H]{Macarrão de Yuvalin}</li><li>@UUID[Item.QfkY7YKBBHLQKrrM]{Doppelganger}</li><li>@UUID[Item.AZ4nOLhF2GJGu9ox]{Batata do Castelo}</li><li>@UUID[Item.AZSlA6Bgh5oZPNix]{Cestinha Uivante}</li><li>@UUID[Item.H3VIsCwfQOBY9WBV]{Alqui-Fruta}</li><li>@UUID[Item.a7vwH1gc4AfZnxTs]{Coxa de Trobo Assada}</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "pumDEq1YmlCSqIsZ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!tEFnJjkUwi90VpFu.pumDEq1YmlCSqIsZ"
+    },
+    {
+      "name": "Fase 3 · O Chefão Final",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<blockquote><p>Vocês entram no galpão e veem Blixto amarrado e amordaçado num canto. De pé ao lado dele está uma criatura feita de metal polido, com a postura de um cavaleiro, usando espada e escudo. Contudo, quando palavras emergem da face metálica, não são juramentos de vingança ou exaltações à honra. O que o construto diz é:</p>\n\t\t\t\t<p>\"Vocês estão em dívida com a Ploigoníada. Para pagá-la, apresentem o valor previamente combinado. Para morrer, por favor continuem lutando.\"</p></blockquote>\n\t\t\t\t<p>@UUID[Actor.QPl8RGhdXHxC5daH]{Cobrador da Ploigoníada} (ND 9): um tipo específico de inevitável (Deuses de Arton, p. 278). Segue a letra da lei, não a justiça. 400 PV, cura acelerada 5, RD 5, imune a frio, resistência a magia +5, magias como clérigo de 9º nível (CD 28).</p>\n\t\t\t\t<ul><li><b>Ler Seus Direitos</b> (movimento, 3 PM): pasmo por 1 rodada, ou atordoado se for a criatura que deve caçar (Fort CD 28 evita).</li><li><b>Negar Recurso</b> (movimento, 3 PM): Vontade CD 28 ou não usa uma habilidade escolhida até o fim da cena.</li><li><b>Imobilizar</b> (7 PM): paralisado (Vontade muda para lento).</li><li><b>Silêncio</b>, <b>Dissipar Magia</b> e <b>Disfarce Ilusório</b>.</li><li><b>Analisar Suspeito</b>, <b>Encontrar o Culpado</b> e <b>Visão da Justiça</b> (Visão da Verdade permanente).</li></ul>\n\t\t\t\t<p>Macro: @UUID[Macro.DFuaTGhepCj5VSRE]{Mini 1 · Cobrador em Combate}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "BzOH7HtdrlIiy2DH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!tEFnJjkUwi90VpFu.BzOH7HtdrlIiy2DH"
+    },
+    {
+      "name": "Fase 4 · Desfecho",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Derrotado o construto planar burocrático, a Ploigoníada não tem como cobrar a \"dívida\": os heróis estão livres. @UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting} fica muito grato.</p>\n\t\t\t\t<h3>Efeitos de vitória</h3>\n\t\t\t\t<p>Os heróis salvaram Blixto e, mais importante, a Metais do Baixote. A partir de agora, a Metais financia as aventuras: <b>todo tesouro, de qualquer fonte, aumenta 10%</b>, cortesia do Baixote em pessoa.</p>\n\t\t\t\t<h3>Efeitos de derrota</h3>\n\t\t\t\t<p>Se a mini-aventura começar e os heróis não salvarem Blixto (demora, derrota, desistência ou qualquer outra razão), a Metais é tomada pela Ploigoníada. Em horas, os recursos são vendidos e o dinheiro vai para os cofres da guilda do éter. Pela falta de oferta, <b>todo item comprado em Valkaria fica 20% mais caro</b> até o fim do arco (serviços e alimentação não são afetados).</p>\n\t\t\t\t<p>Macro: @UUID[Macro.AHSj0t1evdAlYvk6]{Mini 1 · Desfecho}.</p>\n\t\t\t\t<h3>Para o futuro</h3>\n\t\t\t\t<p>Na Aventura 7, com contato pacífico via o Cobrador, a guilda pode trocar o paradeiro da Roca pelo perdão de parte da dívida.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "HX5Tm8y0eylemgWE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!tEFnJjkUwi90VpFu.HX5Tm8y0eylemgWE"
+    }
+  ],
+  "_key": "!journal!tEFnJjkUwi90VpFu"
+}

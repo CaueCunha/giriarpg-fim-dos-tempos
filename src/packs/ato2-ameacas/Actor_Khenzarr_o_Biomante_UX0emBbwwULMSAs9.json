@@ -2407,7 +2407,7 @@
       "img": "systems/tormenta20/icons/magias/dissipar-magia.webp",
       "effects": [
         {
-          "_id": "wymELJKjvDdKuH9L",
+          "_id": "HoUwEBstHckyCqAP",
           "flags": {
             "tormenta20": {}
           },
@@ -2470,7 +2470,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.LFP8W3EcZv0yQQRC.wymELJKjvDdKuH9L"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.LFP8W3EcZv0yQQRC.HoUwEBstHckyCqAP"
         }
       ],
       "flags": {
@@ -2869,7 +2869,7 @@
       "img": "systems/tormenta20/icons/magias/imobilizar.webp",
       "effects": [
         {
-          "_id": "yyTdR6IseQbjtUHs",
+          "_id": "rZoA3miELVeLmSpg",
           "flags": {
             "tormenta20": {}
           },
@@ -2932,10 +2932,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.yyTdR6IseQbjtUHs"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.rZoA3miELVeLmSpg"
         },
         {
-          "_id": "21bylqeW9K1AqHKa",
+          "_id": "K3AOiSq454iYSY3r",
           "flags": {
             "tormenta20": {}
           },
@@ -2990,10 +2990,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.21bylqeW9K1AqHKa"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.K3AOiSq454iYSY3r"
         },
         {
-          "_id": "1LS1dYGHzm57crXI",
+          "_id": "NVpEpDXkFujDkaTO",
           "flags": {
             "tormenta20": {}
           },
@@ -3056,7 +3056,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.1LS1dYGHzm57crXI"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.kgF53fcGE8vZnG58.NVpEpDXkFujDkaTO"
         },
         {
           "name": "Paralisado",
