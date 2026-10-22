@@ -1,7 +1,7 @@
 {
   "name": "Soldado de Lorelei",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/soldado-supremacista.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/soldado.webp",
   "folder": "QQ99QFt1qm9NREnR",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/soldado-supremacista.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/soldado-token.webp"
     },
     "sight": {
       "enabled": true

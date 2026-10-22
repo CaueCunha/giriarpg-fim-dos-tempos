@@ -4,7 +4,7 @@ Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do F
 
 | Compêndios | Ameaças e NPCs | Itens | Diários | Tabelas | Macros |
 |---|---:|---:|---:|---:|---:|
-| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 103 | 87 | 8 | 13 | 44 |
+| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 123 | 87 | 8 | 13 | 44 |
 | **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora, Av3 Fuga da Rocha Cinzenta) | 38 | 30 | 4 | 6 | 18 |
 | **Campanha** (regras de grupo, Poderes de Grupo, utilidades) | | 23 | 1 | | 7 |
 
@@ -63,7 +63,7 @@ Os guias de cada aventura estão em [`docs/geradores/`](docs/geradores).
 
 ### Artes
 
-Retratos e tokens feitos para a campanha ficam em [`assets/`](assets), separados por aventura. Os geradores apontam para eles (`modules/giriarpg-fim-dos-tempos/assets/...`), e as artes de NPCs sem ficha viram páginas de imagem no diário da aventura, prontas para **Mostrar aos Jogadores**.
+Retratos e tokens feitos para a campanha ficam em [`assets/`](assets), separados por aventura (por enquanto: Lefou Adolescente, Cultistas Puristas Devem Morrer e O Terror que Veio do Céu). Os geradores apontam para eles (`modules/giriarpg-fim-dos-tempos/assets/...`), e os NPCs sem ficha no livro ganham um ator de apoio só com a arte (ou uma página de imagem no diário), prontas para **Mostrar aos Jogadores**.
 
 ## Testes
 
