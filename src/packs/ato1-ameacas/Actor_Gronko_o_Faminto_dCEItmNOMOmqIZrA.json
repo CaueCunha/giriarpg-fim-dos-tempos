@@ -1,7 +1,7 @@
 {
   "name": "Gronko, o Faminto",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/ogro.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gronko.webp",
   "folder": "F1d9oiyyz2YCEFHy",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/ogro.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gronko-token.webp"
     },
     "sight": {
       "enabled": true

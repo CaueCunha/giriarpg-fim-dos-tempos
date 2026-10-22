@@ -1,0 +1,276 @@
+{
+  "name": "Eventos da Perseguição a Pé (Vectora)",
+  "img": "icons/svg/target.svg",
+  "folder": "owSfqsuq1Jud9ryL",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Uma vez por rodada. Obstáculo: quem falha avança metade. Atalho: quem tenta e passa avança o dobro. A macro Perseguição em Vectora já rola isto.",
+  "_id": "LVvx8IFSn3Y2pE7C",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        4
+      ],
+      "weight": 4,
+      "name": "Nenhum",
+      "description": "—",
+      "_id": "dzb3oMT7n97qjhvf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.dzb3oMT7n97qjhvf"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        6
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Constituição CD 15",
+      "description": "Carroça de esterco de otyugh empesteia o ambiente.",
+      "_id": "yXUSHFZPdmR9K52g",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.yXUSHFZPdmR9K52g"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        8
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Acrobacia CD 25 ou Misticismo CD 25",
+      "description": "Um portal se abre na rua e despeja viajantes recém-chegados.",
+      "_id": "EgDgtnbuEbFF7Gri",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.EgDgtnbuEbFF7Gri"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Percepção CD 25",
+      "description": "Os elfos se misturam à multidão de uma rua movimentada.",
+      "_id": "UMKitxC9qcmVdCA1",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.UMKitxC9qcmVdCA1"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        12
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Reflexos CD 25",
+      "description": "Discussão entre dois alquimistas vira duelo de poções. Quem falha também sofre 6d4 de ácido.",
+      "_id": "HYSTGnGCjT85VUaR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.HYSTGnGCjT85VUaR"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        14
+      ],
+      "weight": 2,
+      "name": "Atalho: Inteligência CD 15",
+      "description": "A perseguição passa por uma rua famosa; reconhecer o lugar lembra um atalho.",
+      "_id": "3wTtRTzLyHiAXMis",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.3wTtRTzLyHiAXMis"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        16
+      ],
+      "weight": 2,
+      "name": "Atalho: Acrobacia CD 25",
+      "description": "Saltar um muro alto corta caminho.",
+      "_id": "4eftuaU7qhDEjLky",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.4eftuaU7qhDEjLky"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        18
+      ],
+      "weight": 2,
+      "name": "Atalho: Adestramento CD 25 ou Sobrevivência CD 25",
+      "description": "Baleotes voam baixo o bastante para uma carona rápida.",
+      "_id": "hIPMjMDLXpmgE4sX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.hIPMjMDLXpmgE4sX"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        20
+      ],
+      "weight": 2,
+      "name": "Atalho: Diplomacia CD 25",
+      "description": "Transeuntes prestativos tentam bloquear os elfos. Se ao menos um passar, todos os perseguidores recebem +2 no Atletismo desta rodada.",
+      "_id": "QtGl2B51UBAKz8dL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!LVvx8IFSn3Y2pE7C.QtGl2B51UBAKz8dL"
+    }
+  ],
+  "_key": "!tables!LVvx8IFSn3Y2pE7C"
+}

@@ -1,0 +1,142 @@
+{
+  "name": "Asas do Devorador (pterodraco)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/materia-vermelha.webp",
+  "system": {
+    "description": {
+      "value": "<p>Simbionte da Tormenta que se instala nas costas do hospedeiro: as patas se cravam até a coluna e se prendem para sempre. Quando a simbiose dá certo, cresce um par de grandes asas membranosas.</p><p><b>Ativar:</b> gaste <b>2 PM</b> para ganhar deslocamento de voo igual ao seu deslocamento em terra, com duração sustentada. Ligue o efeito e ajuste o valor (está em 9m).</p><p>Regras de simbiose (aquisição, perda de Carisma, impossibilidade de remover) em <i>Ameaças de Arton</i>, pp. 60–61. Preço: T$ 27.000.</p><p><b>Nesta aventura:</b> só se obtém \"legalmente\" impedindo que sir Androwe se ligue a ele depois de o baú estar aberto. Andrus pode entregá-lo ao grupo na fase 6. Ficar com ele corta o pagamento da SPIMA pela metade.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "tormenta",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "self",
+    "duracao": {
+      "value": 0,
+      "units": "sust",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "area": "",
+    "efeito": ""
+  },
+  "folder": "pj3iiwwzwmmiynrK",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "_id": "n8csYRDIW5nzWdvv",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Asas do Devorador (voo sustentado)",
+      "img": "systems/tormenta20/icons/magias/voo.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Ligue ao ativar (2 PM, sustentado). Ajuste o valor para o deslocamento em terra do hospedeiro.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av2"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.movement.fly.base",
+            "value": "9",
+            "type": "upgrade",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "asDFcURd2SWTrE7u",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!n8csYRDIW5nzWdvv.asDFcURd2SWTrE7u"
+    }
+  ],
+  "_key": "!items!n8csYRDIW5nzWdvv"
+}

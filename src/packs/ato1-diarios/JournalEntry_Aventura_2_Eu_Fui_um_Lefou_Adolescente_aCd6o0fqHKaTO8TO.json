@@ -29,7 +29,7 @@
       "type": "text",
       "sort": 100,
       "text": {
-        "content": "<h2>Ordem do espetáculo</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>@UUID[Actor.lgXIDQ16WdUVnJ5L]{Chupacabra da Tormenta} com Tylora (pule se o chupacabra já morreu na busca pelo circo)</li>\n\t\t\t\t\t<li>@UUID[Actor.FzbMuaX9YcrTF8pH]{X'illirienn, a Engolidora de Fogo}</li>\n\t\t\t\t\t<li>@UUID[Actor.LWsotBj7MX6GIsy2]{Bhuluk, o Anão com Barba de Insetos} (e o @UUID[Actor.42LRUcSnSMzRSqmq]{Enxame de Insetos Corrompidos})</li>\n\t\t\t\t\t<li>@UUID[Actor.dCEItmNOMOmqIZrA]{Gronko, o Faminto}</li>\n\t\t\t\t\t<li>@UUID[Actor.AgLCSloLrILvQiv7]{Gaspar, o Homem Mais Forte do Mundo}; duas rodadas depois, @UUID[Actor.i5Bus3GvmGWxhwXp]{Zardu, o Mestre do Picadeiro} (e a @UUID[Actor.YLlQSCByOk690gtD]{Cópia Ilusória de Zardu})</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>Efeitos de palco, tendas e guloseimas: @UUID[Actor.0ZwzPfYs139yLCkz]{Espetáculo de Prodígios e Horrores (palco e tendas)}.</p>\n\t\t\t\t<h2>Antes de cada atração</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Zardu apresenta a atração e o palco muda (uma rodada livre para os heróis se prepararem).</li>\n\t\t\t\t\t<li>Rode @UUID[Macro.yelu2LGf8mzhl15r]{Av2 · Um de Nós!}. Se a plateia estiver entretida e o grupo escolheu anular, pule.</li>\n\t\t\t\t\t<li>Ilusão ou Realidade: cada jogador declara o que acha do efeito do palco. Use @UUID[Macro.VR6SJ5lGgxvRoZuD]{Av2 · Teste do Circo} com +5 ou –5.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Automação</h2>\n\t\t\t\t<p>Ligue @UUID[Macro.8BegmrzAj4p6TRpe]{Av2 · Automação (liga/desliga)} no começo da sessão (vale só até recarregar a página, só no computador do Mestre). Ela cuida de:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Bhuluk: metade do dano e –2 no bônus de insetos a cada dano.</li>\n\t\t\t\t\t<li>Chupacabra: 1d6 de Tylora a cada dano; Tylora ferida/caída; Fúria (+2) quando ela cai.</li>\n\t\t\t\t\t<li>Início do turno do chupacabra: Drenar Sangue em quem estiver <i>agarrado</i> e o chicote de Tylora no alvo que você estiver mirando.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Outras macros: @UUID[Macro.Byzn9XPAVfF1Lev3]{Av2 · Enxames de Bhuluk}, @UUID[Macro.jksxIkBm4zEKDEqX]{Av2 · Mil Faces (Zardu)}, @UUID[Macro.u6P254BAtku01w0D]{Av2 · Convencer Gaspar}, @UUID[Macro.GiB4ya3qZwdE3i10]{Av2 · Redefinição de Caminhos} (tabela @UUID[RollTable.5IG6N20aj3oBV2u1]{Redefinição de Caminhos}).</p>\n\t\t\t\t<h2>Quem cai</h2>\n\t\t\t\t<p>Um turno para ser reanimado; depois, correntes rubras o levam para a plateia. Ninguém morre assim. Se for libertado, volta a sangrar.</p>",
+        "content": "<h2>Ordem do espetáculo</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>@UUID[Actor.lgXIDQ16WdUVnJ5L]{Chupacabra da Tormenta} com @UUID[Actor.Ws4TkqIlj7KImbjw]{Tylora, a Criança Domadora} (pule se o chupacabra já morreu na busca pelo circo)</li>\n\t\t\t\t\t<li>@UUID[Actor.FzbMuaX9YcrTF8pH]{X'illirienn, a Engolidora de Fogo}</li>\n\t\t\t\t\t<li>@UUID[Actor.LWsotBj7MX6GIsy2]{Bhuluk, o Anão com Barba de Insetos} (e o @UUID[Actor.42LRUcSnSMzRSqmq]{Enxame de Insetos Corrompidos})</li>\n\t\t\t\t\t<li>@UUID[Actor.dCEItmNOMOmqIZrA]{Gronko, o Faminto}</li>\n\t\t\t\t\t<li>@UUID[Actor.AgLCSloLrILvQiv7]{Gaspar, o Homem Mais Forte do Mundo}; duas rodadas depois, @UUID[Actor.i5Bus3GvmGWxhwXp]{Zardu, o Mestre do Picadeiro} (e a @UUID[Actor.YLlQSCByOk690gtD]{Cópia Ilusória de Zardu})</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>Efeitos de palco, tendas e guloseimas: @UUID[Actor.0ZwzPfYs139yLCkz]{Espetáculo de Prodígios e Horrores (palco e tendas)}.</p>\n\t\t\t\t<h2>Antes de cada atração</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Zardu apresenta a atração e o palco muda (uma rodada livre para os heróis se prepararem).</li>\n\t\t\t\t\t<li>Rode @UUID[Macro.yelu2LGf8mzhl15r]{Av2 · Um de Nós!}. Se a plateia estiver entretida e o grupo escolheu anular, pule.</li>\n\t\t\t\t\t<li>Ilusão ou Realidade: cada jogador declara o que acha do efeito do palco. Use @UUID[Macro.VR6SJ5lGgxvRoZuD]{Av2 · Teste do Circo} com +5 ou –5.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Automação</h2>\n\t\t\t\t<p>Ligue @UUID[Macro.8BegmrzAj4p6TRpe]{Av2 · Automação (liga/desliga)} no começo da sessão (vale só até recarregar a página, só no computador do Mestre). Ela cuida de:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Bhuluk: metade do dano e –2 no bônus de insetos a cada dano.</li>\n\t\t\t\t\t<li>Chupacabra: 1d6 de Tylora a cada dano; Tylora ferida/caída; Fúria (+2) quando ela cai.</li>\n\t\t\t\t\t<li>Início do turno do chupacabra: Drenar Sangue em quem estiver <i>agarrado</i> e o chicote de Tylora no alvo que você estiver mirando.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Outras macros: @UUID[Macro.Byzn9XPAVfF1Lev3]{Av2 · Enxames de Bhuluk}, @UUID[Macro.jksxIkBm4zEKDEqX]{Av2 · Mil Faces (Zardu)}, @UUID[Macro.u6P254BAtku01w0D]{Av2 · Convencer Gaspar}, @UUID[Macro.GiB4ya3qZwdE3i10]{Av2 · Redefinição de Caminhos} (tabela @UUID[RollTable.5IG6N20aj3oBV2u1]{Redefinição de Caminhos}).</p>\n\t\t\t\t<h2>Quem cai</h2>\n\t\t\t\t<p>Um turno para ser reanimado; depois, correntes rubras o levam para a plateia. Ninguém morre assim. Se for libertado, volta a sangrar.</p>",
         "format": 1,
         "markdown": ""
       },
@@ -251,6 +251,424 @@
         "exportSource": null
       },
       "_key": "!journal.pages!aCd6o0fqHKaTO8TO.ytYruKb2M1hCxNqV"
+    },
+    {
+      "name": "Arte · Tylora e o Chupacabra",
+      "type": "image",
+      "sort": 700,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/tylora.webp",
+      "image": {
+        "caption": "Tylora, a Criança Domadora, e o Chupacabra da Tormenta."
+      },
+      "_id": "c9ktAg4Mlu5V7Efx",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.c9ktAg4Mlu5V7Efx"
+    },
+    {
+      "name": "Arte · X'illirienn",
+      "type": "image",
+      "sort": 710,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/xillirienn.webp",
+      "image": {
+        "caption": "X'illirienn, a Engolidora de Fogo."
+      },
+      "_id": "KnN0h7RauAjtSHH6",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.KnN0h7RauAjtSHH6"
+    },
+    {
+      "name": "Arte · Bhuluk",
+      "type": "image",
+      "sort": 720,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/bhuluk.webp",
+      "image": {
+        "caption": "Bhuluk, o Anão com Barba de Insetos."
+      },
+      "_id": "frCsLqwwDm7KJWGF",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.frCsLqwwDm7KJWGF"
+    },
+    {
+      "name": "Arte · Gronko",
+      "type": "image",
+      "sort": 730,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gronko.webp",
+      "image": {
+        "caption": "Gronko, o Faminto."
+      },
+      "_id": "emehzOBd2X1TgKmJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.emehzOBd2X1TgKmJ"
+    },
+    {
+      "name": "Arte · Zardu",
+      "type": "image",
+      "sort": 740,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/zardu.webp",
+      "image": {
+        "caption": "Zardu, o Mestre do Picadeiro."
+      },
+      "_id": "8EJi96vt0AH9KtAD",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.8EJi96vt0AH9KtAD"
+    },
+    {
+      "name": "Arte · Tenda 1 · Vyrda",
+      "type": "image",
+      "sort": 750,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/vyrda.webp",
+      "image": {
+        "caption": "Vyrda, a Mulher Monstruosa."
+      },
+      "_id": "Hgy5IHOks6j3Uixb",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.Hgy5IHOks6j3Uixb"
+    },
+    {
+      "name": "Arte · Tenda 2 · Os Híbridos Profanos",
+      "type": "image",
+      "sort": 760,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/hibridos.webp",
+      "image": {
+        "caption": "Os Híbridos Profanos."
+      },
+      "_id": "9cN4MMm3zM4bqlhJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.9cN4MMm3zM4bqlhJ"
+    },
+    {
+      "name": "Arte · Tenda 3 · Os Erros dos Deuses",
+      "type": "image",
+      "sort": 770,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/erros-dos-deuses.webp",
+      "image": {
+        "caption": "Os Erros dos Deuses."
+      },
+      "_id": "XHhq7HlPRMEoWH57",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.XHhq7HlPRMEoWH57"
+    },
+    {
+      "name": "Arte · Tenda 4 · Korek e Kerok",
+      "type": "image",
+      "sort": 780,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/korek-e-kerok.webp",
+      "image": {
+        "caption": "Korek e Kerok."
+      },
+      "_id": "g7b16ttZDFo0MrjW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.g7b16ttZDFo0MrjW"
+    },
+    {
+      "name": "Arte · Tenda 5 · Noirax",
+      "type": "image",
+      "sort": 790,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/noirax.webp",
+      "image": {
+        "caption": "Noirax, a Lady Tatuada."
+      },
+      "_id": "6WZdzRTrFM8ikHEl",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.6WZdzRTrFM8ikHEl"
+    },
+    {
+      "name": "Arte · Ralphus",
+      "type": "image",
+      "sort": 800,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/ralphus.webp",
+      "image": {
+        "caption": "Ralphus, o assistente de palco."
+      },
+      "_id": "ZBzGxe6zqtbHtGWW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.ZBzGxe6zqtbHtGWW"
     }
   ],
   "_key": "!journal!aCd6o0fqHKaTO8TO"

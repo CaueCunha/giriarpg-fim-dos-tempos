@@ -1,0 +1,333 @@
+{
+  "name": "Arco 2 · Aventura 2 · Conexão Vectora",
+  "folder": "VM4laWZffAAm62YE",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "_id": "VgvF4m4NB4G809XP",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Nível 7. A <b>SPIMA</b> avisa a Guarda: uma quadrilha de elfos vai descer de Vectora com um artefato da Tormenta para vendê-lo em Valkaria. Quatro facções querem o baú (um simbionte <i>Asas do Devorador</i>) e Andrus, o Aranha, paira sobre tudo. Clima de filme de assalto dos anos 90 e de superladrão dos anos 70: tempo correndo, reviravoltas, todo mundo traindo todo mundo.</p>\n\t\t\t\t<p><b>Disponibilidade:</b> só acontece com Vectora atracada. Ao fim de cada aventura, @UUID[Macro.Y9GFfq64mG3d5Q54]{Av2 · Vectora Atracou?} rola 1d6 (6 na primeira, 5+ na segunda...). Se Lei &amp; Ordem chegar a 0 antes, o arco acaba sem Vectora, a menos que você escolha o momento.</p>\n\t\t\t\t<h2>Cenas, não relógio</h2>\n\t\t\t\t<p>Esta aventura é uma \"história\" com sequência definida. As cenas acontecem quando o grupo chega, no momento em que precisam. O mestre tem <b>créditos</b> (ganhos quando o grupo demora a achar os elfos) para gastar em truques que mantêm o baú longe; quanto mais truques sem crédito, maior a vantagem do grupo no final. <b>Não altere rolagens.</b> Se o grupo frustrar tudo, ria, dê os parabéns e conte como deveria ter sido.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Fase 0 · Normalidade:</b> esperar Vectora; boa hora para Felicia procurar o grupo.</li>\n\t\t\t\t\t<li><b>Fase 1 · Este Mundo Está Perdido:</b> a SPIMA na Rua dos Facóceros (role um encontro no caminho).</li>\n\t\t\t\t\t<li><b>Fase 2 · Duas Cidades:</b> Vectora atraca; achar os elfos (@UUID[Macro.JLvekTflFfJqHIDw]{Av2 · Achar os Elfos}), perseguir (@UUID[Macro.3B1xFkEWNaLYm9qE]{Av2 · Perseguição em Vectora}), primeiro confronto.</li>\n\t\t\t\t\t<li><b>Fase 3 · Ponto de Encontro:</b> o Campo de Keenn e a batalha das quatro facções (@UUID[Macro.oBAkQFgnonfviBdr]{Av2 · Batalha no Campo de Keenn}).</li>\n\t\t\t\t\t<li><b>Fase 4 · Explicações:</b> Janara sem medalhão, Elyrionn negociando, os anões apavorados; rastrear os cavaleiros.</li>\n\t\t\t\t\t<li><b>Fase 5 · Fuga para Vectora:</b> perseguição aérea e combate contra os cavaleiros em grifos (@UUID[Macro.zO9hrqx3IZUVDWDY]{Av2 · Transportes para Vectora}).</li>\n\t\t\t\t\t<li><b>Fase 6 · Desfecho:</b> Andrus devolve tudo; provas e pagamento.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.Y9GFfq64mG3d5Q54]{Av2 · Vectora Atracou?}: a rolagem depois de cada aventura (a contagem fica guardada com você).</li><li>@UUID[Macro.JLvekTflFfJqHIDw]{Av2 · Achar os Elfos}: o teste estendido especial (CD 25, dado que encolhe, créditos).</li><li>@UUID[Macro.IfpttY00q2GRuM5K]{Av2 · Créditos do Mestre}: gasta créditos nos truques e aplica o bônus quando não há crédito.</li><li>@UUID[Macro.3B1xFkEWNaLYm9qE]{Av2 · Perseguição em Vectora}: perseguição aérea ou a pé com as tabelas desta aventura (selecione os perseguidores e marque os fugitivos como alvo).</li><li>@UUID[Macro.oBAkQFgnonfviBdr]{Av2 · Batalha no Campo de Keenn}: roteiro das 5 rodadas e a regra de luta entre NPCs.</li><li>@UUID[Macro.ZxDhvZJVCj880OEM]{Av2 · Andrus Ataca}: as três aparições do Aranha e a devolução da fase 6.</li><li>@UUID[Macro.zO9hrqx3IZUVDWDY]{Av2 · Transportes para Vectora}: três transportes sorteados para a fase 5.</li></ul>\n\t\t\t\t<p>Lei &amp; Ordem: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}. As provas vão na opção \"Provas entregues\" da macro de Lei &amp; Ordem.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "8lBUlmfkcvT2EiWE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.8lBUlmfkcvT2EiWE"
+    },
+    {
+      "name": "As Facções",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Não se preocupe com cada indivíduo: basta o estilo do grupo, o líder e o objetivo.</p>\n\t\t\t\t<h3>Os elfos · @UUID[Actor.xnUsjd7nL8xHKPEL]{Elyrionn} e @UUID[Actor.yx00W8tAfMwbPoqB]{Elfo Fora da Lei} ×7</h3>\n\t\t\t\t<p>Oito elfos do Império de Tauron, embrutecidos, com o simbionte. Elyrionn: alto, cabelo rente, cicatriz em X. Frio, implacável, ama o ouro. Vão encontrar os compradores num balão saindo de Vectora.</p>\n\t\t\t\t<h3>Os humanos · @UUID[Actor.yUM4EDhnOfoYf28a]{Janara} e @UUID[Actor.KKuzFJbKzRmwqs1q]{Humano Agente do Reinado} ×5</h3>\n\t\t\t\t<p>Os compradores parecem cultistas, mas são agentes da Coroa. Janara, ex-Protetorado, quer o item fora de circulação sem violência e despreza \"heróis\" interferindo.</p>\n\t\t\t\t<h3>Os anões · @UUID[Actor.VtlPDvjYSNuazYNu]{Rolthurr} e @UUID[Actor.vd2OpQ8AofkhqrXE]{Mazynne}</h3>\n\t\t\t\t<p>Amadores endividados com a Tropa da Floresta e das Montanhas. \"Meu Pedregulho\" e \"Trobinha\". Apavorados.</p>\n\t\t\t\t<h3>Os cavaleiros · @UUID[Actor.1NFtSF6BgAvOcutZ]{Sir Androwe Heribran} e @UUID[Actor.xNgXPXJCxt0YqrS8]{Cavaleiro Corrompido} ×4</h3>\n\t\t\t\t<p>Cavaleiros da Luz corrompidos pela Tormenta em Norm. Androwe é sádico; os outros, fanáticos. Táticas brutais e nada sutis.</p>\n\t\t\t\t<h3>O ladrão · @UUID[Actor.qMVx2nkK8wItTGi6]{Andrus, o Aranha}</h3>\n\t\t\t\t<p>O maior ladrão de Arton. Não é o maior antagonista, mas é a maior incógnita: dá para combater qualquer facção, exceto Andrus. Uma vez que ele tenha sucesso, o grupo depende da benevolência dele.</p>\n\t\t\t\t<h3>Extras</h3>\n\t\t\t\t<ul><li>@UUID[Actor.tTRNKjPAHFnQpQfn]{Bandido da Floresta e das Montanhas} ×4: só se os anões fugirem com o baú.</li><li>@UUID[Actor.0QylhYWMUHXfi5sb]{Grifo dos Cavaleiros}: montarias dos cavaleiros na fase 5.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "jMEuYwuq8xf7dSMJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.jMEuYwuq8xf7dSMJ"
+    },
+    {
+      "name": "Fase 1 · A SPIMA",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>A Rua dos Facóceros, na Vila Élfica, destoa do bairro: estreita, serpenteante, pacata, de pais e mães de família. Poucos elfos. A <b>casa verde</b> fica entre um prédio de três ou quatro famílias e um fabricante de rodas. No térreo, \"Willet e Filhos, Confecção e Conserto de Calçados em Geral\"; uma placa menor: \"Sociedade Pontifícia de Intercessão Moral Artoniana, sede principal: segundo andar\". Passa-se pelo balcão do sapateiro e sobe-se uma escada apertada.</p>\n\t\t\t\t<p>Sala atopetada de pergaminhos e símbolos sagrados, cinco pessoas, um cartaz da deusa Valkaria chorando: \"Seus filhos podem ser cultistas da Tormenta! A negligência paterna faz Valkaria chorar\". <b>Crisântemo Horizonte</b> (humano idoso, ex-clérigo de Glórienn, fazendo um colar de miçangas): <i>\"Rostos jovens! Sejam bem-vindos, vocês estão no lugar certo se querem evitar a corrupção e a loucura que dominam o Reinado!\"</i></p>\n\t\t\t\t<ul><li>Pensam que os heróis vieram \"ouvir a verdade\". Falatório sobre a Tormenta em toda parte e os \"velhos e bons tempos\"; boa hora para uma lenda urbana. Tudo para quando os heróis dizem que são da Guarda.</li><li>Um <b>lefou</b> no grupo apavora os ex-clérigos (\"eles\" vieram levá-los). Se ele for amigável, podem acolhê-lo e oferecer \"redenção\".</li><li>Tudo para eles é corrupção, modernidade e ausência dos deuses antigos: isso deve fazer o grupo desconfiar. Mas a informação é legítima.</li></ul>\n\t\t\t\t<h3>A dica</h3>\n\t\t\t\t<p>Uma quadrilha de elfos usa Vectora para se mover pelo Reinado com um item valioso, que vão vender. Saem do Mercado nas Nuvens num balão, na cobertura da multidão. A SPIMA não sabe quem compra nem onde. A informação chegou por acaso, pela rede de boatos de gente que vê Tormenta em tudo; Crisântemo só soube por ter sido clérigo de Glórienn. Ressalte que não é mistério: uma venda dessas sempre vaza (e a Coroa também soube).</p>\n\t\t\t\t<p><b>Brunhilda</b> (anã de Valkaria, preguiçosa) toma a frente, com medo genuíno: <i>\"Está correndo o boato de que o maior ladrão de Arton está interessado no artefato. (...) Qualquer lugar pode ser corrompido, qualquer pessoa pode enlouquecer se um objeto da Tormenta cair nas mãos de Andrus, o Aranha.\"</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "P37JGAPZYOTTGm4E",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.P37JGAPZYOTTGm4E"
+    },
+    {
+      "name": "Fase 2 · Duas Cidades",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Role um encontro no caminho se o grupo partir com folga; ignore se houver pressa.</p>\n\t\t\t\t<p>Vectora singra os céus sobre o cume invertido de uma montanha, com ilhas flutuantes em volta e as rachaduras da batalha contra o Dragão da Tormenta preenchidas com ouro. Centenas de pessoas no atracadouro (uma torre de metal); goblins anunciando transporte aos gritos e brigando (baloeiro contra ornitóptero, catapulta contra fogos de artifício); magos com serviços caros e seguros; cavaleiros de grifos com jaulas; valkarianos com escadas de mão enormes. Correntes saltam da cidade e se prendem à torre: <b>Vectora atracou.</b> Logo o ar vira um emaranhado de balões, grifos, alados e engenhos voadores.</p>\n\t\t\t\t<h3>Achar os elfos</h3>\n\t\t\t\t<p>Descrição: elfos fortes e embrutecidos, liderado por um homem com cicatriz em X, com um grande baú (talvez num veículo; talvez não seja um balão). Vários grupos se encaixam. Use @UUID[Macro.JLvekTflFfJqHIDw]{Av2 · Achar os Elfos}:</p>\n\t\t\t\t<ul><li>Teste estendido de Investigação ou Percepção, <b>CD 25</b>, que não fica mais difícil e não tem número de sucessos.</li><li>Cada sucesso rola um dado: 1 sucesso 1d20, 2 → 1d12, 3 → 1d10, 4 → 1d8, 5 → 1d6, 6 → 1d4, 7+ → 1d3. <b>Com 1, é o grupo certo.</b></li><li>Cada falha e cada dado que não der 1 dá um <b>crédito</b> ao Mestre. Explique isso aos jogadores.</li><li>Achados em até 5 rolagens: ainda descendo (perseguição <b>aérea</b>). Em 6 a 8: a caminho do Campo de Keenn (perseguição <b>a pé</b>). Mais de 8: perdidos, fase 3.</li><li>Voar, luneta ou magia não dão bônus: são o que permite testar. Aceite perícias criativas (Guerra para uma formação de escolta, Misticismo para sentir a Tormenta).</li><li>Um personagem que se desgarra pode testar sozinho, mas os sucessos dele não somam aos do grupo.</li></ul>\n\t\t\t\t<h3>Perseguindo os elfos</h3>\n\t\t\t\t<p>Regras de perseguição do Tormenta20 (p. 274) com as tabelas @UUID[RollTable.q2DtLCXDNTeC9D9V]{Eventos da Perseguição Aérea (Vectora)} e @UUID[RollTable.LVvx8IFSn3Y2pE7C]{Eventos da Perseguição a Pé (Vectora)}, que @UUID[Macro.3B1xFkEWNaLYm9qE]{Av2 · Perseguição em Vectora} já aplica. Sem voo próprio: <b>baloeiro goblin</b>, 1d3 rodadas e T$ 20 por passageiro, até 8 criaturas Médias, voo 12m; o piloto testa por todos com Pilotagem +10.</p>\n\t\t\t\t<h3>Primeiro confronto</h3>\n\t\t\t\t<p>Encontro: @UUID[Actor.xnUsjd7nL8xHKPEL]{Elyrionn} e @UUID[Actor.yx00W8tAfMwbPoqB]{Elfo Fora da Lei} ×7. Lutam até a morte, mas salvam o baú acima de tudo: o ideal é o grupo vencer e alguns elfos fugirem com ele enquanto os outros se sacrificam. Dois elfos carregam o baú; escapam se passarem 2 rodadas seguidas segurando (desarmar o baú ou derrubar um deles reinicia a contagem) e um vencer Furtividade contra a Percepção do grupo. Se vencerem, não matam ninguém.</p>\n\t\t\t\t<p><b>Andrus:</b> em algum ponto, @UUID[Macro.ZxDhvZJVCj880OEM]{Av2 · Andrus Ataca} (1d4; com 4, rouba o item mais valioso de um personagem sorteado, Percepção contra Ladinagem +35). Não pegue armadura vestida nem espada na bainha: uma gema, um colar, um item alquímico.</p>\n\t\t\t\t<h3>Sumiço do Baú</h3>\n\t\t\t\t<p>Se o grupo tomar o baú e os elfos não tiverem saída dentro das regras (nem a morte impede): um elfo se joga sobre o baú, um brilho verde cega todos e ele explode. O baú foi teleportado pelo @UUID[Item.1rjCMxaza6WT2CJy]{Anel do Sacrifício}. Gaste um crédito em @UUID[Macro.IfpttY00q2GRuM5K]{Av2 · Créditos do Mestre}; <b>sem crédito, todos recuperam todos os PM</b>.</p>\n\t\t\t\t<h3>Contingência: Emboscada</h3>\n\t\t\t\t<p>Se planejarem uma emboscada e tomarem o baú, ótimo. Cada fase tem um truque para manter o baú longe, e um bônus para o grupo se o Mestre usá-lo sem crédito.</p>\n\t\t\t\t<h3>Nem Tão Forçado</h3>\n\t\t\t\t<p>Se achar forçado que os elfos desçam no exato instante: incentive uma <b>tocaia</b> (Investigação ou Percepção; uma falha não trava o jogo, só dá crédito ao Mestre) ou deixe o grupo investigar em Vectora e descobrir hora e local por um NPC (Klunc e Maquius sem perceber, Zebediah Nash ou Luigi Sortudo de propósito). O confronto deve acontecer nas ruas de Valkaria, não em Vectora.</p>\n\t\t\t\t<h3>Tabelas</h3>\n\t\t\t\t<h4>Perseguição aérea</h4><table><tr><th>d20</th><th>Evento</th><th>Teste</th><th>Descrição</th></tr><tr><td>1–4</td><td>Nenhum</td><td>—</td><td>—</td></tr><tr><td>5–6</td><td>Obstáculo</td><td>Inteligência CD 15</td><td>Ventos fazem pedregulhos flutuantes se moverem em padrões erráticos.</td></tr><tr><td>7–8</td><td>Obstáculo</td><td>Acrobacia CD 25</td><td>Um apressadinho alado corta a frente dos perseguidores.</td></tr><tr><td>9–10</td><td>Obstáculo</td><td>Misticismo CD 25 ou Sobrevivência CD 25</td><td>Um vórtice antigravitacional se forma no caminho. Quem falha também perde 1d4 PM.</td></tr><tr><td>11–12</td><td>Obstáculo</td><td>Acrobacia CD 25 ou Percepção CD 25</td><td>Um grande navio voador surge no caminho. Quem falha também sofre 4d6 de impacto; em veículo ou montaria, Reflexos CD 20 ou cai.</td></tr><tr><td>13–14</td><td>Atalho</td><td>Sobrevivência CD 25</td><td>Fortes lufadas de vento dão um impulso adicional.</td></tr><tr><td>15–16</td><td>Atalho</td><td>Acrobacia CD 25</td><td>Um pedregulho flutuante em que dá para subir corta o céu.</td></tr><tr><td>17–18</td><td>Atalho</td><td>Diplomacia CD 25</td><td>Viajantes alados indicam as melhores correntes de vento.</td></tr><tr><td>19–20</td><td>Atalho</td><td>Carisma CD 15</td><td>Uma figura poderosa intervém a favor. Quem passa também recebe +2 nos testes de perícia da perseguição até o fim da cena.</td></tr></table>\n\t\t\t\t<h4>Perseguição a pé</h4><table><tr><th>d20</th><th>Evento</th><th>Teste</th><th>Descrição</th></tr><tr><td>1–4</td><td>Nenhum</td><td>—</td><td>—</td></tr><tr><td>5–6</td><td>Obstáculo</td><td>Constituição CD 15</td><td>Carroça de esterco de otyugh empesteia o ambiente.</td></tr><tr><td>7–8</td><td>Obstáculo</td><td>Acrobacia CD 25 ou Misticismo CD 25</td><td>Um portal se abre na rua e despeja viajantes recém-chegados.</td></tr><tr><td>9–10</td><td>Obstáculo</td><td>Percepção CD 25</td><td>Os elfos se misturam à multidão de uma rua movimentada.</td></tr><tr><td>11–12</td><td>Obstáculo</td><td>Reflexos CD 25</td><td>Discussão entre dois alquimistas vira duelo de poções. Quem falha também sofre 6d4 de ácido.</td></tr><tr><td>13–14</td><td>Atalho</td><td>Inteligência CD 15</td><td>A perseguição passa por uma rua famosa; reconhecer o lugar lembra um atalho.</td></tr><tr><td>15–16</td><td>Atalho</td><td>Acrobacia CD 25</td><td>Saltar um muro alto corta caminho.</td></tr><tr><td>17–18</td><td>Atalho</td><td>Adestramento CD 25 ou Sobrevivência CD 25</td><td>Baleotes voam baixo o bastante para uma carona rápida.</td></tr><tr><td>19–20</td><td>Atalho</td><td>Diplomacia CD 25</td><td>Transeuntes prestativos tentam bloquear os elfos. Se ao menos um passar, todos os perseguidores recebem +2 no Atletismo desta rodada.</td></tr></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "9cMPCSEvRFNcvQ1K",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.9cMPCSEvRFNcvQ1K"
+    },
+    {
+      "name": "Fase 3 · O Campo de Keenn",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Campo de treinamento do exército de Deheon e da Guarda, engolido pelas muralhas. Alojamentos, pistas de obstáculos, altares a Arsenal, bonecos e coberturas, áreas vazias. Aberto à população, cenário de duelos e acampamentos de nobres guerreiros: tipos armados não chamam atenção, e \"conversar\" ali não é ilegal. Hoje, por causa de Vectora, só há o crime.</p>\n\t\t\t\t<p><b>Achar o ponto de encontro:</b> Investigação CD 25 (ou estendido CD 20, 3 sucessos, se quiser segurar o ritmo).</p>\n\t\t\t\t<h3>Resultados possíveis da fase 2</h3>\n\t\t\t\t<ul><li><b>Baú teleportado, alguns elfos fugiram:</b> o fugitivo vai ao Campo de Keenn, onde o baú o espera. Rastreá-lo, ou interrogar um elfo capturado (não é cultista: com garantias, trai a quadrilha).</li><li><b>Baú teleportado, todos os elfos caíram:</b> Investigação CD 25 (Misticismo como ajuda). Os anões chegam antes e tentam escapar com o baú.</li><li><b>Os aventureiros estão com o baú:</b> ainda há os compradores. Disfarçar-se de elfos e armar uma armadilha é ótimo; incentive. Os anões abordam no caminho; os cavaleiros atacam (use o truque). Se só levarem o baú à guarita, os anões abordam no meio do caminho, os cavaleiros atacam perto da guarita e Janara chega tarde e se revela, repreendendo-os.</li><li><b>Os aventureiros dominam a situação:</b> deixe que vençam. Mathilda se surpreende, Janara vai à guarita e os elogia (respeita se não quiserem entregar o baú). Alguém acha na algibeira: <i>\"Nem mesmo eu esperava por isso. Vocês têm talento para o crime. Se quiserem mudar de carreira, venham falar comigo. Não vão me achar, mas eu vou achá-los. –A\"</i></li></ul>\n\t\t\t\t<h3>Cenário ideal</h3>\n\t\t\t\t<p>Dois grupos no campo semicircular: os elfos com o baú e cinco humanos liderados por uma mulher de cabelos brancos, de casaca, com espada de esgrima. Se o grupo se revelar, é emboscada e combate. Escondidos, ouvem a conversa e testam Percepção duas vezes: <b>CD 20</b> nota Rolthurr e Mazynne atrás de um obstáculo; <b>CD 30</b> nota o ar tremeluzindo (os cavaleiros invisíveis; Misticismo CD 15 identifica magia; aura moderada de perto).</p>\n\t\t\t\t<p><i>Elyrionn: \"Então você é Janara?\" Janara: \"Não viemos aqui para nos conhecer. Trouxe a coisa?\" (...) \"Traga o baú até aqui. Deixe seu pessoal para trás. (...) Nos encontramos no meio do caminho e cada um abre o que trouxe, ao mesmo tempo.\"</i> Quando pousam os baús, uma bomba de fumaça cai entre os dois e duas figuras pequenas correm de trás de um alojamento. <b>\"Emboscada!\"</b></p>\n\t\t\t\t<h3>Encontro: as quatro facções</h3>\n\t\t\t\t<p>@UUID[Actor.xnUsjd7nL8xHKPEL]{Elyrionn}, @UUID[Actor.yx00W8tAfMwbPoqB]{Elfo Fora da Lei}, @UUID[Actor.yUM4EDhnOfoYf28a]{Janara}, @UUID[Actor.KKuzFJbKzRmwqs1q]{Humano Agente do Reinado}, @UUID[Actor.vd2OpQ8AofkhqrXE]{Mazynne}, @UUID[Actor.VtlPDvjYSNuazYNu]{Rolthurr}, @UUID[Actor.1NFtSF6BgAvOcutZ]{Sir Androwe Heribran}, @UUID[Actor.xNgXPXJCxt0YqrS8]{Cavaleiro Corrompido} (desconte os elfos já derrotados). Use @UUID[Macro.oBAkQFgnonfviBdr]{Av2 · Batalha no Campo de Keenn} no fim de cada rodada.</p>\n\t\t\t\t<h3>Roteiro</h3>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Mazynne joga mais uma bomba de fumaça; Rolthurr corre até o baú; elfos e humanos se atacam.</li>\n\t\t\t\t\t<li>Rolthurr pega o baú e se afasta; Mazynne segura o outro lado; Elyrionn e Janara notam os anões.</li>\n\t\t\t\t\t<li>Elyrionn e Janara seguram o baú; os cavaleiros saem da invisibilidade em investida contra elfos e humanos.</li>\n\t\t\t\t\t<li>Todos disputam o baú sem vencedor; luta sem ordem.</li>\n\t\t\t\t\t<li>Sir Androwe toma o baú e parte a galope; Janara se revela e ordena a rendição.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h3>Luta entre NPCs</h3>\n\t\t\t\t<ul><li>No fim de cada rodada, 1d6 para cada NPC atacado ou alvo de efeito com dano: com 1, perde metade dos PV (dois ferimentos derrubam).</li><li>Muitos ataques ou efeitos: +1 no número.</li><li>Lacaios (elfos fora da lei, agentes, cavaleiros) são feridos com 2; cada NPC atacado por um lacaio soma +1.</li><li>A investida dos cavaleiros soma +1, e quem é ferido por ela é derrotado.</li></ul>\n\t\t\t\t<h3>Andrus</h3>\n\t\t\t\t<p>Percepção CD 25 nota um vulto a mais. Desta vez ele rouba de <b>Janara</b>: o medalhão que prova que ela serve à Coroa. O grupo tem uma rodada; impedir pede Ladinagem oposta (+35). Sozinha, Janara não percebe.</p>\n\t\t\t\t<h3>Sumiço do Baú</h3>\n\t\t\t\t<p>Se o grupo tiver o baú, todas as facções o atacam para pegar o item (não para matar); quem carrega é o alvo e, se cair, o próximo NPC na iniciativa pega o baú. Se mesmo assim o grupo terminar com ele, sir Androwe funde dois cavaleiros e cavalos num monstro alado que foge com o baú (@UUID[Macro.IfpttY00q2GRuM5K]{Av2 · Créditos do Mestre}). Quem vê ganha a aliança de todas as outras facções; <b>sem crédito, também +1 de Lei &amp; Ordem</b>.</p>\n\t\t\t\t<h3>Pobres anões!</h3>\n\t\t\t\t<p>Se um anão sobreviver, converse com um aventureiro: peixes pequenos num oceano de tubarões, quase vítimas inocentes. Imploram pelo baú para escapar da Tropa. Saída óbvia e desonesta: roubar o @UUID[Item.r0OKybmhNGFbYbaB]{Baú do Pagamento}. Sozinhos, são incapazes. Sucesso rende só a gratidão eterna deles (e convencê-los a não apostar o ouro).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "N2G6Y6cCugItWnfA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.N2G6Y6cCugItWnfA"
+    },
+    {
+      "name": "Fase 4 · Explicações",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Corpos de elfos pelo chão, humanos feridos, Janara tentando se levantar, os anões saindo de fininho. <i>\"Parados! Vocês também, aventureiros. Meu nome é Janara e estou aqui pela autoridade da Coroa do Reinado. Aqui está meu medalhão... Ei, onde está meu medalhão?\"</i></p>\n\t\t\t\t<h3>O que cada um sabe</h3>\n\t\t\t\t<ul><li><b>Janara:</b> ex-Protetorado (sob Arkam Braço Metálico). Nobres e assessores da Rainha-Imperatriz souberam do artefato e dos elfos; ela foi mandada se infiltrar e obter o item com o mínimo de violência, sem prender ninguém (isso seria da Guarda, que nunca foi avisada). Meses negociando por intermediários. Furiosa: culpa o grupo, mas sabe que falhou; não sabia dos cavaleiros nem dos anões.</li><li><b>Elyrionn:</b> negocia a vida. A quadrilha prosperou no caos de Tauron traficando itens da Tormenta; espalhou a venda pelo submundo de Tiberus sem dizer que era um simbionte; viajou em Vectora porque lá ninguém mete o nariz nas mercadorias. Sir Androwe tentou comprar, não tinha ouro e ficou furioso. A Tropa é menor, mas perigosa.</li><li><b>Os anões:</b> não sabiam nem do artefato até receberem a ordem.</li></ul>\n\t\t\t\t<h3>Rastrear os cavaleiros</h3>\n\t\t\t\t<p>Teste estendido de Investigação <b>CD 20, 5 sucessos</b>. Elyrionn dá <b>Ladinagem +15 como ajuda</b>; boa interpretação ou testes sociais que tornem Janara e os anões aliados valem um sucesso automático. Conclusão: os cavaleiros precisam de um lugar fora da jurisdição da Guarda e da Coroa, e protegido. Ironicamente, <b>Vectora</b>.</p>\n\t\t\t\t<h3>Se outra facção ficou com o baú</h3>\n\t\t\t\t<ul><li><b>Os elfos:</b> voltam a Vectora em grifos; a fase 5 é igual, contra os elfos (com o deslocamento dos grifos). Janara e os anões podem ajudar; os cavaleiros nunca.</li><li><b>Janara:</b> só tem a palavra. Intuição: \"ela parece falar a verdade\", com –5 (tudo nela é suspeito: não diz superiores, destino nem como soube). Se confiarem, ela encerra o caso e os elogia a Mathilda. Se atacarem, foge para Vectora em grifos e a fase 5 é contra os agentes. <b>Matá-la custa –5 de Lei &amp; Ordem.</b></li><li><b>Os anões:</b> fogem (perseguição a pé quase formal). Se escaparem, chegam a um esconderijo da Tropa: combate contra @UUID[Actor.tTRNKjPAHFnQpQfn]{Bandido da Floresta e das Montanhas} ×4. Se pegos, imploram para ficar com o baú. A aventura termina aqui.</li><li><b>Os personagens:</b> se até o truque sujo falhou, eles merecem: a aventura termina e impressionam Mathilda e Janara.</li></ul>\n\t\t\t\t<h3>Contingência: \"Nós fazemos alguma diferença?\"</h3>\n\t\t\t\t<p>Aqui os heróis são mais uma facção (a Guarda), não o pináculo da bondade. Se a Guarda vence, criminosos presos, mas a Coroa falha e os anões morrem nas mãos da Tropa. Se Janara vence, o item fica seguro, os criminosos saem livres e os anões morrem. Se os anões vencem, o amor triunfa e uma irmandade fica com um artefato da Tormenta. Só por intervenção dos heróis os anões sobrevivem, Janara ganha credibilidade ou os elfos são presos; sem eles, os cavaleiros ficariam com o baú. Isto é Valkaria: aqui são \"peixes médios\".</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "kEDkvvKeeo7V53Hp",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.kEDkvvKeeo7V53Hp"
+    },
+    {
+      "name": "Fase 5 · Fuga para Vectora",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Anoitecendo, a sombra da estátua de Valkaria corta a luz entre os prédios. O ponto de referência é o Mercado nas Nuvens preso ao atracadouro. Um grifo alça voo, depois outro e outro; crianças apontam, bêbados admiram, aventureiros iniciantes aplaudem. Mas são cultistas assassinos. Se chegarem a Vectora com o artefato, tudo estará perdido.</p>\n\t\t\t\t<p><b>Última trapaça:</b> não importa a demora, o grupo chega quando os grifos estão decolando. Daqui em diante, a aventura segue como qualquer outra.</p>\n\t\t\t\t<h3>Transportes</h3>\n\t\t\t\t<p>@UUID[Macro.zO9hrqx3IZUVDWDY]{Av2 · Transportes para Vectora} sorteia três de @UUID[RollTable.6OqfMl2U7TzL5WML]{Transportes Disponíveis (Vectora)}; cada um leva 1d3 rodadas (boas ideias encurtam, como roubar um veículo e ser caçado por patrulheiros).</p>\n\t\t\t\t<table><tr><th>Transporte</th><th>Preço</th><th>Regra</th></tr><tr><td>Balão Goblin</td><td>T$ 20 por pessoa</td><td>Até 8 criaturas Médias (com o goblin baloeiro), voo 12m. O baloeiro faz os testes de perseguição por todos com Pilotagem +10.</td></tr><tr><td>Grifo</td><td>T$ 5.000</td><td>Funciona como parceiro montaria veterano (Tormenta20, p. 262).</td></tr><tr><td>Catapulta</td><td>T$ 15 por disparo</td><td>Arremessa uma criatura Grande ou menor. Pontaria do goblin (+5) ou do personagem contra a Defesa do cavaleiro-alvo. Acertando, Atletismo ou Cavalgar CD 20 para montar no grifo junto dele. Errando ou falhando, cai e sofre 8d6 de impacto. Depois de 3 rodadas, os cavaleiros saem do alcance.</td></tr><tr><td>Foguete Goblin</td><td>T$ 250</td><td>Uma criatura Média ou menor, voo 24m. Pilotagem com –5; d20 de 1 a 3 manda o foguete numa direção aleatória. Três desses seguidos: para e cai (10d6 de impacto); se o terceiro for 1 natural, explode (+6d6 de fogo). Para de funcionar depois da perseguição.</td></tr><tr><td>Teletransporte</td><td>T$ 360 por pessoa</td><td>Círculo operado por um mago, uma criatura por vez. Misticismo ou Vontade CD 20: surge montado no grifo de um cavaleiro à escolha. Falhando, perde a rodada.</td></tr><tr><td>Ornitóptero Goblin</td><td>T$ 20 por pessoa</td><td>Até 2 criaturas Médias (com o goblin piloto), voo 15m. Só um goblin pilota.</td></tr><tr><td>Serpe</td><td>T$ 2.500</td><td>Parceiro montaria veterano com voo 18m que leva mais uma criatura Média ou menor. Mal domada: Adestramento CD 20 ao montar, ou perde 1 rodada.</td></tr><tr><td>Magia de Voo</td><td>T$ 360</td><td>Um conjurador lança Voo: deslocamento de voo 12m até o fim da cena.</td></tr></table>\n\t\t\t\t<h3>Perseguição e combate</h3>\n\t\t\t\t<p>@UUID[Macro.3B1xFkEWNaLYm9qE]{Av2 · Perseguição em Vectora} com a tabela aérea. Alcançados, os cavaleiros lutam voando para Vectora, até a morte. Desmontar alguém ou derrubar seu voo é uma queda de dezenas de metros (pedregulhos e detritos flutuantes em volta de Vectora podem amortecer). Encontro: @UUID[Actor.1NFtSF6BgAvOcutZ]{Sir Androwe Heribran} e @UUID[Actor.xNgXPXJCxt0YqrS8]{Cavaleiro Corrompido} ×4 em @UUID[Actor.0QylhYWMUHXfi5sb]{Grifo dos Cavaleiros}.</p>\n\t\t\t\t<p><b>A simbiose:</b> com metade dos cavaleiros caídos, sir Androwe gasta 2 rodadas abrindo o baú e se ligando ao pterodraco. Dá para impedir depois da primeira rodada (baú aberto, simbiose não feita); depois do contato, nada a fazer (ligue o efeito na ficha dele). Impedida a simbiose, um personagem pode adquirir as @UUID[Item.n8csYRDIW5nzWdvv]{Asas do Devorador (pterodraco)} pelas regras de <i>Ameaças de Arton</i> (pp. 60–61): é o único jeito \"legal\", e Janara e Mathilda entendem depois.</p>\n\t\t\t\t<h3>Más companhias</h3>\n\t\t\t\t<p>Aliados viram parceiros: Elyrionn atirador veterano, Janara combatente veterana, o casal de anões um único assassino iniciante (+1d6). Os comandados não contam. Contra elfos, humanos ou a Tropa, os cavaleiros nunca são parceiros.</p>\n\t\t\t\t<h3>Andrus em queda livre</h3>\n\t\t\t\t<p>Um vulto despenca de Vectora (Percepção CD 20: é Andrus). Se o baú ou o simbionte estiver com um personagem, é o alvo (Ladinagem oposta, +35). Senão, rouba um item de quem ainda não foi furtado. Balança num fio invisível e some: impossível rastreá-lo. No lugar do objeto, o @UUID[Item.QHacT9ycUrzSiSEy]{Bilhete de Andrus}. Use @UUID[Macro.ZxDhvZJVCj880OEM]{Av2 · Andrus Ataca}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "QW8zX5RNqO5Ak40N",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.QW8zX5RNqO5Ak40N"
+    },
+    {
+      "name": "Fase 6 · Desfecho",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p>No beco escuro atrás da Guarita da Praia, Andrus sai das sombras, sorri e abre o manto com tudo o que roubou (@UUID[Macro.ZxDhvZJVCj880OEM]{Av2 · Andrus Ataca}, opção da fase 6, lista o que foi roubado):</p>\n\t\t\t\t<p><i>\"Nunca fui seu inimigo. Não gosto de bandidos como os elfos de Elyrionn, muito menos de cultistas como aqueles cavaleiros. E não confio em ninguém que esteja disposto a pagar por um simbionte, mesmo que esteja a mando da própria Rainha-Imperatriz. Roubei seus itens para que soubessem que sou melhor que vocês. Roubei o medalhão de Janara para impedi-la de conseguir o simbionte. Tudo que fiz hoje foi para mostrar a vocês que as coisas poderiam ser piores... Mas eu não quis, pois não sou seu inimigo. Aqui está tudo que vocês perderam. Fiquem com o medalhão de Janara. É mais divertido assim. Decidam se querem devolvê-lo a ela. Ah, e podem também ficar com o simbionte. Apenas não o entreguem à Coroa. Aventureiros são mais confiáveis que agentes do Reinado, mesmo que sejam membros da Guarda. E, se me traírem... Bem, podem dar adeus a seus objetos. Todos eles.\"</i></p>\n\t\t\t\t<ul><li><b>Andrus roubou o simbionte</b> (resultado ideal): entrega ao grupo, a melhor opção entre as facções.</li><li><b>Não roubou:</b> só devolve os itens. Lamenta, mas a destruição da criatura foi boa alternativa; se um personagem ficou com o pterodraco, \"era o planejado desde o início\".</li><li><b>Janara ficou com ele:</b> balança a cabeça; vai ter todo o trabalho de roubá-lo de novo.</li></ul>\n\t\t\t\t<p>Depois, pontas soltas: Janara explica o que faltou; os anões pedem ajuda. <i>\"Admito minha derrota. A Guarda de Valkaria ganhou essa. Mas nunca mais interfiram com missões da Coroa.\"</i> Tudo se passou num dia.</p>\n\t\t\t\t<h3>Quem acaba onde</h3>\n\t\t\t\t<ul><li>Janara insiste em ficar com o simbionte, mas sem o medalhão não prova autoridade e não está acima da Guarda. Vai embora resmungando. Se o baú do pagamento \"sumiu\", fica ainda mais desconfiada, mas não prova nada.</li><li>Elfos: mortos ou presos, a menos que tenham vencido.</li><li>Anões: só se saem bem com ajuda do grupo; senão morrem num combate ou depois, nas mãos da Tropa.</li><li>Cavaleiros: provavelmente mortos.</li></ul>\n\t\t\t\t<h3>Provas</h3>\n\t\t\t\t<ul><li>@UUID[Item.kFNvaRBDIhZNhJuS]{Baú com o Simbionte}, com ou sem o simbionte.</li><li>@UUID[Item.lRC3oEpDprIgr6tf]{Medalhão do Reinado (de Janara)}.</li><li>@UUID[Item.r0OKybmhNGFbYbaB]{Baú do Pagamento} (aí não pode ser gasto).</li><li>Um criminoso disposto a delatar os outros (Elyrionn ou um dos anões).</li><li>@UUID[Item.OurRTHot32g4iIsX]{Pedaço de Armadura Corrompida}.</li></ul>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Simbionte destruído ou entregue à Guarita da Praia: a SPIMA paga <b>T$ 12.000</b> (níveis 8–9), <b>T$ 24.000</b> (nível 10) ou <b>T$ 32.000</b> (nível 11). Se o grupo ou Janara ficarem com o simbionte, <b>metade</b> (a SPIMA os acha \"mais loucos que estão estragando nossa querida Arton\" ou \"capachos dessa Rainha-Imperatriz usurpadora\"). <b>Matar Janara: –5 de Lei &amp; Ordem.</b></p>\n\t\t\t\t<p>Agradeça aos jogadores o bom humor numa aventura \"diferente\". Desta vez trapaceamos bastante; na próxima tudo volta ao normal, ou tão normal quanto Valkaria permite.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Alc0hVmgcXd6m5vC",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!VgvF4m4NB4G809XP.Alc0hVmgcXd6m5vC"
+    }
+  ],
+  "_key": "!journal!VgvF4m4NB4G809XP"
+}

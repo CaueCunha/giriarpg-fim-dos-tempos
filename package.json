@@ -1,7 +1,7 @@
 {
   "name": "giriarpg-fim-dos-tempos",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Módulo Foundry VTT da campanha Fim dos Tempos (Tormenta20)",
   "scripts": {

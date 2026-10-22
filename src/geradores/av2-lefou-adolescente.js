@@ -24,6 +24,8 @@
 	const TAG = "av2";
 	const FLAGS = (role) => ({ world: role ? { fdt: TAG, fdtRole: role } : { fdt: TAG } });
 	const T20I = "systems/tormenta20/icons";
+	// Artes da mesa (retratos e tokens), no módulo giriarpg-fim-dos-tempos.
+	const ARTE = "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou";
 
 	/* ------------------------------------------------------------------ */
 	/* 0. Limpeza do que foi gerado antes                                   */
@@ -238,8 +240,9 @@
 	/* ---------- Ato 1: Chupacabra da Tormenta + Tylora ---------- */
 	atores.chupacabra = await criarNPC({
 		name: "Chupacabra da Tormenta",
+		token: `${ARTE}/chupacabra-token.webp`,
 		role: "chupacabra",
-		img: `${T20I}/ameacas/lobo.png`,
+		img: `${ARTE}/chupacabra.webp`,
 		nd: 2,
 		cd: 14,
 		tipo: "mon",
@@ -297,11 +300,29 @@
 	});
 
 	/* ---------- Ato 2: X'illirienn, a Engolidora de Fogo ---------- */
+	// Tylora não tem ficha no livro: as regras dela estão no Chupacabra. Este ator é só o token do mapa.
+	atores.tylora = await criarNPC({
+		name: "Tylora, a Criança Domadora",
+		role: "tylora",
+		img: `${ARTE}/tylora.webp`,
+		token: `${ARTE}/tylora-token.webp`,
+		nd: 1,
+		tipo: "hum",
+		raca: "humana",
+		papel: "special",
+		atr: { for: -1, des: 2, con: 0, int: 0, sab: 1, car: 1 },
+		pv: 1,
+		def: 12,
+		bio: p("<b>Não tem ficha própria.</b> Tudo o que Tylora faz (o chicote, a penalidade de 1d6–1, ficar ferida e cair) está na ficha do Chupacabra da Tormenta, no recurso <i>Tylora</i>. Este ator existe para pôr o token dela no mapa, ao lado do chupacabra.",
+			"Uma menina com um coiote corrompido, domadora do Espetáculo de Prodígios e Horrores.")
+	});
+
 	atores.xillirienn = await criarNPC({
 		name: "X'illirienn, a Engolidora de Fogo",
+		token: `${ARTE}/xillirienn-token.webp`,
 		tokenName: "X'illirienn",
 		role: "xillirienn",
-		img: `${T20I}/ameacas/placeholder.png`,
+		img: `${ARTE}/xillirienn.webp`,
 		nd: 2,
 		cd: 18,
 		tipo: "esp",
@@ -364,9 +385,10 @@
 
 	atores.bhuluk = await criarNPC({
 		name: "Bhuluk, o Anão com Barba de Insetos",
+		token: `${ARTE}/bhuluk-token.webp`,
 		tokenName: "Bhuluk",
 		role: "bhuluk",
-		img: `${T20I}/ameacas/placeholder.png`,
+		img: `${ARTE}/bhuluk.webp`,
 		nd: 2,
 		cd: 15,
 		tipo: "hum",
@@ -405,9 +427,10 @@
 	/* ---------- Ato 4: Gronko, o Faminto ---------- */
 	atores.gronko = await criarNPC({
 		name: "Gronko, o Faminto",
+		token: `${ARTE}/gronko-token.webp`,
 		tokenName: "Gronko",
 		role: "gronko",
-		img: `${T20I}/ameacas/ogro.png`,
+		img: `${ARTE}/gronko.webp`,
 		nd: 2,
 		cd: 20,
 		tipo: "hum",
@@ -458,7 +481,7 @@
 		name: "Gaspar, o Homem Mais Forte do Mundo",
 		tokenName: "Gaspar",
 		role: "gaspar",
-		img: `${T20I}/ameacas/maniaco-lefou.png`,
+		img: `${ARTE}/gaspar-token.webp`,
 		nd: 2,
 		cd: 18,
 		tipo: "mon",
@@ -500,9 +523,10 @@
 
 	atores.zardu = await criarNPC({
 		name: "Zardu, o Mestre do Picadeiro",
+		token: `${ARTE}/zardu-token.webp`,
 		tokenName: "Zardu",
 		role: "zardu",
-		img: `${T20I}/ameacas/necromante.png`,
+		img: `${ARTE}/zardu.webp`,
 		nd: 2,
 		cd: 20,
 		tipo: "hum",
@@ -549,10 +573,11 @@
 
 	atores.copia = await criarNPC({
 		name: "Cópia Ilusória de Zardu",
+		token: `${ARTE}/zardu-token.webp`,
 		tokenName: "Zardu",
 		role: "zardu-copia",
 		link: false,
-		img: `${T20I}/ameacas/necromante.png`,
+		img: `${ARTE}/zardu.webp`,
 		nd: "1/4",
 		cd: 20,
 		tipo: "hum",
@@ -633,7 +658,7 @@
 			poder("Ato 5 · Pesos de Ferro", `${T20I}/itens/equipamentos/marreta.webp`,
 				p("<b>Realidade.</b> O chão é terreno difícil. Para andar na velocidade normal: Acrobacia CD 15 (+5/–5 por Ilusão ou Realidade). Se falhar, sofre <b>1d4 de impacto</b> e para no meio do caminho. Gaspar não é afetado."),
 				{ exec: "passive", rolls: [["Impacto", [["1d4", "impacto"]]]] }),
-			poder("Tenda 5 · Tatuagens de Noirax", `${T20I}/itens/gerais/pergaminho.webp`,
+			poder("Tenda 5 · Tatuagens de Noirax", `${ARTE}/noirax.webp`,
 				p("Inteligência CD 10 para interpretar as tatuagens (história de Zardu, o rapto de Gaspar, Mabel soltando Blanche). Quem passar recupera <b>1d4 PM</b>, uma vez por personagem. Use <b>Aplicar Cura</b>."),
 				{ exec: "action", rolls: [["PM recuperados", [["1d4", "curapm"]]]] }),
 			guloseima("Bolo do Picadeiro (ilusão)", "icons/consumables/food/soup-broth-bowl-wooden-yellow.webp",
@@ -675,20 +700,21 @@
 
 	const PARCEIROS = "tormenta20.parceiros";
 	const ID = { fortao: "YAcnW6C7ok7xjdg6", atirador: "OvBibhyfED5HKbsz", combatente: "nNpGA5SWMj7rtUQR", ajudante: "ROdJSxDCkvamfzX7" };
-	const parceiro = async (tipo, nome, desc) => {
+	const parceiro = async (tipo, nome, desc, img) => {
 		const data = await deCompendio(PARCEIROS, ID[tipo], nome, desc);
-		return data ?? itemDoc(poder(nome, `${T20I}/itens/gerais/parceiros.webp`, desc, { tipo: "geral", subtipo: "Parceiros" }));
+		if (data && img) data.img = img;
+		return data ?? itemDoc(poder(nome, img ?? `${T20I}/itens/gerais/parceiros.webp`, desc, { tipo: "geral", subtipo: "Parceiros" }));
 	};
 
 	novosItens.push(
 		await parceiro("fortao", "Parceiro: Vyrda (Fortão iniciante)",
-			p("<b>Tenda 1.</b> Teste social CD 15 ou boa interpretação: Vyrda vira parceira <b>fortão iniciante</b> durante todos os combates do circo.")),
+			p("<b>Tenda 1.</b> Teste social CD 15 ou boa interpretação: Vyrda vira parceira <b>fortão iniciante</b> durante todos os combates do circo."), `${ARTE}/vyrda.webp`),
 		await parceiro("atirador", "Parceiro: Híbridos Profanos (Atirador iniciante)",
-			p("<b>Tenda 2.</b> Teste social CD 15 ou boa interpretação: os híbridos viram parceiro <b>atirador iniciante</b>.")),
+			p("<b>Tenda 2.</b> Teste social CD 15 ou boa interpretação: os híbridos viram parceiro <b>atirador iniciante</b>."), `${ARTE}/hibridos.webp`),
 		await parceiro("combatente", "Parceiro: Plateia Entretida (Combatente iniciante)",
 			p("<b>Tenda 2.</b> A plateia bem entretida vira parceiro <b>combatente iniciante</b> por <b>um</b> combate, ou anula \"Um de Nós!\" em todos os combates (escolha do grupo).")),
 		await parceiro("fortao", "Parceiro: Gaspar (Fortão veterano)",
-			p("<b>Depois da aventura.</b> Se o grupo devolver Gaspar à família e for especialmente cuidadoso com ele, Mabel pode mandá-lo ajudar os heróis.")),
+			p("<b>Depois da aventura.</b> Se o grupo devolver Gaspar à família e for especialmente cuidadoso com ele, Mabel pode mandá-lo ajudar os heróis."), `${ARTE}/gaspar-token.webp`),
 		await parceiro("ajudante", "Parceiro: Mabel LeBlanc (Ajudante veterana)",
 			p("<b>Depois da aventura.</b> Grata por ter Gaspar de volta, Mabel vira aliada fervorosa e chega a lutar pelo grupo. Defina as três perícias do ajudante com a mesa."))
 	);
@@ -698,12 +724,12 @@
 	if (seringa) novosItens.push(seringa);
 
 	novosItens.push(
-		itemDoc(poder("Bênção de Kerok (+5 contra a Tormenta)", `${T20I}/itens/gerais/orbe-cristalina.webp`,
+		itemDoc(poder("Bênção de Kerok (+5 contra a Tormenta)", `${ARTE}/korek-e-kerok.webp`,
 			p("<b>Tenda 4.</b> Teste social CD 15 ou boa interpretação com Kerok (o gêmeo corrompido, que fala sempre a verdade).",
 				"<b>+5 para resistir a todos os efeitos da Tormenta no circo.</b> Marque o aprimoramento na rolagem de resistência; as macros do circo já somam sozinhas.",
 				"Apague o item quando o grupo sair do circo."),
 			{ tipo: "geral", exec: "passive", effects: [aoUsar("Bênção de Kerok (+5 Tormenta)", `${T20I}/itens/gerais/orbe-cristalina.webp`, [["roll", 5]], ["skill"], RESIST)] })),
-		itemDoc(poder("Segredo de Ralphus (+5 contra ilusões de Zardu)", `${T20I}/itens/gerais/diario.webp`,
+		itemDoc(poder("Segredo de Ralphus (+5 contra ilusões de Zardu)", `${ARTE}/ralphus.webp`,
 			p("<b>Tenda 3, depois de vencer Gaspar.</b> Ralphus está escondido entre os jarros; qualquer teste social o convence a contar que tudo no circo é ilusão.",
 				"<b>+5 para resistir às ilusões de Zardu.</b> Marque o aprimoramento na rolagem; as macros do circo já somam sozinhas."),
 			{ tipo: "geral", exec: "passive", effects: [aoUsar("Segredo de Ralphus (+5 ilusões)", `${T20I}/itens/gerais/diario.webp`, [["roll", 5]], ["skill"], RESIST)] }))
@@ -1113,6 +1139,7 @@
 	/* ------------------------------------------------------------------ */
 	const L = (d) => (d?.uuid ? `@UUID[${d.uuid}]{${d.name}}` : "");
 	const pagina = (name, content, sort) => ({ name, type: "text", sort, text: { content, format: 1 } });
+	const imagem = (name, arq, caption, sort) => ({ name, type: "image", sort, src: `${ARTE}/${arq}.webp`, image: { caption } });
 
 	await JournalEntry.create({
 		name: "Aventura 2 · Eu Fui um Lefou Adolescente",
@@ -1122,7 +1149,7 @@
 			pagina("Guia do Mestre", `
 				<h2>Ordem do espetáculo</h2>
 				<ol>
-					<li>${L(atores.chupacabra)} com Tylora (pule se o chupacabra já morreu na busca pelo circo)</li>
+					<li>${L(atores.chupacabra)} com ${L(atores.tylora)} (pule se o chupacabra já morreu na busca pelo circo)</li>
 					<li>${L(atores.xillirienn)}</li>
 					<li>${L(atores.bhuluk)} (e o ${L(atores.enxame)})</li>
 					<li>${L(atores.gronko)}</li>
@@ -1176,9 +1203,21 @@
 					<li>Na carroça: seis ${L(itemPorNome("Bola de Cristal"))}.</li>
 					<li>Gaspar devolvido: Mabel vira aliada para a vida toda (${L(itemPorNome("Parceiro: Mabel"))}; ${L(itemPorNome("Parceiro: Gaspar"))} se forem cuidadosos com ele) e serve ${L(itemPorNome("Sopa LeBlanc"))}.</li>
 					<li>Zardu levado vivo ao Forte amanhece morto (Vesper). Se Vesper já tiver partido, ele fala de forma confusa sobre a fuga da tripulação e os gog'magogues.</li>
-				</ul>`, 600)
+				</ul>`, 600),
+			// Artes para mostrar aos jogadores (botão "Mostrar aos Jogadores" da página).
+			imagem("Arte · Tylora e o Chupacabra", "tylora", "Tylora, a Criança Domadora, e o Chupacabra da Tormenta.", 700),
+			imagem("Arte · X'illirienn", "xillirienn", "X'illirienn, a Engolidora de Fogo.", 710),
+			imagem("Arte · Bhuluk", "bhuluk", "Bhuluk, o Anão com Barba de Insetos.", 720),
+			imagem("Arte · Gronko", "gronko", "Gronko, o Faminto.", 730),
+			imagem("Arte · Zardu", "zardu", "Zardu, o Mestre do Picadeiro.", 740),
+			imagem("Arte · Tenda 1 · Vyrda", "vyrda", "Vyrda, a Mulher Monstruosa.", 750),
+			imagem("Arte · Tenda 2 · Os Híbridos Profanos", "hibridos", "Os Híbridos Profanos.", 760),
+			imagem("Arte · Tenda 3 · Os Erros dos Deuses", "erros-dos-deuses", "Os Erros dos Deuses.", 770),
+			imagem("Arte · Tenda 4 · Korek e Kerok", "korek-e-kerok", "Korek e Kerok.", 780),
+			imagem("Arte · Tenda 5 · Noirax", "noirax", "Noirax, a Lady Tatuada.", 790),
+			imagem("Arte · Ralphus", "ralphus", "Ralphus, o assistente de palco.", 800)
 		]
 	});
 
-	ui.notifications.info("Aventura 2 criada: 9 atores, itens, diário, tabela e 7 macros. Veja a pasta \"" + NOME_PASTA + "\".");
+	ui.notifications.info("Aventura 2 criada: 10 atores, itens, diário, tabela e 7 macros. Veja a pasta \"" + NOME_PASTA + "\".");
 })();

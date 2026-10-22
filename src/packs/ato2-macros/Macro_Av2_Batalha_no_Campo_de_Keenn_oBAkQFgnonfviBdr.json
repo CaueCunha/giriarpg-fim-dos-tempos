@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Batalha no Campo de Keenn",
+  "type": "script",
+  "img": "icons/svg/combat.svg",
+  "folder": "7cCGI0J7qvClxlei",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n(async function macroKeenn() {\n\t\tconst CHAVE = \"fdtKeenn\";\n\t\tconst e = game.user.getFlag(\"world\", CHAVE) ?? { rodada: 0 };\n\t\tconst ROTEIRO = [\n\t\t\t\"\",\n\t\t\t\"<b>Rodada 1:</b> Mazynne gasta uma ação completa para preparar e arremessar mais uma bomba de fumaça. Rolthurr corre (ação completa) e chega ao baú. Elfos e humanos se atacam.\",\n\t\t\t\"<b>Rodada 2:</b> Rolthurr pega o baú (padrão) e se afasta (movimento). Mazynne se aproxima e segura um lado. Elyrionn e Janara percebem os anões; os comandados continuam lutando.\",\n\t\t\t\"<b>Rodada 3:</b> Elyrionn e Janara se aproximam (movimento) e seguram o baú (padrão). Os cavaleiros saem da invisibilidade e fazem uma <b>investida</b> que atinge elfos e humanos.\",\n\t\t\t\"<b>Rodada 4:</b> Elyrionn, Janara, sir Androwe, Rolthurr e Mazynne disputam o baú sem vencedor. Cavaleiros, elfos e humanos lutam sem ordem.\",\n\t\t\t\"<b>Rodada 5:</b> sir Androwe vence a disputa, toma o baú e parte a galope (corrida montada); os cavaleiros o seguem. Janara se revela e ordena que anões e elfos se rendam à autoridade do Reinado (e descobre que o medalhão sumiu).\"\n\t\t];\n\t\tconst LACAIOS = [\"elfo\", \"agente\", \"cavaleiro\", \"bandido\"];\n\t\tconst npcs = canvas.tokens.placeables.filter((t) => t.actor && t.actor.type === \"npc\" && t.actor.getFlag(\"world\", \"fdt\") === \"a2av2\" && (Number(t.actor.system.attributes?.pv?.value) || 0) > 0);\n\t\tconst linhas = npcs.map((t) => `<tr><td>${t.name}</td><td>${t.actor.system.attributes.pv.value}/${t.actor.system.attributes.pv.max}</td>\n\t\t\t<td><input type=\"checkbox\" name=\"atk_${t.id}\"></td><td><input type=\"checkbox\" name=\"muitos_${t.id}\"></td>\n\t\t\t<td><input type=\"checkbox\" name=\"lacaio_${t.id}\"></td><td><input type=\"checkbox\" name=\"inv_${t.id}\"></td></tr>`).join(\"\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Batalha no Campo de Keenn\" },\n\t\t\tcontent: `\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"rodada\">Fim da rodada ${e.rodada + 1}: roteiro e luta entre NPCs</option>\n\t\t\t\t\t<option value=\"zerar\">Recomeçar a batalha</option></select></div>\n\t\t\t\t${npcs.length ? `<table><tr><th>NPC</th><th>PV</th><th>Foi atacado</th><th>Muitos ataques (+1)</th><th>Por um lacaio (+1)</th><th>Investida dos cavaleiros</th></tr>${linhas}</table>`\n\t\t\t\t\t: \"<p><i>Nenhum NPC desta aventura na cena.</i></p>\"}\n\t\t\t\t<p style=\"font-size:0.85em\">Marque só os NPCs atacados por outros NPCs. 1d6: ferido (perde metade dos PV máximos) com 1; lacaios com 2. Investida: +1 e quem é ferido cai.</p>`,\n\t\t\tok: { label: \"Resolver\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Batalha no Campo de Keenn reiniciada.\");\n\t\t}\n\t\te.rodada += 1;\n\t\tconst rolls = [];\n\t\tlet html = `<h3>Campo de Keenn · rodada ${e.rodada}</h3><p>${ROTEIRO[e.rodada] ?? \"Depois da rodada 5 a batalha segue normalmente; adapte o roteiro ao que o grupo fez.\"}</p>`;\n\t\tconst feridos = [];\n\t\tfor (const t of npcs) {\n\t\t\tif (!res[`atk_${t.id}`] && !res[`inv_${t.id}`]) continue;\n\t\t\tconst a = t.actor;\n\t\t\tconst lacaio = LACAIOS.includes(a.getFlag(\"world\", \"fdtRole\"));\n\t\t\tlet limite = lacaio ? 2 : 1;\n\t\t\tif (res[`muitos_${t.id}`]) limite += 1;\n\t\t\tif (res[`lacaio_${t.id}`]) limite += 1;\n\t\t\tconst investida = !!res[`inv_${t.id}`];\n\t\t\tif (investida) limite += 1;\n\t\t\tconst r = await new Roll(\"1d6\").evaluate();\n\t\t\trolls.push(r);\n\t\t\tif (r.total <= limite) {\n\t\t\t\tconst pv = a.system.attributes.pv;\n\t\t\t\tconst novo = investida ? 0 : Math.max(0, pv.value - Math.ceil(pv.max / 2));\n\t\t\t\tawait a.update({ \"system.attributes.pv.value\": novo });\n\t\t\t\tferidos.push(`${t.name} (${r.total} ≤ ${limite}): ${novo <= 0 ? \"<b>derrotado</b>\" : `ferido, ${novo} PV`}`);\n\t\t\t} else feridos.push(`${t.name} (${r.total} > ${limite}): ileso`);\n\t\t}\n\t\tif (feridos.length) html += `<p><b>Luta entre NPCs:</b></p><ul>${feridos.map((f) => `<li>${f}</li>`).join(\"\")}</ul>`;\n\t\tif (e.rodada === 3) html += \"<p>Ainda nesta rodada: role a macro <i>Andrus Ataca</i> (Campo de Keenn). O grupo tem uma rodada para impedir o roubo do medalhão.</p>\";\n\t\tawait game.user.setFlag(\"world\", CHAVE, e);\n\t\tChatMessage.create({ content: html, rolls, whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t})();",
+  "_id": "oBAkQFgnonfviBdr",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!oBAkQFgnonfviBdr"
+}

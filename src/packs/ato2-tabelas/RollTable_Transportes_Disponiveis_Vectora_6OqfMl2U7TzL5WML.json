@@ -1,0 +1,276 @@
+{
+  "name": "Transportes Disponíveis (Vectora)",
+  "img": "systems/tormenta20/icons/itens/gerais/grifo.webp",
+  "folder": "owSfqsuq1Jud9ryL",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role três vezes; cada resultado é um meio de chegar aos cavaleiros. Pegar qualquer um leva 1d3 rodadas (boas ideias, como roubar um veículo, encurtam). O livro lista oito transportes para 1d10: 9 e 10 rolam de novo (inferido).",
+  "_id": "6OqfMl2U7TzL5WML",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Balão Goblin (T$ 20 por pessoa)",
+      "description": "Até 8 criaturas Médias (com o goblin baloeiro), voo 12m. O baloeiro faz os testes de perseguição por todos com Pilotagem +10.",
+      "_id": "mqtOHekPV37EGyqM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.mqtOHekPV37EGyqM"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Grifo (T$ 5.000)",
+      "description": "Funciona como parceiro montaria veterano (Tormenta20, p. 262).",
+      "_id": "J50ixIqhv2waFNHz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.J50ixIqhv2waFNHz"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Catapulta (T$ 15 por disparo)",
+      "description": "Arremessa uma criatura Grande ou menor. Pontaria do goblin (+5) ou do personagem contra a Defesa do cavaleiro-alvo. Acertando, Atletismo ou Cavalgar CD 20 para montar no grifo junto dele. Errando ou falhando, cai e sofre 8d6 de impacto. Depois de 3 rodadas, os cavaleiros saem do alcance.",
+      "_id": "xK7T3FejljghEAxn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.xK7T3FejljghEAxn"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Foguete Goblin (T$ 250)",
+      "description": "Uma criatura Média ou menor, voo 24m. Pilotagem com –5; d20 de 1 a 3 manda o foguete numa direção aleatória. Três desses seguidos: para e cai (10d6 de impacto); se o terceiro for 1 natural, explode (+6d6 de fogo). Para de funcionar depois da perseguição.",
+      "_id": "KAtbYEHvUfAAUbJC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.KAtbYEHvUfAAUbJC"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Teletransporte (T$ 360 por pessoa)",
+      "description": "Círculo operado por um mago, uma criatura por vez. Misticismo ou Vontade CD 20: surge montado no grifo de um cavaleiro à escolha. Falhando, perde a rodada.",
+      "_id": "fcpqi4brjIxWthgR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.fcpqi4brjIxWthgR"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Ornitóptero Goblin (T$ 20 por pessoa)",
+      "description": "Até 2 criaturas Médias (com o goblin piloto), voo 15m. Só um goblin pilota.",
+      "_id": "wZ0wOF4EySVWgAix",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.wZ0wOF4EySVWgAix"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Serpe (T$ 2.500)",
+      "description": "Parceiro montaria veterano com voo 18m que leva mais uma criatura Média ou menor. Mal domada: Adestramento CD 20 ao montar, ou perde 1 rodada.",
+      "_id": "GYEnieyrKFhNN6im",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.GYEnieyrKFhNN6im"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Magia de Voo (T$ 360)",
+      "description": "Um conjurador lança Voo: deslocamento de voo 12m até o fim da cena.",
+      "_id": "lHeFXGJkk0zHJvGF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.lHeFXGJkk0zHJvGF"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 2,
+      "name": "Role de novo",
+      "description": "O livro lista só oito transportes.",
+      "_id": "A9aAMCqcdmMZNGME",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!6OqfMl2U7TzL5WML.A9aAMCqcdmMZNGME"
+    }
+  ],
+  "_key": "!tables!6OqfMl2U7TzL5WML"
+}

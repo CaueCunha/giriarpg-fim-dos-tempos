@@ -4,8 +4,8 @@ Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do F
 
 | Compêndios | Ameaças e NPCs | Itens | Diários | Tabelas | Macros |
 |---|---:|---:|---:|---:|---:|
-| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 97 | 87 | 8 | 13 | 44 |
-| **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol) | 14 | 7 | 2 | 2 | 5 |
+| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 98 | 87 | 8 | 13 | 44 |
+| **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora) | 25 | 14 | 3 | 5 | 12 |
 | **Campanha** (regras de grupo, Poderes de Grupo, utilidades) | | 23 | 1 | | 7 |
 
 Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.
@@ -61,6 +61,10 @@ O que é próprio da campanha foi criado com efeitos e macros de automação: Po
 
 Os guias de cada aventura estão em [`docs/geradores/`](docs/geradores).
 
+### Artes
+
+Retratos e tokens feitos para a campanha ficam em [`assets/`](assets), separados por aventura. Os geradores apontam para eles (`modules/giriarpg-fim-dos-tempos/assets/...`), e as artes de NPCs sem ficha viram páginas de imagem no diário da aventura, prontas para **Mostrar aos Jogadores**.
+
 ## Testes
 
 ```bash
@@ -71,7 +75,7 @@ npm test
 
 Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/README.md`](tools/sim/README.md)). A simulação usa os modelos de dados reais do Tormenta20, então cada documento é validado e limpo como o Foundry faria. Um campo que o Foundry descartaria em silêncio faz o teste falhar. Os testes cobrem:
 
-- **Macros (56):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
+- **Macros (63):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
 - **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar.
 - **Compêndios:**
   - formato do `foundryvtt-cli` e IDs únicos;
@@ -109,7 +113,7 @@ Para incluir uma aventura nova:
 2. Acrescente o nome dele no ato certo em [`tools/conteudo.mjs`](tools/conteudo.mjs).
 3. Rode `npm run build` e `npm test`.
 
-Ainda não têm gerador: a Av1 do Ato 1 (Tragam-me a Cabeça de Bartram Zonnar) e as Av2 a Av7 do Ato 2.
+Ainda não têm gerador: a Av1 do Ato 1 (Tragam-me a Cabeça de Bartram Zonnar) e as Av3 a Av7 do Ato 2.
 
 ### Versões
 

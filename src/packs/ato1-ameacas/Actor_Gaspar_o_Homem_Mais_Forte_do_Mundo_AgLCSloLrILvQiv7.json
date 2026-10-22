@@ -1,7 +1,7 @@
 {
   "name": "Gaspar, o Homem Mais Forte do Mundo",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/maniaco-lefou.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar-token.webp",
   "folder": "F1d9oiyyz2YCEFHy",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/maniaco-lefou.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar-token.webp"
     },
     "sight": {
       "enabled": true

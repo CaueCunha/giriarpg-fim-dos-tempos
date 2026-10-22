@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Créditos do Mestre",
+  "type": "script",
+  "img": "icons/svg/coins.svg",
+  "folder": "7cCGI0J7qvClxlei",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n(async function macroCreditos() {\n\t\tconst CHAVE = \"fdtVectoraBusca\";\n\t\tconst e = game.user.getFlag(\"world\", CHAVE) ?? { sucessos: 0, rolagens: 0, creditos: 0, achou: false };\n\t\tconst TRUQUES = {\n\t\t\tsumico: [\"Sumiço do Baú (fase 2)\", \"Um elfo se joga sobre o baú; um brilho verde cega todos e ele explode num clarão de magia. O baú foi teleportado. Todos ficam cobertos de sangue, fuligem e pedaços de elfo.\", \"Sem crédito: a explosão tem um efeito inesperado e <b>todos os personagens recuperam todos os PM</b>.\"],\n\t\t\tmonstro: [\"Monstro de Carne (fase 3)\", \"Com uma palavra profana, sir Androwe funde dois cavaleiros e seus cavalos numa criatura grotesca de carne, sangue e carapaça vermelha. Asas horrendas brotam, tentáculos agarram o baú e a coisa foge voando. <b>Quem testemunhar ganha a aliança imediata de todas as outras facções.</b>\", \"Sem crédito: além da aliança, o grupo ganha <b>+1 de Lei &amp; Ordem</b> (a história assusta o submundo).\"],\n\t\t\tultimo: [\"Último instante (fase 5)\", \"Não importa quanto demorem: o grupo chega aos cavaleiros no instante em que os grifos alçam voo. É a última trapaça; não gasta crédito.\", \"\"]\n\t\t};\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Créditos do Mestre (Conexão Vectora)\" },\n\t\t\tcontent: `<p>Créditos disponíveis: <b>${e.creditos}</b>.</p>\n\t\t\t\t<div class=\"form-group\"><label>Truque</label><select name=\"truque\">${Object.entries(TRUQUES).map(([k, t]) => `<option value=\"${k}\">${t[0]}</option>`).join(\"\")}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>Aplicar o bônus sem crédito automaticamente</label><input type=\"checkbox\" name=\"aplicar\" checked></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Para o Sumiço do Baú sem crédito, selecione os personagens que recuperam PM.</p>`,\n\t\t\tok: { label: \"Usar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst [nome, texto, semCredito] = TRUQUES[res.truque];\n\t\tlet html = `<h3>${nome}</h3><p>${texto}</p>`;\n\t\tif (res.truque !== \"ultimo\") {\n\t\t\tif (e.creditos > 0) {\n\t\t\t\te.creditos -= 1;\n\t\t\t\thtml += `<p>Gasta 1 crédito (restam ${e.creditos}).</p>`;\n\t\t\t} else {\n\t\t\t\thtml += `<p>${semCredito}</p>`;\n\t\t\t\tif (res.aplicar && res.truque === \"sumico\") {\n\t\t\t\t\tfor (const t of tokens) {\n\t\t\t\t\t\tconst pm = t.actor.system.attributes?.pm;\n\t\t\t\t\t\tif (pm) await t.actor.update({ \"system.attributes.pm.value\": pm.max });\n\t\t\t\t\t}\n\t\t\t\t\tif (tokens.length) html += `<p>PM recuperados: ${tokens.map((t) => t.name).join(\", \")}.</p>`;\n\t\t\t\t}\n\t\t\t\tif (res.aplicar && res.truque === \"monstro\") {\n\t\t\t\t\tconst lo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"leiordem\");\n\t\t\t\t\tif (lo) {\n\t\t\t\t\t\tconst v = Number(lo.system.resources?.primary?.value) || 0;\n\t\t\t\t\t\tawait lo.update({ \"system.resources.primary.value\": v + 1 });\n\t\t\t\t\t\thtml += `<p>Lei &amp; Ordem: ${v} → <b>${v + 1}</b>.</p>`;\n\t\t\t\t\t} else html += \"<p>Ator de Lei &amp; Ordem não encontrado (importe o Ato 2 do módulo Fim dos Tempos): ajuste à mão.</p>\";\n\t\t\t\t}\n\t\t\t}\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, e);\n\t\t}\n\t\tChatMessage.create({ content: html });\n\t})();",
+  "_id": "IfpttY00q2GRuM5K",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!IfpttY00q2GRuM5K"
+}

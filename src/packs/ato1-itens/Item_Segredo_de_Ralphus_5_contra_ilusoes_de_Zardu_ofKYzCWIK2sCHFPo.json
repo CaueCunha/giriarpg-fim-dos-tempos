@@ -1,7 +1,7 @@
 {
   "name": "Segredo de Ralphus (+5 contra ilusões de Zardu)",
   "type": "poder",
-  "img": "systems/tormenta20/icons/itens/gerais/diario.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/ralphus.webp",
   "flags": {
     "world": {
       "fdt": "av2"

@@ -1513,7 +1513,7 @@
     {
       "name": "Tenda 5 · Tatuagens de Noirax",
       "type": "poder",
-      "img": "systems/tormenta20/icons/itens/gerais/pergaminho.webp",
+      "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/noirax.webp",
       "flags": {
         "world": {
           "fdt": "av2"

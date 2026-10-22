@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Transportes para Vectora",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/grifo.webp",
+  "folder": "7cCGI0J7qvClxlei",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n(async function macroTransportes() {\n\t\tconst tabela = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"a2av2\" && t.name.startsWith(\"Transportes\"));\n\t\tif (!tabela) return ui.notifications.error(\"Tabela de Transportes não encontrada (importe o Ato 2 do módulo Fim dos Tempos).\");\n\t\tconst rolls = [];\n\t\tconst achados = [];\n\t\tlet tentativas = 0;\n\t\twhile (achados.length < 3 && tentativas < 20) {\n\t\t\ttentativas += 1;\n\t\t\tconst r = await new Roll(\"1d10\").evaluate();\n\t\t\tif (r.total > 8) continue;\n\t\t\trolls.push(r);\n\t\t\tconst res = tabela.results.find((x) => r.total >= x.range[0] && r.total <= x.range[1]);\n\t\t\tconst t = await new Roll(\"1d3\").evaluate();\n\t\t\trolls.push(t);\n\t\t\tachados.push(`<li><b>${res?.name ?? r.total}</b> · leva ${t.total} rodada(s) para pegar. ${res?.description ?? \"\"}</li>`);\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Transportes para Vectora</h3><p>Os grifos alçam voo. Por perto há:</p><ul>${achados.join(\"\")}</ul>`, rolls });\n\t})();",
+  "_id": "zO9hrqx3IZUVDWDY",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!zO9hrqx3IZUVDWDY"
+}

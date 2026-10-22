@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Av2 · Conexão Vectora",
+  "type": "JournalEntry",
+  "color": "#6b5a2a",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "_id": "VM4laWZffAAm62YE",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!VM4laWZffAAm62YE"
+}
