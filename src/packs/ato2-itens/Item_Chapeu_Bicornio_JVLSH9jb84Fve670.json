@@ -1,0 +1,164 @@
+{
+  "name": "Chapéu: Bicórnio",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+  "folder": "a8NQaBPvM1uhY8Sg",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Chapéu único de Farboraff ou Brungamm (vestuário, 1 espaço): <b>+1 em Pilotagem (apenas barcos)</b>. Não acumula exatamente com outros chapéus do mesmo tipo. Marque o bônus na janela de rolagem quando a situação se aplica.</p><p>T$ 50; 50% de desconto incentivando a rivalidade, ou de graça em troca de propaganda.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 50,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "peso": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": [],
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "armadura": {
+      "maxAtr": 0,
+      "penalidade": 0,
+      "value": 0
+    },
+    "tipo": "leve"
+  },
+  "_id": "JVLSH9jb84Fve670",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Bicórnio (+1 em Pilotagem (apenas barcos))",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2encontros"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 1,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "skill"
+          ],
+          "names": [
+            "Pilotagem"
+          ],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "uD6BIYNsd9vMz2ik",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!JVLSH9jb84Fve670.uD6BIYNsd9vMz2ik"
+    }
+  ],
+  "_key": "!items!JVLSH9jb84Fve670"
+}

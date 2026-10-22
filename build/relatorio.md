@@ -140,11 +140,11 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 122 documento(s), 11 pasta(s)
-- `ato2-itens`: 105 documento(s), 11 pasta(s)
-- `ato2-diarios`: 11 documento(s), 11 pasta(s)
-- `ato2-tabelas`: 22 documento(s), 11 pasta(s)
-- `ato2-macros`: 63 documento(s), 11 pasta(s)
+- `ato2-ameacas`: 137 documento(s), 12 pasta(s)
+- `ato2-itens`: 133 documento(s), 12 pasta(s)
+- `ato2-diarios`: 12 documento(s), 12 pasta(s)
+- `ato2-tabelas`: 27 documento(s), 12 pasta(s)
+- `ato2-macros`: 66 documento(s), 12 pasta(s)
 
 ### Ligações com o sistema (220)
 

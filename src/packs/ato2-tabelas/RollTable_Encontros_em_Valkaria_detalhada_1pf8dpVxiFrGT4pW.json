@@ -1,0 +1,574 @@
+{
+  "name": "Encontros em Valkaria (detalhada)",
+  "img": "icons/svg/village.svg",
+  "folder": "b3vxiEIhZtMUiT3A",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "encontros"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Sempre que o grupo deixar a base ou a Guarita da Praia (ou por bairro, ou no padrão que preferir). Os personagens circulam e podem ser reencontrados; os lugares são fixos e ficam descobertos (o Castelo do Sabor é franquia e surge em vários pontos; Farboraff e Brungamm ficam nas lojas). Aceite os resultados, mesmo os que \"não fazem sentido\". A macro Encontro na Cidade rola isto e controla quem já foi visto.",
+  "_id": "1pf8dpVxiFrGT4pW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Gnuk, o goblin inventor",
+      "description": "Gnuk construiu a Carroça de Lagarto Interno, um carro primitivo movido a pólvora explosiva e essência de mana (tecnicamente ilegal e muito caro). <b>Mecânica:</b> Veículo Grande, deslocamento 30, Defesa 12 + Des do condutor, 200 PV, leva 2 criaturas Médias ou 40 espaços; –5 em Pilotagem. Na 1ª rodada de uso, <b>10%</b> de explodir (5d6 de impacto nos pilotos, Reflexos CD 20 reduz à metade), +10% por rodada até 100%. Sem explosão e reencontrado, Gnuk aperfeiçoa: 5% e +5% por rodada. Testada de novo sem explodir e reencontrado uma 3ª vez, a Carroça está pronta (sem explosão nem penalidade) e, se o grupo foi amigável, ele a <b>dá</b> aos personagens. Cruza um hexágono de Valkaria em 5 minutos (em vez de meia hora); exige 10 cargas de pólvora (10 munições de mosquete) e 1 essência de mana por aventura.",
+      "_id": "Dw9xbuLdXluxskH0",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.Dw9xbuLdXluxskH0"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Farboraff e Brungamm, os chapeleiros anões rivais",
+      "description": "Farboraff (Só Boinas Chapéus em Geral) e Brungamm (Cartolas & Cia.) têm lojas uma em frente à outra, os mesmos produtos e os mesmos preços. <b>Mecânica:</b> Cada chapéu é vestuário (1 espaço) com um bônus único de +1 (não acumula com chapéus iguais de outra fonte). T$ 50 cada; 50% de desconto fácil, só incentivando a competição. Quem faz propaganda ganha chapéus de graça e mais tarde é infernizado por aventureiros que fazem propaganda do rival.",
+      "_id": "a3zSZga1qKpnz661",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.a3zSZga1qKpnz661"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Wynstar, o unicórnio burocrata",
+      "description": "Um unicórnio que trocou os bosques encantados pela vida estável de funcionário público. <b>Mecânica:</b> O Mestre decide o que é irregular (armas de fogo, deuses como Thwor ou Megalokk). Preencher o formulário: <b>Nobreza ou Conhecimento CD 20</b>. Quem não quer ou não consegue leva multa de <b>20% do próximo pagamento</b>, já descontada pela Xerife Mathilda. Quem foge pode ser perseguido: ele se teleporta à frente, repetidas vezes. Formulários: \"Declaração NW-46 de Uso Ético de Gazuas\", \"Cadastro Preventivo Não-Divino de Cidadãos com Características Monstruosas\" (e a \"Nota de Protesto Omnipopulacional para Recusa de Reconhecimento de Perigo Intrínseco\"), \"Requisição Rubro-Prateada para Livre Exibição de Símbolos Sagrados Controversos\".",
+      "_id": "9tovDFDcYuQmCNIV",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.9tovDFDcYuQmCNIV"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Drelene, a deusa sem portfólio",
+      "description": "Uma humana de cabelos castanhos e olhos azuis que chama atenção porque sempre há alguém comentando como ela chama atenção. <b>Mecânica:</b> Os personagens podem virar devotos com as regras normais de devoção. <b>Crenças:</b> adorar Drelene e refutar argumentos invejosos. <b>Símbolo:</b> retângulo vertical com o rosto dela. <b>Canalizar Energia:</b> qualquer. <b>Arma preferida:</b> não há (não podem lançar Arma Espiritual e similares). <b>Devotos:</b> quaisquer. <b>O&amp;R:</b> exaltá-la sempre que possível e convencer o maior número de pessoas a adorá-la. <b>Poder concedido:</b> Palavra de Drelene.",
+      "_id": "AzTgtYoTgQiO36Mn",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.AzTgtYoTgQiO36Mn"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Castelo do Sabor, uma cadeia de restaurantes",
+      "description": "Taverna de comida rápida em vários pontos da cidade, sempre um castelo falso de madeira, como cenário de teatro. <b>Mecânica:</b> Quatro pratos (veja os itens da Mini-Aventura 1: Doppelganger, Batata do Castelo, Alqui-Fruta e Cestinha Uivante). Quem come no Castelo <b>mais de três vezes</b> (refeições diferentes) sofre <b>–2 PM</b>; cada dia sem comer lá, mais –2 PM. Esses PM não se recuperam de jeito nenhum, até comer de novo no Castelo, que anula todas as penalidades (a contagem continua: no dia seguinte sem Castelo, –2 de novo). Só se livra do vício quem chega a 0 PM pelas penalidades e recebe <i>Purificação</i>. É uma franquia: pode surgir várias vezes.",
+      "_id": "EoFvsRNNVJH7C8SL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.EoFvsRNNVJH7C8SL"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Residência Paterfax, a casa senciente solitária",
+      "description": "Mansão decrépita da família de aventureiros Paterfax, abandonada há décadas sem tragédia nem maldição aparente. <b>Mecânica:</b> Pode virar a casa do grupo sem aluguel. Como base (Arco 1, p. 61), dá <b>+5 PM</b> ao montante do grupo. Com <i>Heróis de Arton</i> (Bases, p. 244): base básica, segurança 6, com biblioteca, memorial e suítes; tipo especial (montante coletivo de PM com +5) e sem custo de manutenção, qualquer que seja o porte.",
+      "_id": "0DR1bkLmk2gj63ya",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.0DR1bkLmk2gj63ya"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Galswell Montasmant, o \"sósia\" de Klunc",
+      "description": "Ator treinado (já fez A Tragédia de um Tritão e Arrependimento Cor de Sangue), sem trabalho, que se passa por Klunc, o Bárbaro. <b>Mecânica:</b> <b>Atuação +10.</b>",
+      "_id": "FmMS3WE9qdr7X0B2",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.FmMS3WE9qdr7X0B2"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "O Elemental da Poluição",
+      "description": "Valkaria gera \"poluição\": fumaça, resíduos na água, lixo, restos alquímicos e de magia. <b>Mecânica:</b> Entendê-lo: <b>três testes de Conhecimento, Misticismo, Religião ou Sobrevivência CD 25</b> (alguns minutos; uma vez por dia). 1 sucesso: é feito de poluição (conceito novo em Arton). 2: é algo novo e primordial, como os elementos. 3: responde qualquer dúvida. Compreendido, o grupo pode influenciá-lo (levá-lo a um lugar onde não prejudique ninguém, ou para o chassi de um golem, criando um novo tipo de golem). Muito contato: <b>Fortitude CD 20</b> por dia. 1ª falha: fraco; 2ª: debilitado; 3ª: –2 temporário em Con e Car; 4ª: vira <b>criatura de poluição</b> (só come lixo, respira fumaça e bebe água contaminada) e as outras penalidades somem. Permanente até ser revertido de forma criativa.",
+      "_id": "VwZHZxqWRoBXxDwH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.VwZHZxqWRoBXxDwH"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Assalto ao Mercado do Ouro Tolo",
+      "description": "O Mercado do Ouro Tolo é feira e prédio comercial com comerciantes legítimos de produtos de alta classe (alquimia, armas aprimoradas, ingredientes mágicos, bebidas importadas), \"coisas que só tolos comprariam\". <b>Mecânica:</b> Perceber: <b>Guerra, Intuição ou Ladinagem CD 20</b> (ou outras boas ideias). <b>Dez assaltantes</b> com a ficha do Bandido Descarado (Aventura 0, p. 87). Se os heróis atacarem, é combate, não perseguição. Dá para resolver sem violência (magias, habilidades, perícias sociais). Prender os criminosos rende até <b>três provas</b> (3 pontos de Lei &amp; Ordem). O autor descartou este resultado uma vez, por horário; recomenda não fazer isso e, se fizer, ser franco.",
+      "_id": "TAfOJuja4t3Y9BXf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.TAfOJuja4t3Y9BXf"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Bebê Corisco, o ginete extremo",
+      "description": "Jovens ricos, criminosos e fanáticos por emoção promovem corridas ilegais no Circuito de Montarias Extremas, só com montarias monstruosas e exóticas (muitos ataques de monstros na cidade são montarias desgarradas). <b>Mecânica:</b> Cinco testes de <b>Cavalgar</b> contra quatro competidores; some os resultados, vence o maior total. Montaria desconhecida: –5. Cada um aposta <b>T$ 500</b>, o vencedor leva <b>T$ 2.500</b> (Corisco fica com metade se o PJ vencer, mas não paga a aposta na derrota). Os outros podem apostar à parte. Cada rival tem Cavalgar 1d20+10. Bônus (não cumulativos do mesmo tipo): poção ou magia na montaria ou no ginete, +1 por círculo; item alquímico, +1 cada; item superior, +1 por melhoria; item mágico, +1 por categoria; Adestramento para ajudar antes da corrida. Reencontrado, e se o grupo aceitou o pedido antes, sempre pode correr de novo.",
+      "_id": "vPiWk73tZvXHLyjb",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.vPiWk73tZvXHLyjb"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Os Goblins da Gazeta do Reinado",
+      "description": "A Gazeta do Reinado, um dos únicos jornais impressos de Arton, é editada pelos \"Goblins de Valkaria\". <b>Mecânica:</b> O grupo escolhe um representante para um teste de perícia social. O resultado vale até o fim da aventura, em uma ou mais perícias (à escolha do Mestre): <b>10 ou menos: –1</b> (broncos: reportagem-denúncia); <b>11–15: +1</b>; <b>16–20: +2</b> (desinteressantes, o melhor resultado); <b>21–25: –1</b>; <b>26–30: –2</b>; <b>31+: –3</b> (tão elogiosa que revela segredos e fraquezas). Ex.: táticas divulgadas, –2 em Luta; vigaristas, –1 em Diplomacia; gente sem importância, +1 em Furtividade.",
+      "_id": "1EE8mHlEBo8q7H9i",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.1EE8mHlEBo8q7H9i"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "O Orfanato das Pobres e Desgraçadas Crianças Infelizes",
+      "description": "Orfanato de clérigas de Lena para crianças sem nenhuma outra alternativa, que atrai um azar enorme: desabamentos, incêndios, fendas no chão, microvulcões, raios em ambientes fechados. <b>Mecânica:</b> Nada de sinistro: as clérigas cuidam bem dos órfãos e nenhum acidente é proposital. <b>Misticismo ou Religião CD 25</b>: a área foi tocada por <b>Nimb</b>. Há mais de 100 anos o Orfanato acolheu um avatar do Deus do Caos, que, grato, o \"abençoou\": poderia receber sorte extrema a qualquer momento. Os personagens podem tentar retirar a influência (uma espécie de exorcismo), mas aí acabam com qualquer chance de os órfãos terem sorte.",
+      "_id": "tlVMRoPoZb0FxoQC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.tlVMRoPoZb0FxoQC"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Yolana, a infiltradora mental",
+      "description": "A nagah Yolana, \"Silêncio Aberrante\", de Salistick, nunca acreditou em deuses até as mudanças no Panteão. <b>Mecânica:</b> Resistir à intrusão: <b>Vontade oposta a Memética +15</b> (perícia só dela). Em voluntários: Memética CD 25; com sucesso, aplica <b>–5 numa perícia treinada</b> e distribui esses 5 pontos como bônus em uma ou mais perícias, por um dia inteiro. <b>1 natural:</b> –5 numa das perícias que seriam beneficiadas. Quantas vezes quiser, uma vez por dia por personagem. O Mestre decide os efeitos de muitas modificações...",
+      "_id": "E9nMEQG0rdQrZGhG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.E9nMEQG0rdQrZGhG"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "O Depósito de Lixo de Valkaria",
+      "description": "O maior lixão da metrópole, uma vergonha da capital: o refugo foi empilhado antes de a cidade crescer em volta, e retirá-lo por meios mundanos é impossível. <b>Mecânica:</b> Um teste de <b>Investigação por turno</b> (manhã, tarde, noite); o resultado dá direito a rolar na Tabela 8-1 (<i>Tormenta20</i>, p. 328): 24 ou menos, nada; 25–30, ND 3; 31–35, ND 6; 36–40, ND 9; 41–45, ND 12; 46–50, ND 15; 51–60, ND 18; 61–80, ND 20 (sempre só itens); 81+, Tabela 8-9 (p. 337). A cada turno, cada personagem faz <b>Fortitude CD 20 (+2 por teste anterior)</b>; falha contrai <b>infecção do esgoto</b> (p. 318). Cada turno dá <b>–5 cumulativo</b> em perícias sociais contra quem sente cheiro, até um bom banho e roupas limpas. Não dá para escolher 10 ou 20. As CDs altas exigem ajuda de outros aventureiros; grupos dedicados devem poder achar itens poderosos (Kiki achou o Escudo de Azgher na mesa original).",
+      "_id": "AMDoafOl6DDYhJ4K",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.AMDoafOl6DDYhJ4K"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Anatole, o empresário e crítico de aventureiros",
+      "description": "Alto e extravagante, numa \"armadura\" de placas finas e brilhantes e com \"armas\" que são enfeites. <b>Mecânica:</b> Ele consegue missões como qualquer aventureiro (tavernas e boatos) e esconde isso com <b>Enganação +12</b>. Contratado, escolha uma aventura deste livro (ou outra) e faça Anatole empurrar o grupo para ela: já prometeu que os heróis resolvem tudo em no máximo dois dias.",
+      "_id": "5Tmlj10ukpgAIfhA",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.5Tmlj10ukpgAIfhA"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "O Avatar da Cidade",
+      "description": "\"Avatar da Cidade\" é um posto e um conjunto de poderes que um mortal recebe (não tem a ver com a deusa Valkaria). <b>Mecânica:</b> Cada jogador rola em nome do Avatar: <b>Memória +15</b> (Conhecimento só da história de Valkaria). CD 20 fatos triviais; 25 importantes, perigosos ou criminosos; 30 segredos de NPCs; 35 segredos da campanha; 40 segredos do cenário. Em princípio, <b>uma pergunta por personagem</b>; o Mestre pode vetar (esse conhecimento deve ser conquistado). Pode guiar o grupo por suas rotas místicas ou ajudar de outra forma.",
+      "_id": "YH9VXCKVHChHJdiG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.YH9VXCKVHChHJdiG"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "O Clube de Cavalheiros",
+      "description": "Taverna reservada aos maiores vilões de Arton, só por convite de vilões. <b>Mecânica:</b> Perceber que há algo na guilda: <b>Conhecimento ou Ladinagem CD 30</b> (em geral a iniciativa é dos jogadores). Convencer os taxidermistas: dizer que sabem e <b>perícia social CD 25</b>. Dentro, compra-se e vende-se de tudo (uma informação que resolve uma aventura custa como um item mágico médio). Proibido usar habilidades; perícias são desencorajadas: 1ª violação, aviso; 2ª, \"convidados a se retirar\"; 3ª, combate. Reconhecer um cliente: perícia relacionada (Nobreza, Guerra, Misticismo...). Atacar: cada herói testa Luta, Pontaria, Misticismo, Religião, Fortitude, Reflexos ou Furtividade: <b>35+</b> foge com metade dos PV e PM; <b>25–34</b> igual, perdendo o item mais valioso; <b>15–24</b> sai carregado com 0 PV, 0 PM e sem nenhum item; <b>14 ou menos</b>, morte. Quem segue as regras pode virar bem-vindo: contatos e informações valiosíssimos.",
+      "_id": "CEmRWEyFSCmCYVcj",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.CEmRWEyFSCmCYVcj"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "As Lutas Qualificatórias para a Arena de Valkaria",
+      "description": "Empresários promovem minicampeonatos quase ilegais para descobrir gladiadores, numa praça cercada por cordas, numa taverna, num estábulo ou num telhado. <b>Mecânica:</b> Cinco lutadores sorteados na tabela de lutadores. Quem participa precisa vencer os cinco (se dois PJs entram, os dois vencem e depois lutam entre si). Cada luta é um <b>teste oposto do melhor ataque com arma</b> (PM de ataques com custo são gastos). Antes de rolar, pode investir <b>5 PV ou 2 PM por +1</b>; depois de rolar, o dobro (10 PV ou 4 PM). Por luta, o gasto de PV e de PM é limitado, cada um, ao nível. Vencidas as cinco: <b>Atuação CD 30</b> com os bônus de Glamour. Sucesso libera a atividade especial <b>Luta na Arena de Valkaria</b>.",
+      "_id": "6CAxVtVLypuzjSCi",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.6CAxVtVLypuzjSCi"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Justine, a candidata a Dama Urbana",
+      "description": "Clériga humana de Khalmyr sem vocação para o deus: entrou no clero só para servir à cidade. <b>Mecânica:</b> Quem apoia faz campanha: sempre que tentar angariar votos (com NPCs que possam votar, a critério do Mestre), faz um teste de perícia social e anota o resultado. O grupo só sabe se ela ganhou ao reencontrá-la ou no fim do arco: some os resultados de todos; <b>500 ou mais</b> elege Justine. Então, sobre um telhado sem sapé (perseguição, tocaia, infiltração), toda habilidade com custo em PM custa <b>1 PM a menos</b> (mínimo 1).",
+      "_id": "DFCl6vRDOjKlGdXI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.DFCl6vRDOjKlGdXI"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Tilliann, o antigo Deus dos Gnomos",
+      "description": "Punido por Khalmyr pela Revolta dos Três, perdeu a divindade, enlouqueceu e veio a Valkaria por instinto, para perto da Deusa da Humanidade. <b>Mecânica:</b> Com <b>5 pedaços de metal arco-íris</b> (5 armas de uma mão), recupera uma partícula de divindade: <b>um único</b> artoniano pode virar devoto e ganhar <b>Procrastinação Criativa</b>. Interagindo com o metal, explica todas as propriedades dele (o conhecimento passa a Blixto, Belinda ou outro artesão, para fúria dos Arting): item de metal arco-íris trabalhado pode ter qualquer melhoria (exceto material especial) e ser reforjado infinitas vezes (Ofício, tempo normal, sem teste nem custo); concede <b>+5 em resistência</b> contra lefeu, criaturas da Tormenta e áreas de Tormenta. Ajudar a criar itens superiores: perícia social <b>CD 30, +5 por item</b>; uma falha encerra até um novo encontro aleatório, que retoma a CD de onde parou. Itens assim (só os feitos pelos próprios PJs) recebem uma melhoria extra que não conta no limite nem muda custo e CD (não pode ser material especial).",
+      "_id": "cCPGb7NHF42oG4wF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!1pf8dpVxiFrGT4pW.cCPGb7NHF42oG4wF"
+    }
+  ],
+  "_key": "!tables!1pf8dpVxiFrGT4pW"
+}

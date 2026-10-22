@@ -1,0 +1,169 @@
+{
+  "name": "Aforismos do Avatar da Cidade",
+  "img": "icons/svg/book.svg",
+  "folder": "b3vxiEIhZtMUiT3A",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "aforismos"
+    }
+  },
+  "formula": "1d5",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "O Avatar fala por enigmas, parábolas e aforismos.",
+  "_id": "JSuSI4pCPzJXDPHI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "\"Aquele que questiona o treinamento apenas treina o questionamento.\"",
+      "description": "",
+      "_id": "XcnAVK8bOBGfzXuf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JSuSI4pCPzJXDPHI.XcnAVK8bOBGfzXuf"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "\"O perdão deve ser pedido antes de ser dado, e oferecido antes de ser aceito.\"",
+      "description": "",
+      "_id": "oqd98cQFaEsGr3ge",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JSuSI4pCPzJXDPHI.oqd98cQFaEsGr3ge"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "\"Se alguém lhe der um soco, atente para o que ele agarra na mão fechada.\"",
+      "description": "",
+      "_id": "b8HlnjLjt3ckKkpB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JSuSI4pCPzJXDPHI.b8HlnjLjt3ckKkpB"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "\"Não acredite que é feliz agora, pois só depois que o agora acabar você saberá se a felicidade era real.\"",
+      "description": "",
+      "_id": "ljO7wOODxTCUWo7c",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JSuSI4pCPzJXDPHI.ljO7wOODxTCUWo7c"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "\"Antes de julgar alguém, caminhe um quilômetro em seus sapatos. Quando estiver longe, você notará que não precisa mais julgá-lo.\"",
+      "description": "",
+      "_id": "Hqu7scEdVIn7qFkH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!JSuSI4pCPzJXDPHI.Hqu7scEdVIn7qFkH"
+    }
+  ],
+  "_key": "!tables!JSuSI4pCPzJXDPHI"
+}

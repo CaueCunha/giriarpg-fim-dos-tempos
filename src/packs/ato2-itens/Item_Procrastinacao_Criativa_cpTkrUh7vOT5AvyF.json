@@ -1,0 +1,71 @@
+{
+  "name": "Procrastinação Criativa",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "procrastinacao"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Poder concedido de Tilliann.</b> Se você terminar uma aventura com pontos de mana sobrando, pode adicionar essa quantidade como <b>PM totais extras</b> no início da aventura seguinte (até um máximo de PM totais igual ao dobro dos seus PM normais).</p><p>Só um artoniano pode recebê-lo, depois que o grupo dá 5 pedaços de metal arco-íris a Tilliann. Aplique os PM extras com um efeito de <i>PM máximos</i> (system.attributes.pm.bonus.total) no início da aventura.</p>",
+      "unidentified": ""
+    },
+    "tipo": "concedido",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "a8NQaBPvM1uhY8Sg",
+  "_id": "cpTkrUh7vOT5AvyF",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!cpTkrUh7vOT5AvyF"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Carroça de Lagarto Interno",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/carroca.webp",
+  "folder": "a8NQaBPvM1uhY8Sg",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "carroca"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Veículo Grande de metal para duas pessoas, movido por pólvora explosiva e essência de mana (tecnicamente ilegal). <b>Deslocamento 30, Defesa 12 + Des do condutor, 200 PV</b>; leva até 2 criaturas Médias ou 40 espaços; funciona indefinidamente.</p><p><b>Protótipo:</b> –5 em Pilotagem. Na 1ª rodada de uso, 10% de explodir (5d6 de impacto nos pilotos, Reflexos CD 20 reduz à metade), +10% por rodada. Na 2ª versão: 5%, +5% por rodada. <b>Pronta</b> (3º encontro com Gnuk): sem explosão e sem penalidade.</p><p>Com a Carroça, atravessar um hexágono de Valkaria leva 5 minutos (em vez de meia hora). Exige 10 cargas de pólvora (10 munições de mosquete) e 1 essência de mana por aventura. Use a macro <i>Valkaria · Testes dos Encontros</i> para rolar a explosão.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "_id": "bGglJThIt0Jullco",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!bGglJThIt0Jullco"
+}
