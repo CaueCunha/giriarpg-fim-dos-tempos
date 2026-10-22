@@ -42,7 +42,8 @@ export const ATOS = [
 			"a2-labirinto-liberto",
 			"a2-encontros-valkaria",
 			"a2-ruas-valkaria",
-			"a2-lendas-linhas"
+			"a2-lendas-linhas",
+			"a2-apendices"
 		]
 	},
 	{
