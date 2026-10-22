@@ -1,7 +1,7 @@
 {
   "name": "Guarda de Dornbach",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/guarda-de-cidade.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/guarda.webp",
   "folder": "QQ99QFt1qm9NREnR",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/guarda-de-cidade.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/guarda-token.webp"
     },
     "sight": {
       "enabled": true

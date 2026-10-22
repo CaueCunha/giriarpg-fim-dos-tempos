@@ -24,6 +24,7 @@
 	const TAG = "av4";
 	const FLAGS = (role) => ({ world: role ? { fdt: TAG, fdtRole: role } : { fdt: TAG } });
 	const T20I = "systems/tormenta20/icons";
+	const ARTE = "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror";
 
 	/* ------------------------------------------------------------------ */
 	/* 0. Limpeza do que foi gerado antes                                   */
@@ -230,7 +231,8 @@
 		name: "Bandoleiro da Harpia",
 		tokenName: "Bandoleiro",
 		role: "bandoleiro",
-		img: `${T20I}/ameacas/bandido.png`,
+		img: `${ARTE}/bandoleiro-espada.webp`,
+		token: `${ARTE}/bandoleiro-espada-token.webp`,
 		nd: "1/2",
 		cd: 15,
 		tipo: "hum",
@@ -249,6 +251,7 @@
 		tesouro: "Metade.",
 		bio: p(
 			"Criminosos recrutados em Zakharov que servem a Torgo e Syvarian. Trabalham em células e conhecem pouco além da própria tarefa. " + CRISTAIS,
+			`<b>Arte do arqueiro</b>, para variar os tokens na cena: retrato <code>${ARTE}/bandoleiro-arco.webp</code> e token <code>${ARTE}/bandoleiro-arco-token.webp</code> (aba Token do token colocado).`,
 			"<b>Variantes com a mesma ficha:</b>",
 			"<b>Artilheiro do canhão:</b> ligue o efeito <i>Cobertura do canhão (+5 Def)</i>. Se for derrotado, o Canhão de Fogo fica inativo por 1d3 rodadas (enquanto outro bandoleiro assume). Cada artilheiro derrotado sai dos 12 capangas do interior da nave.",
 			"<b>Timoneira:</b> enquanto estiver no comando, personagens desprevenidos pelo piso escorregadio sofrem –2 em perícias. Incapacitada, a nave se estabiliza.",
@@ -274,6 +277,7 @@
 		name: "Cão do Inferno",
 		role: "cao",
 		img: `${T20I}/ameacas/cao-do-inferno.png`,
+		token: `${ARTE}/cao-do-inferno-token.webp`,
 		nd: 2,
 		cd: 17,
 		tipo: "esp",
@@ -313,7 +317,8 @@
 		tokenName: "Torgo",
 		role: "torgo",
 		link: true,
-		img: `${T20I}/ameacas/golem-de-ferro.png`,
+		img: `${ARTE}/torgo.webp`,
+		token: `${ARTE}/torgo-token.webp`,
 		nd: 5,
 		cd: 20,
 		tipo: "con",
@@ -457,6 +462,27 @@
 				{ exec: "passive", rolls: [["Queda da escada", [["1d6", "impacto"]]]] })
 		]
 	});
+
+	/* ---------- A família Gallobalt (sem ficha no livro: só para os tokens) ---------- */
+	const SEM_FICHA = "<b>Não tem ficha no livro.</b> Este ator existe para o token no mapa e para mostrar a arte aos jogadores.";
+	const gallobalt = (role, name, arq, raca, atr, bio) => criarNPC({
+		name, role, img: `${ARTE}/${arq}.webp`, disposition: 0, link: true,
+		nd: 1, tipo: raca === "osteon" ? "mor" : "hum", raca, papel: "special", atr, pv: 10, def: 10, bio: p(bio, SEM_FICHA)
+	});
+	atores.nathanael = await gallobalt("nathanael", "Nathanael Gallobalt", "nathanael", "suraggel", { for: 2, des: 1, con: 2, int: 0, sab: 1, car: 0 },
+		"Comanda a fazenda com a irmã Salisha. Pôs o aviso no quadro do Forte. Acha que o ataque é coisa de uma guilda rival. Desconfia de forasteiros e de autoridades.");
+	atores.salisha = await gallobalt("salisha", "Salisha Gallobalt", "salisha", "suraggel", { for: 1, des: 2, con: 1, int: 0, sab: 1, car: 1 },
+		"Comanda a fazenda com o irmão Nathanael. Acha que o ataque é obra de um demônio.");
+	atores.ritanna = await gallobalt("ritanna", "Ritanna Gallobalt", "ritanna", "medusa", { for: 0, des: 2, con: 1, int: 1, sab: 1, car: 1 },
+		"Medusa da família Gallobalt.");
+	atores.haran = await gallobalt("haran", "Haran Gallobalt", "haran", "osteon", { for: 1, des: 1, con: 1, int: 0, sab: 1, car: 0 },
+		"Osteon da família Gallobalt.");
+	atores.jansel = await gallobalt("jansel", "Jansel Gallobalt", "jansel", "suraggel", { for: 1, des: 1, con: 1, int: 0, sab: 0, car: 1 },
+		"18 anos, casado com Vadrinne. Acha que o ataque é uma possessão. Troca olhares cúmplices com a esposa (Percepção ou Intuição 20).");
+	atores.alon = await gallobalt("alon", "Alon Gallobalt", "alon", "suraggel", { for: -1, des: 2, con: 0, int: 0, sab: 1, car: 1 },
+		"10 anos, inquieto com tudo o que está acontecendo (Percepção ou Intuição para notar).");
+	atores.vadrinne = await gallobalt("vadrinne", "Vadrinne Gallobalt", "vadrinne", "dahllan", { for: 0, des: 1, con: 1, int: 0, sab: 0, car: 2 },
+		"Dahllan, irmã de Annabel (das Dahllan Daninhas), casada com Jansel. Carrega o <b>implante de cristal</b>: na rodada 2 do ataque ele liga e ela caminha até a plantação em 5 rodadas. Use a macro <i>Cirurgia do Implante</i> para retirá-lo.");
 
 	/* ---------- Ator de apoio: a fazenda ---------- */
 	atores.fazenda = await criarNPC({
@@ -849,10 +875,10 @@
 				<p><i>Nathanael Gallobalt, Fazendas Gallobalt, depois da Pedra do Corcunda, a dois dias de viagem a norte se vocês não forem lerdos demais."</i></p></blockquote>`, 200),
 			pagina("A Família Gallobalt", `
 				<ul>
-					<li><b>Nathanael</b> e <b>Salisha</b>: irmãos suraggel que comandam a fazenda.</li>
-					<li><b>Ritanna</b> (medusa) e <b>Haran</b> (osteon).</li>
-					<li><b>Alon</b> (10 anos) e <b>Jansel</b> (18 anos).</li>
-					<li><b>Vadrinne</b>: dahllan, irmã de Annabel (das Dahllan Daninhas). Carrega o implante.</li>
+					<li>${L(atores.nathanael)} e ${L(atores.salisha)}: irmãos suraggel que comandam a fazenda.</li>
+					<li>${L(atores.ritanna)} (medusa) e ${L(atores.haran)} (osteon).</li>
+					<li>${L(atores.alon)} (10 anos) e ${L(atores.jansel)} (18 anos).</li>
+					<li>${L(atores.vadrinne)}: dahllan, irmã de Annabel (das Dahllan Daninhas). Carrega o implante.</li>
 				</ul>
 				<p>Plantam <b>achbuld</b> atrás de um muro de pedra e guardam armas de fogo. Desconfiam de forasteiros e de autoridades.</p>
 				<h3>Teorias</h3>
@@ -926,5 +952,5 @@
 		]
 	});
 
-	ui.notifications.info("Aventura 4 criada: 6 atores, itens, diário e 6 macros. Veja a pasta \"" + NOME_PASTA + "\".");
+	ui.notifications.info("Aventura 4 criada: 13 atores, itens, diário e 6 macros. Veja a pasta \"" + NOME_PASTA + "\".");
 })();
