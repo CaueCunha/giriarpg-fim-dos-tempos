@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 61 documento(s), 6 pasta(s)
-- `ato2-itens`: 52 documento(s), 6 pasta(s)
-- `ato2-diarios`: 6 documento(s), 6 pasta(s)
-- `ato2-tabelas`: 10 documento(s), 6 pasta(s)
-- `ato2-macros`: 30 documento(s), 6 pasta(s)
+- `ato2-ameacas`: 81 documento(s), 7 pasta(s)
+- `ato2-itens`: 70 documento(s), 7 pasta(s)
+- `ato2-diarios`: 7 documento(s), 7 pasta(s)
+- `ato2-tabelas`: 14 documento(s), 7 pasta(s)
+- `ato2-macros`: 37 documento(s), 7 pasta(s)
 
-### Ligações com o sistema (120)
+### Ligações com o sistema (139)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -268,6 +268,25 @@
 | Khenzarr, o Biomante | Ferver Sangue | magia | magia do sistema + ficha do NPC |
 | Khenzarr, o Biomante | Imobilizar | magia | magia do sistema + ficha do NPC |
 | Khenzarr, o Biomante | Metamorfose | magia | magia do sistema + ficha do NPC |
+| Lakshrimi, Replicoide Duquesa Alfraye | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Lakshrimi, Replicoide Duquesa Alfraye | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Axel | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Axel | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 

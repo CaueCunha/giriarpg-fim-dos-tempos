@@ -1,0 +1,573 @@
+{
+  "name": "Saída da Sala Mágica",
+  "img": "systems/tormenta20/icons/magias/santuario.webp",
+  "folder": "w8LnWOMM2AE550Qk",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Cada sala mágica pode ter uma saída para outro cômodo. Se cair no cômodo de origem, só há saída para ele.",
+  "_id": "NNsrfCQNhUtGgZJ3",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Hall de Entrada (A)",
+      "description": "",
+      "_id": "0VbjwGNIlTffFipJ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.0VbjwGNIlTffFipJ"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Átrio (B)",
+      "description": "",
+      "_id": "DgZnc27amhBdfHer",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.DgZnc27amhBdfHer"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Chapelaria (C)",
+      "description": "",
+      "_id": "hxRk0UF2h8LpSyY0",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.hxRk0UF2h8LpSyY0"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Salão Principal (D)",
+      "description": "",
+      "_id": "1bPnd9cUcQ91Fw5g",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.1bPnd9cUcQ91Fw5g"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Salão de Banquete (E)",
+      "description": "",
+      "_id": "0vVxiyEQHy5D5ccP",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.0vVxiyEQHy5D5ccP"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Adega (F)",
+      "description": "",
+      "_id": "z12Ab26HnePbY49R",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.z12Ab26HnePbY49R"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Cozinha Principal (G)",
+      "description": "",
+      "_id": "3qgzNPdgBaNoaHtW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.3qgzNPdgBaNoaHtW"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Lavabo Principal (H)",
+      "description": "",
+      "_id": "DAI1TB5dAZeMdFH0",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.DAI1TB5dAZeMdFH0"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Sacada Interna (I)",
+      "description": "",
+      "_id": "ihDppd0FZvSRGBde",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.ihDppd0FZvSRGBde"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Jardim Interno (J)",
+      "description": "",
+      "_id": "vbLHkIyn2XtUIl33",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.vbLHkIyn2XtUIl33"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Salão de Música (K)",
+      "description": "",
+      "_id": "fFgT1XB9PYHZMNiX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.fFgT1XB9PYHZMNiX"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Bastidores (L)",
+      "description": "",
+      "_id": "9EHiIxpYh1F3Am1b",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.9EHiIxpYh1F3Am1b"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Biblioteca (M)",
+      "description": "",
+      "_id": "Sh9RuGvycyKsiNzx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.Sh9RuGvycyKsiNzx"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Estufa (N)",
+      "description": "",
+      "_id": "VyYbXeVLhXTGixhk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.VyYbXeVLhXTGixhk"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Galeria de Arte (O)",
+      "description": "",
+      "_id": "5x9GfoVrry3EZPlB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.5x9GfoVrry3EZPlB"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Cassino (P)",
+      "description": "",
+      "_id": "0msD24SWa0eh5R94",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.0msD24SWa0eh5R94"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Capela (Q)",
+      "description": "",
+      "_id": "HViQ3cYGDifQiFCZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.HViQ3cYGDifQiFCZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Sala de Troféus (R)",
+      "description": "",
+      "_id": "Z82B3Bmn7xjbuyFQ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.Z82B3Bmn7xjbuyFQ"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Dois cômodos",
+      "description": "Role mais duas vezes.",
+      "_id": "PFE37pC88qFdjqce",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.PFE37pC88qFdjqce"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Qualquer cômodo",
+      "description": "À escolha do personagem.",
+      "_id": "BoS3TWI8qVNeXjVE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NNsrfCQNhUtGgZJ3.BoS3TWI8qVNeXjVE"
+    }
+  ],
+  "_key": "!tables!NNsrfCQNhUtGgZJ3"
+}
