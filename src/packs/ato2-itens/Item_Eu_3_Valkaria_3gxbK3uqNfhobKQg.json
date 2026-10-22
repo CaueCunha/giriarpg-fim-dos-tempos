@@ -1,0 +1,71 @@
+{
+  "name": "Eu <3 Valkaria",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/heroismo.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "eu-valkaria"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Durante ou logo antes da luta contra Ghorskander, de preferência quando o grupo leva a pior: valkarianos surgem nas janelas, nas ruas, em naves aéreas e telhados, vaiam o oficial médico, jogam frutas podres e gritam os nomes dos heróis. Use só se o grupo teve apreço pela cidade.</p><p>Cada aventureiro escolhe um benefício:</p><ul><li>Os efeitos de uma noite de descanso em acomodações normais.</li><li>O efeito de uma atividade em Valkaria qualquer.</li><li>O efeito de um parceiro veterano qualquer (algum valkariano sabe fazer o que é preciso).</li></ul><p>Ou, se todos concordarem, abrem mão disso em troca dos <b>efeitos de estar na base do grupo</b>: toda Valkaria conta como a base durante o combate.</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "3f3kt4yHp0H0LP7j",
+  "_id": "3gxbK3uqNfhobKQg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!3gxbK3uqNfhobKQg"
+}

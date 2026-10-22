@@ -1,0 +1,31 @@
+{
+  "name": "Mini 1 · Mensagem da Ploigoníada",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/pergaminho.webp",
+  "folder": "VoP5yNFLRc5qcoqs",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n(async function macroMensagem() {\n\t\tconst CHAVE = \"fdtPloigoniada\";\n\t\tconst agora = () => Number(game.time?.worldTime) || 0;\n\t\tconst e = game.user.getFlag(\"world\", CHAVE);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Mensagem da Ploigoníada\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"ler\">O pergaminho de luz surge (mostrar aos jogadores e iniciar o prazo de 12 horas)</option>\n\t\t\t\t\t<option value=\"prazo\">Quanto falta do prazo</option>\n\t\t\t\t\t<option value=\"pericia\">Os selecionados entendem o contrato (Misticismo, Religião ou Nobreza)</option></select></div>\n\t\t\t\t${e ? `<p>Prazo iniciado: restam cerca de <b>${Math.max(0, Math.ceil((e.fim - agora()) / 3600))} h</b> pelo relógio do mundo.</p>` : \"\"}`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"ler\") {\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, { inicio: agora(), fim: agora() + 12 * 3600 });\n\t\t\treturn ChatMessage.create({ content: `<h3>Um brilho surge no meio da sala</h3><p>O clarão arrefece e toma a forma de um pergaminho feito de luz, flutuando no ar:</p>\n\t\t\t\t<blockquote><p>\"Vocês foram responsabilizados pela dívida contraída por Arthemus Vesper e sua tripulação para com a Ploigoníada. Verificamos que não dispõem dos fundos necessários para realizar o pagamento e assim colocamos em prática o procedimento padrão.\"</p>\n\t\t\t\t<p>\"O hynne Blixto Arting foi tomado como refém. Caso o valor de <b>T$ 50.000.000,00</b> não seja pago no prazo estipulado, ele será executado e sua oficina, a Metais do Baixote, será tomada pela Ploigoníada como compensação.\"</p>\n\t\t\t\t<p>\"Vocês têm <b>12 (doze) horas</b>, a partir do momento em que esta mensagem está sendo lida, para se apresentar no galpão mostrado no mapa (anexo) com a quantia previamente citada. A presença de quaisquer autoridades, heróis ou pessoas além do grupo de aventureiros será considerada quebra de contrato e provocará a morte imediata de Blixto Arting, assim como o supracitado confisco de seu negócio.\"</p>\n\t\t\t\t<p>\"Aguardamos sua chegada com o pagamento.\"<br>\"Cordialmente,\"<br>\"A Ploigoníada\"</p></blockquote>\n\t\t\t\t<p>O pergaminho se desvanece e dá lugar a um pequeno mapa, com o galpão indicado: uma rua do Altar de Heróis.</p>` });\n\t\t}\n\t\tif (res.acao === \"prazo\") {\n\t\t\tif (!e) return ui.notifications.warn(\"O prazo ainda não foi iniciado.\");\n\t\t\tconst h = (e.fim - agora()) / 3600;\n\t\t\treturn ChatMessage.create({ whisper: ChatMessage.getWhisperRecipients(\"GM\"), content: `<h3>Prazo da Ploigoníada</h3><p>${h > 0 ? `Restam <b>${Math.ceil(h)} h</b>.` : \"<b>O prazo acabou.</b> Blixto é executado e a Metais do Baixote é confiscada (veja Efeitos de Derrota na macro <i>Desfecho</i>).\"}</p>` });\n\t\t}\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione os personagens.\");\n\t\tconst rolls = [];\n\t\tconst linhas = [];\n\t\tfor (const t of tokens) {\n\t\t\tconst pe = t.actor.system.pericias ?? {};\n\t\t\tconst [k, v] = [\"mist\", \"reli\", \"nobr\"].map((x) => [x, Number(pe[x]?.value) || 0]).sort((a, b) => b[1] - a[1])[0];\n\t\t\tconst r = await new Roll(`1d20 + ${v}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tlinhas.push(`<li>${t.name} (${{ mist: \"Misticismo\", reli: \"Religião\", nobr: \"Nobreza\" }[k]}): ${r.total}.</li>`);\n\t\t}\n\t\tChatMessage.create({ rolls, content: `<h3>O contrato da Ploigoníada</h3><ul>${linhas.join(\"\")}</ul>\n\t\t\t<p>Qualquer teste revela o mesmo: a Ploigoníada quer reaver ao menos parte do lucro. O valor é exorbitante de propósito, para \"forçar\" a cláusula seguinte: o confisco da Metais do Baixote. É assassinato e roubo em enorme escala com alguns passos a mais, cuidadosamente dentro da letra da lei, para que a guilda continue podendo invocar Cobradores. Discutir a jurisdição de um contrato do éter leva meses, não horas.</p>` });\n\t})();",
+  "_id": "tyrfHsUgfLskikDu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!tyrfHsUgfLskikDu"
+}

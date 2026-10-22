@@ -1904,7 +1904,7 @@
       "img": "systems/tormenta20/icons/magias/curar-ferimentos.webp",
       "effects": [
         {
-          "_id": "uU8jjkCtXRSj0cEA",
+          "_id": "1OjzULaeLZORGvgp",
           "flags": {
             "tormenta20": {}
           },
@@ -1967,10 +1967,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.uU8jjkCtXRSj0cEA"
+          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.1OjzULaeLZORGvgp"
         },
         {
-          "_id": "DcFeyOga9VtIOKgp",
+          "_id": "L4D7w9kv0yux7QDM",
           "flags": {
             "tormenta20": {}
           },
@@ -2033,10 +2033,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.DcFeyOga9VtIOKgp"
+          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.L4D7w9kv0yux7QDM"
         },
         {
-          "_id": "hsrqGbB0oYtjSlXJ",
+          "_id": "zkGKWyC6HbWCdFOi",
           "flags": {
             "tormenta20": {}
           },
@@ -2091,10 +2091,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.hsrqGbB0oYtjSlXJ"
+          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.zkGKWyC6HbWCdFOi"
         },
         {
-          "_id": "LdxJn4WIeT4novd4",
+          "_id": "6juTkcBoVWOg27ib",
           "flags": {
             "tormenta20": {}
           },
@@ -2157,10 +2157,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.LdxJn4WIeT4novd4"
+          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.6juTkcBoVWOg27ib"
         },
         {
-          "_id": "zPCGz3kQPNyHn7G8",
+          "_id": "uHPS3AgOI6QXETFH",
           "flags": {
             "tormenta20": {}
           },
@@ -2230,7 +2230,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.zPCGz3kQPNyHn7G8"
+          "_key": "!actors.items.effects!AFaOSkFUaStc9IXW.hIXeJZCX5e2sWfn6.uHPS3AgOI6QXETFH"
         }
       ],
       "flags": {

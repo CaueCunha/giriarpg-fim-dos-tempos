@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Sabotar o Imagoduto",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/instrumentos-de-oficio.webp",
+  "folder": "cb4jBkHBzZOmbFwU",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n(async function macroImagoduto() {\n\t\tconst CHAVE = \"fdtImagoduto\";\n\t\tconst feitos = Number(game.user.getFlag(\"world\", CHAVE)) || 0;\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Sabotar o Imagoduto\" },\n\t\t\tcontent: `<p>Sucessos: <b>${feitos}/50</b> (Ofício engenhoqueiro CD 30, ação completa cada).</p>\n\t\t\t\t<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"testar\">Testar com os selecionados (um teste cada)</option>\n\t\t\t\t\t<option value=\"zerar\">Recomeçar a contagem</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Bônus de Ofício (engenhoqueiro), se a ficha não tiver</label><input type=\"number\" name=\"bonus\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Resultado já rolado (opcional, um teste)</label><input type=\"number\" name=\"manual\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Contagem do Imagoduto zerada.\");\n\t\t}\n\t\tconst rolls = [];\n\t\tconst linhas = [];\n\t\tlet ok = 0;\n\t\tif (res.manual !== \"\" && res.manual !== undefined) {\n\t\t\tconst v = Number(res.manual);\n\t\t\tif (v >= 30) ok += 1;\n\t\t\tlinhas.push(`Resultado informado: ${v} ${v >= 30 ? \"✔️\" : \"❌\"}`);\n\t\t} else {\n\t\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione quem trabalha no Imagoduto, ou informe o resultado.\");\n\t\t\tfor (const t of tokens) {\n\t\t\t\tconst ofi = Object.values(t.actor.system.pericias ?? {}).find((p) => /engenhoq/i.test(p?.label ?? p?.nome ?? \"\"));\n\t\t\t\tconst b = res.bonus !== \"\" && res.bonus !== undefined ? Number(res.bonus) || 0 : Number(ofi?.value) || Number(t.actor.system.pericias?.ofi0?.value) || 0;\n\t\t\t\tconst r = await new Roll(`1d20 + ${b}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tif (r.total >= 30) ok += 1;\n\t\t\t\tlinhas.push(`${t.name}: ${r.total} ${r.total >= 30 ? \"✔️\" : \"❌\"}`);\n\t\t\t}\n\t\t}\n\t\tconst total = Math.min(50, feitos + ok);\n\t\tconst fim = total >= 50;\n\t\tif (fim) await game.user.unsetFlag(\"world\", CHAVE);\n\t\telse await game.user.setFlag(\"world\", CHAVE, total);\n\t\tChatMessage.create({\n\t\t\tcontent: `<h3>Sabotar o Imagoduto</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join(\"\")}</ul><p>Sucessos: <b>${total}/50</b>.</p>${fim ? \"<p><b>O Imagoduto está desativado!</b> A batalha termina na hora: a paisagem de loucura se desfaz e os internos se acalmam. Ajuste Lei &amp; Ordem.</p>\" : \"\"}`,\n\t\t\trolls\n\t\t});\n\t})();",
+  "_id": "a0zphMZJPcGWknf0",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!a0zphMZJPcGWknf0"
+}

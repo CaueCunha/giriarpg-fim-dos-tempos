@@ -1,0 +1,89 @@
+{
+  "name": "Escudo Esbodegado",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/equipamentos/escudo-pesado.webp",
+  "system": {
+    "description": {
+      "value": "<p>Este enorme escudo parece prestes a se quebrar, mas aguenta alguns golpes. Pode ser usado sem proficiência. <b>Absorve 50 pontos de dano</b> no total (o usuário não sofre dano; o escudo se destrói quando absorve 50). Use a quantidade para contar o dano restante.</p><p><b>Item efêmero da Ploigoníada.</b> Cinco usos (a quantidade conta os usos, inclusive os dos capangas). Largado e não apanhado por 3 rodadas, ou não empunhado ativamente por 3 rodadas, se desfaz. Não pode ser guardado. Um personagem só empunha um destes itens por vez. Quem empunha usa as próprias estatísticas de ataque, modificadas pelo item.</p>",
+      "unidentified": ""
+    },
+    "qtd": 50,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": [],
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "armadura": {
+      "maxAtr": 0,
+      "penalidade": 0,
+      "value": 0
+    },
+    "tipo": "leve"
+  },
+  "folder": "iCDqx60IYdnmDhD0",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "especial-12"
+    }
+  },
+  "_id": "GziqG3fDMPSzAUrq",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!GziqG3fDMPSzAUrq"
+}

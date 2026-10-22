@@ -1,0 +1,1384 @@
+{
+  "name": "NPCs em Valkaria (situações)",
+  "img": "systems/tormenta20/icons/itens/gerais/diario.webp",
+  "folder": "bxOG4ZUEz50bCF6p",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "npcs"
+    }
+  },
+  "formula": "1d100",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role um NPC por situação (três no Tumulto e na Batalha Campal). Ignore NPCs mortos, presos, ausentes ou que já estejam com o grupo. NPCs poderosos estão feridos ou exaustos e precisam ser salvos.",
+  "_id": "i63DP9gm4W1PU8ns",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        2
+      ],
+      "weight": 2,
+      "name": "Gnuk",
+      "description": "",
+      "_id": "DLPckuO3IVuCZTYs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.DLPckuO3IVuCZTYs"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        4
+      ],
+      "weight": 2,
+      "name": "Farboraff e Brungamm",
+      "description": "",
+      "_id": "2yx4RxDK9AOAQub9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.2yx4RxDK9AOAQub9"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        6
+      ],
+      "weight": 2,
+      "name": "Wynstar",
+      "description": "",
+      "_id": "eMjl5qmczhAd5Gg6",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.eMjl5qmczhAd5Gg6"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        8
+      ],
+      "weight": 2,
+      "name": "Drelene",
+      "description": "",
+      "_id": "RACfFIQnHJBldmpp",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.RACfFIQnHJBldmpp"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 2,
+      "name": "Yolana",
+      "description": "",
+      "_id": "vVxDglJAF3HVqd4b",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.vVxDglJAF3HVqd4b"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        12
+      ],
+      "weight": 2,
+      "name": "Galswell Montasmant",
+      "description": "",
+      "_id": "SMCz5Ds7INrFYIGY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.SMCz5Ds7INrFYIGY"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        14
+      ],
+      "weight": 2,
+      "name": "Justine",
+      "description": "",
+      "_id": "YHqWR3VsYyYPeN0H",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.YHqWR3VsYyYPeN0H"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        16
+      ],
+      "weight": 2,
+      "name": "Os Goblins da Gazeta do Reinado",
+      "description": "Salvá-los dá +2 em um teste de perícia de cada personagem até o fim da fase 1.",
+      "_id": "M4h0ssB5P0umkdwr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.M4h0ssB5P0umkdwr"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        18
+      ],
+      "weight": 2,
+      "name": "Uma clériga e duas crianças do Orfanato das Pobres e Desgraçadas Crianças Infelizes",
+      "description": "Ignorar uma situação com eles: cada personagem perde 1d4 PM (remorso).",
+      "_id": "inGrGsgQc5D7LYc4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.inGrGsgQc5D7LYc4"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        20
+      ],
+      "weight": 2,
+      "name": "Bebê Corisco",
+      "description": "",
+      "_id": "DkEsIVFmq0rT5HGS",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.DkEsIVFmq0rT5HGS"
+    },
+    {
+      "type": "text",
+      "range": [
+        21,
+        22
+      ],
+      "weight": 2,
+      "name": "Anatole",
+      "description": "",
+      "_id": "OGznZWCYVyiwjjJr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.OGznZWCYVyiwjjJr"
+    },
+    {
+      "type": "text",
+      "range": [
+        23,
+        24
+      ],
+      "weight": 2,
+      "name": "Um lutador das qualificatórias da Arena de Valkaria",
+      "description": "Salvá-lo dá +2 em um teste de Luta até o fim da fase 1.",
+      "_id": "xtcrwr15zQzWZreJ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.xtcrwr15zQzWZreJ"
+    },
+    {
+      "type": "text",
+      "range": [
+        25,
+        26
+      ],
+      "weight": 2,
+      "name": "Xerife Mathilda Nolt",
+      "description": "",
+      "_id": "PnCy83G7Ekjx2ISZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.PnCy83G7Ekjx2ISZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        27,
+        28
+      ],
+      "weight": 2,
+      "name": "Dra. Zymni",
+      "description": "Salvá-la recupera 10 PV de cada personagem.",
+      "_id": "R8YcEBKqJeKz1c7B",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.R8YcEBKqJeKz1c7B"
+    },
+    {
+      "type": "text",
+      "range": [
+        29,
+        30
+      ],
+      "weight": 2,
+      "name": "Ulnsariann",
+      "description": "",
+      "_id": "eKN2HMdGtaEpAjGN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.eKN2HMdGtaEpAjGN"
+    },
+    {
+      "type": "text",
+      "range": [
+        31,
+        32
+      ],
+      "weight": 2,
+      "name": "Throgarimm",
+      "description": "",
+      "_id": "kX07kmQ2jEABYCkd",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.kX07kmQ2jEABYCkd"
+    },
+    {
+      "type": "text",
+      "range": [
+        33,
+        34
+      ],
+      "weight": 2,
+      "name": "Saeba",
+      "description": "",
+      "_id": "xBqq03uJGVSSJhgc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.xBqq03uJGVSSJhgc"
+    },
+    {
+      "type": "text",
+      "range": [
+        35,
+        36
+      ],
+      "weight": 2,
+      "name": "Hannah",
+      "description": "",
+      "_id": "B3CFpCb4wDIq1Wz9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.B3CFpCb4wDIq1Wz9"
+    },
+    {
+      "type": "text",
+      "range": [
+        37,
+        38
+      ],
+      "weight": 2,
+      "name": "Finley",
+      "description": "",
+      "_id": "PlQI9DNMu9OHKNSx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.PlQI9DNMu9OHKNSx"
+    },
+    {
+      "type": "text",
+      "range": [
+        39,
+        40
+      ],
+      "weight": 2,
+      "name": "Tullia Blasanov",
+      "description": "",
+      "_id": "z6ypDSmqD73D9g3x",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.z6ypDSmqD73D9g3x"
+    },
+    {
+      "type": "text",
+      "range": [
+        41,
+        42
+      ],
+      "weight": 2,
+      "name": "Berthun",
+      "description": "",
+      "_id": "im2J3vXDnIPJzKNm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.im2J3vXDnIPJzKNm"
+    },
+    {
+      "type": "text",
+      "range": [
+        43,
+        44
+      ],
+      "weight": 2,
+      "name": "Blixto Arting",
+      "description": "",
+      "_id": "tBRTcRw4OYhCDGk3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.tBRTcRw4OYhCDGk3"
+    },
+    {
+      "type": "text",
+      "range": [
+        45,
+        46
+      ],
+      "weight": 2,
+      "name": "Basil Arting",
+      "description": "",
+      "_id": "mvRfG4Ko4ClLrA7d",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.mvRfG4Ko4ClLrA7d"
+    },
+    {
+      "type": "text",
+      "range": [
+        47,
+        48
+      ],
+      "weight": 2,
+      "name": "Felicia Daratramm",
+      "description": "",
+      "_id": "WYo8PUjcYJnBGaDI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.WYo8PUjcYJnBGaDI"
+    },
+    {
+      "type": "text",
+      "range": [
+        49,
+        50
+      ],
+      "weight": 2,
+      "name": "Aldanna",
+      "description": "",
+      "_id": "AXAdYAbkFNZpZ7Jm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.AXAdYAbkFNZpZ7Jm"
+    },
+    {
+      "type": "text",
+      "range": [
+        51,
+        52
+      ],
+      "weight": 2,
+      "name": "Albert",
+      "description": "",
+      "_id": "BMcHf2G83X9Lk0JT",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.BMcHf2G83X9Lk0JT"
+    },
+    {
+      "type": "text",
+      "range": [
+        53,
+        54
+      ],
+      "weight": 2,
+      "name": "Grug (Alvuriell)",
+      "description": "",
+      "_id": "na8AOTA13NV4Ah84",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.na8AOTA13NV4Ah84"
+    },
+    {
+      "type": "text",
+      "range": [
+        55,
+        56
+      ],
+      "weight": 2,
+      "name": "Ysmenne",
+      "description": "",
+      "_id": "eQgsQJ8nFhAMTOy6",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.eQgsQJ8nFhAMTOy6"
+    },
+    {
+      "type": "text",
+      "range": [
+        57,
+        58
+      ],
+      "weight": 2,
+      "name": "Os membros da SPIMA",
+      "description": "",
+      "_id": "V8Li2ibMSm4bICsC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.V8Li2ibMSm4bICsC"
+    },
+    {
+      "type": "text",
+      "range": [
+        59,
+        60
+      ],
+      "weight": 2,
+      "name": "Farhuk",
+      "description": "",
+      "_id": "GfG2F3AAvURUEJFh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.GfG2F3AAvURUEJFh"
+    },
+    {
+      "type": "text",
+      "range": [
+        61,
+        62
+      ],
+      "weight": 2,
+      "name": "Click e Drasala",
+      "description": "",
+      "_id": "jHykCvhBf0bvv8PE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.jHykCvhBf0bvv8PE"
+    },
+    {
+      "type": "text",
+      "range": [
+        63,
+        64
+      ],
+      "weight": 2,
+      "name": "Banda Naxia e os Monstros Errantes",
+      "description": "",
+      "_id": "R3fJfhc6oVmpwFeg",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.R3fJfhc6oVmpwFeg"
+    },
+    {
+      "type": "text",
+      "range": [
+        65,
+        66
+      ],
+      "weight": 2,
+      "name": "Banda Brasão de Kor Kovith",
+      "description": "",
+      "_id": "KFOHgGXAgshmyMTt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.KFOHgGXAgshmyMTt"
+    },
+    {
+      "type": "text",
+      "range": [
+        67,
+        68
+      ],
+      "weight": 2,
+      "name": "Banda Tarsos",
+      "description": "",
+      "_id": "BJkwyOMfAkLhOJ23",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.BJkwyOMfAkLhOJ23"
+    },
+    {
+      "type": "text",
+      "range": [
+        69,
+        70
+      ],
+      "weight": 2,
+      "name": "Banda Reles Rancor",
+      "description": "",
+      "_id": "H0YCEoyboZm3yLxS",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.H0YCEoyboZm3yLxS"
+    },
+    {
+      "type": "text",
+      "range": [
+        71,
+        72
+      ],
+      "weight": 2,
+      "name": "Vyrgillia de Azgher",
+      "description": "",
+      "_id": "kzPu8oYSR47tTlBk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.kzPu8oYSR47tTlBk"
+    },
+    {
+      "type": "text",
+      "range": [
+        73,
+        74
+      ],
+      "weight": 2,
+      "name": "Senomar",
+      "description": "",
+      "_id": "ejY8A8VzhHLFW955",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.ejY8A8VzhHLFW955"
+    },
+    {
+      "type": "text",
+      "range": [
+        75,
+        76
+      ],
+      "weight": 2,
+      "name": "Banda Crânio de Pedra",
+      "description": "",
+      "_id": "nsiSEe49ffWi1c7M",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.nsiSEe49ffWi1c7M"
+    },
+    {
+      "type": "text",
+      "range": [
+        77,
+        78
+      ],
+      "weight": 2,
+      "name": "Marquês Vladmir Mors",
+      "description": "",
+      "_id": "UJJ5upgHvEaK9lJk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.UJJ5upgHvEaK9lJk"
+    },
+    {
+      "type": "text",
+      "range": [
+        79,
+        80
+      ],
+      "weight": 2,
+      "name": "Fido",
+      "description": "",
+      "_id": "v2Agu5zM79JAAc9L",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.v2Agu5zM79JAAc9L"
+    },
+    {
+      "type": "text",
+      "range": [
+        81,
+        82
+      ],
+      "weight": 2,
+      "name": "Ellan'grag'dakrimm e Gausblopparesmme",
+      "description": "",
+      "_id": "lrQx6fIMsXfCEiin",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.lrQx6fIMsXfCEiin"
+    },
+    {
+      "type": "text",
+      "range": [
+        83,
+        84
+      ],
+      "weight": 2,
+      "name": "Duquesa Alfraye Oppulak de Trylon e Foltomett",
+      "description": "",
+      "_id": "0R74OOnYKJIIdw1b",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.0R74OOnYKJIIdw1b"
+    },
+    {
+      "type": "text",
+      "range": [
+        85,
+        86
+      ],
+      "weight": 2,
+      "name": "Torzogh Meio-Machado e mais um dos Mata-Malvados",
+      "description": "",
+      "_id": "AARp1mQAuXQ1vrAa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.AARp1mQAuXQ1vrAa"
+    },
+    {
+      "type": "text",
+      "range": [
+        87,
+        88
+      ],
+      "weight": 2,
+      "name": "Janara",
+      "description": "",
+      "_id": "6oavilO9R0xM073X",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.6oavilO9R0xM073X"
+    },
+    {
+      "type": "text",
+      "range": [
+        89,
+        90
+      ],
+      "weight": 2,
+      "name": "Rolthurr e Mazynne",
+      "description": "",
+      "_id": "bMjN8ncQYAn46FVY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.bMjN8ncQYAn46FVY"
+    },
+    {
+      "type": "text",
+      "range": [
+        91,
+        92
+      ],
+      "weight": 2,
+      "name": "Dorothea Millicent",
+      "description": "",
+      "_id": "pImhBQ2RH7nhDG50",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.pImhBQ2RH7nhDG50"
+    },
+    {
+      "type": "text",
+      "range": [
+        93,
+        94
+      ],
+      "weight": 2,
+      "name": "Um jovem nobre sobrevivente do Baile da Primavera",
+      "description": "",
+      "_id": "deCmB5XrSiJHFS6l",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.deCmB5XrSiJHFS6l"
+    },
+    {
+      "type": "text",
+      "range": [
+        95,
+        96
+      ],
+      "weight": 2,
+      "name": "Um NPC trazido das Colinas Centrais",
+      "description": "",
+      "_id": "aWwT1LTl8aQ5ls0g",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.aWwT1LTl8aQ5ls0g"
+    },
+    {
+      "type": "text",
+      "range": [
+        97,
+        98
+      ],
+      "weight": 2,
+      "name": "Um NPC famoso ou lendário à sua escolha",
+      "description": "Se morrer na situação, sobrevive, mas cada personagem perde 2d4 PM.",
+      "_id": "FrPJfuPsD0ZYwqSZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.FrPJfuPsD0ZYwqSZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        99,
+        100
+      ],
+      "weight": 2,
+      "name": "NPC enfurecido",
+      "description": "Role de novo: o NPC está enfurecido e ataca o grupo. Não dá para ignorar a situação, +5 nas CD e cada teste falho custa 2d6 PV.",
+      "_id": "HDCGGDeZtBfQ5tbM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!i63DP9gm4W1PU8ns.HDCGGDeZtBfQ5tbM"
+    }
+  ],
+  "_key": "!tables!i63DP9gm4W1PU8ns"
+}

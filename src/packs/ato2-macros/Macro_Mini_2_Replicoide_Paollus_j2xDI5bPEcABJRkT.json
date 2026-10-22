@@ -1,0 +1,31 @@
+{
+  "name": "Mini 2 · Replicoide Paollus",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/golem-de-ferro.png",
+  "folder": "KHe2ZVcv1sqPkgQ9",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n(async function macroReplicoide() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Replicoide Paollus\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"explorar\">Explorar Capangas (o comandado mirado perde a ação padrão)</option>\n\t\t\t\t\t<option value=\"sacrificio\">Sacrifício Involuntário (o comandado mirado sofre no lugar)</option>\n\t\t\t\t\t<option value=\"vulnerabilidade\">Criar Vulnerabilidade no alvo (–5 Defesa até o fim da cena)</option>\n\t\t\t\t\t<option value=\"embutido\">Armamento Embutido (primeiro tiro da cena: alvo surpreendido)</option>\n\t\t\t\t\t<option value=\"fala\">O Replicoide fala</option></select></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rep = game.actors.find((a) => a.getFlag(\"world\", \"fdt\") === \"a2mini2\" && a.getFlag(\"world\", \"fdtRole\") === \"replicoide\");\n\t\tconst alvo = [...game.user.targets].find((t) => t.actor);\n\t\tlet html = \"<h3>Replicoide Paollus</h3>\";\n\t\tif (res.acao === \"fala\") {\n\t\t\tconst FALAS = [\"\\\"Irmãos! Quem trouxer a cabeça de um desses heróis vira gêmeo amanhã.\\\"\", \"\\\"Puxem a alavanca. Quero que a Casa Blasanov ouça o pescoço dele quebrar.\\\"\", \"\\\"Eu? Uma cópia? Olhem bem para mim. Eu sou Paollus.\\\"\", \"\\\"Morram por mim, irmãos. É para isso que servem.\\\"\"];\n\t\t\tconst r = await new Roll(`1d${FALAS.length}`).evaluate();\n\t\t\treturn ChatMessage.create({ content: `${html}<p><i>${FALAS[r.total - 1]}</i></p>`, speaker: ChatMessage.getSpeaker({ actor: rep }) });\n\t\t}\n\t\tif (!alvo) return ui.notifications.warn(\"Mire o alvo (ou o comandado).\");\n\t\tconst fx = (name, changes) => ({ name, img: \"icons/magic/perception/silhouette-stealth-shadow.webp\", type: \"base\", system: { changes: changes.map(([key, value]) => ({ key, value, type: \"add\", phase: \"initial\", priority: null })) } });\n\t\tif (res.acao === \"explorar\") html += `<p><b>Livre.</b> ${alvo.name} perde a ação padrão nesta rodada. Até o fim da rodada, <b>todos os ataques do Replicoide são Ataques Furtivos</b> (+6d6: marque na janela de ataque).</p>`;\n\t\tif (res.acao === \"sacrificio\") html += `<p><b>Reação.</b> O Replicoide puxa ${alvo.name} para a frente: o comandado sofre o dano ou efeito no lugar dele. (Só um comandado em alcance curto que não tenha sido alvo do mesmo efeito.)</p>`;\n\t\tif (res.acao === \"vulnerabilidade\") {\n\t\t\tawait alvo.actor.createEmbeddedDocuments(\"ActiveEffect\", [fx(\"Vulnerabilidade criada (–5 Defesa)\", [[\"system.attributes.defesa.bonus\", \"-5\"]])]);\n\t\t\thtml += `<p><b>Reação.</b> O Replicoide abre mão do Ataque Furtivo: ${alvo.name} sofre <b>–5 na Defesa</b> até o fim da cena (apague o efeito ao fim da cena).</p>`;\n\t\t}\n\t\tif (res.acao === \"embutido\") {\n\t\t\tif (!alvo.actor.statuses?.has(\"surpreendido\")) await alvo.actor.toggleStatusEffect(\"surpreendido\", { active: true });\n\t\t\thtml += `<p>A pistola sai do braço do golem: ${alvo.name} fica <b>surpreendido</b> contra este ataque (só na primeira vez em cada cena). Tire a condição depois do ataque.</p>`;\n\t\t}\n\t\tChatMessage.create({ content: html });\n\t})();",
+  "_id": "j2xDI5bPEcABJRkT",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!j2xDI5bPEcABJRkT"
+}

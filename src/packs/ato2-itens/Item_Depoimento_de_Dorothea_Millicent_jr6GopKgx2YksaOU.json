@@ -1,0 +1,86 @@
+{
+  "name": "Depoimento de Dorothea Millicent",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/livro.webp",
+  "system": {
+    "description": {
+      "value": "<p>Dorothea conta como tirou Calliko de um quarto imundo de taverna, levou-o para a Casa de Repouso, copiou as chaves e vende as partituras. Pode se entregar à Guarda, mas jura que o bardo é inocente.</p><p><b>Prova.</b> Calliko e a tatuagem de dado no rosto também servem, assim como o testemunho de um cliente da Terceira Opção.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "WVG1NfawNE6djWzk",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "_id": "jr6GopKgx2YksaOU",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!jr6GopKgx2YksaOU"
+}

@@ -1,0 +1,86 @@
+{
+  "name": "Mapa da Rocha Cinzenta",
+  "type": "tesouro",
+  "img": "icons/sundries/documents/document-sealed-brown-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>1) Feudo do Benfeitor, 2) Sala de Cirurgia, 3) Celas, 4) Refeitório, 5) Cozinha, 6) Despensa, 7) Depósito e serviços gerais, 8) Limpeza, 9) Forja, 10) Curtume, 11) Biblioteca, 12) Pátio.</p><p>Sem mapa, uma fuga é impossível. Bartolakk pode deixar ver (não levar) com boa lábia: Inteligência CD 15 a 20 para lembrar cada detalhe. Stoke ou Nerisha podem dar um, se confiarem no grupo.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "ZxNh62kfIZLQh3Tz",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "_id": "QnN7TBLMiak1o88X",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!QnN7TBLMiak1o88X"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Aura de Paz (Palácio do Coração Florido)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/santuario.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Durante o Baile da Primavera, nenhuma criatura com valor de Inteligência pode realizar <b>qualquer ação hostil</b> (ataques, dano, condições negativas, envenenar, controle mental...). Sem teste e sem imunidade possível para personagens jogadores. É possível se esgueirar, observar, seguir e convencer com perícias sociais.</p><p>Os replicoides são imunes (não têm Inteligência). Quando Alfraye decreta o fim do baile, o efeito cessa (macro <i>Baile da Primavera</i>).</p><p class=\"fdt-ref\"><i>No sistema:</i> @UUID[Compendium.tormenta20.poderes.Item.2Ez0hINMBDSMC3YW]{Aura de Paz}</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "La5i93q0KFp4pJ5a",
+  "_id": "awCA3csBUzjRYg4N",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": "Compendium.tormenta20.poderes.Item.2Ez0hINMBDSMC3YW",
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!awCA3csBUzjRYg4N"
+}

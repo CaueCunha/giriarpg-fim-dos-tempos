@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Mini 1 · Ruas de Cobiça",
+  "type": "Item",
+  "color": "#8a6d1f",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "_id": "iCDqx60IYdnmDhD0",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!iCDqx60IYdnmDhD0"
+}

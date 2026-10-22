@@ -1,0 +1,71 @@
+{
+  "name": "Costas com Costas",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/equipamentos/pistola.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2",
+      "fdtRole": "costas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>O aventureiro e Paollus ficam de costas um para o outro, disparando. <b>Ação completa</b>, abrindo mão do bônus de parceiro assassino de Paollus: faz <b>quatro ataques à distância</b>, cada um contra um alvo diferente (precisa empunhar armas suficientes ou recarregar como ação livre).</p><p>Só para quem tem Paollus como parceiro.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "Parceiros",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "hy62yN6CNdjUwBjF",
+  "_id": "HOLx8bOpfjJmJwNg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!HOLx8bOpfjJmJwNg"
+}

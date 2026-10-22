@@ -1,0 +1,88 @@
+{
+  "name": "Instrumento Abençoado do Palácio",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/instrumento-musical.webp",
+  "system": {
+    "description": {
+      "value": "<p>Uma única vez no baile, quem toca um dos instrumentos dos bastidores no salão de música e tira 30 ou mais em Atuação recebe a bênção do palácio: o instrumento vira mágico, com o efeito de uma <b>flauta fantasma</b> (<i>Tormenta20</i>, p. 344).</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "peso": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": [],
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "armadura": {
+      "maxAtr": 0,
+      "penalidade": 0,
+      "value": 0
+    },
+    "tipo": "leve"
+  },
+  "folder": "La5i93q0KFp4pJ5a",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "_id": "ipLkecWkKyR32f2B",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!ipLkecWkKyR32f2B"
+}
