@@ -1,7 +1,7 @@
 {
   "name": "Parceiro: Gaspar (Fortão veterano)",
   "type": "poder",
-  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar-token.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar.webp",
   "flags": {
     "world": {
       "fdt": "av2"

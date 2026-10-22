@@ -481,7 +481,8 @@
 		name: "Gaspar, o Homem Mais Forte do Mundo",
 		tokenName: "Gaspar",
 		role: "gaspar",
-		img: `${ARTE}/gaspar-token.webp`,
+		img: `${ARTE}/gaspar.webp`,
+		token: `${ARTE}/gaspar-token.webp`,
 		nd: 2,
 		cd: 18,
 		tipo: "mon",
@@ -498,7 +499,8 @@
 			"<b>Ato 5.</b> Apavorado e confuso, Gaspar ataca imediatamente. Zardu entra duas rodadas depois (ou quando Gaspar estiver quase vencido).",
 			"<b>Palco (Realidade):</b> pesos de ferro tornam o chão terreno difícil; andar normal exige Acrobacia CD 15 (falha: 1d4 de impacto e para). Gaspar não é afetado.",
 			"<b>Mudar de lado:</b> depois que Zardu aparece, o grupo vence 3 testes sociais opostos à Enganação de Zardu (macro <i>Convencer Gaspar</i>). Só vale com argumento que Gaspar entenda (mãe, irmãos, o Herói Louco). Ele nunca fica neutro: se convencido, ataca Zardu.",
-			"<b>Depois da aventura:</b> se for devolvido à família e bem tratado, Mabel pode mandá-lo ajudar o grupo (item <i>Parceiro: Gaspar</i>)."
+			"<b>Depois da aventura:</b> se for devolvido à família e bem tratado, Mabel pode mandá-lo ajudar o grupo (item <i>Parceiro: Gaspar</i>).",
+			`<b>Token alternativo</b>, com a moldura da família, para depois do resgate: <code>${ARTE}/gaspar-leblanc-token.webp</code> (aba Token da ficha).`
 		),
 		items: [
 			arma("Marreta de Madeira (tacape)", `${T20I}/itens/equipamentos/tacape.webp`, { dano: "1d10+17", tipo: "impacto",
@@ -698,6 +700,23 @@
 		return data;
 	}
 
+	/* ---------- A família LeBlanc (sem ficha no livro: só para os tokens) ---------- */
+	const SEM_FICHA = "<b>Não tem ficha no livro.</b> Este ator existe para o token no mapa e para mostrar a arte aos jogadores.";
+	const leblanc = (role, name, arq, atr, bio) => criarNPC({
+		name, role, img: `${ARTE}/${arq}.webp`, token: `${ARTE}/${arq}-token.webp`, disposition: 0,
+		nd: 1, tipo: "hum", raca: "humano", papel: "special", atr, pv: 10, def: 10, bio: p(bio, SEM_FICHA)
+	});
+	atores.mabel = await leblanc("mabel", "Mabel LeBlanc", "mabel", { for: 2, des: 0, con: 2, int: 0, sab: 1, car: 1 },
+		"\"Mamãe\" Mabel só quer proteger os filhos. Hospitaleira e cordial, quer ser tratada como uma dama; masca fumo e tem o machado amarrado no avental. Orgulhosa de ter \"aprimorado\" a sopa da família (com água contaminada pela Tormenta). Apenas ela é páreo para os heróis. Tratada bem, vira aliada para a vida toda.");
+	atores.blanche = await leblanc("blanche", "Blanche LeBlanc", "blanche", { for: 0, des: 0, con: 0, int: 0, sab: 2, car: 0 },
+		"Filha mais velha, louca e delirante, com um terceiro olho no meio da testa. Visões do passado e do futuro se confundem com delírios. Vive acorrentada lá dentro.");
+	atores.bastien = await leblanc("bastien", "Bastien LeBlanc", "bastien", { for: -1, des: 0, con: 0, int: 0, sab: 0, car: -1 },
+		"O segundo mais velho: hostil, violento, fraco e mirrado. Ameaça forasteiros e diz que vai \"ensinar uma lição\", mas mal ergue a espada (só acerta com 20 natural).");
+	atores.clothilde = await leblanc("clothilde", "Clothilde LeBlanc", "clothilde", { for: -1, des: 1, con: 0, int: 0, sab: 1, car: 0 },
+		"Tem medo de tudo e vive escondida. Só com muito cuidado e paciência dá para interagir com ela.");
+	atores.pascal = await leblanc("pascal", "Pascal LeBlanc", "pascal", { for: 0, des: 0, con: 1, int: 0, sab: 0, car: -1 },
+		"O mais deformado dos irmãos: não tem olhos, e um dos braços tem muitas articulações, como um tentáculo.");
+
 	const PARCEIROS = "tormenta20.parceiros";
 	const ID = { fortao: "YAcnW6C7ok7xjdg6", atirador: "OvBibhyfED5HKbsz", combatente: "nNpGA5SWMj7rtUQR", ajudante: "ROdJSxDCkvamfzX7" };
 	const parceiro = async (tipo, nome, desc, img) => {
@@ -714,9 +733,9 @@
 		await parceiro("combatente", "Parceiro: Plateia Entretida (Combatente iniciante)",
 			p("<b>Tenda 2.</b> A plateia bem entretida vira parceiro <b>combatente iniciante</b> por <b>um</b> combate, ou anula \"Um de Nós!\" em todos os combates (escolha do grupo).")),
 		await parceiro("fortao", "Parceiro: Gaspar (Fortão veterano)",
-			p("<b>Depois da aventura.</b> Se o grupo devolver Gaspar à família e for especialmente cuidadoso com ele, Mabel pode mandá-lo ajudar os heróis."), `${ARTE}/gaspar-token.webp`),
+			p("<b>Depois da aventura.</b> Se o grupo devolver Gaspar à família e for especialmente cuidadoso com ele, Mabel pode mandá-lo ajudar os heróis."), `${ARTE}/gaspar.webp`),
 		await parceiro("ajudante", "Parceiro: Mabel LeBlanc (Ajudante veterana)",
-			p("<b>Depois da aventura.</b> Grata por ter Gaspar de volta, Mabel vira aliada fervorosa e chega a lutar pelo grupo. Defina as três perícias do ajudante com a mesa."))
+			p("<b>Depois da aventura.</b> Grata por ter Gaspar de volta, Mabel vira aliada fervorosa e chega a lutar pelo grupo. Defina as três perícias do ajudante com a mesa."), `${ARTE}/mabel.webp`)
 	);
 
 	const seringa = await deCompendio("tormenta20.pocoes", "hjvqA8b5pxriWBRh", "Seringa de Vyrda (Poção de Físico Divino)",
@@ -1215,9 +1234,15 @@
 			imagem("Arte · Tenda 3 · Os Erros dos Deuses", "erros-dos-deuses", "Os Erros dos Deuses.", 770),
 			imagem("Arte · Tenda 4 · Korek e Kerok", "korek-e-kerok", "Korek e Kerok.", 780),
 			imagem("Arte · Tenda 5 · Noirax", "noirax", "Noirax, a Lady Tatuada.", 790),
-			imagem("Arte · Ralphus", "ralphus", "Ralphus, o assistente de palco.", 800)
+			imagem("Arte · Ralphus", "ralphus", "Ralphus, o assistente de palco.", 800),
+			imagem("Arte · Família LeBlanc · Mabel", "mabel", "Mabel LeBlanc.", 810),
+			imagem("Arte · Família LeBlanc · Gaspar", "gaspar", "Gaspar LeBlanc.", 820),
+			imagem("Arte · Família LeBlanc · Blanche", "blanche", "Blanche LeBlanc.", 830),
+			imagem("Arte · Família LeBlanc · Bastien", "bastien", "Bastien LeBlanc.", 840),
+			imagem("Arte · Família LeBlanc · Clothilde", "clothilde", "Clothilde LeBlanc.", 850),
+			imagem("Arte · Família LeBlanc · Pascal", "pascal", "Pascal LeBlanc.", 860)
 		]
 	});
 
-	ui.notifications.info("Aventura 2 criada: 10 atores, itens, diário, tabela e 7 macros. Veja a pasta \"" + NOME_PASTA + "\".");
+	ui.notifications.info("Aventura 2 criada: 15 atores, itens, diário, tabela e 7 macros. Veja a pasta \"" + NOME_PASTA + "\".");
 })();
