@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 25 documento(s), 3 pasta(s)
-- `ato2-itens`: 14 documento(s), 3 pasta(s)
-- `ato2-diarios`: 3 documento(s), 3 pasta(s)
-- `ato2-tabelas`: 5 documento(s), 3 pasta(s)
-- `ato2-macros`: 12 documento(s), 3 pasta(s)
+- `ato2-ameacas`: 38 documento(s), 4 pasta(s)
+- `ato2-itens`: 30 documento(s), 4 pasta(s)
+- `ato2-diarios`: 4 documento(s), 4 pasta(s)
+- `ato2-tabelas`: 6 documento(s), 4 pasta(s)
+- `ato2-macros`: 18 documento(s), 4 pasta(s)
 
-### Ligações com o sistema (71)
+### Ligações com o sistema (99)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -219,6 +219,34 @@
 | Grifo dos Cavaleiros | Mordida | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | Garras | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | ovo de grifo | tesouro | ficha do livro + origem no sistema |
+| Prisioneiro Bandido | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Evasão | poder | ficha do livro + origem no sistema |
+| Turba de Prisioneiros | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Nerisha | Aparência Inofensiva | poder | ficha do livro + origem no sistema |
+| Nerisha | Adaga Mental | magia | magia do sistema + ficha do NPC |
+| Nerisha | Aparência Perfeita | magia | magia do sistema + ficha do NPC |
+| Nerisha | Enfeitiçar | magia | magia do sistema + ficha do NPC |
+| Nerisha | Escuridão | magia | magia do sistema + ficha do NPC |
+| Nerisha | Erupção Glacial | magia | magia do sistema + ficha do NPC |
+| Rakkas | Mordida | arma | ficha do livro + origem no sistema |
+| Rakkas | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Rakkas | Mau Cheiro | poder | ficha do livro + origem no sistema |
+| Rakkas | Sangue Frio | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Desarmado (×2) | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Chifres | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Investida Poderosa | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Jaydill | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Jaydill | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Assassinar | poder | ficha do livro + origem no sistema |
+| Jaydill | Amedrontar | magia | magia do sistema + ficha do NPC |
+| Jaydill | Sono | magia | magia do sistema + ficha do NPC |
+| Jaydill | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Engolir | poder | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 
