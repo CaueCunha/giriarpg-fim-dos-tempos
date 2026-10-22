@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Lendas e Linhas Narrativas",
+  "type": "RollTable",
+  "color": "#6b3f5e",
+  "flags": {
+    "world": {
+      "fdt": "a2lendas"
+    }
+  },
+  "_id": "tAxjHUQmu7btHyyq",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!tAxjHUQmu7btHyyq"
+}
