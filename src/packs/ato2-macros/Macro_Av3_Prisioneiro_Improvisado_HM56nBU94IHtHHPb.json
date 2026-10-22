@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Prisioneiro Improvisado",
+  "type": "script",
+  "img": "icons/svg/mystery-man.svg",
+  "folder": "P0Ntx2pfcUJcw8W7",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n(async function macroPrisioneiro() {\n\t\tconst tabela = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"a2av3\" && t.name.startsWith(\"Arquétipos\"));\n\t\tif (!tabela) return ui.notifications.error(\"Tabela de prisioneiros não encontrada (importe o Ato 2 do módulo Fim dos Tempos).\");\n\t\tconst a = await new Roll(\"1d10\").evaluate();\n\t\tconst n = await new Roll(\"1d10\").evaluate();\n\t\tconst pega = (r) => tabela.results.find((x) => r.total >= x.range[0] && r.total <= x.range[1])?.name ?? \"\";\n\t\tconst arquetipo = pega(a).split(\" · \")[0];\n\t\tconst nome = pega(n).split(\" · \")[1];\n\t\tChatMessage.create({\n\t\t\tcontent: `<h3>Prisioneiro improvisado</h3><p><b>${nome}</b>, ${arquetipo.toLowerCase()}.</p><p style=\"font-size:0.85em\">Resuma a personalidade ao traço mais marcante. Se puder, faça-o levar o grupo a um NPC que já existe.</p>`,\n\t\t\trolls: [a, n],\n\t\t\twhisper: ChatMessage.getWhisperRecipients(\"GM\")\n\t\t});\n\t})();",
+  "_id": "HM56nBU94IHtHHPb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!HM56nBU94IHtHHPb"
+}

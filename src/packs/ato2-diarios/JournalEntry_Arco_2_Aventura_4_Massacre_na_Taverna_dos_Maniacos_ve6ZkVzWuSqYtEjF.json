@@ -1,0 +1,333 @@
+{
+  "name": "Arco 2 · Aventura 4 · Massacre na Taverna dos Maníacos",
+  "folder": "DrEyGMquVVaBpjOl",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "_id": "ve6ZkVzWuSqYtEjF",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<blockquote><p><i>\"Não aguento mais brigas de taverna! [...] É praticamente uma batalha campal toda noite! Eu me esforço para trazer os melhores bardos e oferecer as melhores cervejas anãs, mas só atraio malucos e bandidos!\"</i> (Click)</p></blockquote>\n\t\t\t\t<h2>Resumo</h2>\n\t\t\t\t<p>Não há vilão de verdade, só gente fazendo escolhas erradas. @UUID[Actor.3LDNDQSAtqtBMZIL]{Calliko, o Bardo Insano}, um bardo silfo, ganhou de um aspecto de Nimb inspiração infinita e insana. @UUID[Actor.DRxFOC4AwfClFT9L]{Dorothea Millicent}, fã dele, levou-o para a Casa de Repouso da avó, @UUID[Actor.HCGAftbBPCRSWAQ5]{Ellanie Millicent}, e vende as partituras pela cidade. As músicas espalham a loucura: quem ouve fica violento, e a Terceira Opção de @UUID[Actor.kaLVU23MASFJ7BFF]{Click, o Taverneiro} vira campo de batalha toda noite.</p>\n\t\t\t\t<p>Por azar (toque de Nimb), Ghorskander instalou um @UUID[Actor.XJIkPtKw0HiHNxbK]{Imagoduto da Casa de Repouso} justamente na cela de Calliko: ele amplia os delírios dos internos e espalha o frenesi por Valkaria, alimentando o Mecano-Lagarto-Terror.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Normalidade:</b> o detetive Berthun chega atrasado, com olheiras e marcas de briga, e leva uma bronca da Xerife Mathilda.</li><li><b>Fase 1 · A Cidade da Praia:</b> role na tabela de Encontros em Valkaria.</li><li><b>Fase 2 · A Taverna Terceira Opção:</b> Click e @UUID[Actor.miBdO9ykACUqREhE]{Drasala, a Segurança}, as bandas, os clientes, as outras tavernas.</li><li><b>Fase 3 · A Inevitável Briga de Taverna:</b> perigo complexo ND 7 (@UUID[Macro.7bGR0WToAYiGCcy5]{Av4 · Briga de Taverna}). Pode acontecer no meio da fase 2.</li><li><b>Fase 4 · A Traficante de Partituras:</b> encontrar Dorothea.</li><li><b>Fase 5 · A Casa de Repouso:</b> Calliko, o Imagoduto e a Batalha Insana (@UUID[Macro.x3GZmqwy8mrHppyg]{Av4 · Batalha Insana}).</li><li><b>Fase 6 · Desfecho:</b> provas, pagamento e um final aberto para Calliko.</li></ul>\n\t\t\t\t<p>Lei &amp; Ordem: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}. Destruir o Imagoduto restaura Lei &amp; Ordem.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "j5hHDxBVtCp8LrH0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.j5hHDxBVtCp8LrH0"
+    },
+    {
+      "name": "A Terceira Opção",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Taverna larga na Cidade da Praia, tabuleta sem desenho, telhas no lugar de sapé, paredes pichadas e cheias de cartazes (@UUID[Item.5Pm7ulJLwqEE7KyW]{Lousa da Terceira Opção}). Lá dentro: janela e cadeiras quebradas, sangue, cacos, um machado cravado no balcão e um palco grande, com lampiões e espelhos, coberto de cerveja. O nome vem da filosofia de Click: quem quer sossego só vem aqui se as tavernas comuns estiverem fechadas ou lotadas.</p>\n\t\t\t\t<h3>Informações de Click</h3>\n\t\t\t\t<ul><li>Paga Drasala e um mínimo aos bardos; os clientes eram \"cidadãos de bem que querem fingir ser rebeldes\" e alguns criminosos e arruaceiros.</li><li>Não consegue identificar a causa. Desconfia de criminosos querendo fechar a casa.</li><li>Drasala faz o serviço de três seguranças. Com relutância (exige boa interpretação), conta que ela também anda violenta: espancou um bandido até ele a segurar.</li><li>As brigas só acontecem nas noites de apresentação.</li><li>Não tem nada a esconder. Se houver um bardo no grupo, oferece o palco.</li></ul>\n\t\t\t\t<h3>Informações de Drasala</h3>\n\t\t\t\t<ul><li>Confirma tudo o que Click disse, mas não faz amigos: está ali para trabalhar.</li><li>Perdeu a cabeça e espancou um bandido. Acha que é porque já sabe que haverá briga.</li><li>Viu músicos de uma banda se juntando à violência, jogando coisas no público.</li><li>Não larga o emprego porque precisa trabalhar e não quer deixar Click na mão.</li></ul>\n\t\t\t\t<h3>Outras tavernas</h3>\n\t\t\t\t<p>Múmia Medrosa, Molar do Rei, Grifo &amp; Gnoll, Velha Lareira, Coroa ou Não Coroa. Bardos dessas casas também tocam Calliko.</p>\n\t\t\t\t<h3>Bebidas</h3>\n\t\t\t\t<p>Oito cervejas e destilados anãos (@UUID[RollTable.hBbIOb20lIiuVc5a]{Bebidas Anãs da Terceira Opção}; @UUID[Macro.NUIoBZNpLN3I46C6]{Av4 · Beber na Terceira Opção}). Fortitude contra a CD (+5 por dose extra no dia); falhas levam a embriagado, bebum e inconsciente.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "KbAlR2T9G2GrYRWb",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.KbAlR2T9G2GrYRWb"
+    },
+    {
+      "name": "Bandas e Clientes",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<h3>Bandas</h3>\n\t\t\t\t<ul><li><b>Tarsos:</b> músicas rápidas e de gosto duvidoso (<i>Quero Ser Seu Simbionte</i>, <i>Glórienn É Minha Namorada</i>, <i>Romance em Hangpharstyth</i>, <i>Asha É uma Lefou</i>, <i>Purista Mas te Amo</i>; de Calliko: <i>A Sszzaazita Mais Bonita</i> e <i>Dança de Amarid</i>). Quatro membros vestidos como o esqueleto Tarso.</li><li><b>Naxia e os Monstros Errantes:</b> música macabra e agressiva. Naxia Nix, dahllan toda de preto, e três humanos maquiados (Maxir, Almia, Zugont).</li><li><b>Reles Rancor:</b> \"superbanda\" de bardos de Aslothia mortos aos 27 anos (Jarynn, Spud, Glenna e Nasto).</li><li><b>Brasão de Kor Kovith:</b> extremamente agressiva, contra os puristas e o Reinado conivente (Chazz, Durk, Nulliandor, Mirne).</li><li><b>Vyrgillia de Azgher:</b> barda de Smokestone, ex-xerife, canções de planícies, fora da lei e pólvora.</li><li><b>Senomar:</b> o velho bardo, rápido e agressivo como sempre.</li><li><b>Crânio de Pedra:</b> três piratas que rimam sem instrumentos (Larkin Rasga-Faca, Vitta Voltania e Bolo).</li><li><b>Homúnculo:</b> duas inventoras de Moreania com autômatos de percussão (Alabarda e Acha d'Armas).</li></ul>\n\t\t\t\t<p>Todas tocam músicas de Calliko e compram as partituras de Dorothea.</p>\n\t\t\t\t<h3>Clientes</h3>\n\t\t\t\t<ul><li>@UUID[Actor.efPpF56dMjyo7ohs]{Emblyn}: estava lá na primeira briga.</li><li>@UUID[Actor.9YZYyE8jHGA5cTFz]{Blanto}: reconhece as composições de Calliko.</li><li>@UUID[Actor.cfi2Wfw9HX6SN1Ep]{Coltrack}: o tipo de cliente que a briga atrai.</li></ul>\n\t\t\t\t<h3>Contingência: outras linhas de investigação</h3>\n\t\t\t\t<p>Becos sem saída se resolvem em uma ou duas frases. O que importa transmitir: as brigas sempre acontecem durante as apresentações, todas as bandas tocam músicas de Calliko, o ódio dos fregueses é inexplicável e Calliko é uma figura misteriosa. Alternativas: um atravessador que rouba e revende partituras, ou um bardo pesquisador da Academia Arcana.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "nRPKLCua13J0FahU",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.nRPKLCua13J0FahU"
+    },
+    {
+      "name": "Briga de Taverna (ND 7)",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p><b>Objetivo:</b> apartar a briga. Use @UUID[Macro.7bGR0WToAYiGCcy5]{Av4 · Briga de Taverna}: \"Começar a rodada\" aplica o dano e rola as Vontades; as ações acumulam os sucessos.</p>\n\t\t\t\t<p><b>Efeito:</b> a música de Calliko afeta toda criatura viva. No início do turno, cada afetado faz <b>Vontade CD 20</b>. Falhas acumuladas: 1ª só ataca (desarmado), 2ª arma improvisada, 3ª arma normal, 4ª melhor ataque, magia ou efeito de dano, 5ª não resiste mais.</p>\n\t\t\t\t<p><b>Dano automático</b> no início de cada rodada: 2d6 de impacto não letal; da 3ª rodada, 3d6 letal; da 5ª, 5d6 letal de um tipo sem resistência.</p>\n\t\t\t\t<p><b>Fim:</b> 15 sucessos em Deixa Disso, ou 10 em Boa Ideia, ou todos fora de combate.</p>\n\t\t\t\t<ul><li><b>Deixa Disso</b> (Diplomacia ou Enganação CD 20): acalma os brigões.</li><li><b>Canção de Ninar</b> (Atuação CD 25): ninguém testa Vontade na próxima rodada.</li><li><b>Escolha Alguém do Seu Tamanho:</b> protege um aliado e sofre o próprio dano, o dele e mais um da casa (somados para a RD).</li><li><b>Boa Ideia</b> (Luta CD 20): bater em alguém. Contagem paralela de 10; cada sucesso tira um do Deixa Disso.</li><li><b>Na Amizade</b> (ataque): dois heróis brigam entre si; quem é acertado não sofre o dano automático seguinte. Não letal, a menos que já tenha 3 falhas.</li><li><b>Me Segura!</b> (Luta CD 20): o aliado segurado não ataca e não testa Vontade na próxima rodada.</li><li><b>Roda de Bardos Arruaceiros</b> (Fortitude CD 20): conta como sucesso em Deixa Disso ou Boa Ideia.</li><li><b>Cidadão de Bem:</b> não sofre o dano automático seguinte (mas testa Vontade).</li><li><b>Dá na Minha Cara</b> (opcional, Provocação Petulante): poupa todos do dano seguinte; o provocador sofre tudo e mais um.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "WDDSbcrgMYEIshJy",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.WDDSbcrgMYEIshJy"
+    },
+    {
+      "name": "Show na Terceira Opção",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Opcional, só se os jogadores quiserem. Pré-requisitos: todos tocam (treinados em Atuação ou testes de treinamento; até dois podem contribuir de outra forma), a banda tem nome, visual e estilo.</p>\n\t\t\t\t<p><b>Teste estendido de Atuação CD 20, 5 sucessos</b> (@UUID[Macro.NCs3txeKqjGcrbJC]{Av4 · Show na Terceira Opção}).</p>\n\t\t\t\t<ul><li>Perícia alternativa sem justificativa de que se refere ao instrumento: +2 na CD dali em diante. Com justificativa aceita (Guerra para tocar tambores do exército), não muda.</li><li>Cada falha: todos perdem <b>2d8 PM</b>. Quem chega a 0 PM <b>congela</b>, sai do teste e a CD sobe +5.</li><li>O frontman faz o último teste; a margem dele define o resultado (efeitos acumulam): até 5, nada; 6 a 10, bebida grátis; 11 a 15, 1d100 T$; 16 a 20, Torcida pelo resto da aventura; 21 a 25, um groupie parceiro; 26 a 30, 1d6 groupies; 31 ou mais, um fanático (parceiro permanente).</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "cFlYaTyTMoJBl4xx",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.cFlYaTyTMoJBl4xx"
+    },
+    {
+      "name": "A Traficante de Partituras",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Toda linha de investigação leva às @UUID[Item.xaA8qtL0q4eIdJes]{Partitura de Calliko}s. <b>Atuação ou Misticismo CD 20</b> num pedaço revela algo estranho nas notas. Os músicos contam que uma garota chamada Dorothea aparece toda semana com composições novas, dizendo-se representante de Calliko (alguns acham que ela <i>é</i> Calliko).</p>\n\t\t\t\t<p><b>Achar Dorothea:</b> teste estendido de <b>Investigação CD 17, 3 sucessos</b>; ou ela aparece na própria Terceira Opção, cercada de bardos que pagam sem hesitar. Também dá para segui-la até a Casa de Repouso.</p>\n\t\t\t\t<h3>Informações de Dorothea</h3>\n\t\t\t\t<ul><li>É neta de Ellanie, clériga de Marah. Insegura e muito ingênua, não acredita que alguém seja realmente maligno.</li><li>Acha Calliko um gênio; sabe do dado tatuado (símbolo de Nimb), mas não achou relevante. Não sabe do aspecto de Nimb.</li><li>Não acredita que as músicas causem as brigas e não acha os internos perigosos.</li><li>A avó não sabe de nada: ela implora que não contem.</li><li>Leva o grupo à Casa de Repouso e indica o quarto. Pode se entregar à Guarda, mas o bardo é inocente.</li><li>Um interno pode contar que viu <b>Torgo</b> instalando o Imagoduto há quase um ano.</li></ul>\n\t\t\t\t<p>@UUID[Item.jr6GopKgx2YksaOU]{Depoimento de Dorothea Millicent}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "wfC8fKrHl9sdGKlH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.wfC8fKrHl9sdGKlH"
+    },
+    {
+      "name": "A Casa de Repouso Millicent",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Quase um castelo no topo de uma colina, colado à muralha: manchas de umidade, símbolos de Marah tomados de limo, anjos com rostos erodidos, janelas gradeadas, porta de prisão. Ellanie criou o hospital logo antes do primeiro ataque da Tormenta e hoje é um depósito de gente, tocado por ela e por voluntários. A casa está levemente afetada pela Tormenta: a barreira entre os Planos é tênue, e no quarto andar está o Imagoduto.</p>\n\t\t\t\t<p>A subida até a cela de Calliko é uma curta jornada de horrores, mas digna de pena. Visão mística mostra pensamentos e emoções subindo para o Imagoduto. Destaque três internos: Rylonn, Bdun e Grisgemm.</p>\n\t\t\t\t<h3>O bardo insano</h3>\n\t\t\t\t<p>Cela imunda, partituras no chão, notas escritas com sangue nas paredes, e um silfo magro com um dado tatuado no rosto: \"Tragam mais pergaminhos... Mais tinta... Preciso continuar a compor...\" <b>Investigação ou Misticismo CD 25</b> revela a energia do Imagoduto e o cristal rosado. Falar em limitar as composições, em Nimb ou no Imagoduto põe Calliko em frenesi. <b>Chegando de surpresa:</b> o frenesi começa com qualquer interferência no Imagoduto.</p>\n\t\t\t\t<h3>Batalha Insana</h3>\n\t\t\t\t<p>Uma explosão de cores vira paisagem de loucura, os andares se misturam e os três internos surgem, <b>um de cada vez</b>: @UUID[Actor.yIjRQIKtWQfbJaan]{Carrasco de Lena (tormento de Rylonn)}, @UUID[Actor.KJIrO5Cd5BPc5mtH]{Cocatriz-Real (tormento de Bdun)} e @UUID[Actor.gVdahIZSAw3sT3yj]{Quimera (tormento de Grisgemm)}. Termina ao destruir ou desativar o Imagoduto, apaziguar os internos ou acalmar Calliko.</p>\n\t\t\t\t<ul><li>Início de cada rodada: <b>1d12</b> em @UUID[RollTable.Yc6M7BXvKlITcByB]{Efeitos de Loucura}.</li><li><b>Rio de Som:</b> quem cair faz Vontade CD 20 ou só canta e toca na rodada.</li><li><b>Apaziguar:</b> 5 sucessos, um teste do grupo por rodada (ação padrão), os outros ajudam. Rylonn: Cura ou social CD 22. Bdun: Nobreza ou social CD 24. Grisgemm: Guerra ou social CD 26. Falha por 5+: @UUID[RollTable.ccOLSuyGwc1DWFxZ]{Surtos dos Internos}.</li><li><b>Imagoduto:</b> 50 sucessos em Ofício (engenhoqueiro) CD 30 (@UUID[Macro.a0zphMZJPcGWknf0]{Av4 · Sabotar o Imagoduto}), ou 500 PV com RD 20 que não pode ser ignorada.</li><li><b>\"Isso é forçar a barra\":</b> os 50 sucessos existem para o grupo ter que lidar com os monstros. A melhor tática é segurar o carrasco sem derrotá-lo enquanto alguém sabota a máquina; se o grupo descobrir, deixe funcionar.</li></ul>\n\t\t\t\t<p>Use @UUID[Macro.x3GZmqwy8mrHppyg]{Av4 · Batalha Insana} para os efeitos de loucura, o rio, os testes de apaziguar e os surtos.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "lrWzP6RBO9ohUDRD",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.lrWzP6RBO9ohUDRD"
+    },
+    {
+      "name": "Desfecho, Provas e Pagamento",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p>A Casa de Repouso volta a uma calma relativa, mas nada foi resolvido de verdade: Calliko ainda está frenético e Ellanie, desamparada. Dorothea não fez nada tecnicamente ilegal, mas causou muita destruição; o julgamento foge à alçada dos heróis. Fora da Casa, Calliko fica mais vulnerável e continua compondo; matá-lo ou mantê-lo desacordado funciona, a um custo.</p>\n\t\t\t\t<p>As partituras que já circulam não podem ser todas destruídas; as bandas da Terceira Opção param de tocá-las. O importante é que não surjam novas. Se a aventura for depois da metade do arco, os jogadores podem entender agora a que Lei &amp; Ordem se refere.</p>\n\t\t\t\t<p><b>Final infeliz?</b> Diga sim às ideias dos jogadores para salvar Calliko: a Academia Arcana, a devoção a Khalmyr, uma <i>magnum opus</i> que esgote a criatividade. Ou opte por um tom trágico, desde que o grupo possa afetar o resultado.</p>\n\t\t\t\t<h3>Provas</h3>\n\t\t\t\t<ul><li>Calliko e a tatuagem no rosto.</li><li>@UUID[Item.jr6GopKgx2YksaOU]{Depoimento de Dorothea Millicent}.</li><li>O Imagoduto ou @UUID[Item.OKiad2ZHW25YgwMf]{Peça do Imagoduto}.</li><li>O testemunho de um cliente da Terceira Opção.</li><li>@UUID[Item.xaA8qtL0q4eIdJes]{Partitura de Calliko} (ou um pedaço).</li></ul>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Se as brigas acabarem, não importa o que aconteça com Calliko, Click paga: níveis 8 ou 9, <b>T$ 12.000</b>; nível 10, <b>T$ 24.000</b>; nível 11, <b>T$ 32.000</b>. Se o grupo fez um bom trabalho (sobretudo cuidando dos bardos), bebe de graça na Terceira Opção a qualquer hora.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "mUWoQt3dY0cOdCgD",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ve6ZkVzWuSqYtEjF.mUWoQt3dY0cOdCgD"
+    }
+  ],
+  "_key": "!journal!ve6ZkVzWuSqYtEjF"
+}

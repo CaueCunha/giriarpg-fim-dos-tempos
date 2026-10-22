@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Beber na Terceira Opção",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/caneca.webp",
+  "folder": "cb4jBkHBzZOmbFwU",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n(async function macroBeber() {\n\t\tconst BEBIDAS = [\n\t\t\t[\"Barbas de Heredrimm\", 15, { name: \"Barbas de Heredrimm: +1d6 em um teste\", changes: [] }, \"+1d6 em um teste à escolha até o fim do dia (some à mão)\"],\n\t\t\t[\"Beluhga\", 20, { name: \"Beluhga: redução de fogo 5\", changes: [[\"system.tracos.resistencias.fogo.bonus\", 5]] }],\n\t\t\t[\"Escavador\", 20, { name: \"Escavador: +1 For, –3m\", changes: [[\"system.atributos.for.bonus\", 1], [\"system.attributes.movement.walk.base\", -3]] }],\n\t\t\t[\"Rangedente\", 20, { name: \"Rangedente: +2 Fortitude\", changes: [[\"system.pericias.fort.bonus\", 2]] }],\n\t\t\t[\"Limpa-ventas\", 15, { name: \"Limpa-ventas: redução de frio 5\", changes: [[\"system.tracos.resistencias.frio.bonus\", 5]] }],\n\t\t\t[\"Tuku'tu\", 20, { name: \"Tuku'tu: +2 Reflexos\", changes: [[\"system.pericias.refl.bonus\", 2]] }],\n\t\t\t[\"Bafo de elfa\", 15, { name: \"Bafo de elfa: +2 Misticismo\", changes: [[\"system.pericias.mist.bonus\", 2]] }],\n\t\t\t[\"Água-de-sangue\", 15, { name: \"Água-de-sangue: +2 Vontade\", changes: [[\"system.pericias.vont.bonus\", 2]] }],\n\t\t\t[\"Cerveja comum\", 10, null]\n\t\t];\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Beber na Terceira Opção\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Bebida</label><select name=\"bebida\">${BEBIDAS.map(([n, cd], i) => `<option value=\"${i}\">${n} (CD ${cd})</option>`).join(\"\")}<option value=\"fim\">Fim do dia: tirar embriaguez e bebidas</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione quem bebe. Cada dose adicional no mesmo dia soma +5 na CD.</p>`,\n\t\t\tok: { label: \"Beber\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione quem bebe.\");\n\t\tif (res.bebida === \"fim\") {\n\t\t\tfor (const t of tokens) {\n\t\t\t\tconst a = t.actor;\n\t\t\t\tconst fx = a.effects.filter((x) => x.getFlag(\"world\", \"fdtBebida\"));\n\t\t\t\tif (fx.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", fx.map((x) => x.id));\n\t\t\t\tfor (const s of [\"desprevenido\", \"inconsciente\"]) if (a.statuses?.has(s)) await a.toggleStatusEffect(s, { active: false });\n\t\t\t\tawait a.unsetFlag(\"world\", \"fdtDoses\");\n\t\t\t}\n\t\t\treturn ChatMessage.create({ content: `<h3>Fim do dia</h3><p>${tokens.map((t) => t.name).join(\", \")}: embriaguez e bebidas encerradas.</p>` });\n\t\t}\n\t\tconst [nome, cdBase, beneficio, nota] = BEBIDAS[Number(res.bebida)] ?? BEBIDAS[8];\n\t\tconst NIVEL = [\n\t\t\tnull,\n\t\t\t{ name: \"Embriagado\", changes: [[\"system.modificadores.atributos.des\", -2], [\"system.modificadores.atributos.car\", -2]], txt: \"fica <b>embriagado</b> (–2 em testes de Destreza e Carisma)\" },\n\t\t\t{ name: \"Bebum\", changes: [[\"system.modificadores.atributos.des\", -5], [\"system.modificadores.atributos.car\", -5]], txt: \"fica <b>bebum</b> (desprevenido, –5 em testes de Destreza e Carisma)\" }\n\t\t];\n\t\tconst efeito = (dados, nivel) => ({\n\t\t\tname: dados.name,\n\t\t\timg: \"systems/tormenta20/icons/itens/gerais/caneca.webp\",\n\t\t\ttype: \"base\",\n\t\t\tduration: { value: 86400, units: \"seconds\" },\n\t\t\tflags: { world: { fdtBebida: nivel ?? 0 } },\n\t\t\tsystem: { changes: dados.changes.map(([key, value]) => ({ key, value: String(value), type: \"add\", phase: \"initial\", priority: null })) }\n\t\t});\n\t\tconst rolls = [];\n\t\tlet html = `<h3>Uma rodada de ${nome}</h3><ul>`;\n\t\tfor (const t of tokens) {\n\t\t\tconst a = t.actor;\n\t\t\tconst doses = Number(a.getFlag(\"world\", \"fdtDoses\")) || 0;\n\t\t\tconst cd = cdBase + 5 * doses;\n\t\t\tconst r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tawait a.setFlag(\"world\", \"fdtDoses\", doses + 1);\n\t\t\tlet txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}`;\n\t\t\tif (beneficio) {\n\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [efeito(beneficio)]);\n\t\t\t\ttxt += `; ganha <i>${beneficio.name}</i>${nota ? ` (${nota})` : \"\"}`;\n\t\t\t}\n\t\t\tif (r.total >= cd) txt += \". Segura bem.\";\n\t\t\telse {\n\t\t\t\tconst atual = Math.max(0, ...a.effects.map((x) => Number(x.getFlag(\"world\", \"fdtBebida\")) || 0));\n\t\t\t\tconst velhos = a.effects.filter((x) => (Number(x.getFlag(\"world\", \"fdtBebida\")) || 0) > 0);\n\t\t\t\tif (velhos.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", velhos.map((x) => x.id));\n\t\t\t\tif (atual >= 2) {\n\t\t\t\t\tif (!a.statuses?.has(\"inconsciente\")) await a.toggleStatusEffect(\"inconsciente\", { active: true });\n\t\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [efeito(NIVEL[2], 2)]);\n\t\t\t\t\ttxt += \". Já estava bebum: <b>cai inconsciente</b> até o fim do dia.\";\n\t\t\t\t} else {\n\t\t\t\t\tconst n = atual + 1;\n\t\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [efeito(NIVEL[n], n)]);\n\t\t\t\t\tif (n === 2 && !a.statuses?.has(\"desprevenido\")) await a.toggleStatusEffect(\"desprevenido\", { active: true });\n\t\t\t\t\ttxt += `. ${NIVEL[n].txt} até o fim do dia.`;\n\t\t\t\t}\n\t\t\t}\n\t\t\thtml += `<li>${txt}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "NUIoBZNpLN3I46C6",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!NUIoBZNpLN3I46C6"
+}

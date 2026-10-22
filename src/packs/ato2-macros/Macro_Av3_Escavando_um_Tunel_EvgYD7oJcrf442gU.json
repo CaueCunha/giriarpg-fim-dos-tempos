@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Escavando um Túnel",
+  "type": "script",
+  "img": "icons/tools/hand/shovel-spade-steel-grey.webp",
+  "folder": "P0Ntx2pfcUJcw8W7",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n(async function macroTunel() {\n\t\tconst CHAVE = \"fdtTunelRocha\";\n\t\tconst e = game.user.getFlag(\"world\", CHAVE) ?? { semana: 0, sucessos: 0, falhas: 0, extra: 0, suspeita: 0 };\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tconst alvos = [...game.user.targets].filter((t) => t.actor);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Escavando um Túnel\" },\n\t\t\tcontent: `<p>Semana ${e.semana} · sucessos <b>${e.sucessos}/5</b> · falhas <b>${e.falhas}/3</b> · CD ${30 + e.extra}${e.suspeita ? ` · <b>desconfiança</b> (ocultar CD 30)` : \"\"}.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\"><option value=\"semana\">Mais uma semana de escavação</option><option value=\"zerar\">Recomeçar do zero</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Têm pás, picaretas etc.</label><input type=\"checkbox\" name=\"ferramentas\" checked></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia para ocultar</label><select name=\"ocultar\"><option value=\"furt\">Furtividade</option><option value=\"enga\">Enganação</option><option value=\"dipl\">Diplomacia</option><option value=\"inti\">Intimidação</option><option value=\"atua\">Atuação</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Ajuda de planejamento (bônus total)</label><input type=\"number\" name=\"plano\" value=\"0\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione o escavador (e um segundo, que ajuda com bônus dobrado). Marque como alvo (T) quem oculta a obra; quem oculta não escava.</p>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Túnel recomeçado do zero.\");\n\t\t}\n\t\tconst [esc, ajud] = tokens;\n\t\tif (!esc) return ui.notifications.warn(\"Selecione quem escava.\");\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };\n\t\tconst per = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;\n\t\te.semana += 1;\n\t\tconst cd = 30 + e.extra + (res.ferramentas ? 0 : 5);\n\t\tlet html = `<h3>Escavando um Túnel · semana ${e.semana}</h3>`;\n\t\tlet ajuda = 0;\n\t\tif (ajud) {\n\t\t\tconst r = await rolar(`1d20 + ${per(ajud.actor, \"atle\")}`);\n\t\t\tajuda = Math.floor(r.total / 10) * 2;\n\t\t\thtml += `<p>${ajud.name} ajuda: Atletismo ${r.total}, <b>+${ajuda}</b> (bônus dobrado).</p>`;\n\t\t}\n\t\tconst plano = Number(res.plano) || 0;\n\t\tconst r = await rolar(`1d20 + ${per(esc.actor, \"atle\")} + ${ajuda} + ${plano}`);\n\t\tconst ok = r.total >= cd;\n\t\thtml += `<p>${esc.name}: Atletismo <b>${r.total}</b> contra CD ${cd}${res.ferramentas ? \"\" : \" (sem ferramentas)\"}: ${ok ? \"<b>avança</b>\" : \"<b>imprevisto</b> (CD +2)\"}.</p>`;\n\t\tif (ok) e.sucessos += 1;\n\t\telse { e.falhas += 1; e.extra += 2; }\n\t\tconst oc = alvos[0];\n\t\tif (oc) {\n\t\t\tconst cdO = e.suspeita ? 30 : 25;\n\t\t\tconst o = await rolar(`1d20 + ${per(oc.actor, res.ocultar)}`);\n\t\t\tif (o.total >= cdO) html += `<p>${oc.name} mantém a obra escondida (${o.total} contra CD ${cdO}).</p>`;\n\t\t\telse {\n\t\t\t\te.suspeita += 1;\n\t\t\t\thtml += e.suspeita >= 2 ? `<p>${oc.name}: ${o.total} contra CD ${cdO}. <b>Os guardas descobrem a escavação!</b></p>` : `<p>${oc.name}: ${o.total} contra CD ${cdO}. Surgem desconfianças: a CD para ocultar sobe para 30.</p>`;\n\t\t\t}\n\t\t} else html += \"<p><i>Ninguém ocultou a obra esta semana (marque um alvo para testar).</i></p>\";\n\t\tif (e.suspeita >= 2) {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else if (e.sucessos >= 5) {\n\t\t\thtml += \"<p><b>O túnel está pronto.</b> Lá embaixo fica o espaço de masmorra (e o dejeto vivo). Fora das muralhas, as habilidades voltam (o equipamento não).</p>\";\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else if (e.falhas >= 3) {\n\t\t\tconst cdR = 30 + e.extra;\n\t\t\thtml += `<p><b>O túnel desaba!</b> Quem está dentro faz dois testes de Reflexos (CD ${cdR}).</p><ul>`;\n\t\t\tfor (const t of [esc, ajud].filter(Boolean)) {\n\t\t\t\tlet f = 0;\n\t\t\t\tfor (let i = 0; i < 2; i++) if ((await rolar(`1d20 + ${per(t.actor, \"refl\")}`)).total < cdR) f += 1;\n\t\t\t\tif (f === 1) {\n\t\t\t\t\tconst pv = t.actor.system.attributes.pv;\n\t\t\t\t\tawait t.actor.update({ \"system.attributes.pv.value\": pv.value - Math.ceil(pv.value / 2) });\n\t\t\t\t\tif (!t.actor.statuses?.has(\"fatigado\")) await t.actor.toggleStatusEffect(\"fatigado\", { active: true });\n\t\t\t\t}\n\t\t\t\thtml += `<li>${t.name}: ${f === 0 ? \"escapa ileso\" : f === 1 ? \"escapa com ferimentos graves (metade dos PV, fatigado até recuperar)\" : \"<b>é soterrado e morre</b>\"}.</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul><p>O túnel está perdido: qualquer nova tentativa começa do zero.</p>\";\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else await game.user.setFlag(\"world\", CHAVE, e);\n\t\thtml += `<p style=\"font-size:0.85em\">Sucessos ${e.sucessos}/5 · falhas ${e.falhas}/3.</p>`;\n\t\tChatMessage.create({ content: html, rolls, whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t})();",
+  "_id": "EvgYD7oJcrf442gU",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!EvgYD7oJcrf442gU"
+}
