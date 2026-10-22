@@ -1,0 +1,31 @@
+{
+  "name": "Av7 · Suprimentos da Guarita",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/pocao.webp",
+  "folder": "uykxyJEFqTlkYRNm",
+  "flags": {
+    "world": {
+      "fdt": "a2av7"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 7 · gerado por a2-av7-mecano-lagarto-terror.js\n(async function macroSuprimentos() {\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione os personagens que passaram um turno na Guarita da Praia.\");\n\t\tconst modelo = (role) => game.items.find((i) => i.getFlag(\"world\", \"fdt\") === \"a2av7\" && i.getFlag(\"world\", \"fdtRole\") === role);\n\t\tconst itens = [\"pocao\", \"po-azul\"].map(modelo).filter(Boolean).map((i) => i.toObject());\n\t\tif (!itens.length) return ui.notifications.error(\"Não achei a poção e o pó azul da Aventura 7. Importe o Ato 2 de novo.\");\n\t\tfor (const t of tokens) await t.actor.createEmbeddedDocuments(\"Item\", itens);\n\t\tChatMessage.create({ content: `<h3>Suprimentos da Guarita da Praia</h3><p>Valkaria está em caos e a Guarita abre todos os recursos: ${tokens.map((t) => t.name).join(\", \")} recebe${tokens.length > 1 ? \"m\" : \"\"}, cada um, uma <b>poção de curar ferimentos</b> (11d8+11 PV) e uma dose de <b>pó azul</b> (ação completa, 2d4 PM).</p>` });\n\t})();",
+  "_id": "dBNNPCPHDjZ5JioD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!dBNNPCPHDjZ5JioD"
+}

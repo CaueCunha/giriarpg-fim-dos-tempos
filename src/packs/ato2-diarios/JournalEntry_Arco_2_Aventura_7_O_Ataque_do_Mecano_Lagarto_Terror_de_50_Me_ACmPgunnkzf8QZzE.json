@@ -1,0 +1,257 @@
+{
+  "name": "Arco 2 · Aventura 7 · O Ataque do Mecano-Lagarto-Terror de 50 Metros de Altura",
+  "folder": "bF1NNgG3W3HNQKDo",
+  "flags": {
+    "world": {
+      "fdt": "a2av7"
+    }
+  },
+  "_id": "ACmPgunnkzf8QZzE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<blockquote><p>Um imenso lagarto-terror, como aqueles que existem em Galrasia, mas com partes metálicas. Armas espalhadas pelo corpo: armas de fogo giratórias cospem rajada atrás de rajada, bombas são lançadas de canhões [...] Este é o caos que estava para tomar Valkaria. <b>O Mecano-Lagarto-Terror de 50 Metros de Altura.</b></p></blockquote>\n\t\t\t\t<h2>O vilão e seu objetivo</h2>\n\t\t\t\t<p>Última aventura do arco. O vilão é @UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander}, o oficial médico da Roca: desestabilizar Valkaria até a nobreza se sentir ameaçada e aceitar refúgio com Arthemus Vesper em Galrasia. Quando a violência toma as ruas, os Imagodutos canalizam a raiva dos valkarianos e materializam o monstro projetado a partir das pesquisas de Khenzarr: @UUID[Actor.UQ0D5foCwtdejDna]{Mecano-Lagarto-Terror de 50 Metros de Altura}.</p>\n\t\t\t\t<p>Se o grupo resolveu a maior parte das aventuras, Ghorskander perde várias vantagens: a importância de tudo que fizeram deve ficar evidente agora.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Normalidade:</b> não há. A aventura começa quando o contador de Lei & Ordem chega a 0, faça o grupo o que fizer.</li><li><b>Fase 1 · O Monstro que Pisoteou Valkaria:</b> a perseguição pelo mapa de hexágonos, com as situações em cada hexágono.</li><li><b>Fase 2 · O Rei dos Monstros:</b> escalar e desativar quatro segmentos do monstro.</li><li><b>Fase 3 · A Luta pelo Destino de Valkaria:</b> @UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander}, a partir do terceiro segmento desativado.</li><li><b>Fase 4 · Desfecho:</b> Valkaria segue em frente, e o caminho para Galrasia.</li></ul>\n\t\t\t\t<h2>Criaturas</h2>\n\t\t\t\t<ul><li>@UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander} (ND 12) e @UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)} (ND 10, no tronco e depois na cabeça).</li><li>@UUID[Actor.UQ0D5foCwtdejDna]{Mecano-Lagarto-Terror de 50 Metros de Altura}: guarda as armas do monstro inteiro.</li><li>Pontos fracos: @UUID[Actor.0cIas7AsFZtT45Jd]{Ponto Fraco · Pernas (plataformas de manutenção)}, @UUID[Actor.lNmYCSD2sZDosAd5]{Ponto Fraco · Cauda (escotilha de manutenção)}, @UUID[Actor.EF83gkD6MWvNU8s4]{Ponto Fraco · Mecanismo do Tronco}, @UUID[Actor.zmeiEwmMelRgDnPa]{Ponto Fraco · Mecanismos do Ombro}, @UUID[Actor.kTUuGUIWX7xsXubW]{Ponto Fraco · Sopro de Fúria}, @UUID[Actor.oUcDHbBElIRlIE4L]{Ponto Fraco · Olho}.</li><li>Defesas: @UUID[Actor.dNErS5tMXSS6X5DH]{Ninho de Metralhadoras} e @UUID[Actor.E4koGjyXlNrqbb1S]{Lança-Mísseis}.</li><li>Quatro @UUID[Actor.MVuKRUn3239VsTiy]{Enxame de Dragões do Esgoto} (ou @UUID[Actor.XYWNfOwTy2dBURs9]{Enxame de Dragões do Esgoto Alfa}) no tronco e quatro na cabeça.</li></ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.9EnarqMH00TvDOjq]{Av7 · Caminho de Destruição}: a ascensão, o avanço do monstro a cada rodada, hexágonos destruídos, estátua e palácio, Lagarto Teimoso, segmentos desativados e os gastos de @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</li><li>@UUID[Macro.Uhz8Y89QsTBezBjh]{Av7 · Situação em Valkaria}: sorteia a situação e os NPCs, resolve um teste por personagem selecionado (com a melhor perícia permitida), aplica as falhas, o sucesso ou o fracasso e as chances de morte dos NPCs.</li><li>@UUID[Macro.kkkOUcXUdLI3DMuG]{Av7 · Escalar e Sabotar}: escaladas e abordagens alternativas, sabotagem dos pontos fracos, pisoteio, golpe e sacudida da cauda e descargas das plataformas.</li><li>@UUID[Macro.Dq8bAymkRw6rWnuj]{Av7 · Defesas do Mecano-Lagarto-Terror}: ninhos, lança-mísseis, garras, sopro e raios contra os personagens num segmento, com alvos sorteados.</li><li>@UUID[Macro.P1Xx964TIhgNbMZI]{Av7 · Ghorskander em Combate} e @UUID[Macro.dBNNPCPHDjZ5JioD]{Av7 · Suprimentos da Guarita}.</li></ul>\n\t\t\t\t<h2>Ataque inconveniente</h2>\n\t\t\t\t<p>O monstro surge fora do controle dos personagens: talvez logo depois de outra aventura, com poucos PV e PM. A Guarita da Praia abre todos os recursos: quem passa um turno lá recebe @UUID[Item.C1IVRzT5HnfB3lpl]{Poção de Curar Ferimentos (Guarita da Praia)} e @UUID[Item.jPYKg9AbcXZLwfLu]{Pó Azul}. Se o contador não chegou a 0, os pontos restantes viram @UUID[Item.08EPmFbZhT8ese7w]{Benefícios de Lei & Ordem (excesso)}.</p>\n\t\t\t\t<h3>\"Shivara deve ter visto isso!\"</h3>\n\t\t\t\t<p>Shivara nota o ataque, mas aprendeu na Guerra Artoniana o que acontece quando sai de circulação. Coordena dezenas de grupos de heróis e soldados para salvar vidas, e lida com as queixas dos nobres e com a perda de habilidades dos aventureiros. Os heróis épicos estão em outros problemas ou foram afetados pelas mensagens subliminares. Ela só age pessoalmente se o pior acontecer (o grupo falhar).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "eicx50pLM7g1zvYv",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.eicx50pLM7g1zvYv"
+    },
+    {
+      "name": "Fase 1 · O Monstro que Pisoteou Valkaria",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<blockquote><p>As paredes tremem com um rugido aterrorizante. [...] Algo primitivo se agita dentro de vocês, um medo ancestral que os faz se sentirem pequenos e vulneráveis, um eco da Era de Megalokk, quando monstros reinavam sobre Arton.</p></blockquote>\n\t\t\t\t<p>No início da sessão, gritos, vidro quebrando e luta generalizada. Bandos de cidadãos enlouquecidos passam com armas e tochas. Um detetive da Guarita da Praia arrasta um criminoso da Companhia dos Irmãos, que ri: em breve não haverá Guarda e a cidade será governada pelo crime. Uma comitiva de nobres passa ignorando o povo.</p>\n\t\t\t\t<h2>Tudo de acordo com o plano</h2>\n\t\t\t\t<ul><li><b>Aventura 1 não resolvida:</b> cada personagem perde acesso às duas últimas habilidades ativáveis que adquiriu.</li><li><b>Aventura 3:</b> situação Quadrilha antes de perseguir o monstro; o grupo não avança nessa rodada, o monstro sim.</li><li><b>Aventura 5:</b> situação Monstros à Solta (depois da Quadrilha, se for o caso), com a mesma regra.</li><li><b>Aventura 6:</b> nobres vão embora já: Valkaria sofre 1 hexágono de dano.</li></ul>\n\t\t\t\t<p>Se o grupo tomou medidas contra um efeito sem resolver a aventura (como cristais rosados contra as mensagens), evita o efeito. A macro @UUID[Macro.9EnarqMH00TvDOjq]{Av7 · Caminho de Destruição} (opção <i>Tudo de acordo com o plano</i>) registra.</p>\n\t\t\t\t<h2>A ascensão</h2>\n\t\t\t\t<p>No hexágono do grupo quando o contador chega a 0, role 1d6 para a direção (1 é a face de cima, depois em sentido horário) e 2d4 para a distância em hexágonos. Fora das muralhas, role de novo.</p>\n\t\t\t\t<h2>Contingência: excesso de Lei &amp; Ordem</h2>\n\t\t\t\t<p>Se o contador nunca chegar a 0, o monstro se ergue assim que o grupo termina o quarto caso investigado. É um desafio bem menor e cada ponto restante vira um benefício (a qualquer momento): @UUID[Item.08EPmFbZhT8ese7w]{Benefícios de Lei & Ordem (excesso)}. O autor recomenda limitar o ganho de Lei &amp; Ordem e converter o excesso aqui.</p>\n\t\t\t\t<h2>Caminho de Destruição</h2>\n\t\t\t\t<p>Cada rodada é uma cena. Na ordem:</p>\n\t\t\t\t<ul><li>O monstro avança um hexágono numa direção aleatória (1d6) e destrói o hexágono que deixou para trás.</li><li>Os aventureiros escolhem um hexágono adjacente e avançam.</li><li>Role a situação no hexágono do grupo.</li></ul>\n\t\t\t\t<p>Se o grupo terminar uma rodada no hexágono do monstro, começa a fase 2. Com <b>10 hexágonos destruídos</b> (pelo monstro ou por situações), a nobreza abandona a capital: o monstro continua matando, Ghorskander tenta fugir e deixa Torgo para deter o grupo, e volta no Arco 3.</p>\n\t\t\t\t<p><b>Hexágonos destruídos:</b> +5 na CD das situações e +10% de chance de morte de NPCs.</p>\n\t\t\t\t<h3>A estátua e o palácio</h3>\n\t\t\t\t<p>Se o monstro chega ao hexágono da estátua de Valkaria, não destrói esse hexágono: ataca a deusa petrificada e fica parado na rodada seguinte. Na terceira rodada segue normalmente; Valkaria sofre 1 hexágono de dano e, a partir daí, todos os hexágonos contam como destruídos. O mesmo vale para o Palácio Imperial. Com os dois: +10 nas CD e +20% de morte. Muito provavelmente todos os NPCs rolados morrem.</p>\n\t\t\t\t<h3>Locais de destaque destruídos</h3>\n\t\t\t\t<p>Lugares muito resistentes (Rocha Cinzenta, Arena de Valkaria) ficam de pé. Os outros são destruídos. NPCs não rolados muito ligados a um local destruído (como Stugrid e a Catedral) têm 50% de chance de morrer.</p>\n\t\t\t\t<h3>Lagarto Teimoso</h3>\n\t\t\t\t<p>Até três vezes, uma por rodada, o monstro avança um hexágono adicional (mesmo detido por Lei &amp; Ordem) sem destruí-lo e sacrifica os ninhos de metralhadoras de um ombro. Serve para prolongar a perseguição.</p>\n\t\t\t\t<h3>Velozes e Valorosos</h3>\n\t\t\t\t<p>@UUID[Item.rhOTrHgHrObFwc3Q]{Velozes e Valorosos}: com acesso o tempo todo a um meio rápido, o grupo avança um hexágono adicional numa única rodada, sem situação.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Oiu63MhTXABEosjH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.Oiu63MhTXABEosjH"
+    },
+    {
+      "name": "Situações em Valkaria",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Sempre que o grupo entra num hexágono, role 1d12 em @UUID[RollTable.jWPkQtg4KZFH8lXT]{Situações em Valkaria} e 1d100 em @UUID[RollTable.i63DP9gm4W1PU8ns]{NPCs em Valkaria (situações)}. Cada situação é um teste estendido aberto: <b>cada personagem faz um único teste</b>, e o grupo fracassa ao juntar três falhas ou ao não conseguir os sucessos. Quase sempre dá para <b>ignorar</b> e avançar um hexágono adicional, com as consequências. Use @UUID[Macro.Uhz8Y89QsTBezBjh]{Av7 · Situação em Valkaria}.</p>\n\t\t\t\t<h3>NPCs</h3>\n\t\t\t\t<p>Ignore NPCs mortos, presos, ausentes ou já com o grupo. Mantenha os que o grupo não conhece (boa chance de apresentar um coadjuvante), a menos que complique demais. NPCs com recursos estão isolados e sem equipamento; os poderosos (Janara, Torzogh) estão feridos ou exaustos. Com <b>99-00</b>, o NPC está com o pleno poder e enfurecido: não dá para ignorar, +5 nas CD e cada teste falho custa 2d6 PV.</p>\n\t\t\t\t<h3>As doze situações</h3>\n\t\t\t\t<table><tr><th>Situação</th><th>Teste</th><th>Falha no teste</th><th>Sucesso</th><th>Fracasso</th><th>Ignorar</th></tr>\n\t\t\t\t\t<tr><td>1. Saque</td><td>Luta, Pontaria, Diplomacia, Intimidação ou Misticismo CD 30, 3</td><td>Perde 1 consumível (ou 1d6 PV)</td><td>Um consumível de até T$ 100</td><td>–2 em testes com equipamento na próxima rodada; NPCs 50%</td><td>NPCs 80%</td></tr>\n\t\t\t\t\t<tr><td>2. Quadrilha</td><td>Mesmas perícias, CD 32, 4</td><td>2d6 PV</td><td>1d4 de bônus num teste até o fim da fase 1</td><td>Não avança na próxima rodada; 50%</td><td>1d6 PV cada; 60%</td></tr>\n\t\t\t\t\t<tr><td>3. Desabamento</td><td>Atletismo (ou Misticismo com magia) CD 30, 3</td><td>4d6 impacto</td><td>Caminho livre</td><td>4d6 impacto cada, não avança; 65%</td><td>65%, sem o hexágono extra</td></tr>\n\t\t\t\t\t<tr><td>4. Incêndio</td><td>Fortitude (ou Misticismo) CD 32, 4</td><td>4d6 fogo</td><td>—</td><td>4d6 fogo e fatigado; 65%</td><td>2d6 fogo cada; 80%</td></tr>\n\t\t\t\t\t<tr><td>5. Monstros à Solta</td><td>Adestramento (ou Misticismo) CD 32, 3</td><td>2d6 PV</td><td>—</td><td>65% e monstros perseguem</td><td>75% e monstros perseguem (1d6 PV por teste falho; +5 na CD para se livrar)</td></tr>\n\t\t\t\t\t<tr><td>6. Mortos-Vivos</td><td>Luta, Pontaria, Misticismo ou Religião CD 33, 4 (Canalizar Energia: 6 PM por um sucesso)</td><td>4d6 trevas</td><td>75% de um NPC morto na fase 1 voltar à vida</td><td>65%; espíritos causam 2d6 trevas por rodada até uma rodada parada</td><td>Não pode</td></tr>\n\t\t\t\t\t<tr><td>7. Alagamento de Poções</td><td>Fortitude, Ofício (alquimista) ou Reflexos CD 32, 3</td><td>Condição 1d4: alquebrado, cego, enjoado, lento</td><td>1d4 preparados de até T$ 50</td><td>50%; condições até uma rodada de recuperação</td><td>65%; 1d12 PV por veneno (Fort CD 32 metade)</td></tr>\n\t\t\t\t\t<tr><td>8. Magia Selvagem</td><td>Fortitude, Reflexos, Vontade ou Misticismo CD 33, 4 (Dissipar Magia: 3 PM por um sucesso)</td><td>—</td><td>1d4 PM cada</td><td>65%; efeitos por sucessos (6d6 fogo; perda de vida; mutação; teleporte)</td><td>75%; 50% de se repetir, –10% por rodada</td></tr>\n\t\t\t\t\t<tr><td>9. Tumulto</td><td>Diplomacia, Guerra ou Intimidação CD 33, 3; três NPCs</td><td>4d6 impacto (metade com escalada ou voo)</td><td>—</td><td>50%; arrastados a um hexágono aleatório</td><td>75%</td></tr>\n\t\t\t\t\t<tr><td>10. Batalha Campal</td><td>Diplomacia, Guerra, Intimidação, Luta, Misticismo ou Pontaria CD 35, 3 por grupo; três NPCs (dois lados e inocentes); pode fazer dois testes com –5</td><td>3d4 PV</td><td>Grupo protegido salvo, outros 75%; dois grupos: +1 hexágono sem situação</td><td>Escolhido 65%, outros 80%; hexágono destruído</td><td>Não pode</td></tr>\n\t\t\t\t\t<tr><td>11. Aventureiros em Pânico</td><td>Três perícias da Tabela 6-6 (T20 p. 279) CD 33, 4</td><td>2d6 PV ou 1 PM</td><td>Próximo sucesso dá +1 hexágono</td><td>50%; 2d6 PV e 1d4 PM cada</td><td>65%; NPCs têm 10% de se voltar contra o grupo</td></tr>\n\t\t\t\t\t<tr><td>12. Cultistas</td><td>Luta, Misticismo, Pontaria ou Religião CD 35, 5</td><td>1d6 PM</td><td>Uma noite de descanso</td><td>50%; abominação enfraquecida (1 hexágono a cada 3 rodadas)</td><td>75%; abominação (1 hexágono a cada 2 rodadas; 1 Lei &amp; Ordem anula)</td></tr></table>\n\t\t\t\t<p style=\"font-size:0.85em\">As porcentagens são a chance de morte de cada NPC presente.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "AEyCNUIchVJGZUeJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.AEyCNUIchVJGZUeJ"
+    },
+    {
+      "name": "Fase 2 · O Rei dos Monstros",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<blockquote><p>Ao chegar perto da criatura, vocês percebem a enormidade da tarefa de destruí-la. Seria como atacar uma montanha, como desafiar um vulcão.</p></blockquote>\n\t\t\t\t<p>Ghorskander sabe que o monstro não sobrevive: o melhor para a Roca é mesmo que seja eliminado, depois de causar estrago. O monstro tem <b>cinco segmentos</b> (pernas, cauda, tronco, braços e cabeça), cada um um objeto Colossal com RD 10, Defesa e PV próprios e um ponto fraco. <b>Sabotar</b>: ação completa, Ladinagem ou Ofício (engenhoqueiro) CD 25; o ponto fraco perde PV iguais ao resultado. Desativar <b>quatro segmentos</b> quaisquer encerra a fase 2 (a cabeça conta como dois).</p>\n\t\t\t\t<p>Do chão, só as pernas e a cauda. Conduza como um combate normal: <b>a cada 5 rodadas</b> (10 com as pernas desabilitadas), o monstro anda 1 hexágono por Valkaria e destrói 1; role situação e NPC. O grupo pode descer automaticamente para lidar com ela, mas terá de escalar de novo. Ghorskander só enfrenta o grupo depois do terceiro segmento.</p>\n\t\t\t\t<h3>Defesas</h3>\n\t\t\t\t<ul><li>@UUID[Actor.dNErS5tMXSS6X5DH]{Ninho de Metralhadoras}: Grande, dispara duas vezes por rodada na última contagem, +32 (4d8 perfuração, 19/×3, alcance longo), dois alvos sorteados. Defesa 35, RD 5, 60 PV; sabotar com Ladinagem ou engenhoqueiro CD 30.</li><li>@UUID[Actor.E4koGjyXlNrqbb1S]{Lança-Mísseis}: Grande, uma vez por rodada na última contagem, a até 90m: 6d10 impacto e –2 cumulativo em todos os testes por 1 rodada (Ref CD 30 metade e evita). Defesa 35, RD 5, 60 PV; sabotar com Ladinagem CD 30.</li></ul>\n\t\t\t\t<h3>Pernas · @UUID[Actor.0cIas7AsFZtT45Jd]{Ponto Fraco · Pernas (plataformas de manutenção)}</h3>\n\t\t\t\t<p>Antes de subir, criaturas Grandes ou menores são pisoteadas: 12d6 impacto (Ref CD 32 metade), ignora RD. Sem passarelas: plataformas de manutenção a 20m, escalada CD 25. Dois ninhos nos joelhos no fim de cada rodada; descargas de 4d6 eletricidade e ofuscado no início de cada turno nas plataformas (Ref CD 32 evita). Defesa 28, RD 10, 500 PV. Opcional: das plataformas se segue ao tronco. Desabilitadas: metade da velocidade e sem pisoteio.</p>\n\t\t\t\t<h3>Cauda · @UUID[Actor.lNmYCSD2sZDosAd5]{Ponto Fraco · Cauda (escotilha de manutenção)}</h3>\n\t\t\t\t<p>Antes de subir: 8d6 impacto e empurrado 1 hexágono (Ref CD 33 metade e evita), ignora RD. Escotilha a 20m, escalada CD 22. Quatro plataformas a meia altura, um lança-mísseis em cada. No fim de cada rodada, quem ainda escala faz Atletismo ou Reflexos CD 33: 4d6 impacto, e cai se falhar por 5. Defesa 26, RD 10, 450 PV. Desabilitada: –2 na CD de todos os efeitos do monstro e sem golpe de cauda.</p>\n\t\t\t\t<h3>Rápidos e mortos (o grupo descobre ao chegar no tronco)</h3>\n\t\t\t\t<p>Os braços protegem a cabeça com golpes muito poderosos: é mais seguro desabilitá-los antes, mas são mais rodadas com o monstro andando. Em compensação, quando o grupo chega à cabeça <b>o monstro para</b>. Se a cabeça cair cedo e ainda faltarem segmentos, ele volta a andar.</p>\n\t\t\t\t<h3>Tronco · @UUID[Actor.EF83gkD6MWvNU8s4]{Ponto Fraco · Mecanismo do Tronco}</h3>\n\t\t\t\t<p>Sem testes de escalada para chegar e se move livremente aqui e para os braços. Cinco mecanismos (ação de movimento para alcançar cada um), 250 PV e Defesa 15 cada. Dois ninhos, quatro lança-mísseis, quatro @UUID[Actor.MVuKRUn3239VsTiy]{Enxame de Dragões do Esgoto} (ou @UUID[Actor.XYWNfOwTy2dBURs9]{Enxame de Dragões do Esgoto Alfa}) e @UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)}. Desativado: o ódio se desfaz e não se rolam mais situações.</p>\n\t\t\t\t<h3>Braços · @UUID[Actor.zmeiEwmMelRgDnPa]{Ponto Fraco · Mecanismos do Ombro}</h3>\n\t\t\t\t<p>Cada ombro: dois ninhos e dois lança-mísseis (o Lagarto Teimoso sacrifica os ninhos de um ombro). Cada garra ataca o ombro oposto: +28 (4d12+16 corte, 19) contra todos ali, ignora RD. Passarelas: sem testes. Mecanismos do ombro: Defesa 30, RD 10, 350 PV cada; os dois desabilitam o segmento e impedem a defesa da cabeça.</p>\n\t\t\t\t<h3>Cabeça · @UUID[Actor.kTUuGUIWX7xsXubW]{Ponto Fraco · Sopro de Fúria} e @UUID[Actor.oUcDHbBElIRlIE4L]{Ponto Fraco · Olho}</h3>\n\t\t\t\t<p>A 10m de escalada do tronco ou dos braços (CD 25). Se demorarem mais de uma rodada, sofrem dois ataques das garras no fim da primeira, a menos que escalem pelas costas (20m). Sem ponto fraco único: cai quando todas as defesas caem. Quatro @UUID[Actor.MVuKRUn3239VsTiy]{Enxame de Dragões do Esgoto} (ou @UUID[Actor.XYWNfOwTy2dBURs9]{Enxame de Dragões do Esgoto Alfa}) (e os que sobraram correm para cá), Torgo se estiver vivo e, se for a última luta, Ghorskander. Os defensores são imunes aos mecanismos.</p>\n\t\t\t\t<ul><li><b>Sopro de fúria</b> (contagem 20): cone de 9m, 8d6 essência, 1 PM por 6 nos dados (Ref CD 30 metade e evita a perda), ignora RD; 0 PM é frenesi. Defesa 28, 150 PV; quem o desabilita falha automaticamente.</li><li><b>Raios oculares</b> (contagem 15): cada olho, 6d6 luz e ofuscado (Fort CD 30 evita a condição), ignora RD. Defesa 25, 100 PV; quem o desabilita falha automaticamente.</li><li><b>Garras</b> (contagem 10): cada braço funcional ataca todos na cabeça.</li></ul>\n\t\t\t\t<p>Destruir a cabeça conta como desabilitar dois segmentos.</p>\n\t\t\t\t<h3>Dando a volta por cima</h3>\n\t\t\t\t<p>Pular de um prédio, voar ou teletransportar: CD 25 para o tronco ou braços, 30 para a cabeça (Acrobacia ou Atletismo para saltar; Acrobacia, Pilotagem ou Misticismo para voar; Misticismo para teletransporte; Ofício não serve). Falhar no salto é uma queda; falhar no voo é sofrer a barragem sem abordar. Logo antes de abordar, todos levam a barragem do segmento: tronco (2 ninhos e 4 mísseis), braços (4 ninhos, 2 mísseis e 2 garras), cabeça (sopro, 2 raios e 2 garras), com alvos sorteados. Invisibilidade não protege; teletransporte pode, a critério do Mestre.</p>\n\t\t\t\t<h3>O mapa</h3>\n\t\t\t\t<p>Não há mapa oficial: os segmentos são complexos demais. Na stream, havia \"reatores\" onde quem caísse morria: perigosos para os dois lados.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "jvnk4fmJkCronmqW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.jvnk4fmJkCronmqW"
+    },
+    {
+      "name": "Fase 3 · A Luta pelo Destino de Valkaria",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<blockquote><p>Ghorskander, o oficial médico da Roca, é uma figura estranha. Alto e esquálido [...] veste uma cartola, como se zombasse dos modos artonianos, além de uma capa e um avental sujo de sangue. [...] A parte traseira de seu crânio é achatada: é o mostrador de um relógio.</p></blockquote>\n\t\t\t\t<p>O discurso completo está na macro @UUID[Macro.P1Xx964TIhgNbMZI]{Av7 · Ghorskander em Combate} (opção <i>O discurso</i>).</p>\n\t\t\t\t<h3>Como conduzir</h3>\n\t\t\t\t<p>@UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander} não é um lutador nato, mas usa todas as táticas. Diferente de Syvarian, despreza os heróis; não tem honra e mata primeiro o aventureiro mais frágil (sem antagonizar jogadores menos experientes). Não teme ser destruído: com o fim do tempo, tudo será uma coisa só. Vencidos o monstro e Ghorskander, Valkaria está em paz relativa... mas em algum lugar da cidade outra batalha épica acontece.</p>\n\t\t\t\t<h3>Eu &lt;3 Valkaria</h3>\n\t\t\t\t<p>@UUID[Item.3gxbK3uqNfhobKQg]{Eu <3 Valkaria}. Use se o grupo teve apreço pela cidade, de preferência quando estiver levando a pior. Recrie o clima dos filmes de heróis: esta é a grande retribuição de Valkaria.</p>\n\t\t\t\t<h3>Relato da mesa original</h3>\n\t\t\t\t<p>A luta quase matou todo o grupo na primeira rodada: os Cães das Colinas chegaram à cabeça sem desabilitar os braços. Por causa desse playtest entrou a regra de o monstro parar quando o grupo chega à cabeça. Com um grupo inexperiente, diga com franqueza que lutar na cabeça sem desabilitar os braços será muito mais difícil e que a morte de todos é provável.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "LVYpivggoNVJoeb2",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.LVYpivggoNVJoeb2"
+    },
+    {
+      "name": "Fase 4 · Desfecho",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<blockquote><p>\"Comprem aqui mesmo!\", grita uma menina de no máximo doze anos. \"Suvenires da luta contra o monstro que pisoteou Valkaria! Tudo legítimo, na minha mão!\" [...] É uma cena movimentada, cômica, trágica, banal e épica. Valkaria passou por mais isso, absorveu a experiência e segue em frente. [...] Mas, por enquanto, vocês estão atravancando o caminho e os valkarianos querem passar.</p></blockquote>\n\t\t\t\t<h2>O caminho para Galrasia</h2>\n\t\t\t\t<ul><li><b>Paollus:</b> aliado ao verdadeiro Paollus, o grupo recebe tudo sobre a localização da Roca e o covil de Vesper.</li><li><b>A Ploigoníada:</b> com contato pacífico via o Cobrador, a guilda troca o paradeiro da Roca pelo perdão de parte da dívida de Arton.</li><li><b>Meios sobrenaturais:</b> deixe dar certo, com um motivo para a informação não ter vindo antes. Ninguém mandou outros heróis porque há outras sagas: \"Vocês são os heróis!\"</li><li><b>Arthemus Vesper:</b> se teve relação cordial com o grupo, pode convidá-lo a Galrasia para ver o \"refúgio\".</li><li><b>A druida de bordo ou a própria Roca:</b> só como culminação de um interesse ao longo do arco.</li><li><b>A Academia Arcana:</b> adivinhações, contatos e alguém que viu a Roca cair anos atrás.</li><li><b>Xerife Mathilda Nolt:</b> lagartos-terror vêm de algum lugar; nobres levados a um ponto distante e inacessível: Galrasia.</li><li><b>A Coroa:</b> Shivara aparece, curta, impressionante e decisiva, ou manda um pergaminho assinado.</li><li><b>NPCs:</b> Yolana, Alfraye, os Goblins da Gazeta, Justine, o Avatar da Cidade, Anatole (e agora o grupo deve a ele), até um vilão do Clube de Cavalheiros.</li><li><b>Capangas:</b> um delator da Companhia dos Irmãos com medo do verdadeiro Paollus.</li></ul>\n\t\t\t\t<h2>Epílogo</h2>\n\t\t\t\t<p>O trabalho em Valkaria acabou; os próximos passos estão em Galrasia. Reserve ao menos uma sessão para amarrar pontas soltas e despedidas. O grupo não perde negócios, residências e vínculos: use o poder atual para justificar o acesso remoto. No terceiro arco, os heróis são pessoas do mundo.</p>\n\t\t\t\t<h3>Destino dos NPCs</h3>\n\t\t\t\t<ul><li><b>Mathilda e os detetives:</b> ficam na Guarda; Mathilda pode virar Reguladora (Ulnsariann, Throgarimm ou Hannah no lugar).</li><li><b>Blixto Arting:</b> desconto perene; talvez uma filial da Metais em Lysianassa, com Basil indo junto.</li><li><b>Felicia Daratramm:</b> livre para ficar com Belinda nas Colinas Centrais.</li><li><b>Os Mata-Malvados:</b> se amigos, podem ir a Galrasia.</li><li><b>Click e as bandas:</b> talvez uma taverna em Lysianassa.</li><li><b>O Povo dos Túneis:</b> sem lugar na Mansão do Sono e Suplício, podem ir a Galrasia (têm experiência com lagartos-terror).</li><li><b>Alfraye:</b> pode acompanhar o grupo e montar uma base em Lysianassa, mas o mais provável é ficar e manter contato mágico.</li><li><b>A juventude nobre:</b> Archibald e Melynna, Drekaag em Sckharshantallas, Loranth atrás de novas substâncias...</li><li><b>Gnuk:</b> pode ir pesquisar transportes (inclua uma missão para tirá-lo de encrenca).</li><li><b>O Castelo do Sabor:</b> uma filial fora de Valkaria.</li><li><b>Bebê Corisco:</b> talvez capturar uma montaria ainda mais radical em Galrasia.</li><li><b>Os Goblins da Gazeta:</b> o grupo é manchete, elogiosa ou escandalosa.</li><li><b>A Residência Paterfax:</b> a despedida deve ser o mais melodramática possível.</li><li><b>Anatole:</b> vira \"agente de aventureiros\" em Lysianassa.</li><li><b>Justine:</b> fica, mas o grupo sempre será bem-vindo.</li></ul>\n\t\t\t\t<h3>Informações para o futuro</h3>\n\t\t\t\t<ul><li>A Roca caiu em Galrasia e continua lá.</li><li>Há uma druida de bordo muito próxima da nave viva.</li><li>O Dr. Arthemus Vesper construiu uma base na ilha.</li><li>Nobres e ricaços foram levados a Galrasia para que Vesper tivesse acesso aos recursos deles.</li><li>O plano está nas últimas fases e deve chegar a um ponto culminante.</li><li>A única cidade verdadeira de Galrasia é Lysianassa: qualquer expedição começa lá.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "CwUv4hzz7F8HQmgQ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!ACmPgunnkzf8QZzE.CwUv4hzz7F8HQmgQ"
+    }
+  ],
+  "_key": "!journal!ACmPgunnkzf8QZzE"
+}

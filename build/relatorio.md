@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 81 documento(s), 7 pasta(s)
-- `ato2-itens`: 70 documento(s), 7 pasta(s)
-- `ato2-diarios`: 7 documento(s), 7 pasta(s)
-- `ato2-tabelas`: 14 documento(s), 7 pasta(s)
-- `ato2-macros`: 37 documento(s), 7 pasta(s)
+- `ato2-ameacas`: 92 documento(s), 8 pasta(s)
+- `ato2-itens`: 75 documento(s), 8 pasta(s)
+- `ato2-diarios`: 8 documento(s), 8 pasta(s)
+- `ato2-tabelas`: 16 documento(s), 8 pasta(s)
+- `ato2-macros`: 43 documento(s), 8 pasta(s)
 
-### Ligações com o sistema (139)
+### Ligações com o sistema (145)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -286,7 +286,13 @@
 | Replicoide de Axel | Ataque Furtivo | poder | ficha do livro + origem no sistema |
 | Replicoide de Irludde | Adaga (×2) | arma | ficha do livro + origem no sistema |
 | Replicoide de Irludde | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Ghorskander | Engenhosidade | poder | ficha do livro + origem no sistema |
+| Ghorskander | Ossos Frágeis | poder | ficha do livro + origem no sistema |
+| Ghorskander | Evasão | poder | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Pancada (×2) | arma | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Fúria | poder | ficha do livro + origem no sistema |
 | (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
+| (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 
