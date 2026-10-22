@@ -39,7 +39,8 @@ export const ATOS = [
 			"a2-av7-mecano-lagarto-terror",
 			"a2-mini1-ruas-de-cobica",
 			"a2-mini2-irmandade-maxima",
-			"a2-labirinto-liberto"
+			"a2-labirinto-liberto",
+			"a2-encontros-valkaria"
 		]
 	},
 	{

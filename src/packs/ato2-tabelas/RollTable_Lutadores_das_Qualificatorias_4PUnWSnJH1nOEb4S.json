@@ -1,0 +1,574 @@
+{
+  "name": "Lutadores das Qualificatórias",
+  "img": "systems/tormenta20/icons/itens/gerais/manopla.webp",
+  "folder": "b3vxiEIhZtMUiT3A",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "lutadores"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Cinco lutadores por encontro. Cada luta é um teste oposto do melhor ataque com arma contra 1d20 + o bônus do lutador. A macro Desafios da Cidade conduz as cinco lutas.",
+  "_id": "4PUnWSnJH1nOEb4S",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Malgor, o Fajuto (+2)",
+      "description": "Um fanfarrão que tenta afugentar os adversários com suas bravatas.",
+      "_id": "lMDpjc2TqLYCgx5q",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.lMDpjc2TqLYCgx5q"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Grispina, a Penitente (+10)",
+      "description": "Uma anã que odeia lutar e luta por penitência a Arsenal. Sempre pede desculpas.",
+      "_id": "VRGfaqvvpRnYW4Us",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.VRGfaqvvpRnYW4Us"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Sardento (+7)",
+      "description": "Um hynne disfarçado de criança humana. Chora, finge ser indefeso, tenta pegar o oponente desprevenido.",
+      "_id": "1ubuyje8KTZ0hDq6",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.1ubuyje8KTZ0hDq6"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Bartholomeu, o Sagaz (+10)",
+      "description": "Um ogro fortíssimo que tenta falar difícil.",
+      "_id": "BG5aEwyNAr31Mlek",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.BG5aEwyNAr31Mlek"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Zarkel, o Piedoso (+7)",
+      "description": "Um criminoso cruel que usa venenos.",
+      "_id": "BTyKE0one4ihRgNE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.BTyKE0one4ihRgNE"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Dallantor, o Apaixonado (+0)",
+      "description": "Um qareen que quer ser gladiador para impressionar a linda Salismena. Oferece T$ 100 para o personagem entregar a luta.",
+      "_id": "Txee9c6G4yIdjNRR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.Txee9c6G4yIdjNRR"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Salismena, a Fria (+15)",
+      "description": "Exímia lutadora que quer ser gladiadora para se livrar de Dallantor, que não a deixa em paz.",
+      "_id": "8Mt7k5u4OLvCRtq9",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.8Mt7k5u4OLvCRtq9"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Blynna, a Cientista (+10)",
+      "description": "Uma osteon que morreu testando uma arma inovadora e continua testando depois da morte.",
+      "_id": "WSxBTaVFOiyTz2Gs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.WSxBTaVFOiyTz2Gs"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Ulieg, o Soldado (+17)",
+      "description": "Veterano da Guerra Artoniana que saca uma arma de fogo e atira no oponente!",
+      "_id": "oSlvMsAsHTAEstVx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.oSlvMsAsHTAEstVx"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Yuki, a Tranquila (+10)",
+      "description": "Uma samurai especialista em saque rápido.",
+      "_id": "fCtTj3LbaMxWxCIC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.fCtTj3LbaMxWxCIC"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Grendokrielakk, o Dragão (+20)",
+      "description": "Tecnicamente um dragão não pode ser gladiador, mas ninguém tem coragem de dizer não a ele.",
+      "_id": "n16GFrliXkEN3Ap2",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.n16GFrliXkEN3Ap2"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Zardana, a Pacifista (+0)",
+      "description": "Clériga de Marah que veio protestar: joga cola e purpurina no personagem. Não tem bônus, mas o resultado da rolagem dela vira penalidade na próxima luta do aventureiro.",
+      "_id": "BOnPvXhj9hpRzqgQ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.BOnPvXhj9hpRzqgQ"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Hernandez, o Rotundo (+7)",
+      "description": "Um esgrimista fanfarrão, de porte avantajado, que come enquanto luta.",
+      "_id": "RhctR48z3xS0hDNm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.RhctR48z3xS0hDNm"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Gynlariel, o Derrotista (+12)",
+      "description": "Um elfo que deseja morrer em combate.",
+      "_id": "eAW5UeF5H0ToCDLf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.eAW5UeF5H0ToCDLf"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Drag'daxxa, a Dois em Um (+10)",
+      "description": "Uma inventora goblin que monta num golem, no espaço que seria a cabeça dele.",
+      "_id": "m0JbFRWCme20MiLF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.m0JbFRWCme20MiLF"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Loriane, a Campeã da Arena (+20)",
+      "description": "Um pouco injusto: ela quer saber se entraria de novo se tivesse que passar por tudo.",
+      "_id": "0WkeAJ7MswUZULWa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.0WkeAJ7MswUZULWa"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Magdalenna, a Detetive (+17)",
+      "description": "Guarda de Valkaria infiltrada no circuito para descobrir uma quadrilha na Arena. Só se revela se souber que o adversário também é detetive.",
+      "_id": "Z3JVMJZ9vU384P5c",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.Z3JVMJZ9vU384P5c"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Sombra, o Ninja (+10)",
+      "description": "Pouco se sabe sobre este infame ninja de Tamu-ra.",
+      "_id": "XgGZlwXRZjE1OMui",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.XgGZlwXRZjE1OMui"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Shai-Nefer, a Múmia (+12)",
+      "description": "Antiga guerreira do Deserto da Perdição que absorve a energia vital: o resultado da rolagem dela é descontado dos PV do personagem.",
+      "_id": "YlnicfjumjXSZFMC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.YlnicfjumjXSZFMC"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Maquius \"Capito\" Victorius (+25)",
+      "description": "O maior lutador de Arton, campeão da Arena de Tiberus. Este lefou se perguntou por que nunca tentou a Arena de Valkaria e achou as eliminatórias por acaso.",
+      "_id": "ZdPWwoGJXj7zCfoh",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!4PUnWSnJH1nOEb4S.ZdPWwoGJXj7zCfoh"
+    }
+  ],
+  "_key": "!tables!4PUnWSnJH1nOEb4S"
+}

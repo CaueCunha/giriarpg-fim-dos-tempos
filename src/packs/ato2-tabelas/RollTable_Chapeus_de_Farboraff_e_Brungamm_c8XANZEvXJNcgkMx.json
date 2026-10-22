@@ -1,0 +1,709 @@
+{
+  "name": "Chapéus de Farboraff e Brungamm",
+  "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+  "folder": "b3vxiEIhZtMUiT3A",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "chapeus"
+    }
+  },
+  "formula": "1d25",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "T$ 50 cada (50% de desconto fácil). Cada chapéu dá +1 numa perícia, numa situação.",
+  "_id": "c8XANZEvXJNcgkMx",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "document",
+      "documentUuid": "Item.JVLSH9jb84Fve670",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Chapéu: Bicórnio",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Pilotagem (apenas barcos).",
+      "_id": "krvOG1C5OPfY3jJH",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.krvOG1C5OPfY3jJH"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.C5ixxLNa9GoTj00U",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Chapéu: Boina",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Atuação (apenas teatro e poesia).",
+      "_id": "K6ocHCWNNn2rkvI1",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.K6ocHCWNNn2rkvI1"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.uDXU5gT6BigJjHyQ",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Chapéu: Cartola",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Nobreza para etiqueta.",
+      "_id": "USDuZbrIgyZRn65O",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.USDuZbrIgyZRn65O"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.qVtA9tUncXv6ZND0",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapelão Emplumado",
+      "img": "systems/tormenta20/icons/itens/gerais/pena.webp",
+      "description": "+1 em Acrobacia para passar por inimigo.",
+      "_id": "TYOftEFCA0OJiSF3",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.TYOftEFCA0OJiSF3"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.x134xTV22g9r3LZM",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Caçador/Detetive",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Investigação para procurar.",
+      "_id": "nthyLwQALaGoBrDM",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.nthyLwQALaGoBrDM"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.fg2hScHbwyqfCQAx",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu Coco",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Diplomacia para mudar atitude.",
+      "_id": "CKFs1Lh9C1ZX9Ydq",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.CKFs1Lh9C1ZX9Ydq"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.yw93krYkrPEptZN6",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Cozinheiro",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Ofício (cozinheiro).",
+      "_id": "HOfDFxa9PyldQrTF",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.HOfDFxa9PyldQrTF"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.lpJwzI5lR22GjmiW",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Enfermeiro",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Cura para cuidados prolongados.",
+      "_id": "OskHDL7NwGdEI2EH",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.OskHDL7NwGdEI2EH"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.cL0DOFIPCNj5TrJY",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Mago",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Misticismo para detectar magia e identificar item mágico.",
+      "_id": "yWGFK5M1PEJp0aOg",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.yWGFK5M1PEJp0aOg"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.tYKGoRG35sREHr90",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Palha",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Ofício (fazendeiro ou pescador).",
+      "_id": "ui4LdmjwpR9pPNSN",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.ui4LdmjwpR9pPNSN"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.Kd3kqGmRh9d92wAZ",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Texugo",
+      "img": "systems/tormenta20/icons/itens/gerais/gorro-de-ervas.webp",
+      "description": "+1 em Sobrevivência para acampamento.",
+      "_id": "PBhXv45mqewQL2UF",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.PBhXv45mqewQL2UF"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.3jsLw0kadxNrnthc",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Toureiro",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Adestramento para acalmar animal.",
+      "_id": "WAVBimkc8Tl3n3yE",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.WAVBimkc8Tl3n3yE"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.arqMIvAnFrpuXSNK",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu Ultrajante",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Enganação para intriga.",
+      "_id": "WdZWH48G9BLhRnfT",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.WdZWH48G9BLhRnfT"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.K9nsxZibRAMFHmOg",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Chapéu: Chapéu de Vaqueiro",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Cavalgar (apenas cavalos).",
+      "_id": "CSUwhgLta2MeEpzQ",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.CSUwhgLta2MeEpzQ"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.izx1nY5YC6eCpQ2A",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Chapéu: Faixa na Testa",
+      "img": "systems/tormenta20/icons/itens/gerais/bandana.webp",
+      "description": "+1 em Atletismo para corrida e escalar.",
+      "_id": "2ijGDS1iZ84WJGWz",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.2ijGDS1iZ84WJGWz"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.o3dv4K2hqF0mSDW9",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Chapéu: Fedora",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Investigação para obter informação.",
+      "_id": "HxBll97D9bZjWO9G",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.HxBll97D9bZjWO9G"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.HNHWPs5DwSakGfjU",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Chapéu: Gorro de Baloeiro",
+      "img": "systems/tormenta20/icons/itens/gerais/gorro-de-ervas.webp",
+      "description": "+1 em Pilotagem (apenas veículos aéreos).",
+      "_id": "J3oXHGAeQugNF2Nm",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.J3oXHGAeQugNF2Nm"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.ZG3xc06EiKt6JpWC",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Chapéu: Gorro com Guizos",
+      "img": "systems/tormenta20/icons/itens/gerais/gorro-de-ervas.webp",
+      "description": "+1 em Ladinagem para punga.",
+      "_id": "QL6a5ICFrdWPfSEN",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.QL6a5ICFrdWPfSEN"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.3pHDybpToHCEsJph",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Chapéu: Gorro de Lã",
+      "img": "systems/tormenta20/icons/itens/gerais/gorro-de-ervas.webp",
+      "description": "+1 em Fortitude (apenas contra frio e gelo).",
+      "_id": "xBefq9HT4H4HsbOC",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.xBefq9HT4H4HsbOC"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.RsIGXtDqZ8H2TChK",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Chapéu: Mitra",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Religião para rito.",
+      "_id": "IsRX8naRhlrTizeD",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.IsRX8naRhlrTizeD"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.Eugom0wMxjW9ts87",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "name": "Chapéu: Peruca de Juiz",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Nobreza para informação (apenas leis).",
+      "_id": "kHHk6T0AmEqH4h5r",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.kHHk6T0AmEqH4h5r"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.cRcTAgl6nS5iDuAm",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "name": "Chapéu: Quepe",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Guerra para analisar terreno.",
+      "_id": "lLOglsy8Pt9TIR0L",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.lLOglsy8Pt9TIR0L"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.lWmAJY6bUU8kJpkA",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "name": "Chapéu: Touca",
+      "img": "systems/tormenta20/icons/itens/gerais/gorro-de-ervas.webp",
+      "description": "+1 em Intimidação para coagir.",
+      "_id": "3GQnPWOK1OqDGZ2V",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.3GQnPWOK1OqDGZ2V"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.FS1ygsDSZdy0U6ka",
+      "range": [
+        24,
+        24
+      ],
+      "weight": 1,
+      "name": "Chapéu: Tricórnio",
+      "img": "systems/tormenta20/icons/itens/gerais/chapeu-arcano.webp",
+      "description": "+1 em Enganação para fintar.",
+      "_id": "bBagHDD3GMGZeJEj",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.bBagHDD3GMGZeJEj"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.2wuJT0CvB8t4ywA9",
+      "range": [
+        25,
+        25
+      ],
+      "weight": 1,
+      "name": "Chapéu: Viseira",
+      "img": "systems/tormenta20/icons/itens/gerais/bandana.webp",
+      "description": "+1 em Jogatina (apenas cartas contra quem depende da visão).",
+      "_id": "rNfRKysY1Ldjy08K",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!c8XANZEvXJNcgkMx.rNfRKysY1Ldjy08K"
+    }
+  ],
+  "_key": "!tables!c8XANZEvXJNcgkMx"
+}
