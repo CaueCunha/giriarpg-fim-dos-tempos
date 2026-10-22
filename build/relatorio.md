@@ -2,16 +2,18 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 123 documento(s), 8 pasta(s)
-- `ato1-itens`: 87 documento(s), 9 pasta(s)
-- `ato1-diarios`: 8 documento(s), 8 pasta(s)
-- `ato1-tabelas`: 13 documento(s), 6 pasta(s)
-- `ato1-macros`: 44 documento(s), 8 pasta(s)
+- `ato1-ameacas`: 139 documento(s), 9 pasta(s)
+- `ato1-itens`: 90 documento(s), 10 pasta(s)
+- `ato1-diarios`: 9 documento(s), 9 pasta(s)
+- `ato1-tabelas`: 15 documento(s), 7 pasta(s)
+- `ato1-macros`: 49 documento(s), 9 pasta(s)
 
-### Ligações com o sistema (120)
+### Ligações com o sistema (122)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
+| Orc Canibal | Clava | arma | ficha do livro + origem no sistema |
+| Aharadak, Líder dos Orcs Canibais | Clava | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Mordida | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Drenar Sangue | poder | link para o sistema |

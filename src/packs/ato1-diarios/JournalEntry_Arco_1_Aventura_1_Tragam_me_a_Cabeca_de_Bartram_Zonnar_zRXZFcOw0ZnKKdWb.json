@@ -1,0 +1,295 @@
+{
+  "name": "Arco 1 · Aventura 1 · Tragam-me a Cabeça de Bartram Zonnar",
+  "folder": "ZMgbbr9YnBEbgQfG",
+  "flags": {
+    "world": {
+      "fdt": "av1"
+    }
+  },
+  "_id": "zRXZFcOw0ZnKKdWb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<blockquote><p>Enquanto todos estavam dormindo na Metais do Baixote Forja &amp; Armazém, o assistente de Belinda Arting fugiu pelas Colinas Centrais, levando consigo todas as armas já produzidas com o misterioso metal arco-íris. Os aventureiros acordam em sua primeira manhã no Forte Cabeça-de-Martelo para descobrir que já têm uma missão.</p></blockquote>\n\t\t\t\t<h2>O vilão e seu objetivo</h2>\n\t\t\t\t<p>Os \"vilões\" são os orcs canibais liderados por @UUID[Actor.7J6sRPe7fVA41xmQ]{Aharadak, Líder dos Orcs Canibais}: só querem encher a barriga. Por trás, Syvarian coordenou, através da Companhia dos Irmãos, a chantagem de @UUID[Actor.GxvsDniHFkrmozCM]{Bartram Zonnar} e o roubo, para levar o metal a Valkaria e ao Dr. Vesper.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Normalidade:</b> o desjejum no salão comunal do Forte.</li><li><b>Fase 1 · Investigação Preliminar:</b> Belinda desesperada, a forja e a paliçada.</li><li><b>Fase 2 · No Rastro:</b> teste estendido até a colina calcinada.</li><li><b>Fase 3 · Emboscada:</b> oito orcs canibais.</li><li><b>Fase 4 · Informações:</b> os orcs se rendem; a primeira grande escolha.</li><li><b>Fase 5 · Encontro nas Centrais:</b> role nos Encontros nas Colinas Centrais.</li><li><b>Fase 6A · Rastreando os Criminosos</b> ou <b>6B · Informações de Tanna-Toh</b>.</li><li><b>Fase 7 · As Colinas Têm Olhos:</b> o Ritual do Banquete e Aharadak.</li><li><b>Fase 8 · Desfecho.</b></li></ul>\n\t\t\t\t<h2>Criaturas</h2>\n\t\t\t\t<ul><li>@UUID[Actor.PKVSM6XIiM2WJ3NO]{Orc Canibal} (ND 1/4): 8 na emboscada, 14 no bando.</li><li>@UUID[Actor.9XUDldIaS6MBuaM3]{Khalmyr, Líder dos Batedores Orcs}, líder dos batedores.</li><li>@UUID[Actor.7J6sRPe7fVA41xmQ]{Aharadak, Líder dos Orcs Canibais} (ND 1). Encontros: emboscada ND 2, Aharadak e bando ND 3.</li><li>Apoio: @UUID[Actor.GxvsDniHFkrmozCM]{Bartram Zonnar} e @UUID[Actor.EfMtZKLiygcVGm3k]{Tanna-Toh, a Velha Orc}.</li></ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.xAoTntVTBuZR27Wp]{Av1 · No Rastro (testes estendidos)}: os testes estendidos do rastro de Bartram (CD 12) e dos criminosos (CD 15), com a ajuda, as perícias de uso único e a colina calcinada.</li><li>@UUID[Macro.yCKWqX6pWbKim79t]{Av1 · Orcs Canibais}: dá os nomes de deuses aos tokens, espreita, rendição e Furtividade para chegar ao ritual.</li><li>@UUID[Macro.j44Q4XYqI5mxHyI5]{Av1 · Conversar com Tanna-Toh}, @UUID[Macro.WH2lCJmMqS9gD1cP]{Av1 · Ritual do Banquete} e @UUID[Macro.nuBG8thbjqsbUONw]{Av1 · Metal Arco-Íris}.</li></ul>\n\t\t\t\t<h3>Contingência: jogadores apáticos</h3>\n\t\t\t\t<p>Se o grupo só rola dados sem interagir, role uma vez nos Encontros nas Colinas Centrais. No fim da sessão, pergunte se um estilo mais focado em combate ou mais conduzido pelo Mestre agradaria mais.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "FSfoHEopGfZioYjJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.FSfoHEopGfZioYjJ"
+    },
+    {
+      "name": "O Forte Cabeça-de-Martelo",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Os personagens chegaram há no máximo um dia e estão hospedados na estalagem improvisada da Metais do Baixote. Ninguém conhece a região, ninguém tem assuntos pessoais aqui, ninguém tem pressa. Eles não se conhecem, a menos que tenham um histórico em comum.</p>\n\t\t\t\t<h3>A galera do Forte</h3>\n\t\t\t\t<ul><li>@UUID[Actor.uNscXCPseIcHMEqA]{Belinda Arting}</li><li>@UUID[Actor.A30UIPkbXX9thRvn]{Sargento Morgan de Molok}</li><li>@UUID[Actor.zKaeEAR5GlWV5ipE]{Dr. Arthemus Vesper}</li><li>@UUID[Actor.ixgyvF9Nh1xNOltG]{Isabrine}</li><li>@UUID[Actor.uBRXytB5z6EuZDlU]{Edwina}</li><li>@UUID[Actor.uxUNByKzyOaEHyBC]{Tarik}</li><li>@UUID[Actor.BtobkVFXPRER9VEa]{Doran Derinarion}</li><li>@UUID[Actor.EoHK1j2RZcFCdFih]{Moira}</li><li>@UUID[Actor.SWVTdJ9R8g9IFcfc]{Nadine}</li><li>@UUID[Actor.gT0YfV9HkUFUlwv5]{Fermond Aldaman}</li><li>@UUID[Actor.rPucMTfFVlLwwifY]{Mortimer}</li></ul>\n\t\t\t\t<p>No desjejum estão o Sargento Morgan, Isabrine, Doran, Tarik, Moira e o velho inventor Arthemus Vesper. Descreva o quadro de avisos, mas ainda sem ler as missões. Belinda e Bartram não aparecem: ela já estaria trabalhando há uma hora.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "7AFyNmYl3aHCen9M",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.7AFyNmYl3aHCen9M"
+    },
+    {
+      "name": "Fases 1 e 2 · Investigação e Rastro",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<blockquote><p>\"Eu sabia que não devia ter confiado naquele traste! [...] Todos os meses de trabalho, todo o esforço de garimpar o metal... Tudo roubado por um palerma que não consegue nem forjar uma ferradura!\"</p></blockquote>\n\t\t\t\t<p>A forja não foi arrombada (ninguém tranca portas no Forte). As sentinelas eram Nadine e Fermond; ninguém viu nada, porque as sentinelas olham para fora da paliçada.</p>\n\t\t\t\t<ul><li><b>Investigação ou Sobrevivência CD 10:</b> houve uma fuga; caixotes empilhados para escalar a paliçada.</li><li><b>15 ou mais:</b> o fujão se arranhou nos topos afiados das toras e caiu de mau jeito do outro lado.</li><li>Bartram enrolou cada arma em panos. Fermond ouviu algo, mas tem medo de decepcionar o sargento.</li><li>Rastros de poucas horas: ainda dá para capturá-lo. Belinda pede ao grupo, já que os soldados não podem deixar os postos.</li></ul>\n\t\t\t\t<p>Opcional: @UUID[Item.fPMSTNfEIKpi3Ins]{Carta no Quarto de Bartram}.</p>\n\t\t\t\t<h2>No rastro</h2>\n\t\t\t\t<p>Teste estendido aberto, complexidade baixa (3 sucessos), CD 12 e <b>+2 por teste depois do primeiro</b>. Sobrevivência é a perícia básica, mas cada um pode usar outra perícia justificada; uma pessoa por teste pode ajudar. Toda perícia que não seja Sobrevivência vale uma vez no teste inteiro. Cada sucesso revela um trecho da jornada: ele mancava, carregava muito peso, andava à noite sem lampião e não desacelerava.</p>\n\t\t\t\t<ul><li>Sem nenhuma falha: o grupo percebe que Bartram estava sendo seguido.</li><li>Com duas falhas: role uma vez nos Encontros nas Colinas Centrais (ou role quando quiser, pelo ritmo).</li><li>Interações positivas com NPCs ou bons testes sociais podem dar dicas ou transformar uma falha em sucesso.</li></ul>\n\t\t\t\t<p>No fim, a colina pedregosa com a árvore retorcida, calcinada. Sobrevivência CD 12 mostra que Bartram seguiu sozinho; qualquer um vê que houve combate. Fase rápida, sem NPCs: o foco são os personagens.</p>\n\t\t\t\t<h3>Contingência: falha em rastrear</h3>\n\t\t\t\t<p>O grupo se perde nas trilhas e é emboscado pelos orcs, sem saber do encontro com os criminosos. A aventura continua.</p>\n\t\t\t\t<p>Macro: @UUID[Macro.xAoTntVTBuZR27Wp]{Av1 · No Rastro (testes estendidos)}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "gJvReR3cRhZnAUZd",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.gJvReR3cRhZnAUZd"
+    },
+    {
+      "name": "Fases 3 e 4 · Emboscada e Informações",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Bartram foi arrastado por um bando de bípedes: os orcs canibais. Afastando-se do local, Percepção contra a Furtividade dos batedores. Passando ou não, todos ouvem o ronco de um estômago e <b>\"Carne fresca!\"</b>.</p>\n\t\t\t\t<p><b>Oito @UUID[Actor.PKVSM6XIiM2WJ3NO]{Orc Canibal}</b> (ND 2 o encontro), deixados para trás pelo primeiro bando. Deviam seguir os criminosos, mas os acharam perigosos demais, e os forasteiros sumiram num brilho vindo do céu. Armas toscas; só o líder, @UUID[Actor.9XUDldIaS6MBuaM3]{Khalmyr, Líder dos Batedores Orcs}, tem a @UUID[Item.YGxHUVOD4opwd8Kk]{Adaga de Metal Arco-Íris}: <b>a primeira pista</b>. Nomes: Khalmyr, Azgher, Thyatis, Lena, Wynna, Hyninn, Oceano e Tenebra (@UUID[RollTable.r2serE13cmNzbidU]{Nomes dos Orcs Canibais}).</p>\n\t\t\t\t<p>Se os heróis perderem, são levados à caverna de Tanna-Toh para serem desmembrados vivos.</p>\n\t\t\t\t<h3>Relato da mesa original</h3>\n\t\t\t\t<p>O grupo arrasou este combate (sorte e entrosamento). Com iniciantes, use-o como está; calibre o combate final pelo desempenho aqui.</p>\n\t\t\t\t<h2>Os orcs canibais das Colinas</h2>\n\t\t\t\t<p>Uma única família, deformada por consanguinidade e pelo efeito divino das Centrais. Comem de tudo, mas preferem humanoides; já atormentaram as Dahllan Daninhas, mantidas à distância por Annabel. Cerca de 20 orcs com nomes de deuses: a ascensão ou a queda do deus se reflete no orc homônimo. Aharadak nasceu com quatro braços, o segundo par de carapaça rubra da Tormenta, e baniu Tanna-Toh.</p>\n\t\t\t\t<h2>Informações</h2>\n\t\t\t\t<p>Com um ou dois de pé e o grupo em vantagem, os orcs se rendem e contam a transação que viram. Três caminhos: Tanna-Toh, os criminosos (não leva a nada concreto) ou Bartram. <b>Desvios</b> antes do covil: nenhum, Bartram ferido; um (o normal), muito ferido e sem alguns membros; dois ou mais, morto. A primeira grande escolha dos jogadores.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "FMghpm6SzQNDFHcM",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.FMghpm6SzQNDFHcM"
+    },
+    {
+      "name": "Fases 5 e 6 · Encontro, Criminosos e Tanna-Toh",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><b>Fase 5:</b> depois do primeiro combate, role nos Encontros nas Colinas Centrais (uma segunda vez se o grupo fizer dois desvios). O encontro vem antes do objetivo da cena.</p>\n\t\t\t\t<h2>6A · Rastreando os criminosos</h2>\n\t\t\t\t<p>Outro teste estendido, CD inicial 15: eles não estão feridos e levaram tochas. A trilha acaba num local calcinado: foram recolhidos pelo gog'magogue. Orcs e NPCs amistosos viram uma \"luz muito brilhante no céu\" ontem à noite.</p>\n\t\t\t\t<h2>6B · Informações de Tanna-Toh</h2>\n\t\t\t\t<blockquote><p>Se vocês esperavam que alguém chamada Tanna-Toh estivesse numa biblioteca, a decepção não poderia ser maior. [...] Tanna-Toh não passa de uma anciã sentada no chão, encurvada e frágil.</p></blockquote>\n\t\t\t\t<p>@UUID[Actor.EfMtZKLiygcVGm3k]{Tanna-Toh, a Velha Orc} teme estranhos; os orcs ou um teste social a acalmam (+5 para quem respeita os costumes das Centrais; ela valoriza livros, pergaminhos, informações e histórias, e quem nota a ligação dos orcs com os deuses). Conta tudo, inclusive como vencer Aharadak com a alma das Colinas. Macro: @UUID[Macro.j44Q4XYqI5mxHyI5]{Av1 · Conversar com Tanna-Toh}.</p>\n\t\t\t\t<h3>Contingência: pedindo reforços</h3>\n\t\t\t\t<p>Se o grupo voltar ao Forte, Bartram estará morto quando chegarem. Morgan aconselha a desistir, mas @UUID[Actor.SWVTdJ9R8g9IFcfc]{Nadine} (parceira combatente iniciante) e @UUID[Actor.BtobkVFXPRER9VEa]{Doran Derinarion} (parceiro assassino iniciante) saem escondidos. @UUID[Actor.gT0YfV9HkUFUlwv5]{Fermond Aldaman} os denuncia, e ninguém mais desobedece Morgan.</p>\n\t\t\t\t<h3>Contingência: lavando as mãos</h3>\n\t\t\t\t<p>Se o grupo abandonar Bartram, chegam ao Forte ao anoitecer, de mãos vazias. Morgan diz que \"isso acontece\". Moira fica chocada e não colabora mais com facilidade; Fermond se aproxima (faria o mesmo); Belinda finge entender, mas chora pelo assistente. Um fim lúgubre, como algumas histórias nas Colinas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "PtZWXtbz1vrDEpa6",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.PtZWXtbz1vrDEpa6"
+    },
+    {
+      "name": "Fase 7 · As Colinas Têm Olhos",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Não é uma tribo: uma família estendida em cavernas e tendas. Os orcs cercam o tronco onde Bartram está amarrado; @UUID[Actor.7J6sRPe7fVA41xmQ]{Aharadak, Líder dos Orcs Canibais} corta pedaços dele e os dá ao clã com a garra insetoide. Furtividade CD 15 para chegar sem ser visto (macro @UUID[Macro.yCKWqX6pWbKim79t]{Av1 · Orcs Canibais}). Entre os entulhos, a @UUID[Item.iEohjHBWG2gG2QQN]{Espada Curta de Metal Arco-Íris}.</p>\n\t\t\t\t<blockquote><p>\"Hoje tem comida! Comida fresca, comida gritando! Hoje a gente não come cabra roubada, nem cachorro perdido, nem resto de urubu! Eu dou pra vocês carne boa! E se alguém se achar bom demais pra comer da carne que eu dou, pode vir e vai servir de carne também! Abram a boca que a comida chegou!\"</p></blockquote>\n\t\t\t\t<p><b>Encontro ND 3:</b> 14 orcs canibais (Marah, Tenebra, Nimb, Arsenal, Thwor, Valkaria, Allihanna, Megalokk, Kally, Sszzaas, Lin-Wu, Glórienn, Ragnar, Keenn) e Aharadak.</p>\n\t\t\t\t<h3>O Ritual do Banquete</h3>\n\t\t\t\t<ul><li>Na primeira rodada, Aharadak corta a mão de Bartram: 10 PV (de 20) e sangra 1 PV por rodada. O caldeirão borbulha.</li><li>Enquanto ele sangrar: orcs +1 em ataques e heróis que respiram –1 em ataques.</li><li><b>Ação completa:</b> Aharadak corta um naco (–1 PV) e atira a um orc, que perde a ação padrão e ganha 5 PV temporários. Anule ocupando Aharadak ou salvando Bartram.</li><li>Derrubar o caldeirão: Força CD 15; falha por 5 ou mais entorna sobre si (1d4 de ácido).</li></ul>\n\t\t\t\t<p>Macro: @UUID[Macro.WH2lCJmMqS9gD1cP]{Av1 · Ritual do Banquete}.</p>\n\t\t\t\t<h3>Usando as Colinas contra Aharadak</h3>\n\t\t\t\t<p>Quase toda ideia criativa recebe um sim, desde que venha de dentro das Centrais (subterrâneo, habitantes, animais, plantas). Atirar pedras não conta.</p>\n\t\t\t\t<ul><li>Derrubá-lo num fosso: +5 na manobra.</li><li>Soterrá-lo: +5 no teste de manobra.</li><li>Atrair parceiros animais atrai um parceiro extra do mesmo tipo.</li><li>Armas de madeira das Centrais: +1 em ataque e dano contra ele.</li><li>Magias com plantas ou pedras: CD +3.</li></ul>\n\t\t\t\t<h3>Metal arco-íris</h3>\n\t\t\t\t<p>+1 de dano de um elemento a que o alvo seja vulnerável; senão, role (@UUID[RollTable.TaSBXASdtCRu5Ha5]{Elemento do Metal Arco-Íris}), ignorando resistências e imunidades. Lefeu sofrem o dano apesar da imunidade. Contra habitantes das Colinas corrompidos (por enquanto Aharadak e Gaspar): +1 por elemento (+6) e o portador não é alvo dos membros lefeu. A essência de Tilliann rejeita a mácula. Misticismo: \"é como se duas forças dentro das Colinas Centrais estivessem lutando entre si\". Macro: @UUID[Macro.nuBG8thbjqsbUONw]{Av1 · Metal Arco-Íris}.</p>\n\t\t\t\t<h3>Contingência: derrota</h3>\n\t\t\t\t<p>Os orcs não matam os heróis: guardam-nos para depois. Bartram não tem a mesma sorte. As sentinelas caem fácil em Enganação, Intimidação ou até Diplomacia, e os orcs não entendem magia.</p>\n\t\t\t\t<h3>Relato da mesa original</h3>\n\t\t\t\t<p>O grupo original não falou com Tanna-Toh e achou que o metal funcionava contra qualquer coisa da Tormenta. Kiki fez amizade com o orc Lena, sobrevivente da emboscada, que lutou ao lado do grupo na batalha final.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "X6nwDnCnKFnjFN2k",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.X6nwDnCnKFnjFN2k"
+    },
+    {
+      "name": "Fase 8 · Desfecho",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Vencidos os orcs, o grupo volta ao Forte. Se Bartram estiver vivo, não tem condições de falar: pode ser interrogado na próxima aventura.</p>\n\t\t\t\t<p>@UUID[Actor.uNscXCPseIcHMEqA]{Belinda Arting} recebe o grupo como heróis e paga <b>T$ 50</b> a cada um, com estadia grátis na Metais até chegarem fregueses pagantes. Moira aprova a bondade, Nadine a ousadia, Edwina o conhecimento novo. O Sargento Morgan entra, todos se calam; ele não desfaz a cara amarrada, mas acena: <i>\"bom trabalho, garotos\"</i>.</p>\n\t\t\t\t<p><b>Todos passam para o 2º nível.</b></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "tMz76lrzKwLf5UNf",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!zRXZFcOw0ZnKKdWb.tMz76lrzKwLf5UNf"
+    }
+  ],
+  "_key": "!journal!zRXZFcOw0ZnKKdWb"
+}

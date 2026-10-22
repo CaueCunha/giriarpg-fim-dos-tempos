@@ -12,7 +12,7 @@ export const ATOS = [
 		rotulo: "Ato 1 · Colinas Centrais",
 		cor: "#7a5a2a",
 		geradores: [
-			// Av1 (Tragam-me a Cabeça de Bartram Zonnar) ainda não tem gerador.
+			"av1-cabeca-de-bartram",
 			"av2-lefou-adolescente",
 			"a1-guloseimas-gronko",
 			"av3-cultistas-puristas",
