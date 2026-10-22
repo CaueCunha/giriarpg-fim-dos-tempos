@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 38 documento(s), 4 pasta(s)
-- `ato2-itens`: 30 documento(s), 4 pasta(s)
-- `ato2-diarios`: 4 documento(s), 4 pasta(s)
-- `ato2-tabelas`: 6 documento(s), 4 pasta(s)
-- `ato2-macros`: 18 documento(s), 4 pasta(s)
+- `ato2-ameacas`: 50 documento(s), 5 pasta(s)
+- `ato2-itens`: 42 documento(s), 5 pasta(s)
+- `ato2-diarios`: 5 documento(s), 5 pasta(s)
+- `ato2-tabelas`: 9 documento(s), 5 pasta(s)
+- `ato2-macros`: 23 documento(s), 5 pasta(s)
 
-### Ligações com o sistema (99)
+### Ligações com o sistema (105)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -247,6 +247,12 @@
 | Jaydill | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
 | Dejeto Vivo | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
 | Dejeto Vivo | Engolir | poder | ficha do livro + origem no sistema |
+| Carrasco de Lena (tormento de Rylonn) | Mordida | arma | ficha do livro + origem no sistema |
+| Cocatriz-Real (tormento de Bdun) | Evasão | poder | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Salassan, cabeça de dragão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Grumk, cabeça de leão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Marrada (Hans, cabeça de bode) | arma | link para o sistema |
+| Quimera (tormento de Grisgemm) | Voo | poder | link para o sistema |
 
 ### Avisos do Foundry simulado (0)
 

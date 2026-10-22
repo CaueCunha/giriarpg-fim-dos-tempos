@@ -1,0 +1,357 @@
+{
+  "name": "Efeitos de Loucura",
+  "img": "systems/tormenta20/icons/magias/enfeiticar.webp",
+  "folder": "COHWWhbLHiOgL7SX",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Batalha Insana: role no início de cada rodada. O efeito vale para todos os testes da rodada e acaba no fim dela (trocas de lugar não se desfazem).",
+  "_id": "Yc6M7BXvKlITcByB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "1. Os dois personagens mais distantes do monstro à direita e à esquerda trocam de lugar",
+      "description": "Os dois personagens mais distantes do monstro à direita e à esquerda trocam de lugar.",
+      "_id": "D6sMq3szeUVkrhu6",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.D6sMq3szeUVkrhu6"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "2. Efeitos mágicos de cura de luz causam dano de trevas",
+      "description": "Efeitos mágicos de cura de luz causam dano de trevas.",
+      "_id": "nurIiqziLGR7LnVH",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.nurIiqziLGR7LnVH"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "3. Efeitos de dano (incluindo ataques) curam pontos de vida",
+      "description": "Efeitos de dano (incluindo ataques) curam pontos de vida.",
+      "_id": "YBRiFSNZVnMbVu2h",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.YBRiFSNZVnMbVu2h"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "4. O personagem mais distante do monstro troca de lugar com o mais perto do monstro (empate",
+      "description": "O personagem mais distante do monstro troca de lugar com o mais perto do monstro (empate: aleatório).",
+      "_id": "bY8CF7A86NPD5cDu",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.bY8CF7A86NPD5cDu"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "5. O monstro surge a 5 quadrados numa direção aleatória",
+      "description": "O monstro surge a 5 quadrados numa direção aleatória.",
+      "_id": "AZO0xSR8FiHVBFDX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.AZO0xSR8FiHVBFDX"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "6. Efeitos elementais mudam de tipo",
+      "description": "Efeitos elementais mudam de tipo: role 1d6 para cada efeito (1 ácido, 2 eletricidade, 3 fogo, 4 frio, 5 luz, 6 trevas).",
+      "_id": "RcsxeU32TcT0vA84",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.RcsxeU32TcT0vA84"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "7. Antigravidade",
+      "description": "Antigravidade. Todos \"caem para cima\": 3d6 de dano e Acrobacia CD 15 ou começam o turno caídos. No início da rodada seguinte, o mesmo acontece quando todos caem para baixo. Voadores e a criatura não são afetados.",
+      "_id": "FsBsNOZxWzaycNeX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.FsBsNOZxWzaycNeX"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "8. Os dois personagens mais distantes do monstro acima e abaixo trocam de lugar",
+      "description": "Os dois personagens mais distantes do monstro acima e abaixo trocam de lugar.",
+      "_id": "H9qTOa4v13fT20Pv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.H9qTOa4v13fT20Pv"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "9. Todas as criaturas perdem toda redução de dano e ganham vulnerabilidade a dano do mesmo tipo (RD geral vira vulnerabilidade a tudo)",
+      "description": "Todas as criaturas perdem toda redução de dano e ganham vulnerabilidade a dano do mesmo tipo (RD geral vira vulnerabilidade a tudo).",
+      "_id": "ow3E3OWf9FpOn6eY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.ow3E3OWf9FpOn6eY"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "10. Escolha dois personagens aleatoriamente",
+      "description": "Escolha dois personagens aleatoriamente: qualquer efeito ou ação do primeiro afeta o segundo, sem importar o alcance.",
+      "_id": "v4BP4755vKGIljHB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.v4BP4755vKGIljHB"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "11. Resistências contra magias de Fortitude, Reflexos e Vontade viram Intuição, Investigação e Iniciativa",
+      "description": "Resistências contra magias de Fortitude, Reflexos e Vontade viram Intuição, Investigação e Iniciativa. Misticismo e Religião para resolver magias (como Dissipar Magia) viram Acrobacia e Atletismo.",
+      "_id": "OAbvpMf8U1qmZ6Ib",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.OAbvpMf8U1qmZ6Ib"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "12. Uma falha é sucesso e um sucesso é falha, em todos os testes, inclusive ataques",
+      "description": "Uma falha é sucesso e um sucesso é falha, em todos os testes, inclusive ataques.",
+      "_id": "3TTAXVRmNujrH1mb",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!Yc6M7BXvKlITcByB.3TTAXVRmNujrH1mb"
+    }
+  ],
+  "_key": "!tables!Yc6M7BXvKlITcByB"
+}

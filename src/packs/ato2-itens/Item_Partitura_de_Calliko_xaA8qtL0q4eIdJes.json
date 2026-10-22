@@ -1,0 +1,86 @@
+{
+  "name": "Partitura de Calliko",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/pergaminho.webp",
+  "system": {
+    "description": {
+      "value": "<p>Composição de Calliko, comprada de Dorothea. Ninguém nota nada de mágico, mas <b>Atuação ou Misticismo CD 20</b> revela que há algo estranho na combinação das notas.</p><p>Tocada, espalha a loucura de Nimb: quem ouve fica violento (veja a Briga de Taverna). Sucessos dos Tarsos de Calliko: <i>A Sszzaazita Mais Bonita</i> e <i>Dança de Amarid</i>.</p><p><b>Prova</b> (inteira ou um pedaço rasgado).</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "WVG1NfawNE6djWzk",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "_id": "xaA8qtL0q4eIdJes",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!xaA8qtL0q4eIdJes"
+}
