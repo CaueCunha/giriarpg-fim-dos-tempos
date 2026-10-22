@@ -1,0 +1,162 @@
+{
+  "name": "Capa de Couro de Dragão do Esgoto",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/gerais/capa-esvoacante.webp",
+  "system": {
+    "description": {
+      "value": "<p><b>Regra da mesa original.</b> Vestuário, item superior com duas modificações (T$ 3.090). Exige três peças de couro de dragão do esgoto e alguém capaz de fabricar itens superiores.</p><p>Ao se cobrir, fica sob efeito de <b>Invisibilidade</b>: camuflagem total, +10 em Furtividade e quem não pode vê-lo fica desprevenido. Termina se atacar ou lançar magia ofensiva; uma <b>ação padrão</b> reajusta a capa. Um inimigo em combate pode gastar uma ação de movimento para ignorar a invisibilidade até o início do próximo turno.</p><p>Ligue o efeito na aba de efeitos.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 3090,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "peso": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": [],
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "armadura": {
+      "maxAtr": 0,
+      "penalidade": 0,
+      "value": 0
+    },
+    "tipo": "leve"
+  },
+  "folder": "g8alCbHMMRvYFN6B",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "_id": "Ct0Hl7v4ktABe0wE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Capa de couro de dragão: invisível",
+      "img": "systems/tormenta20/icons/magias/invisibilidade.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Camuflagem total, +10 em Furtividade, quem não vê o usuário fica desprevenido. Acaba ao atacar ou lançar magia ofensiva; ação padrão para reajustar.",
+      "statuses": [
+        "invisivel"
+      ],
+      "flags": {
+        "world": {
+          "fdt": "a2av5"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.furt.bonus",
+            "value": "10",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "hnJ0hvYiYbW4J5pE",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!Ct0Hl7v4ktABe0wE.hnJ0hvYiYbW4J5pE"
+    }
+  ],
+  "_key": "!items!Ct0Hl7v4ktABe0wE"
+}

@@ -33,8 +33,9 @@ export const ATOS = [
 			"a2-av1-stremtol",
 			"a2-av2-vectora",
 			"a2-av3-rocha-cinzenta",
-			"a2-av4-taverna-maniacos"
-			// Av5 a Av7 ainda não têm gerador.
+			"a2-av4-taverna-maniacos",
+			"a2-av5-tuneis-famintos"
+			// Av6 e Av7 ainda não têm gerador.
 		]
 	},
 	{

@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 50 documento(s), 5 pasta(s)
-- `ato2-itens`: 42 documento(s), 5 pasta(s)
-- `ato2-diarios`: 5 documento(s), 5 pasta(s)
-- `ato2-tabelas`: 9 documento(s), 5 pasta(s)
-- `ato2-macros`: 23 documento(s), 5 pasta(s)
+- `ato2-ameacas`: 61 documento(s), 6 pasta(s)
+- `ato2-itens`: 52 documento(s), 6 pasta(s)
+- `ato2-diarios`: 6 documento(s), 6 pasta(s)
+- `ato2-tabelas`: 10 documento(s), 6 pasta(s)
+- `ato2-macros`: 30 documento(s), 6 pasta(s)
 
-### Ligações com o sistema (105)
+### Ligações com o sistema (120)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -253,6 +253,21 @@
 | Quimera (tormento de Grisgemm) | Mordida (Grumk, cabeça de leão) | arma | ficha do livro + origem no sistema |
 | Quimera (tormento de Grisgemm) | Marrada (Hans, cabeça de bode) | arma | link para o sistema |
 | Quimera (tormento de Grisgemm) | Voo | poder | link para o sistema |
+| Dragão do Esgoto | Mordida | arma | ficha do livro + origem no sistema |
+| Dragão do Esgoto | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Enxame de Dragões do Esgoto | Enxame | poder | link para o sistema |
+| Enxame de Dragões do Esgoto Alfa | Enxame | poder | link para o sistema |
+| Khenzarr, o Biomante | Raio Arcano | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Magia Acelerada | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Fluxo de Mana | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Natureza Vegetal | poder | link para o sistema |
+| Khenzarr, o Biomante | Armadura Arcana | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Desespero Esmagador | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Ferver Sangue | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Imobilizar | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Metamorfose | magia | magia do sistema + ficha do NPC |
 
 ### Avisos do Foundry simulado (0)
 
