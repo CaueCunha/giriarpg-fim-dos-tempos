@@ -4,7 +4,7 @@ Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do F
 
 | Compêndios | Ameaças e NPCs | Itens | Diários | Tabelas | Macros |
 |---|---:|---:|---:|---:|---:|
-| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 98 | 87 | 8 | 13 | 44 |
+| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 103 | 87 | 8 | 13 | 44 |
 | **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora) | 25 | 14 | 3 | 5 | 12 |
 | **Campanha** (regras de grupo, Poderes de Grupo, utilidades) | | 23 | 1 | | 7 |
 

@@ -2,7 +2,7 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 98 documento(s), 8 pasta(s)
+- `ato1-ameacas`: 103 documento(s), 8 pasta(s)
 - `ato1-itens`: 87 documento(s), 9 pasta(s)
 - `ato1-diarios`: 8 documento(s), 8 pasta(s)
 - `ato1-tabelas`: 13 documento(s), 6 pasta(s)

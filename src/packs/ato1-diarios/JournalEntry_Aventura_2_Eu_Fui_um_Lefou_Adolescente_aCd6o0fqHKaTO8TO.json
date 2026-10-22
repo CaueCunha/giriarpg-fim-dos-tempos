@@ -669,6 +669,234 @@
         "exportSource": null
       },
       "_key": "!journal.pages!aCd6o0fqHKaTO8TO.ZBzGxe6zqtbHtGWW"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Mabel",
+      "type": "image",
+      "sort": 810,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/mabel.webp",
+      "image": {
+        "caption": "Mabel LeBlanc."
+      },
+      "_id": "nAQHOLLeIkbCSdxc",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.nAQHOLLeIkbCSdxc"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Gaspar",
+      "type": "image",
+      "sort": 820,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar.webp",
+      "image": {
+        "caption": "Gaspar LeBlanc."
+      },
+      "_id": "U4GCebIR4mLxCaoZ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.U4GCebIR4mLxCaoZ"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Blanche",
+      "type": "image",
+      "sort": 830,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/blanche.webp",
+      "image": {
+        "caption": "Blanche LeBlanc."
+      },
+      "_id": "QCAG8hGWjIFKtKwc",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.QCAG8hGWjIFKtKwc"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Bastien",
+      "type": "image",
+      "sort": 840,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/bastien.webp",
+      "image": {
+        "caption": "Bastien LeBlanc."
+      },
+      "_id": "m7fLNfGiYSOqBJDK",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.m7fLNfGiYSOqBJDK"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Clothilde",
+      "type": "image",
+      "sort": 850,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/clothilde.webp",
+      "image": {
+        "caption": "Clothilde LeBlanc."
+      },
+      "_id": "s96RdGAaBvhv5ePQ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.s96RdGAaBvhv5ePQ"
+    },
+    {
+      "name": "Arte · Família LeBlanc · Pascal",
+      "type": "image",
+      "sort": 860,
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/pascal.webp",
+      "image": {
+        "caption": "Pascal LeBlanc."
+      },
+      "_id": "yAUuYUZLbijUsvPE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "content": "",
+        "markdown": "",
+        "format": 1
+      },
+      "video": {},
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!aCd6o0fqHKaTO8TO.yAUuYUZLbijUsvPE"
     }
   ],
   "_key": "!journal!aCd6o0fqHKaTO8TO"
