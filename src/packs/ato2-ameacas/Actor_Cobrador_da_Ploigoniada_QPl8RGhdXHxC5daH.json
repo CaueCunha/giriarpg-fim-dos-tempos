@@ -1517,7 +1517,7 @@
       "img": "systems/tormenta20/icons/magias/disfarce-ilusorio.webp",
       "effects": [
         {
-          "_id": "ZOzEFgHVxnUJNtAa",
+          "_id": "FLgkp67brNgtL92N",
           "flags": {
             "tormenta20": {}
           },
@@ -1594,10 +1594,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.ZOzEFgHVxnUJNtAa"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.FLgkp67brNgtL92N"
         },
         {
-          "_id": "EHs1XQVf7rUqDZkR",
+          "_id": "OsnM2SGgd0SkxVYe",
           "flags": {
             "tormenta20": {}
           },
@@ -1667,10 +1667,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.EHs1XQVf7rUqDZkR"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.OsnM2SGgd0SkxVYe"
         },
         {
-          "_id": "DOPz6uxYjKY4GWuH",
+          "_id": "GDsKTmIpeP5u0XB8",
           "flags": {
             "tormenta20": {}
           },
@@ -1740,10 +1740,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.DOPz6uxYjKY4GWuH"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.GDsKTmIpeP5u0XB8"
         },
         {
-          "_id": "kcGkAuYOgjHNyyBL",
+          "_id": "yU8c0ReSzZEFP4eB",
           "flags": {
             "tormenta20": {}
           },
@@ -1806,10 +1806,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.kcGkAuYOgjHNyyBL"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.yU8c0ReSzZEFP4eB"
         },
         {
-          "_id": "3A0fbBdv9C4KgRrr",
+          "_id": "LUPdNw3vOXwMeyTb",
           "flags": {
             "tormenta20": {}
           },
@@ -1879,10 +1879,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.3A0fbBdv9C4KgRrr"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.LUPdNw3vOXwMeyTb"
         },
         {
-          "_id": "4N3AGns4czxmSDBW",
+          "_id": "Y2vplbDnE3ELJdJ5",
           "disabled": false,
           "duration": {
             "value": null,
@@ -1943,7 +1943,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.4N3AGns4czxmSDBW"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.s3rfriLGsi17tBSk.Y2vplbDnE3ELJdJ5"
         }
       ],
       "flags": {
@@ -2025,7 +2025,7 @@
       "img": "systems/tormenta20/icons/magias/dissipar-magia.webp",
       "effects": [
         {
-          "_id": "HoUwEBstHckyCqAP",
+          "_id": "1e37n8vk6x7M7j69",
           "flags": {
             "tormenta20": {}
           },
@@ -2088,7 +2088,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.DvKHclZQQ3KAU0af.HoUwEBstHckyCqAP"
+          "_key": "!actors.items.effects!QPl8RGhdXHxC5daH.DvKHclZQQ3KAU0af.1e37n8vk6x7M7j69"
         }
       ],
       "flags": {

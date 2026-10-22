@@ -1481,7 +1481,7 @@
       "img": "systems/tormenta20/icons/magias/campo-de-forca.webp",
       "effects": [
         {
-          "_id": "zF9z9IFOxkBsmTQd",
+          "_id": "cGsJFFPV1hCEmEDx",
           "flags": {
             "tormenta20": {}
           },
@@ -1558,10 +1558,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.zF9z9IFOxkBsmTQd"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.cGsJFFPV1hCEmEDx"
         },
         {
-          "_id": "UEbWUbo2a8m85tLd",
+          "_id": "Ni5CYHTE420HqYRW",
           "flags": {
             "tormenta20": {}
           },
@@ -1631,10 +1631,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.UEbWUbo2a8m85tLd"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.Ni5CYHTE420HqYRW"
         },
         {
-          "_id": "SbLOKBau1AJuYfdM",
+          "_id": "ghXYeGL4fuQNTxvt",
           "flags": {
             "tormenta20": {}
           },
@@ -1711,10 +1711,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.SbLOKBau1AJuYfdM"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.ghXYeGL4fuQNTxvt"
         },
         {
-          "_id": "I482UU3xKdjXldzb",
+          "_id": "FhqziPQmmmJfIxvd",
           "flags": {
             "tormenta20": {}
           },
@@ -1777,7 +1777,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.I482UU3xKdjXldzb"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.FhqziPQmmmJfIxvd"
         },
         {
           "origin": "Item.BmiLj15LQW7f76j8",
@@ -1792,7 +1792,7 @@
             "expired": false
           },
           "disabled": true,
-          "_id": "fCbzhEpYoZPP7S7N",
+          "_id": "ZDPquNwswU7LFzf1",
           "transfer": false,
           "_stats": {
             "coreVersion": "14.366",
@@ -1850,7 +1850,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.fCbzhEpYoZPP7S7N"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.ZDPquNwswU7LFzf1"
         },
         {
           "name": "Campo de Força",
@@ -1867,7 +1867,7 @@
             "expired": false
           },
           "disabled": false,
-          "_id": "7mcAG4KNNFoLzW8G",
+          "_id": "dNZxOmPIDXx5jXD1",
           "type": "base",
           "system": {
             "changes": [],
@@ -1908,7 +1908,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.7mcAG4KNNFoLzW8G"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.vg4Q14atyr69HV4S.dNZxOmPIDXx5jXD1"
         }
       ],
       "flags": {
@@ -2005,7 +2005,7 @@
       "img": "systems/tormenta20/icons/magias/desespero-esmagador.webp",
       "effects": [
         {
-          "_id": "siPZpu7BaRSdK15n",
+          "_id": "sCX1KTuUrJYrDICr",
           "flags": {
             "tormenta20": {}
           },
@@ -2075,10 +2075,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.siPZpu7BaRSdK15n"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.sCX1KTuUrJYrDICr"
         },
         {
-          "_id": "iXl4ArWHPL69WusL",
+          "_id": "F9aiy4xmi4BpuX6g",
           "flags": {
             "tormenta20": {}
           },
@@ -2133,10 +2133,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.iXl4ArWHPL69WusL"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.F9aiy4xmi4BpuX6g"
         },
         {
-          "_id": "iiLGF6fvT28lH9Mq",
+          "_id": "vv8r9myTtnZEPTV3",
           "flags": {
             "tormenta20": {}
           },
@@ -2199,7 +2199,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.iiLGF6fvT28lH9Mq"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.zm9a1qzRAhqbgqhY.vv8r9myTtnZEPTV3"
         },
         {
           "name": "Debilitado",
@@ -2407,7 +2407,7 @@
       "img": "systems/tormenta20/icons/magias/dissipar-magia.webp",
       "effects": [
         {
-          "_id": "HoUwEBstHckyCqAP",
+          "_id": "1e37n8vk6x7M7j69",
           "flags": {
             "tormenta20": {}
           },
@@ -2470,7 +2470,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.LFP8W3EcZv0yQQRC.HoUwEBstHckyCqAP"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.LFP8W3EcZv0yQQRC.1e37n8vk6x7M7j69"
         }
       ],
       "flags": {
@@ -3264,7 +3264,7 @@
       "img": "systems/tormenta20/icons/magias/metamorfose.webp",
       "effects": [
         {
-          "_id": "W2US7bQxyOeiLpU2",
+          "_id": "AmkkNpRrQTdpBJM1",
           "flags": {
             "tormenta20": {}
           },
@@ -3319,10 +3319,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.W2US7bQxyOeiLpU2"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.AmkkNpRrQTdpBJM1"
         },
         {
-          "_id": "2vn6FI3g0iypSSMf",
+          "_id": "ct7Sx6zHsFkoo3tK",
           "flags": {
             "tormenta20": {}
           },
@@ -3377,10 +3377,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.2vn6FI3g0iypSSMf"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.ct7Sx6zHsFkoo3tK"
         },
         {
-          "_id": "updO42GItjv1g0po",
+          "_id": "nvmi9s8k6IoeeQEY",
           "flags": {
             "tormenta20": {}
           },
@@ -3450,10 +3450,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.updO42GItjv1g0po"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.nvmi9s8k6IoeeQEY"
         },
         {
-          "_id": "Ey3dDh0QBJzAmoQt",
+          "_id": "jHIrfUOGswT5OMol",
           "flags": {
             "tormenta20": {}
           },
@@ -3530,10 +3530,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.Ey3dDh0QBJzAmoQt"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.jHIrfUOGswT5OMol"
         },
         {
-          "_id": "jFKvW7lCW65sBimo",
+          "_id": "ssoZJm2URS7z5fwM",
           "flags": {
             "tormenta20": {}
           },
@@ -3588,10 +3588,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.jFKvW7lCW65sBimo"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.ssoZJm2URS7z5fwM"
         },
         {
-          "_id": "NqpXni7LESxZ7dey",
+          "_id": "LbbsMevctelIeHgI",
           "flags": {
             "tormenta20": {}
           },
@@ -3646,10 +3646,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.NqpXni7LESxZ7dey"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.LbbsMevctelIeHgI"
         },
         {
-          "_id": "yxsrQUfQXPs24ipb",
+          "_id": "E1PzsRhbd7cTEscZ",
           "flags": {
             "tormenta20": {}
           },
@@ -3704,10 +3704,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.yxsrQUfQXPs24ipb"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.E1PzsRhbd7cTEscZ"
         },
         {
-          "_id": "PM1zmZZVz01cwoD1",
+          "_id": "oViqfUGxz7yGNVmx",
           "disabled": false,
           "duration": {
             "value": null,
@@ -3768,7 +3768,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.PM1zmZZVz01cwoD1"
+          "_key": "!actors.items.effects!UX0emBbwwULMSAs9.ikJCtxn3CklV3gq7.oViqfUGxz7yGNVmx"
         }
       ],
       "flags": {

@@ -1,0 +1,277 @@
+{
+  "name": "Pistas do Enxadrista",
+  "img": "systems/tormenta20/icons/itens/gerais/baralho.webp",
+  "folder": "PbGWXyMgNaRbkTIB",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "pistas"
+    }
+  },
+  "formula": "1d9",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "O Enxadrista dá as pistas em ordem, uma a cada vantagem (teste vencido). A macro Enxadrista controla a ordem. Sem ninguém para resgatar, troque a 7ª por: \"Na masmorra, não há amigos, só tramoias e maldade. Esqueçam os seus umbigos e não façam caridade!\"",
+  "_id": "86L0V6PKXKVyx3tC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "\"No centro deste labirinto, há uma escadaria. Se quisesse ficar dormindo, é para lá que eu iria!\"",
+      "description": "A escadaria da Sala 15 de Hyninn leva ao subnível, o lugar mais seguro para descansar (e à porta do covil).",
+      "_id": "nu5Q7eru72gImLGl",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.nu5Q7eru72gImLGl"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "\"Atrás de uma porta fechada há um buraco gritante. Se seguirem a trilha escavada, acharão tesouro abundante!\"",
+      "description": "A Sala 7 (passagem-truque): o túnel não tem armadilha e leva ao tesouro da Sala 16.",
+      "_id": "X28HkSegchND75us",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.X28HkSegchND75us"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "\"Não importa a lombada, nem toda história é lida. Às vezes, com uma dentada, dos livros viramos comida!\"",
+      "description": "O mímico da estante (Sala 3).",
+      "_id": "e5sHB74YFQWkQXvC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.e5sHB74YFQWkQXvC"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "\"Invisíveis na masmorra andam caça e caçador. Não enfrente, apenas corra! Um é medo e outro é horror.\"",
+      "description": "O rarvnaak (caçador invisível) e o metaliano.",
+      "_id": "hcRTsJ4cErTqUYwQ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.hcRTsJ4cErTqUYwQ"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "\"Amarelo leva ao sol e o roxo, à sabedoria. De um, precisam de um bicho e da outra, uma dinastia.\"",
+      "description": "Os círculos: amarelo leva a Azgher, roxo a Tanna-Toh. Azgher precisa de um bicho (o aurumvorax para o Tesouro Infinito); Tanna-Toh, de uma dinastia (o livro da genealogia para as múmias).",
+      "_id": "xrbBal7k9kLd3Z1f",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.xrbBal7k9kLd3Z1f"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "\"Três masmorras têm riquezas. Para alguns, já é o fim. Mas a última proeza é vencer o carmesim.\"",
+      "description": "As três masmorras guardam riquezas, mas o objetivo final é o dragão vermelho.",
+      "_id": "Keje6ys7UnnQumoM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.Keje6ys7UnnQumoM"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "\"Na masmorra estão amigos, um falso e um de verdade. Esqueçam os seus umbigos e não façam caridade!\"",
+      "description": "O duplo (o amigo falso) e quem o grupo veio resgatar (o de verdade).",
+      "_id": "FR7yRFWRxUBmeYzU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.FR7yRFWRxUBmeYzU"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "\"Não tenho mais a contar, isso é tudo que posso dizer! Se quiserem ainda jogar, será por puro prazer!\"",
+      "description": "Acabaram as pistas.",
+      "_id": "RPeZmuZiZeAYphgY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.RPeZmuZiZeAYphgY"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "\"Admito, era cilada. Há mais uma dica da trilha. Para a masmorra letrada, levem uma armadilha.\"",
+      "description": "Levar a armadilha da cabra-cega (Sala 14) para a Biblioteca Proibida.",
+      "_id": "cYauBDsVrWPbX3rq",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!86L0V6PKXKVyx3tC.cYauBDsVrWPbX3rq"
+    }
+  ],
+  "_key": "!tables!86L0V6PKXKVyx3tC"
+}

@@ -1,0 +1,87 @@
+{
+  "name": "Armadilha da Cabra-Cega",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/engrenagens.webp",
+  "folder": "qUAXig9rIqdl4g0D",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "cabraCega"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Mecanismo da Sala 14 de Hyninn, como um brinquedo de corda ou uma mina: aura que deixa <b>cegas e surdas</b> todas as criaturas em alcance curto (Fort CD 30 anula), mesmo imunes, e não pode ser dissipada. Interage com a masmorra: afeta também os habitantes.</p><p>Para levar: Força CD 15 (arrancar do piso) ou Ladinagem CD 25 (abrir as trancas). Magias à distância funcionam se exercerem força ou manipulação fina. É a única coisa que anula a visão dos bibliotecários (eles resistem só com 13 ou mais no d20). Os personagens podem aprimorá-la para aumentar a CD, com boas ideias e perícias. Pista do Enxadrista: \"para a masmorra letrada, levem uma armadilha\".</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 2,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "_id": "G4nS81EEX7HcAKZX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!G4nS81EEX7HcAKZX"
+}

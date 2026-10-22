@@ -1,0 +1,31 @@
+{
+  "name": "Labirinto · Escuridão",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/escuridao.webp",
+  "folder": "RlW3rBqa2qbk1PVY",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · O Labirinto Liberto · gerado por a2-labirinto-liberto.js\n(async function macroEscuridao() {\n\t\tif (!canvas.scene) return ui.notifications.warn(\"Abra a cena do Labirinto.\");\n\t\tconst cena = canvas.scene;\n\t\tconst ativa = cena.getFlag(\"world\", \"fdtEscuridaoLab\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Labirinto · Escuridão\" },\n\t\t\tcontent: `\n\t\t\t\t<p>No Labirinto, luz mágica e mundana funcionam normalmente, mas <b>visão no escuro e na penumbra não funcionam</b> (truque de Hyninn). A escuridão está <b>${ativa ? \"LIGADA\" : \"desligada\"}</b> nesta cena.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"alternar\">${ativa ? \"Desligar\" : \"Ligar\"} a escuridão do Labirinto</option>\n\t\t\t\t\t<option value=\"tocha\">Acender tocha nos tokens selecionados (6m de luz, 12m de penumbra)</option>\n\t\t\t\t\t<option value=\"lampiao\">Acender lampião nos tokens selecionados (9m de luz, 18m de penumbra)</option>\n\t\t\t\t\t<option value=\"apagar\">Apagar a luz dos tokens selecionados</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Ligar guarda a visão de cada token e desliga a visão no escuro; desligar restaura. Os habitantes do Labirinto não sofrem a escuridão: a macro só mexe nos tokens de personagens. Tokens colocados depois de ligar não são ajustados.</p>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif ([\"tocha\", \"lampiao\", \"apagar\"].includes(res.acao)) {\n\t\t\tconst [luz, pen] = res.acao === \"tocha\" ? [6, 12] : res.acao === \"lampiao\" ? [9, 18] : [0, 0];\n\t\t\tconst ups = canvas.tokens.controlled.map((t) => ({ _id: t.id, \"light.bright\": luz, \"light.dim\": pen, \"light.color\": luz ? \"#ffb35c\" : null, \"light.animation.type\": luz ? \"torch\" : null }));\n\t\t\tif (!ups.length) return ui.notifications.warn(\"Selecione os tokens que carregam a luz.\");\n\t\t\treturn cena.updateEmbeddedDocuments(\"Token\", ups);\n\t\t}\n\t\tif (!ativa) {\n\t\t\tconst tokens = cena.tokens.filter((t) => t.actor?.type === \"character\").map((t) => ({\n\t\t\t\t_id: t.id,\n\t\t\t\t\"flags.world.fdtVisaoLab\": { range: t.sight.range, mode: t.sight.visionMode },\n\t\t\t\t\"sight.range\": 0,\n\t\t\t\t\"sight.visionMode\": \"basic\"\n\t\t\t}));\n\t\t\tif (tokens.length) await cena.updateEmbeddedDocuments(\"Token\", tokens);\n\t\t\tawait cena.update({ \"flags.world.fdtEscuridaoLab\": { darkness: cena.environment.darknessLevel, global: cena.environment.globalLight.enabled }, \"environment.darknessLevel\": 1, \"environment.globalLight.enabled\": false });\n\t\t\tChatMessage.create({ content: \"<p><b>A escuridão do Labirinto Liberto:</b> nenhum olho enxerga no escuro aqui, só a luz funciona. Quem está fora da luz fica <b>cego</b>.</p>\" });\n\t\t} else {\n\t\t\tconst tokens = cena.tokens.filter((t) => t.getFlag(\"world\", \"fdtVisaoLab\")).map((t) => {\n\t\t\t\tconst o = t.getFlag(\"world\", \"fdtVisaoLab\");\n\t\t\t\treturn { _id: t.id, \"sight.range\": o.range, \"sight.visionMode\": o.mode, \"flags.world.-=fdtVisaoLab\": null };\n\t\t\t});\n\t\t\tif (tokens.length) await cena.updateEmbeddedDocuments(\"Token\", tokens);\n\t\t\tawait cena.update({ \"environment.darknessLevel\": ativa.darkness ?? 0, \"environment.globalLight.enabled\": ativa.global ?? false, \"flags.world.-=fdtEscuridaoLab\": null });\n\t\t\tui.notifications.info(\"Escuridão do Labirinto desligada: visão restaurada.\");\n\t\t}\n\t})();",
+  "_id": "mf5Vnp0twY9Fdr0y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!mf5Vnp0twY9Fdr0y"
+}

@@ -140,13 +140,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 106 documento(s), 10 pasta(s)
-- `ato2-itens`: 97 documento(s), 10 pasta(s)
-- `ato2-diarios`: 10 documento(s), 10 pasta(s)
-- `ato2-tabelas`: 19 documento(s), 10 pasta(s)
-- `ato2-macros`: 52 documento(s), 10 pasta(s)
+- `ato2-ameacas`: 122 documento(s), 11 pasta(s)
+- `ato2-itens`: 105 documento(s), 11 pasta(s)
+- `ato2-diarios`: 11 documento(s), 11 pasta(s)
+- `ato2-tabelas`: 22 documento(s), 11 pasta(s)
+- `ato2-macros`: 63 documento(s), 11 pasta(s)
 
-### Ligações com o sistema (181)
+### Ligações com o sistema (220)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -328,6 +328,45 @@
 | Replicoide Paollus | Pistola | arma | ficha do livro + origem no sistema |
 | Replicoide Paollus | Ataque Furtivo | poder | ficha do livro + origem no sistema |
 | Replicoide Paollus | Evasão | poder | ficha do livro + origem no sistema |
+| Mirminoide Soldado | Mordida | arma | ficha do livro + origem no sistema |
+| Mirminoide Soldado | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Trilha Mirminoide | Mordida | arma | ficha do livro + origem no sistema |
+| Trilha Mirminoide | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Aurumvorax | Mordida | arma | ficha do livro + origem no sistema |
+| Aurumvorax | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Bibliotecário | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Mordida | arma | ficha do livro + origem no sistema |
+| Chama Funesta | Sopro | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Aura Aterradora | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Desespero Esmagador | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Metamorfose | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Selo de Mana | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Toque Vampírico | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Velocidade | magia | magia do sistema + ficha do NPC |
+| Mímico da Estante | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Mímico da Estante | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Mímico da Estante | Imobilidade | poder | link para o sistema |
+| Duplo Prisioneiro | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Mantor | Mordida | arma | ficha do livro + origem no sistema |
+| Mantor | Imobilidade | poder | link para o sistema |
+| Tigre-de-Hyninn | Mordida | arma | ficha do livro + origem no sistema |
+| Tigre-de-Hyninn Primordial | Mordida | arma | ficha do livro + origem no sistema |
+| Tigre-de-Hyninn Primordial | Sopro | poder | ficha do livro + origem no sistema |
+| Rarvnaak | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bulette | Mordida | arma | ficha do livro + origem no sistema |
+| Bulette | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Bulette | Engolir | poder | ficha do livro + origem no sistema |
+| Múmia Real Sar-Allan | Pancada | arma | ficha do livro + origem no sistema |
+| Múmia Real Sar-Allan | Doença | poder | ficha do livro + origem no sistema |
+| Rei Sar-Allan (Senhor das Múmias) | Pancada | arma | ficha do livro + origem no sistema |
+| Rei Sar-Allan (Senhor das Múmias) | Disfarce Ilusório | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Enxame de Pestes | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Infligir Ferimentos | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Perdição | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Poeira da Podridão | magia | magia do sistema + ficha do NPC |
 | (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
 | (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
 | (item) | Gorad Quente | consumivel | ficha do livro + origem no sistema |

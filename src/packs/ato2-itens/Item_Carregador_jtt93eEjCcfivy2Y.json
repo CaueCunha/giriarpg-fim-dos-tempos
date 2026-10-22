@@ -1,0 +1,71 @@
+{
+  "name": "Carregador",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/parceiros.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "carregador"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Alguém forte e corajoso que carrega o equipamento. <b>Iniciante:</b> 2 espaços e usa qualquer item que carrega e não exija teste (empunhar uma tocha, aplicar um bálsamo). <b>Veterano:</b> 5 espaços. <b>Mestre:</b> 10 espaços.</p><p>Contratado por toda a exploração: T$ 90 (iniciante), T$ 450 (veterano) ou T$ 900 (mestre). Coadjuvantes que já apareceram, ou criados pelos jogadores com nome e personalidade, custam metade (T$ 45, 225 e 450). Na mesa original, a regra fez Rex criar Rataro.</p><p>Decida se os carregadores são vulneráveis em combates e armadilhas. Na mesa original eram efetivamente imortais.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "Parceiros",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "qUAXig9rIqdl4g0D",
+  "_id": "jtt93eEjCcfivy2Y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!jtt93eEjCcfivy2Y"
+}
