@@ -1,0 +1,31 @@
+{
+  "name": "Mini 2 · Arcanos Brutais",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/sopro-das-uivantes.webp",
+  "folder": "KHe2ZVcv1sqPkgQ9",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n(async function macroArcanos() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Arcanos Brutais\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"sopro\">Sopro das Uivantes nos alvos (11 PM, Fortitude CD 24)</option>\n\t\t\t\t\t<option value=\"campo\">Campo de Força (4 PM, RD 30 contra um dano)</option>\n\t\t\t\t\t<option value=\"nevoa\">Névoa (3 PM)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Os alvos batem numa parede (+2d6 de impacto)</label><input type=\"checkbox\" name=\"parede\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione o arcano brutal e mire os alvos.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tk = canvas.tokens.controlled.find((t) => t.actor?.getFlag(\"world\", \"fdtRole\") === \"arcano\") ?? canvas.tokens.placeables.find((t) => t.actor?.getFlag(\"world\", \"fdt\") === \"a2mini2\" && t.actor.getFlag(\"world\", \"fdtRole\") === \"arcano\");\n\t\tif (!tk) return ui.notifications.warn(\"Não há um Arcano Brutal na cena.\");\n\t\tconst CUSTO = { sopro: 11, campo: 4, nevoa: 3 };\n\t\tconst pm = Number(tk.actor.system.attributes.pm.value) || 0;\n\t\tif (pm < CUSTO[res.acao]) return ui.notifications.warn(`${tk.name} não tem ${CUSTO[res.acao]} PM.`);\n\t\tawait tk.actor.update({ \"system.attributes.pm.value\": pm - CUSTO[res.acao] });\n\t\tconst rolls = [];\n\t\tlet html = `<h3>${tk.name}</h3>`;\n\t\tif (res.acao === \"sopro\") {\n\t\t\tconst alvos = [...game.user.targets].filter((t) => t.actor && t !== tk);\n\t\t\tconst dano = await new Roll(\"12d6+6\").evaluate();\n\t\t\trolls.push(dano);\n\t\t\tconst linhas = [];\n\t\t\tfor (const t of alvos) {\n\t\t\t\tconst r = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.fort?.value) || 0}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst passou = r.total >= 24;\n\t\t\t\tlet total = passou ? Math.floor(dano.total / 2) : dano.total;\n\t\t\t\tlet extra = \"\";\n\t\t\t\tif (!passou) {\n\t\t\t\t\tconst tam = t.actor.system.tracos?.tamanho ?? \"med\";\n\t\t\t\t\tif ([\"min\", \"peq\", \"med\"].includes(tam)) {\n\t\t\t\t\t\tif (!t.actor.statuses?.has(\"caido\")) await t.actor.toggleStatusEffect(\"caido\", { active: true });\n\t\t\t\t\t\textra = \", <b>caído</b> e empurrado 6m\";\n\t\t\t\t\t\tif (res.parede) {\n\t\t\t\t\t\t\tconst pd = await new Roll(\"2d6\").evaluate();\n\t\t\t\t\t\t\trolls.push(pd);\n\t\t\t\t\t\t\ttry { await t.actor.applyDamageV2(await new Roll(`${pd.total}[impacto]`).evaluate(), 1); } catch (err) { console.warn(err); }\n\t\t\t\t\t\t\textra += ` (bate na parede: +${pd.total} de impacto)`;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\ttry { await t.actor.applyDamageV2(await new Roll(`${total}[frio]`).evaluate(), 1); } catch (err) { console.warn(err); }\n\t\t\t\tlinhas.push(`<li>${t.name}: Fortitude ${r.total}, ${passou ? \"metade\" : \"dano total\"} (${total} de frio)${extra}.</li>`);\n\t\t\t}\n\t\t\thtml += `<p><b>Sopro das Uivantes:</b> cone de 9m, ${dano.total} de frio.</p>${linhas.length ? `<ul>${linhas.join(\"\")}</ul>` : \"<p>Mire os alvos no cone.</p>\"}`;\n\t\t}\n\t\tif (res.acao === \"campo\") html += \"<p><b>Campo de Força</b> (reação): RD 30 contra este dano. Devolva até 30 PV do dano que acabou de sofrer.</p>\";\n\t\tif (res.acao === \"nevoa\") html += \"<p><b>Névoa:</b> nuvem de 6m de raio e 6m de altura em alcance curto. Camuflagem leve a até 1,5m, total a partir de 3m; os escolhidos pelo arcano enxergam através.</p>\";\n\t\thtml += `<p>PM: ${tk.actor.system.attributes.pm.value}.</p>`;\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "8CDwZRRw65IXA2fu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!8CDwZRRw65IXA2fu"
+}

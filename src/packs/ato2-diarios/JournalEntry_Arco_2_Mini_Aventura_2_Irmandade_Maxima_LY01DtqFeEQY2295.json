@@ -1,0 +1,219 @@
+{
+  "name": "Arco 2 · Mini-Aventura 2 · Irmandade Máxima",
+  "folder": "zuSiNxMj92tcxA9Q",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2"
+    }
+  },
+  "_id": "LY01DtqFeEQY2295",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<p><b>Gancho:</b> se os heróis completarem as Aventuras 3 e 6, estão envolvidos com a Companhia dos Irmãos e sabem que pessoas importantes estão sendo substituídas por golens. Assim que completarem as duas, conduza a cena em que @UUID[Actor.8dCdlX4DYucQZeNi]{Paollus, o Irmão Mais Velho} os aborda.</p>\n\t\t\t\t<p><b>Nível presumido:</b> 4 personagens de nível 9. <b>Recompensa:</b> não rende nível nem pagamento, mas há recompensas muito valiosas.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Acontecimentos nos Bastidores:</b> o replicoide no comando da Companhia.</li><li><b>Fase 1 · Descanso Curto:</b> Paollus bate à porta.</li><li><b>Fase 2 · Balé da Morte:</b> o ataque à fortaleza em Pura Valkaria.</li><li><b>Fase 3 · Desfecho:</b> efeitos de vitória e/ou de derrota.</li></ul>\n\t\t\t\t<h2>Criaturas</h2>\n\t\t\t\t<ul><li>@UUID[Actor.uQImv6ymVaEDQCAO]{Irmão da Companhia} (ND 1)</li><li>@UUID[Actor.PRfuUcWAU04kwX94]{Bando Desesperado} (ND 4)</li><li>@UUID[Actor.GFMEbnHsyH0AAL9H]{Arcano Brutal} (ND 6)</li><li>@UUID[Actor.WKz5QOnxOWOj7EC7]{Replicoide Paollus} (ND 9)</li><li>@UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)} (opcional, da Aventura 7)</li><li>@UUID[Actor.k8kO1advA8uI9SiJ]{Barril de Pólvora} (elemento da fortaleza)</li><li>Apoio: @UUID[Actor.8dCdlX4DYucQZeNi]{Paollus, o Irmão Mais Velho} e @UUID[Actor.gYuLYIVYAilebDiH]{Yeremin Blasanov}.</li></ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.PDZtYRMGI7efNaCJ]{Mini 2 · Paollus Bate à Porta}: a cena, a proposta, o que os heróis ganham e o prazo.</li><li>@UUID[Macro.xhoTe0kMdtKX7yf4]{Mini 2 · Balé da Morte}: os inimigos, o enforcamento de Yeremin (3 rodadas), barris de pólvora e pombas.</li><li>@UUID[Macro.j2xDI5bPEcABJRkT]{Mini 2 · Replicoide Paollus}: Explorar Capangas, Sacrifício Involuntário, Criar Vulnerabilidade, Armamento Embutido e falas.</li><li>@UUID[Macro.8CDwZRRw65IXA2fu]{Mini 2 · Arcanos Brutais}: Sopro das Uivantes, Campo de Força e Névoa, gastando os PM do arcano.</li><li>@UUID[Macro.7g2BdOKTTjsLIYgw]{Mini 2 · Desfecho}: efeitos de vitória e de derrota, descontando Lei &amp; Ordem de @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "QjPLGwmeHDBIWzHn",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LY01DtqFeEQY2295.QjPLGwmeHDBIWzHn"
+    },
+    {
+      "name": "Fases 0 e 1 · Bastidores e Descanso Curto",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h2>Acontecimentos nos bastidores</h2>\n\t\t\t\t<p>Valkaria não gira em torno dos heróis. Uma trama paralela é a substituição de pessoas importantes por golens, os replicoides de Ghorskander. Um deles vem abalando as fundações da capital: o que substituiu <b>Paollus</b>, o líder da Companhia dos Irmãos.</p>\n\t\t\t\t<p>Desde as Colinas Centrais, os heróis ouvem que \"Paollus enlouqueceu\". A irmandade passou a contratar bandidos medíocres (os capangas que atacaram o Forte Cabeça-de-Martelo), a operar fora da capital (o gog'magogue nas Fazendas Gallobalt), e Syvarian surgiu \"do nada\" no círculo interno. Quem está no comando não é mais Paollus!</p>\n\t\t\t\t<p>O verdadeiro sobreviveu a uma emboscada há mais de um ano e vive nas sombras, informado por um ou dois irmãos leais. Esperava o replicoide em terreno aberto, com poucos capangas, para um ataque preciso. Não pode mais esperar: o falso Paollus está prestes a provocar uma guerra contra a <b>Casa Blasanov</b>, que arruinaria as duas irmandades e causaria um massacre.</p>\n\t\t\t\t<h2>Descanso curto</h2>\n\t\t\t\t<p>Não dê tempo para os heróis se recuperarem da última missão. Batidas na porta: é Paollus (macro @UUID[Macro.PDZtYRMGI7efNaCJ]{Mini 2 · Paollus Bate à Porta}). A Companhia capturou @UUID[Actor.gYuLYIVYAilebDiH]{Yeremin Blasanov} e vai executá-lo em <b>12 horas</b>, numa fortaleza abandonada em <b>Pura Valkaria</b>, reduto purista clandestino no território dos Blasanov. A execução será semipública, para que a notícia vaze e a Casa revide.</p>\n\t\t\t\t<p>Paollus não faz rodeios: é preciso atacar a fortaleza, salvar Yeremin e matar o replicoide e seus capangas, sem a Casa Blasanov e sem a Guarda. Não há tempo para reconquistar a lealdade da irmandade; criminosos nem entenderiam a trama. Ganhos: tirar um replicoide do poder e um favor de Paollus para cada um.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "KgAuV5vKOzWxfPMv",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LY01DtqFeEQY2295.KgAuV5vKOzWxfPMv"
+    },
+    {
+      "name": "Fase 2 · Balé da Morte",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Os heróis têm 12 horas para se preparar (poções, PM, equipamento). Se isso cair de dia, mude para 16 ou 18 horas: <b>o combate precisa ser à noite</b>. Só o recrutamento é limitado: gente \"de fora\", só a mínima e de total confiança. <b>A Guarita da Praia não é opção:</b> a Xerife Mathilda não ajudaria a reinstaurar Paollus; tentaria prendê-lo!</p>\n\t\t\t\t<p>Conduza a jornada rápido, sem Encontros em Valkaria. Na fortaleza, deixe o grupo planejar: infiltração, ataque frontal ou os dois. Mas, uma vez iniciado, o combate é cruel e feroz. Não dá para negociar, desabilitar sem dano ou resgatar só com furtividade.</p>\n\t\t\t\t<h3>Inimigos</h3>\n\t\t\t\t<ul><li><b>Fora</b> (ameias e portão): 6 @UUID[Actor.uQImv6ymVaEDQCAO]{Irmão da Companhia} e 2 @UUID[Actor.PRfuUcWAU04kwX94]{Bando Desesperado}.</li><li><b>Dentro:</b> 22 irmãos, 8 bandos, 6 @UUID[Actor.GFMEbnHsyH0AAL9H]{Arcano Brutal} e o @UUID[Actor.WKz5QOnxOWOj7EC7]{Replicoide Paollus}.</li><li>Opcional: @UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)}, se o grupo for muito eficiente ou se ele ainda não apareceu no arco.</li></ul>\n\t\t\t\t<h3>Elementos da fortaleza</h3>\n\t\t\t\t<p><b>5 @UUID[Actor.k8kO1advA8uI9SiJ]{Barril de Pólvora}:</b> um tiro de pistola que erra um personagem adjacente tem 50% de chance de explodir o barril: 6d6 de fogo nos quadrados adjacentes (Reflexos CD 20 reduz à metade). Atacados com fogo ou tiros (Defesa 10, 1 PV), explodem.</p>\n\t\t\t\t<p><b>4 bandos de pombas empoleiradas:</b> ação padrão, justificada (um tiro, um som estridente...), para impor <b>–5 em Defesa e Reflexos</b> a um oponente contra um ataque ou efeito até o próximo turno do personagem (pode ser o de outro). Oponente e pombas em alcance curto. O bando se dispersa. <i>Se tem pombas brancas no meio de uma cena de ação, é um filme de Hong Kong.</i></p>\n\t\t\t\t<h3>O condenado</h3>\n\t\t\t\t<p>Yeremin está num cadafalso no centro da fortaleza, com a forca no pescoço; ao lado, o Replicoide e 4 irmãos. Assim que o combate começa, o Replicoide puxa a alavanca (ação padrão). Os heróis têm <b>3 rodadas</b> (cortar a corda, sustentar os pés...): na terceira, no turno do Replicoide, Yeremin morre. Executado, explode a guerra, mesmo que o Replicoide seja destruído: o grupo pode receber os efeitos de vitória e de derrota.</p>\n\t\t\t\t<p>Macro: @UUID[Macro.xhoTe0kMdtKX7yf4]{Mini 2 · Balé da Morte}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Eug4MsHcqPpHbrhv",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LY01DtqFeEQY2295.Eug4MsHcqPpHbrhv"
+    },
+    {
+      "name": "O Replicoide e os Arcanos",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>@UUID[Actor.WKz5QOnxOWOj7EC7]{Replicoide Paollus} (ND 9): 340 PV, RD 5, evasão, imune a efeitos mentais. Espada longa +27 ×2 com 3d6 de eletricidade e pistola +27 (4d6+18), Ataque Furtivo +6d6.</p>\n\t\t\t\t<ul><li><b>Armamento Embutido:</b> no primeiro tiro de pistola da cena, o alvo fica surpreendido.</li><li><b>Criar Vulnerabilidade</b> (reação): troca o Ataque Furtivo por –5 na Defesa do alvo até o fim da cena.</li><li><b>Explorar Capangas</b> (livre): um comandado perde a ação padrão e todos os ataques do Replicoide viram furtivos até o fim da rodada.</li><li><b>Sacrifício Involuntário</b> (reação): um comandado em alcance curto sofre o dano ou efeito no lugar dele.</li><li>Enganação +31 para se passar por Paollus.</li></ul>\n\t\t\t\t<p>@UUID[Actor.GFMEbnHsyH0AAL9H]{Arcano Brutal} (ND 6): arcanista de 6º nível (CD 24) de armadura completa. Campo de Força, Névoa, Salto Dimensional, Sopro das Uivantes (12d6+6 de frio em cone de 9m, caído e empurrão) e Toque Chocante (+10d8+16 de eletricidade).</p>\n\t\t\t\t<p>Macros: @UUID[Macro.j2xDI5bPEcABJRkT]{Mini 2 · Replicoide Paollus} e @UUID[Macro.8CDwZRRw65IXA2fu]{Mini 2 · Arcanos Brutais}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Vxx3MfGuIs4dmpJW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LY01DtqFeEQY2295.Vxx3MfGuIs4dmpJW"
+    },
+    {
+      "name": "Fase 3 · Desfecho",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<blockquote><p>A fortaleza está atapetada de corpos. Fumaça sobe ao céu noturno de Valkaria, enquanto chamas iluminam a escuridão. Nesta noite, um grupo de detetives lutou ao lado de um dos maiores criminosos do mundo... Contra um inimigo que ambos os lados odeiam mais do que um ao outro.</p></blockquote>\n\t\t\t\t<p>Aconteça o que acontecer, o resultado deve ser espetacular, com os heróis em risco real e muitos capangas em pedaços.</p>\n\t\t\t\t<h3>Efeitos de derrota</h3>\n\t\t\t\t<p>Se Yeremin for executado, começa uma guerra de irmandades: <b>Valkaria perde 2 pontos de Lei &amp; Ordem</b>. Com o Replicoide destruído, o verdadeiro Paollus terá muito trabalho para restaurar a paz; com a derrota total, é só o começo de uma época sanguinolenta.</p>\n\t\t\t\t<h3>Efeitos de vitória</h3>\n\t\t\t\t<p>Guerra evitada e Replicoide destruído: Paollus deve <b>um favor a cada aventureiro</b> (aprovado pelo Mestre: dinheiro no negócio de um herói, um item superior não mágico, informações do submundo). A maior recompensa é uma mudança de regra: <b>realizar uma atividade em Valkaria deixa de consumir 1 ponto de Lei &amp; Ordem</b>; o custo em dinheiro e tempo permanece.</p>\n\t\t\t\t<h3>Paollus como parceiro</h3>\n\t\t\t\t<p>@UUID[Item.by1zo0RMSA0AG9EI]{Paollus (Assassino mestre)}, ou o poder @UUID[Item.HOLx8bOpfjJmJwNg]{Costas com Costas}.</p>\n\t\t\t\t<p>Macro: @UUID[Macro.7g2BdOKTTjsLIYgw]{Mini 2 · Desfecho}.</p>\n\t\t\t\t<h3>Para o futuro</h3>\n\t\t\t\t<p>Na Aventura 7, aliado ao verdadeiro Paollus, o grupo recebe tudo sobre a localização da Roca e o covil de Vesper.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "JYcwrcMwt0N7wt58",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LY01DtqFeEQY2295.JYcwrcMwt0N7wt58"
+    }
+  ],
+  "_key": "!journal!LY01DtqFeEQY2295"
+}

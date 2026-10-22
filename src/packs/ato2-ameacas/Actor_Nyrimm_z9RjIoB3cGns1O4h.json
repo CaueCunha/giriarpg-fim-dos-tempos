@@ -1670,7 +1670,7 @@
       "img": "systems/tormenta20/icons/magias/campo-de-forca.webp",
       "effects": [
         {
-          "_id": "xCdHiHes9GMOK6mH",
+          "_id": "zF9z9IFOxkBsmTQd",
           "flags": {
             "tormenta20": {}
           },
@@ -1747,10 +1747,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.xCdHiHes9GMOK6mH"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.zF9z9IFOxkBsmTQd"
         },
         {
-          "_id": "BHeMja5SsgTGt3H6",
+          "_id": "UEbWUbo2a8m85tLd",
           "flags": {
             "tormenta20": {}
           },
@@ -1820,10 +1820,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.BHeMja5SsgTGt3H6"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.UEbWUbo2a8m85tLd"
         },
         {
-          "_id": "d5DyRGTqq6qrKaAt",
+          "_id": "SbLOKBau1AJuYfdM",
           "flags": {
             "tormenta20": {}
           },
@@ -1900,10 +1900,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.d5DyRGTqq6qrKaAt"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.SbLOKBau1AJuYfdM"
         },
         {
-          "_id": "gvS3ovP9Gz8iSA6u",
+          "_id": "I482UU3xKdjXldzb",
           "flags": {
             "tormenta20": {}
           },
@@ -1966,7 +1966,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.gvS3ovP9Gz8iSA6u"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.I482UU3xKdjXldzb"
         },
         {
           "origin": "Item.BmiLj15LQW7f76j8",
@@ -1981,7 +1981,7 @@
             "expired": false
           },
           "disabled": true,
-          "_id": "AP4owqIaSFEPnrUc",
+          "_id": "fCbzhEpYoZPP7S7N",
           "transfer": false,
           "_stats": {
             "coreVersion": "14.366",
@@ -2039,7 +2039,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.AP4owqIaSFEPnrUc"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.fCbzhEpYoZPP7S7N"
         },
         {
           "name": "Campo de Força",
@@ -2056,7 +2056,7 @@
             "expired": false
           },
           "disabled": false,
-          "_id": "ntJpUZfhHPRjC0g1",
+          "_id": "7mcAG4KNNFoLzW8G",
           "type": "base",
           "system": {
             "changes": [],
@@ -2097,7 +2097,7 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.ntJpUZfhHPRjC0g1"
+          "_key": "!actors.items.effects!z9RjIoB3cGns1O4h.BuskCrdxkXt3fslu.7mcAG4KNNFoLzW8G"
         }
       ],
       "flags": {

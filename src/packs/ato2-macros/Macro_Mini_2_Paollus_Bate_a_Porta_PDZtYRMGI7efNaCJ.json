@@ -1,0 +1,31 @@
+{
+  "name": "Mini 2 · Paollus Bate à Porta",
+  "type": "script",
+  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "folder": "KHe2ZVcv1sqPkgQ9",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n(async function macroPaollus() {\n\t\tconst CHAVE = \"fdtIrmandade\";\n\t\tconst agora = () => Number(game.time?.worldTime) || 0;\n\t\tconst e = game.user.getFlag(\"world\", CHAVE);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Paollus Bate à Porta\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"porta\">Batidas na porta: Paollus aparece (iniciar o prazo)</option>\n\t\t\t\t\t<option value=\"proposta\">Paollus explica o plano</option>\n\t\t\t\t\t<option value=\"ganho\">O que os heróis ganham</option>\n\t\t\t\t\t<option value=\"prazo\">Quanto falta para a execução</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Horas até a execução</label><select name=\"horas\"><option value=\"12\">12 (à noite)</option><option value=\"16\">16 (para cair à noite)</option><option value=\"18\">18 (para cair à noite)</option></select></div>\n\t\t\t\t${e ? `<p>Prazo iniciado: restam cerca de <b>${Math.max(0, Math.ceil((e.fim - agora()) / 3600))} h</b> pelo relógio do mundo.</p>` : \"\"}`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"porta\") {\n\t\t\tconst h = Number(res.horas) || 12;\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, { inicio: agora(), fim: agora() + h * 3600 });\n\t\t\treturn ChatMessage.create({ content: `<h3>Descanso curto</h3><p>Vocês acabaram de chegar em casa. Estão exaustos, feridos, meio atordoados com as últimas revelações... Mas vitoriosos. O primeiro de vocês finalmente senta para descansar quando todos ouvem batidas na porta. Furtivas, rápidas, insistentes.</p>\n\t\t\t\t<p>À sua frente está um humano com sangue élfico. Um tipo durão, com algumas cicatrizes, cabelo oleado para trás. Já tem certa idade e é curtido por uma vida de crime. Está sujo, cansado, maltrapilho, mas ainda guarda o orgulho de sua posição no submundo da capital.</p>\n\t\t\t\t<p>Após alguns instantes, vocês o reconhecem. Este é <b>Paollus, o líder da Companhia dos Irmãos</b>.</p>` });\n\t\t}\n\t\tif (res.acao === \"proposta\") {\n\t\t\treturn ChatMessage.create({ content: `<h3>Paollus</h3><p>Ele senta e coloca os pés sobre a mesa, como se fosse o dono do lugar.</p>\n\t\t\t\t<blockquote><p>\"Se vocês não são idiotas totais, devem ter percebido que a Companhia dos Irmãos vem agindo de forma estranha há mais de um ano. Os sussurros no submundo dizem que 'Paollus enlouqueceu'! Isso é porque não sou mais eu no comando. Fui substituído por uma cópia, algum tipo de golem ou coisa assim! Tentaram me matar, mas consegui fugir. Desde então, vivo escondido, com a ajuda de alguns poucos irmãos que conhecem a verdade e ainda são leais a mim. Mas agora chegou a hora de retomar o controle da irmandade, antes que minha cópia afogue Valkaria em sangue... E vocês vão me ajudar.\"</p></blockquote>\n\t\t\t\t<ul><li>A Companhia capturou <b>Yeremin Blasanov</b>, capitão da Casa Blasanov, e vai executá-lo em <b>12 horas</b>.</li>\n\t\t\t\t<li>A execução é numa fortaleza abandonada em <b>Pura Valkaria</b>, reduto purista clandestino no território dos Blasanov, de forma semipública: para a notícia vazar e a Casa Blasanov revidar.</li>\n\t\t\t\t<li>O plano: atacar a fortaleza durante a execução, salvar Yeremin e destruir o replicoide e seus capangas. Será um banho de sangue.</li>\n\t\t\t\t<li>Sem a Casa Blasanov (semanas de negociação) e sem a Guarda: a Xerife Mathilda nunca ajudaria a reinstaurar um criminoso. Tentaria prendê-lo! Aliados de fora, só os mínimos e de total confiança.</li></ul>` });\n\t\t}\n\t\tif (res.acao === \"ganho\") {\n\t\t\treturn ChatMessage.create({ content: \"<h3>O que os heróis ganham</h3><ul><li>Tirar um replicoide do poder.</li><li>Paollus fica devendo <b>um favor a cada um</b>.</li><li>Se a guerra for evitada, uma Valkaria mais estável: as atividades na capital deixam de custar Lei &amp; Ordem.</li></ul><p style=\\\"font-size:0.85em\\\">Completar Irmandade Máxima não rende nível nem pagamento.</p>\" });\n\t\t}\n\t\tif (!e) return ui.notifications.warn(\"O prazo ainda não foi iniciado.\");\n\t\tconst h = (e.fim - agora()) / 3600;\n\t\tChatMessage.create({ whisper: ChatMessage.getWhisperRecipients(\"GM\"), content: `<h3>Prazo da execução</h3><p>${h > 0 ? `Restam <b>${Math.ceil(h)} h</b>. A batalha precisa ser à noite.` : \"<b>A hora chegou.</b> A execução começa na fortaleza.\"}</p>` });\n\t})();",
+  "_id": "PDZtYRMGI7efNaCJ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!PDZtYRMGI7efNaCJ"
+}
