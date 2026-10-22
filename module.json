@@ -2,7 +2,7 @@
   "id": "giriarpg-fim-dos-tempos",
   "title": "Fim dos Tempos · Campanha (Tormenta20)",
   "description": "<p>Conteúdo da campanha <b>Fim dos Tempos</b> para o sistema Tormenta20: ameaças, itens, diários, tabelas e macros do Ato 1 (Colinas Centrais) e do Ato 2 (Valkaria), além das regras de grupo. Importe pelo botão no topo da aba de Compêndios ou pela macro do compêndio Campanha.</p>",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -327,7 +327,7 @@
   },
   "url": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos",
   "manifest": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/latest/download/module.json",
-  "download": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/download/v0.3.0/module.zip",
+  "download": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/download/v0.4.0/module.zip",
   "readme": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos#readme",
   "bugs": "https://github.com/CaueCunha/giriarpg-fim-dos-tempos/issues"
 }
