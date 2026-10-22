@@ -1,0 +1,71 @@
+{
+  "name": "Conceder Segunda Chance",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-ressurreicao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "cavSegunda"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Cavaleiro da Redenção.</i> Uma vez por rodada, quando um aliado em alcance curto falha em um teste, você pode gastar <b>2 PM</b> para que ele <b>role novamente</b>. Para cada dois outros poderes de Cavaleiro da Redenção, uma vez adicional por rodada (mas não no mesmo teste).</p><p><b>Pré-requisito:</b> Escudo Redentor.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "reaction",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "short",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "AH5SG6xAbaQKkPXy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!AH5SG6xAbaQKkPXy"
+}

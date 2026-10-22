@@ -1,0 +1,151 @@
+{
+  "name": "Traje das Sombras (Marca da Distinção)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/distincao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "marcaVigilante"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> Escolha uma armadura ou item de vestuário: ele se torna seu traje das sombras. Enquanto o estiver vestindo, você recebe <b>+1 em Furtividade e Intimidação</b> e, se o item impuser penalidade de armadura, ela diminui em –1. Esses benefícios aumentam em +1 para cada poder de vigilante mascarado que você possuir. Se perder o traje, crie outro com um dia de trabalho e T$ 100.</p><p>O efeito abaixo é atualizado pela macro Distinções conforme os poderes. Desligue-o quando estiver sem o traje.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "dNPqAHGITGdAAjLD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Traje das Sombras",
+      "img": "systems/tormenta20/icons/poderes/distincao.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Vestindo o traje das sombras. Penalidade de armadura do traje –1 por nível de bônus (ajuste no item).",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2apendices",
+          "fdtRole": "efTraje"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.furt.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.inti.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "gtCoYRPStyp2MwSP",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!dNPqAHGITGdAAjLD.gtCoYRPStyp2MwSP"
+    }
+  ],
+  "_key": "!items!dNPqAHGITGdAAjLD"
+}

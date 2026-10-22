@@ -1,0 +1,71 @@
+{
+  "name": "Vingador Sem Rosto",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "vigVingador"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> Você se torna <b>imune a todas as formas de detecção da sua identidade secreta</b>, incluindo Intuição, Percepção e magias como Visão da Verdade. Você ainda pode ser detectado, mas isso nunca revela sua identidade. A única forma de descobri-la é arrancar a máscara do traje das sombras enquanto você estiver inconsciente ou paralisado.</p><p><b>Pré-requisito:</b> Cavaleiro das Trevas.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "aDABpmpYGDACIEmG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!aDABpmpYGDACIEmG"
+}

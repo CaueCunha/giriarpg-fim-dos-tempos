@@ -1,0 +1,258 @@
+{
+  "name": "Arco 2 · Apêndices",
+  "folder": "OKpz2opJMmCvzSOa",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "diarioApendices"
+    }
+  },
+  "_id": "mzuzU5dqwGf5x6jC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<p>Os Apêndices do livro do Arco 2 (pp. 309–319): regras de negócios dos heróis e duas novas distinções.</p>\n\t\t\t\t<ul><li>@UUID[Macro.2u6FVUCuBr5faVCH]{Valkaria · Negócios}: cria o negócio (teste e custo), sobe de nível (CD, custo, Estúdio e Escritório), controla os ativos e os pré-requisitos, paga o rendimento (com o mês dedicado e o Empório), rola o Cassino (com a dívida) e o Mercado Multinivelado, e aplica os benefícios dos ativos ao grupo como um efeito \"Negócios do grupo\". Os negócios ficam guardados no ator do dono.</li><li>@UUID[Macro.rFjgb9X4Un1SYyxP]{Arco 2 · Distinções}: mostra as admissões, dá a marca, atualiza o Traje das Sombras e a Mobilidade Urbana conforme os poderes, controla o desmascaramento e gasta os PM dos poderes (Símbolo de Esperança aplica +2 aos aliados mirados; Provocação Flamejante rola e aplica o fogo).</li></ul>\n\t\t\t\t<p><b>Poderes de distinção:</b> @UUID[Item.tDIrFvrk5wQEGB2Y]{Presença Protetora (Marca da Distinção)}, @UUID[Item.rTFs3b5gaoDgMkOg]{Escudo Redentor}, @UUID[Item.AH5SG6xAbaQKkPXy]{Conceder Segunda Chance}, @UUID[Item.B15bL58b0Py6kdoW]{Palavras Redentoras}, @UUID[Item.UDfpMmlQJZRuvVTM]{Provocação Flamejante}, @UUID[Item.aqLuPS5CLs1DeBeK]{Revoada da Fênix}, @UUID[Item.dNPqAHGITGdAAjLD]{Traje das Sombras (Marca da Distinção)}, @UUID[Item.E1GG9ERhu6w7knmO]{Cavaleiro das Trevas}, @UUID[Item.bpN92QKYD0sXkCX4]{Criatura da Noite}, @UUID[Item.oOwxFLGJ9co1Db2h]{Mobilidade Urbana}, @UUID[Item.aMKyUlT5OlIrFW5a]{Símbolo de Esperança}, @UUID[Item.aDABpmpYGDACIEmG]{Vingador Sem Rosto}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "8vD2LkKxhSEr2DmZ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.8vD2LkKxhSEr2DmZ"
+    },
+    {
+      "name": "Negócios",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Cedo ou tarde, algum jogador quer fazer parte de Valkaria de vez: uma casa, uma família... e um negócio. Quem fica o tempo todo na taverna não é bom aventureiro, mas um herói pode ter um negócio de qualquer tipo, administrado por empregados ou familiares, que só supervisiona entre uma masmorra e outra. O que importa é que seja permanente, lucrativo e fonte de satisfação, complicações e aventuras.</p>\n\t\t\t\t<p>O jogador cria o nome do estabelecimento e ajuda a decidir onde fica (áreas nobres são quase exclusivas de famílias tradicionais; um espaço perto da estátua é caríssimo, mesmo para uma tenda de pães doces) e cria alguns empregados. O negócio vira parte integral da campanha, como um NPC aliado, um item mágico ou um navio do grupo.</p>\n\t\t\t\t<h2>Criando um negócio</h2>\n\t\t\t\t<p>Um mês de trabalho, <b>T$ 1.000</b> e um teste de <b>Ofício ou Nobreza (CD 20)</b>: procurar lugar, audiência com um Lorde Urbano para os alvarás, contratar, comprar mercadorias. Passou: negócio de nível 1. Falhou: tente de novo com mais um mês e T$ 1.000.</p>\n\t\t\t\t<h2>Níveis</h2>\n\t\t\t\t<p>De 1 a 7. Níveis 1 e 2: poucos empregados, mercadorias baratas (pequena oficina, tenda de comida). 3 a 5: vários empregados ou mercadorias valiosas (taverna, estábulo, bazar). 6 e 7: proeminentes (empórios abastecidos por caravanas, laboratórios alquímicos de alto poder). Para subir: teste de Ofício ou Nobreza contra <b>CD 20 + 2 × o próximo nível</b>, um mês de trabalho e <b>T$ 1.000 × o próximo nível</b> (do 3 para o 4: CD 28 e T$ 4.000).</p>\n\t\t\t\t<h2>Ativos</h2>\n\t\t\t\t<p>Um ativo por nível: empregados, mercadorias e instalações, que dizem que tipo de negócio é. Cada ativo dá um benefício ao dono e ao resto do grupo enquanto tiverem acesso ao negócio e por até um mês depois (longe é não poder frequentá-lo ao menos uma vez por semana; a critério do mestre, perde-se após uma aventura inteira fora). O único \"custo\" é de interpretação: quem se beneficia frequenta o negócio (o clérigo de Azgher no Altar do colega devoto de Tenebra pode ganhar inimigos, até o próprio patrono). São benefícios de estruturas: acumulam com habilidades, perícias, itens, magias, parceiros e ambiente, mas não com outras estruturas (dádivas, domínios, bases).</p>\n\t\t\t\t<h2>Rendimentos</h2>\n\t\t\t\t<p>Todo negócio rende <b>T$ 100 × nível</b> por aventura (ou mês). Quem dedica o mês inteiro ao negócio faz um teste de Ofício ou Nobreza: o rendimento do mês é <b>o resultado × 10 × o nível</b>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "oRiH1gA12N0ODtJC",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.oRiH1gA12N0ODtJC"
+    },
+    {
+      "name": "Os Ativos",
+      "type": "text",
+      "sort": 210,
+      "text": {
+        "content": "<ul><li><b>Academia.</b> Seu negócio é tão vasto e famoso que atrai pessoas extraordinárias de todo o mundo para aprender com você e seus companheiros: uma verdadeira escola de aventureiros. Você recebe um <b>parceiro veterano</b> humanoide de um tipo à sua escolha (exceto montaria). Se o parceiro for morto, é substituído na próxima vez que você passar na Academia. <i>Pré-requisito: negócio de nível 7.</i></li><li><b>Alfaiataria.</b> Costureiros atentos à moda da nobreza e realeza, com tecidos e joias de alta qualidade. Você pode se beneficiar de <b>um item vestido adicional</b>. <i>Pré-requisito: Oficina.</i></li><li><b>Alojamentos.</b> Camas, bacias com água para higiene e o descanso merecido após a última aventura. As condições de descanso no negócio se tornam <b>confortáveis</b>.</li><li><b>Altar.</b> Um local de oração, com símbolos de uma ou mais divindades. Você recebe <b>+2 PM</b>, mas apenas se for um conjurador divino. <i>(automático na macro)</i></li><li><b>Arena.</b> Um espaço para lutas de todos os tipos. Você recebe <b>proficiência em uma arma marcial</b> à sua escolha (ou uma exótica, se já for proficiente com armas marciais).</li><li><b>Bazar.</b> Contatos com guildas de artesãos, caravaneiros e capitães mercantes, e a estrutura para vender. Quando compra ou vende itens mundanos (não superiores e não mágicos), o preço muda <b>10% a seu favor</b>.</li><li><b>Botica.</b> Remédios, bálsamos e ervas medicinais que garantem boa saúde. Você recebe <b>+1 em Fortitude</b>. <i>(automático na macro)</i></li><li><b>Cassino.</b> Jogos de azar e apostas. Alguns dizem que é abençoado por Nimb; outros, que é amaldiçoado... Você recebe <b>+1 em Jogatina</b>. Uma vez por aventura (ou mês), role um dado: par, recebe <b>TO 10 × nível do negócio²</b>; ímpar, perde metade dessa quantia (sem fundos, fica devendo para a próxima vez). <i>(automático na macro)</i></li><li><b>Centro de Pesquisa.</b> Um local protegido para experimentos longe dos olhos (e dos rostos) alheios. A quantidade de <b>engenhocas</b> que você pode manter aumenta em <b>+1</b>. <i>Pré-requisito: Oficina.</i></li><li><b>Círculo de Poder.</b> Objetos encantados e padrões no chão, como pentagramas e runas, atraem as energias místicas. Você recebe <b>+2 PM</b>, mas apenas se for um conjurador arcano. <i>(automático na macro)</i></li><li><b>Clínica.</b> Macas, bandagens, ervas e o necessário para curar ferimentos e doenças. Você recebe <b>+3 PV</b>. <i>(automático na macro)</i></li><li><b>Cocheira.</b> Espaço para animais descansarem, isolados do barulho, com alimentação e tratadores. Você pode ter até <b>um parceiro montaria</b> que não conta no limite de parceiros.</li><li><b>Conservatório.</b> Uma escola especializada para aprender as minúcias do instrumento. Você pode usar <b>Atuação no lugar de Diplomacia</b>.</li><li><b>Cozinha.</b> Fornos, panelas, utensílios limpos e um bom estoque de ingredientes. Os bônus em perícias dos <b>alimentos que você cozinha aumentam em +1</b>.</li><li><b>Creche.</b> Um lugar seguro para filhos e protegidos, que deixa você mais disposto a se arriscar. Uma vez por aventura (ou mês), você pode <b>sofrer um efeito nocivo no lugar de um aliado adjacente</b>.</li><li><b>Dojo.</b> Local de treino das artes marciais tamuranianas, com tablado, bonecos estofados e um pequeno altar a Lin-Wu. Você recebe <b>+1 em testes de ataque desarmado ou com armas naturais</b>.</li><li><b>Empório.</b> Se algo existe em Arton, está à venda no seu negócio. O negócio passa a render <b>100 TO × nível</b> por mês (ou o resultado do teste de Ofício ou Nobreza × 10 × nível). <i>Pré-requisito: Bazar.</i></li><li><b>Escritório.</b> Ábacos, pergaminhos e funcionários estressados que cuidam da contabilidade e da administração. O <b>custo em tibares para aumentar o nível</b> do negócio é <b>metade</b> do normal.</li><li><b>Espionagem Industrial.</b> Agentes atentos às tendências e segredos dos outros negócios. Escolha um ativo que o negócio não tenha, mas cujos pré-requisitos cumpra: o negócio fornece os benefícios dele. Uma vez por aventura (ou mês), você pode trocar o ativo escolhido. <i>Pré-requisito: negócio de nível 3.</i></li><li><b>Estagiários.</b> Jovens aprendizes que trabalham muito e recebem pouco (ou nada). Quando fabrica um item não consumível, você pode sofrer <b>–5 no teste para fabricar dois itens</b> da mesma categoria, pagando o custo de ambos. <i>Pré-requisito: Oficina.</i></li><li><b>Estúdio.</b> Um espaço para os gênios, inovadores, loucos e criativos que você emprega. A <b>CD do teste para aumentar o nível</b> do negócio diminui em <b>–5</b>.</li><li><b>Fachada.</b> Aparentemente um estabelecimento respeitável, as autoridades não batem à porta. Você recebe <b>+1 em Furtividade</b> e pode conduzir atividades ilegais no negócio (culto a deuses proibidos, armas de fogo, receptação...). Isso não impede tramas em que o negócio seja ameaçado. A critério do mestre, também anula a má fama de quem frequenta o negócio. <i>(automático na macro)</i></li><li><b>Forjaria.</b> Fornalha, bigorna, fole e malho para itens de grande qualidade. Você recebe <b>20% de desconto</b> para comprar ou fabricar <b>itens superiores</b>. <i>Pré-requisito: Oficina.</i></li><li><b>Fortificação.</b> Muralhas de pedra, portões de ferro e janelas gradeadas. Se o negócio for atacado, seus defensores recebem <b>+2 na Defesa e em testes de resistência</b>.</li><li><b>Galeria de Arte.</b> As obras mais inovadoras do Reinado, que muitos não entendem. Mas será que há algo para entender? Você pode substituir testes de <b>Atuação por Enganação</b>.</li><li><b>Ginásio.</b> Invenção dos minotauros que se espalha pelo Reinado (a maioria ainda acha as máquinas parecidas com instrumentos de tortura). Você recebe <b>+1 em rolagens de dano desarmado e com armas naturais</b>.</li><li><b>Guilda de Aventureiros.</b> Um salão onde heróis andarilhos trocam histórias. Toda <b>XP que você recebe aumenta em +10%</b>. Com a regra de avanço por marcos (Tormenta20, p. 326), em vez disso você recebe +2 PV e +2 PM a cada novo patamar. <i>Pré-requisito: Salão Comunal.</i></li><li><b>Integração.</b> Um programa de treinamento para novos contratados. Você recebe <b>+2 em testes de treinamento</b> (Tormenta20, p. 277). <i>Pré-requisito: negócio de nível 3.</i></li><li><b>Jardim.</b> Flores e árvores: o contato com a natureza, mesmo tênue, fortalece a ligação com os poderes selvagens. O custo de <b>Forma Selvagem diminui em –1 PM</b>.</li><li><b>Laboratório Alquímico.</b> Ampulhetas, balanças e frascos com todo tipo de ingrediente. Os efeitos dos seus <b>preparados alquímicos aumentam em um dado</b> (fogo alquímico causa 2d6 em vez de 1d6). <i>Pré-requisito: Oficina.</i></li><li><b>Laboratório Secreto.</b> Um covil para experimentos ilegais, perigosos, profanos ou antinaturais. Você recebe <b>um poder da Tormenta</b> (com a perda de Carisma normal). <i>Pré-requisito: negócio de nível 5, Fachada.</i></li><li><b>Livraria.</b> Prateleiras de livros, tomos e pergaminhos sobre assuntos variados. Você recebe <b>+1 em Conhecimento</b>. <i>(automático na macro)</i></li><li><b>Logística.</b> Especialistas em armazenamento, transporte e manuseio de carga. Seu <b>limite de carga aumenta em 5 espaços</b>. <i>(automático na macro)</i></li><li><b>Mercado Multinivelado.</b> As pessoas pagam para trabalhar para você, desde que recrutem outras que paguem para trabalhar para elas, e assim por diante (há pequenos detalhes, como as multas e as dívidas, mas não vamos falar sobre isso). A cada aventura (ou mês) em que recrutar <b>um NPC com nome</b>, você recebe <b>T$ nível × 100</b>; com dois, nível × 200; e assim por diante, até um multiplicador igual ao nível do negócio. O mestre decide o que é preciso para recrutar (interpretação, testes sociais e uma vítima, digo, futuro associado com propensão a embarcar nessa). <i>Pré-requisito: negócio de nível 3.</i></li><li><b>Oficina.</b> Bancadas, ferramentas e auxiliares para exercer o ofício com perfeição. Você recebe <b>+1 em Ofício</b>. <i>(automático na macro)</i></li><li><b>Ourivesaria.</b> Acessórios de todos os tipos, de joias genuínas a bijuterias. No início de cada aventura (ou mês), escolha um item seu para receber os benefícios das melhorias <b>banhado a ouro ou cravejado de gemas</b>, sem contar no limite de melhorias.</li><li><b>Palco.</b> Músicos, malabaristas, atores, mímicos... Você pode usar <b>poderes de Música com uma ação de movimento</b> (em vez de padrão).</li><li><b>Pátio de Treinamento.</b> Armas variadas, alvos de madeira e espaço para golpear sem machucar ninguém. Escolha uma arma: <b>+1 em testes de ataque</b> com ela.</li><li><b>Plano de Carreira.</b> O negócio ajuda os funcionários em seus próprios objetivos. Você recebe <b>+2 em testes de buscas</b> (Tormenta20, p. 278). <i>Pré-requisito: negócio de nível 3.</i></li><li><b>Propaganda.</b> Arautos nas arenas, cartazes nas paredes, brasões bordados nas roupas de aventureiros famosos. Você recebe <b>+1 em Diplomacia ou Enganação</b> (a macro dá Diplomacia; troque no efeito se quiser Enganação). <i>Pré-requisito: negócio de nível 2.</i> <i>(automático na macro)</i></li><li><b>Salão Comunal.</b> Mesas e cadeiras para beber e comemorar; o burburinho camufla os sussurros. Você pode usar o poder <b>Mestre dos Sussurros</b> (Tormenta20, p. 45). Se já o possui, soma o nível do negócio nos testes de perícia com ele.</li><li><b>Salão de Baile.</b> Nobres e figurões alugam o espaço para festas ou reuniões exclusivas. Você recebe <b>+1 em Nobreza</b>. <i>(automático na macro)</i></li><li><b>Salão de Marah.</b> Lugares que oferecem o amor (ou o simulacro que pode ser comprado). Uma visita deixa qualquer aventureiro mais disposto. Seu total de <b>PM aumenta em +1 por patamar</b>. <i>(automático na macro)</i></li><li><b>Santuário.</b> Um lugar sagrado de comunhão. Se for devoto da divindade do santuário, você aprende <b>uma magia divina adicional</b> de qualquer círculo que possa lançar. <i>Pré-requisito: Altar.</i></li><li><b>Torre Arcana.</b> Um espaço para estudar e testar magias em paz (e sem desintegrar nenhum inocente). Você aprende <b>uma magia arcana adicional</b> de qualquer círculo que possa lançar. <i>Pré-requisito: Círculo de Poder.</i></li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "oU9PHhll5rqBfV5j",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.oU9PHhll5rqBfV5j"
+    },
+    {
+      "name": "Distinções",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Há aventureiros para quem o trivial não basta, por mais poder que traga: o piedoso e orgulhoso Cavaleiro da Redenção, o misterioso e imprevisível vigilante mascarado. Eles buscam uma <b>distinção</b>, ligada a uma organização, um grupo de estudiosos, uma filosofia ou ao resultado de eventos e escolhas da história do personagem. Conquistá-la é parte da história do aventureiro.</p>\n\t\t\t\t<h2>Em jogo</h2>\n\t\t\t\t<ul><li><b>Admissão:</b> as tarefas e requisitos para conquistar a distinção, quase sempre ações na história. Nunca acontece no passado do personagem (começar em nível alto não dá distinções) nem fora de cena: só na mesa. O mestre tem a palavra final.</li><li><b>Marca da distinção:</b> uma habilidade recebida automaticamente ao conquistar a distinção.</li><li><b>Poderes da distinção:</b> poderes exclusivos escolhidos como poderes gerais, com seus pré-requisitos. Efeitos que contam \"poderes da distinção\" só contam os daquela distinção. Poderes escolhidos mais de uma vez contam separadamente.</li><li>Qualquer um pode cumprir a admissão, mas só personagens de patamar <b>veterano</b> (a partir do 5º nível) obtêm os poderes.</li></ul>\n\t\t\t\t<h2>Usando distinções</h2>\n\t\t\t\t<p>O principal é a história. A disponibilidade depende da campanha: sem Ignis Crae nem outro NPC da Ordem, é difícil virar Cavaleiro da Redenção. Os jogadores devem conversar com o mestre e apresentar os objetivos antes. Uma distinção não é um direito, é uma recompensa por esforço, criatividade e construção da história.</p>\n\t\t\t\t<ul><li><b>Aventuras de admissão:</b> algumas admissões são uma aventura inteira ou parte de uma, para o grupo todo colaborar (o evento que leva alguém a virar vigilante mascarado).</li><li><b>Tempo entre aventuras e testes estendidos:</b> para partes exclusivas do candidato ou muito objetivas (confeccionar o traje das sombras), com moderação. Nunca resolva toda a admissão assim.</li><li><b>História e ideias:</b> nenhuma mecânica acha um mentor sozinha; é preciso visitar lugares, investigar boatos. O jogador é o principal responsável.</li><li><b>Mentores:</b> um NPC de pelo menos patamar veterano, com no mínimo três poderes da distinção (e o que mais a organização exigir), com vontade e paciência para ensinar.</li></ul>\n\t\t\t\t<p><i>\"Eu não passei pela admissão, a admissão passou por mim!\"</i></p>\n\t\t\t\t<h2>E agora?</h2>\n\t\t\t\t<p>Conquistar uma distinção é um marco: às vezes uma cerimônia formal (a iniciação de um Cavaleiro da Redenção), às vezes só uma realização profunda, às vezes uma transformação (o vigilante ganha uma vida dupla, com uma identidade secreta não revelada nem ao grupo). São escolhas conscientes do personagem, não obrigações.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "fch6mLjyGp1Hp9hJ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.fch6mLjyGp1Hp9hJ"
+    },
+    {
+      "name": "Cavaleiro da Redenção",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>A Ordem da Cavalaria da Redenção é indissociável de seu criador, o golem paladino de Thyatis <b>Ignis Crae</b>. Criado pelo inventor Austerion Victtus, banhado pela paz de Marah ao despertar, logo se viu inquieto; a visão de um pássaro de fogo o levou a Thyatis. Sua missão: corrigir injustiças e oferecer segundas chances a quem passou por situações terríveis ou cometeu atos malignos. Dois de seus primeiros seguidores foram o dragão mendigo <b>Elmer</b> e a ex-purista <b>Lorelei Wulff</b>.</p>\n\t\t\t\t<p>A sede da Ordem fica nas Colinas Centrais, em Zakharov, mas seus membros surgem em outros lugares, principalmente Valkaria. Não há protocolos formais nem cerimônias rígidas. Ser um Cavaleiro da Redenção é assumir a própria imperfeição, os próprios pecados, talvez os próprios crimes; ostentar o brasão é mostrar ao mundo a marca dos seus erros... e da sua perseverança. Nem todo Cavaleiro monta a cavalo de armadura pesada: alguns oferecem segundas chances pelo combate, outros pela caridade.</p>\n\t\t\t\t<h2>Admissão</h2>\n\t\t\t\t<ol><li>Ter cometido erros graves e chegado ao fundo do poço: um crime, a morte de alguém próximo, renunciar ao dever por razões mesquinhas, voltar as costas a um amigo ou falta igualmente séria. O juiz do quão fundo é o poço é o próprio candidato; o principal é a culpa e a vontade de mudar.</li><li>Encontrar um Cavaleiro da Redenção e pedir ajuda (às vezes o mentor encontra o candidato, uma grande bênção de Thyatis, mas não se pode só esperar).</li><li>Contar ao mentor seus erros e o motivo do desejo de mudança, e cumprir a tarefa que ele impõe para corrigi-los: de reconstruir uma aldeia a apresentar-se às autoridades. Restaurar as vidas que prejudicou, tanto quanto possível.</li><li>Ser um redentor, não só um redimido: procurar alguém que precise de uma segunda chance e ajudá-lo a mudar, compensando as vítimas dos erros desse desgarrado (que não vira Cavaleiro e pode nem entender o que o candidato faz).</li><li>Com os erros corrigidos e a segunda chance aceita, uma rápida cerimônia e a designação de um dever, decidida pelo mentor.</li></ol>\n\t\t\t\t<h2>Marca e poderes</h2>\n\t\t\t\t<ul><li>@UUID[Item.tDIrFvrk5wQEGB2Y]{Presença Protetora (Marca da Distinção)}</li><li>@UUID[Item.rTFs3b5gaoDgMkOg]{Escudo Redentor}</li><li>@UUID[Item.AH5SG6xAbaQKkPXy]{Conceder Segunda Chance}</li><li>@UUID[Item.B15bL58b0Py6kdoW]{Palavras Redentoras}</li><li>@UUID[Item.UDfpMmlQJZRuvVTM]{Provocação Flamejante}</li><li>@UUID[Item.aqLuPS5CLs1DeBeK]{Revoada da Fênix}</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Qg3NaYKCuCQIEURb",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.Qg3NaYKCuCQIEURb"
+    },
+    {
+      "name": "Vigilante Mascarado",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><i>Criminosos são um bando covarde e supersticioso.</i> Debocham da Guarda, desafiam aventureiros, mas tremem diante de um vingador urbano implacável, cuja identidade e capacidades ninguém conhece. O vigilante mascarado treinou corpo e mente até o limite para caçar vilões nas ruas de Valkaria e domina os becos e telhados, as sombras e as sarjetas. Todo vigilante veste um uniforme (de uma fantasia elaborada que remete a animais ou deuses a um simples manto e uma máscara); o mais importante é o segredo.</p>\n\t\t\t\t<p>Tem duas vidas: a do nome verdadeiro, com amigos, família e talvez uma profissão, e a do codinome. Muitos são aventureiros com grupos e reputações heroicas! Os motivos variam: métodos que o grupo não aprovaria, proteger entes queridos de represálias, colher informações sobre as irmandades, combater figuras \"respeitáveis\" ligadas ao crime, ou só intimidar. Alguns são altruístas, outros carniceiros tão cruéis quanto os criminosos; alguns pertencem a sociedades secretas, outros agem sozinhos. Aos olhos dos criminosos, é um demônio imortal e incansável. <i>Goblin Herói, Extinção, Curandeiro e Vingador de Val: amigões da vizinhança!</i></p>\n\t\t\t\t<h2>Admissão</h2>\n\t\t\t\t<ol><li>Uma experiência ou acontecimento muito forte, pontual e transformador que dê um bom motivo para perseguir criminosos pela noite (talvez inspirando o codinome e o uniforme).</li><li>Expressar o juramento, a alguém ou a si mesmo, e embarcar numa jornada de transformação.</li><li>Desenvolver um uniforme marcante, com um tema, que esconda a identidade (feito por ele mesmo ou por alguém de confiança; o segredo não pode passar de uma ou duas pessoas). Criar um codinome.</li><li>Desenvolver uma técnica ou ataque marcante (uma manobra de combate, uma maneira de desvendar mistérios), único o bastante para virar assunto de sussurros amedrontados no submundo.</li><li>Combater o crime sob a identidade secreta, usando a técnica registrada (impedir um roubo, capturar um assassino, resgatar um prisioneiro). Nessa missão, não pode revelar a identidade nem receber ajuda do grupo.</li></ol>\n\t\t\t\t<p>Com sucesso, o candidato abandona a vida comum: para sempre terá um segredo, até das pessoas mais próximas.</p>\n\t\t\t\t<h2>Por trás da máscara</h2>\n\t\t\t\t<p>Só de uma a três pessoas podem conhecer a identidade. Se o vigilante for desmascarado publicamente, se a identidade for divulgada ou muita gente (a critério do mestre) souber, <b>perde todos os bônus da marca e não pode usar os poderes da distinção</b>. Para recuperar, cria uma nova identidade ou \"prova\" que a revelação era falsa: passa pela admissão de novo, pulando a motivação (desmentindo, não precisa de traje nem técnica novos, mas precisa convencer o público). Nenhum vigilante revela a identidade ao grupo (no máximo a um companheiro): seria visto perto deles com frequência, e um vilão esperto vasculharia as mentes dos outros.</p>\n\t\t\t\t<h2>Marca e poderes</h2>\n\t\t\t\t<ul><li>@UUID[Item.dNPqAHGITGdAAjLD]{Traje das Sombras (Marca da Distinção)}</li><li>@UUID[Item.E1GG9ERhu6w7knmO]{Cavaleiro das Trevas}</li><li>@UUID[Item.bpN92QKYD0sXkCX4]{Criatura da Noite}</li><li>@UUID[Item.oOwxFLGJ9co1Db2h]{Mobilidade Urbana}</li><li>@UUID[Item.aMKyUlT5OlIrFW5a]{Símbolo de Esperança}</li><li>@UUID[Item.aDABpmpYGDACIEmG]{Vingador Sem Rosto}</li></ul>\n\t\t\t\t<p><i>Berthun, da Guarita da Praia, é o vigilante Curandeiro.</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "5WwYLKPFjHiFp40f",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!mzuzU5dqwGf5x6jC.5WwYLKPFjHiFp40f"
+    }
+  ],
+  "_key": "!journal!mzuzU5dqwGf5x6jC"
+}

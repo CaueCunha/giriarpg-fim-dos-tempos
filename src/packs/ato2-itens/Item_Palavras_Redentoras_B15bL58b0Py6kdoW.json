@@ -1,0 +1,71 @@
+{
+  "name": "Palavras Redentoras",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-ressurreicao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "cavPalavras"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Cavaleiro da Redenção.</i> A maior arma de um Cavaleiro é uma palavra amiga. Você aprende e pode lançar <b>Escudo da Fé</b> e <b>Tranquilidade</b> (atributo-chave Carisma).</p><p><b>Pré-requisito:</b> Escudo Redentor.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "B15bL58b0Py6kdoW",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!B15bL58b0Py6kdoW"
+}
