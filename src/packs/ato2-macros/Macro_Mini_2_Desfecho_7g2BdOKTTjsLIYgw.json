@@ -1,0 +1,31 @@
+{
+  "name": "Mini 2 · Desfecho",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/corda.webp",
+  "folder": "KHe2ZVcv1sqPkgQ9",
+  "flags": {
+    "world": {
+      "fdt": "a2mini2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n(async function macroDesfecho() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Irmandade Máxima · Desfecho\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O Replicoide Paollus foi destruído</label><input type=\"checkbox\" name=\"replicoide\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Yeremin Blasanov foi executado</label><input type=\"checkbox\" name=\"executado\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Descontar os 2 pontos de Lei &amp; Ordem (se Yeremin morreu)</label><input type=\"checkbox\" name=\"descontar\" checked></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst lo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"leiordem\");\n\t\tlet html = `<h3>Irmandade Máxima</h3><p><i>A fortaleza está atapetada de corpos. Fumaça sobe ao céu noturno de Valkaria, enquanto chamas iluminam a escuridão. Nesta noite, um grupo de detetives lutou ao lado de um dos maiores criminosos do mundo... Contra um inimigo que ambos os lados odeiam mais do que um ao outro.</i></p>`;\n\t\tif (res.executado) {\n\t\t\tlet txt = \"\";\n\t\t\tif (res.descontar && lo) {\n\t\t\t\tconst v = Number(lo.system.resources?.primary?.value) || 0;\n\t\t\t\tawait lo.update({ \"system.resources.primary.value\": v - 2 });\n\t\t\t\ttxt = ` Lei &amp; Ordem: ${v} → <b>${v - 2}</b>.`;\n\t\t\t} else if (res.descontar) txt = \" (Ator de Lei &amp; Ordem não encontrado: desconte à mão.)\";\n\t\t\thtml += `<p><b>Efeitos de derrota:</b> uma guerra de irmandades começa em Valkaria. A capital perde <b>2 pontos de Lei &amp; Ordem</b>.${txt} ${res.replicoide ? \"O verdadeiro Paollus vai ter que se esforçar muito para restaurar a paz sem perder o respeito de inimigos e comandados.\" : \"Com a derrota total, é só o começo de uma época sanguinolenta para a capital...\"}</p>`;\n\t\t}\n\t\tif (res.replicoide && !res.executado) {\n\t\t\thtml += \"<p><b>Efeitos de vitória:</b> o verdadeiro Paollus fica devendo <b>um favor a cada aventureiro</b> (aprovado pelo Mestre: dinheiro no negócio de um herói, um item superior não mágico ou informações sobre o submundo).</p><p>Com as irmandades relativamente estáveis, os detetives não precisam trabalhar a cada minuto do dia: <b>realizar uma atividade em Valkaria deixa de consumir 1 ponto de Lei &amp; Ordem</b> (o custo em dinheiro e tempo permanece).</p><p>Paollus pode virar parceiro (assassino mestre, ou o poder Costas com Costas).</p>\";\n\t\t} else if (res.replicoide) {\n\t\t\thtml += \"<p>O Replicoide foi destruído e Paollus volta ao poder, mas a guerra explodiu mesmo assim. Paollus ainda fica devendo um favor a cada um; as atividades em Valkaria continuam custando Lei &amp; Ordem até a paz voltar.</p>\";\n\t\t} else if (!res.executado) {\n\t\t\thtml += \"<p>O Replicoide sobreviveu, mas Yeremin está vivo: a guerra foi adiada, não evitada. O golem continua no comando da Companhia.</p>\";\n\t\t}\n\t\tawait game.user.setFlag(\"world\", \"fdtMini2\", { replicoide: !!res.replicoide, executado: !!res.executado });\n\t\tChatMessage.create({ content: `${html}<p style=\"font-size:0.85em\">Completar Irmandade Máxima não rende nível nem pagamento.</p>` });\n\t})();",
+  "_id": "7g2BdOKTTjsLIYgw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!7g2BdOKTTjsLIYgw"
+}

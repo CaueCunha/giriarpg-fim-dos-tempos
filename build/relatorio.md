@@ -140,13 +140,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 99 documento(s), 9 pasta(s)
-- `ato2-itens`: 95 documento(s), 9 pasta(s)
-- `ato2-diarios`: 9 documento(s), 9 pasta(s)
-- `ato2-tabelas`: 19 documento(s), 9 pasta(s)
-- `ato2-macros`: 47 documento(s), 9 pasta(s)
+- `ato2-ameacas`: 106 documento(s), 10 pasta(s)
+- `ato2-itens`: 97 documento(s), 10 pasta(s)
+- `ato2-diarios`: 10 documento(s), 10 pasta(s)
+- `ato2-tabelas`: 19 documento(s), 10 pasta(s)
+- `ato2-macros`: 52 documento(s), 10 pasta(s)
 
-### Ligações com o sistema (162)
+### Ligações com o sistema (181)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -309,6 +309,25 @@
 | Cobrador da Ploigoníada | Dissipar Magia | magia | magia do sistema + ficha do NPC |
 | Cobrador da Ploigoníada | Imobilizar | magia | magia do sistema + ficha do NPC |
 | Cobrador da Ploigoníada | Silêncio | magia | magia do sistema + ficha do NPC |
+| Irmão da Companhia | Espada Curta | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Pistola | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Irmão da Companhia | Bomba | poder | link para o sistema |
+| Bando Desesperado | Espada Curta | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Arco Curto | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque em Bando | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Forma Coletiva | poder | ficha do livro + origem no sistema |
+| Arcano Brutal | Espada Curta | arma | ficha do livro + origem no sistema |
+| Arcano Brutal | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Névoa | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Salto Dimensional | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Sopro das Uivantes | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Toque Chocante | magia | magia do sistema + ficha do NPC |
+| Replicoide Paollus | Espada Longa | arma | ficha do livro + origem no sistema |
+| Replicoide Paollus | Pistola | arma | ficha do livro + origem no sistema |
+| Replicoide Paollus | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide Paollus | Evasão | poder | ficha do livro + origem no sistema |
 | (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
 | (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
 | (item) | Gorad Quente | consumivel | ficha do livro + origem no sistema |
