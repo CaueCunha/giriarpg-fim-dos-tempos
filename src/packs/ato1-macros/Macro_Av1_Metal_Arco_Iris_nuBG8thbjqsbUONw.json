@@ -1,0 +1,31 @@
+{
+  "name": "Av1 · Metal Arco-Íris",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/metal-arco-iris.webp",
+  "folder": "APqUXvCdaN0oOn1u",
+  "flags": {
+    "world": {
+      "fdt": "av1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n(async function macroMetal() {\n\t\tconst ELEMENTOS = [\"acido\", \"eletricidade\", \"fogo\", \"frio\", \"luz\", \"trevas\"];\n\t\tconst NOME = { acido: \"ácido\", eletricidade: \"eletricidade\", fogo: \"fogo\", frio: \"frio\", luz: \"luz\", trevas: \"trevas\" };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Metal Arco-Íris\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O alvo é um habitante das Colinas corrompido pela Tormenta (Aharadak, Gaspar)</label><input type=\"checkbox\" name=\"corrompido\"></div>\n\t\t\t\t<div class=\"form-group\"><label>O alvo é lefeu (ignora a imunidade a elementos)</label><input type=\"checkbox\" name=\"lefeu\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Mire o alvo que acabou de ser atingido. A macro escolhe um elemento a que ele seja vulnerável ou rola um entre os que ele não resiste e aplica o dano.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst alvo = [...game.user.targets].find((t) => t.actor);\n\t\tif (!alvo) return ui.notifications.warn(\"Mire o alvo atingido pela arma de metal arco-íris.\");\n\t\tconst rolls = [];\n\t\tconst rs = alvo.actor.system.tracos?.resistencias ?? {};\n\t\tif (res.corrompido) {\n\t\t\tconst r = await new Roll(\"1[acido] + 1[eletricidade] + 1[fogo] + 1[frio] + 1[luz] + 1[trevas]\").evaluate();\n\t\t\trolls.push(r);\n\t\t\ttry { await alvo.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }\n\t\t\treturn ChatMessage.create({ rolls, content: `<h3>Metal Arco-Íris</h3><p>Contra ${alvo.name}, corrompido nas Colinas: a essência de Tilliann rejeita a mácula. <b>+1 de cada elemento (+6)</b>, e o portador não pode ser alvo dos membros lefeu.</p>` });\n\t\t}\n\t\tconst vulneravel = ELEMENTOS.filter((k) => rs[k]?.vulnerabilidade);\n\t\tlet tipo = vulneravel[0];\n\t\tif (!tipo) {\n\t\t\tconst livres = res.lefeu ? ELEMENTOS : ELEMENTOS.filter((k) => !rs[k]?.imunidade && !(Number(rs[k]?.value) > 0));\n\t\t\tconst pool = livres.length ? livres : ELEMENTOS;\n\t\t\tfor (let i = 0; i < 20 && !tipo; i++) {\n\t\t\t\tconst d = await new Roll(\"1d6\").evaluate();\n\t\t\t\trolls.push(d);\n\t\t\t\tif (pool.includes(ELEMENTOS[d.total - 1])) tipo = ELEMENTOS[d.total - 1];\n\t\t\t}\n\t\t\ttipo ??= pool[0];\n\t\t}\n\t\tconst r = await new Roll(`1[${tipo}]`).evaluate();\n\t\trolls.push(r);\n\t\ttry { await alvo.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }\n\t\tChatMessage.create({ rolls, content: `<h3>Metal Arco-Íris</h3><p>${alvo.name} sofre <b>+1 de ${NOME[tipo]}</b>${vulneravel.length ? \" (vulnerável)\" : \"\"}${res.lefeu ? \", apesar da imunidade lefeu a elementos\" : \"\"}.</p>` });\n\t})();",
+  "_id": "nuBG8thbjqsbUONw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!nuBG8thbjqsbUONw"
+}

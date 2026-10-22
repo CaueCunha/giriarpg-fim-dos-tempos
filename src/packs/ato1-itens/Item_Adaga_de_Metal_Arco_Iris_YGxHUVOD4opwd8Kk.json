@@ -1,0 +1,285 @@
+{
+  "name": "Adaga de Metal Arco-Íris",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/equipamentos/adaga.webp",
+  "system": {
+    "description": {
+      "value": "<p>Uma das armas roubadas da forja de Belinda, tomada por Khalmyr. <b>A primeira pista.</b></p><p><b>Metal arco-íris.</b> Causa +1 de dano de um elemento ao qual o alvo seja vulnerável (ácido, eletricidade, fogo, frio, luz ou trevas); se não houver, role o elemento ignorando resistências e imunidades. Lefeu sofrem esse dano apesar da imunidade a elementos.</p><p>Contra habitantes das Colinas corrompidos pela Tormenta (por enquanto, Aharadak e Gaspar), causa 1 por elemento (<b>+6</b>) e o portador não pode ser alvo de ataques com membros lefeu. Não funciona contra lefeu ou forasteiros corrompidos. Macro <i>Metal Arco-Íris</i>.</p>",
+      "unidentified": ""
+    },
+    "equipado": 0,
+    "qtd": 1,
+    "criticoM": 19,
+    "criticoX": 2,
+    "alcance": "",
+    "proficiencia": "simples",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "preco": 0,
+    "peso": 0.5,
+    "espacos": 1,
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "for",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "1d4",
+            "perfuracao",
+            ""
+          ],
+          [
+            "@for",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "equipado2": {
+      "type": "hand",
+      "slot": 0
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "ataques": 0,
+    "tipoUso": "sim",
+    "propriedades": {},
+    "size": "normal"
+  },
+  "folder": "CZVP32ytwA6IWn3Y",
+  "flags": {
+    "world": {
+      "fdt": "av1",
+      "fdtRole": "adaga"
+    }
+  },
+  "_id": "YGxHUVOD4opwd8Kk",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Metal arco-íris (+1 de elemento)",
+      "img": "systems/tormenta20/icons/itens/gerais/metal-arco-iris.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av1"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "9LnhonTvmVFFDWlc",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!YGxHUVOD4opwd8Kk.9LnhonTvmVFFDWlc"
+    },
+    {
+      "name": "Contra corrompido das Colinas (+6)",
+      "img": "systems/tormenta20/icons/itens/gerais/metal-arco-iris.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "av1"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "6",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "wOAsvCxlJmR58XfP",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!YGxHUVOD4opwd8Kk.wOAsvCxlJmR58XfP"
+    }
+  ],
+  "_key": "!items!YGxHUVOD4opwd8Kk"
+}

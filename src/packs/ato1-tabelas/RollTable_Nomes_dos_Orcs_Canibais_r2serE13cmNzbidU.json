@@ -1,0 +1,574 @@
+{
+  "name": "Nomes dos Orcs Canibais",
+  "img": "systems/tormenta20/icons/ameacas/orc.png",
+  "folder": "6cbWqyw9NApWmdph",
+  "flags": {
+    "world": {
+      "fdt": "av1",
+      "fdtRole": "nomes"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Os orcs do clã têm nomes de deuses (cerca de 20 no clã; nomes repetidos quando sobram orcs). Emboscada: Khalmyr (líder), Azgher, Thyatis, Lena, Wynna, Hyninn, Oceano e Tenebra. Bando: Marah, Tenebra, Nimb, Arsenal, Thwor, Valkaria, Allihanna, Megalokk, Kally, Sszzaas, Lin-Wu, Glórienn, Ragnar e Keenn.",
+  "_id": "r2serE13cmNzbidU",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Khalmyr",
+      "description": "",
+      "_id": "vSHLvRUzWvKJpqhy",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.vSHLvRUzWvKJpqhy"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Azgher",
+      "description": "",
+      "_id": "heoR7yWEwMU7a641",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.heoR7yWEwMU7a641"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Thyatis",
+      "description": "",
+      "_id": "dX7SoSgGhxjXgz5o",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.dX7SoSgGhxjXgz5o"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Lena",
+      "description": "",
+      "_id": "EXBGIfyIDG3UyOgs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.EXBGIfyIDG3UyOgs"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Wynna",
+      "description": "",
+      "_id": "96yBxX15wJjHnzwf",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.96yBxX15wJjHnzwf"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Hyninn",
+      "description": "",
+      "_id": "o8nokWiej5ZiGZY5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.o8nokWiej5ZiGZY5"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Oceano",
+      "description": "",
+      "_id": "AsQiO6Qsmj31eahM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.AsQiO6Qsmj31eahM"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Tenebra",
+      "description": "",
+      "_id": "iB4Kgqg9CEDtqmrx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.iB4Kgqg9CEDtqmrx"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Marah",
+      "description": "",
+      "_id": "yyWiK0uhmI0kPLoC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.yyWiK0uhmI0kPLoC"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Nimb",
+      "description": "",
+      "_id": "Z0exXeWmvIWqtKuc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.Z0exXeWmvIWqtKuc"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Arsenal",
+      "description": "",
+      "_id": "F4iD0cQx3HEOLM1A",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.F4iD0cQx3HEOLM1A"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Thwor",
+      "description": "",
+      "_id": "P1gEJq1XBHW2QDaL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.P1gEJq1XBHW2QDaL"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        13
+      ],
+      "weight": 1,
+      "name": "Valkaria",
+      "description": "",
+      "_id": "P6UFJe6qcPNoWAFC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.P6UFJe6qcPNoWAFC"
+    },
+    {
+      "type": "text",
+      "range": [
+        14,
+        14
+      ],
+      "weight": 1,
+      "name": "Allihanna",
+      "description": "",
+      "_id": "SkHse1tGwVOG2KZk",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.SkHse1tGwVOG2KZk"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        15
+      ],
+      "weight": 1,
+      "name": "Megalokk",
+      "description": "",
+      "_id": "nEbezEnxf0E1SkCc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.nEbezEnxf0E1SkCc"
+    },
+    {
+      "type": "text",
+      "range": [
+        16,
+        16
+      ],
+      "weight": 1,
+      "name": "Kally",
+      "description": "",
+      "_id": "xp9kHnXGlDJzFhxE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.xp9kHnXGlDJzFhxE"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        17
+      ],
+      "weight": 1,
+      "name": "Sszzaas",
+      "description": "",
+      "_id": "wKQlbRSRWWmqfOd5",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.wKQlbRSRWWmqfOd5"
+    },
+    {
+      "type": "text",
+      "range": [
+        18,
+        18
+      ],
+      "weight": 1,
+      "name": "Lin-Wu",
+      "description": "",
+      "_id": "mWsnq36tdVWONMlG",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.mWsnq36tdVWONMlG"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "Glórienn",
+      "description": "",
+      "_id": "4hIFOXll882BODpr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.4hIFOXll882BODpr"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "Ragnar",
+      "description": "",
+      "_id": "9FnuEayy0NKEqK2f",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!r2serE13cmNzbidU.9FnuEayy0NKEqK2f"
+    }
+  ],
+  "_key": "!tables!r2serE13cmNzbidU"
+}
