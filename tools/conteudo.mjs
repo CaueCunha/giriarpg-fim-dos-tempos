@@ -41,7 +41,8 @@ export const ATOS = [
 			"a2-mini2-irmandade-maxima",
 			"a2-labirinto-liberto",
 			"a2-encontros-valkaria",
-			"a2-ruas-valkaria"
+			"a2-ruas-valkaria",
+			"a2-lendas-linhas"
 		]
 	},
 	{

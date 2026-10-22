@@ -1,0 +1,196 @@
+{
+  "name": "Lendas Urbanas de Valkaria",
+  "img": "icons/svg/book.svg",
+  "folder": "tAxjHUQmu7btHyyq",
+  "flags": {
+    "world": {
+      "fdt": "a2lendas",
+      "fdtRole": "lendas"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Contadas por NPCs, lidas em diários e anotações ou publicadas na Gazeta do Reinado. Quem conta acredita nela e conhece alguém que conhece o protagonista. Cada lenda dá uma dica de uma aventura do arco. A macro Lenda Urbana conta com a abertura e manda o subtexto ao Mestre.",
+  "_id": "oxXUIST8BYdpWORI",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Os Vampiros de Pensamentos",
+      "description": "Existem criaturas invisíveis que se alimentam de nossos pensamentos e emoções. Elas podem comer qualquer coisa que passe em nossa mente, mas preferem sentimentos fortes e pensamentos importantes. <i>Subtexto:</i> Alguns valkarianos notam que aventureiros e até vilões estão \"se acomodando\" e deixando de lado as atividades e emoções extremas. É efeito da Escola de Etiqueta e Bom Comportamento de Madame Margebell, que resulta na vizinhança pacata demais de Stremtol.",
+      "_id": "mb8OnThpETpxlKUD",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.mb8OnThpETpxlKUD"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "A Serva e o Bardo",
+      "description": "É bom ter cuidado com a música que seus filhos, familiares e até servos escutam. Hoje em dia, bardos de todos os tipos ficam famosos em Valkaria e as pessoas se tornam tão obcecadas pela música que esquecem de todo o resto. <i>Subtexto:</i> As músicas dos bardos que se apresentam na Terceira Opção e em tavernas parecidas estão espalhando fúria e loucura.",
+      "_id": "IoBVkP4qAqoBYO5R",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.IoBVkP4qAqoBYO5R"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Megan Miserável",
+      "description": "A inveja de algumas pessoas dura até depois da morte. <i>Subtexto:</i> Reflete a boataria sobre os nobres raptados e substituídos no Baile da Primavera. A história real não tem nada a ver com espelhos, mas esse elemento representa a sensação de que os jovens nobres são as vítimas, especialmente quando estão arrumados para uma festa.",
+      "_id": "T0VzrGcwONmfuFha",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.T0VzrGcwONmfuFha"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Os Doentes da Praga",
+      "description": "Todos sabem que a Praga Coral foi criada por humanos para se livrar dos orcs no antigo reino de Lomatubar. O que poucos sabem é que existe uma forma muito fácil de transmitir a Praga Coral: basta ter um pedaço da \"casca\" que as vítimas da Praga adquirem e transformá-la em pó. Uma mera pitada desse pó em qualquer comida ou bebida é suficiente para contaminar com a Praga Coral. <i>Subtexto:</i> O contexto real não está na praga, mas nos \"exércitos de vilões insanos\" que fazem maldade sem ganhar nada, só por sadismo. Os valkarianos notam que as pessoas à sua volta ficam mais violentas, cruéis e perigosas sem motivo. É efeito do plano de Ghorskander (os Imagodutos).",
+      "_id": "FEUyxeFcU8cXq5A8",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.FEUyxeFcU8cXq5A8"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "O Golem Errado",
+      "description": "Havia em Valkaria um mago especialista em fabricar golens e encantar objetos. Ele tinha muitos golens e muitos itens mágicos em sua torre. Um dia o mago foi viajar e sua torre foi invadida por um casal de jovens ladrões. Eles sabiam que não podiam levar muita coisa, então examinaram os golens e os itens. Achavam que, se cada um levasse apenas um item, o mago não daria falta. <i>Subtexto:</i> A noção de que pode haver confusão entre um golem e uma pessoa, e de que um assassino perigoso pode estar logo ao lado, reflete as substituições dos jovens nobres no último Baile da Primavera.",
+      "_id": "Gr8PFldVrjsuPKXd",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.Gr8PFldVrjsuPKXd"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Existem Dragões nos Esgotos de Valkaria",
+      "description": "Muitos aventureiros matam dragões, mas ficam com pena de destruir seus ovos. Eles então trazem os ovos de volta à cidade e tentam criar os dragões bebês, achando que eles poderão ser aliados fiéis e que, com bastante amor, não se tornarão malignos. <i>Subtexto:</i> A lenda com o subtexto mais óbvio: os \"dragões do esgoto\" criados por Khenzarr.",
+      "_id": "NqQbrZNtIA7sr3Ck",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!oxXUIST8BYdpWORI.NqQbrZNtIA7sr3Ck"
+    }
+  ],
+  "_key": "!tables!oxXUIST8BYdpWORI"
+}

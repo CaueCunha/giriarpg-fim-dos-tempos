@@ -142,9 +142,9 @@
 
 - `ato2-ameacas`: 167 documento(s), 13 pasta(s)
 - `ato2-itens`: 133 documento(s), 12 pasta(s)
-- `ato2-diarios`: 13 documento(s), 13 pasta(s)
-- `ato2-tabelas`: 27 documento(s), 12 pasta(s)
-- `ato2-macros`: 70 documento(s), 13 pasta(s)
+- `ato2-diarios`: 15 documento(s), 14 pasta(s)
+- `ato2-tabelas`: 28 documento(s), 13 pasta(s)
+- `ato2-macros`: 74 documento(s), 14 pasta(s)
 
 ### Ligações com o sistema (220)
 
