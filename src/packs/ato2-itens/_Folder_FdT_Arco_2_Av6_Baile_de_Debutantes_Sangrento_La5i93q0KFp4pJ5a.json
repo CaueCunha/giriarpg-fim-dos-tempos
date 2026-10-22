@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Av6 · Baile de Debutantes Sangrento",
+  "type": "Item",
+  "color": "#8a3a5c",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "_id": "La5i93q0KFp4pJ5a",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!La5i93q0KFp4pJ5a"
+}

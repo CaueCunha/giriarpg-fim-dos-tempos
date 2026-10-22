@@ -1,0 +1,143 @@
+{
+  "name": "Calor do Coração",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/enfeiticar.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Duas pessoas que possam se atrair fazem Carisma CD 10. Se ambas passam, despertam sentimentos românticos (ou amizade profunda): sabem onde a outra está e, em alcance curto, recebem <b>+2 em testes de perícia</b> até o fim do baile.</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "La5i93q0KFp4pJ5a",
+  "_id": "5U70439xzY72QsNN",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Calor do coração (+2 perto do par)",
+      "img": "systems/tormenta20/icons/magias/enfeiticar.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Ligue quando o par estiver em alcance curto.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av6",
+          "fdtBaile": true
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.*.bonus",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "ZaevBJ2XQLvzRfCp",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!5U70439xzY72QsNN.ZaevBJ2XQLvzRfCp"
+    }
+  ],
+  "_key": "!items!5U70439xzY72QsNN"
+}

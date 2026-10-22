@@ -1,0 +1,141 @@
+{
+  "name": "Salas Mágicas",
+  "img": "systems/tormenta20/icons/magias/santuario.webp",
+  "folder": "w8LnWOMM2AE550Qk",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "formula": "1d4",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Para o jardim interno ou uma sala mágica sorteada. Cada sala dura uma cena ou enquanto houver alguém dentro; cadáveres e objetos trazidos são expulsos para um cômodo adjacente.",
+  "_id": "7fq2NyaF3bmWdgGX",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Ateliê da Inspiração (M1)",
+      "description": "Uma cena aqui: +5 em Atuação e Ofício até o fim do baile.",
+      "_id": "MAhuDvm9YCyZEekx",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!7fq2NyaF3bmWdgGX.MAhuDvm9YCyZEekx"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Calor do Coração (M2)",
+      "description": "Carisma CD 10 para cada um do par: sabem onde o outro está e +2 em perícias em alcance curto.",
+      "_id": "4K38FpJs4NXcjvNo",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!7fq2NyaF3bmWdgGX.4K38FpJs4NXcjvNo"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Ninho de Prazer (M3)",
+      "description": "Quem se atrai mutuamente pode usar, até o fim do baile, um poder ou perícia treinada do outro.",
+      "_id": "TkoF5bS5YRmCmFre",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!7fq2NyaF3bmWdgGX.TkoF5bS5YRmCmFre"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Santuário da Esperança (M4)",
+      "description": "1 hora (uma cena): PM temporários iguais ao nível até o fim do baile.",
+      "_id": "en90bRag7T5w4v52",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!7fq2NyaF3bmWdgGX.en90bRag7T5w4v52"
+    }
+  ],
+  "_key": "!tables!7fq2NyaF3bmWdgGX"
+}
