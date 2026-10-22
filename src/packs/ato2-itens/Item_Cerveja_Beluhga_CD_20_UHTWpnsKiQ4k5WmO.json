@@ -1,0 +1,176 @@
+{
+  "name": "Cerveja Beluhga (CD 20)",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/caneca.webp",
+  "system": {
+    "description": {
+      "value": "<p>Opaca e esbranquiçada, espuma azul no caneco, leve sabor mentolado. Fornece <b>redução de fogo 5</b>.</p><p>Dura <b>1 dia</b>. Uma das cervejas anãs exclusivas da Terceira Opção (acordo de Click com a Guilda dos Cervejeiros de Doherimm).</p><p>Ao beber, <b>Fortitude</b> contra a CD indicada (+5 por dose adicional no mesmo dia). Falhou: <b>embriagado</b> (–2 em testes de Destreza e Carisma); se já estava, <b>bebum</b> (desprevenido, –5); se já estava bebum, <b>inconsciente</b>. Tudo dura até o fim do dia. A macro <i>Beber na Terceira Opção</i> rola e aplica.</p>",
+      "unidentified": ""
+    },
+    "tipo": "food",
+    "qtd": 1,
+    "preco": 45,
+    "espacos": 0.5,
+    "ativacao": {
+      "execucao": "action",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 1,
+      "units": "day",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "fort",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Fortitude CD 20 (+5 por dose extra no dia)"
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "peso": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "subtipo": ""
+  },
+  "folder": "WVG1NfawNE6djWzk",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "_id": "UHTWpnsKiQ4k5WmO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Beluhga: redução de fogo 5",
+      "img": "systems/tormenta20/icons/itens/gerais/caneca.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": 86400,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av4"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.tracos.resistencias.fogo.bonus",
+            "value": "5",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "W39aLQALEUJoECov",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!UHTWpnsKiQ4k5WmO.W39aLQALEUJoECov"
+    }
+  ],
+  "_key": "!items!UHTWpnsKiQ4k5WmO"
+}

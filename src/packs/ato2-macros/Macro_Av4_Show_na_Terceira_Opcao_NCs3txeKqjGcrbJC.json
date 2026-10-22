@@ -1,0 +1,31 @@
+{
+  "name": "Av4 · Show na Terceira Opção",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/alaude-elfico.webp",
+  "folder": "cb4jBkHBzZOmbFwU",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n(async function macroShow() {\n\t\tconst CHAVE = \"fdtShowTerceira\";\n\t\tconst e = foundry.utils.mergeObject({ sucessos: 0, falhas: 0, extra: 0, congelados: [] }, game.user.getFlag(\"world\", CHAVE) ?? {}, { inplace: false });\n\t\tconst PERICIAS = { atua: \"Atuação\", inti: \"Intimidação\", enga: \"Enganação\", dipl: \"Diplomacia\", acro: \"Acrobacia\", guer: \"Guerra\", mist: \"Misticismo\", atle: \"Atletismo\" };\n\t\tconst RESULTADOS = [\n\t\t\t[5, \"O show foi bem-sucedido, mas só.\"],\n\t\t\t[10, \"A plateia paga as bebidas: todos bebem de graça na Terceira Opção pelo resto da noite.\"],\n\t\t\t[15, \"Presentes e dinheiro no palco: o grupo ganha <b>1d100 tibares</b>.\"],\n\t\t\t[20, \"Fãs temporários: todos ganham os benefícios do poder <b>Torcida</b> pelo resto da aventura (com algum NPC inteligente por perto).\"],\n\t\t\t[25, \"Um <b>groupie</b>: escolham um NPC com nome (com aprovação do Mestre); ele é parceiro até o fim da aventura.\"],\n\t\t\t[30, \"<b>1d6 groupies</b>, parceiros até o fim da aventura.\"],\n\t\t\t[Infinity, \"Um <b>fanático</b>: o groupie vira parceiro permanente (só um).\"]\n\t\t];\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Show na Terceira Opção\" },\n\t\t\tcontent: `<p>Sucessos <b>${e.sucessos}/5</b> · falhas <b>${e.falhas}</b> · CD <b>${20 + e.extra}</b>${e.congelados.length ? ` · congelados: ${e.congelados.join(\", \")}` : \"\"}</p>\n\t\t\t\t<div class=\"form-group\"><label>Teste</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"teste\">Teste de um músico</option>\n\t\t\t\t\t<option value=\"frontman\">Último teste (frontman)</option>\n\t\t\t\t\t<option value=\"zerar\">Recomeçar o show</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\">${Object.entries(PERICIAS).map(([k, n]) => `<option value=\"${k}\">${n}</option>`).join(\"\")}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia alternativa sem justificativa (+2 CD daqui em diante)</label><input type=\"checkbox\" name=\"semJustificativa\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Resultado já rolado (opcional)</label><input type=\"number\" name=\"manual\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione quem toca. Numa falha, todos os selecionados perdem 2d8 PM: deixe a banda inteira selecionada e ponha quem testa primeiro na seleção.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Show recomeçado.\");\n\t\t}\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tconst rolls = [];\n\t\tconst k = res.pericia in PERICIAS ? res.pericia : \"atua\";\n\t\tlet total = Number(res.manual);\n\t\tlet quem = \"Resultado informado\";\n\t\tif (res.manual === \"\" || res.manual === undefined) {\n\t\t\tconst a = tokens[0]?.actor;\n\t\t\tif (!a) return ui.notifications.warn(\"Selecione quem faz o teste, ou informe o resultado.\");\n\t\t\tif (e.congelados.includes(tokens[0].name)) return ui.notifications.warn(`${tokens[0].name} congelou e não pode mais testar.`);\n\t\t\tconst r = await new Roll(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\ttotal = r.total;\n\t\t\tquem = tokens[0].name;\n\t\t}\n\t\tconst cd = 20 + e.extra;\n\t\tconst ok = total >= cd;\n\t\tlet html = `<h3>Show na Terceira Opção</h3><p>${quem}: ${PERICIAS[k]} <b>${total}</b> contra CD ${cd}. ${ok ? \"Sucesso!\" : \"Falha.\"}</p>`;\n\t\tif (res.semJustificativa) { e.extra += 2; html += \"<p>Perícia alternativa sem justificativa: a CD sobe +2.</p>\"; }\n\t\tif (ok) e.sucessos += 1;\n\t\telse {\n\t\t\te.falhas += 1;\n\t\t\thtml += \"<p>O nervosismo pesa em todos: <b>2d8 PM</b> cada.</p><ul>\";\n\t\t\tfor (const t of tokens) {\n\t\t\t\tconst r = await new Roll(\"2d8\").evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tconst pm = t.actor.system.attributes?.pm;\n\t\t\t\tconst novo = Math.max(0, (Number(pm?.value) || 0) - r.total);\n\t\t\t\tawait t.actor.update({ \"system.attributes.pm.value\": novo });\n\t\t\t\tlet txt = `${t.name}: –${r.total} PM (fica com ${novo})`;\n\t\t\t\tif (novo === 0 && !e.congelados.includes(t.name)) {\n\t\t\t\t\te.congelados.push(t.name);\n\t\t\t\t\te.extra += 5;\n\t\t\t\t\ttxt += \". <b>Congelou no palco</b>: sai do teste e a CD sobe +5\";\n\t\t\t\t}\n\t\t\t\thtml += `<li>${txt}.</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t}\n\t\tif (res.acao === \"frontman\") {\n\t\t\tif (!ok || e.sucessos < 5) html += `<p><b>O show fracassou.</b> ${e.sucessos < 5 ? `Só ${e.sucessos} de 5 sucessos.` : \"\"}</p>`;\n\t\t\telse {\n\t\t\t\tconst margem = total - cd;\n\t\t\t\tconst ganhos = RESULTADOS.filter(([lim], i) => i === 0 || margem > RESULTADOS[i - 1][0]).map(([, t]) => t);\n\t\t\t\thtml += `<p><b>Show de sucesso</b>, margem de ${margem}. Os efeitos se acumulam:</p><ul>${ganhos.map((g) => `<li>${g}</li>`).join(\"\")}</ul>`;\n\t\t\t}\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else {\n\t\t\thtml += `<p>Sucessos <b>${e.sucessos}/5</b> · falhas ${e.falhas}. ${e.sucessos >= 5 ? \"Hora do frontman fazer o último teste.\" : \"\"}</p>`;\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, e);\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "NCs3txeKqjGcrbJC",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!NCs3txeKqjGcrbJC"
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Benefícios de Lei & Ordem (excesso)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/circulo-da-justica.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "lo-beneficios"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Se a aventura começa sem o contador chegar a 0, cada ponto restante vira um benefício, a qualquer momento:</p><ul><li>Um personagem recupera <b>4d8+4 PV</b> ou <b>2d4 PM</b> (1 ponto).</li><li>Rolar de novo um teste de perícia recém-feito, uma vez por teste (1 ponto).</li><li>O monstro não se move nesta rodada: 2 pontos, +2 a cada uso (2, 4, 6...).</li><li>Valkaria resiste a 1 hexágono destruído a mais antes de a nobreza ir embora: 1 ponto, +1 a cada uso (1, 2, 3...).</li><li>Anular a abominação dos cultistas (1 ponto).</li></ul><p>A macro <i>Caminho de Destruição</i> desconta do ator Lei & Ordem.</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "3f3kt4yHp0H0LP7j",
+  "_id": "08EPmFbZhT8ese7w",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!08EPmFbZhT8ese7w"
+}

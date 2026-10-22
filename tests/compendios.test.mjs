@@ -120,7 +120,11 @@ test("chaves dos efeitos existem na ficha ou são chaves do sistema", async () =
 		}
 	}
 	assert.ok(doSistema.size > 20, "não consegui ler as chaves dos compêndios do sistema");
+	// Chaves com * que o sistema replica para cada perícia/atributo (ActiveEffect._prepareProxyChange).
+	for (const k of ["system.atributos.*.bonus", "system.pericias.*.bonus", "system.pericias.*.condi"]) doSistema.add(k);
 	const pj = await mundo.criarPJ("Teste de chaves", { nivel: 5 });
+	// O campo bonus das perícias é do esquema; na ficha simulada ele só aparece depois de alguma edição.
+	for (const k of Object.keys(pj.system.pericias)) doSistema.add(`system.pericias.${k}.bonus`);
 	const npc = mundo.game.actors.find((a) => a.type === "npc");
 	const ruins = new Set();
 	const conferir = (e, dono) => {

@@ -1,0 +1,150 @@
+{
+  "name": "Bênção da Capela de Marah",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/bencao.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quem reza na capela recebe <b>+1 em Sabedoria e Carisma</b> até o fim do baile, enquanto seguir as obrigações e restrições de Marah.</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "La5i93q0KFp4pJ5a",
+  "_id": "rWxy9kWm30eSX0wy",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Bênção da capela",
+      "img": "systems/tormenta20/icons/magias/bencao.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "+1 em Sabedoria e Carisma enquanto seguir as obrigações de Marah.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av6",
+          "fdtBaile": true
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.atributos.sab.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.atributos.car.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "WFe5s3ZrHiI5aUDL",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!rWxy9kWm30eSX0wy.WFe5s3ZrHiI5aUDL"
+    }
+  ],
+  "_key": "!items!rWxy9kWm30eSX0wy"
+}

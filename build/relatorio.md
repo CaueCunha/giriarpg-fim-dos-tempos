@@ -2,16 +2,18 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 123 documento(s), 8 pasta(s)
-- `ato1-itens`: 87 documento(s), 9 pasta(s)
-- `ato1-diarios`: 8 documento(s), 8 pasta(s)
-- `ato1-tabelas`: 13 documento(s), 6 pasta(s)
-- `ato1-macros`: 44 documento(s), 8 pasta(s)
+- `ato1-ameacas`: 139 documento(s), 9 pasta(s)
+- `ato1-itens`: 90 documento(s), 10 pasta(s)
+- `ato1-diarios`: 9 documento(s), 9 pasta(s)
+- `ato1-tabelas`: 15 documento(s), 7 pasta(s)
+- `ato1-macros`: 49 documento(s), 9 pasta(s)
 
-### Ligações com o sistema (120)
+### Ligações com o sistema (122)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
+| Orc Canibal | Clava | arma | ficha do livro + origem no sistema |
+| Aharadak, Líder dos Orcs Canibais | Clava | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Mordida | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Drenar Sangue | poder | link para o sistema |
@@ -138,13 +140,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 25 documento(s), 3 pasta(s)
-- `ato2-itens`: 14 documento(s), 3 pasta(s)
-- `ato2-diarios`: 3 documento(s), 3 pasta(s)
-- `ato2-tabelas`: 5 documento(s), 3 pasta(s)
-- `ato2-macros`: 12 documento(s), 3 pasta(s)
+- `ato2-ameacas`: 92 documento(s), 8 pasta(s)
+- `ato2-itens`: 75 documento(s), 8 pasta(s)
+- `ato2-diarios`: 8 documento(s), 8 pasta(s)
+- `ato2-tabelas`: 16 documento(s), 8 pasta(s)
+- `ato2-macros`: 43 documento(s), 8 pasta(s)
 
-### Ligações com o sistema (71)
+### Ligações com o sistema (145)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -219,6 +221,80 @@
 | Grifo dos Cavaleiros | Mordida | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | Garras | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | ovo de grifo | tesouro | ficha do livro + origem no sistema |
+| Prisioneiro Bandido | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Evasão | poder | ficha do livro + origem no sistema |
+| Turba de Prisioneiros | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Nerisha | Aparência Inofensiva | poder | ficha do livro + origem no sistema |
+| Nerisha | Adaga Mental | magia | magia do sistema + ficha do NPC |
+| Nerisha | Aparência Perfeita | magia | magia do sistema + ficha do NPC |
+| Nerisha | Enfeitiçar | magia | magia do sistema + ficha do NPC |
+| Nerisha | Escuridão | magia | magia do sistema + ficha do NPC |
+| Nerisha | Erupção Glacial | magia | magia do sistema + ficha do NPC |
+| Rakkas | Mordida | arma | ficha do livro + origem no sistema |
+| Rakkas | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Rakkas | Mau Cheiro | poder | ficha do livro + origem no sistema |
+| Rakkas | Sangue Frio | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Desarmado (×2) | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Chifres | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Investida Poderosa | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Jaydill | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Jaydill | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Assassinar | poder | ficha do livro + origem no sistema |
+| Jaydill | Amedrontar | magia | magia do sistema + ficha do NPC |
+| Jaydill | Sono | magia | magia do sistema + ficha do NPC |
+| Jaydill | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Engolir | poder | ficha do livro + origem no sistema |
+| Carrasco de Lena (tormento de Rylonn) | Mordida | arma | ficha do livro + origem no sistema |
+| Cocatriz-Real (tormento de Bdun) | Evasão | poder | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Salassan, cabeça de dragão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Grumk, cabeça de leão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Marrada (Hans, cabeça de bode) | arma | link para o sistema |
+| Quimera (tormento de Grisgemm) | Voo | poder | link para o sistema |
+| Dragão do Esgoto | Mordida | arma | ficha do livro + origem no sistema |
+| Dragão do Esgoto | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Enxame de Dragões do Esgoto | Enxame | poder | link para o sistema |
+| Enxame de Dragões do Esgoto Alfa | Enxame | poder | link para o sistema |
+| Khenzarr, o Biomante | Raio Arcano | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Magia Acelerada | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Fluxo de Mana | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Natureza Vegetal | poder | link para o sistema |
+| Khenzarr, o Biomante | Armadura Arcana | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Desespero Esmagador | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Ferver Sangue | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Imobilizar | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Metamorfose | magia | magia do sistema + ficha do NPC |
+| Lakshrimi, Replicoide Duquesa Alfraye | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Lakshrimi, Replicoide Duquesa Alfraye | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Axel | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Axel | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Ghorskander | Engenhosidade | poder | ficha do livro + origem no sistema |
+| Ghorskander | Ossos Frágeis | poder | ficha do livro + origem no sistema |
+| Ghorskander | Evasão | poder | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Pancada (×2) | arma | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Fúria | poder | ficha do livro + origem no sistema |
+| (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
+| (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 

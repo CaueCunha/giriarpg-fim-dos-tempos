@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Esgoto (fedor e infecção)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp",
+  "folder": "sUDN5Vw4Z42gQjFf",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(async function macroEsgoto() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Esgoto de Valkaria\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"entrar\">Entrar no esgoto (fedor)</option>\n\t\t\t\t\t<option value=\"lenco\">Entrar com lenço no nariz</option>\n\t\t\t\t\t<option value=\"sair\">Sair (1 hora depois, o fedor passa)</option>\n\t\t\t\t\t<option value=\"infeccao\">Fim do dia: Fortitude contra infecção</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione os personagens.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione os personagens.\");\n\t\tconst ehFedor = (e) => e.getFlag(\"world\", \"fdtFedor\");\n\t\tconst linhas = [];\n\t\tconst rolls = [];\n\t\tfor (const t of tokens) {\n\t\t\tconst a = t.actor;\n\t\t\tconst faro = (a.system.attributes?.sentidos?.value ?? []).includes(\"faro\");\n\t\t\tif (res.acao === \"infeccao\") {\n\t\t\t\tconst pv = a.system.attributes.pv;\n\t\t\t\tconst ferido = pv.value < pv.max;\n\t\t\t\tconst r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}${ferido ? \" - 5\" : \"\"}`).evaluate();\n\t\t\t\trolls.push(r);\n\t\t\t\tlinhas.push(`${t.name}: Fortitude ${r.total}${ferido ? \" (ferido, –5)\" : \"\"} contra CD 15: ${r.total >= 15 ? \"escapou.\" : \"<b>contraiu infecção do esgoto</b> (Tormenta20, p. 318).\"}`);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tconst velhos = a.effects.filter(ehFedor);\n\t\t\tif (velhos.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", velhos.map((e) => e.id));\n\t\t\tif (res.acao === \"sair\") {\n\t\t\t\tif (a.statuses?.has(\"alquebrado\")) await a.toggleStatusEffect(\"alquebrado\", { active: false });\n\t\t\t\tlinhas.push(`${t.name}: sem fedor.`);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tconst lenco = res.acao === \"lenco\";\n\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [{\n\t\t\t\tname: lenco ? \"Fedor do esgoto com lenço (–1)\" : \"Fedor do esgoto (–2)\",\n\t\t\t\timg: \"systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp\",\n\t\t\t\ttype: \"base\",\n\t\t\t\tflags: { world: { fdtFedor: true } },\n\t\t\t\tsystem: { changes: [{ key: \"system.pericias.*.bonus\", value: lenco ? \"-1\" : \"-2\", type: \"add\", phase: \"initial\", priority: null }] }\n\t\t\t}]);\n\t\t\tif (faro && !lenco && !a.statuses?.has(\"alquebrado\")) await a.toggleStatusEffect(\"alquebrado\", { active: true });\n\t\t\tlinhas.push(`${t.name}: ${lenco ? \"–1\" : \"–2\"} em perícias${faro && !lenco ? \" e <b>alquebrado</b> (faro)\" : \"\"}.`);\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Esgoto de Valkaria</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join(\"\")}</ul>`, rolls });\n\t})();",
+  "_id": "YBQbw7jYdS0xNNFg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!YBQbw7jYdS0xNNFg"
+}

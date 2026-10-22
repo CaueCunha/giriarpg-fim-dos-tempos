@@ -1,0 +1,213 @@
+{
+  "name": "Fedor do Esgoto",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quem circula pelo esgoto sofre <b>–2 em testes de perícia</b> (efeito de metabolismo). Com <b>faro</b>, também fica <b>alquebrado</b>. Some depois de 1 hora fora do esgoto.</p><p>Um <b>lenço</b> ou proteção sobre o nariz (item vestido) reduz para –1 e evita o alquebrado. A macro <i>Esgoto</i> liga e desliga.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "g8alCbHMMRvYFN6B",
+  "_id": "HibSfKyKAy3YftXU",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Fedor do esgoto (–2)",
+      "img": "systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av5"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.*.bonus",
+            "value": "-2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "L9UpvKM0wzgtNBXt",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!HibSfKyKAy3YftXU.L9UpvKM0wzgtNBXt"
+    },
+    {
+      "name": "Fedor do esgoto com lenço (–1)",
+      "img": "systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av5"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.*.bonus",
+            "value": "-1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "OKRCNgyEQ8uc3wdo",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!HibSfKyKAy3YftXU.OKRCNgyEQ8uc3wdo"
+    }
+  ],
+  "_key": "!items!HibSfKyKAy3YftXU"
+}

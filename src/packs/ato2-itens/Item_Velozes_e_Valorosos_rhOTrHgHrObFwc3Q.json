@@ -1,0 +1,71 @@
+{
+  "name": "Velozes e Valorosos",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/velocidade.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "velozes"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quem tem acesso <b>o tempo todo</b> a um meio rápido de atravessar a capital avança um hexágono adicional numa única rodada (sem situação nesse hexágono). Não sugira: deixe os jogadores lembrarem.</p><ul><li>Carroça de Lagarto Interno.</li><li>Amizade com Wynstar (o unicórnio teletransporta o grupo).</li><li>Justine eleita (telhados sem sapé mais acessíveis).</li><li>Amizade com o Avatar da Cidade.</li><li>Amizade com Bebê Corisco.</li><li>Confiança de Janara (organiza oficiais e aventureiros).</li><li>Aliança com o Povo dos Túneis.</li><li>Amizade com Alfraye (o dinheiro compra tudo).</li></ul>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "3f3kt4yHp0H0LP7j",
+  "_id": "rhOTrHgHrObFwc3Q",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!rhOTrHgHrObFwc3Q"
+}

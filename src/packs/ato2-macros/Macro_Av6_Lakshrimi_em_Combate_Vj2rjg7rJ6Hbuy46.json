@@ -1,0 +1,31 @@
+{
+  "name": "Av6 · Lakshrimi em Combate",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/gritador.webp",
+  "folder": "jbCBkJ95KRCErcBX",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n(async function macroLakshrimi() {\n\t\tconst NOMES = { drekaag: \"Drekaag\", kalyon: \"Kalyon\", angeliese: \"Angeliese\", archibald: \"Archibald\", melynna: \"Melynna\", loranth: \"Loranth\", axel: \"Axel\", irludde: \"Irludde\" };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Lakshrimi em Combate\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"gravacao\">Gravação Estridente nos alvos (Vontade CD 32)</option>\n\t\t\t\t\t<option value=\"convidar\">Convidar Amigos: replicoides disponíveis</option>\n\t\t\t\t\t<option value=\"explodir\">Autodestruição</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Gravação: mire as criaturas inteligentes a até 9m. Na primeira vez que Lakshrimi sofre dano.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rep = (k) => game.actors.find((x) => x.getFlag(\"world\", \"fdt\") === \"a2av6\" && x.getFlag(\"world\", \"fdtRole\") === `rep-${k}`);\n\t\tif (res.acao === \"convidar\") {\n\t\t\tconst mortos = (game.user.getFlag(\"world\", \"fdtBaile\")?.mortos ?? []).filter((k) => k in NOMES);\n\t\t\tconst naCena = new Set((canvas.scene?.tokens ?? []).map((t) => t.actorId));\n\t\t\tconst lista = mortos.map((k) => rep(k)).filter(Boolean).map((a) => `<li>@UUID[${a.uuid}]{${a.name}}${naCena.has(a.id) ? \" (já na cena)\" : \"\"}</li>`);\n\t\t\treturn ChatMessage.create({\n\t\t\t\twhisper: ChatMessage.getWhisperRecipients(\"GM\"),\n\t\t\t\tcontent: `<h3>Convidar Amigos</h3><p>Ação completa, recarga (movimento). O replicoide surge a até 9m e ataca a partir da próxima rodada. Arraste um para a cena:</p>${lista.length ? `<ul>${lista.join(\"\")}</ul>` : \"<p>Nenhum convidado foi substituído: não há replicoides para chamar.</p>\"}`\n\t\t\t});\n\t\t}\n\t\tif (res.acao === \"explodir\") {\n\t\t\treturn ChatMessage.create({ content: \"<h3>Autodestruição</h3><p>Capturada ou abaixo de 0 PV, Lakshrimi explode para proteger os segredos do Dr. Vesper. Sobram só pedaços do corpo metálico e fragmentos do cristal rosado.</p>\" });\n\t\t}\n\t\tconst alvos = [...game.user.targets].filter((t) => t.actor);\n\t\tif (!alvos.length) return ui.notifications.warn(\"Mire as criaturas atingidas pelo grito.\");\n\t\tconst rolls = [];\n\t\tconst dano = await new Roll(\"6d12\").evaluate();\n\t\trolls.push(dano);\n\t\tlet html = `<h3>Gravação Estridente</h3><p>Grito de <b>${dano.total}</b> de dano psíquico num raio de 9m.</p><ul>`;\n\t\tfor (const t of alvos) {\n\t\t\tconst v = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.vont?.value) || 0}`).evaluate();\n\t\t\trolls.push(v);\n\t\t\tconst ok = v.total >= 32;\n\t\t\tconst valor = ok ? Math.floor(dano.total / 2) : dano.total;\n\t\t\tconst r = await new Roll(`${valor}[psiquico]`).evaluate();\n\t\t\ttry { await t.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }\n\t\t\tif (!ok && !t.actor.statuses?.has(\"atordoado\")) await t.actor.toggleStatusEffect(\"atordoado\", { active: true });\n\t\t\thtml += `<li>${t.name}: Vontade ${v.total}. ${ok ? `Metade (${valor}).` : `${valor} e <b>atordoado</b> por 1 rodada.`}</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "Vj2rjg7rJ6Hbuy46",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Vj2rjg7rJ6Hbuy46"
+}

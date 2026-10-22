@@ -4,8 +4,8 @@ Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do F
 
 | Compêndios | Ameaças e NPCs | Itens | Diários | Tabelas | Macros |
 |---|---:|---:|---:|---:|---:|
-| **Ato 1 · Colinas Centrais** (Av2 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 123 | 87 | 8 | 13 | 44 |
-| **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora) | 25 | 14 | 3 | 5 | 12 |
+| **Ato 1 · Colinas Centrais** (Av1 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 139 | 90 | 9 | 15 | 49 |
+| **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora, Av3 Fuga da Rocha Cinzenta, Av4 Massacre na Taverna dos Maníacos, Av5 Túneis Famintos, Av6 Baile de Debutantes Sangrento, Av7 O Ataque do Mecano-Lagarto-Terror) | 92 | 75 | 8 | 16 | 43 |
 | **Campanha** (regras de grupo, Poderes de Grupo, utilidades) | | 23 | 1 | | 7 |
 
 Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.
@@ -75,7 +75,7 @@ npm test
 
 Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/README.md`](tools/sim/README.md)). A simulação usa os modelos de dados reais do Tormenta20, então cada documento é validado e limpo como o Foundry faria. Um campo que o Foundry descartaria em silêncio faz o teste falhar. Os testes cobrem:
 
-- **Macros (62):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
+- **Macros (98):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
 - **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar.
 - **Compêndios:**
   - formato do `foundryvtt-cli` e IDs únicos;
@@ -113,7 +113,7 @@ Para incluir uma aventura nova:
 2. Acrescente o nome dele no ato certo em [`tools/conteudo.mjs`](tools/conteudo.mjs).
 3. Rode `npm run build` e `npm test`.
 
-Ainda não têm gerador: a Av1 do Ato 1 (Tragam-me a Cabeça de Bartram Zonnar) e as Av3 a Av7 do Ato 2.
+Todas as aventuras principais já têm gerador. Ainda não têm: as Mini-Aventuras 1 e 2 (Ruas de Cobiça e Irmandade Máxima) e O Labirinto Liberto, do Ato 2.
 
 ### Versões
 
