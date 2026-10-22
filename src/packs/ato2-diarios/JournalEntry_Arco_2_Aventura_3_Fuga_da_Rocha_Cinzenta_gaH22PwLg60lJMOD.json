@@ -1,0 +1,371 @@
+{
+  "name": "Arco 2 · Aventura 3 · Fuga da Rocha Cinzenta",
+  "folder": "dOnTNox1yWLTDNFn",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "_id": "gaH22PwLg60lJMOD",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Nível 8. Um detetive infiltrado, Farhuk, está preso na Rocha Cinzenta como \"Majid\", conselheiro do Benfeitor, um minotauro da Companhia dos Irmãos que domina a prisão. Os heróis entram (provavelmente como presos), descobrem os cristais rosados de Ghorskander e tiram Farhuk de lá. Clima de filme de prisão.</p>\n\t\t\t\t<h2>Caixa de areia</h2>\n\t\t\t\t<p>Não há sequência de eventos nem plano dos vilões: eles só reagem. Trate a Rocha como uma <b>masmorra social</b> (todos os NPCs estão presos lá dentro, com relações descritas) e também como uma masmorra física (arquitetura, perigos, armadilhas). Se o plano dos jogadores pegar você de surpresa, peça um tempo e um resumo por escrito do plano.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li><b>Fase 0 · Normalidade:</b> Finley importuna Tullia Blasanov com perguntas sobre a família criminosa dela. Depois, a Xerife Mathilda e o caso secreto (@UUID[Item.E0BcuACf8ijLLk56]{Mensagem de Farhuk (trapo)}).</li>\n\t\t\t\t\t<li><b>Fase 1 · Entrando na Prisão:</b> as portas mágicas, o Pequeno Bart e @UUID[Actor.apmFmAPnDEK41DBw]{Bartolakk}.</li>\n\t\t\t\t\t<li><b>Fase 2 · Atrás das Grades:</b> o cotidiano, os locais e as personalidades, o feudo do Benfeitor e a cirurgia.</li>\n\t\t\t\t\t<li><b>Fase 3 · Fuga Impossível:</b> tomada de poder, agentes duplos, infiltração, ataque frontal, distração ou fuga ousada.</li>\n\t\t\t\t\t<li><b>Fase 4 · Desfecho:</b> Farhuk volta à Guarda; provas e pagamento.</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.7jXEk8QOUdAvgd67]{Av3 · Rocha Cinzenta (entrar/sair)}: zera os PM e liga as limitações nos selecionados ao entrar; desliga ao sair; marca quem tem implante.</li><li>@UUID[Macro.WqgmIG3vqQPbzVLK]{Av3 · Cirurgia de Tryphne}: os testes de Tryphne e a Fortitude do paciente, com PV, condições e o implante aplicados.</li><li>@UUID[Macro.igBDGWHnrzy7QTDa]{Av3 · Corrida para a Liberdade}: o teste estendido de fuga (CD 20 + Prontidão, 7 sucessos), um evento por rodada.</li><li>@UUID[Macro.EvgYD7oJcrf442gU]{Av3 · Escavando um Túnel}: uma semana de escavação por clique, com ocultação, imprevistos e desabamento.</li><li>@UUID[Macro.v23n5jABIaUgPvX3]{Av3 · Amigos no Corredor}: os 2d6 da plateia quando um herói erra um prisioneiro (uma vez por rodada).</li><li>@UUID[Macro.HM56nBU94IHtHHPb]{Av3 · Prisioneiro Improvisado}: arquétipo e nome sorteados de @UUID[RollTable.sXR30aP4EqVi361q]{Arquétipos e Nomes de Prisioneiros}.</li></ul>\n\t\t\t\t<p>Lei &amp; Ordem: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "h9oajznkFoySLAt4",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.h9oajznkFoySLAt4"
+    },
+    {
+      "name": "Fases 0 e 1 · O Caso e Bartolakk",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h3>O caso secreto</h3>\n\t\t\t\t<p><i>\"Querem saber do caso secreto? (...) uma vez que ouvirem, não terão escolha. Não podem dar para trás, não podem contar para ninguém e não podem se demorar.\"</i> Ninguém pode saber, nem outros detetives. Se vazar que aventureiros com a descrição do grupo estão nisso, ninguém mais poderá tentar.</p>\n\t\t\t\t<p>Farhuk, detetive qareen, infiltrou-se anos atrás na equipe do minotauro Khabrias Minareus. Numa batida da Guarda a um armazém, sumiu. Há um mês chegou a mensagem num trapo, trazida por um pássaro encantado (e magia não funciona na Rocha!). Mathilda nem o conhece pessoalmente. Recusou detetives conhecidos da irmandade; o caso exige novatos. Confia no diretor, o golem Bartolakk, incapaz de trair a função. A missão: entrar e tirar Farhuk de lá.</p>\n\t\t\t\t<h3>A Rocha Cinzenta</h3>\n\t\t\t\t<p>Bloco de pedra gigantesco no meio de Valkaria, sem portas ou janelas aparentes; vizinhos vivem normalmente em volta. Portas mágicas integradas à parede detectam a mente de quem chega. Corredor de entrada escuro com <b>quatro golens de pedra</b> (Bartolakk vê pelos olhos deles); duas portas que nunca abrem juntas. O Pequeno Bart, golem diminuto, leva à sala do diretor: mesa intacta, seis cadeiras sem uso, quatro luzes e oito espelhos que só mostram cinza.</p>\n\t\t\t\t<h3>O que Bartolakk sabe</h3>\n\t\t\t\t<ul><li>Não conhece nenhum Farhuk.</li><li>A Companhia dos Irmãos tem um irmão com tanta autoridade quanto ele: Khabrias Minareus, \"o Benfeitor\", que de algum jeito burlou a segurança.</li><li>Dentro da Rocha, \"todos são como aldeões\"; mesmo assim, o Benfeitor e seus capangas têm poderes. A Academia Arcana não pode se dedicar ao problema.</li><li>O principal conselheiro do Benfeitor é um qareen chamado Majid.</li><li>Preso num dilema: mandar um exército seria matar guardas (segunda diretriz); um acordo é ilegal (primeira); pedir para ser desativado fere a terceira; não pode ser reprogramado.</li><li>Precisa de aventureiros. Sabe que a missão não é derrubar o Benfeitor, mas não nega que seria o ideal.</li></ul>\n\t\t\t\t<p><b>Ponto de entrada:</b> com a ordem de uma Xerife, Bartolakk pode prendê-los legalmente, em duplas por cela (sorteie um companheiro de cela em @UUID[RollTable.sXR30aP4EqVi361q]{Arquétipos e Nomes de Prisioneiros} se o grupo for ímpar). Planos ilegais precisam ser escondidos dele. Enganar o diretor (como na mesa original) é possível, mas não pode ser fácil.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "mY8jrtXMKgHBRCtL",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.mY8jrtXMKgHBRCtL"
+    },
+    {
+      "name": "Limitações da Rocha Cinzenta",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<ul><li>Nenhuma forma de magia: habilidades mágicas param, itens mágicos perdem os poderes.</li><li>Personagens perdem todos os PM e não os recuperam de forma alguma (nem descansando).</li><li>Todo equipamento é retirado (exceto de quem entrou escondido). Equipamento que faz parte do corpo para de funcionar.</li><li>Só deslocamento normal: asas não batem direito, teletransporte e movimentos especiais param.</li><li>Todas as outras habilidades param, exceto modificadores permanentes de atributos ou perícias, habilidades de tamanho e fraquezas (como Medo de Altura).</li></ul>\n\t\t\t\t<h3>Mas como...?</h3>\n\t\t\t\t<p>Todos podem existir na prisão, mas ninguém tem vantagem nela. Goblins continuam Pequenos, mas sem escalada; golens não desligam, mas perdem imunidade a algum elemento; lefou continuam macabros, sem poderes da Tormenta. <b>Se uma habilidade burla a prisão, ela não funciona.</b> Gênios a projetaram e as brechas foram corrigidas há muito tempo.</p>\n\t\t\t\t<p>Use @UUID[Macro.7jXEk8QOUdAvgd67]{Av3 · Rocha Cinzenta (entrar/sair)} (efeito @UUID[Item.nXKJhs1I9A6e05TB]{Limitações da Rocha Cinzenta}). Personagens sociais ou de perícias brilham aqui.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "8sjXsQoQhTELHIAF",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.8sjXsQoQhTELHIAF"
+    },
+    {
+      "name": "Fase 2 · Atrás das Grades",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Armas e armaduras entregues, só a roupa do corpo. Corredores com portas que abrem e fecham em sincronia. Um mezanino de celas, provocações e ameaças. Horários de refeição, pátio e trabalho recitados sem emoção. As portas se fecham. <b>Vocês estão presos.</b></p>\n\t\t\t\t<h3>O cotidiano</h3>\n\t\t\t\t<p>A Rocha quer reabilitar: pagar a dívida, aprender um ofício, voltar ao mundo. Ao nascer do sol, carcereiros acendem tochas (escuridão total seria cruel demais). Mingau no salão comunal; quem tem o privilégio vai trabalhar (oficinas, copistas, curtume), os outros voltam às celas. Almoço e jantar iguais. <b>À tarde, o pátio:</b> contrabando, tentativas de assassinato, lutas, acordos, vinganças. O Benfeitor e os capangas nunca são trancados, comem banquetes e fazem corte no pátio. Desafetos ficam presos o dia todo, sem comer e sem sol, ou vão para lugares \"especiais\".</p>\n\t\t\t\t<h3>Locais e personalidades</h3>\n\t\t\t\t<ul><li><b>Forja</b> (uns 10 presos de confiança): <b>Cremildhe</b>, humana, a ferreira mais experiente, soturna, matou duas pessoas numa briga (@UUID[Item.t8fVctAc6twSjUBG]{Parceiro: Cremildhe (Fortona veterana)}); <b>Imnek</b>, goblin inventor de uma quadrilha de assaltos, louco por engenhocas, aliado natural com os implantes (@UUID[Item.9RWaz0GnUssEzvb8]{Parceiro: Imnek (Destruidor iniciante, ácido)}).</li><li><b>Biblioteca</b>: <b>Borislav</b>, osteon executado por um crime que não lembra, cidadão-modelo que não quer sair (@UUID[Item.0VKP8fj2FRHeCzjK]{Parceiro: Borislav (Ajudante veterano)}); <b>Sakrizi</b>, medusa ladra de livros, presa pelo grimório de um arquimago (@UUID[Item.vqwAzXgPzyJ6KzL4]{Parceiro: Sakrizi (Ajudante veterana)}).</li><li><b>Curtume, lavanderia, limpeza e serviços gerais</b> (vigilância constante, \"testes\"): <b>Jaydill</b>, tritão piadista e assassino serial (@UUID[Actor.b6QQZaULRIpAbXIy]{Jaydill}; @UUID[Item.HYEHV71tssFrJCAN]{Parceiro: Jaydill (Assassino mestre)}).</li><li><b>Cozinha</b> (só presos-modelo, \"gente com quem ninguém mexe\"): <b>Yngri</b>, anã incriminada por desbaratar um culto, a presa de maior confiança, cozinha com a força do ódio (@UUID[Item.laQi11sYtWWYBJfZ]{Parceiro: Yngri (Assassina veterana)}); <b>Azure</b>, pirata do Mar Negro, cozinheiro pessoal do Benfeitor, protegido por ele.</li><li><b>Ala de Contenção Demoníaca</b>: improvisada às pressas, pouco confiável; o número de presos varia sem explicação. Ninguém entra.</li><li><b>Ala de Contenção de Mortos-Vivos</b>: só <b>Angis</b>, fantasma sem memória que atormentava vítimas até a morte. Um advogado o tornou \"cidadão\". Quer liberdade para escolher a próxima vítima.</li></ul>\n\t\t\t\t<p>Outros clichês de filme de prisão existem: use @UUID[Macro.HM56nBU94IHtHHPb]{Av3 · Prisioneiro Improvisado}. Lembre que a maioria cometeu crimes sérios: podem virar rivais de verdade.</p>\n\t\t\t\t<h3>Encontros prontos</h3>\n\t\t\t\t<p>@UUID[Actor.kJ5z4AlqhlIqJhKM]{Prisioneiro Bandido}, @UUID[Actor.WtFSg5WTL9KYIP5l]{Carcereiro Comum}, @UUID[Actor.waZlf8mzdswEGv8o]{Chefe do Corredor}, @UUID[Actor.JRA2GCtRhmWxQXEF]{Turba de Prisioneiros}. Numa briga com plateia, @UUID[Macro.v23n5jABIaUgPvX3]{Av3 · Amigos no Corredor}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "2vNBcA9Ht02VMukw",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.2vNBcA9Ht02VMukw"
+    },
+    {
+      "name": "O Feudo do Benfeitor",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Uma ala grande com a cela expandida do minotauro (várias celas viraram um salão) e os domínios dos capangas, guardada por presos e carcereiros. Detentos vêm pedir favores e entregar comida, armas, joias, dinheiro e ferramentas. Não há saída para fora daqui. Destaques: a <b>sala de cirurgia</b> e a sala de interrogatório.</p>\n\t\t\t\t<ul><li>@UUID[Actor.dBEVuWzwXIkFJZwA]{O Benfeitor (Khabrias Minareus)}: o chefe. Desconfiado, cruel, implacável; um ser vivo, apesar de tudo.</li><li>@UUID[Actor.NXEwvDB1oyiupy9Q]{Carcereiro Stoke}: o carcereiro corrupto que traz o contrabando e os cristais.</li><li>@UUID[Actor.p3c2DRnxI05VTNXn]{Farhuk (\"Majid\")}: o conselheiro, sempre vigiado.</li><li>@UUID[Actor.54Qs1y8ovCSTBaZ9]{Tryphne}: a clériga que opera. Trágica, não maligna.</li><li>@UUID[Actor.d2ygGXL5ljCf59bt]{Nerisha}: a sulfure nascida na Rocha, que controla a entrada e saída de produtos e poderia desenhar um mapa.</li><li>@UUID[Actor.SXyx4iBMjrKDPpNe]{Rakkas}: o troglodita mais durão da prisão.</li></ul>\n\t\t\t\t<h3>O interesse de Ghorskander</h3>\n\t\t\t\t<p>Por que o oficial médico da Roca se arriscaria por uma clériga da irmandade? Os jogadores devem achar desproporcional. Os presos são cobaias: quando Valkaria estiver cheia de mensagens subliminares, os aventureiros perderão habilidades, mas os portadores do implante não. Tudo para criar pânico e ganhar o apoio dos nobres que não foram trocados por golens.</p>\n\t\t\t\t<h3>A sala de cirurgia</h3>\n\t\t\t\t<p>Depósito das pistas que você quiser dar: diagramas de origem kliren, o símbolo do relógio, trechos do Diário Científico de Ghorskander (@UUID[Item.u0n2ugejXwYmTESG]{Pergaminhos da Cirurgia}).</p>\n\t\t\t\t<h3>Contrabando</h3>\n\t\t\t\t<p>Stoke tem contato com criminosos lá fora e, às vezes, com a própria Companhia: recebe os cristais de gente de confiança de \"Paollus\" (o construto no lugar dele). Seguir Stoke pode mostrar uma taverna da irmandade, um informante, ou Paollus e Torgo na entrega.</p>\n\t\t\t\t<h3>O subterrâneo</h3>\n\t\t\t\t<p>Sob a Rocha e dentro das muralhas, esgotos, galerias, túneis de presos e ruínas se interligaram num pequeno labirinto: espaço de masmorra (ironia de Hyninn). Armadilhas aleatórias (solo que cede, ácido gotejando, alvenaria \"prestes a cair\") e @UUID[Actor.tqATCP5qQAy0QxMQ]{Dejeto Vivo}. Visão na penumbra e no escuro não funcionam aqui.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "rXiJZ8NJx35QWXFl",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.rXiJZ8NJx35QWXFl"
+    },
+    {
+      "name": "A Cirurgia",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Quem se infiltra no bando do Benfeitor quase certamente passa por ela; muitos grupos vão querer, para recuperar as habilidades. Use @UUID[Macro.WqgmIG3vqQPbzVLK]{Av3 · Cirurgia de Tryphne}.</p>\n\t\t\t\t<h3>Testes de Tryphne</h3>\n\t\t\t\t<ul><li><b>Religião CD 15</b> (+7): passou, ela descansou e rezou, PM completos. Falhou, poucos PM: os resultados de Fortitude do paciente caem uma categoria.</li><li><b>Cura CD 25</b> (+12): passou, o paciente tem acesso às habilidades dentro da Rocha. Falhou, a cirurgia fracassa e precisa de nova tentativa.</li></ul>\n\t\t\t\t<h3>Teste do aventureiro: Fortitude CD 20</h3>\n\t\t\t\t<ul><li><b>1 natural:</b> –1 PV, inconsciente e sangrando. Pode morrer se não for socorrido; Tryphne não tem mais PM para impedir.</li><li><b>Falha:</b> acorda com metade dos PV (só voltam com descanso natural) e fica debilitado até recuperá-los.</li><li><b>Sucesso:</b> acorda com metade dos PV (só voltam com descanso natural).</li><li><b>20 natural:</b> acorda sem nenhum efeito negativo.</li></ul>\n\t\t\t\t<p>Golens, osteon e outros sem fisiologia normal mantêm as imunidades que a Rocha não bloqueou.</p>\n\t\t\t\t<h3>Relato da mesa original</h3>\n\t\t\t\t<p>Os jogadores morreram de medo da palavra \"cirurgia\", e o mestre correspondeu: acesso pleno a poderes, mas pesadelos (Vontade CD 20 para descansar; senão, descanso ruim) e um número limitado de cristais. Para compensar, o Benfeitor não usou tudo no combate final (atacado comendo, estava sem o charuto). Opção na macro.</p>\n\t\t\t\t<p>Item: @UUID[Item.W935kDUWjJifuT2H]{Implante de Cristal Rosado}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "kBXygZnNfajz9Jio",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.kBXygZnNfajz9Jio"
+    },
+    {
+      "name": "Fase 3 · Fuga Impossível",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Quase todo grupo segue um destes planos. Se não, peça um tempo.</p>\n\t\t\t\t<h3>Tomada de poder</h3>\n\t\t\t\t<ul><li><b>Intimidação:</b> ser visto vencendo (Rakkas na frente de todos é o óbvio). Carcereiros, honestos e corruptos, tentam parar a briga.</li><li><b>Vantagens:</b> oferecer algo além de medo: contrabando, contatos, tirar um NPC das garras do Benfeitor, histórias e promessas.</li><li><b>Aliados:</b> alguém que conheça a Rocha, alguém ligado aos carcereiros, alguém que conheça as estratégias do Benfeitor e alguém que organize os presos (heróis podem cumprir alguns papéis).</li><li><b>Habilidades especiais:</b> o caminho evidente é a redenção de Tryphne.</li><li><b>Discrição</b> e <b>oportunidade:</b> tudo às escondidas, depois um ataque rápido e devastador. Com a facção no poder, Farhuk pede testemunhas de fora e Bartolakk aceita.</li></ul>\n\t\t\t\t<h3>Agentes duplos</h3>\n\t\t\t\t<p>Audiência é fácil; o difícil é ter algo a oferecer. Ser melhor que um capanga (vencer Rakkas, cozinhar melhor que Azure, conhecer a prisão melhor que Nerisha) ou oferecer algo novo (segredos da Companhia ou da Guarda, ciência, conhecimento antigo, entretenimento). Ou conquistar a amizade dele. Para não acabar sem ação: Nerisha ou Stoke desconfia e, na hora de levar Farhuk ao diretor, o Benfeitor ataca; ou Stoke barra o caminho.</p>\n\t\t\t\t<h3>Mas e Farhuk?</h3>\n\t\t\t\t<p>Só a vigilância do Benfeitor impede Farhuk de pedir testemunhas. Ele nunca está sozinho: com o minotauro, ou cercado de capangas e carcereiros corruptos que denunciam qualquer contato com o diretor. Derrotar um vigia não basta.</p>\n\t\t\t\t<h3>Infiltração</h3>\n\t\t\t\t<p>Exige um mapa (@UUID[Item.QnN7TBLMiak1o88X]{Mapa da Rocha Cinzenta}); depois, um teste por local. Furtividade sozinha não extrai Farhuk: é preciso se revelar a ele e usar outro plano.</p>\n\t\t\t\t<h3>Ataque frontal</h3>\n\t\t\t\t<p>Sem poderes, é suicídio: deixe claro. Os sobreviventes viram prisioneiros do Benfeitor, que os interroga e mata. Um grupo com sorte pode concentrar tudo no minotauro; os capangas querem proteger o chefe (agarrar, desarmar, conter). Com ele morto, Intimidação pode dispersar a facção. Depois de recuperar equipamento e habilidades, atacar com surpresa é ótima ideia: a prisão vira um caos.</p>\n\t\t\t\t<h3>Distração</h3>\n\t\t\t\t<p>Uma revolta geral distrai carcereiros e presos, mas raramente chega ao feudo; revoltar os capangas exige indignação maior que o medo. Depois, uma corrida de obstáculos arrastando Farhuk, e ainda um carcereiro de confiança que abra as portas contra as ordens: Bartolakk mantém os presos dentro mesmo sabendo o motivo. Com Farhuk diante dele, solitária ou lugar protegido até tudo se ajeitar.</p>\n\t\t\t\t<h3>Fuga ousada</h3>\n\t\t\t\t<p>Acesso a Farhuk, equipamento, habilidades e, acima de tudo, um mapa. Bartolakk pode deixar ver um mapa (não levar): mostre aos jogadores, mas não deixe consultar; Inteligência CD 15 a 20 para lembrar cada detalhe. Stoke ou Nerisha podem dar um. Veja a próxima página.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "BmRXAAoxgGJdbiCP",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.BmRXAAoxgGJdbiCP"
+    },
+    {
+      "name": "Túnel e Corrida para a Liberdade",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<h3>Escavando um túnel</h3>\n\t\t\t\t<p>@UUID[Macro.EvgYD7oJcrf442gU]{Av3 · Escavando um Túnel}. Teste estendido em grupo de <b>Atletismo CD 30, 5 sucessos</b>, uma semana por teste; sem ferramentas, CD +5. Dois escavam: um testa, o outro ajuda com bônus dobrado (+2 com 10, +4 com 20); outros ajudam com Conhecimento, Guerra ou Ofício. Cada falha é um imprevisto: CD +2. <b>3 falhas:</b> desabamento, dois testes de Reflexos (CD atual): uma falha, metade dos PV e fatigado até recuperar; duas, soterrado e morto. O túnel recomeça do zero.</p>\n\t\t\t\t<p>A cada semana, alguém oculta a obra (CD 25, qualquer perícia justificável; quem oculta não escava). Uma falha: desconfiança, CD 30. Duas: os guardas descobrem.</p>\n\t\t\t\t<p>No túnel, o espaço de masmorra: três ou quatro salas e o @UUID[Actor.tqATCP5qQAy0QxMQ]{Dejeto Vivo}. Fora das muralhas, as habilidades voltam (o equipamento não). Lá fora, a Guarda pode perseguir o grupo até uma guarita de confiança, ou deixe-os escapar por um beco.</p>\n\t\t\t\t<h3>Corrida para a liberdade</h3>\n\t\t\t\t<p>@UUID[Macro.igBDGWHnrzy7QTDa]{Av3 · Corrida para a Liberdade}. Teste estendido em grupo de várias perícias, <b>CD 20 + Prontidão, 7 sucessos</b> antes de 3 falhas. Um evento por rodada (1d6). Perícias alternativas com boas ideias, cada uma só uma vez.</p>\n\t\t\t\t<ul><li><b>1 Corredores:</b> Atletismo (+2 Prontidão, sucesso conta como dois) ou Furtividade (+1 só se falhar).</li><li><b>2 Prisioneiros:</b> combater (Luta ou Pontaria, +2), negociar (Diplomacia, Enganação ou Intimidação) ou convidar para a fuga (sucesso automático, +1d4). Falhando, repete.</li><li><b>3 Chance de distração:</b> uma perícia da Tabela 6-6 (Tormenta20, p. 279); passando, –1d6 de Prontidão.</li><li><b>4 Porta trancada:</b> Ladinagem (CD +2; sucesso –1) ou Atletismo (+1).</li><li><b>5 Atravessar o pátio:</b> cada um testa Atletismo ou Furtividade; metade passando é um sucesso. 1d4 = 1: uma luz mágica, –5. Só uma vez; repetido, vale Corredores.</li><li><b>6 Passar por guardas:</b> Enganação (falha +1, sucesso –1), Furtividade (falha por 5+ dá +1) ou combate (+2; não dá mais para enganar ou se esgueirar deste grupo). Falhando, repete.</li></ul>\n\t\t\t\t<p><b>Discrição:</b> qualquer teste pode ter –5; passando, –1 de Prontidão. <b>Falha total:</b> surra, 0 PV (sem sangrar), de volta às celas, vigiados para sempre: esta fuga vira falha automática e as outras ficam com CD +5.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "R5PocH7NwAskbY3h",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.R5PocH7NwAskbY3h"
+    },
+    {
+      "name": "Fase 4 · Desfecho",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<p>Farhuk respira o ar fumacento da capital: <i>\"Finalmente posso ser eu de novo. Depois de passar anos como amigo de bandidos, estou de volta à Guarda. Cercado de heróis... E de estranhos.\"</i> Ele sente apego aos facínoras que o abrigaram e precisa recomeçar. Mais uma pessoa sozinha na multidão de Valkaria. Decida se ele fica fixo na Guarita da Praia ou aparece às vezes.</p>\n\t\t\t\t<h3>A revelação</h3>\n\t\t\t\t<p>Provavelmente a primeira menção a <b>Ghorskander</b>. A tripulação da Roca ainda controla a Companhia dos Irmãos, mesmo sem Syvarian; somado a Paollus \"mudado\", o grupo começa a juntar as peças (controle mental, ou algo pior). E o mais importante: os criminosos manterão as habilidades quando os aventureiros as perderem. Quem jogou a Aventura 1 vai entender o perigo.</p>\n\t\t\t\t<h3>Provas</h3>\n\t\t\t\t<ul><li>@UUID[Item.u0n2ugejXwYmTESG]{Pergaminhos da Cirurgia}.</li><li>O depoimento de Farhuk ou de Tryphne.</li><li>@UUID[Item.oPYBCX2UnNy3OIGP]{Documentos da Prisão}.</li><li>Uma inspeção da Rocha mostrando que o Benfeitor alterou a arquitetura.</li><li>O corpo de um prisioneiro operado, ou @UUID[Item.C9qSYfBGAu4tLgPk]{Cristal Rosado (avulso)}.</li></ul>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Com Farhuk em segurança, a Xerife Mathilda paga <b>T$ 12.000</b> (níveis 8–9), <b>T$ 24.000</b> (nível 10) ou <b>T$ 32.000</b> (nível 11).</p>\n\t\t\t\t<h3>Parceiros na Rocha Cinzenta</h3>\n\t\t\t\t<ul><li>Cremildhe: fortona veterana · @UUID[Item.t8fVctAc6twSjUBG]{Parceiro: Cremildhe (Fortona veterana)}</li><li>Imnek: destruidor (ácido) iniciante · @UUID[Item.9RWaz0GnUssEzvb8]{Parceiro: Imnek (Destruidor iniciante, ácido)}</li><li>Borislav: ajudante veterano (Conhecimento, Nobreza, Religião) · @UUID[Item.0VKP8fj2FRHeCzjK]{Parceiro: Borislav (Ajudante veterano)}</li><li>Sakrizi: ajudante veterana (Furtividade, Ladinagem, Misticismo) · @UUID[Item.vqwAzXgPzyJ6KzL4]{Parceiro: Sakrizi (Ajudante veterana)}</li><li>Yngri: assassina veterana · @UUID[Item.laQi11sYtWWYBJfZ]{Parceiro: Yngri (Assassina veterana)}</li><li>Jaydill: assassino mestre · @UUID[Item.HYEHV71tssFrJCAN]{Parceiro: Jaydill (Assassino mestre)}</li><li>Tryphne: médica veterana · @UUID[Item.HT7nSSVaOpjy93Xy]{Parceiro: Tryphne (Médica veterana)}</li><li>Farhuk: adepto iniciante e ajudante veterano (Enganação, Intuição, Investigação) · @UUID[Item.ypr7GC5sycqMVxfC]{Parceiro: Farhuk (Adepto iniciante)} · @UUID[Item.OsuEeATGmyzTeukc]{Parceiro: Farhuk (Ajudante veterano)}</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "6lLh1ykmh85lxkQ0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!gaH22PwLg60lJMOD.6lLh1ykmh85lxkQ0"
+    }
+  ],
+  "_key": "!journal!gaH22PwLg60lJMOD"
+}

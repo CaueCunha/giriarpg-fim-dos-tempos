@@ -1,0 +1,70 @@
+{
+  "name": "Implante de Cristal Rosado",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/po-de-cristal.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Cristal rosado de origem kliren implantado por Tryphne (que aprendeu com Ghorskander). O portador usa habilidades especiais e magia dentro da Rocha Cinzenta.</p><p>Depois da cirurgia, PV perdidos só voltam com descanso natural. <b>Regra opcional da mesa original:</b> pesadelos; Vontade CD 20 para descansar bem à noite, ou descanso ruim (recuperação pela metade).</p><p><b>Por que isso importa:</b> quando Valkaria estiver cheia de mensagens subliminares, os portadores do implante (os criminosos) manterão as habilidades.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "ZxNh62kfIZLQh3Tz",
+  "_id": "W935kDUWjJifuT2H",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!W935kDUWjJifuT2H"
+}

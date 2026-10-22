@@ -1,0 +1,371 @@
+{
+  "name": "Arco 2 · Aventura 6 · Baile de Debutantes Sangrento",
+  "folder": "sXFauMULJzcOZ2zf",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "_id": "LiXyUJgxNcdKRfJG",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<blockquote><p><i>\"Há um assassino serial à solta e ninguém se importa! [...] O Baile da Primavera está cancelado até que alguém tome uma atitude.\"</i> Duquesa Alfraye Oppulak de Trylon e Foltomett. Embaixo, noutra letra: <i>\"Esqueça esse caso! É insolúvel porque é a fantasia de uma nobre desocupada!\"</i> Throgarimm.</p></blockquote>\n\t\t\t\t<h2>Resumo</h2>\n\t\t\t\t<p>Nível 10. A vilã é @UUID[Actor.bx4gNb8bEGMaWCuy]{Lakshrimi, Replicoide Duquesa Alfraye}, a teóloga de bordo da Roca, sob o comando de Ghorskander. O plano: no Baile da Primavera, quando a segurança relaxa, matar jovens nobres e trocá-los por golens (<b>replicoides</b>). Dois anos atrás, @UUID[Actor.4ZD5PSKhBdOXfEoy]{Duquesa Alfraye Oppulak de Trylon e Foltomett} viu os corpos dos amigos e ninguém acreditou; ela cancelou o baile e, sem saber, pausou o plano. A aventura simula um filme de terror adolescente: só se resolve com um novo baile.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Normalidade:</b> @UUID[Actor.dbuss0AGbIBbrwX8]{Ulnsariann} e @UUID[Actor.tGaR6AEuJ9zPtqdR]{Throgarimm} contam o caso pela visão deles.</li><li><b>Fase 1 · Em Busca do Crime:</b> a visita a Alfraye no Castelo Oppulak (Bairro do Recomeço); role uma vez em Encontros em Valkaria no caminho.</li><li><b>Fase 2 · Becos sem Saída:</b> todas as linhas de investigação dão em nada, exceto realizar o baile.</li><li><b>Fase 3 · O Baile da Primavera:</b> a \"masmorra social\" do Palácio do Coração Florido.</li><li><b>Fase 4 · Banho de Sangue:</b> as mortes, as substituições e o confronto.</li><li><b>Fase 5 · Desfecho.</b></li></ul>\n\t\t\t\t<h2>Macros</h2>\n\t\t\t\t<ul><li>@UUID[Macro.DAjeDFHezbhkSHBu]{Av6 · Baile da Primavera (cenas e vítimas)}: conta as cenas e, a cada duas, sorteia vítima e regra quebrada com todas as exceções do livro; registra quem foi substituído e encerra o baile.</li><li>@UUID[Macro.G8eGcq3XhpJVb33c]{Av6 · Passagens Secretas}: procura passagens (CD 30) e sorteia a sala mágica e a saída.</li><li>@UUID[Macro.Vbap23Ulj6SgNnUW]{Av6 · Cômodos do Palácio}, @UUID[Macro.LjMemsGbNZ8rSpaL]{Av6 · Adega do Palácio} e @UUID[Macro.iOWcttgaSVy3a6X7]{Av6 · Cassino dos Sentimentos}: os benefícios de cada cômodo.</li><li>@UUID[Macro.WePxslwfNlhSryi1]{Av6 · Investigar no Baile}: notar replicoides, examinar a falsa Alfraye, seguir convidados e chegar à sala mágica a tempo.</li><li>@UUID[Macro.Vj2rjg7rJ6Hbuy46]{Av6 · Lakshrimi em Combate}: Gravação Estridente, Convidar Amigos e autodestruição.</li></ul>\n\t\t\t\t<p>Lei &amp; Ordem: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ed0vukMqgLKu0fvR",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.ed0vukMqgLKu0fvR"
+    },
+    {
+      "name": "Os Detetives e a Duquesa",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>\"Esqueçam isso\", diz o elfo. \"Não façam ele começar...\" \"Esse caso, esse caso, sempre esse caso!\", Throgarimm esbraveja.</p>\n\t\t\t\t<h3>Informações de Ulnsariann e Throgarimm</h3>\n\t\t\t\t<ul><li>A família Oppulak faz o Baile da Primavera todo ano no Palácio do Coração Florido. Não aconteceu no ano passado e provavelmente não acontecerá neste.</li><li>Alfraye, muito jovem, é a chefe da família: os pais e tios morreram na Guerra Artoniana. Ela decide a data do baile.</li><li>Na própria noite do baile, dois anos atrás, ela relatou os crimes. Os detetives entrevistaram todas as \"vítimas\": ninguém relatou nada, exceto a fuga da anfitriã.</li><li>Trouxeram a Dra. Zymni para garantir que não eram mortos-vivos; um nobre deixou a mente ser vasculhada. Alfraye não permitiu investigação mágica sobre ela.</li><li>Desistiram depois de uma semana, com a aprovação da Xerife Mathilda. Outros detetives tentaram depois e chegaram à mesma conclusão.</li></ul>\n\t\t\t\t<h3>O Castelo Oppulak e Alfraye</h3>\n\t\t\t\t<p>Paredes brancas de mármore, o símbolo de Marah entalhado e salas vazias há anos. Alfraye, descalça e de roupas simples, lê numa poltrona: \"Sou Alfraye, muito prazer! Por favor, me digam que finalmente a Guarda de Valkaria está me levando a sério!\" Criados para improvisar: Erlonis, Poltiarthas, Umitha, Strelin, Bubid, Ghesfar, Dholba.</p>\n\t\t\t\t<p><b>As supostas vítimas:</b> todas deixaram Valkaria com as famílias, servos e agregados (Investigação ou Nobreza CD 20), como os nobres dos Avatares do Futuro Eterno. Conde Tolassant Hyulligard-Evansser, Marquesa Lyppitt de Delawoff-Urlant, Duque Felcid Juynald Gyloimm Mastradig Volynn Volunn Chrostrarx Waclov, Condessa Nommia Astraberg, Duquesa Quelad de Gthorank e Oxopald e Visconde Phobert do Escudo da Manhã Cristalina de Todos os Deuses.</p>\n\t\t\t\t<h3>A sequência do último baile</h3>\n\t\t\t\t<ul><li>Alfraye discursou e o teto se abriu numa chuva de pétalas. Ao buscar uma bebida da adega, entrou numa passagem mágica e achou <b>Lypitt</b> (sangue élfico) com a garganta cortada. Correu, gritou, e Lypitt estava viva no salão.</li><li><b>Tolassant</b> disse \"já volto\"; <b>Felcid</b> estranhou a demora e foi atrás. Alfraye achou os dois mortos no jardim interno. Chamou Nomnia, bêbada demais para levar a sério; os dois chegaram vivos.</li><li><b>Quelad e Phobert</b> tinham se esgueirado para ficar a sós: mortos num quarto secreto. Na fuga, o cadáver de <b>Nomnia</b> (muito bêbada).</li><li>No salão, todos os \"mortos\" estavam vivos. Alfraye fugiu e se trancou no castelo. Meses depois, todas as famílias saíram de Valkaria.</li></ul>\n\t\t\t\t<h3>Regras de sobrevivência a filmes de terror</h3>\n\t\t\t\t<p>Espalhe estes detalhes enquanto Alfraye fala, sem revelar que são \"regras\": a primeira foi a não humana; \"já volto\" e quem foi atrás; a bêbada; o casal que se esgueirou. Eles serão úteis no baile.</p>\n\t\t\t\t<h3>Interpretando Alfraye</h3>\n\t\t\t\t<p>Simpática, bondosa, sozinha e desamparada, não chorona nem gótica. Generosa, mas acostumada a aproveitadores (está cercada de proteções contra manipulação). Os jogadores vão chamá-la de \"Airfryer\": não lute contra isso, só garanta que lembrem o nome verdadeiro. Se demonstrarem empatia, ela aceita ser sondada mentalmente.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "W3vT2cQev4au0OtC",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.W3vT2cQev4au0OtC"
+    },
+    {
+      "name": "Becos sem Saída",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Aceite todas as ideias, mas todas chegam ao mesmo resultado: não há nada a descobrir. A aventura só se resolve com um novo Baile da Primavera.</p>\n\t\t\t\t<ul><li><b>As vítimas:</b> as famílias foram embora sem deixar rastro, sem ameaças nem motivo, cada uma por conta própria.</li><li><b>O palácio:</b> fechado e desabitado fora do baile; os servos não viram nada. O palácio muda durante o baile: só o ritual reproduz as condições dos crimes.</li><li><b>Inimigos de Alfraye:</b> nenhum. Os pais morreram em batalha; não há maldição nem pacto.</li><li><b>Investigação mística:</b> o ritual é legítimo e bem documentado; a mente de Alfraye não foi manipulada. O cristal rosado \"engole\" magias como Visão da Verdade.</li><li><b>Os convidados:</b> @UUID[Actor.YBAQ0L3IkGdmtBkx]{Príncipe Drekaag de Sckharshantallas}, @UUID[Actor.aRnvKFLcd3DewVU7]{Duque Kalyon Montalbert Arkystan III}, @UUID[Actor.o5QjkgrAim9YKpAG]{Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt}, @UUID[Actor.0pMlVPlegUhb3LLX]{Conde Archibald Benessar Xendros Tranalyell Whorp}, @UUID[Actor.heJonMTFIYQyfJoO]{Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\"}, @UUID[Actor.2OFkufCGiu2IdYes]{Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\"}, @UUID[Actor.D0cfyZX5gZbJ5N9T]{Conde Axel Trelock Dezzenhal da Grande Batalha}, @UUID[Actor.SZ3QgRWE9245W4kv]{Marquesa Irludde Dyssindar Veront-Faryllia}. Nada liga nenhum deles ao último baile. Archibald é o maior interessado no baile; Drekaag parece suspeito pelo sangue de dragão, mas é pose.</li><li><b>Os servos:</b> interrogatórios mundanos e mágicos (até falar com deuses) não acham nada: são inocentes.</li></ul>\n\t\t\t\t<p>Se alguém concluir que os nobres foram trocados por \"clones\", não desminta: deixe que cheguem ao baile desconfiando de todos.</p>\n\t\t\t\t<h3>Contingências</h3>\n\t\t\t\t<ul><li><b>Frustração:</b> lembre que vários detetives já tentaram; transforme a fase em \"eliminar o que os NPCs já tentaram\"; resuma as cenas sem resultado; use a pressão da alta sociedade pelo baile; faça uma ideia do grupo apontar o baile como melhor tática.</li><li><b>Por essa eu não esperava:</b> pense bem antes de aceitar uma ideia irrefutável. Lakshrimi aprisionou as almas e mandou os traços dos cadáveres para o espaço entre os Planos (nem o Helladarion sabe); Syvarian não conhecia o plano. Se mesmo assim não houver furo, deixe a ideia funcionar.</li><li><b>Sem convidados:</b> um baile falso não atrai ninguém. A nobreza se ofende, a pressão aumenta e o baile verdadeiro acontece (o clero de Marah pode abrir uma nova \"janela\", já que não houve baile no ano passado).</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "QaHsexZA4ua2ZErw",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.QaHsexZA4ua2ZErw"
+    },
+    {
+      "name": "O que Realmente Aconteceu",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Lakshrimi, a navegadora da Roca pelo éter divino, transferiu a mente para um golem anos atrás. O último corpo tem um grande cristal rosado que liga objetos através do éter; Ghorskander o cobriu com pele orgânica idêntica à de Alfraye. Ela apagou a consciência e ficou em animação suspensa entre os Planos, visitada por Ghorskander para atualizar o rosto.</p>\n\t\t\t\t<p>O ritual do baile acendeu o cristal e a trouxe ao palácio. Sob a bênção de Marah ela não podia ser violenta, mas podia trazer um <b>replicoide</b> (não consciente, imune à bênção) idêntico à vítima. O replicoide mata, traga o corpo para o cristal em um ou dois minutos e toma o lugar. O plano era que cada replicoide matasse o próximo, para sempre.</p>\n\t\t\t\t<p>A verdadeira Alfraye interrompeu o primeiro. Lakshrimi \"piscou\" para longe com o replicoide e voltou para sumir com o corpo, e passou a noite trazendo os replicoides ela mesma, fugindo da duquesa. Não podia matá-la: a Roca precisa dela para manter o baile. Depois, os replicoides convenceram \"suas\" famílias a seguir os Avatares do Futuro Eterno rumo a Galrasia. Há replicoides prontos para a próxima leva de nobres.</p>\n\t\t\t\t<p><b>Muito conveniente…</b> Como num slasher, o assassino sempre tem um truque na manga. Se um jogador estranhar a quantidade de coincidências, incentive: é a pista para observar as regras quebradas e a sequência das vítimas.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "IQr6BKDBOG5WmMu9",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.IQr6BKDBOG5WmMu9"
+    },
+    {
+      "name": "O Baile da Primavera",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>\"Chega mais uma vez a hora de comemorar! [...] Que tenha início o Baile da Primavera!\" O palácio parece de cristal e brilha em luz multicolorida; cada passo e cada taça viram música. Os guardas são cerimoniais (armaduras douradas com flores, espadas cravejadas).</p>\n\t\t\t\t<h3>Conduzindo o baile</h3>\n\t\t\t\t<ul><li>Trate o palácio como uma <b>masmorra social</b>: os jogadores têm o mapa, mas não sabem onde ficam as passagens.</li><li>Cada atividade ou interação conta como uma <b>cena</b> (meia hora ou uma hora; até o amanhecer, 12 ou 24 cenas). Se o grupo se dividir, cada jogador faz uma atividade por cena; peça para um jogador controlar a ordem.</li><li>A cada duas cenas, role uma vítima e uma regra quebrada (@UUID[RollTable.DYG7Ykc6HKrBDzpi]{Vítimas do Baile}, @UUID[RollTable.SRPsDhiP5PC6XKM9]{Regras Quebradas}; ou a macro @UUID[Macro.DAjeDFHezbhkSHBu]{Av6 · Baile da Primavera (cenas e vítimas)}).</li><li>Quem morre para de fazer as atividades da lista: é a dica de que foi substituído. Nem toda ida a uma sala mágica termina em morte, e nem toda morte acontece perto dos heróis.</li><li>Sem demora e com sucesso imediato, o grupo acha a vítima viva; com 2 ou mais rodadas, o corpo; com mais de um minuto, nada.</li></ul>\n\t\t\t\t<h3>Os convidados de honra e suas atividades</h3>\n\t\t\t\t<ul><li>@UUID[Actor.YBAQ0L3IkGdmtBkx]{Príncipe Drekaag de Sckharshantallas}: Atividades: conta que Sckhar lhe pediu um conselho; cria fogo para impressionar; finge não entender palavras comuns para parecer \"exótico\".</li><li>@UUID[Actor.aRnvKFLcd3DewVU7]{Duque Kalyon Montalbert Arkystan III}: Atividades: organiza uma caridade (perfume para os soldados perto da Tormenta); tenta assumir a cozinha para \"ajudar\"; pergunta quando foi o último assassinato em Valkaria (há mais de 100 anos, não?).</li><li>@UUID[Actor.o5QjkgrAim9YKpAG]{Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt}: Atividades: pergunta sobre a vida de um herói, interessada de verdade; questiona se os puristas eram tão ruins; dá conselhos ao deus de um devoto.</li><li>@UUID[Actor.0pMlVPlegUhb3LLX]{Conde Archibald Benessar Xendros Tranalyell Whorp}: Atividades: faz perguntas sem fim a um arcanista ou estudioso; pede conselhos para conquistar Melynna; tenta se apresentar para ela e falha miseravelmente.</li><li>@UUID[Actor.heJonMTFIYQyfJoO]{Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\"}: Atividades: rejeita uma proposta de casamento; dá uma \"gorjeta\" para um herói sair da festa; pergunta com enfado a um artista se vai ter de aturar mais uma obra em sua homenagem.</li><li>@UUID[Actor.2OFkufCGiu2IdYes]{Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\"}: Atividades: ri descontroladamente de algo dito a sério; oferece \"substâncias\"; explica que Arton é o sonho de uma criança.</li><li>@UUID[Actor.D0cfyZX5gZbJ5N9T]{Conde Axel Trelock Dezzenhal da Grande Batalha}: Atividades: puxa briga por qualquer coisa; conta histórias exageradas de bandidos derrotados; desafia o mais forte do grupo para queda de braço.</li><li>@UUID[Actor.SZ3QgRWE9245W4kv]{Marquesa Irludde Dyssindar Veront-Faryllia}: Atividades: comenta a roupa de um herói para forçar algo comprometedor; tenta arrancar um segredo; conta, \"escandalizada\", o que um amigo fez (útil para guiar o grupo até uma vítima).</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "dQFlnmUDEt1dQ1kc",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.dQFlnmUDEt1dQ1kc"
+    },
+    {
+      "name": "O Palácio do Coração Florido",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p><b>@UUID[Item.awCA3csBUzjRYg4N]{Aura de Paz (Palácio do Coração Florido)}:</b> nenhuma criatura com Inteligência pode agir com hostilidade, sem teste e sem imunidade para personagens jogadores. Os replicoides são imunes. Acaba quando Alfraye encerra o baile.</p>\n\t\t\t\t<p><b>Procurar passagens:</b> ação completa e Investigação, Nobreza ou Religião CD 30 (+5 se viu alguém usar a passagem, +2 devoto de Marah). Passou: acha a passagem, mas não sabe para onde vai. @UUID[Macro.G8eGcq3XhpJVb33c]{Av6 · Passagens Secretas}.</p>\n\t\t\t\t<h3>Cômodos</h3>\n\t\t\t\t<ul><li><b>A · Hall de Entrada:</b> liga ao átrio. Sem passagens.</li><li><b>B · Átrio:</b> na primeira visita, Carisma CD 15: 3 PM temporários até o fim do baile. Liga a A, C, P, D. Passagem 1d6: 1 calor do coração.</li><li><b>C · Chapelaria:</b> máscaras alegóricas que duram até o fim da festa: @UUID[Item.c4eONrz78b1XHQNO]{Máscara Alegórica: Coroa} (+2 Nobreza, –2 Enganação); @UUID[Item.u59Ibah9iCL5RYn9]{Máscara Alegórica: Dados} (+2 Jogatina, –2 Religião); @UUID[Item.hawje09hzwoG78x8]{Máscara Alegórica: Nota musical} (+2 Atuação, –2 Nobreza); @UUID[Item.WVlKY8fIGLhd3w1s]{Máscara Alegórica: Pena} (+2 Conhecimento, –2 Reflexos); @UUID[Item.M2aJLzv8XlFV4BBT]{Máscara Alegórica: Raposa} (+2 Intuição, –2 Fortitude); @UUID[Item.bqOZTSzX4e5NrtDh]{Máscara Alegórica: Rosa} (+2 Diplomacia, –2 Intimidação); @UUID[Item.ugVUOo4mnVpfAehB]{Máscara Alegórica: Serpente} (+2 Enganação, –2 Diplomacia); @UUID[Item.KeaGWp1wLYkm11yU]{Máscara Alegórica: Urso} (+2 Intimidação, –2 Conhecimento); @UUID[Item.iYndeSz90geivexV]{Máscara Alegórica: Vela} (+2 Religião, –2 ataques). Liga a B, P, D. Passagem 1d6: 1 ateliê.</li><li><b>D · Salão Principal:</b> +2 em Diplomacia (para obter informações) e Investigação; –2 em Furtividade e Ladinagem. Liga a B, E, I, J, O. Passagem 1d6: 1 ateliê, 2 calor, 3 ninho, 4 santuário.</li><li><b>E · Salão de Banquete:</b> o benefício de um prato especial à escolha. Liga a G, D, H, F, K. Passagem 1d6: 1 ateliê, 2–3 calor, 4–5 ninho, 6 santuário.</li><li><b>F · Adega:</b> +5 em Diplomacia enquanto beber; Fortitude CD 15 (+2 por teste anterior) a cada cena: embriagado, depois bebum (as penalidades não valem em Diplomacia). @UUID[Macro.LjMemsGbNZ8rSpaL]{Av6 · Adega do Palácio}. Liga a G, D, E. Passagem 1d6: 1–4 as quatro salas.</li><li><b>G · Cozinha Principal:</b> fazendo amizade com os cozinheiros, um segundo prato especial (acumula). Liga a E, F.</li><li><b>H · Lavabo Principal:</b> –2 em Percepção; bom lugar para surpreender alguém. Liga a L, E.</li><li><b>I · Sacada Interna (duas):</b> +2 em Intuição e Percepção observando o salão, mas em evidência. Liga a D. Passagem 1d6: 1 santuário (uma rolagem por sacada).</li><li><b>J · Jardim Interno:</b> liga a D, K, M, N, R e a qualquer sala mágica já aberta, ou 1d4 entre as quatro.</li><li><b>K · Salão de Música:</b> Atuação +5 contra CD 25: o resultado substitui um teste de perícia no palácio. Liga a Q, E, D, L. Passagem 1d6: 1 ateliê.</li><li><b>L · Bastidores:</b> instrumentos aprimorados; uma vez no baile, Atuação 30+ com um deles no palco: @UUID[Item.ipLkecWkKyR32f2B]{Instrumento Abençoado do Palácio}. Liga a K, H.</li><li><b>M · Biblioteca:</b> rolar de novo um teste de Int ou Sab feito no dia, com +5 (uma vez por personagem). Liga a O, J. Passagem 1d6: 1 ateliê, 2 ninho (o livro diz \"cofre das artes\"), 3 santuário.</li><li><b>N · Estufa:</b> @UUID[Item.PDOZvpDlo556SBAb]{Batatino da Estufa}, para devotos de Marah ou treinados em Sobrevivência. Liga a J, O. Passagem 1d6: 1–4 as quatro salas.</li><li><b>O · Galeria de Arte:</b> Sabedoria CD 15: um poder concedido de Marah até o fim do baile. Liga a M, N, D, P. Passagem 1d6: 1–4.</li><li><b>P · Cassino:</b> apostas de Inspiração (PM máx. –1), Coração (enfeitiçado pelo vencedor), Coragem (PV máx. –3) ou Talento (uma perícia treinada), em testes de Jogatina. @UUID[Macro.iOWcttgaSVy3a6X7]{Av6 · Cassino dos Sentimentos}. Liga a B, C, O. Passagem 1d6: 1–4.</li><li><b>Q · Capela:</b> @UUID[Item.rWxy9kWm30eSX0wy]{Bênção da Capela de Marah}. Liga a J, K, R. Passagem 1d6: 1–4.</li><li><b>R · Sala de Troféus:</b> escolhe um interesse romântico verdadeiro: até o próximo baile, Diplomacia para conquistá-lo rola dois dados e usa o melhor. Liga a J, Q. Passagem 1d6: 1–4.</li></ul>\n\t\t\t\t<h3>Salas mágicas</h3>\n\t\t\t\t<p>@UUID[RollTable.7fq2NyaF3bmWdgGX]{Salas Mágicas} e @UUID[RollTable.NNsrfCQNhUtGgZJ3]{Saída da Sala Mágica}. Cada sala é única para o cômodo de acesso e dura uma cena ou enquanto houver alguém dentro. @UUID[Item.RWEGdxr1m5VEWKkv]{Ateliê da Inspiração}, @UUID[Item.5U70439xzY72QsNN]{Calor do Coração}; no ninho de prazer, cada um pode usar um poder ou perícia treinada do outro até o fim do baile; no santuário da esperança, PM temporários iguais ao nível.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "zjQ2AKkUw3G00khy",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.zjQ2AKkUw3G00khy"
+    },
+    {
+      "name": "Banho de Sangue",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<ul><li>A cada duas interações das atividades (ou uma, se longa), uma morte. A primeira é sempre <b>Drekaag</b> (não humano).</li><li>Alfraye rolada: role de novo; só morre se sair duas vezes. Loranth: a regra é sempre <i>Usa drogas</i>; se outro rolar <i>Usa drogas</i>, Loranth está envolvido.</li><li><i>Faz sexo</i>: role outra vítima, os dois morrem (ou o \"parceiro\" é um golem). Com Archibald, é uma brincadeira cruel de outro nobre.</li><li>Se Drekaag morrer como previsto, o replicoide dele mata a próxima vítima, e assim por diante; o replicoide arranja desculpa para ficar perto da próxima vítima (uma das maiores pistas). Lakshrimi só se esgueira para garantir que tudo dá certo.</li><li>Cada vítima e cada regra só valem uma vez (use o bom senso).</li></ul>\n\t\t\t\t<h3>Envolvendo os personagens</h3>\n\t\t\t\t<ul><li><b>Notar a troca:</b> Intuição CD 35, +2 por detalhe que o jogador descrever. A réplica de Loranth não usa substâncias, a de Irludde não fofoca, Archibald perde o interesse em Melynna, Kalyon mostra malícia.</li><li>Magias que mostram o passado de um lugar revelam o crime, se o grupo chegar ao local.</li><li><b>Seguir quem quebrou uma regra:</b> Furtividade contra Percepção +10. Ninguém ataca um convidado acompanhado: o herói precisa estar escondido, invisível ou disfarçado.</li><li><b>A falsa Alfraye:</b> Investigação ou Intuição contra a Enganação de Lakshrimi. Ela se recusa a ir até a verdadeira; arrastá-la é impossível durante o baile.</li></ul>\n\t\t\t\t<p>Macro: @UUID[Macro.WePxslwfNlhSryi1]{Av6 · Investigar no Baile}.</p>\n\t\t\t\t<h3>Contingência: os guarda-costas</h3>\n\t\t\t\t<p>Há mais convidados que heróis, e eles se rebelam contra a vigilância: comunicação mágica, invisibilidade e truques (+20 nas perícias); não se deixam convencer e controle mental falha. Quem fica sozinho quebra alguma regra: role vítimas só entre os vulneráveis (até fora da ordem, até Alfraye primeiro). Se ainda assim o grupo vigiar todos, o baile acaba sem mortes e é preciso outra tática.</p>\n\t\t\t\t<h3>Contingência: prefiro enfrentar um psicopata</h3>\n\t\t\t\t<p>Se tudo for complexo demais: relacione cada elemento a um clichê (Alfraye é a última sobrevivente, Archibald o nerd, Axel o valentão, Melynna a popular), assista aos episódios 19 a 24 do Arco 2 da stream ou fixe a ordem das vítimas e das regras, com um mapa mais simples.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "7CPFqG6ILykBBgJt",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.7CPFqG6ILykBBgJt"
+    },
+    {
+      "name": "Confronto",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p>Descoberta, Lakshrimi abandona a discrição e ataca com todos os replicoides que já substituíram convidados. Os replicoides não estão sob a bênção, mas os heróis estão: Alfraye decreta o fim do baile (macro @UUID[Macro.DAjeDFHezbhkSHBu]{Av6 · Baile da Primavera (cenas e vítimas)}). Se Alfraye morreu, o efeito já acabou. Os guardas dos nobres não ajudam e os reforços chegam só depois da luta.</p>\n\t\t\t\t<blockquote><p>O que antes parecia ser a Duquesa Alfraye arranca a própria pele: por baixo, uma cabeça metálica de golem. <i>\"Vocês são monstros ou apenas idiotas. Preservam as vidas fúteis desses nobres desocupados, enquanto o Dr. Vesper luta pela felicidade de toda a Criação? [...] Têm coragem de desafiar o homem maravilhoso que é Ghorskander?\"</i></p></blockquote>\n\t\t\t\t<p><b>Criaturas:</b> @UUID[Actor.bx4gNb8bEGMaWCuy]{Lakshrimi, Replicoide Duquesa Alfraye} e os replicoides dos convidados mortos: @UUID[Actor.pXOL4Z1YAmW0quIm]{Replicoide de Drekaag}, @UUID[Actor.TFBKLAhK6cWiYtjk]{Replicoide de Kalyon}, @UUID[Actor.qko4vA1nRvouRLUM]{Replicoide de Angeliese}, @UUID[Actor.HSTCDu72Y51e4NQK]{Replicoide de Archibald}, @UUID[Actor.wkEmTqwFl1dEAc6E]{Replicoide de Melynna}, @UUID[Actor.iMD1Rm24svG9QCOF]{Replicoide de Loranth}, @UUID[Actor.nJy1iR51DYmskOA6]{Replicoide de Axel}, @UUID[Actor.RwWKybuRd953CSct]{Replicoide de Irludde}. Cada replicoide tem um armamento embutido (escolha deste módulo; troque à vontade). Use @UUID[Macro.Vj2rjg7rJ6Hbuy46]{Av6 · Lakshrimi em Combate}.</p>\n\t\t\t\t<p>Ela conta tudo: o papel de teóloga (navegadora), a missão de achar o metal arco-íris (odeia os heróis por terem destruído seus esforços nas Colinas Centrais, que considera sagradas), as trocas de corpo e o amor por Ghorskander. Se a aventura for cedo no arco, é a primeira menção a ele. Capturada ou abaixo de 0 PV, <b>explode</b>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "hANvPkR76gmQv1OI",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.hANvPkR76gmQv1OI"
+    },
+    {
+      "name": "Desfecho, Provas e Pagamento",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<p>Os nobres não são gratos: a Guarda só fez o trabalho dela, e talvez nem lembrem dos nomes. A exceção é Alfraye, tocada por terem acreditado nela (no fim do arco, um item mágico ou benefício especial; antes, favores de influência). Os corpos tragados pelos cristais não podem ser recuperados.</p>\n\t\t\t\t<h3>Provas</h3>\n\t\t\t\t<ul><li>@UUID[Item.D4QjputIbSInOxvA]{Pedaço do Corpo Metálico de Lakshrimi}.</li><li>@UUID[Item.dRxLodoSOCMbhO4w]{Fragmento de Cristal Rosado} (ou um replicoide inteiro).</li><li>@UUID[Item.kuVKQyILtXXrKEGT]{Depoimento da Duquesa Alfraye}.</li><li>O cadáver de uma das vítimas.</li><li>O relato de quem viu um cadáver ser tragado para dentro de um cristal.</li></ul>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Com Lakshrimi vencida, os assassinatos elucidados e o baile de volta: níveis 8 ou 9, <b>T$ 12.000</b>; nível 10, <b>T$ 24.000</b>; nível 11, <b>T$ 32.000</b>.</p>\n\t\t\t\t<p>Ulnsariann e Throgarimm viram rivais se o grupo esfregar o caso na cara deles, ou pagam cervejas anãs e vinhos élficos se dividirem o mérito. Se não for a última aventura do arco, o grupo ganha o máximo respeito da Xerife Mathilda até sair de Valkaria.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "68YzFUNyTQKhltEq",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!LiXyUJgxNcdKRfJG.68YzFUNyTQKhltEq"
+    }
+  ],
+  "_key": "!journal!LiXyUJgxNcdKRfJG"
+}

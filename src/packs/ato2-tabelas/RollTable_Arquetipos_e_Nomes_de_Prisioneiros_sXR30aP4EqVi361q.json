@@ -1,0 +1,303 @@
+{
+  "name": "Arquétipos e Nomes de Prisioneiros",
+  "img": "systems/tormenta20/icons/itens/gerais/algemas.webp",
+  "folder": "QdOsPYqiPG1qHjBA",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role duas vezes: uma para o arquétipo, outra para o nome. A macro Prisioneiro Improvisado faz isso. Também serve para o companheiro de cela quando o grupo é ímpar.",
+  "_id": "sXR30aP4EqVi361q",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Velho sábio · Trelot",
+      "description": "Arquétipo: Velho sábio. Nome: Trelot.",
+      "_id": "KkCOtFxgKSzN2ITW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.KkCOtFxgKSzN2ITW"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Ingênuo · Ziera",
+      "description": "Arquétipo: Ingênuo. Nome: Ziera.",
+      "_id": "nlt9m9B367jwkRtY",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.nlt9m9B367jwkRtY"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Inocente incriminado · Scarbisse",
+      "description": "Arquétipo: Inocente incriminado. Nome: Scarbisse.",
+      "_id": "kcTPHILeduJpjEga",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.kcTPHILeduJpjEga"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Veterano protetor · Rathier",
+      "description": "Arquétipo: Veterano protetor. Nome: Rathier.",
+      "_id": "4G0BIGDafTJDBntB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.4G0BIGDafTJDBntB"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Artista · Rothin",
+      "description": "Arquétipo: Artista. Nome: Rothin.",
+      "_id": "9JmLBKNQ83qc71Gt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.9JmLBKNQ83qc71Gt"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Assassino refinado · Beriokh",
+      "description": "Arquétipo: Assassino refinado. Nome: Beriokh.",
+      "_id": "WjAVwMkVRcEadEim",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.WjAVwMkVRcEadEim"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Piadista · Veyrak",
+      "description": "Arquétipo: Piadista. Nome: Veyrak.",
+      "_id": "XgyLrT2cBnb5SGEz",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.XgyLrT2cBnb5SGEz"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Ex-guarda · Thariel",
+      "description": "Arquétipo: Ex-guarda. Nome: Thariel.",
+      "_id": "9LvqSX7fuHgyG2SB",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.9LvqSX7fuHgyG2SB"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Valentão · Crovess",
+      "description": "Arquétipo: Valentão. Nome: Crovess.",
+      "_id": "9o0bqpM9lIG8YDHK",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.9o0bqpM9lIG8YDHK"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Covarde traidor · Miraith",
+      "description": "Arquétipo: Covarde traidor. Nome: Miraith.",
+      "_id": "T3vxdv4my2MCT7vm",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!sXR30aP4EqVi361q.T3vxdv4my2MCT7vm"
+    }
+  ],
+  "_key": "!tables!sXR30aP4EqVi361q"
+}

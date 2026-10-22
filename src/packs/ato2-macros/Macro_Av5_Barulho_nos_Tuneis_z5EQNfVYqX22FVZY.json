@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Barulho nos Túneis",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/gritador.webp",
+  "folder": "sUDN5Vw4Z42gQjFf",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(async function macroBarulho() {\n\t\tconst CHAVE = \"fdtBarulhoTuneis\";\n\t\tconst e = foundry.utils.mergeObject({ dias: 0, sucessos: 0 }, game.user.getFlag(\"world\", CHAVE) ?? {}, { inplace: false });\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Barulho nos Túneis\" },\n\t\t\tcontent: `<p>Dia ${e.dias} da semana · sucessos <b>${e.sucessos}/3</b></p>\n\t\t\t\t<div class=\"form-group\"><label>Aliados iniciantes (1 cada)</label><input type=\"number\" name=\"ini\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Aliados veteranos (2 cada)</label><input type=\"number\" name=\"vet\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Aliados mestres (5 cada)</label><input type=\"number\" name=\"mes\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Soma dos ND dos combates do dia</label><input type=\"number\" name=\"nd\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Ideias chamativas (2 ou 5 cada, já somadas)</label><input type=\"number\" name=\"ideias\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Recomeçar a semana</label><input type=\"checkbox\" name=\"zerar\"></div>`,\n\t\t\tok: { label: \"Fim do dia\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.zerar) {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Semana de barulho recomeçada.\");\n\t\t}\n\t\tconst n = (k) => Math.max(0, Number(res[k]) || 0);\n\t\tconst pontos = n(\"ini\") + 2 * n(\"vet\") + 5 * n(\"mes\") + n(\"nd\") + n(\"ideias\");\n\t\tconst d = await new Roll(\"1d100\").evaluate();\n\t\te.dias += 1;\n\t\tconst ok = d.total <= pontos;\n\t\tif (ok) e.sucessos += 1;\n\t\tlet html = `<h3>Barulho nos Túneis · dia ${e.dias}</h3><p>Pontuação do dia <b>${pontos}</b>; 1d100 = ${d.total}. ${ok ? \"Khenzarr notou o barulho!\" : \"Ninguém notou.\"}</p><p>Sucessos: <b>${e.sucessos}/3</b> na semana.</p>`;\n\t\tif (e.sucessos >= 3) html += \"<p><b>Khenzarr acha que o Reinado está vasculhando os túneis e abandona o esconderijo!</b></p>\";\n\t\telse if (e.dias >= 7) html += \"<p>A semana acabou sem convencer Khenzarr.</p>\";\n\t\tif (e.sucessos >= 3 || e.dias >= 7) await game.user.unsetFlag(\"world\", CHAVE);\n\t\telse await game.user.setFlag(\"world\", CHAVE, e);\n\t\tChatMessage.create({ content: html, rolls: [d] });\n\t})();",
+  "_id": "z5EQNfVYqX22FVZY",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!z5EQNfVYqX22FVZY"
+}

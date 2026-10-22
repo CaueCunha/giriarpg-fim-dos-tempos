@@ -1,0 +1,31 @@
+{
+  "name": "Av6 · Adega do Palácio",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/bebida-comum.webp",
+  "folder": "jbCBkJ95KRCErcBX",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n(async function macroAdega() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Adega do Palácio\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"beber\">Beber (começar ou continuar nesta cena)</option>\n\t\t\t\t\t<option value=\"parar\">Parar de beber</option>\n\t\t\t\t\t<option value=\"manha\">Manhã seguinte (acaba a embriaguez)</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">+5 em Diplomacia enquanto beber. Fortitude CD 15, +2 por teste anterior no baile. As penalidades da embriaguez não valem em Diplomacia.</p>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione quem bebe.\");\n\t\tconst ICONE = \"systems/tormenta20/icons/itens/gerais/bebida-comum.webp\";\n\t\tconst rolls = [];\n\t\tconst linhas = [];\n\t\tconst ae = (name, changes, extra = {}) => ({ name, img: ICONE, type: \"base\", flags: { world: { fdtAdega: name } }, ...extra, system: { changes: changes.map(([key, value]) => ({ key, value, type: \"add\", phase: \"initial\", priority: null })) } });\n\t\tfor (const t of tokens) {\n\t\t\tconst a = t.actor;\n\t\t\tconst tem = (n) => a.effects.find((x) => x.getFlag(\"world\", \"fdtAdega\") === n);\n\t\t\tif (res.acao === \"manha\") {\n\t\t\t\tconst ids = a.effects.filter((x) => x.getFlag(\"world\", \"fdtAdega\")).map((x) => x.id);\n\t\t\t\tif (ids.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", ids);\n\t\t\t\tawait a.unsetFlag(\"world\", \"fdtTestesAdega\");\n\t\t\t\tif (a.statuses?.has(\"desprevenido\")) await a.toggleStatusEffect(\"desprevenido\", { active: false });\n\t\t\t\tlinhas.push(`${t.name}: sóbrio.`);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (res.acao === \"parar\") {\n\t\t\t\tconst b = tem(\"Bebendo na adega\");\n\t\t\t\tif (b) await b.delete();\n\t\t\t\tlinhas.push(`${t.name} para de beber: perde o +5 em Diplomacia (a embriaguez continua).`);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (!tem(\"Bebendo na adega\")) await a.createEmbeddedDocuments(\"ActiveEffect\", [ae(\"Bebendo na adega\", [[\"system.pericias.dipl.bonus\", \"5\"]])]);\n\t\t\tconst feitos = Number(a.getFlag(\"world\", \"fdtTestesAdega\")) || 0;\n\t\t\tconst cd = 15 + 2 * feitos;\n\t\t\tconst r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tawait a.setFlag(\"world\", \"fdtTestesAdega\", feitos + 1);\n\t\t\tlet txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}. `;\n\t\t\tif (r.total >= cd) txt += \"Aguenta firme.\";\n\t\t\telse if (!tem(\"Embriagado\")) {\n\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [ae(\"Embriagado\", [[\"system.modificadores.atributos.des\", \"-2\"], [\"system.modificadores.atributos.car\", \"-2\"], [\"system.pericias.dipl.bonus\", \"2\"]])]);\n\t\t\t\ttxt += \"<b>Embriagado</b> (–2 em testes de Destreza e Carisma, exceto Diplomacia) até a manhã seguinte.\";\n\t\t\t} else if (!tem(\"Bebum\")) {\n\t\t\t\tawait a.createEmbeddedDocuments(\"ActiveEffect\", [ae(\"Bebum\", [[\"system.modificadores.atributos.des\", \"-3\"], [\"system.modificadores.atributos.car\", \"-3\"], [\"system.pericias.dipl.bonus\", \"3\"]])]);\n\t\t\t\tif (!a.statuses?.has(\"desprevenido\")) await a.toggleStatusEffect(\"desprevenido\", { active: true });\n\t\t\t\ttxt += \"<b>Bebum</b>: desprevenido e –5 em testes de Destreza e Carisma (exceto Diplomacia).\";\n\t\t\t} else txt += \"Já está bebum.\";\n\t\t\tlinhas.push(txt);\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Adega do Palácio</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join(\"\")}</ul>`, rolls });\n\t})();",
+  "_id": "LjMemsGbNZ8rSpaL",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!LjMemsGbNZ8rSpaL"
+}

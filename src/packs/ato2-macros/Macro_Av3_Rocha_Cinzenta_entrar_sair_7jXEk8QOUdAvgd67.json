@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Rocha Cinzenta (entrar/sair)",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/algemas.webp",
+  "folder": "P0Ntx2pfcUJcw8W7",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n(async function macroRocha() {\n\t\tconst NOME = \"Na Rocha Cinzenta\";\n\t\tconst LIMITES = {\n\t\t\tname: NOME,\n\t\t\timg: \"systems/tormenta20/icons/itens/gerais/algemas.webp\",\n\t\t\ttype: \"base\",\n\t\t\tflags: { world: { fdtRocha: true } },\n\t\t\tdescription: \"Sem magia, sem PM (e sem recuperá-los: não descanse PM aqui), sem equipamento, só deslocamento normal. Habilidades especiais não funcionam, exceto modificadores permanentes, tamanho e fraquezas.\",\n\t\t\tsystem: {\n\t\t\t\tchanges: [\"fly\", \"climb\", \"swim\"].map((m) => ({ key: `system.attributes.movement.${m}.base`, value: \"0\", type: \"override\", phase: \"initial\", priority: null }))\n\t\t\t}\n\t\t};\n\t\tconst IMPLANTE = {\n\t\t\tname: \"Implante de Cristal Rosado\",\n\t\t\timg: \"systems/tormenta20/icons/itens/gerais/po-de-cristal.webp\",\n\t\t\ttype: \"base\",\n\t\t\tflags: { world: { fdtImplante: true } },\n\t\t\tdescription: \"Usa habilidades e magia dentro da Rocha Cinzenta. PV perdidos na cirurgia só voltam com descanso natural.\",\n\t\t\tsystem: { changes: [] }\n\t\t};\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione os personagens.\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Rocha Cinzenta\" },\n\t\t\tcontent: `<p>Selecionados: ${tokens.map((t) => t.name).join(\", \")}.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"entrar\">Entrar (zera os PM e liga as limitações)</option>\n\t\t\t\t\t<option value=\"sair\">Sair das muralhas (desliga as limitações; PM voltam com descanso)</option>\n\t\t\t\t\t<option value=\"implante\">Marcar implante (sem limitações dentro da Rocha)</option>\n\t\t\t\t\t<option value=\"tirar\">Tirar o implante</option></select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Quem entrou escondido não perde o equipamento. Confira à mão as habilidades que burlariam a prisão.</p>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst linhas = [];\n\t\tfor (const t of tokens) {\n\t\t\tconst a = t.actor;\n\t\t\tconst limites = a.effects.filter((e) => e.getFlag(\"world\", \"fdtRocha\"));\n\t\t\tconst implante = a.effects.find((e) => e.getFlag(\"world\", \"fdtImplante\"));\n\t\t\tif (res.acao === \"entrar\") {\n\t\t\t\tif (implante) { linhas.push(`${t.name}: tem o implante, mantém as habilidades.`); continue; }\n\t\t\t\tawait a.update({ \"system.attributes.pm.value\": 0 });\n\t\t\t\tif (!limites.length) await a.createEmbeddedDocuments(\"ActiveEffect\", [LIMITES]);\n\t\t\t\tlinhas.push(`${t.name}: sem PM, sem magia, sem equipamento.`);\n\t\t\t} else if (res.acao === \"sair\") {\n\t\t\t\tif (limites.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", limites.map((e) => e.id));\n\t\t\t\tlinhas.push(`${t.name}: fora das muralhas, habilidades de volta.`);\n\t\t\t} else if (res.acao === \"implante\") {\n\t\t\t\tif (limites.length) await a.deleteEmbeddedDocuments(\"ActiveEffect\", limites.map((e) => e.id));\n\t\t\t\tif (!implante) await a.createEmbeddedDocuments(\"ActiveEffect\", [IMPLANTE]);\n\t\t\t\tlinhas.push(`${t.name}: com o implante de cristal rosado.`);\n\t\t\t} else {\n\t\t\t\tif (implante) await a.deleteEmbeddedDocuments(\"ActiveEffect\", [implante.id]);\n\t\t\t\tlinhas.push(`${t.name}: sem o implante.`);\n\t\t\t}\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Rocha Cinzenta</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join(\"\")}</ul>`, whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t})();",
+  "_id": "7jXEk8QOUdAvgd67",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!7jXEk8QOUdAvgd67"
+}

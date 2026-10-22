@@ -160,10 +160,8 @@
     "tracos": {
       "tamanho": "med",
       "ic": {
-        "value": [
-          "encantamento"
-        ],
-        "custom": ""
+        "value": [],
+        "custom": "encantamento"
       },
       "idiomas": {
         "value": [

@@ -1,0 +1,31 @@
+{
+  "name": "Av6 · Cassino dos Sentimentos",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/itens-magicos/baralho-do-caos.webp",
+  "folder": "jbCBkJ95KRCErcBX",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n(async function macroCassino() {\n\t\tconst APOSTAS = {\n\t\t\tinspiracao: [\"Inspiração\", \"PM máximos –1\", [[\"system.attributes.pm.bonus.total\", \"-1\"]]],\n\t\t\tcoracao: [\"Coração\", \"fica enfeitiçado pelo vencedor da mesa\", []],\n\t\t\tcoragem: [\"Coragem\", \"PV máximos –3\", [[\"system.attributes.pv.bonus.total\", \"-3\"]]],\n\t\t\ttalento: [\"Talento\", \"perde uma perícia treinada à escolha\", []]\n\t\t};\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Cassino dos Sentimentos\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Aposta</label><select name=\"aposta\">${Object.entries(APOSTAS).map(([k, x]) => `<option value=\"${k}\">${x[0]} (${x[1]})</option>`).join(\"\")}</select></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Selecione os apostadores (dois ou mais). Cada um rola Jogatina; quem tirar menos perde a aposta e o vencedor ganha o que um perdedor perdeu (mais um para cada vez que multiplicar o valor da aposta, a critério do Mestre). Tudo dura até o fim do baile.</p>`,\n\t\t\tok: { label: \"Apostar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (tokens.length < 2) return ui.notifications.warn(\"Selecione pelo menos dois apostadores.\");\n\t\tconst ap = APOSTAS[res.aposta] ?? APOSTAS.inspiracao;\n\t\tconst ICONE = \"systems/tormenta20/icons/itens/itens-magicos/baralho-do-caos.webp\";\n\t\tconst rolls = [];\n\t\tconst placar = [];\n\t\tfor (const t of tokens) {\n\t\t\tconst r = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.joga?.value) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tplacar.push({ t, total: r.total });\n\t\t}\n\t\tplacar.sort((x, y) => y.total - x.total);\n\t\tconst [venc, ...perdedores] = placar;\n\t\tconst ae = (name, changes) => ({ name, img: ICONE, type: \"base\", flags: { world: { fdtBaile: true } }, system: { changes: changes.map(([key, value]) => ({ key, value, type: \"add\", phase: \"initial\", priority: null })) } });\n\t\tlet html = `<h3>Cassino · aposta de ${ap[0]}</h3><ol>${placar.map((x) => `<li>${x.t.name}: Jogatina ${x.total}</li>`).join(\"\")}</ol><p><b>${venc.t.name}</b> vence a mesa.</p><ul>`;\n\t\tfor (const x of perdedores) {\n\t\t\tif (ap[2].length) await x.t.actor.createEmbeddedDocuments(\"ActiveEffect\", [ae(`Aposta perdida: ${ap[0]}`, ap[2])]);\n\t\t\tif (res.aposta === \"coracao\" && !x.t.actor.statuses?.has(\"enfeiticado\")) await x.t.actor.toggleStatusEffect(\"enfeiticado\", { active: true });\n\t\t\tconst vezes = Math.max(1, Math.floor(venc.total / Math.max(1, x.total)));\n\t\t\thtml += `<li>${x.t.name} perde: ${ap[1]}${res.aposta === \"coracao\" ? ` (por ${venc.t.name})` : \"\"}. O vencedor multiplicou a aposta ${vezes}×.</li>`;\n\t\t}\n\t\thtml += \"</ul>\";\n\t\tconst ganho = ap[2].map(([k, v]) => [k, String(-Number(v))]);\n\t\tif (ganho.length) await venc.t.actor.createEmbeddedDocuments(\"ActiveEffect\", [ae(`Aposta ganha: ${ap[0]}`, ganho)]);\n\t\thtml += `<p>${venc.t.name} recebe o que um apostador perdeu${ganho.length ? \" (efeito aplicado)\" : res.aposta === \"talento\" ? \" (uma perícia treinada de um perdedor)\" : \"\"}.</p>`;\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "iOWcttgaSVy3a6X7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!iOWcttgaSVy3a6X7"
+}

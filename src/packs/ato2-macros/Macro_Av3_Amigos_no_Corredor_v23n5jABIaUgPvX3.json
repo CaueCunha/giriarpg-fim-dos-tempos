@@ -1,0 +1,31 @@
+{
+  "name": "Av3 · Amigos no Corredor",
+  "type": "script",
+  "img": "icons/svg/combat.svg",
+  "folder": "P0Ntx2pfcUJcw8W7",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n(async function macroAmigos() {\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione quem errou o ataque (ou falhou no teste exposto).\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Amigos no Corredor\" },\n\t\t\tcontent: `<p>Os amigos do prisioneiro na plateia atacam ${tokens.map((t) => t.name).join(\", \")}: <b>2d6</b>, uma vez por rodada.</p>\n\t\t\t\t<div class=\"form-group\"><label>Tipo</label><select name=\"tipo\"><option value=\"impacto\">Impacto (chutes, pedrada)</option><option value=\"corte\">Corte</option><option value=\"perfuracao\">Perfuração (estocada)</option></select></div>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rodada = game.combat ? `${game.combat.id}.${game.combat.round}` : null;\n\t\tconst rolls = [];\n\t\tconst linhas = [];\n\t\tfor (const t of tokens) {\n\t\t\tconst a = t.actor;\n\t\t\tif (rodada && a.getFlag(\"world\", \"fdtAmigosCorredor\") === rodada) { linhas.push(`${t.name}: já sofreu este dano nesta rodada.`); continue; }\n\t\t\tconst r = await new Roll(`2d6[${res.tipo}]`).evaluate();\n\t\t\trolls.push(r);\n\t\t\ttry { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }\n\t\t\tif (rodada) await a.setFlag(\"world\", \"fdtAmigosCorredor\", rodada);\n\t\t\tlinhas.push(`${t.name}: <b>${r.total}</b> de ${res.tipo}.`);\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Amigos no Corredor</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join(\"\")}</ul>`, rolls });\n\t})();",
+  "_id": "v23n5jABIaUgPvX3",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!v23n5jABIaUgPvX3"
+}
