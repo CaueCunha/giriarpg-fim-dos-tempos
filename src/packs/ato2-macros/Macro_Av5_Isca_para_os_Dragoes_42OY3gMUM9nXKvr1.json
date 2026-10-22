@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Isca para os Dragões",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/mordida.webp",
+  "folder": "sUDN5Vw4Z42gQjFf",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(async function macroIsca() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Isca para os Dragões\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"posicionar\">Posicionar a isca (Sobrevivência CD 25)</option>\n\t\t\t\t\t<option value=\"dia\">Passar um dia esperando (1d6)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Poder relacionado a armadilhas (+2)</label><input type=\"checkbox\" name=\"armadilha\"></div>\n\t\t\t\t<div class=\"form-group\"><label>O posicionamento deu 30 ou mais (+1 no d6)</label><input type=\"checkbox\" name=\"bom\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"posicionar\") {\n\t\t\tconst a = canvas.tokens.controlled[0]?.actor;\n\t\t\tif (!a) return ui.notifications.warn(\"Selecione quem posiciona a isca.\");\n\t\t\tconst sobr = Number(a.system.pericias?.sobr?.value) || 0;\n\t\t\tconst r = await new Roll(`1d20 + ${sobr}${res.armadilha ? \" + 2\" : \"\"}`).evaluate();\n\t\t\treturn ChatMessage.create({\n\t\t\t\tcontent: `<h3>Isca para os Dragões</h3><p>Posicionar: <b>${r.total}</b> contra CD 25.</p><p style=\"font-size:0.85em\">${r.total >= 30 ? \"30 ou mais: +1 nos d6 diários. \" : \"\"}${r.total >= 25 ? \"Bem posicionada.\" : \"Sem saber, foi mal posicionada: nas próximas 24 horas outra criatura leva a isca.\"}</p>`,\n\t\t\t\trolls: [r],\n\t\t\t\twhisper: ChatMessage.getWhisperRecipients(\"GM\")\n\t\t\t});\n\t\t}\n\t\tconst tab = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"a2av5\" && t.name.startsWith(\"Isca\"));\n\t\tconst d = await new Roll(`1d6${res.bom ? \" + 1\" : \"\"}`).evaluate();\n\t\tconst v = Math.min(6, d.total);\n\t\tconst r = tab?.results.find((x) => v >= x.range[0] && v <= x.range[1]);\n\t\tChatMessage.create({ content: `<h3>Isca para os Dragões</h3><p>${d.total}: <b>${r?.name ?? (v <= 2 ? \"Outra criatura levou a isca\" : v <= 4 ? \"Nada acontece\" : \"Um dragão mordeu a isca\")}</b>. ${r?.description ?? \"\"}</p>`, rolls: [d] });\n\t})();",
+  "_id": "42OY3gMUM9nXKvr1",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!42OY3gMUM9nXKvr1"
+}

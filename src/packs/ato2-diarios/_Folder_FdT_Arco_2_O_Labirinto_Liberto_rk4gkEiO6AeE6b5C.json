@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · O Labirinto Liberto",
+  "type": "JournalEntry",
+  "color": "#4b3f72",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto"
+    }
+  },
+  "_id": "rk4gkEiO6AeE6b5C",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!rk4gkEiO6AeE6b5C"
+}

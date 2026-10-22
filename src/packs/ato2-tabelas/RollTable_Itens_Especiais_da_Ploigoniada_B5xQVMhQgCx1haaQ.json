@@ -1,0 +1,358 @@
+{
+  "name": "Itens Especiais da Ploigoníada",
+  "img": "systems/tormenta20/icons/itens/equipamentos/montante.webp",
+  "folder": "szBcYbZlcylduX0a",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "itens"
+    }
+  },
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Em média, um a cada cinco aventureiros-capangas tem um destes itens. Se o item não fizer sentido para a classe do capanga, role de novo ou escolha.",
+  "_id": "B5xQVMhQgCx1haaQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "document",
+      "documentUuid": "Item.F6CvR1N6C4xdFT32",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Espada Exagerada",
+      "img": "systems/tormenta20/icons/itens/equipamentos/montante.webp",
+      "description": "",
+      "_id": "3eXYXpEIT4vCTMdr",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.3eXYXpEIT4vCTMdr"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.ZpL54EoitKbuAmpG",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Faca Veloz",
+      "img": "systems/tormenta20/icons/itens/equipamentos/adaga.webp",
+      "description": "",
+      "_id": "IdS2zXrB8UBR8brB",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.IdS2zXrB8UBR8brB"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.oWgczlGv7s9YUo4F",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Escudo Bloqueador",
+      "img": "systems/tormenta20/icons/itens/equipamentos/escudo-leve.webp",
+      "description": "",
+      "_id": "n6YRyzH68gVEFqjq",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.n6YRyzH68gVEFqjq"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.HKQhlI52XFGb9rkr",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Tijolo",
+      "img": "systems/tormenta20/icons/itens/equipamentos/pedras.webp",
+      "description": "",
+      "_id": "FvQCHFKxXBzsW3LT",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.FvQCHFKxXBzsW3LT"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.kJdgf4eAdotzC19r",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Chicote da Rasteira",
+      "img": "systems/tormenta20/icons/itens/equipamentos/chicote.webp",
+      "description": "",
+      "_id": "YJcTwBj6VvvEXX8z",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.YJcTwBj6VvvEXX8z"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.rpCCad6yTgfh40PD",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Besta Maldosa",
+      "img": "systems/tormenta20/icons/itens/equipamentos/besta-leve.webp",
+      "description": "",
+      "_id": "JkpyxKwnhCW5RIMT",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.JkpyxKwnhCW5RIMT"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.ko65MWO162VdADqB",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Maça Exagerada",
+      "img": "systems/tormenta20/icons/itens/equipamentos/maca-de-guerra.webp",
+      "description": "",
+      "_id": "ptv7hTvn7oSfKaB1",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.ptv7hTvn7oSfKaB1"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.FFhjw6RRlyOCdfY0",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Tomo Fumegante",
+      "img": "systems/tormenta20/icons/itens/gerais/tomo-hermetico.webp",
+      "description": "",
+      "_id": "zs0w96DXiprxDOYF",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.zs0w96DXiprxDOYF"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.0tEOpWDqcbC82vnW",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Pergaminho Piedoso",
+      "img": "systems/tormenta20/icons/itens/gerais/pergaminho.webp",
+      "description": "",
+      "_id": "b9P76nfmKA0JliAJ",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.b9P76nfmKA0JliAJ"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.q3hGcIe45QMfGjEo",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Varinha Repetitiva",
+      "img": "systems/tormenta20/icons/itens/gerais/varinha-arcana.webp",
+      "description": "",
+      "_id": "swb55ylJnlD1RQe1",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.swb55ylJnlD1RQe1"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.2CurZxDiY13pEwo0",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Aspersório Cheiroso",
+      "img": "systems/tormenta20/icons/itens/gerais/agua-benta.webp",
+      "description": "",
+      "_id": "gV2Yj1PP1lQzyv0E",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.gV2Yj1PP1lQzyv0E"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Item.GziqG3fDMPSzAUrq",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Escudo Esbodegado",
+      "img": "systems/tormenta20/icons/itens/equipamentos/escudo-pesado.webp",
+      "description": "",
+      "_id": "FoAYvpulkjahAXpH",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!B5xQVMhQgCx1haaQ.FoAYvpulkjahAXpH"
+    }
+  ],
+  "_key": "!tables!B5xQVMhQgCx1haaQ"
+}

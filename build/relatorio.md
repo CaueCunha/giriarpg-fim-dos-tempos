@@ -2,16 +2,18 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 123 documento(s), 8 pasta(s)
-- `ato1-itens`: 87 documento(s), 9 pasta(s)
-- `ato1-diarios`: 8 documento(s), 8 pasta(s)
-- `ato1-tabelas`: 13 documento(s), 6 pasta(s)
-- `ato1-macros`: 44 documento(s), 8 pasta(s)
+- `ato1-ameacas`: 139 documento(s), 9 pasta(s)
+- `ato1-itens`: 90 documento(s), 10 pasta(s)
+- `ato1-diarios`: 9 documento(s), 9 pasta(s)
+- `ato1-tabelas`: 15 documento(s), 7 pasta(s)
+- `ato1-macros`: 49 documento(s), 9 pasta(s)
 
-### Ligações com o sistema (120)
+### Ligações com o sistema (122)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
+| Orc Canibal | Clava | arma | ficha do livro + origem no sistema |
+| Aharadak, Líder dos Orcs Canibais | Clava | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Mordida | arma | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
 | Chupacabra da Tormenta | Drenar Sangue | poder | link para o sistema |
@@ -138,13 +140,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 25 documento(s), 3 pasta(s)
-- `ato2-itens`: 14 documento(s), 3 pasta(s)
-- `ato2-diarios`: 3 documento(s), 3 pasta(s)
-- `ato2-tabelas`: 5 documento(s), 3 pasta(s)
-- `ato2-macros`: 12 documento(s), 3 pasta(s)
+- `ato2-ameacas`: 122 documento(s), 11 pasta(s)
+- `ato2-itens`: 105 documento(s), 11 pasta(s)
+- `ato2-diarios`: 11 documento(s), 11 pasta(s)
+- `ato2-tabelas`: 22 documento(s), 11 pasta(s)
+- `ato2-macros`: 63 documento(s), 11 pasta(s)
 
-### Ligações com o sistema (71)
+### Ligações com o sistema (220)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -219,6 +221,155 @@
 | Grifo dos Cavaleiros | Mordida | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | Garras | arma | ficha do livro + origem no sistema |
 | Grifo dos Cavaleiros | ovo de grifo | tesouro | ficha do livro + origem no sistema |
+| Prisioneiro Bandido | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Chefe do Corredor | Evasão | poder | ficha do livro + origem no sistema |
+| Turba de Prisioneiros | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Nerisha | Aparência Inofensiva | poder | ficha do livro + origem no sistema |
+| Nerisha | Adaga Mental | magia | magia do sistema + ficha do NPC |
+| Nerisha | Aparência Perfeita | magia | magia do sistema + ficha do NPC |
+| Nerisha | Enfeitiçar | magia | magia do sistema + ficha do NPC |
+| Nerisha | Escuridão | magia | magia do sistema + ficha do NPC |
+| Nerisha | Erupção Glacial | magia | magia do sistema + ficha do NPC |
+| Rakkas | Mordida | arma | ficha do livro + origem no sistema |
+| Rakkas | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Rakkas | Mau Cheiro | poder | ficha do livro + origem no sistema |
+| Rakkas | Sangue Frio | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Desarmado (×2) | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Chifres | arma | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Investida Poderosa | poder | ficha do livro + origem no sistema |
+| O Benfeitor (Khabrias Minareus) | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Jaydill | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Jaydill | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Assassinar | poder | ficha do livro + origem no sistema |
+| Jaydill | Amedrontar | magia | magia do sistema + ficha do NPC |
+| Jaydill | Sono | magia | magia do sistema + ficha do NPC |
+| Jaydill | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Jaydill | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Dejeto Vivo | Engolir | poder | ficha do livro + origem no sistema |
+| Carrasco de Lena (tormento de Rylonn) | Mordida | arma | ficha do livro + origem no sistema |
+| Cocatriz-Real (tormento de Bdun) | Evasão | poder | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Salassan, cabeça de dragão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Mordida (Grumk, cabeça de leão) | arma | ficha do livro + origem no sistema |
+| Quimera (tormento de Grisgemm) | Marrada (Hans, cabeça de bode) | arma | link para o sistema |
+| Quimera (tormento de Grisgemm) | Voo | poder | link para o sistema |
+| Dragão do Esgoto | Mordida | arma | ficha do livro + origem no sistema |
+| Dragão do Esgoto | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Enxame de Dragões do Esgoto | Enxame | poder | link para o sistema |
+| Enxame de Dragões do Esgoto Alfa | Enxame | poder | link para o sistema |
+| Khenzarr, o Biomante | Raio Arcano | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Magia Acelerada | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Fluxo de Mana | poder | ficha do livro + origem no sistema |
+| Khenzarr, o Biomante | Natureza Vegetal | poder | link para o sistema |
+| Khenzarr, o Biomante | Armadura Arcana | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Desespero Esmagador | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Ferver Sangue | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Imobilizar | magia | magia do sistema + ficha do NPC |
+| Khenzarr, o Biomante | Metamorfose | magia | magia do sistema + ficha do NPC |
+| Lakshrimi, Replicoide Duquesa Alfraye | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Lakshrimi, Replicoide Duquesa Alfraye | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Drekaag | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Kalyon | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Angeliese | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Archibald | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Melynna | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Loranth | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Axel | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Axel | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Adaga (×2) | arma | ficha do livro + origem no sistema |
+| Replicoide de Irludde | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Ghorskander | Engenhosidade | poder | ficha do livro + origem no sistema |
+| Ghorskander | Ossos Frágeis | poder | ficha do livro + origem no sistema |
+| Ghorskander | Evasão | poder | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Pancada (×2) | arma | ficha do livro + origem no sistema |
+| Torgo (Arco 2) | Fúria | poder | ficha do livro + origem no sistema |
+| Guerreiro Capanga | Marreta | arma | ficha do livro + origem no sistema |
+| Clérigo Capanga | Martelo de Guerra | arma | ficha do livro + origem no sistema |
+| Clérigo Capanga | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Caçador Capanga | Arco Longo | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Espada Curta | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Adaga | arma | ficha do livro + origem no sistema |
+| Ladino Capanga | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Ladino Capanga | Evasão | poder | ficha do livro + origem no sistema |
+| Mago Capanga | Raio Arcano | poder | ficha do livro + origem no sistema |
+| Cavaleiro Capanga | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Cavaleiro Capanga | Chifres | arma | ficha do livro + origem no sistema |
+| Cobrador da Ploigoníada | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Cobrador da Ploigoníada | Disfarce Ilusório | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Imobilizar | magia | magia do sistema + ficha do NPC |
+| Cobrador da Ploigoníada | Silêncio | magia | magia do sistema + ficha do NPC |
+| Irmão da Companhia | Espada Curta | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Pistola | arma | ficha do livro + origem no sistema |
+| Irmão da Companhia | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Irmão da Companhia | Bomba | poder | link para o sistema |
+| Bando Desesperado | Espada Curta | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Arco Curto | arma | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque em Bando | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bando Desesperado | Forma Coletiva | poder | ficha do livro + origem no sistema |
+| Arcano Brutal | Espada Curta | arma | ficha do livro + origem no sistema |
+| Arcano Brutal | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Névoa | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Salto Dimensional | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Sopro das Uivantes | magia | magia do sistema + ficha do NPC |
+| Arcano Brutal | Toque Chocante | magia | magia do sistema + ficha do NPC |
+| Replicoide Paollus | Espada Longa | arma | ficha do livro + origem no sistema |
+| Replicoide Paollus | Pistola | arma | ficha do livro + origem no sistema |
+| Replicoide Paollus | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Replicoide Paollus | Evasão | poder | ficha do livro + origem no sistema |
+| Mirminoide Soldado | Mordida | arma | ficha do livro + origem no sistema |
+| Mirminoide Soldado | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Trilha Mirminoide | Mordida | arma | ficha do livro + origem no sistema |
+| Trilha Mirminoide | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Aurumvorax | Mordida | arma | ficha do livro + origem no sistema |
+| Aurumvorax | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Bibliotecário | Evasão Aprimorada | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Mordida | arma | ficha do livro + origem no sistema |
+| Chama Funesta | Sopro | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Aura Aterradora | poder | ficha do livro + origem no sistema |
+| Chama Funesta | Campo de Força | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Curar Ferimentos | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Desespero Esmagador | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Dissipar Magia | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Metamorfose | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Selo de Mana | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Toque Vampírico | magia | magia do sistema + ficha do NPC |
+| Chama Funesta | Velocidade | magia | magia do sistema + ficha do NPC |
+| Mímico da Estante | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Mímico da Estante | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Mímico da Estante | Imobilidade | poder | link para o sistema |
+| Duplo Prisioneiro | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Mantor | Mordida | arma | ficha do livro + origem no sistema |
+| Mantor | Imobilidade | poder | link para o sistema |
+| Tigre-de-Hyninn | Mordida | arma | ficha do livro + origem no sistema |
+| Tigre-de-Hyninn Primordial | Mordida | arma | ficha do livro + origem no sistema |
+| Tigre-de-Hyninn Primordial | Sopro | poder | ficha do livro + origem no sistema |
+| Rarvnaak | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bulette | Mordida | arma | ficha do livro + origem no sistema |
+| Bulette | Agarrar Aprimorado | poder | ficha do livro + origem no sistema |
+| Bulette | Engolir | poder | ficha do livro + origem no sistema |
+| Múmia Real Sar-Allan | Pancada | arma | ficha do livro + origem no sistema |
+| Múmia Real Sar-Allan | Doença | poder | ficha do livro + origem no sistema |
+| Rei Sar-Allan (Senhor das Múmias) | Pancada | arma | ficha do livro + origem no sistema |
+| Rei Sar-Allan (Senhor das Múmias) | Disfarce Ilusório | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Enxame de Pestes | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Infligir Ferimentos | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Perdição | magia | magia do sistema + ficha do NPC |
+| Rei Sar-Allan (Senhor das Múmias) | Poeira da Podridão | magia | magia do sistema + ficha do NPC |
+| (item) | Aura de Paz (Palácio do Coração Florido) | poder | ficha do livro + origem no sistema |
+| (item) | Poção de Curar Ferimentos (Guarita da Praia) | consumivel | ficha do livro + origem no sistema |
+| (item) | Gorad Quente | consumivel | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 

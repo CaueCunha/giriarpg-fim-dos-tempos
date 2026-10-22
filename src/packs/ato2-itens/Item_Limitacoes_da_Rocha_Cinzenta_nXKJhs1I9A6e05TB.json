@@ -1,0 +1,156 @@
+{
+  "name": "Limitações da Rocha Cinzenta",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/algemas.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av3"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Dentro das muralhas, todos são \"como aldeões\": sem magia (itens mágicos perdem os poderes), <b>sem PM</b> e sem recuperá-los, sem equipamento (exceto quem entrou escondido; equipamento que faz parte do corpo para de funcionar), só deslocamento normal, sem teletransporte.</p><p>Só funcionam modificadores permanentes de atributos e perícias, habilidades de tamanho e fraquezas (como Medo de Altura). Golens não desligam, mas perdem imunidades; lefou não usam poderes da Tormenta. <b>Se uma habilidade burla a prisão, ela não funciona.</b></p><p>A macro <i>Rocha Cinzenta</i> zera os PM e liga este efeito nos selecionados.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "ZxNh62kfIZLQh3Tz",
+  "_id": "nXKJhs1I9A6e05TB",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Na Rocha Cinzenta",
+      "img": "systems/tormenta20/icons/itens/gerais/algemas.webp",
+      "type": "base",
+      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Só deslocamento normal. Sem PM e sem recuperá-los (não descanse PM aqui). Habilidades especiais não funcionam (confira à mão).",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av3"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.movement.fly.base",
+            "value": "0",
+            "type": "override",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.climb.base",
+            "value": "0",
+            "type": "override",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.attributes.movement.swim.base",
+            "value": "0",
+            "type": "override",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "Xjp1zrnh0DPFVdcW",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!nXKJhs1I9A6e05TB.Xjp1zrnh0DPFVdcW"
+    }
+  ],
+  "_key": "!items!nXKJhs1I9A6e05TB"
+}

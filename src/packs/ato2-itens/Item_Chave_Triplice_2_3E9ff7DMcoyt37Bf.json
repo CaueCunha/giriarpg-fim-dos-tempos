@@ -1,0 +1,87 @@
+{
+  "name": "Chave Tríplice 2",
+  "type": "tesouro",
+  "img": "icons/svg/padlock.svg",
+  "folder": "qUAXig9rIqdl4g0D",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "chave2"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Uma das três chaves que abrem a porta dupla de metal do subnível de Hyninn, cercada de cristais, que leva ao covil de Chama Funesta. Marcada com o número <b>2</b>. Encontrada em: atrás de uma das mesas de estudo da Biblioteca Proibida (Sala 11 de Tanna-Toh).</p><p>É impossível abrir a porta por qualquer meio físico ou mágico sem as três chaves.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "_id": "3E9ff7DMcoyt37Bf",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!3E9ff7DMcoyt37Bf"
+}

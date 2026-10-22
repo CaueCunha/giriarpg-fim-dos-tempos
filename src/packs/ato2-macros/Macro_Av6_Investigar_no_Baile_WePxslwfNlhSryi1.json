@@ -1,0 +1,31 @@
+{
+  "name": "Av6 · Investigar no Baile",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/visao-ampla.webp",
+  "folder": "jbCBkJ95KRCErcBX",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n(async function macroInvestigar() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Investigar no Baile\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"notar\">Notar que um convidado foi substituído (Intuição CD 35)</option>\n\t\t\t\t\t<option value=\"falsa\">Examinar a falsa Alfraye (contra Enganação +34)</option>\n\t\t\t\t\t<option value=\"seguir\">Seguir um convidado sem ser visto (contra Percepção +10)</option>\n\t\t\t\t\t<option value=\"vigiar\">Os nobres tentam despistar a vigilância (+20)</option>\n\t\t\t\t\t<option value=\"chegar\">Chegar à sala mágica depois de uma vítima</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Detalhes descritos pelo jogador (+2 cada)</label><input type=\"number\" name=\"detalhes\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia contra a falsa Alfraye</label><select name=\"pericia\"><option value=\"intu\">Intuição</option><option value=\"inve\">Investigação</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Rodadas de demora (para chegar à sala)</label><input type=\"number\" name=\"rodadas\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>O convidado é um replicoide</label><input type=\"checkbox\" name=\"replicoide\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst gm = ChatMessage.getWhisperRecipients(\"GM\");\n\t\tif (res.acao === \"chegar\") {\n\t\t\tconst r = Math.max(0, Number(res.rodadas) || 0);\n\t\t\tconst txt = r === 0 ? \"Sem perder tempo e com sucesso imediato: <b>a vítima está viva</b> e o assassino é pego no ato.\" : r <= 10 ? \"Duas rodadas ou mais: encontram <b>o corpo</b> (o replicoide está tragando o cadáver para o cristal, um ou dois minutos).\" : \"Mais de um minuto: <b>não há nada</b>. A vítima foi substituída; só o comportamento a denuncia.\";\n\t\t\tconst msg = r === 1 ? \"Uma rodada: decida entre o flagrante e o corpo.\" : txt;\n\t\t\treturn ChatMessage.create({ content: `<h3>Investigar no Baile</h3><p>Demora de ${r} rodada(s). ${msg}</p>`, whisper: gm });\n\t\t}\n\t\tconst tk = canvas.tokens.controlled[0];\n\t\tif (!tk?.actor) return ui.notifications.warn(\"Selecione o personagem.\");\n\t\tconst pv = (k) => Number(tk.actor.system.pericias?.[k]?.value) || 0;\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };\n\t\tlet html = \"<h3>Investigar no Baile</h3>\";\n\t\tif (res.acao === \"notar\") {\n\t\t\tconst det = Math.max(0, Number(res.detalhes) || 0);\n\t\t\tconst r = await rolar(`1d20 + ${pv(\"intu\")} + ${2 * det}`);\n\t\t\thtml += `<p>${tk.name}: Intuição <b>${r}</b> (+${2 * det} por ${det} detalhe(s)) contra CD 35.</p>`;\n\t\t\thtml += res.replicoide ? `<p>${r >= 35 ? \"<b>Percebe que não é a mesma pessoa!</b>\" : \"Nada parece errado.\"}</p>` : \"<p>Não é um replicoide: nada de estranho.</p>\";\n\t\t\treturn ChatMessage.create({ content: html, rolls, whisper: gm });\n\t\t}\n\t\tif (res.acao === \"falsa\") {\n\t\t\tconst k = res.pericia === \"inve\" ? \"inve\" : \"intu\";\n\t\t\tconst r = await rolar(`1d20 + ${pv(k)}`);\n\t\t\tconst d = await rolar(\"1d20 + 34\");\n\t\t\thtml += `<p>${tk.name}: ${k === \"inve\" ? \"Investigação\" : \"Intuição\"} <b>${r}</b> contra Enganação de Lakshrimi <b>${d}</b>. ${r > d ? \"<b>Há algo estranho na duquesa.</b> Ela se recusa a ir até a Alfraye verdadeira.\" : \"Parece a própria Alfraye.\"}</p>`;\n\t\t\treturn ChatMessage.create({ content: html, rolls, whisper: gm });\n\t\t}\n\t\tif (res.acao === \"seguir\") {\n\t\t\tconst r = await rolar(`1d20 + ${pv(\"furt\")}`);\n\t\t\tconst d = await rolar(\"1d20 + 10\");\n\t\t\thtml += `<p>${tk.name}: Furtividade <b>${r}</b> contra Percepção do convidado <b>${d}</b>. ${r > d ? \"Segue sem ser notado. Lakshrimi e os replicoides só atacam se o herói estiver escondido, invisível ou disfarçado.\" : \"Foi notado: o convidado não vai para onde ia sozinho.\"}</p>`;\n\t\t\treturn ChatMessage.create({ content: html, rolls });\n\t\t}\n\t\tconst r = await rolar(`1d20 + ${pv(\"perc\")}`);\n\t\tconst d = await rolar(\"1d20 + 20\");\n\t\thtml += `<p>Os nobres tentam se livrar da vigilância (magia de comunicação, invisibilidade e truques: +20). ${tk.name}: Percepção <b>${r}</b> contra <b>${d}</b>. ${r >= d ? \"Não conseguiram despistar.\" : \"<b>Escaparam da vigilância!</b> Quem ficar sozinho vai quebrar alguma regra.\"}</p>`;\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "WePxslwfNlhSryi1",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!WePxslwfNlhSryi1"
+}

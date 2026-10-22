@@ -1,0 +1,31 @@
+{
+  "name": "Labirinto · Enxadrista",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/baralho.webp",
+  "folder": "RlW3rBqa2qbk1PVY",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · O Labirinto Liberto · gerado por a2-labirinto-liberto.js\nconst DADOS = {\"pistas\":[\"\\\"No centro deste labirinto, há uma escadaria. Se quisesse ficar dormindo, é para lá que eu iria!\\\"\",\"\\\"Atrás de uma porta fechada há um buraco gritante. Se seguirem a trilha escavada, acharão tesouro abundante!\\\"\",\"\\\"Não importa a lombada, nem toda história é lida. Às vezes, com uma dentada, dos livros viramos comida!\\\"\",\"\\\"Invisíveis na masmorra andam caça e caçador. Não enfrente, apenas corra! Um é medo e outro é horror.\\\"\",\"\\\"Amarelo leva ao sol e o roxo, à sabedoria. De um, precisam de um bicho e da outra, uma dinastia.\\\"\",\"\\\"Três masmorras têm riquezas. Para alguns, já é o fim. Mas a última proeza é vencer o carmesim.\\\"\",\"\\\"Na masmorra estão amigos, um falso e um de verdade. Esqueçam os seus umbigos e não façam caridade!\\\"\",\"\\\"Não tenho mais a contar, isso é tudo que posso dizer! Se quiserem ainda jogar, será por puro prazer!\\\"\",\"\\\"Admito, era cilada. Há mais uma dica da trilha. Para a masmorra letrada, levem uma armadilha.\\\"\"],\"semResgate\":\"\\\"Na masmorra, não há amigos, só tramoias e maldade. Esqueçam os seus umbigos e não façam caridade!\\\"\"};\n(async function macroEnxadrista(D) {\n\t\tconst ESTADO = \"fdtLabirinto\";\n\t\tconst x = foundry.utils.deepClone(game.user.getFlag(\"world\", `${ESTADO}.xadrez`) ?? { pista: 0 });\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Labirinto · Enxadrista\" },\n\t\t\tposition: { width: 500 },\n\t\t\tcontent: `\n\t\t\t\t<p><i>\"Eu sou o Enxadrista e só existo para o xadrez. Se quiserem uma pista, entre só um de vocês!\"</i> Pistas já dadas: ${x.pista}/${D.pistas.length}.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"partida\">Jogar uma partida (o primeiro selecionado joga; os outros estão do lado de fora)</option>\n\t\t\t\t\t<option value=\"zerar\">Zerar as pistas</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"per\">\n\t\t\t\t\t<option value=\"guer\">Guerra</option><option value=\"joga\">Jogatina</option><option value=\"nobr\">Nobreza</option><option value=\"ladi\">Ladinagem (roubar)</option><option value=\"inte\">Inteligência</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Bônus</label><input type=\"number\" name=\"mod\" value=\"0\"></div>\n\t\t\t\t<div class=\"form-group\"><label>O grupo não veio resgatar ninguém (troca a 7ª pista)</label><input type=\"checkbox\" name=\"semResgate\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Três testes opostos contra Ladinagem +15: o primeiro a vencer dois ganha. Cada teste vencido pelo personagem dá uma pista; cada um vencido pelo Enxadrista tira 10 PM (ou PV, sem PM) de um companheiro do lado de fora, sorteado.</p>`,\n\t\t\tok: { label: \"Jogar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") return game.user.unsetFlag(\"world\", `${ESTADO}.xadrez`);\n\t\tconst jogador = tokens[0]?.actor;\n\t\tif (!jogador) return ui.notifications.warn(\"Selecione quem joga (e, depois, os companheiros do lado de fora).\");\n\t\tconst fora = tokens.slice(1).map((t) => t.actor);\n\t\tconst bonus = res.per === \"inte\" ? Number(jogador.system.atributos?.int?.value) || 0 : Number(jogador.system.pericias?.[res.per]?.value) || 0;\n\t\tconst rolls = [];\n\t\tlet pj = 0;\n\t\tlet enx = 0;\n\t\tlet html = `<h3>Partida contra o Enxadrista</h3><p>As peças tomam a forma dos companheiros de ${jogador.name}.</p><ol>`;\n\t\twhile (pj < 2 && enx < 2) {\n\t\t\tconst a = await new Roll(`1d20 + ${bonus} + ${Number(res.mod) || 0}`).evaluate();\n\t\t\tconst b = await new Roll(\"1d20 + 15\").evaluate();\n\t\t\trolls.push(a, b);\n\t\t\tif (a.total > b.total) {\n\t\t\t\tpj++;\n\t\t\t\tconst pistas = [...D.pistas];\n\t\t\t\tif (res.semResgate) pistas[6] = D.semResgate;\n\t\t\t\tconst pista = x.pista < pistas.length ? pistas[x.pista] : pistas.at(-2);\n\t\t\t\tx.pista = Math.min(x.pista + 1, pistas.length);\n\t\t\t\thtml += `<li>${jogador.name} ${a.total} × ${b.total} Enxadrista: <b>vantagem!</b> <i>\"Sempre que tiver vantagem, você ganha uma das rimas. Podem parecer bobagem, mas são minhas obras-primas!\"</i><br>${pista}</li>`;\n\t\t\t} else {\n\t\t\t\tenx++;\n\t\t\t\tlet txt = \"\";\n\t\t\t\tif (fora.length) {\n\t\t\t\t\tconst sorte = await new Roll(`1d${fora.length}`).evaluate();\n\t\t\t\t\trolls.push(sorte);\n\t\t\t\t\tconst v = fora[sorte.total - 1];\n\t\t\t\t\tconst pm = Number(v.system.attributes.pm?.value) || 0;\n\t\t\t\t\tconst tiraPM = Math.min(pm, 10);\n\t\t\t\t\tawait v.update({ \"system.attributes.pm.value\": pm - tiraPM, \"system.attributes.pv.value\": (Number(v.system.attributes.pv.value) || 0) - (10 - tiraPM) });\n\t\t\t\t\ttxt = `${v.name} perde ${tiraPM} PM${tiraPM < 10 ? ` e ${10 - tiraPM} PV` : \"\"}`;\n\t\t\t\t} else txt = \"um companheiro do lado de fora, sorteado, perde 10 PM (selecione-os para a macro aplicar)\";\n\t\t\t\thtml += `<li>${jogador.name} ${a.total} × ${b.total} Enxadrista: o Enxadrista leva a vantagem. ${txt}.</li>`;\n\t\t\t}\n\t\t}\n\t\thtml += `</ol><p><b>${pj >= 2 ? `${jogador.name} vence!` : \"O Enxadrista vence.\"}</b> ${pj >= 2 ? \"Ele agradece e se oferece para jogar de novo.\" : \"Ele concede quantas revanches quiserem, até contra outro personagem.\"}</p>`;\n\t\tawait game.user.setFlag(\"world\", `${ESTADO}.xadrez`, x);\n\t\tawait ChatMessage.create({ content: html, rolls });\n\t})(DADOS);",
+  "_id": "pxeCoBhiJ8nCmO8f",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!pxeCoBhiJ8nCmO8f"
+}

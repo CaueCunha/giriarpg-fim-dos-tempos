@@ -1,0 +1,71 @@
+{
+  "name": "Besta de Carga",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/itens/gerais/animal-comum.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "besta"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Um boi, burro ou mula. <b>Iniciante:</b> 10 espaços. <b>Veterano:</b> 15. <b>Mestre:</b> 20. Aumenta automaticamente o ruído do grupo em <b>uma categoria</b>.</p><p>Mesmo preço do carregador: T$ 90, 450 ou 900 pela exploração inteira (metade para animais com nome e personalidade).</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "Parceiros",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "qUAXig9rIqdl4g0D",
+  "_id": "7tTfU5liXnJCNKjY",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!7tTfU5liXnJCNKjY"
+}

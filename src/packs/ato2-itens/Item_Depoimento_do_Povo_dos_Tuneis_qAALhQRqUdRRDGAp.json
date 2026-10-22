@@ -1,0 +1,86 @@
+{
+  "name": "Depoimento do Povo dos Túneis",
+  "type": "tesouro",
+  "img": "systems/tormenta20/icons/itens/gerais/livro.webp",
+  "system": {
+    "description": {
+      "value": "<p>O relato do Povo dos Túneis ou de Athisza sobre o laboratório, Khenzarr, Torgo e o homem de casaco longo.</p><p><b>Prova.</b> Também servem: a visita de um oficial da Guarda ao laboratório e o depoimento de um morador da Baixa Vila de Lena que viu os dragões e confirma que os ataques pararam.</p>",
+      "unidentified": ""
+    },
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "duracao": {
+      "units": "inst",
+      "value": 0,
+      "special": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "rolls": [],
+    "container": false
+  },
+  "folder": "g8alCbHMMRvYFN6B",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "_id": "qAALhQRqUdRRDGAp",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!qAALhQRqUdRRDGAp"
+}

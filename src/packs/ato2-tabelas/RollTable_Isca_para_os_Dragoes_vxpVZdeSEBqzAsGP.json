@@ -1,0 +1,114 @@
+{
+  "name": "Isca para os Dragões",
+  "img": "systems/tormenta20/icons/poderes/ameacas/mordida.webp",
+  "folder": "jgyl40QtV1jLhcwx",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Role uma vez por dia com a isca no lugar. Se o teste para posicionar a isca deu 30 ou mais, some 1.",
+  "_id": "vxpVZdeSEBqzAsGP",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        2
+      ],
+      "weight": 2,
+      "name": "Outra criatura levou a isca",
+      "description": "Recomecem do zero.",
+      "_id": "HyWpnjwdPHmg8VKc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!vxpVZdeSEBqzAsGP.HyWpnjwdPHmg8VKc"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        4
+      ],
+      "weight": 2,
+      "name": "Nada acontece",
+      "description": "Esperem mais um dia.",
+      "_id": "JrSsfx3KRM2VKg5m",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!vxpVZdeSEBqzAsGP.JrSsfx3KRM2VKg5m"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        6
+      ],
+      "weight": 2,
+      "name": "Um dragão mordeu a isca",
+      "description": "Está voltando para o esconderijo: rastreiem (Sobrevivência CD 20, 3 sucessos).",
+      "_id": "FA1clAJUoM477YnR",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!vxpVZdeSEBqzAsGP.FA1clAJUoM477YnR"
+    }
+  ],
+  "_key": "!tables!vxpVZdeSEBqzAsGP"
+}

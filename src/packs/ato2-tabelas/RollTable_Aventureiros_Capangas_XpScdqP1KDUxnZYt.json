@@ -1,0 +1,196 @@
+{
+  "name": "Aventureiros-Capangas",
+  "img": "systems/tormenta20/icons/ameacas/bandido.png",
+  "folder": "szBcYbZlcylduX0a",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "capangas"
+    }
+  },
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Cada grupo tem um capanga a mais que o total de personagens, mais 1 (personagens + 2), em qualquer combinação. Nível 9: quatro grupos; +1 grupo por nível acima de 9.",
+  "_id": "XpScdqP1KDUxnZYt",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "document",
+      "documentUuid": "Actor.2pzeZIBYxlZ2FYXn",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Guerreiro Capanga",
+      "img": "systems/tormenta20/icons/ameacas/bandido.png",
+      "description": "",
+      "_id": "eNA4ZI21C7v2n3P8",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.eNA4ZI21C7v2n3P8"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Actor.ZGMfWX8fC9hS1Y9z",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Clérigo Capanga",
+      "img": "systems/tormenta20/icons/ameacas/capelao-de-guerra.png",
+      "description": "",
+      "_id": "v6sokvQVdZAb17NL",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.v6sokvQVdZAb17NL"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Actor.ywYmsZHsmJRGFPzf",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Caçador Capanga",
+      "img": "systems/tormenta20/icons/racas/humano.webp",
+      "description": "",
+      "_id": "XLeyU2pJ0ZoSBJTz",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.XLeyU2pJ0ZoSBJTz"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Actor.8DbOLnCuku1sAwMx",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Ladino Capanga",
+      "img": "systems/tormenta20/icons/ameacas/chefe-bandido.png",
+      "description": "",
+      "_id": "aN8dnQNG275nFGe0",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.aN8dnQNG275nFGe0"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Actor.meHNfCxbj5FlaonJ",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Mago Capanga",
+      "img": "systems/tormenta20/icons/racas/elfo.webp",
+      "description": "",
+      "_id": "2ez93aIkOReAGnIG",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.2ez93aIkOReAGnIG"
+    },
+    {
+      "type": "document",
+      "documentUuid": "Actor.LuJ9AM4Zz5rSjmSN",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Cavaleiro Capanga",
+      "img": "systems/tormenta20/icons/ameacas/guerreiro-de-chifres.png",
+      "description": "",
+      "_id": "rxUB22LVkWg04l4q",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!XpScdqP1KDUxnZYt.rxUB22LVkWg04l4q"
+    }
+  ],
+  "_key": "!tables!XpScdqP1KDUxnZYt"
+}

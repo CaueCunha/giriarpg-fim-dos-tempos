@@ -367,7 +367,7 @@
 		def: 33,
 		walk: 9,
 		pericias: { inic: 12, perc: 9, fort: 15, refl: 19, vont: 10, luta: 26, pont: 26, acro: 12, atle: 9, guer: 10, inve: 10, intu: 10, nobr: 10 },
-		ic: ["encantamento"],
+		icCustom: "encantamento",
 		resTxt: "Esquiva sobrenatural, evasão, imunidade a encantamento, resistência a medo +2.",
 		equipTxt: "Couraça sob medida, florete preciso, enfeite de elmo, medalhão do Reinado (até Andrus roubá-lo).",
 		ataquesTxt: "Florete ×2 +26 (2d8+13, 15).",

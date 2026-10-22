@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Seguir um Dragão",
+  "type": "script",
+  "img": "systems/tormenta20/icons/magias/localizacao.webp",
+  "folder": "sUDN5Vw4Z42gQjFf",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(async function macroSeguir() {\n\t\tconst CHAVE = \"fdtSeguirDragao\";\n\t\tconst e = foundry.utils.mergeObject({ testes: 0, perdidos: 0 }, game.user.getFlag(\"world\", CHAVE) ?? {}, { inplace: false });\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Seguir um Dragão do Esgoto\" },\n\t\t\tcontent: `<p>Teste ${e.testes + 1} de 3 · perdidos: ${e.perdidos}</p>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"pericia\"><option value=\"furt\">Furtividade</option><option value=\"sobr\">Sobrevivência</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Recomeçar</label><input type=\"checkbox\" name=\"zerar\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Só um personagem segue o dragão (selecione-o). O dragão tem Percepção +7, +5 por conhecer os túneis.</p>`,\n\t\t\tok: { label: \"Seguir\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.zerar) {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Perseguição recomeçada.\");\n\t\t}\n\t\tconst tk = canvas.tokens.controlled[0];\n\t\tif (!tk?.actor) return ui.notifications.warn(\"Selecione quem segue o dragão.\");\n\t\tconst k = res.pericia === \"sobr\" ? \"sobr\" : \"furt\";\n\t\tconst r = await new Roll(`1d20 + ${Number(tk.actor.system.pericias?.[k]?.value) || 0}`).evaluate();\n\t\tconst d = await new Roll(\"1d20 + 12\").evaluate();\n\t\te.testes += 1;\n\t\tconst venceu = r.total > d.total;\n\t\tif (!venceu) e.perdidos += 1;\n\t\tlet html = `<h3>Seguir um Dragão · teste ${e.testes}</h3><p>${tk.name}: ${k === \"furt\" ? \"Furtividade\" : \"Sobrevivência\"} <b>${r.total}</b> contra Percepção do dragão <b>${d.total}</b>. ${venceu ? \"Continua na cola.\" : \"Perdeu o rastro neste trecho.\"}</p>`;\n\t\tconst fim = e.testes >= 3 || e.perdidos >= 2;\n\t\tif (fim) {\n\t\t\tif (e.perdidos === 0) html += \"<p><b>Chegou ao laboratório sem ser notado!</b> Pode chamar os outros ou voltar e trazê-los com calma.</p>\";\n\t\t\telse if (e.perdidos === 1) html += \"<p>Perdeu o rastro do dragão. Tentem de novo com outro.</p>\";\n\t\t\telse html += \"<p><b>Emboscada!</b> Um enxame de dragões do esgoto ataca.</p>\";\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t} else await game.user.setFlag(\"world\", CHAVE, e);\n\t\tChatMessage.create({ content: html, rolls: [r, d] });\n\t})();",
+  "_id": "YXUarfDcvb9Txnso",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!YXUarfDcvb9Txnso"
+}

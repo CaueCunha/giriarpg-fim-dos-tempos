@@ -1,0 +1,142 @@
+{
+  "name": "Batatino da Estufa",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/magias/controlar-plantas.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Tubérculo animado que cuida da estufa. Um devoto de Marah ou treinado em Sobrevivência convence um a acompanhá-lo: parceiro que dá <b>+2 em Sobrevivência</b> e permite lançar <i>Controlar Plantas</i> (CD Sab; quem já conhece paga –1 PM). Não conta no limite de parceiros durante o baile; depois, conta.</p>",
+      "unidentified": ""
+    },
+    "tipo": "ability",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "La5i93q0KFp4pJ5a",
+  "_id": "PDOZvpDlo556SBAb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Batatino (+2 Sobrevivência)",
+      "img": "systems/tormenta20/icons/magias/controlar-plantas.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2av6"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.pericias.sobr.bonus",
+            "value": "2",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "wtcrVULEmxvhVJKn",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!PDOZvpDlo556SBAb.wtcrVULEmxvhVJKn"
+    }
+  ],
+  "_key": "!items!PDOZvpDlo556SBAb"
+}

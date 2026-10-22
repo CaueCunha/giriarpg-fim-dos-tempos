@@ -1,0 +1,70 @@
+{
+  "name": "Infecção do Esgoto",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/ameacas/doenca.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Quem passa alguns minutos no esgoto faz <b>Fortitude CD 15</b> no fim do dia (–5 se estava ferido, abaixo dos PV máximos). Falhou: contrai <b>infecção do esgoto</b> (<i>Tormenta20</i>, p. 318). A macro <i>Esgoto</i> rola para os selecionados.</p>",
+      "unidentified": ""
+    },
+    "tipo": "geral",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": "Fortitude CD 15"
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "g8alCbHMMRvYFN6B",
+  "_id": "nsNsTF9unnRRcL9S",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!nsNsTF9unnRRcL9S"
+}
