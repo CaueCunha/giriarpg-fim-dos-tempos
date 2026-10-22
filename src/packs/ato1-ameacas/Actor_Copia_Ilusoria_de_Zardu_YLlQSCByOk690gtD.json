@@ -1,7 +1,7 @@
 {
   "name": "Cópia Ilusória de Zardu",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/necromante.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/zardu.webp",
   "folder": "F1d9oiyyz2YCEFHy",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/necromante.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/zardu-token.webp"
     },
     "sight": {
       "enabled": true

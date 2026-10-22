@@ -1,7 +1,7 @@
 {
   "name": "Bandoleiro da Harpia",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/bandido.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/bandoleiro-espada.webp",
   "folder": "nwwpB8FdDEkZwYiT",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/bandido.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/bandoleiro-espada-token.webp"
     },
     "sight": {
       "enabled": true
@@ -150,7 +150,7 @@
       "ataquesad": "Besta leve +9 (1d8+2, 19).",
       "equipamento": "Couro batido, espada longa, besta leve, virotes.",
       "biography": {
-        "value": "<p>Criminosos recrutados em Zakharov que servem a Torgo e Syvarian. Trabalham em células e conhecem pouco além da própria tarefa. Os olhos foram substituídos por <b>cristais rosados</b> (implantes do Dr. Vesper). Por isso a luz da Harpia não os ofusca. Capturados, revelam tudo o que sabem, mas não sabem quase nada: foram levados a algum lugar, apagaram no caminho e acordaram já operados.</p><p><b>Variantes com a mesma ficha:</b></p><p><b>Artilheiro do canhão:</b> ligue o efeito <i>Cobertura do canhão (+5 Def)</i>. Se for derrotado, o Canhão de Fogo fica inativo por 1d3 rodadas (enquanto outro bandoleiro assume). Cada artilheiro derrotado sai dos 12 capangas do interior da nave.</p><p><b>Timoneira:</b> enquanto estiver no comando, personagens desprevenidos pelo piso escorregadio sofrem –2 em perícias. Incapacitada, a nave se estabiliza.</p><p><b>Defensores da escada de corda:</b> só chutam (use a arma <i>Chute</i>, +8, 1d3+2) para derrubar quem sobe.</p>",
+        "value": "<p>Criminosos recrutados em Zakharov que servem a Torgo e Syvarian. Trabalham em células e conhecem pouco além da própria tarefa. Os olhos foram substituídos por <b>cristais rosados</b> (implantes do Dr. Vesper). Por isso a luz da Harpia não os ofusca. Capturados, revelam tudo o que sabem, mas não sabem quase nada: foram levados a algum lugar, apagaram no caminho e acordaram já operados.</p><p><b>Arte do arqueiro</b>, para variar os tokens na cena: retrato <code>modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/bandoleiro-arco.webp</code> e token <code>modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/bandoleiro-arco-token.webp</code> (aba Token do token colocado).</p><p><b>Variantes com a mesma ficha:</b></p><p><b>Artilheiro do canhão:</b> ligue o efeito <i>Cobertura do canhão (+5 Def)</i>. Se for derrotado, o Canhão de Fogo fica inativo por 1d3 rodadas (enquanto outro bandoleiro assume). Cada artilheiro derrotado sai dos 12 capangas do interior da nave.</p><p><b>Timoneira:</b> enquanto estiver no comando, personagens desprevenidos pelo piso escorregadio sofrem –2 em perícias. Incapacitada, a nave se estabiliza.</p><p><b>Defensores da escada de corda:</b> só chutam (use a arma <i>Chute</i>, +8, 1d3+2) para derrubar quem sobe.</p>",
         "public": ""
       },
       "origem": "",

@@ -1,7 +1,7 @@
 {
   "name": "Parceiro: Híbridos Profanos (Atirador iniciante)",
   "type": "poder",
-  "img": "systems/tormenta20/icons/itens/gerais/parceiros.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/hibridos.webp",
   "flags": {
     "world": {
       "fdt": "av2"

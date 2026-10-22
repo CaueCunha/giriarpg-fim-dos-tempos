@@ -1,7 +1,7 @@
 {
   "name": "Capelã de Guerra Lorelei Wulff",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/capelao-de-guerra.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/lorelei.webp",
   "folder": "QQ99QFt1qm9NREnR",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/capelao-de-guerra.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/lorelei-token.webp"
     },
     "sight": {
       "enabled": true
@@ -150,7 +150,7 @@
       "ataquesad": "",
       "equipamento": "Armadura completa, escudo leve, martelo de guerra cruel, símbolo sagrado, lampião mecanomágico, pergaminhos de Sono.",
       "biography": {
-        "value": "<p>Criminosa de guerra da Supremacia Purista escondida em Dornbach. Virou clériga de Aharadak achando que cultua Valkaria e quer \"purificar\" não humanos, transformando-os em \"humanos\" (na verdade lefou). Ela mesma já é lefou e não sabe.</p><p>Lança magias como clériga de 5º nível (CD 18). Prefere morrer a ser capturada; se tiver chance, se mata. Interrogada, fala com orgulho do experimento e da religião.</p><p><b>Sabe:</b> o nome \"Torgo\" (que surgiu para ela numa grande luz no céu) e que <b>Syvarian</b> é um comandante, oficial de média patente, que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde.</p>",
+        "value": "<p>Criminosa de guerra da Supremacia Purista escondida em Dornbach. Virou clériga de Aharadak achando que cultua Valkaria e quer \"purificar\" não humanos, transformando-os em \"humanos\" (na verdade lefou). Ela mesma já é lefou e não sabe.</p><p>Lança magias como clériga de 5º nível (CD 18). Prefere morrer a ser capturada; se tiver chance, se mata. Interrogada, fala com orgulho do experimento e da religião.</p><p><b>Sabe:</b> o nome \"Torgo\" (que surgiu para ela numa grande luz no céu) e que <b>Syvarian</b> é um comandante, oficial de média patente, que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde.</p><p><b>Arte alternativa</b>, sem os óculos, com os olhos de inseto à mostra (para quando ela for desmascarada): retrato <code>modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/lorelei-sem-oculos.webp</code> e token <code>modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/lorelei-sem-oculos-token.webp</code> (aba Token da ficha).</p>",
         "public": ""
       },
       "origem": "",

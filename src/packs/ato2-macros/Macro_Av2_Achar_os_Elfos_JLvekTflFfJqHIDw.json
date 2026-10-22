@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Achar os Elfos",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/luneta.webp",
+  "folder": "7cCGI0J7qvClxlei",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n(async function macroAcharElfos() {\n\t\tconst CHAVE = \"fdtVectoraBusca\";\n\t\tconst e = game.user.getFlag(\"world\", CHAVE) ?? { sucessos: 0, rolagens: 0, creditos: 0, achou: false };\n\t\tconst DADOS = [\"\", \"1d20\", \"1d12\", \"1d10\", \"1d8\", \"1d6\", \"1d4\", \"1d3\"];\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Achar os elfos no céu de Vectora\" },\n\t\t\tcontent: `<p>${e.achou ? \"<b>Os elfos já foram achados.</b> \" : \"\"}Rolagens: <b>${e.rolagens}</b> · sucessos: <b>${e.sucessos}</b> · créditos do Mestre: <b>${e.creditos}</b>.</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"testar\">Teste do representante (CD 25)</option>\n\t\t\t\t\t<option value=\"zerar\">Começar de novo (zera rolagens, sucessos e créditos)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Perícia</label><select name=\"per\"><option value=\"inve\">Investigação</option><option value=\"perc\">Percepção</option>\n\t\t\t\t\t<option value=\"guer\">Guerra</option><option value=\"mist\">Misticismo</option><option value=\"sobr\">Sobrevivência</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Resultado já rolado (opcional)</label><input type=\"number\" name=\"manual\" placeholder=\"rola para o token selecionado\"></div>\n\t\t\t\t<p style=\"font-size:0.85em\">Voar entre a multidão, luneta ou magia não dão bônus: são o que permite fazer o teste. Aceite outras perícias com boa justificativa.</p>`,\n\t\t\tok: { label: \"Rolar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Busca pelos elfos reiniciada.\");\n\t\t}\n\t\tconst rolls = [];\n\t\tlet total = Number(res.manual);\n\t\tlet quem = \"Resultado informado\";\n\t\tif (res.manual === \"\" || res.manual === undefined) {\n\t\t\tconst a = atores[0];\n\t\t\tif (!a) return ui.notifications.warn(\"Selecione o token do representante do grupo, ou informe o resultado.\");\n\t\t\tconst r = await new Roll(`1d20 + ${Number(a.system.pericias?.[res.per]?.value) || 0}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\ttotal = r.total;\n\t\t\tquem = a.name;\n\t\t}\n\t\te.rolagens += 1;\n\t\tlet html = `<h3>Achar os elfos · rolagem ${e.rolagens}</h3><p>${quem}: <b>${total}</b> contra CD 25.</p>`;\n\t\tif (total >= 25) {\n\t\t\te.sucessos += 1;\n\t\t\tconst dado = DADOS[Math.min(e.sucessos, 7)];\n\t\t\tconst d = await new Roll(dado).evaluate();\n\t\t\trolls.push(d);\n\t\t\tif (d.total === 1) {\n\t\t\t\te.achou = true;\n\t\t\t\thtml += `<p>Sucesso ${e.sucessos}: ${dado} = <b>1</b>. <b>É o grupo certo!</b></p>`;\n\t\t\t} else {\n\t\t\t\te.creditos += 1;\n\t\t\t\thtml += `<p>Sucesso ${e.sucessos}: ${dado} = ${d.total}. Outro grupo de elfos. <b>+1 crédito</b> para o Mestre.</p>`;\n\t\t\t}\n\t\t} else {\n\t\t\te.creditos += 1;\n\t\t\thtml += \"<p>Falha. <b>+1 crédito</b> para o Mestre.</p>\";\n\t\t}\n\t\tif (e.achou) {\n\t\t\thtml += e.rolagens <= 5 ? \"<p>Os elfos <b>ainda estão descendo</b> de Vectora: perseguição <b>aérea</b>.</p>\"\n\t\t\t\t: e.rolagens <= 8 ? \"<p>Os elfos já estão <b>a caminho do Campo de Keenn</b>, mas ainda dá para interceptá-los: perseguição <b>a pé</b>.</p>\"\n\t\t\t\t\t: \"<p>Achados tarde demais: siga para a fase 3 e o Campo de Keenn.</p>\";\n\t\t} else if (e.rolagens >= 9) {\n\t\t\thtml += \"<p><b>Mais de 8 rolagens: os elfos sumiram.</b> Siga para a fase 3 (achar o ponto de encontro: Investigação CD 25).</p>\";\n\t\t}\n\t\thtml += `<p style=\"font-size:0.85em\">Créditos do Mestre: ${e.creditos}. Use a macro <i>Créditos do Mestre</i> para gastá-los nos truques.</p>`;\n\t\tawait game.user.setFlag(\"world\", CHAVE, e);\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "JLvekTflFfJqHIDw",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!JLvekTflFfJqHIDw"
+}

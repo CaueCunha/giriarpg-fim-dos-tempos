@@ -1,7 +1,7 @@
 {
   "name": "Bênção de Kerok (+5 contra a Tormenta)",
   "type": "poder",
-  "img": "systems/tormenta20/icons/itens/gerais/orbe-cristalina.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/korek-e-kerok.webp",
   "flags": {
     "world": {
       "fdt": "av2"

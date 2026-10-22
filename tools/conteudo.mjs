@@ -30,8 +30,9 @@ export const ATOS = [
 		cor: "#2f4a6b",
 		geradores: [
 			"a2-av0-valkaria",
-			"a2-av1-stremtol"
-			// Av2 a Av7 ainda não têm gerador.
+			"a2-av1-stremtol",
+			"a2-av2-vectora"
+			// Av3 a Av7 ainda não têm gerador.
 		]
 	},
 	{

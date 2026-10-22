@@ -25,6 +25,7 @@
 	const TAG = "av3";
 	const FLAGS = (role) => ({ world: role ? { fdt: TAG, fdtRole: role } : { fdt: TAG } });
 	const T20I = "systems/tormenta20/icons";
+	const ARTE = "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas";
 
 	/* ------------------------------------------------------------------ */
 	/* 0. Limpeza do que foi gerado antes                                   */
@@ -244,7 +245,8 @@
 		tokenName: "Lorelei Wulff",
 		role: "lorelei",
 		link: true,
-		img: `${T20I}/ameacas/capelao-de-guerra.png`,
+		img: `${ARTE}/lorelei.webp`,
+		token: `${ARTE}/lorelei-token.webp`,
 		nd: 4,
 		cd: 18,
 		tipo: "mon",
@@ -263,7 +265,8 @@
 		bio: p(
 			"Criminosa de guerra da Supremacia Purista escondida em Dornbach. Virou clériga de Aharadak achando que cultua Valkaria e quer \"purificar\" não humanos, transformando-os em \"humanos\" (na verdade lefou). Ela mesma já é lefou e não sabe.",
 			"Lança magias como clériga de 5º nível (CD 18). Prefere morrer a ser capturada; se tiver chance, se mata. Interrogada, fala com orgulho do experimento e da religião.",
-			"<b>Sabe:</b> o nome \"Torgo\" (que surgiu para ela numa grande luz no céu) e que <b>Syvarian</b> é um comandante, oficial de média patente, que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde."
+			"<b>Sabe:</b> o nome \"Torgo\" (que surgiu para ela numa grande luz no céu) e que <b>Syvarian</b> é um comandante, oficial de média patente, que lidera criminosos, está nas Colinas e tem um exército. Não sabe onde.",
+			`<b>Arte alternativa</b>, sem os óculos, com os olhos de inseto à mostra (para quando ela for desmascarada): retrato <code>${ARTE}/lorelei-sem-oculos.webp</code> e token <code>${ARTE}/lorelei-sem-oculos-token.webp</code> (aba Token da ficha).`
 		),
 		effects: [...ajudantes()],
 		items: [
@@ -293,7 +296,8 @@
 	atores.soldado = await criarNPC({
 		name: "Soldado de Lorelei",
 		role: "soldado",
-		img: `${T20I}/ameacas/soldado-supremacista.png`,
+		img: `${ARTE}/soldado.webp`,
+		token: `${ARTE}/soldado-token.webp`,
 		nd: 2,
 		cd: 15,
 		tipo: "hum",
@@ -335,7 +339,8 @@
 	atores.guarda = await criarNPC({
 		name: "Guarda de Dornbach",
 		role: "guarda",
-		img: `${T20I}/ameacas/guarda-de-cidade.png`,
+		img: `${ARTE}/guarda.webp`,
+		token: `${ARTE}/guarda-token.webp`,
 		nd: "1/2",
 		cd: 15,
 		tipo: "hum",
@@ -384,7 +389,8 @@
 		role: "zagar",
 		link: true,
 		disposition: 0,
-		img: `${T20I}/ameacas/trog.png`,
+		img: `${ARTE}/hermann.webp`,
+		token: `${ARTE}/zagar-token.webp`,
 		nd: "1/4",
 		cd: 15,
 		tipo: "mon",
@@ -436,6 +442,40 @@
 			"Depois que o ritual começa (rodada 2), nem a morte de Lorelei o para: é preciso <b>destruir a máquina</b> ou <b>tirar a vítima</b> da gaiola. Use a macro <i>Ritual de Purificação</i> para avançar as rodadas."
 		)
 	});
+
+	/* ---------- Aldeões e as Dahllan Daninhas (sem ficha no livro: só para os tokens) ---------- */
+	const SEM_FICHA = "<b>Não tem ficha no livro.</b> Este ator existe para o token no mapa e para mostrar a arte aos jogadores.";
+	const retrato = (role, name, arq, raca, atr, bio, extra = "") => criarNPC({
+		name, role, img: `${ARTE}/${arq}.webp`, disposition: 0, link: true,
+		nd: 1, tipo: "hum", raca, papel: "special", atr, pv: 10, def: 10, bio: p(bio, extra || SEM_FICHA)
+	});
+	const COMO_GUARDA = "<b>Em combate</b>, use a ficha do <i>Guarda de Dornbach</i> (ou arraste este ator e copie os números de lá).";
+	atores.delmond = await retrato("delmond", "Delmond, o Ferreiro", "delmond", "humano", { for: 2, des: 1, con: 2, int: 0, sab: -1, car: 0 },
+		"Ferreiro purista convicto, tem a aprendiz Braya. Montou a máquina de Lorelei com as peças de Torgo. Convida não humanos para \"conhecer o salão\" e oferece \"aprimorar as armas\". Se Lorelei morrer, tenta o ritual (50%).", COMO_GUARDA);
+	atores.marwen = await retrato("marwen", "Marwen", "marwen", "humano", { for: 2, des: 1, con: 2, int: 0, sab: -1, car: 0 },
+		"Taverneira da Chifre de Bode, racista \"condescendente\". Serve o jantar com Poção de Sono e pede as armaduras \"para polir\". Com bons argumentos (e a taverna pegando fogo), pode trocar de lado.", COMO_GUARDA);
+	atores.orlo = await retrato("orlo", "Ancião Orlo", "orlo", "humano", { for: -1, des: 0, con: 0, int: 1, sab: 1, car: 1 },
+		"O ancião da aldeia, purista convicto. Fica no salão comunal com Deron, Catagran e Bernice.");
+	atores.deron = await retrato("deron", "Deron", "deron", "humano", { for: 1, des: 0, con: 1, int: 0, sab: 0, car: 0 },
+		"Aldeão do salão comunal, ao lado do ancião Orlo.");
+	atores.catagran = await retrato("catagran", "Catagran", "catagran", "humano", { for: 1, des: 0, con: 1, int: 0, sab: 0, car: 0 },
+		"Aldeão do salão comunal, ao lado do ancião Orlo.");
+	atores.bernice = await retrato("bernice", "Bernice", "bernice", "humano", { for: 0, des: 0, con: 1, int: 0, sab: 1, car: 0 },
+		"Aldeã do salão comunal, ao lado do ancião Orlo.");
+	atores.brixon = await retrato("brixon", "Brixon", "brixon", "humano", { for: 1, des: 0, con: 1, int: 0, sab: 0, car: -1 },
+		"Do moinho, com Arsace: racistas discretos que odeiam forasteiros. O panfleto de ódio está num baú do moinho.");
+	atores.arsace = await retrato("arsace", "Arsace", "arsace", "humano", { for: 1, des: 0, con: 1, int: 0, sab: 0, car: -1 },
+		"Do moinho, com Brixon: racistas discretos que odeiam forasteiros.");
+	atores.annabel = await retrato("annabel", "Annabel, a Dahllan Daninha", "annabel", "dahllan", { for: 2, des: 2, con: 2, int: 0, sab: 1, car: 0 },
+		"A irmã mais velha: hostil, teimosa, quase paranoica, aliada feroz se ganharem sua confiança. Recebe o grupo com um tiro de besta de aviso. Depois do resgate, quer executar os aldeões.");
+	atores.grena = await retrato("grena", "Grena, a Dahllan Daninha", "grena", "dahllan", { for: 0, des: 1, con: 1, int: 0, sab: 1, car: 2 },
+		"Chamou o grupo pelo aviso no Forte. Tenta colaborar e desculpar a irmã mais velha.");
+	atores.astelle = await retrato("astelle", "Astelle, a Dahllan Daninha", "astelle", "dahllan", { for: -1, des: 1, con: 0, int: 3, sab: 1, car: 0 },
+		"A caçula estudiosa (cerca de 13 anos). Solta verdades constrangedoras sobre as irmãs. Se o grupo der as costas, foge de casa para pedir ajuda.");
+	atores.andrisse = await retrato("andrisse", "Andrisse, a Dahllan Daninha", "andrisse", "dahllan", { for: -1, des: 1, con: 0, int: 0, sab: 0, car: 2 },
+		"A desaparecida: seguiu hipnotizada o brilho do lampião até Dornbach e está presa sob o salão comunal, sofrendo lavagem cerebral. É a primeira vítima do ritual.");
+	atores.vadrinne = await retrato("vadrinne", "Vadrinne, a Dahllan Daninha", "vadrinne", "dahllan", { for: 0, des: 1, con: 1, int: 0, sab: 0, car: 2 },
+		"A irmã que as outras chamam de traidora: casou com o fazendeiro Jansel Gallobalt e vive longe da família. Reaparece na Aventura 4.");
 
 	/* ---------- Ator de apoio: a aldeia ---------- */
 	atores.aldeia = await criarNPC({
@@ -785,10 +825,10 @@
 			pagina("As Dahllan Daninhas", `
 				<p>Vivem num carvalho oco do tamanho de uma torre, sem folhas mas florindo na primavera (sinal de Allihanna), no topo de uma colina cultivada. Filhas da dríade Granúlia.</p>
 				<ul>
-					<li><b>Annabel</b>, a mais velha: hostil, teimosa, quase paranoica, aliada feroz se ganharem sua confiança. Resume as Colinas Centrais.</li>
-					<li><b>Grena</b>: chamou o grupo, tenta colaborar e desculpar a irmã.</li>
-					<li><b>Astelle</b>, a caçula estudiosa: revela verdades constrangedoras (Andrisse era protegida demais e muito ingênua).</li>
-					<li><b>Andrisse</b>: a desaparecida, presa sob o salão comunal e sofrendo lavagem cerebral.</li>
+					<li>${L(atores.annabel)}, a mais velha: hostil, teimosa, quase paranoica, aliada feroz se ganharem sua confiança. Resume as Colinas Centrais.</li>
+					<li>${L(atores.grena)}: chamou o grupo, tenta colaborar e desculpar a irmã.</li>
+					<li>${L(atores.astelle)}, a caçula estudiosa: revela verdades constrangedoras (Andrisse era protegida demais e muito ingênua).</li>
+					<li>${L(atores.andrisse)}: a desaparecida, presa sob o salão comunal e sofrendo lavagem cerebral.</li>
 				</ul>
 				<p>Servos de Allihanna, druidas e aventureiros ligados à natureza ganham a simpatia delas com mais facilidade.</p>
 				<h3>O que elas dizem (e o que é verdade)</h3>
@@ -803,10 +843,10 @@
 				<p><b>Se o grupo der as costas:</b> a missão falha (Vesper ganha apoio de nobres racistas em Valkaria) ou Astelle foge de casa para pedir ajuda pessoalmente.</p>`, 300),
 			pagina("Construções de Dornbach", `
 				<ul>
-					<li><b>Oficina de Delmond:</b> ferreiro e a aprendiz Braya, ambos puristas. Pistas: nenhum sinal de que ele é inventor, talheres mordidos pelos dentes de Zagar, elos de corrente descartados.</li>
-					<li><b>Chifre de Bode:</b> taverna famosa pelo chifre de bode cozido em lama. Marwen (racista \"condescendente\", pode trocar de lado), Ungus (fanático) e Zagar. Pistas: ${L(itemPorNome("Poção de Sono"))} atrás do balcão, o comportamento de Zagar, o quarto dele com roupas que não servem e o desenho de Lylla.</li>
-					<li><b>Salão Comunal:</b> ancião Orlo (purista convicto), Deron, Catagran e Bernice. Ishtob, Volko, Zebedinna e Myrilla ficam \"fazendo hora\". Investigação/Ladinagem: armadilha de poço. Ofício (pedreiro): há um subsolo. Investigação: pratos e talheres sobrando (alguém escondido come ali). Enganação razoável faz os anciões mostrarem as visões puristas.</li>
-					<li><b>Moinho:</b> Brixon e Arsace, racistas discretos que odeiam forasteiros. ${L(itemPorNome("Panfleto"))} num baú.</li>
+					<li><b>Oficina de ${L(atores.delmond)}:</b> ferreiro e a aprendiz Braya, ambos puristas. Pistas: nenhum sinal de que ele é inventor, talheres mordidos pelos dentes de Zagar, elos de corrente descartados.</li>
+					<li><b>Chifre de Bode:</b> taverna famosa pelo chifre de bode cozido em lama. ${L(atores.marwen)} (racista \"condescendente\", pode trocar de lado), Ungus (fanático) e Zagar. Pistas: ${L(itemPorNome("Poção de Sono"))} atrás do balcão, o comportamento de Zagar, o quarto dele com roupas que não servem e o desenho de Lylla.</li>
+					<li><b>Salão Comunal:</b> ancião ${L(atores.orlo)} (purista convicto), ${L(atores.deron)}, ${L(atores.catagran)} e ${L(atores.bernice)}. Ishtob, Volko, Zebedinna e Myrilla ficam \"fazendo hora\". Investigação/Ladinagem: armadilha de poço. Ofício (pedreiro): há um subsolo. Investigação: pratos e talheres sobrando (alguém escondido come ali). Enganação razoável faz os anciões mostrarem as visões puristas.</li>
+					<li><b>Moinho:</b> ${L(atores.brixon)} e ${L(atores.arsace)}, racistas discretos que odeiam forasteiros. ${L(itemPorNome("Panfleto"))} num baú.</li>
 					<li><b>Templo do Panteão:</b> fechado com tábuas, símbolos externos apagados há pouco, medalhões dos deuses riscados. Os aldeões contam versões diferentes de um \"ataque de orcs\".</li>
 					<li><b>Casas:</b> simples, nada surpreendente. Sem mercado, só uma praça perto do salão onde se vende grão.</li>
 				</ul>`, 400),
@@ -853,5 +893,5 @@
 		]
 	});
 
-	ui.notifications.info("Aventura 3 criada: 7 atores, itens, diário, tabela e 4 macros. Veja a pasta \"" + NOME_PASTA + "\".");
+	ui.notifications.info("Aventura 3 criada: 20 atores, itens, diário, tabela e 4 macros. Veja a pasta \"" + NOME_PASTA + "\".");
 })();

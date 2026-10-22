@@ -2,7 +2,7 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 97 documento(s), 8 pasta(s)
+- `ato1-ameacas`: 123 documento(s), 8 pasta(s)
 - `ato1-itens`: 87 documento(s), 9 pasta(s)
 - `ato1-diarios`: 8 documento(s), 8 pasta(s)
 - `ato1-tabelas`: 13 documento(s), 6 pasta(s)
@@ -138,13 +138,13 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 14 documento(s), 2 pasta(s)
-- `ato2-itens`: 7 documento(s), 2 pasta(s)
-- `ato2-diarios`: 2 documento(s), 2 pasta(s)
-- `ato2-tabelas`: 2 documento(s), 2 pasta(s)
-- `ato2-macros`: 5 documento(s), 2 pasta(s)
+- `ato2-ameacas`: 25 documento(s), 3 pasta(s)
+- `ato2-itens`: 14 documento(s), 3 pasta(s)
+- `ato2-diarios`: 3 documento(s), 3 pasta(s)
+- `ato2-tabelas`: 5 documento(s), 3 pasta(s)
+- `ato2-macros`: 12 documento(s), 3 pasta(s)
 
-### Ligações com o sistema (37)
+### Ligações com o sistema (71)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
@@ -185,6 +185,40 @@
 | Nyrimm | Armadura Arcana | magia | magia do sistema + ficha do NPC |
 | Nyrimm | Campo de Força | magia | magia do sistema + ficha do NPC |
 | Nyrimm | Controlar Plantas | magia | magia do sistema + ficha do NPC |
+| Elyrionn | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Elyrionn | Emboscar | poder | ficha do livro + origem no sistema |
+| Elyrionn | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Elyrionn | Evasão | poder | ficha do livro + origem no sistema |
+| Elfo Fora da Lei | Espada Curta (×2) | arma | ficha do livro + origem no sistema |
+| Elfo Fora da Lei | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Elfo Fora da Lei | Rolamento Defensivo | poder | ficha do livro + origem no sistema |
+| Elfo Fora da Lei | Evasão | poder | ficha do livro + origem no sistema |
+| Janara | Adaga | arma | ficha do livro + origem no sistema |
+| Janara | Audácia | poder | ficha do livro + origem no sistema |
+| Janara | Evasão | poder | ficha do livro + origem no sistema |
+| Humano Agente do Reinado | Espada Bastarda | arma | ficha do livro + origem no sistema |
+| Humano Agente do Reinado | Espada Curta | arma | ficha do livro + origem no sistema |
+| Rolthurr | Martelo de Guerra (×2) | arma | ficha do livro + origem no sistema |
+| Mazynne | Machadinha | arma | ficha do livro + origem no sistema |
+| Mazynne | Besta Leve | arma | ficha do livro + origem no sistema |
+| Mazynne | Bomba de Fumaça | poder | link para o sistema |
+| Sir Androwe Heribran | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Sir Androwe Heribran | Bloqueio com Escudo | poder | ficha do livro + origem no sistema |
+| Sir Androwe Heribran | Duelo | poder | ficha do livro + origem no sistema |
+| Cavaleiro Corrompido | Lança Montada (×2) | arma | ficha do livro + origem no sistema |
+| Cavaleiro Corrompido | Espada Longa (×2) | arma | ficha do livro + origem no sistema |
+| Cavaleiro Corrompido | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Cavaleiro Corrompido | Duelo | poder | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Cimitarra (×2) | arma | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Machadinha | arma | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Ataque Furtivo | poder | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Bloqueio com Escudo | poder | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Saque Rápido | poder | ficha do livro + origem no sistema |
+| Bandido da Floresta e das Montanhas | Evasão | poder | ficha do livro + origem no sistema |
+| Grifo dos Cavaleiros | Bote | poder | ficha do livro + origem no sistema |
+| Grifo dos Cavaleiros | Mordida | arma | ficha do livro + origem no sistema |
+| Grifo dos Cavaleiros | Garras | arma | ficha do livro + origem no sistema |
+| Grifo dos Cavaleiros | ovo de grifo | tesouro | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 

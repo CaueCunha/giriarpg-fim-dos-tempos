@@ -1,7 +1,7 @@
 {
   "name": "Gaspar, o Homem Mais Forte do Mundo",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/maniaco-lefou.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar.webp",
   "folder": "F1d9oiyyz2YCEFHy",
   "flags": {
     "world": {
@@ -21,7 +21,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/maniaco-lefou.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar-token.webp"
     },
     "sight": {
       "enabled": true
@@ -149,7 +149,7 @@
       "ataquescac": "Marreta de madeira +16 (1d10+17).",
       "equipamento": "Marreta de madeira (tacape).",
       "biography": {
-        "value": "<p><b>Ato 5.</b> Apavorado e confuso, Gaspar ataca imediatamente. Zardu entra duas rodadas depois (ou quando Gaspar estiver quase vencido).</p><p><b>Palco (Realidade):</b> pesos de ferro tornam o chão terreno difícil; andar normal exige Acrobacia CD 15 (falha: 1d4 de impacto e para). Gaspar não é afetado.</p><p><b>Mudar de lado:</b> depois que Zardu aparece, o grupo vence 3 testes sociais opostos à Enganação de Zardu (macro <i>Convencer Gaspar</i>). Só vale com argumento que Gaspar entenda (mãe, irmãos, o Herói Louco). Ele nunca fica neutro: se convencido, ataca Zardu.</p><p><b>Depois da aventura:</b> se for devolvido à família e bem tratado, Mabel pode mandá-lo ajudar o grupo (item <i>Parceiro: Gaspar</i>).</p>",
+        "value": "<p><b>Ato 5.</b> Apavorado e confuso, Gaspar ataca imediatamente. Zardu entra duas rodadas depois (ou quando Gaspar estiver quase vencido).</p><p><b>Palco (Realidade):</b> pesos de ferro tornam o chão terreno difícil; andar normal exige Acrobacia CD 15 (falha: 1d4 de impacto e para). Gaspar não é afetado.</p><p><b>Mudar de lado:</b> depois que Zardu aparece, o grupo vence 3 testes sociais opostos à Enganação de Zardu (macro <i>Convencer Gaspar</i>). Só vale com argumento que Gaspar entenda (mãe, irmãos, o Herói Louco). Ele nunca fica neutro: se convencido, ataca Zardu.</p><p><b>Depois da aventura:</b> se for devolvido à família e bem tratado, Mabel pode mandá-lo ajudar o grupo (item <i>Parceiro: Gaspar</i>).</p><p><b>Token alternativo</b>, com a moldura da família, para depois do resgate: <code>modules/giriarpg-fim-dos-tempos/assets/arco1/av2-lefou/gaspar-leblanc-token.webp</code> (aba Token da ficha).</p>",
         "public": ""
       },
       "origem": "",

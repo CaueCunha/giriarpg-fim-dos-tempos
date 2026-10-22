@@ -23,7 +23,7 @@ jobs:
       - name: Montar module.zip
         run: |
           mkdir -p dist
-          zip -r dist/module.zip module.json scripts styles lang packs README.md
+          zip -r dist/module.zip module.json scripts styles lang packs assets README.md
           cp module.json dist/module.json
       - name: Publicar release
         env:

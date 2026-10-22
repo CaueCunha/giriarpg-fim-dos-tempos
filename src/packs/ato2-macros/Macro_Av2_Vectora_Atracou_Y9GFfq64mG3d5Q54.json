@@ -1,0 +1,31 @@
+{
+  "name": "Av2 · Vectora Atracou?",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/balao-goblin.webp",
+  "folder": "7cCGI0J7qvClxlei",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n(async function macroVectora() {\n\t\tconst CHAVE = \"fdtVectora\";\n\t\tconst e = game.user.getFlag(\"world\", CHAVE) ?? { aventuras: 0, chegou: false };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Vectora atracou?\" },\n\t\t\tcontent: `<p>Aventuras concluídas desde a Av0: <b>${e.aventuras}</b>. ${e.chegou ? \"<b>Vectora já está atracada.</b>\" : \"\"}</p>\n\t\t\t\t<div class=\"form-group\"><label>Ação</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"rolar\">Fim de uma aventura: rolar 1d6</option>\n\t\t\t\t\t<option value=\"chegou\">Vectora chega agora (escolha do Mestre)</option>\n\t\t\t\t\t<option value=\"partiu\">Vectora partiu / caso encerrado</option>\n\t\t\t\t\t<option value=\"zerar\">Zerar a contagem</option></select></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tif (res.acao === \"zerar\") {\n\t\t\tawait game.user.unsetFlag(\"world\", CHAVE);\n\t\t\treturn ui.notifications.info(\"Contagem de Vectora zerada.\");\n\t\t}\n\t\tif (res.acao === \"partiu\") {\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, { ...e, chegou: false });\n\t\t\treturn ChatMessage.create({ content: \"<h3>Vectora partiu</h3><p>O Mercado nas Nuvens deixou Valkaria.</p>\", whisper: ChatMessage.getWhisperRecipients(\"GM\") });\n\t\t}\n\t\tif (res.acao === \"chegou\") {\n\t\t\tawait game.user.setFlag(\"world\", CHAVE, { ...e, chegou: true });\n\t\t\treturn ChatMessage.create({ content: \"<h3>Vectora está chegando!</h3><p>O caso <b>Conexão Vectora</b> fica disponível no Quadro de Casos.</p>\" });\n\t\t}\n\t\tconst n = e.aventuras + 1;\n\t\tconst minimo = Math.max(1, 7 - n);\n\t\tconst r = await new Roll(\"1d6\").evaluate();\n\t\tconst chegou = r.total >= minimo;\n\t\tawait game.user.setFlag(\"world\", CHAVE, { aventuras: n, chegou: chegou || e.chegou });\n\t\tconst lo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"leiordem\");\n\t\tconst aviso = lo && Number(lo.system.resources?.primary?.value) <= 0 ? \"<p><b>Lei &amp; Ordem já chegou a zero:</b> o arco acaba sem Vectora, a menos que você queira mestrar o caso mesmo assim.</p>\" : \"\";\n\t\tChatMessage.create({\n\t\t\tcontent: `<h3>Vectora atracou?</h3><p>Depois da aventura ${n}: precisa de ${minimo}+ no d6. Resultado <b>${r.total}</b>: ${chegou ? \"<b>Vectora está chegando!</b> O caso Conexão Vectora fica disponível.\" : \"ainda não.\"}</p>${aviso}`,\n\t\t\trolls: [r],\n\t\t\twhisper: ChatMessage.getWhisperRecipients(\"GM\")\n\t\t});\n\t})();",
+  "_id": "Y9GFfq64mG3d5Q54",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!Y9GFfq64mG3d5Q54"
+}

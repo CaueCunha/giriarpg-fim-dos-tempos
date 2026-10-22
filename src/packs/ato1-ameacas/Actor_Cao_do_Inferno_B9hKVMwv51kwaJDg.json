@@ -21,7 +21,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/cao-do-inferno.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/cao-do-inferno-token.webp"
     },
     "sight": {
       "enabled": true

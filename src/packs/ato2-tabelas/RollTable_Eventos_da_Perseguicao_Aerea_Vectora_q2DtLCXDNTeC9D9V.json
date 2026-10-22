@@ -1,0 +1,276 @@
+{
+  "name": "Eventos da Perseguição Aérea (Vectora)",
+  "img": "systems/tormenta20/icons/itens/gerais/balao-goblin.webp",
+  "folder": "owSfqsuq1Jud9ryL",
+  "flags": {
+    "world": {
+      "fdt": "a2av2"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Uma vez por rodada. Obstáculo: quem falha avança metade. Atalho: quem tenta e passa avança o dobro. A macro Perseguição em Vectora já rola isto.",
+  "_id": "q2DtLCXDNTeC9D9V",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        4
+      ],
+      "weight": 4,
+      "name": "Nenhum",
+      "description": "—",
+      "_id": "JWKfOvge4YEkUiAJ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.JWKfOvge4YEkUiAJ"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        6
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Inteligência CD 15",
+      "description": "Ventos fazem pedregulhos flutuantes se moverem em padrões erráticos.",
+      "_id": "1mS19o1AFfFmyvAL",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.1mS19o1AFfFmyvAL"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        8
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Acrobacia CD 25",
+      "description": "Um apressadinho alado corta a frente dos perseguidores.",
+      "_id": "dpnsMTDpxhSyfZrd",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.dpnsMTDpxhSyfZrd"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        10
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Misticismo CD 25 ou Sobrevivência CD 25",
+      "description": "Um vórtice antigravitacional se forma no caminho. Quem falha também perde 1d4 PM.",
+      "_id": "pkq9RxCEjiT9Ht2J",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.pkq9RxCEjiT9Ht2J"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        12
+      ],
+      "weight": 2,
+      "name": "Obstáculo: Acrobacia CD 25 ou Percepção CD 25",
+      "description": "Um grande navio voador surge no caminho. Quem falha também sofre 4d6 de impacto; em veículo ou montaria, Reflexos CD 20 ou cai.",
+      "_id": "TGGx9SjpygRAHHGM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.TGGx9SjpygRAHHGM"
+    },
+    {
+      "type": "text",
+      "range": [
+        13,
+        14
+      ],
+      "weight": 2,
+      "name": "Atalho: Sobrevivência CD 25",
+      "description": "Fortes lufadas de vento dão um impulso adicional.",
+      "_id": "zCoJdu8ooPwBhzgv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.zCoJdu8ooPwBhzgv"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        16
+      ],
+      "weight": 2,
+      "name": "Atalho: Acrobacia CD 25",
+      "description": "Um pedregulho flutuante em que dá para subir corta o céu.",
+      "_id": "fBd5H18s5XzBoKyc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.fBd5H18s5XzBoKyc"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        18
+      ],
+      "weight": 2,
+      "name": "Atalho: Diplomacia CD 25",
+      "description": "Viajantes alados indicam as melhores correntes de vento.",
+      "_id": "s0pz1N4laTf9Q46p",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.s0pz1N4laTf9Q46p"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        20
+      ],
+      "weight": 2,
+      "name": "Atalho: Carisma CD 15",
+      "description": "Uma figura poderosa intervém a favor. Quem passa também recebe +2 nos testes de perícia da perseguição até o fim da cena.",
+      "_id": "BvoUAbPbPBDYmrF0",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!q2DtLCXDNTeC9D9V.BvoUAbPbPBDYmrF0"
+    }
+  ],
+  "_key": "!tables!q2DtLCXDNTeC9D9V"
+}
