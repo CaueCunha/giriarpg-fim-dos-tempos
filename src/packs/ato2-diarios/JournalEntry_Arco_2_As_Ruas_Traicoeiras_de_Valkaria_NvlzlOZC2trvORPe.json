@@ -1,0 +1,752 @@
+{
+  "name": "Arco 2 · As Ruas Traiçoeiras de Valkaria",
+  "folder": "ovwoIKkmFpyL1a2V",
+  "flags": {
+    "world": {
+      "fdt": "a2ruas",
+      "fdtRole": "diarioRuas"
+    }
+  },
+  "_id": "NvlzlOZC2trvORPe",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<p>Este diário traz o capítulo de introdução do Arco 2: como montar e mestrar a campanha em Valkaria, os <b>Valkarianos Notáveis</b> de cada núcleo e a <b>Guarda de Valkaria</b>. A descrição completa da cidade está no <i>Atlas de Arton</i> (pp. 69–77); as fichas de algumas criaturas, em <i>Ameaças de Arton</i>.</p>\n\t\t\t\t<h2>Ferramentas</h2>\n\t\t\t\t<ul><li>@UUID[Macro.1AcvK4552XMInzKb]{Valkaria · Deslocamento}: tempo de viagem pelo mapa (1 hexágono = meia hora; a Carroça de Lagarto Interno pronta faz em 5 minutos). Pode avançar o relógio do mundo.</li><li>@UUID[Macro.MHQrhYzHnJEiAKbO]{Valkaria · Notáveis}: escolhe um notável e mostra ao Mestre (com os segredos) ou aos jogadores (só o que se sabe), abre a ficha ou põe o token na cena.</li><li>@UUID[Macro.NaFeq368BbdYQTBg]{Guarda · Juramento e Direitos}: o juramento da Guarda, os Direitos dos Suspeitos (com o crime), os níveis de força, as punições e os cargos.</li><li>@UUID[Macro.BqRhJ6auagq8nPOa]{Valkaria · Vazios no Mapa}: registra as vizinhanças sem nome que o grupo inventar, num diário próprio que o gerador nunca apaga.</li><li>@UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem} continua sendo o relógio do arco.</li></ul>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<p><b>Tokens de apoio</b> (sem ficha no livro): @UUID[Actor.fYHGjqPOguypGyqC]{Stugrid, a Apóstata}, @UUID[Actor.ciwmH6kDKgIDyIo2]{Felicia Daratramm}, @UUID[Actor.PnbCoUE9BFUqhkVD]{Reynard}, @UUID[Actor.rlOyzUGCs96lt02Q]{Merikyzz}, @UUID[Actor.TdomOFORrFqa2u2p]{Basil Arting}, @UUID[Actor.VyLB9VLMetut3mrc]{Osmont Elbannise}, @UUID[Actor.FNJZUYLfjJKBv7Rp]{Aldanna Elbannise}, @UUID[Actor.rVPblFoC8iO3xApB]{Remont Ronchetillon}, @UUID[Actor.wx8fnXnjIa8JiKjb]{Ysmenne Ronchetillon}, @UUID[Actor.TJEUFX8XAyHUF8Wf]{Inagar}, @UUID[Actor.LWUX8Za09UFX2QUg]{Albert}, @UUID[Actor.bQsEoL8l2Fm4rALG]{Illydna}, @UUID[Actor.UYXTUHKtVCvt8pnW]{Alvuriell}, @UUID[Actor.c0UhWYU0OaYhgN9e]{Hugo}, @UUID[Actor.PAiZaQQfgtcliyKG]{Rosa (e o bebê Luka)}, @UUID[Actor.EfSOqFHjaB62bUi6]{Crisântemo Horizonte}, @UUID[Actor.CuDhUAClGSUJyyRf]{Calavius Caelius Cumolonimbus}, @UUID[Actor.qJtPk9JyAsTh0QWW]{Laenne}, @UUID[Actor.WnrDTwd8rAtWEkDk]{Brunhilda}, @UUID[Actor.YRrr0G521HYnIkzY]{Vlorax}, @UUID[Actor.6fvAMPFSFLHvunyW]{Ozeanna}, @UUID[Actor.hwTeH5ltaSKVNuYW]{Vancort}, @UUID[Actor.Dn5VYhZqDvKvYjrN]{Mildred}, @UUID[Actor.ul7G4RCmt9txPUAn]{Xarynn Libra, a Dama da Justiça}, @UUID[Actor.E8DpqcqPP5n1LnJT]{Dra. Zymni}, @UUID[Actor.EsL0UgYaYUhjRrH0]{Saeba, o Guarda Ninja}, @UUID[Actor.Tr25tnBkzHe1IA1L]{Hannah}, @UUID[Actor.OwwAlD8aXMKwwCXd]{Finley}, @UUID[Actor.epTs0a7gQjnaOvz3]{Tullia Blasanov}, @UUID[Actor.IGVjh7jtiR6lDGS6]{Berthun}.</p>\n\t\t\t\t<p><b>Fichas das aventuras</b> ligadas aqui: @UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting}, @UUID[Actor.apmFmAPnDEK41DBw]{Bartolakk}, @UUID[Actor.NXEwvDB1oyiupy9Q]{Carcereiro Stoke}, @UUID[Actor.dBEVuWzwXIkFJZwA]{O Benfeitor (Khabrias Minareus)}, @UUID[Actor.p3c2DRnxI05VTNXn]{Farhuk (\"Majid\")}, @UUID[Actor.kaLVU23MASFJ7BFF]{Click, o Taverneiro}, @UUID[Actor.miBdO9ykACUqREhE]{Drasala, a Segurança}, @UUID[Actor.RpHRe2PPveEjG0dA]{Marquês Vladmir Mors}, @UUID[Actor.iSUvBHsupi4TPzoL]{Fido}, @UUID[Actor.kNmEhRgwgsdBerPy]{Ellan'grag'dakrimm}, @UUID[Actor.EOZuamzDbFFsI1sz]{Gausbloppasremme}, @UUID[Actor.L8N8dabtlO3400ch]{Athisza, a Sereia do Esgoto}, @UUID[Actor.4ZD5PSKhBdOXfEoy]{Duquesa Alfraye Oppulak de Trylon e Foltomett}, @UUID[Actor.aRnvKFLcd3DewVU7]{Duque Kalyon Montalbert Arkystan III}, @UUID[Actor.o5QjkgrAim9YKpAG]{Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt}, @UUID[Actor.0pMlVPlegUhb3LLX]{Conde Archibald Benessar Xendros Tranalyell Whorp}, @UUID[Actor.heJonMTFIYQyfJoO]{Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\"}, @UUID[Actor.2OFkufCGiu2IdYes]{Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\"}, @UUID[Actor.D0cfyZX5gZbJ5N9T]{Conde Axel Trelock Dezzenhal da Grande Batalha}, @UUID[Actor.SZ3QgRWE9245W4kv]{Marquesa Irludde Dyssindar Veront-Faryllia}, @UUID[Actor.YBAQ0L3IkGdmtBkx]{Príncipe Drekaag de Sckharshantallas}, @UUID[Actor.7xlqREDzVMs1EKJ9]{Xerife Mathilda Nolt}, @UUID[Actor.dbuss0AGbIBbrwX8]{Ulnsariann}, @UUID[Actor.tGaR6AEuJ9zPtqdR]{Throgarimm}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "gk7wOLFlLhXAth4G",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.gk7wOLFlLhXAth4G"
+    },
+    {
+      "name": "Montando a Campanha",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h2>O vilão e seu objetivo</h2>\n\t\t\t\t<p>O vilão de Fim dos Tempos é o <b>Dr. Arthemus Vesper</b>, inventor kliren que caiu em Arton com a tripulação da Roca, seu gog'magogue, num plano ensandecido para acabar com o tempo. No Arco 1 seus desígnios eram cumpridos por Syvarian, honrado mas implacável. No Arco 2, por <b>Ghorskander</b>, o oficial médico da Roca: um sádico que faz experimentos em cobaias inteligentes e manipula e tortura até os aliados.</p>\n\t\t\t\t<p>Ghorskander quer instaurar pânico, medo, insegurança e violência, afundando a capital no caos, e ao mesmo tempo manipular a alta nobreza. Se tudo funcionar, Valkaria afunda em crime, culminando no ataque de um gigantesco <b>lagarto-trovão mutante mecanizado</b>, enquanto os aventureiros da capital estão sem suas capacidades especiais e a aristocracia está enredada numa seita. Os nobres então apoiam e financiam a única figura que lhes oferece segurança: o Dr. Vesper, que terá meios para criar as máquinas que acabam com o tempo. Autoridades e grandes heróis estarão desacreditados.</p>\n\t\t\t\t<h2>Valkaria</h2>\n\t\t\t\t<p>A maior cidade do mundo conhecido: todas as raças, aventureiros, deuses e reinos, e coisas que parecem só existir aqui (irmandades criminosas, vigilantes mascarados, uma prisão que limita aventureiros, a política intrincada, a estátua de uma deusa). O preço: sempre há várias ameaças globais em curso, e os personagens não podem chamar a Rainha-Imperatriz ou um campeão épico. São os únicos responsáveis por deter o inimigo, com a ajuda de patrulheiros, detetives e cidadãos.</p>\n\t\t\t\t<h2>Personagens apropriados</h2>\n\t\t\t\t<p>O ideal são os mesmos do Arco 1. Personagens novos começam no <b>7º nível</b> e <b>não</b> devem ser nativos de Valkaria: chegar à metrópole, ser desafiado e acolhido por ela é parte da experiência. O grupo precisa de combate, furtividade, magia, cura e principalmente interação social. Quem não convive em ambiente urbano ou com NPCs (fanáticos de Megalokk ou Aharadak, druidas intolerantes, quem odeia um povo) não se encaixa bem; converse. Nenhuma raça é estranha demais para Valkaria. Quem quer fazer parte da sociedade (negócios, nobreza, cargos públicos, tavernas, casamento) aproveita mais.</p>\n\t\t\t\t<p>O arco presume que o grupo fixa raízes em Valkaria e trabalha com a Guarda como detetives independentes. Não force: alguns NPCs sugerem a parceria; se houver dúvida, converse e explique a proposta. O grupo pode até agir do lado errado da lei.</p>\n\t\t\t\t<h2>Leitura e preparação</h2>\n\t\t\t\t<p>A campanha é uma caixa de areia cheia de NPCs: o ideal é ler o livro todo antes da primeira aventura e conhecer as subtramas paralelas (a ascensão do crime, o desaparecimento de nobres, o comportamento estranho da Companhia dos Irmãos, as lendas urbanas). Os vídeos da stream ajudam a ver o caos se desenrolando, mas não é preciso imitar ninguém. Se algo diminuir a sua diversão, descarte.</p>\n\t\t\t\t<h2>Testes sociais</h2>\n\t\t\t\t<p>Um \"teste social\" é um teste de perícia de interação: Diplomacia, Enganação ou Intimidação; a critério do mestre, outras como Atuação.</p>\n\t\t\t\t<h2>Complicando as coisas</h2>\n\t\t\t\t<p>O Arco 1 foi propositalmente simples (preparação e combate). As aventuras do Arco 2 têm em geral três partes (duas de investigação ou interação, depois combate ou ação), várias resoluções e muitos coadjuvantes; NPCs famosos infestam a capital. Nenhum \"erro\" ao mestrar tem consequência no mundo real. Em troca, há muito mais diversão para o mestre: um baile, um show de bardos arruaceiros, uma perseguição aérea, uma caçada nos esgotos, uma revolta na prisão.</p>\n\t\t\t\t<h2>Ordem das aventuras</h2>\n\t\t\t\t<p>A <b>Aventura 0</b> apresenta Valkaria e a Guarda e termina no juramento de detetives, com um quadro de seis casos (as Aventuras 1 a 6), jogáveis em qualquer ordem. Pela mecânica de Lei &amp; Ordem, é quase impossível resolver todos: o grupo escolhe os mais interessantes e úteis contra a Roca. A <b>Aventura 2</b> só pode ser escolhida quando Vectora chega à cidade (e pode ser ignorada: o grupo original fez isso). A <b>Aventura 7</b> não é escolhida: começa quando Lei &amp; Ordem chega a zero.</p>\n\t\t\t\t<h2>Fases e cenas</h2>\n\t\t\t\t<p>As aventuras são divididas em <b>fases</b>, não cenas: são conjuntos de situações, não histórias predeterminadas. Quando uma fase se resolve num só lugar ou com um só grupo de NPCs, ela é uma cena. Em princípio, considere uma fase uma cena e adapte.</p>\n\t\t\t\t<h2>Materiais adicionais</h2>\n\t\t\t\t<p>Não é preciso repetir as descrições ou as caixas de texto ao pé da letra; o importante é todos se comunicarem. Sem o <i>Atlas de Arton</i>, junte o que o livro e a stream dizem de cada lugar (a Baixa Vila de Lena é um bairro boêmio, por exemplo) ou proponha uma vaquinha pela versão digital. Sem <i>Ameaças de Arton</i>, use equivalentes do livro básico (este módulo já traz as fichas montadas).</p>\n\t\t\t\t<h2>Mestrando sem preparação</h2>\n\t\t\t\t<ul><li>Encare o jogo como um jogo: você descobre a aventura junto com o grupo.</li><li>Comece cada aventura com o grupo escolhendo um caso no Quadro de Casos da Guarita da Praia e leia em voz alta a fase 0.</li><li>Os jogadores cuidam de tudo que não depende de você: calculam o tempo de deslocamento no mapa (use a macro), fazem compras pelo livro básico (em Valkaria quase tudo está à venda) e listam as ações que dependem de você, de preferência uma por jogador, já em ordem.</li><li>Enquanto isso, leia os títulos das fases, os NPCs em negrito e as listas de pistas.</li><li>Resolva as ações; peça a um jogador que leia em voz alta a descrição de um NPC se ajudar. Todos podem dar dicas (\"o livro diz que Finley é desastrado...\").</li><li>Na próxima fase, leia em voz alta também o texto explicativo antes do itálico. Diga as opções claras e quantas pistas há.</li><li>Um jogador separa as fichas de Ameaças de Arton e lembra habilidades; outro lembra de ajustar CDs e quantidade de inimigos ao nível do grupo.</li><li>Perto do fim, faça um momento de metajogo para discutir o desenrolar mais lógico. Leia <i>O que Realmente Aconteceu</i> antes da cena final.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "PiLBm9DitsfrBHSs",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.PiLBm9DitsfrBHSs"
+    },
+    {
+      "name": "Mestrando em Valkaria",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Todos os elementos de Arton estão aqui (vilões, monstros, masmorras, armadilhas), mas num contexto maior: tudo o que o grupo faz tem consequências, e os coadjuvantes têm vidas que não giram em torno dele.</p>\n\t\t\t\t<h2>Imigrantes</h2>\n\t\t\t\t<p>O que é novo para os jogadores também é novo para os personagens. Ressalte o tamanho de tudo: a estátua impossivelmente alta, multidões infinitas, idiomas sem fim, cheiros fétidos e deliciosos. Parques, irmandades, vigilantes mascarados, bairros bem definidos: muito é único. Há imigrantes de toda parte, então tramas pessoais de qualquer canto de Arton cabem aqui (a irmã assassina da cavaleira de Bielefeld pode estar em Valkaria atrás de contatos ou refúgio).</p>\n\t\t\t\t<h2>Beleza e feiura</h2>\n\t\t\t\t<p>Metrópole mágica ou buraco fétido? <b>Sim.</b> Luxo e pobreza, magia e banalidade, maravilhas e horrores, lado a lado: uma árvore abençoada por Allihanna ao lado de uma taverna da Companhia dos Irmãos; um círculo de teleporte numa praça de execuções. Às vezes se confundem: a maga no tapete voador procurando um sapateiro é maravilhosa ou banal? Não amenize o feio nem diminua o belo. Quem vive em Valkaria aceita os contrastes.</p>\n\t\t\t\t<h2>Distâncias</h2>\n\t\t\t\t<p>Não há calçada: pessoas, animais e veículos dividem ruas estreitas e serpenteantes, sem planejamento. O que levaria cinco minutos leva <b>meia hora</b>. Por isso os valkarianos estão sempre com pressa e as naves aéreas são comuns. A maioria vive numa área e raramente vai longe; quando vai, dorme numa estalagem. Aventureiros são a exceção e podem ser o elo entre NPCs de bairros distantes.</p>\n\t\t\t\t<h2>Anacronismo</h2>\n\t\t\t\t<p>Valkaria se parece mais com São Paulo, Nova York, Londres ou Tóquio do que com outras cidades de fantasia. Bardos formam bandas e tocam em casas de espetáculo; o povo teme irmandades, não guildas de ladrões; detetives investigam; cidadãos votam em Lordes Urbanos; arautos distribuem panfletos; a Gazeta do Reinado espalha notícias; turistas visitam as maravilhas. Nada é genérico: não há \"uma oficina de ferreiro\", há o império Metais do Baixote e seus concorrentes, e brasões e \"logotipos\" nas fachadas. Há nobres e altos nobres, miseráveis, abastados e uma enorme classe média em prédios de apartamentos e subúrbios pacatos. Não transforme Valkaria em paródia de uma cidade real, mas lembre que o cotidiano dos valkarianos se parece mais com o nosso que com o de uma vila artoniana.</p>\n\t\t\t\t<h2>Heróis por toda parte</h2>\n\t\t\t\t<p>Campeões das Colinas no 7º nível, os personagens chegam como peixes pequenos e, mesmo no fim do arco, serão apenas alguns dos heróis poderosos da capital. O valkariano médio é esperto, cosmopolita e calejado: diante de um necromante enfrentando aventureiros, protege-se, mas não interrompe o caminho. Quase todos já viram um combate assim (o cerco da Guerra Artoniana, os minotauros nos portões). O grupo é especial para os amigos, as vizinhanças e os detetives da Guarita da Praia, e faz parte da grande tradição de heróis valkarianos. <b>A capital não vira as costas para os seus.</b></p>\n\t\t\t\t<h2>Bairrismo</h2>\n\t\t\t\t<p>Quem mora aqui diz que é \"de Valkaria\", não anão ou deheoni. Pode reclamar à vontade da cidade, mas, se um forasteiro disser o mesmo, atrai sua fúria: para criticar Valkaria, é preciso abraçar Valkaria. Entre valkarianos, porém, vale o bairro:</p>\n\t\t\t\t<ul><li><b>Cidade da Praia:</b> afastada do centro, sotaque próprio, menos abastada, considerada \"menos valkariana\", e por isso defende o bairro com ferocidade. Odeia os esnobes do Refúgio da Felicidade.</li><li><b>Refúgio da Felicidade:</b> novos ricos que se dizem \"verdadeiros valkarianos\" e são chamados de \"falsos valkarianos\" pela Cidade da Praia e pelos nobres tradicionais do Bairro do Recomeço.</li><li><b>Baixa Vila de Lena:</b> sem rivalidades, mas com manias próprias. O bairro boêmio fica acordado à noite; tudo o que é moderno na arte nasceu ou passou por aqui. Alguns artistas o acham um bairro de fingidores.</li></ul>\n\t\t\t\t<p>Os valkarianos são bairristas e têm opinião sobre tudo. Agora que o grupo faz parte da capital, vai adquirir essas lealdades e rivalidades.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ruYt5RZX5zBeyw2K",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.ruYt5RZX5zBeyw2K"
+    },
+    {
+      "name": "Usando o Mapa e Vazios no Mapa",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<h2>Usando o mapa</h2>\n\t\t\t\t<p>O mapa tem linhas e colunas para orientação, mas em jogo vale a divisão em <b>hexágonos</b>: cada um é <b>meia hora de caminhada</b> (pouco mais de cinco minutos numa metrópole do nosso mundo). Controle o tempo para visualizar como o grupo se desloca; quando todos se acostumarem com o ritmo, descreva os deslocamentos de forma mais abstrata. Use @UUID[Macro.1AcvK4552XMInzKb]{Valkaria · Deslocamento}.</p>\n\t\t\t\t<h2>Vazios no mapa</h2>\n\t\t\t\t<p>Nem toda vizinhança tem nome ou descrição, de propósito: Valkaria acolhe toda interpretação de si mesma. Quando os personagens passarem por uma região sem nome, pergunte ao grupo que lugar é esse:</p>\n\t\t\t\t<ul><li><b>Meia-Cidade</b>: um bairro hynne dominado por uma gangue de contrabandistas de itens mágicos.</li><li><b>Nuvem Sombria</b>: vizinhança com fama de amaldiçoada, para onde são mandados os indesejados das famílias nobres.</li><li><b>A Sopa</b>: zona de laboratórios onde as sarjetas são rios de ingredientes alquímicos com propriedades imprevisíveis.</li></ul>\n\t\t\t\t<p>Só você e o grupo podem decidir. Marque essas vizinhanças no mapa: sem essas intervenções, Valkaria nunca estará completa na sua mesa. Registre-as com @UUID[Macro.BqRhJ6auagq8nPOa]{Valkaria · Vazios no Mapa}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "P3irGcFyog0CECFn",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.P3irGcFyog0CECFn"
+    },
+    {
+      "name": "Valkarianos Notáveis",
+      "type": "text",
+      "sort": 450,
+      "text": {
+        "content": "<p>Contatos importantes do grupo ou NPCs centrais das aventuras, divididos em núcleos pelos lugares onde podem ser encontrados. Lugares sem descrição aqui estão no <i>Atlas de Arton</i>. Cada núcleo tem uma página.</p>\n\t\t\t\t<ul><li><b>Catedral de Valkaria:</b> @UUID[Actor.fYHGjqPOguypGyqC]{Stugrid, a Apóstata}</li><li><b>Academia Arcana:</b> @UUID[Actor.ciwmH6kDKgIDyIo2]{Felicia Daratramm}, @UUID[Actor.PnbCoUE9BFUqhkVD]{Reynard}, @UUID[Actor.rlOyzUGCs96lt02Q]{Merikyzz}</li><li><b>Metais do Baixote:</b> @UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting}, @UUID[Actor.TdomOFORrFqa2u2p]{Basil Arting}</li><li><b>Vizinhança de Stremtol:</b> @UUID[Actor.VyLB9VLMetut3mrc]{Osmont Elbannise}, @UUID[Actor.FNJZUYLfjJKBv7Rp]{Aldanna Elbannise}, @UUID[Actor.rVPblFoC8iO3xApB]{Remont Ronchetillon}, @UUID[Actor.wx8fnXnjIa8JiKjb]{Ysmenne Ronchetillon}, @UUID[Actor.TJEUFX8XAyHUF8Wf]{Inagar}, @UUID[Actor.LWUX8Za09UFX2QUg]{Albert}, @UUID[Actor.bQsEoL8l2Fm4rALG]{Illydna}, @UUID[Actor.UYXTUHKtVCvt8pnW]{Alvuriell}, @UUID[Actor.c0UhWYU0OaYhgN9e]{Hugo}, @UUID[Actor.PAiZaQQfgtcliyKG]{Rosa (e o bebê Luka)}</li><li><b>Sociedade Pontifícia de Intercessão Moral Artoniana (SPIMA):</b> @UUID[Actor.EfSOqFHjaB62bUi6]{Crisântemo Horizonte}, @UUID[Actor.CuDhUAClGSUJyyRf]{Calavius Caelius Cumolonimbus}, @UUID[Actor.qJtPk9JyAsTh0QWW]{Laenne}, @UUID[Actor.WnrDTwd8rAtWEkDk]{Brunhilda}, @UUID[Actor.YRrr0G521HYnIkzY]{Vlorax}</li><li><b>A Rocha Cinzenta:</b> @UUID[Actor.apmFmAPnDEK41DBw]{Bartolakk}, @UUID[Actor.NXEwvDB1oyiupy9Q]{Carcereiro Stoke}, @UUID[Actor.dBEVuWzwXIkFJZwA]{O Benfeitor (Khabrias Minareus)}, @UUID[Actor.p3c2DRnxI05VTNXn]{Farhuk (\"Majid\")}</li><li><b>Taverna Terceira Opção:</b> @UUID[Actor.kaLVU23MASFJ7BFF]{Click, o Taverneiro}, @UUID[Actor.miBdO9ykACUqREhE]{Drasala, a Segurança}</li><li><b>Baixa Vila de Lena:</b> @UUID[Actor.RpHRe2PPveEjG0dA]{Marquês Vladmir Mors}, @UUID[Actor.iSUvBHsupi4TPzoL]{Fido}, @UUID[Actor.6fvAMPFSFLHvunyW]{Ozeanna}, @UUID[Actor.hwTeH5ltaSKVNuYW]{Vancort}, @UUID[Actor.Dn5VYhZqDvKvYjrN]{Mildred}, @UUID[Actor.kNmEhRgwgsdBerPy]{Ellan'grag'dakrimm}, @UUID[Actor.EOZuamzDbFFsI1sz]{Gausbloppasremme}, @UUID[Actor.L8N8dabtlO3400ch]{Athisza, a Sereia do Esgoto}</li><li><b>A Juventude Nobre:</b> @UUID[Actor.4ZD5PSKhBdOXfEoy]{Duquesa Alfraye Oppulak de Trylon e Foltomett}, @UUID[Actor.aRnvKFLcd3DewVU7]{Duque Kalyon Montalbert Arkystan III}, @UUID[Actor.o5QjkgrAim9YKpAG]{Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt}, @UUID[Actor.0pMlVPlegUhb3LLX]{Conde Archibald Benessar Xendros Tranalyell Whorp}, @UUID[Actor.heJonMTFIYQyfJoO]{Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\"}, @UUID[Actor.2OFkufCGiu2IdYes]{Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\"}, @UUID[Actor.D0cfyZX5gZbJ5N9T]{Conde Axel Trelock Dezzenhal da Grande Batalha}, @UUID[Actor.SZ3QgRWE9245W4kv]{Marquesa Irludde Dyssindar Veront-Faryllia}, @UUID[Actor.YBAQ0L3IkGdmtBkx]{Príncipe Drekaag de Sckharshantallas}</li><li><b>A Guarda de Valkaria:</b> @UUID[Actor.ul7G4RCmt9txPUAn]{Xarynn Libra, a Dama da Justiça}, @UUID[Actor.7xlqREDzVMs1EKJ9]{Xerife Mathilda Nolt}, @UUID[Actor.E8DpqcqPP5n1LnJT]{Dra. Zymni}, @UUID[Actor.dbuss0AGbIBbrwX8]{Ulnsariann}, @UUID[Actor.tGaR6AEuJ9zPtqdR]{Throgarimm}, @UUID[Actor.EsL0UgYaYUhjRrH0]{Saeba, o Guarda Ninja}, @UUID[Actor.Tr25tnBkzHe1IA1L]{Hannah}, @UUID[Actor.OwwAlD8aXMKwwCXd]{Finley}, @UUID[Actor.epTs0a7gQjnaOvz3]{Tullia Blasanov}, @UUID[Actor.IGVjh7jtiR6lDGS6]{Berthun}</li></ul>\n\t\t\t\t<p>Mostre qualquer um com @UUID[Macro.MHQrhYzHnJEiAKbO]{Valkaria · Notáveis}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "DHg3WZBexMVKuXgm",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.DHg3WZBexMVKuXgm"
+    },
+    {
+      "name": "Catedral de Valkaria",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>O maior templo da Deusa da Humanidade, aos pés da estátua. Nobres, heróis e o povo comum dividem as mesmas ruelas em volta.</p>\n\t\t<h3>@UUID[Actor.fYHGjqPOguypGyqC]{Stugrid, a Apóstata}</h3><p><i>A Alta Clériga da Catedral. Tem a palavra <b>HEREGE</b> queimada a ferro na testa e a ostenta com orgulho. Seus sermões são inflamados e polêmicos.</i></p><p>Tecnicamente devota da Deusa da Humanidade, mas sua maior ambição é <b>destruí-la e tomar seu lugar</b>. Já tinha esse objetivo há anos; a ascensão de Arsenal e Thwor tornou o plano megalomaníaco uma possibilidade concreta.</p><p>Já foi punida por rituais profanos. Uma maldição impede que se livre da marca de \"HEREGE\" na testa. Os devotos tradicionalistas dizem que ela espalha uma mensagem distorcida entre os fiéis.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "bECfzONoQMPAvVPh",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.bECfzONoQMPAvVPh"
+    },
+    {
+      "name": "Academia Arcana",
+      "type": "text",
+      "sort": 510,
+      "text": {
+        "content": "<p>A maior escola de magia de Arton, recém-reformulada. Lugar de pesquisadores, não de aventureiros: quase ninguém tem tempo para o grupo.</p>\n\t\t<h3>@UUID[Actor.ciwmH6kDKgIDyIo2]{Felicia Daratramm}</h3><p><i>Anã pesquisadora de itens mágicos e de técnicas perdidas de encantamento. Sonhadora, curiosa e tranquila.</i></p><p>Estuda a construção de itens mágicos e técnicas perdidas de encantamento. Também se interessa por luthieria: ensinou à namorada, <b>Belinda</b>, técnicas avançadas de construção e manutenção de instrumentos especiais.</p><p>Parece o oposto de Belinda, e talvez por isso as duas se deem bem. Lamenta que a amada tenha ido realizar a vocação nas Colinas Centrais, mas compreende (quase sempre).</p><p>Foi uma das idealizadoras da reformulação da Academia Arcana, desde quando era um projeto secreto. Por isso tomou a decisão prática e fria (rara para ela) de ficar em Valkaria. Trabalha com Merikyzz no Bureau Theuderulf.</p><h3>@UUID[Actor.PnbCoUE9BFUqhkVD]{Reynard}</h3><p><i>Arquimago impassível e metódico, pesquisador residente da Academia Arcana. Não tem um dos braços.</i></p><p>Foi o líder da <b>Companhia Rubra</b>, o mais notório grupo de exploradores da Tormenta de que se tem notícia. Depois da incursão desastrosa pela Área de Tormenta de Zakharov, perdeu os companheiros e um braço.</p><p>Muitas vezes está ausente, em alguma incursão por uma área de Tormenta. Leva muito a sério qualquer informação sobre a Tempestade Rubra, mas não pode dar atenção a todos os aventureiros que o procuram.</p><h3>@UUID[Actor.rlOyzUGCs96lt02Q]{Merikyzz}</h3><p><i>Uma harpia (asas de abutre no lugar dos braços, garras no lugar dos pés) entre os pesquisadores da Academia Arcana. Rude e sarcástica.</i></p><p>Harpias quase só existem em masmorras, semi-ferais; Merikyzz é uma visão única até na Academia. Pesquisa <b>magias sonoras e comunicação mágica</b>, interesse que veio do grito aterrorizante da raça.</p><p>Trabalha no Bureau Theuderulf, muitas vezes com Felicia, porque a luthieria mágica da anã tem pontos em comum com a pesquisa dela. Não abandona o jeito rude e sarcástico, mas em geral é bem-intencionada.</p>\n\t\t\n\t\t<p><i>Felicia é a namorada de Belinda, das Colinas Centrais (Arco 1).</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ZE4FeavT9u0YUoGN",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.ZE4FeavT9u0YUoGN"
+    },
+    {
+      "name": "Metais do Baixote",
+      "type": "text",
+      "sort": 520,
+      "text": {
+        "content": "<p>Uma das oficinas mais famosas da capital. Explodiu em fama quando o herói Nargom usou suas armas e quando ajudou no esforço de guerra contra os puristas. Ocupa mais de um quarteirão da Cidade da Praia e parece uma fortaleza: loja, forja, pátio de treino, taverna, alojamentos, estábulo e guaritas. Ao lado fica o Coliseu do Baixote.</p>\n\t\t<h3>@UUID[Actor.heCD3JagIn4bgkYI]{Blixto Arting}</h3><p><i>O hynne dono da Metais do Baixote. Sempre com um charuto (muitas vezes apagado) entre os dentes, dinâmico, entusiasmado e acelerado.</i></p><p>Quis provar que um hynne podia ser armeiro tão bom quanto qualquer anão; para os valkarianos, conseguiu. O diferencial é o preço. Saiu dos negócios de charuto e comida da família e hoje emprega a família inteira e boa parte da vizinhança.</p><p>Apaixonado pela Cidade da Praia (\"brega e tosca\"): prefere funcionários, fornecedores e clientes do bairro. Os anões que fiquem com os ricaços esnobes do Refúgio da Felicidade!</p><p>Mesmo rico, vive como se precisasse garantir cada refeição: opera a forja, atende no balcão, negocia. Distribui tarefas sem perceber: quem vem falar com ele logo está consertando uma cadeira ou servindo vinho.</p><p>Nunca se casou nem teve filhos; considera o sobrinho Basil um filho. Depois de alguns canecos deixa escapar a solidão: não se arrepende da vida dedicada à Metais, só lamenta não ter achado alguém com a mesma paixão (ou obsessão).</p><h3>@UUID[Actor.TdomOFORrFqa2u2p]{Basil Arting}</h3><p><i>Sobrinho de Blixto e dono do Coliseu do Baixote. Relaxado, tranquilo e um pouco indolente.</i></p><p>Foi o primeiro e único funcionário da Metais: dormia, inventava desculpas, tomava poções que simulavam doenças e forjava cartas para fugir do trabalho. Blixto o convidou para um jantar e o emboscou com clérigos: expulsaram um pequeno <b>demônio da preguiça</b> que o possuíra quando leu tomos religiosos que não devia.</p><p>Eternamente grato, ajudou a oficina a crescer. Quando Blixto chegou ao limite como administrador, Basil abriu o <b>Coliseu do Baixote</b>, ao lado da Metais: lutadores demonstram as armas de Blixto, há apostas, comida, bebida e um templo do Panteão. Comer, beber, apostar e rezar no mesmo prédio!</p><p>Parte da preguiça era só dele: aceita qualquer desculpa para atrasos e não liga para uma cerveja em serviço. Alguns funcionários preferem trabalhar no Coliseu por isso.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "eQuYDhfJdYUtQp5o",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.eQuYDhfJdYUtQp5o"
+    },
+    {
+      "name": "Vizinhança de Stremtol",
+      "type": "text",
+      "sort": 530,
+      "text": {
+        "content": "<p>Uma região no extremo do Refúgio da Felicidade: casas de médio porte com jardins, clima pacato e cordialidade entre vizinhos. Vidas sossegadas, sem grandes surpresas. Vários aventureiros aposentados escolhem morar aqui. (É o palco da Aventura 1.)</p>\n\t\t<h3>@UUID[Actor.VyLB9VLMetut3mrc]{Osmont Elbannise}</h3><p><i>Conde, ex-frequentador das cortes da alta nobreza. Preocupa-se muito com aparências: lembra a todos que é nobre e tenta parecer o mais \"normal\" possível.</i></p><p>Capturado por salteadores numa viagem ao Império de Tauron, foi salvo por aventureiros e se apaixonou pela caçadora Aldanna. Venceu pela insistência; casaram depois de um ano.</p><p>Esperava que ela largasse as aventuras e a viu partir numa missão dias depois do casamento. Viveram brigando, até que Aldanna subitamente desistiu e fixou raízes na capital. Hoje vivem numa casa confortável, bem menos luxuosa do que ele conheceu, e ele é feliz na devoção total da esposa.</p><p>Odeia falar da época de aventureira de Aldanna.</p><h3>@UUID[Actor.FNJZUYLfjJKBv7Rp]{Aldanna Elbannise}</h3><p><i>Dona de casa polida e graciosa, ótima cozinheira, sempre maquiada e arrumada. Sobre o passado de aventureira, sorri e fala de \"loucuras da juventude\".</i></p><p>Era uma caçadora especialista em sobrevivência nos ermos, mais à vontade numa floresta do que numa casa. Hoje não guarda nenhuma semelhança com o que foi.</p><p>Tinha um companheiro animal, o javali <b>Aníbal</b>. Para comemorar a nova vida, preparou Aníbal para o jantar e o serviu ao marido na primeira refeição na casa nova. Não fala do antigo companheiro e muda de assunto quando alguém menciona o nome.</p><p>O dia a dia gira em torno da casa e dos vizinhos, quase todos casais com pelo menos um aventureiro aposentado. Parece muito feliz em Stremtol.</p><h3>@UUID[Actor.rVPblFoC8iO3xApB]{Remont Ronchetillon}</h3><p><i>Um dos vários filhos da família nobre Ronchetillon. Com a esposa Ysmenne, foi o primeiro morador de Stremtol. Não trabalha, mas vai muito à corte.</i></p><p>Apaixonou-se por Ysmenne, cavaleira da família, mas a diferença social impedia o casamento. Os Ronchetillon financiam a <b>Escola de Etiqueta e Bom Comportamento de Madame Margebell</b>; depois de uma temporada lá, Ysmenne foi aceita pela família.</p><p>Casamento de sonhos. Foram morar em Stremtol para começar vida nova longe (mas não muito) da família dele.</p><h3>@UUID[Actor.wx8fnXnjIa8JiKjb]{Ysmenne Ronchetillon}</h3><p><i>Esposa de Remont. Antiga cavaleira da família Ronchetillon, hoje perfeitamente à vontade na corte.</i></p><p>Aprendeu na Escola de Madame Margebell tudo o que precisava para, apesar do nascimento, se portar na corte e ser aceita pelos Ronchetillon.</p><h3>@UUID[Actor.TJEUFX8XAyHUF8Wf]{Inagar}</h3><p><i>Ex-mago, casado com o contador Albert. Hoje é aprendiz na Guilda de Contadores.</i></p><p>Guarda os grimórios no porão, com certa vergonha. Albert conseguiu para ele um posto de aprendiz na guilda onde trabalha; os dois passam quase o tempo todo juntos.</p><h3>@UUID[Actor.LWUX8Za09UFX2QUg]{Albert}</h3><p><i>Contador da Guilda de Contadores, casado com Inagar.</i></p><p>A guilda presta serviços a altos nobres de Valkaria; Albert já conhecia alguns dos vizinhos atuais pelo trabalho.</p><h3>@UUID[Actor.bQsEoL8l2Fm4rALG]{Illydna}</h3><p><i>Elfa que prosperou servindo à família Ronchetillon. Casada com o goblin Alvuriell.</i></p><p>Não mora mais na propriedade dos patrões: ganhou o direito a casa própria e vai ao trabalho todos os dias.</p><p>Conheceu Grug, um ladino goblin, quando ele se esgueirava pelos corredores da propriedade. Apiedou-se, tirou-o da vida de aventuras, deu-lhe um belo nome élfico e casou com ele para protegê-lo. Não o deixa trabalhar nem administrar a casa: prefere mantê-lo confortável e descansado.</p><h3>@UUID[Actor.UYXTUHKtVCvt8pnW]{Alvuriell}</h3><p><i>Goblin de nome élfico, marido de Illydna. Não trabalha.</i></p><p>Ex-ladino. O nome original era <b>Grug</b> e fazia parte de um grupo de aventureiros urbanos, até ser pego por Illydna nos corredores dos Ronchetillon.</p><h3>@UUID[Actor.c0UhWYU0OaYhgN9e]{Hugo}</h3><p><i>Vizinho de roupas simples que acorda cedo para cuidar da horta. Vive quase como aldeão, com a esposa Rosa e o bebê Luka.</i></p><p>Era o <b>Conde Kasthafore Horatio Hugo Godefroy de Lilac e Labonnet</b>. Casou com Rosa, abandonou a vida na corte e os dois trocaram de nome. Têm existências pacatas, parecendo quase comuns demais.</p><h3>@UUID[Actor.PAiZaQQfgtcliyKG]{Rosa (e o bebê Luka)}</h3><p><i>Esposa de Hugo, de roupas simples, cuidando do filho bebê, Luka.</i></p><p>Era a necromante <b>Rozaryth Dez Caveiras</b>, por causa dos crânios animados que adornavam seus mantos. Capturada por heróis contratados pela família Labonnet, foi matriculada na Escola de Madame Margebell e saiu de lá \"totalmente regenerada\".</p>\n\t\t\n\t\t<p>Na Aventura 1 (@UUID[JournalEntry.nPpSP5zc8qiBHoEf]{Arco 2 · Aventura 1 · Os Aventureiros de Stremtol}) a vizinhança é investigada: veja @UUID[Actor.mqoK6CXrEt2GKtDE]{Vizinhança de Stremtol (pistas)} e @UUID[Actor.r3DKOoWKUkgm8QsY]{Madame Margebell}, da Escola de Etiqueta que \"regenerou\" Ysmenne e Rosa.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "J5evCKOeH8OCquAq",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.J5evCKOeH8OCquAq"
+    },
+    {
+      "name": "Sociedade Pontifícia de Intercessão Moral Artoniana (SPIMA)",
+      "type": "text",
+      "sort": 540,
+      "text": {
+        "content": "<p>Associação de clérigos sem deveres comunitários ou aventurescos, porque seus deuses não existem mais. Querem restaurar os \"velhos e bons tempos\", quando os jovens respeitavam os mais velhos. Culpam a decadência moral pela Tormenta: duyshidakk, puristas, o Kishinauros, o Paladino gigante, Valkaria espalhando poderes fora de Deheon, heróis nobres, heróis inventores, bardos, a Gazeta do Reinado, música de taverna... Tudo é corrupção ou obra de cultistas. Até hoje só escreveram cartas (a burocratas, à Gazeta, à Rainha-Imperatriz e a heróis \"tradicionais\").</p>\n\t\t<h3>@UUID[Actor.EfSOqFHjaB62bUi6]{Crisântemo Horizonte}</h3><p><i>Humano clérigo de Glórienn. Toca músicas élficas na rua por moedas e vende artesanato \"élfico\".</i></p><p>Era coletor de impostos, com filhos, netos e outro nome. Fascinado por uma comunidade élfica, largou tudo, adotou um nome \"ligado às vibrações da alma élfica\" e sagrou-se clérigo de Glórienn em 1404. Em 1405 Glórienn caiu e virou deusa menor.</p><p>Contrariando a família e os elfos, continuou clérigo, sozinho numa \"comunidade\" que quase não existia, até 1414, quando Glórienn se tornou mortal. Hoje sua principal atividade é achar culpados pelas quedas da deusa, junto à SPIMA.</p><h3>@UUID[Actor.CuDhUAClGSUJyyRf]{Calavius Caelius Cumolonimbus}</h3><p><i>Minotauro clérigo de Tauron, sábio e filósofo outrora renomado no Império de Tauron.</i></p><p>Sua filosofia dizia que Tauron, Deus da Força, era primordial e não podia morrer: se morresse, toda a Criação ficaria mais fraca que algo sem força e deixaria de existir.</p><p>Estava em Valkaria quando Tauron morreu. Virou charlatão da noite para o dia: suas obras foram expurgadas e cartas educadas avisaram que \"não precisava mais comparecer\" ao Senado. Não lhe falta dinheiro, mas prestígio e respeito, sim. Procura uma nova corrente filosófica que o devolva ao topo da torre de marfim.</p><h3>@UUID[Actor.qJtPk9JyAsTh0QWW]{Laenne}</h3><p><i>Elfa clériga de Keenn, sem poderes, que faz bicos como segurança de tavernas e guarda-costas de figurões.</i></p><p>Quando Glórienn caiu, disse \"eu avisei\": os elfos, perfeitos, deviam se espalhar por todos os ofícios e ensinar aos outros povos. Fazia sentido que um elfo logo desbancasse Mestre Arsenal como sumo-sacerdote de Keenn.</p><p>Quando Arsenal ascendeu, achou que era um erro de comunicação com o Deus da Guerra. Lutou na Guerra Artoniana com seu conhecimento militar. Na SPIMA chama Arsenal de \"aquele barbudinho insolente\", \"o gritão\" e \"o amante de árvores\".</p><h3>@UUID[Actor.WnrDTwd8rAtWEkDk]{Brunhilda}</h3><p><i>Anã clériga de Valkaria. A única da SPIMA cuja deusa ainda é deusa, e não cansa de corrigir e admoestar os demais.</i></p><p>Queria só um bom emprego na capital: um templo numa ruela, uma congregação modesta que pagasse o dízimo, e depois uma cerveja na taverna. Pregava que os fiéis eram preguiçosos, sentada em sua poltrona.</p><p>Quando Valkaria foi libertada, os devotos foram proibidos de ficar muito tempo no mesmo lugar. Brunhilda arrumou a mochila, mas precisava de botas novas, deu um mau jeito no ombro, começou a chover... O rebanho se esvaiu. Mora na sede da SPIMA, sustentada pelos companheiros.</p><h3>@UUID[Actor.YRrr0G521HYnIkzY]{Vlorax}</h3><p><i>Humano clérigo de Leen (depois Ragnar). Um ex-vilão que se diz cansado de tudo.</i></p><p>Fazia sacrifícios, combatia heróis e tramava em nome do insidioso Leen. Quando Leen virou Ragnar, adotou os modos bárbaros e peregrinou a Lamnor. Quando finalmente se acostumou, Ragnar morreu.</p><p>Furioso, entregou-se à Guarda para ser julgado, mas os crimes eram antigos demais e não havia registros: foi liberado. Tentou ser vilão de novo, mas não tinha mais graça. Na SPIMA, repete sua opinião mais forte: <b>o mundo está tão perdido que não se consegue nem ser maligno</b>.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "FylX0ZpHljBRAiE0",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.FylX0ZpHljBRAiE0"
+    },
+    {
+      "name": "A Rocha Cinzenta",
+      "type": "text",
+      "sort": 550,
+      "text": {
+        "content": "<p>A principal prisão de Valkaria, capaz de limitar as capacidades dos aventureiros. É o palco da Aventura 3.</p>\n\t\t<h3>@UUID[Actor.apmFmAPnDEK41DBw]{Bartolakk}</h3><p><i>O diretor da Rocha Cinzenta: um golem criado pela Academia Arcana para a função. Totalmente literal, lógico e frio.</i></p><p>Nunca saiu da Rocha. Trata penas e cotidiano dos presos de forma matemática, sem indignação nem compaixão: busca a melhor forma de reabilitar ou controlar o preso com o mínimo dano a vidas mortais.</p><p>Três diretrizes: não descumprir a lei e fazer a lei ser cumprida; não ferir mortais (exceto se conflitar com a primeira); defender a própria vida (exceto se conflitar com as duas primeiras).</p><p>Não entende as ligações emocionais dos mortais. Por que várias roupas e não um uniforme? Por que \"bom dia\"? Por que sentar para comer?</p><h3>@UUID[Actor.NXEwvDB1oyiupy9Q]{Carcereiro Stoke}</h3><p><i>Carcereiro chefe de uma equipe na Rocha Cinzenta.</i></p><p>Sádico, corrupto, violento e covarde: a última pessoa que deveria ter poder sobre os outros, e por isso quis ser carcereiro. Fez acordo com a Companhia dos Irmãos e é garoto de recados para o mundo exterior.</p><p>Está abaixo de todos os irmãos por não ter feito juramento: os criminosos mandam, ele obedece e desconta nos presos \"comuns\".</p><h3>@UUID[Actor.dBEVuWzwXIkFJZwA]{O Benfeitor (Khabrias Minareus)}</h3><p><i>Um preso minotauro tratado como nobre dentro da Rocha. Todos parecem dever algo a ele.</i></p><p>Khabrias Minareus, irmão do meio da Companhia dos Irmãos, preso numa ação conjunta da Guarda e três grupos de aventureiros durante uma venda de itens amaldiçoados. Encurralado, matou um guarda da forma mais cruel possível, e mais dois antes de cair.</p><p>Com essa fama e o posto na irmandade, reuniu um pequeno exército de detentos e corrompeu Stoke. A irmandade lhe mandou uma clériga cirurgiã e um meio de contornar as limitações de magia da prisão.</p><p>Consegue qualquer coisa para qualquer preso, em troca de dívida permanente. Comanda operações lá fora através de Stoke e lucra com o tráfico de <b>achbuld</b>. Não quer sair. Ouviu dos irmãos que <b>em breve todos os aventureiros de Valkaria terão as mesmas limitações dos detentos</b>, e só os criminosos terão capacidades extraordinárias...</p><h3>@UUID[Actor.p3c2DRnxI05VTNXn]{Farhuk (\"Majid\")}</h3><p><i>\"Majid\", o conselheiro qareen do Benfeitor, preso com a equipe dele.</i></p><p>Detetive qareen da Guarda infiltrado na Companhia dos Irmãos sob o nome Majid (algo nunca feito antes). Largou os poucos amigos e entrou na irmandade sob Khabrias.</p><p>Foi preso com a equipe dele. Sem magia nem habilidades, não tem como contatar o mundo exterior nem provar quem é. Caiu nas graças do Benfeitor: trouxe soldados, negociou mercadorias, engambelou carcereiros e virou \"conselheiro\". Tem acesso a muita informação, mas está sempre sob vigilância do minotauro.</p>\n\t\t\n\t\t<p>Aventura: @UUID[JournalEntry.gaH22PwLg60lJMOD]{Arco 2 · Aventura 3 · Fuga da Rocha Cinzenta}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "gPHCnxaEGxA0r0ys",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.gPHCnxaEGxA0r0ys"
+    },
+    {
+      "name": "Taverna Terceira Opção",
+      "type": "text",
+      "sort": 560,
+      "text": {
+        "content": "<p>Na Cidade da Praia, uma taverna para quem gosta de música de verdade: cerveja anã trazida de Doherimm, palco, bardos pagos e composições próprias, não as cantigas de sempre. Atraiu corredores de carruagem, gladiadores, artistas e aventureiros. Agora as brigas estão cada vez mais violentas, viram batalhas, afastam a clientela e atraem arruaceiros. É o palco da Aventura 4. <i>Onde toda música começa com uma contagem 1-2-3-4.</i></p>\n\t\t<h3>@UUID[Actor.kaLVU23MASFJ7BFF]{Click, o Taverneiro}</h3><p><i>O taverneiro: um anão osteon cuja mandíbula estala quando ele fala.</i></p><p>Morreu na Guerra Artoniana e garante que se ergueu da tumba porque não aguentava mais a música perto do cemitério: canções melosas, melodias que não ofendem ninguém, versões para bailes elegantes. Tudo lixo!</p><p>Nunca foi bardo, mas ama música. Com o tesouro saqueado dos puristas, abriu a Terceira Opção para músicos que não têm medo de gritar e escandalizar os valkarianos de bem. O nome: quem quer um lugar tranquilo só vem se as tavernas comuns estiverem fechadas ou lotadas.</p><p>Tem acordo exclusivo com a Guilda dos Cervejeiros de Doherimm. O nome antigo era Bhulgarassimm; \"Click\" soa muito mais natural.</p><h3>@UUID[Actor.miBdO9ykACUqREhE]{Drasala, a Segurança}</h3><p><i>A segurança da Terceira Opção: uma medusa forte e vigorosa, ex-gladiadora da Arena de Valkaria, com metade das serpentes da cabeça cortadas.</i></p><p>Nunca foi hábil nem chamativa, mas aguentava dano como ninguém, e a raça fez dela a \"vilã\" natural das lutas de exibição. As lutas eram falsas, o dano não: devia perder, e os adversários às vezes pesavam a mão. Um machado cortou metade das serpentes da cabeça dela.</p><p>Aposentou-se (já estava velha) e faz bicos onde é preciso alguém forte, resistente e amedrontador. Parecia um trabalho fácil... até as brigas começarem.</p>\n\t\t<h2>As bandas</h2><ul><li><b>Naxia e os Monstros Errantes:</b> música macabra com toque agressivo. Naxia Nix, dahllan toda de preto, e três humanos de maquiagem pesada (Maxir, Almia, Zugont).</li><li><b>Brasão de Kor Kovith:</b> extremamente agressiva, quase tudo sobre combater os puristas; acusam o Reinado de conivência. Chazz (lefou, vocal/alaúde), Durk (goblin, vocal/alaúde), Nulliandor (elfo, violoncelo), Mirne (sereia, pratos/tambor).</li><li><b>Tarsos:</b> músicas rápidas, simples e divertidas, de gosto duvidoso (<i>Quero Ser Seu Simbionte</i>, <i>Glórienn É Minha Namorada</i>, <i>Romance em Hangpharstyth</i>). Tarso Drake, Tarso Galtran, Tarso Algherulff e Tarso Khoshkothruk se vestem iguais, imitando o esqueleto Tarso.</li><li><b>Reles Rancor:</b> \"superbanda\" de bardos de Aslothia mortos ao longo dos séculos, todos aos 27 anos: Jarynn (povoamento de Bielefeld), Spud (Guerra Civil), Glenna (executada por Ferren Asloth por usar magia) e Nasto (afogado no próprio vômito). Mistura pesada de gêneros de cada época.</li><li><b>Vyrgillia de Azgher:</b> barda de Smokestone. Diz ter sido xerife de Azgher e ter um passado sombrio. Canta as planícies, a solidão dos foras da lei e os arrependimentos da bebida e das armas de pólvora.</li><li><b>Senomar:</b> o velho bardo continua rápido e agressivo. Às vezes aparece e até se apresenta.</li><li><b>Crânio de Pedra:</b> três piratas sem instrumentos, com rimas rápidas e ácidas: Larkin Rasga-Faca (troglodita), Vitta Voltania (humana) e Bolo (anão largo como um barril, que batuca em qualquer coisa e incentiva o público a fazer o mesmo). Sucessos: <i>Mar Salgado/Sangue Salgado</i>, <i>Fogo no Reinado</i>, <i>3 Bucaneiros</i>.</li><li><b>Homúnculo:</b> dupla de inventoras de Moreania, Alabarda (herdeira da raposa) e Acha d'Armas (herdeira da coruja), com autômatos mesclados a instrumentos de percussão, em apresentações experimentais e performáticas.</li></ul>\n\t\t<p>Aventura: @UUID[JournalEntry.ve6ZkVzWuSqYtEjF]{Arco 2 · Aventura 4 · Massacre na Taverna dos Maníacos}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Ht1BgkDonadzfMbY",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.Ht1BgkDonadzfMbY"
+    },
+    {
+      "name": "Baixa Vila de Lena",
+      "type": "text",
+      "sort": 570,
+      "text": {
+        "content": "<p>O principal bairro boêmio da capital: acordado à noite, jovens com cálices e canecas com brasões das tavernas, bardos em cada esquina e movimentos artísticos novos (e esquisitos) a cada instante. Embaixo, os esgotos do Povo dos Túneis. É o palco da Aventura 5.</p>\n\t\t<h3>@UUID[Actor.RpHRe2PPveEjG0dA]{Marquês Vladmir Mors}</h3><p><i>Um vampiro conhecido de todos, rico, sempre cercado de admiradores, em festas, falando o tempo todo. Mora na Mansão do Sono e Suplício, de portas sempre abertas.</i></p><p>Aristocrata solitário, torturado e soturno que não parece nada disso. A quem diz que é fachada: <i>\"É preciso um sofrimento ainda maior para que minha dor vos satisfaça... Então logo estarão felizes, pois meu tormento não tem limite e não tem fim!\"</i></p><p>Existe na Baixa Vila pelo menos desde a construção de Vectora (diz ter visitado o Mercado nas Nuvens atrás de uma cura) e às vezes sugere que estava aqui antes dos refugiados de Lamnor. Aqui é Valkaria, onde até os sanguessugas pagam impostos.</p><p>Diz que não mata para se alimentar. Tem um séquito de \"crianças da noite\", \"inocentes amaldiçoados\", \"sonâmbulos do sangue\": devotos de Tenebra e jovens entediados, muitos deixam que ele beba seu sangue esperando ser transformados. Ele é claro: <b>nunca</b> passará adiante a terrível existência eterna de riqueza, adulação e festas.</p><p>A mansão funciona como castelo, aberta ao público (exceto os aposentos e o caixão), onde ele atende os \"súditos\".</p><h3>@UUID[Actor.iSUvBHsupi4TPzoL]{Fido}</h3><p><i>O único servo oficial do Marquês. Um humano um pouco caipira, muito nervoso, medroso e totalmente leal.</i></p><p>Lobisomem: perde o controle e se transforma nas noites de lua cheia. Pediu ajuda a Vladmir, o único que poderia entender sua condição; o vampiro o acolheu e o acorrenta sempre que há risco. Daí uma lealdade... canina.</p><h3>@UUID[Actor.6fvAMPFSFLHvunyW]{Ozeanna}</h3><p><i>Súdita do Marquês. Uma qareen bela e sempre na moda, com seu próprio séquito de seguidores.</i></p><h3>@UUID[Actor.hwTeH5ltaSKVNuYW]{Vancort}</h3><p><i>Súdito do Marquês. Um jovem hynne franzino e alérgico, fascinado pela vida noturna.</i></p><h3>@UUID[Actor.Dn5VYhZqDvKvYjrN]{Mildred}</h3><p><i>Súdita do Marquês. Arcanista e devota de Tenebra de meia-idade.</i></p><p>Fascinada pelo vampirismo e obcecada pela ideia de viver para sempre.</p><h3>@UUID[Actor.kNmEhRgwgsdBerPy]{Ellan'grag'dakrimm}</h3><p><i>Um dos membros mais ativos do Povo dos Túneis, nos esgotos. Não sabe que sua aparência e seu nome são estranhos.</i></p><p>Uma junção de elfo, anão e goblin: partes de cada raça costuradas numa colcha de retalhos viva. As memórias são fragmentos contraditórios das três: lembra de uma guilda de ferreiros e da terra natal invadida por monstros, mas a terra natal era uma região pobre de Valkaria. Não sabe que são lembranças de Doherimm, de Lenórienn e da Favela dos Goblins.</p><h3>@UUID[Actor.EOZuamzDbFFsI1sz]{Gausbloppasremme}</h3><p><i>Uma das líderes do Povo dos Túneis, que tenta agir como irmã mais velha dos outros.</i></p><p>Um misto de partes de minotauro, hynne e dahllan, sem notar que isso tem algo de estranho. As memórias conflitantes (era um legionário que vendia charutos numa floresta idílica) tornam difícil ter qualquer experiência útil para a comunidade.</p><h3>@UUID[Actor.L8N8dabtlO3400ch]{Athisza, a Sereia do Esgoto}</h3><p><i>Uma sereia do esgoto, nascida sem olhos, líder natural do Povo dos Túneis.</i></p><p>Lembra dos pais, mas não do que lhes aconteceu; as primeiras lembranças já são dos esgotos. Acredita ser a geração mais nova de uma longa linhagem de sereias do esgoto (nasceu sem olhos, adaptação de quem vive longe da luz).</p><p>Conheceu os piratas do esgoto, fugiu dos monstros e encontrou o Povo dos Túneis, que não estava adaptado aos esgotos nem lembrava como chegou lá. É a única que conhece os esgotos o bastante para manter os protegidos um passo à frente do inimigo.</p><p>Determinada e prática, mas a reação natural é fugir ou se esconder: o \"povo de cima\" raramente desce com boas intenções, e coragem quase sempre é sinônimo de idiotice.</p>\n\t\t\n\t\t<p>Aventura: @UUID[JournalEntry.XcmDgIGXAd8bEICV]{Arco 2 · Aventura 5 · Túneis Famintos}. <i>A ordem dos nomes de Ozeanna, Vancort e Mildred no livro é ambígua (texto em colunas); veja o guia do gerador.</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "1WRVsrLRAR2HAE5O",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.1WRVsrLRAR2HAE5O"
+    },
+    {
+      "name": "A Juventude Nobre",
+      "type": "text",
+      "sort": 580,
+      "text": {
+        "content": "<p>A alta nobreza de Valkaria está tão acima da nobreza \"comum\" quanto um nobre comum está do mais reles plebeu. Nunca lidaram com dinheiro: simplesmente possuem tudo. Nem a Rainha-Imperatriz pode desestabilizá-los sem fazer metade do Reinado ruir, e nem um deus está fora do seu alcance. Muitas famílias têm sangue élfico, divino, angelical, feérico ou dracônico. Os jovens vivem de festas, esportes, viagens, fofoca, roupas e às vezes estudo; muitos nem sabem que houve uma guerra (\"uma dessas brigas de plebeus\"). São os convidados da Aventura 6.</p>\n\t\t<h3>@UUID[Actor.4ZD5PSKhBdOXfEoy]{Duquesa Alfraye Oppulak de Trylon e Foltomett}</h3><p><i>Duquesa Alfraye Oppulak de Trylon e Foltomett. Melancólica e reclusa, alvo de pena ou piadas.</i></p><p>Órfã desde que os pais morreram na Guerra Artoniana, assumiu a chefia da família. Passou a ser considerada esquisita depois de um baile em que, segundo ela, <b>todos os seus amigos morreram</b>. O problema: nenhum deles parece estar morto! Fica sozinha no castelo da família, com livros e trivialidades.</p><h3>@UUID[Actor.aRnvKFLcd3DewVU7]{Duque Kalyon Montalbert Arkystan III}</h3><p><i>Duque Kalyon Montalbert Arkystan III. Bonito, carismático, cativante e totalmente ingênuo.</i></p><p>Tão desconectado do mundo que não transparece maldade, tão privilegiado que não entende como alguém poderia não gostar dele. Os boatos de assassinatos de jovens nobres o chocaram: isso ficou no passado, não? Ataque de Mestre Arsenal, corrupção do Paladino, rapto da Princesa Tanya: histórias divertidas, que nunca aconteceriam no mundo real!</p><h3>@UUID[Actor.o5QjkgrAim9YKpAG]{Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt}</h3><p><i>Viscondessa Angeliese Michon-Albanez de Wallas e Ramannt. Uma das poucas jovens nobres que tenta ajudar o mundo \"normal\".</i></p><p>Já organizou um evento beneficente para a \"família carente\" da rainha de Namalkah, doou vestidos para os refugiados da guerra usarem em seus bailes e tentou um acordo diplomático entre Azgher e Tenebra. Não sabe ajudar as pessoas comuns nem conhece os próprios limites, mas a boa vontade é inegável.</p><h3>@UUID[Actor.0pMlVPlegUhb3LLX]{Conde Archibald Benessar Xendros Tranalyell Whorp}</h3><p><i>Conde Archibald Benessar Xendros Tranalyell Whorp. Baixinho, magro e desajeitado, estudioso, quer ser arcanista.</i></p><p>Tem talento para ser um grande mago: a vaga na Academia Arcana está garantida e já tem alguns artefatos. A paixão pela Duquesa Melynna o distraiu da magia para os bailes e roupas. Suspeita que só o convidam pela influência dos pais, mas não deixa isso atrapalhar os grandes gestos para conquistar Melynna.</p><h3>@UUID[Actor.heJonMTFIYQyfJoO]{Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\"}</h3><p><i>Duquesa Melynna Trewnwryte Stolinsson Fröghstassen Jurdluchstnach, \"a Vigésima-Primeira Deusa do Panteão\". Talvez a pessoa mais bela da cidade.</i></p><p>A herdeira mais cobiçada de Arton: senadores de Tauron ofereceram províncias por um encontro; príncipes angelicais pediram sua mão; bardos desistiram da arte ao vê-la. A família é rica até para os padrões valkarianos. Se você nunca ouviu falar, é porque não merece.</p><p>Sabe da própria beleza. Deu-se o epíteto e todos aceitaram. Arrogante e condescendente: não se acha melhor que ninguém, <i>sabe</i> que é melhor que todos, e não só mortais.</p><h3>@UUID[Actor.2OFkufCGiu2IdYes]{Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\"}</h3><p><i>Barão Loranth Okanjyll Lessamar Lodek, \"o Teleporte\". Especialista em drogas e alucinógenos.</i></p><p>Faz os amigos \"irem para outro lugar\" num piscar de olhos. Ninguém sabe o que são suas combinações de plantas, alquimia e magia, nem ele: \"Semiplaninho de Wynna\", \"Amansa-Ogro\", \"Holy Absolver\", \"Uefel\", \"Masmorrite\", \"Aliança Verde\"...</p><p>Acredita em teorias da conspiração e \"verdades alternativas\", quase todas sobre heróis famosos de Arton usarem substâncias recreativas.</p><h3>@UUID[Actor.D0cfyZX5gZbJ5N9T]{Conde Axel Trelock Dezzenhal da Grande Batalha}</h3><p><i>Conde Axel Trelock Dezzenhal da Grande Batalha. Alto, forte, treinado como guerreiro, de pavio curto.</i></p><p>A família não era nobre: um antepassado foi sagrado cavaleiro na Grande Batalha. São \"novos ricos\" eternamente recém-chegados. O epíteto faz os descendentes se acharem grandes heróis, mas nenhum saiu em aventura desde então.</p><p>Não perde chance de mostrar força e \"valentia\", sobretudo perto de mulheres. Inseguro quanto às origens, desafia qualquer um que pareça questionar sua nobreza.</p><h3>@UUID[Actor.SZ3QgRWE9245W4kv]{Marquesa Irludde Dyssindar Veront-Faryllia}</h3><p><i>Marquesa Irludde Dyssindar Veront-Faryllia. Imersa em fofoca, pequenas competições e minúsculos escândalos.</i></p><p>Jogadora iniciante do <b>Grande Jogo</b>, a teia de maquinações, alianças e insultos dos \"adultos\" da elite. Não é maligna nem exatamente maliciosa, mas não perde chance de divulgar segredos ou apontar defeitos. Aventureiros que se aproximam e a deixam falar descobrem muita coisa.</p><h3>@UUID[Actor.YBAQ0L3IkGdmtBkx]{Príncipe Drekaag de Sckharshantallas}</h3><p><i>Príncipe Drekaag de Sckharshantallas. Pupilas verticais, cabelos vermelhos e pequenas escamas; adora ouro, invoca o nome de Sckhar e mexe com fogo.</i></p><p>Um dos poucos não humanos da alta nobreza: descendente do próprio Sckhar (bisneto, tataraneto, sobrinho-tataraneto em terceiro grau, algo assim). Distante o bastante para nunca ter visto o Dragão-Rei, perto o bastante para ser rico e respeitado.</p><p>Veio quando Sckharshantallas ainda era do Reinado e ficou. Mais velho que os amigos, mas com a cabeça de quem sai da adolescência. Sendo o único meio-dragão que conhece, imita o que imagina ser o comportamento de seu povo.</p>\n\t\t\n\t\t<p>Aventura: @UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "iLiVCF37Zt3odG6e",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.iLiVCF37Zt3odG6e"
+    },
+    {
+      "name": "A Guarda de Valkaria",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Uma instituição antiga, com tradições de ordens de cavalaria de Lamnor, que muda com a cidade. Até a Guerra Artoniana, era quase militar: capitães, sargentos, salário fixo e um quartel por região. O influxo de veteranos e refugiados tornou isso inviável: os casos pulavam de quartel em quartel e os próprios quartéis eram realocados. Pior, os cofres secaram (a guerra, o sumiço da Rainha-Imperatriz, o ouro que \"sumiu\" nos jogos de poder): sem salário, os guardas faziam missões de aventureiro e eram incentivados a ser incompetentes no emprego. A Guarda virava uma irmandade que só se mexia por recompensa. Após a guerra, as maiores autoridades, incluindo a Rainha-Imperatriz, reformularam tudo.</p>\n\t\t\t\t<h2>Quem é a lei</h2>\n\t\t\t\t<p>Não há mais quartéis, mas <b>guaritas</b>, cada uma comandada por um <b>Xerife</b>, que responde a um <b>Regulador</b> (de um conselho vigiado pelos Juízes de Khalmyr). Abaixo vêm os <b>detetives</b> (quase aventureiros, com restrições; heróis de confiança podem receber o posto honorário) e os <b>patrulheiros</b>, com seus <b>alcaides</b>.</p>\n\t\t\t\t<p>A jurisdição não depende de geografia: qualquer cidadão procura qualquer guarita, e há <b>caixas de mensagens</b> pela cidade para queixas endereçadas à guarita preferida. O regulamento manda investigar todos os casos que chegam assim. Cada Xerife define as prioridades (alguns designam, outros deixam os detetives escolher, alguns deixam a vítima escolher o detetive).</p>\n\t\t\t\t<p>As guaritas são <b>apadrinhadas</b> por negócios, famílias nobres, igrejas, heróis ou torres de magos. Como qualquer um pode recorrer a qualquer guarita, uma guarita eficiente perto de um palacete só atrai o povo à zona rica. O trunfo da Guarda contra aventureiros e mercenários é a eficiência e a honestidade; queixas contra guardas vão direto aos Juízes de Khalmyr, e as guaritas vigiam umas às outras. Dizem que alguns nobres espalham boatos contra os ricaços que não contribuem.</p>\n\t\t\t\t<p>Os <b>detetives ganham por caso resolvido no mês</b>, com provas materiais ou testemunhos: quanto mais sólido o caso, mais rende. Isso não impede conspirações com provas forjadas e testemunhas enfeitiçadas, e faz os casos insolúveis passarem de mão em mão como batatas quentes. Os <b>patrulheiros</b> continuam pagos e equipados pela cidade e rodam entre guaritas; quando promovidos, são escolhidos por um Xerife (ou viram alcaides, ou são dispensados).</p>\n\t\t\t\t<p><i>No sistema judicial valkariano, o povo é representado por dois grupos separados e igualmente importantes: a Guarda, que investiga os crimes, e os promotores, que trazem os criminosos à justiça. Essas são suas histórias. DUN-DUN!</i></p>\n\t\t\t\t<h2>O Alto Comando</h2>\n\t\t\t\t<p>Os <b>Lordes Urbanos</b> (um para cada bairro, outros para vários bairros, como o Lorde Urbano dos Andares Acima do Terceiro, e outros para pequenas áreas, como o Lorde Urbano das Oficinas na Cidade da Praia) elegem o <b>Lorde (ou Dama) da Justiça</b>, chefe de toda a Guarda. Os votos têm pesos que mudam: o Lorde Urbano dos Telhados Nevados não vota em invernos \"muito rigorosos\"; o dos Quartéis com Mais de Vinte Soldados tem voto triplicado se há guerra perto de Deheon; um clérigo de Oceano perdeu sendo o mais votado porque a chuva torrencial reduziu seus votos como reprimenda ao deus. Qualquer um pode se candidatar (um ex-morador de rua foi dos mais celebrados), mas quase sempre vencem altos nobres ou guardas experientes.</p>\n\t\t\t\t<h3>@UUID[Actor.ul7G4RCmt9txPUAn]{Xarynn Libra, a Dama da Justiça}</h3><p><i>A atual Dama da Justiça, chefe de toda a Guarda de Valkaria. Lefou devota de Khalmyr, fascinada pela ordem, pelas leis e pela burocracia.</i></p><p>Surgiu aparentemente do nada. Talvez a única pessoa que entende a teia de atribuições dos Lordes Urbanos e a matemática bizarra da eleição: invocou regras obscuras, falou com as pessoas certas e se elegeu por uma série interminável de tecnicalidades. Recusar a vitória seria invalidar o próprio processo.</p><p>Está se provando uma boa Dama da Justiça. Fez parte do conselho que criou a nova Guarda (estatística, logística, meandros legais). Ignora bem e mal, tradições, heroísmo e ameaças cósmicas: faz valer a lei como está escrita, igual para todos. Já prendeu temporariamente a sumo-sacerdotisa de Marah por barulho demais ao salvar vítimas de um incêndio.</p><p>Muitos gostam da previsibilidade. Alguns dizem que, como ninguém conhece a lei tão bem quanto ela, ninguém pode ter certeza de que ela não inventa as próprias regras...</p>\n\t\t\t\t<h2>Cargos e divisões</h2>\n\t\t\t\t<ul><li><b>Dama da Justiça:</b> Xarynn Libra, eleita pelos Lordes Urbanos. Chefia toda a Guarda.</li><li><b>Reguladores:</b> Figurões de um conselho, sob a vigilância dos Juízes de Khalmyr. Cada Xerife responde a um Regulador.</li><li><b>Xerife:</b> Comanda uma guarita com bastante autonomia, dentro das regras básicas da Guarda. Escolhe os detetives e a prioridade dos casos.</li><li><b>Detetives:</b> Investigam cenas de crime, suspeitos, desaparecidos e casos de todo tipo. Quase aventureiros a serviço da Guarda; agem em duplas ou equipes. Não fazem rondas nem portam apito. Ganham por caso resolvido no mês: quanto mais provas, mais o caso rende. Heróis de confiança podem receber o posto honorário.</li><li><b>Alcaides:</b> Comandantes de equipes de patrulha (portões, áreas de patrulha intensa). Mesmo nível dos detetives, mas em geral não ascendem.</li><li><b>Patrulheiros:</b> O posto mais baixo e o maior contingente: rondas em duplas ou pequenos grupos, apito, primeiros a responder. Salário fixo da cidade; rodam entre guaritas. Chamam detetives para todo crime que não viram com os próprios olhos.</li><li><b>Guarda do Palácio:</b> Protege o Palácio Imperial e arredores, com prestígio e pouquíssima liberdade. Nunca atua em outras áreas.</li><li><b>Guarda Arcana:</b> Arcanistas, clérigos, inventores e outros: magia de adivinhação nas cenas, traços mágicos, pesquisa e, recentemente, autópsias. Raramente entram na ação.</li></ul>\n\t\t\t\t<h2>Juramento da Guarda de Valkaria</h2>\n\t\t\t\t<blockquote>Eu juro, por Khalmyr e pela Rainha-Imperatriz<br>Defender a cidade, e o povo acima dela<br>Honrar meus companheiros, e a lei acima deles<br>Buscar em todos os casos a verdade, e a justiça acima disso<br>Zelar pela ordem, e pela vida acima de tudo<br>Colocar o dever acima de mim mesmo<br>E, acima do dever, o bem</blockquote>\n\t\t\t\t<p>Use @UUID[Macro.NaFeq368BbdYQTBg]{Guarda · Juramento e Direitos} quando o grupo jurar, no fim da Aventura 0 (@UUID[JournalEntry.F2pQco7kNcYpG9JD]{Arco 2 · Aventura 0 · Chegada a Valkaria}).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "A0gjHOELlWbzjrUK",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.A0gjHOELlWbzjrUK"
+    },
+    {
+      "name": "Ninguém Acima da Lei",
+      "type": "text",
+      "sort": 710,
+      "text": {
+        "content": "<p>Para um herói a serviço da Guarda, não basta resolver o mistério e matar os criminosos. <b>Todo guarda deve fazer um esforço real para capturar suspeitos com vida</b>, por mais perigosos que sejam.</p>\n\t\t\t\t<ul><li><b>Presença e ordens verbais:</b> O primeiro nível de força, pela cartilha que existe há séculos: \"Guarda de Valkaria! Parado!\"</li><li><b>Técnicas não letais:</b> Se o suspeito resiste, mas não é violento nem está armado.</li><li><b>Força letal:</b> Só se o suspeito ataca o guarda ou outra pessoa. Mesmo assim, o juramento manda se esforçar para não matar. Todo guarda deve fazer um esforço real para capturar suspeitos com vida.</li></ul>\n\t\t\t\t<p>Ao capturar, o guarda recita os direitos (ser alimentado sob custódia, receber um clérigo, recusar magias de controle mental). Suspeitos são interrogados. Pegos em flagrante, passam aos Juízes de Khalmyr; os guardas só fornecem provas e testemunhas. Depois, relatórios e papelada.</p>\n\t\t\t\t<h2>Direitos dos Suspeitos</h2>\n\t\t\t\t<blockquote>“Você é acusado de (crime do qual o suspeito é acusado) pela Guarda de Valkaria, sob a verdade de Khalmyr e Tanna-Toh. Você está sob responsabilidade da cidade de Valkaria e tem o direito de ser alimentado e abrigado. Tem o direito de receber a visita de um clérigo de qualquer deus do qual for devoto, desde que não represente perigo ou profanação. Tem o direito de estar a salvo de qualquer controle mental, leitura de pensamentos ou vigilância de sua alma. Ao aceitar esses direitos, reconhece ser um habitante inteligente e não monstruoso do mundo material, sujeito às leis dos mortais.”</blockquote>\n\t\t\t\t<h2>Punições</h2>\n\t\t\t\t<ul><li><b>Infrações simples:</b> Danos materiais, descumprir ordem direta (\"Eu falei para vocês não se meterem com o barão!\"), equipamento ilegal: uma ou duas semanas de afastamento e suspensão do pagamento do caso resolvido de forma irregular. O guarda entrega espada e distintivo e, teoricamente, se afasta de todos os assuntos da Guarda (por alguma razão, isso raramente é cumprido). Investigadas por outra guarita ou punidas de forma simples.</li><li><b>Desrespeito flagrante às autoridades:</b> Prosseguir numa investigação encerrada, invadir propriedade sem autorização, usar magia ilegal num suspeito, mesmo com as melhores intenções: expulsão e perda de aposentadoria (curiosamente, uma ameaça que aflige muitos guardas prestes a se aposentar).</li><li><b>Crimes:</b> Execuções, acusações falsas e chantagem: investigação detalhada, expulsão e/ou qualquer pena cabível. A Rocha Cinzenta é um lugar terrível para ex-guardas.</li></ul>\n\t\t\t\t<p>Para o verdadeiro guarda, a grande motivação não é o pagamento nem o heroísmo: é o cumprimento do dever. Quem se importa com heróis empolados que contam vantagem depois de saquear meia dúzia de masmorras? Os guardas defendem o povo todos os dias, sem fraquejar.</p>\n\t\t\t\t<p><i>Isto é uma obra de ficção: a Guarda de Valkaria é tão realista como polícia quanto grupos de aventureiros são como solução para a política internacional. Tudo foi pensado para o jogo, não como plataforma ideológica.</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "S9PQto1ktKaNwARZ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.S9PQto1ktKaNwARZ"
+    },
+    {
+      "name": "A Guarita da Praia",
+      "type": "text",
+      "sort": 720,
+      "text": {
+        "content": "<p>O principal centro de lei e ordem da Cidade da Praia: um antigo mosteiro convertido em prédio público, cercado por um espelho d'água, com colunas decoradas e alcovas de meditação que hoje servem à agitação investigativa e burocrática. O elenco resumido também está em @UUID[JournalEntry.F2pQco7kNcYpG9JD]{Arco 2 · Aventura 0 · Chegada a Valkaria} › Elenco da Guarita da Praia.</p>\n\t\t\t\t<h3>@UUID[Actor.7xlqREDzVMs1EKJ9]{Xerife Mathilda Nolt}</h3><p><i>A Xerife da Guarita da Praia, talvez a mais jovem da cidade. Clériga de Tanna-Toh, só fala a verdade. Perdeu o uso das pernas.</i></p><p>Geração mais recente de uma família de guardas. Ouviu o chamado de Tanna-Toh ainda criança e se ordenou no início da adolescência; virou \"mascote\" nas guaritas da mãe e dos tios e criou sistemas arcanos de detecção de pistas antes de adulta. Carreira meteórica de detetive.</p><p>A honestidade e a competência incomodaram. Numa tarde em que seus desafetos estavam fora, bandidos que não queriam nada atacaram o quartel; Mathilda parecia o alvo. Atravessada por uma lança e baleada, estancou os ferimentos com a própria magia e instruiu os colegas até chegarem clérigos.</p><p>Promovida a Xerife na reforma. Não descobriu os culpados, mas sabe que guardas corruptos têm ligação. Como só fala a verdade, já disse isso mais de uma vez, e continua sendo um alvo...</p><h3>@UUID[Actor.E8DpqcqPP5n1LnJT]{Dra. Zymni}</h3><p><i>A médica da Guarita da Praia, uma troglodita que examina cadáveres e provas no anexo, onde até faz as refeições.</i></p><p>Encontrada no ovo por aventureiros de Salistick e adotada por uma família de cientistas. Formou-se no Colégio Real de Médicos. Em Valkaria descobriu que a maioria dos humanos não queria ser tratada por uma trog, mas a Guarda Arcana sempre precisa de especialistas.</p><p>Curiosa, com uma naturalidade desconcertante perto de cadáveres e cenas grotescas, e um senso de humor inapropriado que é só dela. A maioria dos guardas evita o anexo; ela não se importa.</p><h3>@UUID[Actor.dbuss0AGbIBbrwX8]{Ulnsariann}</h3><p><i>Detetive elfo, ousado, jovem (para os padrões élficos) e nobre. Parceiro inseparável de Throgarimm.</i></p><p>A dupla é famosa em toda a Cidade da Praia pelas brigas constantes e por desafiar o regulamento. Pergunte algo aos dois e ouvirá duas respostas opostas. Reclamam um do outro, mas se recusam a trabalhar com outros ou sozinhos (\"é preciso ficar de olho no anão\"). Mathilda odeia os métodos, mas admite que dão resultado.</p><h3>@UUID[Actor.tGaR6AEuJ9zPtqdR]{Throgarimm}</h3><p><i>Detetive anão, cauteloso, velho e plebeu. Parceiro inseparável de Ulnsariann.</i></p><p>\"O elfo vai ser enganado pelo suspeito\"; \"é preciso dois detetives para invadir o covil\": sempre há uma justificativa para não se separar de Ulnsariann.</p><h3>@UUID[Actor.EsL0UgYaYUhjRrH0]{Saeba, o Guarda Ninja}</h3><p><i>Detetive tamuraniano que se veste de samurai e usa armas tradicionais, mas age sozinho, sorrateiro e cheio de truques. Não confirma nem desmente os boatos.</i></p><p>Entrou na Guarda para vingar a irmã mais nova, vítima de uma Irmandade. Começou o ataque sozinho, mas, ao se ver enfrentando guardas tanto quanto criminosos, decidiu ficar do lado da lei. Um dos detetives mais marcantes e eficientes da Guarita da Praia.</p><h3>@UUID[Actor.Tr25tnBkzHe1IA1L]{Hannah}</h3><p><i>Detetive de herança celestial, extremamente apegada à justiça e talvez intolerante demais com criminosos.</i></p><p>Vê como dever acabar com o crime em Valkaria e se perde em infrações insignificantes. A lealdade à Guarda é inquestionável, mas Mathilda às vezes a repreende pelo tratamento aos suspeitos e aos cidadãos que descumprem qualquer lei obscura.</p><h3>@UUID[Actor.OwwAlD8aXMKwwCXd]{Finley}</h3><p><i>O detetive mais jovem da Guarita da Praia: entusiasmado, ingênuo, sempre disposto a ajudar e completamente verde.</i></p><p>A burocracia o promoveu e Mathilda se apiedou dele. Não é um prodígio: é um rapaz normal numa situação muito além das suas capacidades. Já foi enganado várias vezes por criminosos (pelo menos uma fuga). A Xerife não é tão severa quanto poderia, mas todos conhecem os erros dele.</p><h3>@UUID[Actor.epTs0a7gQjnaOvz3]{Tullia Blasanov}</h3><p><i>Detetive lefou com o sobrenome de uma das famílias criminosas mais notórias da capital.</i></p><p>Sofre preconceito por ser lefou e, dentro da Guarda, por ser uma Blasanov. Nunca fez parte da Irmandade, mas cresceu na <b>Casa Blasanov</b>, que só compete com a Companhia dos Irmãos no crime organizado. Considera ter nascido lefou uma bênção: indesejada pela família, viu como ela era cruel e violenta.</p><p>Sabe que é um risco para qualquer guarita (os Blasanov são vingativos) e se esforça para compensar. Muitas vezes alude ao que presenciou crescendo na família.</p><h3>@UUID[Actor.IGVjh7jtiR6lDGS6]{Berthun}</h3><p><i>Detetive veterano que viu a reforma da Guarda. Poderia ser Xerife, não fossem as infrações: dorme em serviço, chega atrasado, falta às reuniões e muitas vezes aparece ferido ou mancando.</i></p><p>Não é desonesto, negligente nem violento demais. A esposa e os filhos notam suas ausências por várias noites; a maioria dos guardas acha que é um bêbado que se mete em brigas de taverna.</p><p><b>Segredo:</b> é o vigilante mascarado conhecido como <b>Curandeiro</b>, que caça os criminosos que escapam das investigações normais. Ele mesmo não sabe se a exaustão não os ajuda a escapar impunes.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "lln1kuYvgCtYT004",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.lln1kuYvgCtYT004"
+    },
+    {
+      "name": "Escolhendo os Casos",
+      "type": "text",
+      "sort": 730,
+      "text": {
+        "content": "<p>Os jogadores devem saber que a chance de resolver todos os casos antes que \"algo aconteça\" é bem pequena. Blixto, Mathilda ou qualquer detetive pode dizer isso; diga você mesmo, sem meias-palavras, se houver dúvida.</p>\n\t\t\t\t<p>O livro presume que o grupo escolha os casos que, pelo palpite dele, têm a ver com a trama, mas pode escolher só os mais divertidos. Cada caso ligado à trama principal dá informações e vantagens para a última aventura. Controle o tempo com @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "IBaAFDo4OiAY53ws",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.IBaAFDo4OiAY53ws"
+    },
+    {
+      "name": "Relatos da Mesa Original",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p>Nas Colinas Centrais, os personagens conheceram quase todos os NPCs e os jogadores lembravam nomes e características. Em Valkaria houve bem menos conexão com os coadjuvantes, mas nunca faltou o que fazer. <b>No interior não havia nada para fazer, mas todos se conheciam; na capital nunca há tédio, mas ninguém conhece os vizinhos.</b></p>\n\t\t\t\t<p>Abrace essa dinâmica. Blixto não é uma nova Belinda; os detetives da Guarita da Praia não são os novos soldados do Forte Cabeça-de-Martelo. Mesmo sem se envolver no crescimento de Finley ou no drama de Tullia, o grupo original interagiu com a cidade pelos negócios, pelas atividades e pelas aventuras, e as relações que fez foram marcantes: Vladmir Mors, Alfraye, Jaydill e até Paollus ascenderam naturalmente a papéis de destaque.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "mnLC4wL14bh8FEDZ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!NvlzlOZC2trvORPe.mnLC4wL14bh8FEDZ"
+    }
+  ],
+  "_key": "!journal!NvlzlOZC2trvORPe"
+}
