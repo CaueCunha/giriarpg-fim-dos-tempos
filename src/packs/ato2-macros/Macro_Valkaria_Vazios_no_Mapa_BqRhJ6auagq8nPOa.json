@@ -1,0 +1,31 @@
+{
+  "name": "Valkaria · Vazios no Mapa",
+  "type": "script",
+  "img": "icons/svg/village.svg",
+  "folder": "DwaJYlHNlh2OteDp",
+  "flags": {
+    "world": {
+      "fdt": "a2ruas"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · As Ruas Traiçoeiras de Valkaria · gerado por a2-ruas-valkaria.js\nconst DADOS = {\"ideias\":[\"<b>Meia-Cidade</b>: um bairro hynne dominado por uma gangue de contrabandistas de itens mágicos.\",\"<b>Nuvem Sombria</b>: vizinhança com fama de amaldiçoada, para onde são mandados os indesejados das famílias nobres.\",\"<b>A Sopa</b>: zona de laboratórios onde as sarjetas são rios de ingredientes alquímicos com propriedades imprevisíveis.\"]};\n(async function macroVazios(D) {\n\t\tconst MARCA = \"a2ruasMapa\";\n\t\tconst NOME = \"Nossa Valkaria · Vizinhanças do Grupo\";\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Valkaria · Vazios no Mapa\" },\n\t\t\tposition: { width: 500 },\n\t\t\tcontent: `\n\t\t\t\t<p>Quando os personagens passarem por uma região sem nome, pergunte ao grupo que lugar é esse. Cada vizinhança vira uma página do diário <i>${NOME}</i>, que o gerador não apaga.</p>\n\t\t\t\t<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"registrar\">Registrar uma vizinhança</option>\n\t\t\t\t\t<option value=\"listar\">Listar as vizinhanças do grupo</option>\n\t\t\t\t\t<option value=\"ideias\">Mostrar exemplos do livro</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Nome</label><input type=\"text\" name=\"nome\" placeholder=\"Meia-Cidade\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Onde no mapa</label><input type=\"text\" name=\"onde\" placeholder=\"coluna F, linha 7\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Quem sugeriu</label><input type=\"text\" name=\"quem\"></div>\n\t\t\t\t<div class=\"form-group stacked\"><label>Identidade do lugar</label><textarea name=\"desc\" rows=\"3\" placeholder=\"Um bairro hynne dominado por contrabandistas de itens mágicos.\"></textarea></div>`,\n\t\t\tok: { label: \"Aplicar\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst whisper = ChatMessage.getWhisperRecipients(\"GM\");\n\t\tif (res.acao === \"ideias\") {\n\t\t\treturn ChatMessage.create({ whisper, content: `<h3>Vazios no mapa</h3><p>Valkaria acomoda tudo o que você e o grupo imaginarem. Exemplos:</p><ul>${D.ideias.map((t) => `<li>${t}</li>`).join(\"\")}</ul><p>Aproveite os adesivos e marque essas vizinhanças no mapa, tornando-o único.</p>` });\n\t\t}\n\t\tlet diario = game.journal.find((j) => j.getFlag(\"world\", \"fdt\") === MARCA);\n\t\tif (res.acao === \"listar\") {\n\t\t\tconst paginas = diario ? diario.pages.contents : [];\n\t\t\treturn ChatMessage.create({ whisper, content: `<h3>${NOME}</h3>${paginas.length ? `<ul>${paginas.map((pg) => `<li>@UUID[${pg.uuid}]{${pg.name}}</li>`).join(\"\")}</ul>` : \"<p>Nenhuma vizinhança registrada ainda.</p>\"}` });\n\t\t}\n\t\tconst nome = String(res.nome ?? \"\").trim();\n\t\tif (!nome) return ui.notifications.warn(\"Dê um nome à vizinhança.\");\n\t\tdiario ??= await JournalEntry.create({ name: NOME, flags: { world: { fdt: MARCA } } });\n\t\tconst esc = (s) => String(s ?? \"\").trim().replace(/[<>&]/g, (c) => ({ \"<\": \"&lt;\", \">\": \"&gt;\", \"&\": \"&amp;\" })[c]);\n\t\tconst conteudo = `${res.onde ? `<p><b>No mapa:</b> ${esc(res.onde)}</p>` : \"\"}<p>${esc(res.desc) || \"<i>Identidade a definir.</i>\"}</p>${res.quem ? `<p><i>Ideia de ${esc(res.quem)}.</i></p>` : \"\"}`;\n\t\tconst [pg] = await diario.createEmbeddedDocuments(\"JournalEntryPage\", [{ name: nome, type: \"text\", sort: (diario.pages.size + 1) * 100, text: { content: conteudo, format: 1 } }]);\n\t\tawait ChatMessage.create({ whisper, content: `<p>Nova vizinhança em ${NOME}: @UUID[${pg.uuid}]{${pg.name}}.</p>` });\n\t})(DADOS);",
+  "_id": "BqRhJ6auagq8nPOa",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!BqRhJ6auagq8nPOa"
+}
