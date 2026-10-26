@@ -1,0 +1,296 @@
+{
+  "name": "FdT · Poderes dos PJs",
+  "folder": "MLkuc12hORteZmBX",
+  "flags": {
+    "world": {
+      "fdt": "fdtpoderes",
+      "fdtRole": "poderesPJs"
+    }
+  },
+  "_id": "c7ZZJLd2BLtCyCXH",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Como usar",
+      "type": "text",
+      "text": {
+        "content": "<p>Revisão dos poderes de <b>Tariq, Rak, Hannah, Felix, Elyas e Balthazar</b> (fichas exportadas em out/2026), conferida no código do Tormenta20 1.6.4.</p>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Selecione os tokens dos PJs (ou nenhum, para todos os PJs com jogador) e rode @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}. Ela lista cada problema achado; desmarque o que não quiser e clique em Executar. Cada poder alterado é guardado na ficha antes, e a opção <i>Desfazer</i> volta tudo.</li>\n\t\t\t\t\t<li>Ligue @UUID[Macro.V8cAAkHgHF8oTYff]{PJs · Automações} uma vez: Temeroso e Provocação Petulante passam a funcionar sozinhos, e voltam ligados ao abrir o mundo.</li>\n\t\t\t\t\t<li>Na mesa: @UUID[Macro.RpuvLv0JdqBga7FX]{PJs · Mau Cheiro} para o Rak e @UUID[Macro.dNqOOHi52tFHknXM]{PJs · Rolar de novo} para o Felix (Sortudo e Sorte Salvadora).</li>\n\t\t\t\t</ol>\n\t\t\t\t<p>A macro de correção acha os problemas pelo nome do poder, então serve também para personagens novos com os mesmos poderes. Armas naturais modelo: @UUID[Item.F7809dI3UJ9dJ25s]{Mordida}, @UUID[Item.Mz5lSqLPGn7ewXkP]{Cauda}.</p>\n\t\t\t\t<h3>Por que estavam quebrados</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Efeitos de Uso antigos.</b> Até o 1.5 o \"Efeito de Uso\" ficava em <code>flags.tormenta20</code>. O 1.6 migrou o mundo uma vez; poderes que vieram depois de módulos ou compêndios não migrados (Engenhosidade do Elyas, Fúria Bestial, Infusão Distante) ficaram desligados para sempre.</li>\n\t\t\t\t\t<li><b>Ataques dentro de poderes.</b> Mordida e Cauda tinham a rolagem no próprio poder. Poder não recebe os modificadores de ataque e dano corpo a corpo (a Fúria), nem passos e crítico. Como arma natural, recebem.</li>\n\t\t\t\t\t<li><b>Passos com tipo errado.</b> A chave <code>passos</code> só sobe o dado com tipo <i>custom</i>; com <i>add</i> o sistema soma o número no dano (Presas Primordiais do compêndio tem esse erro).</li>\n\t\t\t\t\t<li><b>Chave em branco.</b> Resistência Elemental do compêndio vem com <code>resistencias.???.value</code>, que o sistema ignora; e <code>.value</code> é recalculado, o certo é somar em <code>.bonus</code>.</li>\n\t\t\t\t</ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "AIrNMl2i6MjoI39g",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.AIrNMl2i6MjoI39g"
+    },
+    {
+      "name": "Tariq (paladino qareen)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Resistência Elemental</td><td>Chave <code>???</code>: não valia. A ficha tinha luz 10 digitada à mão</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: escolha o elemento; o valor passa para o efeito e o digitado zera</td></tr><tr><td>Desejos</td><td>Caixa −1 PM em magias</td><td>Funciona</td></tr><tr><td>Tatuagem Mística</td><td>Caixa −1 PM em magias (só vale se aprender a magia de novo)</td><td>Funciona</td></tr><tr><td>Impulsivo, Abençoado, Abraço da Fênix (imunidade a fogo)</td><td>Efeitos certos</td><td>Funciona. A cura com dano mágico de fogo é à mão</td></tr><tr><td>Golpe Divino, Cura pelas Mãos</td><td>Iguais ao compêndio</td><td>Funciona</td></tr><tr><td>Montaria: Trobo</td><td>Mestre dava +15 em Fortitude</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: +5 em Fortitude, Reflexos e Vontade</td></tr><tr><td>Combate Defensivo</td><td>Só o −2 no ataque</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes} (usa a macro Poder · Combate Defensivo)</td></tr><tr><td>Provocação Petulante</td><td>Sem efeito</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: o card traz a postura; com @UUID[Macro.V8cAAkHgHF8oTYff]{PJs · Automações} os inimigos testam Vontade no início do turno</td></tr><tr><td>Herança, Código do Herói, Dom da Imortalidade, Paladino do Reino</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr><tr><td>Grupo · Nome, Grupo · Liderança</td><td>Do módulo</td><td>Funciona</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ZDsZ3PlJd1SWz8t9",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.ZDsZ3PlJd1SWz8t9"
+    },
+    {
+      "name": "Rak (bárbaro trog)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Mordida (P.P) e Mordida (P.P+Fúria)</td><td>Duas cópias do ataque com Presas e Fúria embutidos à mão; sem o bônus da Fúria</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: vira a arma natural Mordida (1d6); as cópias somem</td></tr><tr><td>Presas Primordiais</td><td>+2 como caixa em qualquer ataque, somando +2 no dano</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: usar o poder (1 PM) traz o efeito da cena, que sobe a Mordida 2 passos sozinho</td></tr><tr><td>Fúria</td><td>Durava 10 rodadas fixas</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: até parar (fim da cena no máximo)</td></tr><tr><td>Fúria Bestial</td><td>Formato antigo, nunca entrava</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: o card da Fúria traz \"Fúria Bestial · armas naturais\" (+2 passos, crítico +1)</td></tr><tr><td>Mau Cheiro</td><td>Sem automação</td><td>@UUID[Macro.RpuvLv0JdqBga7FX]{PJs · Mau Cheiro}: testes de Fortitude de todos em 9 m, enjoado 1d6 rodadas, imunidade de um dia</td></tr><tr><td>Efeito solto \"Rak Wraith Raiser\" no ator</td><td>Chave passos fora de Efeito de Uso</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: apagado</td></tr><tr><td>Reptiliano, Sangue Frio, Sentidos Aguçados, Chato</td><td>Efeitos certos</td><td>Funciona</td></tr><tr><td>Arma Natural Hábil, À Prova de Tudo</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "u3VfXdWdKnRH92lQ",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.u3VfXdWdKnRH92lQ"
+    },
+    {
+      "name": "Hannah (feiticeira nagah)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Cauda</td><td>Ataque dentro do poder, sem a Força no dano</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: arma natural Cauda (1d6 + For)</td></tr><tr><td>Presentes de Ssaazzaas</td><td>Faltava resistência a veneno +5</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: caixa +5 na Fortitude</td></tr><tr><td>Fraquezas Ofídicas</td><td>Sem efeito</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: +1 por dado de frio e caixa −5 contra Música</td></tr><tr><td>Foco em Magia (cura ferimentos)</td><td>−1 PM como caixa em toda magia</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: −1 PM automático em Curar Ferimentos</td></tr><tr><td>Temeroso</td><td>Só o −5 em Luta</td><td>Funciona; o abalado ao lado de inimigo vem de @UUID[Macro.V8cAAkHgHF8oTYff]{PJs · Automações}</td></tr><tr><td>Inocência Dissimulada</td><td>+2 Enganação</td><td>Funciona. Trocar o teste por Enganação (2 PM) é à mão</td></tr><tr><td>Cura Gentil, Dom da Esperança, Caminho do Arcanista</td><td>Efeitos certos</td><td>Funciona</td></tr><tr><td>Aspirante a herói, Linhagem Abençoada, Magia Ilimitada, Recurvado, Conhecimento Mágico</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "t6hKwLNzditEizfH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.t6hKwLNzditEizfH"
+    },
+    {
+      "name": "Felix (bardo hynne)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Citadino</td><td>+2 também em Adestramento</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: −2 em Adestramento compensa</td></tr><tr><td>Sortudo, Sorte Salvadora</td><td>Sem automação</td><td>@UUID[Macro.dNqOOHi52tFHknXM]{PJs · Rolar de novo}: escolhe o teste no chat, gasta os PM e rola de novo</td></tr><tr><td>Temeroso</td><td>Só o −5 em Luta</td><td>Funciona; abalado por @UUID[Macro.V8cAAkHgHF8oTYff]{PJs · Automações}</td></tr><tr><td>Arremessador, Pequeno e Rechonchudo, Dom Artístico, Golpista Divino, Eclético, Inspiração, Magias</td><td>Efeitos certos</td><td>Funciona</td></tr><tr><td>Aumentar Repertório</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "LUR13JChhGX8p4zA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.LUR13JChhGX8p4zA"
+    },
+    {
+      "name": "Elyas (alquimista meio-elfo)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Engenhosidade</td><td>Formato antigo: a caixa de +Int nunca aparecia</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: caixa de 2 PM nos testes de perícia</td></tr><tr><td>Infusão Distante</td><td>Formato antigo, sem mudanças</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: caixa de 1 PM nos consumíveis</td></tr><tr><td>Visão nas Trevas</td><td>Sem efeito</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: visão no escuro</td></tr><tr><td>Efeito solto \"Engenhosidade\" no ator</td><td>Chave vazia</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: apagado</td></tr><tr><td>Temeroso</td><td>Só o −5 em Luta</td><td>Funciona; abalado por @UUID[Macro.V8cAAkHgHF8oTYff]{PJs · Automações}</td></tr><tr><td>Entre Dois Mundos, Sangue Élfico, Inventário Organizado, Aumento de Atributo, Saque Rápido</td><td>Efeitos certos</td><td>Funciona</td></tr><tr><td>Ambição Herdada, Laboratório Pessoal, Alquimista Iniciado, Ginete, Recurvado, Aspirante a herói, Perícias</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "GIIj3Dfu7vXUGYXF",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.GIIj3Dfu7vXUGYXF"
+    },
+    {
+      "name": "Balthazar (mago kliren)",
+      "type": "text",
+      "text": {
+        "content": "<table><thead><tr><th>Poder</th><th>Como estava</th><th>Agora</th></tr></thead><tbody><tr><td>Vanguardista</td><td>Caixa de +2 em qualquer perícia, além do +2 no Ofício</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: fica só o +2 em Ofício (escriba)</td></tr><tr><td>Adepto</td><td>Três caixas de −1 PM (até −3 numa magia)</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: uma caixa</td></tr><tr><td>Ossos Frágeis</td><td>Sem efeito</td><td>Corrigido por @UUID[Macro.mN0trPFGjHYK5xny]{PJs · Corrigir poderes}: +1 por dado de impacto</td></tr><tr><td>Engenhosidade (Kliren), Caminho do Arcanista: Mago, Distraído</td><td>Efeitos certos</td><td>Funciona</td></tr><tr><td>Híbrido, Teurgista Místico, Familiar Elemental, Escrever Pergaminho, Memória Súbita</td><td>Texto</td><td>Sem automação (regra de mesa)</td></tr></tbody></table>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "cNgxLwpjLHHa8DEA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "sort": 0,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!c7ZZJLd2BLtCyCXH.cNgxLwpjLHHa8DEA"
+    }
+  ],
+  "_key": "!journal!c7ZZJLd2BLtCyCXH"
+}

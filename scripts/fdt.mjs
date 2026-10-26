@@ -213,6 +213,8 @@ Hooks.once("init", () => {
 		default: true
 	});
 	game.settings.register(MODULO, "avisado", { scope: "world", config: false, type: String, default: "" });
+	// Ligado pela macro "PJs · Automações" (Temeroso e Provocação Petulante); religa ao abrir o mundo.
+	game.settings.register(MODULO, "automacoesPJs", { scope: "world", config: false, type: Boolean, default: false });
 
 	const Base = foundry.applications?.api?.ApplicationV2;
 	if (Base) {
@@ -238,6 +240,10 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
 	if (!game.user.isGM || (game.users.activeGM && game.users.activeGM !== game.user)) return;
+	if (game.settings.get(MODULO, "automacoesPJs")) {
+		const auto = game.macros.find((m) => marca(m) === "fdtpoderes" && m.getFlag("world", "fdtRole") === "pjsAutomacoes");
+		await auto?.execute({ auto: true });
+	}
 	if (!game.settings.get(MODULO, "oferecer")) return;
 	const versao = modulo()?.version;
 	const reg = importados();
