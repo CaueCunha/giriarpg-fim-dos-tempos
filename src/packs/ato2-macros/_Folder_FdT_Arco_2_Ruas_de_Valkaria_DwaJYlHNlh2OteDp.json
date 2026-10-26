@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Ruas de Valkaria",
+  "type": "Macro",
+  "color": "#7a5c3e",
+  "flags": {
+    "world": {
+      "fdt": "a2ruas"
+    }
+  },
+  "_id": "DwaJYlHNlh2OteDp",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!DwaJYlHNlh2OteDp"
+}

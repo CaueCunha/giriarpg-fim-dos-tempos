@@ -1,0 +1,31 @@
+{
+  "name": "Av5 · Porta do Laboratório",
+  "type": "script",
+  "img": "systems/tormenta20/icons/poderes/ameacas/quebrar-tudo.webp",
+  "folder": "sUDN5Vw4Z42gQjFf",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(async function macroPorta() {\n\t\tconst CHAVE = \"fdtPortaLaboratorio\";\n\t\tconst feitos = Number(game.user.getFlag(\"world\", CHAVE)) || 0;\n\t\tconst tokens = canvas.tokens.controlled.filter((t) => t.actor).slice(0, 2);\n\t\tif (!tokens.length) return ui.notifications.warn(\"Selecione quem força a porta (e até um ajudante).\");\n\t\tconst [forca, ajuda] = tokens;\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };\n\t\tlet bonus = 0;\n\t\tlet html = \"<h3>Porta do Laboratório</h3>\";\n\t\tif (ajuda) {\n\t\t\tconst h = await rolar(`1d20 + ${Number(ajuda.actor.system.atributos?.for?.value) || 0}`);\n\t\t\tbonus = h.total >= 10 ? 2 : 0;\n\t\t\thtml += `<p>${ajuda.name} ajuda: ${h.total} ${bonus ? \"(+2)\" : \"(sem bônus)\"}.</p>`;\n\t\t}\n\t\tconst r = await rolar(`1d20 + ${Number(forca.actor.system.atributos?.for?.value) || 0} + ${bonus}`);\n\t\tconst ok = r.total >= 20;\n\t\thtml += `<p>${forca.name}: Força <b>${r.total}</b> contra CD 20. ${ok ? \"A porta cede um pouco.\" : \"Falhou!\"}</p>`;\n\t\tif (!ok) {\n\t\t\thtml += \"<ul>\";\n\t\t\tfor (const t of tokens) {\n\t\t\t\tconst d = await rolar(\"1d6\");\n\t\t\t\tconst dano = await new Roll(`${d.total}[impacto]`).evaluate();\n\t\t\t\ttry { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }\n\t\t\t\thtml += `<li>${t.name}: ${d.total} de impacto.</li>`;\n\t\t\t}\n\t\t\thtml += \"</ul>\";\n\t\t}\n\t\tconst total = feitos + (ok ? 1 : 0);\n\t\thtml += `<p>Sucessos: <b>${total}/3</b>.${total >= 3 ? \" <b>A porta foi arrombada!</b> Os dragões no salão correm para avisar Khenzarr.\" : \"\"}</p>`;\n\t\tif (total >= 3) await game.user.unsetFlag(\"world\", CHAVE);\n\t\telse await game.user.setFlag(\"world\", CHAVE, total);\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "xzK5HxpRnMH0CEB7",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!xzK5HxpRnMH0CEB7"
+}

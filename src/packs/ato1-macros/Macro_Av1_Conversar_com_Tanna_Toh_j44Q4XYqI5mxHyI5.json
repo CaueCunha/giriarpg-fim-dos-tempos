@@ -1,0 +1,31 @@
+{
+  "name": "Av1 · Conversar com Tanna-Toh",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/gerais/livro.webp",
+  "folder": "APqUXvCdaN0oOn1u",
+  "flags": {
+    "world": {
+      "fdt": "av1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n(async function macroTanna() {\n\t\tconst NOME = { dipl: \"Diplomacia\", enga: \"Enganação\", inti: \"Intimidação\", intu: \"Intuição\", nobr: \"Nobreza\", atua: \"Atuação\" };\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Conversar com Tanna-Toh\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>Perícia social</label><select name=\"pericia\">${Object.entries(NOME).map(([k, n]) => `<option value=\"${k}\">${n}</option>`).join(\"\")}</select></div>\n\t\t\t\t<div class=\"form-group\"><label>Os orcs do clã estão junto</label><input type=\"checkbox\" name=\"orcs\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Respeito às tradições das Centrais (+5)</label><input type=\"checkbox\" name=\"respeito\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Presente: livro, pergaminho, história ou nota sobre os nomes dos deuses (+2)</label><input type=\"checkbox\" name=\"presente\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Ela viu a adaga de metal arco-íris</label><input type=\"checkbox\" name=\"adaga\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst tk = canvas.tokens.controlled[0];\n\t\tconst rolls = [];\n\t\tlet html = \"<h3>Tanna-Toh, a Velha Orc</h3>\";\n\t\tlet calma = !!res.orcs;\n\t\tif (!calma) {\n\t\t\tif (!tk?.actor) return ui.notifications.warn(\"Selecione quem fala com ela.\");\n\t\t\tconst k = res.pericia in NOME ? res.pericia : \"dipl\";\n\t\t\tconst r = await new Roll(`1d20 + ${Number(tk.actor.system.pericias?.[k]?.value) || 0}${res.respeito ? \" + 5\" : \"\"}${res.presente ? \" + 2\" : \"\"}`).evaluate();\n\t\t\trolls.push(r);\n\t\t\tcalma = r.total >= 15;\n\t\t\thtml += `<p>${tk.name} (${NOME[k]}): <b>${r.total}</b> contra CD 15. ${calma ? \"A anciã se acalma.\" : \"Ela se encolhe, com medo; tente de outro jeito (ou traga os orcs).\"}</p>`;\n\t\t} else html += \"<p>Com os orcs do clã por perto, ela se acalma.</p>\";\n\t\tif (calma) {\n\t\t\thtml += `<p>Como se tivesse algo da deusa, conta toda a história do clã e o que sabe:</p><ul>\n\t\t\t\t<li>As Centrais são um lugar especial: têm uma alma própria.</li>\n\t\t\t\t<li>Nos últimos anos, algo \"sujo, ruim\" vem se infiltrando. \"Algo vermelho?\" Sim.</li>\n\t\t\t\t<li>Os humanos de fora tentam domar as Centrais, mas as Colinas resistem: por isso \"um grupo de mineradores forasteiros\" nunca achou o metal arco-íris.</li>\n\t\t\t\t<li>Nas últimas luas, mais estrangeiros; nenhum corrompido. Nos últimos sóis, uns muito deslocados e urbanos (os criminosos), que já foram embora, para alívio dela.</li>\n\t\t\t\t<li><b>Conselho:</b> a coisa suja que dá poder a Aharadak é estrangeira. Usem as próprias Colinas, a alma da região, para vencê-lo.${res.adaga ? \" E esse metal colorido <b>pertence às Centrais</b>.\" : \"\"}</li></ul>\n\t\t\t\t<p style=\"font-size:0.85em\">Ela não pode ferir ninguém. Maligna e canibal, morre de fome se ninguém caçar por ela; mantida viva, é fonte de sabedoria rústica sobre as Centrais.</p>`;\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "j44Q4XYqI5mxHyI5",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!j44Q4XYqI5mxHyI5"
+}

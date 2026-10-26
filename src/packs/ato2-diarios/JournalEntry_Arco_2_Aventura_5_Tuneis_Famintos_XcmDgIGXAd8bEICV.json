@@ -1,0 +1,295 @@
+{
+  "name": "Arco 2 · Aventura 5 · Túneis Famintos",
+  "folder": "s3eL0WSPqX3MycW2",
+  "flags": {
+    "world": {
+      "fdt": "a2av5"
+    }
+  },
+  "_id": "XcmDgIGXAd8bEICV",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<blockquote><p><i>\"Estou sendo acusado de atos inomináveis. Sou inocente, mas cada vez mais pessoas estão convencidas de minha culpa [...]\"</i> Vladmir Mors, na Mansão do Sono e Suplício, na Baixa Vila de Lena. <i>PS: venham depois do pôr do sol.</i></p></blockquote>\n\t\t\t\t<h2>Resumo</h2>\n\t\t\t\t<p>Nível 9. Pessoas somem à noite na Baixa Vila de Lena e o vampiro @UUID[Actor.RpHRe2PPveEjG0dA]{Marquês Vladmir Mors} é o bode expiatório. Os culpados são os <b>dragões do esgoto</b>, lagartos-terror invisíveis criados pelo biomante finntroll @UUID[Actor.UX0emBbwwULMSAs9]{Khenzarr, o Biomante}, discípulo de Ghorskander, para caçar o <b>Povo dos Túneis</b>: suas primeiras criações, costuradas com pedaços de cadáveres, que fugiram do laboratório. As mortes na superfície são danos colaterais.</p>\n\t\t\t\t<h2>Fases</h2>\n\t\t\t\t<ul><li><b>Fase 0 · Normalidade:</b> se for no fim do arco, a Dra. Zymni mostra uma autópsia estranha, ligada a algo que o grupo deixou passar. Tudo da tripulação da Roca segue dois caminhos: controle mental em massa e criação de matéria viva.</li><li><b>Fase 1 · Rumo à Baixa Vila de Lena:</b> à noite; role uma vez em Encontros em Valkaria.</li><li><b>Fase 2 · A Mansão do Sono e Suplício:</b> Vladmir, @UUID[Actor.iSUvBHsupi4TPzoL]{Fido} e as crianças da noite. Todos os lugares ficam perto de bueiros (Investigação CD 15, ou de graça).</li><li><b>Fase 3 · No Esgoto:</b> o rastro e os dois caminhos: @UUID[Actor.SOsD4APanWojU1Is]{Barba de Rato, o Terror dos Sete Esgotos} (o \"fantasma\") ou @UUID[Actor.L8N8dabtlO3400ch]{Athisza, a Sereia do Esgoto} e o Povo dos Túneis (a \"criatura\").</li><li><b>Fase 4 · O Laboratório Secreto:</b> um plano para achar o covil e o combate com Khenzarr.</li><li><b>Fase 5 · Desfecho.</b></li></ul>\n\t\t\t\t<p>Lei &amp; Ordem: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "VAFsYgpYfsBM5ICD",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.VAFsYgpYfsBM5ICD"
+    },
+    {
+      "name": "A Mansão do Sono e Suplício",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>A Baixa Vila de Lena à noite é uma taverna a céu aberto: gente fantasiada, bardos nas esquinas, trupes nas praças. A mansão é enorme, elegante e lúgubre; jovens pálidos de preto olham o grupo com desconfiança. Lá dentro, Vladmir bebe do pulso de uma garota voluntária.</p>\n\t\t\t\t<h3>Informações de Vladmir</h3>\n\t\t\t\t<ul><li>Está em Valkaria há séculos (exagera dizendo que é de antes da fundação). Viu tudo desde a chegada de Talude, sempre com perspectiva lúgubre.</li><li>A última pessoa que matou foi uma jovem, em 1309. O título de marquês não significa mais nada.</li><li>Fido é um lobisomem: Vladmir o acorrenta na lua cheia e tem certeza de que ele não é o culpado.</li><li>Entre dez e vinte desaparecimentos, à noite. Às vezes acham roupas, sangue ou pedaços; às vezes nada.</li><li>Nenhuma vítima apareceu sem sangue. As pessoas preferem se sentir seguras a estar seguras.</li><li>Não conhece as vítimas. Nas noites dos crimes, fazia o mesmo que agora. Nada aponta para ele além de ser vampiro.</li></ul>\n\t\t\t\t<h3>Informações de Fido</h3>\n\t\t\t\t<ul><li>Foge do grupo até Vladmir tranquilizá-lo; tinha medo de ser o culpado, mas houve mortes em noites em que estava sob vigilância.</li><li>Lista vários lugares onde acharam restos: todos perto de bueiros.</li><li>Viu um \"fantasma\" translúcido arrastar um rapaz para as sombras. No dia seguinte, acharam os restos.</li></ul>\n\t\t\t\t<h3>Informações das crianças da noite</h3>\n\t\t\t\t<ul><li>Confirmam tudo. Ninguém está sob controle mental. Fido seria incapaz de esconder um crime.</li><li>Discordam de Fido: o culpado é uma criatura feita de partes (humano, elfo, goblin, anão...). Um deles a viu perto de onde acharam restos; ela fugiu.</li><li>Com qualquer incentivo, notam que sempre há um bueiro por perto.</li></ul>\n\t\t\t\t<h3>Contingência: moralismo excessivo</h3>\n\t\t\t\t<p>Se alguém se recusar a defender um vampiro: abra o jogo (Vladmir não é maligno, ninguém está sendo enganado) ou embarque: a Xerife Mathilda não gosta, Vladmir reclama de discriminação na Guarita da Praia, e a <b>Guarita Noturna</b> do @UUID[Actor.EIdR2u8Qy12lmvz8]{Xerife Dallmirann} acha que ele é culpado. @UUID[Item.7iOWFMwEhohEyzWr]{Pergaminho de Cidadania de Vladmir}.</p>\n\t\t\t\t<p><b>Vampiro vegetariano:</b> para um Vladmir mais \"perigoso\", ele pode fazer teatro sobre a fome, perder o documento, ter doadores menos voluntários, ou transformar um ou dois jovens por geração (o limite recomendado).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ev6B4YsjfUMTh0mq",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.ev6B4YsjfUMTh0mq"
+    },
+    {
+      "name": "No Esgoto",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Escuridão total, paredes cilíndricas, água imunda correndo e um fedor pior que qualquer magia.</p>\n\t\t\t\t<ul><li><b>Fedor:</b> –2 em perícias; com faro, também alquebrado. Lenço: –1 e sem alquebrado. @UUID[Item.HibSfKyKAy3YftXU]{Fedor do Esgoto}; @UUID[Item.t5h49lhp4riCPuTB]{Lenço contra o Fedor}.</li><li><b>Infecção:</b> Fortitude CD 15 no fim do dia (–5 se ferido). @UUID[Item.nsNsTF9unnRRcL9S]{Infecção do Esgoto}.</li><li><b>Achar o rastro:</b> teste estendido CD 20, 7 sucessos, sem falha total; cada falha custa 1d6 PV e 1 PM. Misticismo ou Religião para o \"fantasma\" (emanações arcanas); Investigação ou Sobrevivência para a \"criatura\" (sangue, retalho, fios de costurar tecido vivo).</li></ul>\n\t\t\t\t<p>Macros: @UUID[Macro.YBQbw7jYdS0xNNFg]{Av5 · Esgoto (fedor e infecção)} e @UUID[Macro.dbuVfFsY0Mj89He0]{Av5 · Testes Estendidos do Esgoto}.</p>\n\t\t\t\t<h3>Caminho 1 · Em busca do fantasma</h3>\n\t\t\t\t<p>Um túnel largo com correnteza forte e uma jangada de restos: \"Ahoy! Este é o território de Barba de Rato, o pirata do esgoto!\" Sem hostilidade, ele dá carona.</p>\n\t\t\t\t<ul><li>Viu \"coisas\" translúcidas, do tamanho de goblins, correndo em grupo; só se notam pela água. Não são fantasmas: são materiais e invisíveis.</li><li>Viu uma arrastando um cadáver: os \"fantasmas\" são os assassinos (Fido tinha razão!).</li><li>Sabe do Povo dos Túneis (corpos costurados) e achou vários mortos por garras e presas. Acha que são o alvo de verdade.</li><li>Caçar os \"fantasmas\" ou achar o Povo: Sobrevivência CD 20, 5 sucessos, sem falha total, 1d6 PV e 1 PM por falha. Com ele, vale Pilotagem e o grupo repete uma rolagem.</li></ul>\n\t\t\t\t<h3>Caminho 2 · Em busca da criatura</h3>\n\t\t\t\t<p>O rastro é desesperado e fácil. Uma sereia sem olhos barra a passagem: \"Vieram a mando do mago ou do povo da superfície? [...] Mesmo que eu precise entregar minha vida, eles não serão pegos hoje!\"</p>\n\t\t\t\t<h3>Demonstrações de amizade (para Athisza)</h3>\n\t\t\t\t<ul><li>Mostrar que um ou mais heróis são de raças \"monstruosas\" (medusa, osteon...).</li><li>Trazer Barba de Rato para confirmar as boas intenções.</li><li>Aceitar ser desarmados, amarrados e vendados.</li><li>Entregar um membro do grupo como refém.</li><li>Oferecer o corpo de um dragão do esgoto (@UUID[Item.HOeUvHnDzBgOa4FL]{Corpo de um Dragão do Esgoto}).</li><li>Qualquer coisa que deixe os heróis vulneráveis, ou mostre que também são ameaçados pelos predadores.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "gLAfAVaCbccikzdE",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.gLAfAVaCbccikzdE"
+    },
+    {
+      "name": "O Povo dos Túneis",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p>Atrás de uma placa metálica, num salão escavado: menos de vinte pessoas costuradas com pedaços de várias raças, em estado deplorável. Quem é treinado em Cura percebe que não deveriam estar vivos. Ao ver forasteiros, acham que vão morrer; só dois erguem os punhos, fracos. @UUID[Actor.kNmEhRgwgsdBerPy]{Ellan'grag'dakrimm} e @UUID[Actor.EOZuamzDbFFsI1sz]{Gausbloppasremme} falam pelo grupo. Não oferecem comida: não podem desperdiçar nada.</p>\n\t\t\t\t<h3>A história</h3>\n\t\t\t\t<ul><li>Memórias contraditórias de antes (Doherimm e Tauron, floresta e deserto). Os nomes juntam sílabas de várias raças. A lembrança nítida começa na mesa de cirurgia de Khenzarr.</li><li>Jaulas, recém-chegados sempre acolhidos, cada um mais \"funcional\" que o anterior. Cirurgias exploratórias (Cura ou Conhecimento percebe). Visitas do \"homem de metal\", Torgo.</li><li>Uma visita de um homem alto e magro, de casaco longo e dedos compridos demais (Ghorskander): <i>\"Comece a segunda leva de experimentos.\"</i></li><li>Guinchos, risadas, e eles viraram comida dos \"dragões\". Depois, de coisas invisíveis.</li><li>Um deles abriu a fechadura com um graveto: o que os prendia era o condicionamento. Cerca de cinquenta fugiram; Athisza os achou. Restam menos de 5% das centenas originais.</li><li>Subiram à superfície por desespero e levaram os dragões junto: a onda de assassinatos atribuída a Vladmir, de quem nunca ouviram falar.</li></ul>\n\t\t\t\t<p><b>Terapia:</b> Cura CD 25, 5 sucessos, com magias de conexão mental ou que removam condições mentais. Falha total: danos psicológicos irreversíveis.</p>\n\t\t\t\t<p><b>Coincidências demais?</b> Os NPCs só pedem ajuda quando as coisas chegam ao ponto culminante, e a incursão leva horas ou um dia inteiro.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "adHvs3JoZdjIwSLG",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.adHvs3JoZdjIwSLG"
+    },
+    {
+      "name": "O Laboratório Secreto",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>O Povo dos Túneis lembra só de uma seção labiríntica e uma galeria ampla; Athisza orienta um pouco. Achar o laboratório exige um <b>plano</b>: um teste estendido pode fazer parte, mas o plano deve também consumir recursos, exigir uma boa ideia, contar com um NPC estratégico, usar poderes do grupo ou interagir com o ambiente (pelo menos três desses). Juntar três planos diferentes como \"sucessos\" também funciona.</p>\n\t\t\t\t<h3>Ideias</h3>\n\t\t\t\t<ul><li><b>Mapeamento:</b> Guerra ou Sobrevivência CD 30, 7 sucessos, um dia cada; outras perícias só uma vez. Falha: 2d6 PV e 1d4 PM (só voltam fora do esgoto); na 2ª falha, um @UUID[Actor.MVuKRUn3239VsTiy]{Enxame de Dragões do Esgoto} ataca; 3 falhas encerram. Pesquisa na superfície (CD 15, um dia) dá bônus de ajuda; cada dia fora dá –1d4 (–1d6, –1d8...) no teste seguinte.</li><li><b>Sinalizador:</b> @UUID[Item.j6FmAscD4YWOy8BJ]{Transmissor Simples (sinalizador)} ou isca com <i>Localização</i>; posicionar com Sobrevivência ou Ofício (armadilheiro) CD 25; @UUID[RollTable.vxpVZdeSEBqzAsGP]{Isca para os Dragões} por dia; rastrear (Sobrevivência CD 20, 3 sucessos). Macro @UUID[Macro.42OY3gMUM9nXKvr1]{Av5 · Isca para os Dragões}.</li><li><b>Perseguição:</b> um só personagem segue um @UUID[Actor.8SaWRjzDAvTlXLTq]{Dragão do Esgoto}: três testes de Furtividade ou Sobrevivência contra Percepção +12. Perdeu um: perde o rastro; dois: emboscada de um enxame. Macro @UUID[Macro.YXUarfDcvb9Txnso]{Av5 · Seguir um Dragão}.</li><li><b>Lábia:</b> Empatia Selvagem ou Acalmar Animal custam +1 PM; o dragão começa hostil, recebe +5 para resistir, –10 nos testes se subjugado; dois sucessos dele e fica enfurecido.</li><li><b>Ameaça:</b> fazer barulho por dias até Khenzarr achar que o Reinado está nos túneis: aliados (1/2/5), ND dos combates, ideias chamativas (2 ou 5); d100 ≤ pontuação, 3 sucessos numa semana. Macro @UUID[Macro.z5EQNfVYqX22FVZY]{Av5 · Barulho nos Túneis}.</li><li><b>Barganha:</b> mensagem presa a um dragão capturado. Khenzarr quer conhecimento de modificação corporal (provado), a localização do Povo dos Túneis ou segredos de Ghorskander, como os cristais rosados.</li><li><b>Médicos Monstros:</b> se Vectora estiver atracada, podem entregar o cliente, com muita persuasão.</li><li><b>Valkarianos:</b> em Encontros em Valkaria, Wynstar, o Elemental da Poluição, Yolana, o Avatar da Cidade, Justine e Tilliann sabem algo.</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "GDP8z50DGJrNvvbj",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.GDP8z50DGJrNvvbj"
+    },
+    {
+      "name": "O Covil de Khenzarr",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p>Uma grade, uma seção desativada, uma galeria alagada e um túnel isolado levam a uma porta circular de metal. Khenzarr não vigia: é arrogante demais.</p>\n\t\t\t\t<ul><li><b>Quebrar a porta:</b> três testes de Força CD 20; cada falha causa 1d6 de impacto (em quem força e em quem ajuda). Macro @UUID[Macro.xzK5HxpRnMH0CEB7]{Av5 · Porta do Laboratório}.</li><li><b>Arrombar:</b> Ladinagem CD 25, 3 sucessos (um ajudante); falha total emperra a fechadura (@UUID[Macro.dbuVfFsY0Mj89He0]{Av5 · Testes Estendidos do Esgoto}).</li></ul>\n\t\t\t\t<p>O salão de pedra, cheio de ossadas, tem alguns dragões treinados para avisar o finntroll. Dali saem a caverna das jaulas (agora dos dragões), a sala de cirurgias e os aposentos. Khenzarr está na sala de cirurgias, com as mãos sujas de sangue até os antebraços, operando um dragão acordado e preso por tiras de metal:</p>\n\t\t\t\t<blockquote><p><i>\"Após todos esses anos, achei que nunca encontraria aventureiros na superfície. Dizem que pessoas como vocês caçam pessoas como eu... Mas estou há muito tempo convivendo em sua sociedade e fui muito bem tratado. Ninguém pede a ajuda de heróis enquanto está sendo pago.\"</i></p></blockquote>\n\t\t\t\t<p><b>Criaturas:</b> @UUID[Actor.UX0emBbwwULMSAs9]{Khenzarr, o Biomante} e um @UUID[Actor.XYWNfOwTy2dBURs9]{Enxame de Dragões do Esgoto Alfa}. Use @UUID[Macro.XCGmaVrfDt8LUwmr]{Av5 · Dragões Invisíveis}. Khenzarr responde tudo durante a luta, inclusive sobre Ghorskander, e continua falando se for preso: morrer para os heróis é como levar um raio.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "lBbdFHdHSxk4QZSV",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.lBbdFHdHSxk4QZSV"
+    },
+    {
+      "name": "Desfecho, Provas e Pagamento",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>Com Khenzarr derrotado, o problema está resolvido: os dragões que sobrarem não se reproduzem e viram missão para outros aventureiros. O Povo dos Túneis pode ser adotado por Vladmir, Athisza pode ser acolhida na superfície e a Baixa Vila de Lena pode aceitar melhor os \"esquisitos macabros\".</p>\n\t\t\t\t<h3>Provas</h3>\n\t\t\t\t<ul><li>@UUID[Item.HOeUvHnDzBgOa4FL]{Corpo de um Dragão do Esgoto}.</li><li>@UUID[Item.qAALhQRqUdRRDGAp]{Depoimento do Povo dos Túneis}.</li><li>@UUID[Item.5TT6OSMSoUaishmX]{Ferramentas Cirúrgicas de Khenzarr}.</li><li>A visita de um oficial da Guarda à área do laboratório.</li><li>O depoimento de um morador da Baixa Vila de Lena que viu os dragões e confirma que os ataques pararam.</li></ul>\n\t\t\t\t<h3>Pagamento</h3>\n\t\t\t\t<p>Se Khenzarr for derrotado e os culpados revelados, Vladmir paga: níveis 8 ou 9, <b>T$ 12.000</b>; nível 10, <b>T$ 24.000</b>; nível 11, <b>T$ 32.000</b>.</p>\n\t\t\t\t<h3>Mesa original: capa de couro de dragão do esgoto</h3>\n\t\t\t\t<p>@UUID[Item.Ct0Hl7v4ktABe0wE]{Capa de Couro de Dragão do Esgoto} e @UUID[Item.icBRRY5K9HhgKku7]{Couro de Dragão do Esgoto}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "mNeM7u7nZ11anGIl",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!XcmDgIGXAd8bEICV.mNeM7u7nZ11anGIl"
+    }
+  ],
+  "_key": "!journal!XcmDgIGXAd8bEICV"
+}

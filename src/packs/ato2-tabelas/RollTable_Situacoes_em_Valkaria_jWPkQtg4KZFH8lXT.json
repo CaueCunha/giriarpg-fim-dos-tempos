@@ -1,0 +1,358 @@
+{
+  "name": "Situações em Valkaria",
+  "img": "systems/tormenta20/icons/magias/explosao-de-chamas.webp",
+  "folder": "bxOG4ZUEz50bCF6p",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "situacoes"
+    }
+  },
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Sempre que o grupo entra num hexágono. Cada personagem faz um único teste; três falhas ou não juntar os sucessos é fracasso. Use a macro Situação em Valkaria.",
+  "_id": "jWPkQtg4KZFH8lXT",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Saque",
+      "description": "Luta, Pontaria, Diplomacia, Intimidação ou Misticismo CD 30, 3 sucessos.",
+      "_id": "EdyzwDl9UQLvpwJ3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.EdyzwDl9UQLvpwJ3"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Quadrilha",
+      "description": "Luta, Pontaria, Diplomacia, Intimidação ou Misticismo CD 32, 4 sucessos.",
+      "_id": "BKt5L26CtF021LTt",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.BKt5L26CtF021LTt"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Desabamento",
+      "description": "Atletismo CD 30, 3 sucessos.",
+      "_id": "ECfzuLAWoHcRDh7t",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.ECfzuLAWoHcRDh7t"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Incêndio",
+      "description": "Fortitude CD 32, 4 sucessos.",
+      "_id": "DfAJ4NmftA9ncwY7",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.DfAJ4NmftA9ncwY7"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Monstros à Solta",
+      "description": "Adestramento CD 32, 3 sucessos.",
+      "_id": "jxEBrUmHIgB9tNOM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.jxEBrUmHIgB9tNOM"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Infestação de Mortos-Vivos",
+      "description": "Luta, Pontaria, Misticismo ou Religião CD 33, 4 sucessos. Não pode ser ignorada.",
+      "_id": "dCxzqaOr9IMFl2lC",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.dCxzqaOr9IMFl2lC"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Alagamento de Poções",
+      "description": "Fortitude, Ofício (alquimista) ou Reflexos CD 32, 3 sucessos.",
+      "_id": "IAD3DblWwbLEYpoy",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.IAD3DblWwbLEYpoy"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Área de Magia Selvagem",
+      "description": "Fortitude, Reflexos, Vontade ou Misticismo CD 33, 4 sucessos.",
+      "_id": "VlCbnacqGKrluAul",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.VlCbnacqGKrluAul"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Tumulto",
+      "description": "Diplomacia, Guerra ou Intimidação CD 33, 3 sucessos. Role três NPCs.",
+      "_id": "jwW6VhHao3vxsSVr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.jwW6VhHao3vxsSVr"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Batalha Campal",
+      "description": "Diplomacia, Guerra, Intimidação, Luta, Misticismo ou Pontaria CD 35, 3 sucessos por grupo. Três NPCs. Não pode ser ignorada.",
+      "_id": "TCgC5Q6omoEGzH3R",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.TCgC5Q6omoEGzH3R"
+    },
+    {
+      "type": "text",
+      "range": [
+        11,
+        11
+      ],
+      "weight": 1,
+      "name": "Aventureiros em Pânico",
+      "description": "Três perícias sorteadas (Tabela 6-6), CD 33, 4 sucessos.",
+      "_id": "plZi63c15wC3OOLZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.plZi63c15wC3OOLZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        12
+      ],
+      "weight": 1,
+      "name": "Cultistas",
+      "description": "Luta, Misticismo, Pontaria ou Religião CD 35, 5 sucessos.",
+      "_id": "BIVUPZgHWIKlW7MD",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jWPkQtg4KZFH8lXT.BIVUPZgHWIKlW7MD"
+    }
+  ],
+  "_key": "!tables!jWPkQtg4KZFH8lXT"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Arco 2 · Apêndices",
+  "type": "Macro",
+  "color": "#8a6d2b",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices"
+    }
+  },
+  "_id": "VPyOtrCeKn0Gz2Sv",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!VPyOtrCeKn0Gz2Sv"
+}

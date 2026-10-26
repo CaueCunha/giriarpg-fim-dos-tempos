@@ -1,0 +1,151 @@
+{
+  "name": "Palavra de Drelene",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "palavraDrelene"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><b>Poder concedido de Drelene.</b> Você recebe <b>+2 em testes de perícia para convencer alguém a adorar Drelene</b>.</p>",
+      "unidentified": ""
+    },
+    "tipo": "concedido",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "none",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "folder": "a8NQaBPvM1uhY8Sg",
+  "_id": "j0jGuEvi0YuxFQM8",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Palavra de Drelene (+2 para converter)",
+      "img": "systems/tormenta20/icons/poderes/concedidos.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2encontros"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "roll",
+            "value": 2,
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "skill"
+          ],
+          "names": [
+            "Diplomacia",
+            "Enganação",
+            "Intimidação",
+            "Atuação",
+            "Religião"
+          ],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "K0W4XP9do7SKMfr6",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!j0jGuEvi0YuxFQM8.K0W4XP9do7SKMfr6"
+    }
+  ],
+  "_key": "!items!j0jGuEvi0YuxFQM8"
+}

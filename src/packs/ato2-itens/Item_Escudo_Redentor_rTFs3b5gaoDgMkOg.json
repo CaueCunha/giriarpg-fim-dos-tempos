@@ -1,0 +1,71 @@
+{
+  "name": "Escudo Redentor",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-ressurreicao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "cavEscudo"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Cavaleiro da Redenção.</i> Quando um aliado dentro do efeito da sua Égide Sagrada se torna alvo de um ataque ou efeito hostil, você pode gastar <b>2 PM</b> para protegê-lo com seu próprio escudo. Apenas contra esse ataque ou efeito, o aliado aplica os bônus do seu escudo na Defesa, em testes de resistência e em redução de dano (benefício do poder, não de equipamento). Se o aliado sofrer dano, <b>você sofre metade no lugar dele</b>.</p><p><b>Pré-requisitos:</b> treinado em Diplomacia, Luta e Vontade, Égide Sagrada, devoto de Thyatis.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "reaction",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "rTFs3b5gaoDgMkOg",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!rTFs3b5gaoDgMkOg"
+}

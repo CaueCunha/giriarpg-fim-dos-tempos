@@ -1,0 +1,71 @@
+{
+  "name": "Criatura da Noite",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "vigCriatura"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> Escolha uma das formas selvagens de druida (Tormenta20, p. 63) e um animal ligado ao seu disfarce. Vestindo o traje das sombras, você pode gastar uma <b>ação completa e 3 PM</b> para virar uma versão humanoide desse animal: recebe os benefícios da forma selvagem escolhida, mas não assume completamente a forma (e não recebe o bônus em Enganação). No mais, funciona como Forma Selvagem. Com três poderes de vigilante, pode gastar <b>6 PM</b> para a versão aprimorada; com cinco, <b>10 PM</b> para a superior.</p><p><b>Pré-requisitos:</b> Cavaleiro das Trevas, ter a imagem do animal estampada no traje.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 3,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "bpN92QKYD0sXkCX4",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!bpN92QKYD0sXkCX4"
+}

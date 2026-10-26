@@ -1,0 +1,179 @@
+{
+  "name": "Mobilidade Urbana",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "vigMobilidade"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> Em ambiente urbano, você recebe <b>+1 na Defesa e em Acrobacia, Atletismo, Furtividade, Investigação e Percepção</b>, +1 para cada outro poder de vigilante mascarado. Em terreno elevado (um telhado), pode gastar <b>2 PM</b> para uma investida pulando sobre um oponente no chão: faça um teste de Acrobacia para amortecer queda (Tormenta20, p. 115); se passar, além da investida normal, cada dado de dano de queda que reduzir dá <b>+1d6 de dano</b> ao ataque.</p><p><b>Pré-requisitos:</b> treinado em Acrobacia, Cavaleiro das Trevas.</p><p>O efeito abaixo (ligue em ambiente urbano) é atualizado pela macro Distinções.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "oOwxFLGJ9co1Db2h",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Mobilidade Urbana (ambiente urbano)",
+      "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "Ligue em ambiente urbano.",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2apendices",
+          "fdtRole": "efMobilidade"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "system.attributes.defesa.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.acro.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.atle.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.furt.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.inve.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          },
+          {
+            "key": "system.pericias.perc.bonus",
+            "value": "1",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": false,
+        "abilityUse": {
+          "types": [],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "V02cFPUmlRaBRtvV",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!oOwxFLGJ9co1Db2h.V02cFPUmlRaBRtvV"
+    }
+  ],
+  "_key": "!items!oOwxFLGJ9co1Db2h"
+}

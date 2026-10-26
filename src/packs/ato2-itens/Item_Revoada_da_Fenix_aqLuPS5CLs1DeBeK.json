@@ -1,0 +1,71 @@
+{
+  "name": "Revoada da Fênix",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-ressurreicao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "cavRevoada"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Cavaleiro da Redenção.</i> Uma vez por rodada, você pode gastar <b>2 PM</b> para receber uma <b>ação de movimento adicional</b>, que só pode ser usada para se deslocar em direção a um aliado.</p><p><b>Pré-requisito:</b> Escudo Redentor.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 2,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "aqLuPS5CLs1DeBeK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!aqLuPS5CLs1DeBeK"
+}

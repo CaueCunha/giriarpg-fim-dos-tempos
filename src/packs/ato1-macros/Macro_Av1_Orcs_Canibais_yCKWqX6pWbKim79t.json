@@ -1,0 +1,31 @@
+{
+  "name": "Av1 · Orcs Canibais",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/orc.png",
+  "folder": "APqUXvCdaN0oOn1u",
+  "flags": {
+    "world": {
+      "fdt": "av1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n(async function macroOrcs() {\n\t\tconst EMBOSCADA = [\"Khalmyr\", \"Azgher\", \"Thyatis\", \"Lena\", \"Wynna\", \"Hyninn\", \"Oceano\", \"Tenebra\"];\n\t\tconst BANDO = [\"Marah\", \"Tenebra\", \"Nimb\", \"Arsenal\", \"Thwor\", \"Valkaria\", \"Allihanna\", \"Megalokk\", \"Kally\", \"Sszzaas\", \"Lin-Wu\", \"Glórienn\", \"Ragnar\", \"Keenn\"];\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Orcs Canibais\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"nomes-emboscada\">Dar nomes aos orcs da emboscada (8)</option>\n\t\t\t\t\t<option value=\"nomes-bando\">Dar nomes aos orcs do bando de Aharadak (14)</option>\n\t\t\t\t\t<option value=\"espreita\">Os batedores espreitam: Percepção dos selecionados contra Furtividade</option>\n\t\t\t\t\t<option value=\"render\">Os últimos orcs se rendem e contam o que viram</option>\n\t\t\t\t\t<option value=\"furtividade\">Chegar ao Ritual sem ser visto (Furtividade CD 15)</option></select></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };\n\t\tconst orcs = canvas.tokens.placeables.filter((t) => t.actor?.getFlag(\"world\", \"fdt\") === \"av1\" && t.actor.getFlag(\"world\", \"fdtRole\") === \"orc\");\n\t\tif (res.acao.startsWith(\"nomes\")) {\n\t\t\tconst lista = res.acao === \"nomes-bando\" ? BANDO : EMBOSCADA.slice(1);\n\t\t\tif (!orcs.length) return ui.notifications.warn(\"Não há tokens de Orc Canibal nesta cena.\");\n\t\t\tconst feitos = [];\n\t\t\tfor (let i = 0; i < orcs.length; i++) {\n\t\t\t\tconst nome = lista[i % lista.length] + (i >= lista.length ? ` ${Math.floor(i / lista.length) + 1}` : \"\");\n\t\t\t\tawait orcs[i].document.update({ name: nome });\n\t\t\t\tfeitos.push(nome);\n\t\t\t}\n\t\t\treturn ChatMessage.create({ whisper: ChatMessage.getWhisperRecipients(\"GM\"), content: `<h3>Orcs Canibais</h3><p>Tokens renomeados: ${feitos.join(\", \")}.${res.acao === \"nomes-bando\" ? \" Aharadak lidera o bando.\" : \" Khalmyr (o líder, com a adaga de metal arco-íris) é um ator à parte.\"}</p>` });\n\t\t}\n\t\tconst pjs = canvas.tokens.controlled.filter((t) => t.actor);\n\t\tif (res.acao === \"espreita\") {\n\t\t\tif (!pjs.length) return ui.notifications.warn(\"Selecione os personagens.\");\n\t\t\tconst furt = await rolar(\"1d20\");\n\t\t\tconst linhas = [];\n\t\t\tfor (const t of pjs) {\n\t\t\t\tconst r = await rolar(`1d20 + ${Number(t.actor.system.pericias?.perc?.value) || 0}`);\n\t\t\t\tlinhas.push(`<li>${t.name}: Percepção ${r} ${r >= furt ? \"<b>nota os orcs</b> antes do ataque\" : \"não nota nada\"}.</li>`);\n\t\t\t}\n\t\t\treturn ChatMessage.create({ rolls, content: `<h3>Os heróis estão sendo observados</h3><p>Furtividade dos orcs: ${furt}.</p><ul>${linhas.join(\"\")}</ul><p>Passando ou não, todos ouvem o ronco de um estômago e as palavras <b>\"Carne fresca!\"</b>. Os orcs atacam.</p>` });\n\t\t}\n\t\tif (res.acao === \"furtividade\") {\n\t\t\tif (!pjs.length) return ui.notifications.warn(\"Selecione os personagens.\");\n\t\t\tconst linhas = [];\n\t\t\tfor (const t of pjs) {\n\t\t\t\tconst r = await rolar(`1d20 + ${Number(t.actor.system.pericias?.furt?.value) || 0}`);\n\t\t\t\tlinhas.push(`<li>${t.name}: Furtividade ${r}, ${r >= 15 ? \"se aproxima sem ser visto\" : \"<b>é visto</b>\"}.</li>`);\n\t\t\t}\n\t\t\treturn ChatMessage.create({ rolls, content: `<h3>As Colinas Têm Olhos</h3><p>Os orcs estão atentos ao canibalismo ritualístico (CD 15).</p><ul>${linhas.join(\"\")}</ul>` });\n\t\t}\n\t\tChatMessage.create({ content: `<h3>Os orcs se rendem</h3><p>Com um ou dois de pé, imploram por clemência e oferecem informações:</p><ul>\n\t\t\t<li>Viram a transação: Bartram entregou as armas a dois forasteiros \"muito perigosos\", que depois sumiram num brilho vindo do céu.</li>\n\t\t\t<li>O primeiro bando de caça levou Bartram para o clã, onde Aharadak manda.</li>\n\t\t\t<li>A velha Tanna-Toh sabe mais sobre as \"coisas estranhas\" nas Centrais; eles indicam a caverna.</li></ul>\n\t\t\t<p>Três caminhos: falar com Tanna-Toh, perseguir os criminosos (não leva a nada concreto) ou salvar Bartram. Cada desvio piora o estado dele: nenhum, ferido; um, muito ferido e sem alguns membros; dois ou mais, morto.</p>` });\n\t})();",
+  "_id": "yCKWqX6pWbKim79t",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!yCKWqX6pWbKim79t"
+}

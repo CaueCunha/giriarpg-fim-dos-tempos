@@ -1,0 +1,120 @@
+{
+  "name": "Pó Azul",
+  "type": "consumivel",
+  "img": "systems/tormenta20/icons/itens/gerais/bolsa-de-po.webp",
+  "system": {
+    "description": {
+      "value": "<p>Preparado alquímico originário de Galrasia. Consumir é uma <b>ação completa</b> que recupera <b>2d4 PM</b>. A Guarita da Praia dá uma dose para cada um.</p>",
+      "unidentified": ""
+    },
+    "tipo": "alchemy",
+    "qtd": 1,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 0.5,
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "full",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "rolls": [
+      {
+        "name": "PM recuperados",
+        "key": "dano0",
+        "type": "dano",
+        "parts": [
+          [
+            "2d4",
+            "curapm",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "alcance": "",
+    "alvo": "",
+    "area": "",
+    "efeito": "",
+    "resistencia": {
+      "txt": "",
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    }
+  },
+  "folder": "3f3kt4yHp0H0LP7j",
+  "flags": {
+    "world": {
+      "fdt": "a2av7",
+      "fdtRole": "po-azul"
+    }
+  },
+  "_id": "jPYKg9AbcXZLwfLu",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!jPYKg9AbcXZLwfLu"
+}

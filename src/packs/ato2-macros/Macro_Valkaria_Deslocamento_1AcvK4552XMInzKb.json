@@ -1,0 +1,31 @@
+{
+  "name": "Valkaria · Deslocamento",
+  "type": "script",
+  "img": "icons/svg/clockwork.svg",
+  "folder": "DwaJYlHNlh2OteDp",
+  "flags": {
+    "world": {
+      "fdt": "a2ruas"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · As Ruas Traiçoeiras de Valkaria · gerado por a2-ruas-valkaria.js\nconst DADOS = {\"longe\":\"Grandes distâncias: a maioria dos valkarianos vive numa área da cidade e quase nunca vai longe. Quando precisa, dorme pelo menos uma noite numa estalagem, como numa jornada pelos ermos. Comprar algo de um leiloeiro do outro lado da cidade pode levar dois ou três dias.\"};\n(async function macroDeslocamento(D) {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Valkaria · Deslocamento\" },\n\t\t\tposition: { width: 460 },\n\t\t\tcontent: `\n\t\t\t\t<p>Cada <b>hexágono</b> do mapa de Valkaria é <b>meia hora</b> de caminhada (cinco minutos numa metrópole do nosso mundo). Montaria não ajuda: todos dividem as mesmas ruas estreitas e lotadas.</p>\n\t\t\t\t<div class=\"form-group\"><label>Hexágonos</label><input type=\"number\" name=\"hex\" value=\"1\" min=\"0\" step=\"1\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Como</label><select name=\"modo\">\n\t\t\t\t\t<option value=\"pe\">A pé ou montado (30 min por hexágono)</option>\n\t\t\t\t\t<option value=\"carroca\">Carroça de Lagarto Interno pronta (5 min por hexágono)</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Avançar o relógio do mundo</label><input type=\"checkbox\" name=\"avancar\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Só para o Mestre</label><input type=\"checkbox\" name=\"mestre\"></div>`,\n\t\t\tok: { label: \"Calcular\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst hex = Math.max(0, Math.floor(Number(res.hex) || 0));\n\t\tconst porHex = res.modo === \"carroca\" ? 5 : 30;\n\t\tconst min = hex * porHex;\n\t\tconst h = Math.floor(min / 60);\n\t\tconst m = min % 60;\n\t\tconst tempo = h ? `${h} h${m ? ` ${m} min` : \"\"}` : `${m} min`;\n\t\tlet html = `<h3>Deslocamento em Valkaria</h3><p><b>${hex}</b> hexágono(s) ${res.modo === \"carroca\" ? \"de Carroça de Lagarto Interno\" : \"a pé\"}: <b>${tempo}</b>.</p>`;\n\t\tif (res.modo === \"pe\" && hex) html += `<p style=\"font-size:0.85em\">No caminho é preciso desviar de uma construção gigantesca, esperar uma comitiva nobre passar, evitar um duelo de feiticeiros, espremer-se numa multidão...</p>`;\n\t\tif (min >= 8 * 60) html += `<p>${D.longe}</p>`;\n\t\tif (res.avancar && min) {\n\t\t\tawait game.time.advance(min * 60);\n\t\t\thtml += `<p style=\"font-size:0.85em\">Relógio do mundo avançado em ${tempo}.</p>`;\n\t\t}\n\t\tawait ChatMessage.create({ content: html, whisper: res.mestre ? ChatMessage.getWhisperRecipients(\"GM\") : [] });\n\t})(DADOS);",
+  "_id": "1AcvK4552XMInzKb",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!1AcvK4552XMInzKb"
+}

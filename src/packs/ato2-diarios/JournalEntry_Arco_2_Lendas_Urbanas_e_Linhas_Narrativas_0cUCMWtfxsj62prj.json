@@ -1,0 +1,638 @@
+{
+  "name": "Arco 2 · Lendas Urbanas e Linhas Narrativas",
+  "folder": "YCltvhj0vpHjFprX",
+  "flags": {
+    "world": {
+      "fdt": "a2lendas",
+      "fdtRole": "diarioLendas"
+    }
+  },
+  "_id": "0cUCMWtfxsj62prj",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<p>Os capítulos Lendas Urbanas (p. 62) e Linhas Narrativas da Campanha (pp. 65–73) do livro do Arco 2.</p>\n\t\t\t\t<ul><li>@UUID[Macro.1NYdeLGfu32sr2pe]{Valkaria · Lenda Urbana}: rola ou escolhe uma lenda, conta com uma abertura de \"amigo do amigo\" (ou como anotação, ou na Gazeta) e manda o subtexto ao Mestre. Guarda a coleção que o grupo já ouviu. Tabela: @UUID[RollTable.oxXUIST8BYdpWORI]{Lendas Urbanas de Valkaria}.</li><li>@UUID[Macro.YEEl8lUck2xa9n6w]{Valkaria · Documentos da Trama}: revela aos jogadores os pergaminhos dos Avatares do Futuro Eterno e as entradas do diário de Ghorskander, que ficam ocultos em @UUID[JournalEntry.FAJV0Du0dhvShky4]{Arco 2 · Documentos da Trama} até lá.</li><li>@UUID[Macro.DUMkhhUIMrzB1UAk]{Valkaria · Linha do Tempo}: o que acontece em Valkaria sem os heróis. Marque o que aconteceu ou foi evitado e veja o próximo passo.</li><li>@UUID[Macro.HCDY803TUidNbtFr]{Arco 2 · Ajustar ao Nível}: aplica o ajuste de nível do livro num oponente único (±1 em testes e dano, ±10 PV por nível) ou sugere a quantidade de criaturas.</li></ul>\n\t\t\t\t<p>Fichas: @UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander} e @UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)} (Aventura 7). Relógio do arco: @UUID[Actor.FRtXgLKNLyoz5St9]{Valkaria · Lei & Ordem}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "GEYmSj5D6dcCzQrA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.GEYmSj5D6dcCzQrA"
+    },
+    {
+      "name": "Lendas Urbanas",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<p>Em Arton é difícil separar lenda de história, mas cada região cria tradições orais que expressam medos e preocupações locais. Em Valkaria, elas são <b>lendas urbanas</b>: anedotas sobre fatos fictícios que expressam sentimentos e contextos reais. Têm fundo de verdade, mas são factualmente falsas. São lições de moral ou alertas (nem sempre corretos). O perigo de que avisam em geral não é real, mas o medo é, e sempre há outro perigo por trás. Às vezes servem para difamar um grupo: os jovens, povos não humanos pouco conhecidos, sábios de estudos exóticos, quem age diferente.</p>\n\t\t\t\t<p>Use como quiser: contadas por NPCs, lidas em diários e anotações, até publicadas na Gazeta do Reinado. O segredo do \"folclore moderno\" é que quem conta acredita nela e nunca conhece o protagonista, só alguém que conhece. Podem ser só interpretação, ou ser colecionadas por grupos que gostam de esgotar o cenário. <b>Cada lenda dá uma dica de uma aventura do arco</b> ou do panorama de Valkaria.</p>\n\t\t\t\t<h2>A verdade chocante: como contar</h2>\n\t\t\t\t<ul><li><b>Dois intermediários.</b> Quem ouviu de um \"amigo de um amigo\" não repassa como \"amigo de um amigo de um amigo\": sempre ficam só dois.</li><li><b>Uma frase forte no começo ou no fim</b>, de indignação ou pavor (\"Infelizmente, até hoje algumas pessoas acham que uma música vale mais que uma vida\"). Questionar a lenda parece questionar o sentimento, e isso desencoraja o pensamento crítico.</li><li><b>Uma ação exigida do ouvinte</b>: proteger-se ou repassar a história (\"então repasse para todas as pessoas que você conhece\").</li><li><b>Vagueza.</b> Os protagonistas não têm nome (\"a serva\", \"o ladrão\") e a história acaba quando é conveniente: por que Mestre Arsenal ficou parado? Quem era o mago?</li></ul>\n\t\t\t\t<h2>As seis lendas</h2>\n\t\t\t\t<ul><li><b>Os Vampiros de Pensamentos</b>: dica de @UUID[JournalEntry.nPpSP5zc8qiBHoEf]{Arco 2 · Aventura 1 · Os Aventureiros de Stremtol}</li><li><b>A Serva e o Bardo</b>: dica de @UUID[JournalEntry.ve6ZkVzWuSqYtEjF]{Arco 2 · Aventura 4 · Massacre na Taverna dos Maníacos}</li><li><b>Megan Miserável</b>: dica de @UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}</li><li><b>Os Doentes da Praga</b>: dica de a trama geral de Ghorskander</li><li><b>O Golem Errado</b>: dica de @UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}</li><li><b>Existem Dragões nos Esgotos de Valkaria</b>: dica de @UUID[JournalEntry.XcmDgIGXAd8bEICV]{Arco 2 · Aventura 5 · Túneis Famintos}</li></ul>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "J4WVHBedXQlVpG0t",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.J4WVHBedXQlVpG0t"
+    },
+    {
+      "name": "Os Vampiros de Pensamentos",
+      "type": "text",
+      "sort": 210,
+      "text": {
+        "content": "<p>Existem criaturas invisíveis que se alimentam de nossos pensamentos e emoções. Elas podem comer qualquer coisa que passe em nossa mente, mas preferem sentimentos fortes e pensamentos importantes.</p><p>Os nobres conhecem essas criaturas, mas não fazem nada contra elas porque são úteis. Quando elas devoram nossas emoções mais fortes, não conseguimos sentir ódio dos nobres. Quando elas sugam nossos pensamentos mais importantes, não conseguimos planejar ou fazer descobertas.</p><p>A única coisa que bloqueia os vampiros de pensamentos são metais preciosos — por isso os nobres usam coroas nas cabeças. Se uma dessas criaturas nos nota, o melhor é não se deixar levar por nenhum sentimento muito forte, nem pensar em nada muito complicado, até conseguir a proteção de uma coroa ou um elmo feito de ouro ou outro metal precioso.</p><h3>Subtexto</h3><p>Alguns valkarianos notam que aventureiros e até vilões estão \"se acomodando\" e deixando de lado as atividades e emoções extremas. É efeito da Escola de Etiqueta e Bom Comportamento de Madame Margebell, que resulta na vizinhança pacata demais de Stremtol.</p><p style=\"font-size:0.85em\">Dica de @UUID[JournalEntry.nPpSP5zc8qiBHoEf]{Arco 2 · Aventura 1 · Os Aventureiros de Stremtol}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "UbbrrKWnVWxwpXZH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.UbbrrKWnVWxwpXZH"
+    },
+    {
+      "name": "A Serva e o Bardo",
+      "type": "text",
+      "sort": 220,
+      "text": {
+        "content": "<p>É bom ter cuidado com a música que seus filhos, familiares e até servos escutam. Hoje em dia, bardos de todos os tipos ficam famosos em Valkaria e as pessoas se tornam tão obcecadas pela música que esquecem de todo o resto.</p><p>Certa vez uma serva de uma família nobre recebeu permissão para ir a uma taverna. Ficou a noite toda ouvindo os bardos. No dia seguinte, estava tão fascinada pela música que continuou dançando e cantando enquanto trabalhava. Seus deveres naquele dia eram preparar o jantar e ninar o filho de seus senhores. Distraída desse jeito, não percebeu quando colocou um faisão cru no berço e a criança no forno...</p><p>Infelizmente, até hoje algumas pessoas acham que uma música vale mais que uma vida.</p><h3>Subtexto</h3><p>As músicas dos bardos que se apresentam na Terceira Opção e em tavernas parecidas estão espalhando fúria e loucura.</p><p style=\"font-size:0.85em\">Dica de @UUID[JournalEntry.ve6ZkVzWuSqYtEjF]{Arco 2 · Aventura 4 · Massacre na Taverna dos Maníacos}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "IiYDWShUlugTAOPr",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.IiYDWShUlugTAOPr"
+    },
+    {
+      "name": "Megan Miserável",
+      "type": "text",
+      "sort": 230,
+      "text": {
+        "content": "<p>A inveja de algumas pessoas dura até depois da morte.</p><p>Megan era uma plebeia que tinha muita inveja das roupas e joias que as nobres usavam. Ela ficou tão consumida pela inveja que não conseguiu mais trabalhar e caiu na pobreza. A última coisa que Megan vendeu foi seu espelho, onde ficava se admirando o dia inteiro, imaginando-se com os vestidos e adornos das nobres. Ela morreu de fome e frio, sozinha, enquanto se olhava no espelho.</p><p>Hoje em dia, se você ficar na frente de um espelho e falar \"Megan Miserável\" cinco vezes, o fantasma de Megan aparece e leva você para dentro do espelho. Alguns dizem que isso só funciona se você for nobre, ou se estiver usando joias, ou se estiver dentro de um palácio.</p><h3>Subtexto</h3><p>Reflete a boataria sobre os nobres raptados e substituídos no Baile da Primavera. A história real não tem nada a ver com espelhos, mas esse elemento representa a sensação de que os jovens nobres são as vítimas, especialmente quando estão arrumados para uma festa.</p><p style=\"font-size:0.85em\">Dica de @UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "AypZhma79SKSCL7u",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.AypZhma79SKSCL7u"
+    },
+    {
+      "name": "Os Doentes da Praga",
+      "type": "text",
+      "sort": 240,
+      "text": {
+        "content": "<p>Todos sabem que a Praga Coral foi criada por humanos para se livrar dos orcs no antigo reino de Lomatubar. O que poucos sabem é que existe uma forma muito fácil de transmitir a Praga Coral: basta ter um pedaço da \"casca\" que as vítimas da Praga adquirem e transformá-la em pó. Uma mera pitada desse pó em qualquer comida ou bebida é suficiente para contaminar com a Praga Coral.</p><p>Existem verdadeiros exércitos de vilões insanos espalhando a Praga Coral, principalmente para crianças, em tendas de petiscos e refrescos nas ruas e nos mercados. Outros loucos deixam agulhas infectadas com a Praga Coral escondidas nas arquibancadas da Arena Imperial, nos bancos de apresentações teatrais e até mesmo nas cadeiras de tavernas.</p><p>Se, ao sentar, você for picado por uma dessas agulhas, está contaminado para sempre. Muitas vezes o culpado fica por perto, esperando para ver o rosto de sua vítima.</p><h3>Subtexto</h3><p>O contexto real não está na praga, mas nos \"exércitos de vilões insanos\" que fazem maldade sem ganhar nada, só por sadismo. Os valkarianos notam que as pessoas à sua volta ficam mais violentas, cruéis e perigosas sem motivo. É efeito do plano de Ghorskander (os Imagodutos).</p><p style=\"font-size:0.85em\">Dica de a trama geral de Ghorskander.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "9O6suVK7M0pDoBXX",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.9O6suVK7M0pDoBXX"
+    },
+    {
+      "name": "O Golem Errado",
+      "type": "text",
+      "sort": 250,
+      "text": {
+        "content": "<p>Havia em Valkaria um mago especialista em fabricar golens e encantar objetos. Ele tinha muitos golens e muitos itens mágicos em sua torre. Um dia o mago foi viajar e sua torre foi invadida por um casal de jovens ladrões. Eles sabiam que não podiam levar muita coisa, então examinaram os golens e os itens. Achavam que, se cada um levasse apenas um item, o mago não daria falta.</p><p>A moça logo notou um golem enorme e vistoso, segurando um martelo. Tirou o martelo das mãos do golem e decidiu levá-lo. O rapaz viu que o golem também tinha uma espada muito bonita. Quase pôs as mãos nela, mas achou que levar uma arma era arriscado demais. Afastou-se daquele golem e escolheu um singelo anel mágico.</p><p>Os dois estavam tão confiantes que, em vez de fugir logo, decidiram dormir na própria torre. De manhã, o rapaz acordou para descobrir sua namorada morta, com a cabeça esmagada. Olhou para cima e viu o tal golem, com o martelo ensanguentado nas mãos. O golem disse: \"SORTE SUA QUE NÃO ESCOLHEU A ESPADA\".</p><p>A espada era a Holy Avenger. O \"golem\" era ninguém menos que Mestre Arsenal, que estava lá para roubar os itens do mago.</p><h3>Subtexto</h3><p>A noção de que pode haver confusão entre um golem e uma pessoa, e de que um assassino perigoso pode estar logo ao lado, reflete as substituições dos jovens nobres no último Baile da Primavera.</p><p style=\"font-size:0.85em\">Dica de @UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "D3BFzB36AS2LBzNW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.D3BFzB36AS2LBzNW"
+    },
+    {
+      "name": "Existem Dragões nos Esgotos de Valkaria",
+      "type": "text",
+      "sort": 260,
+      "text": {
+        "content": "<p>Muitos aventureiros matam dragões, mas ficam com pena de destruir seus ovos. Eles então trazem os ovos de volta à cidade e tentam criar os dragões bebês, achando que eles poderão ser aliados fiéis e que, com bastante amor, não se tornarão malignos.</p><p>Mas dragões bebês são responsabilidade demais para aventureiros. Cuidar deles é muito caro e, mais cedo ou mais tarde, eles mostram seu lado maligno. Os aventureiros então jogam os dragõezinhos em bueiros, para que se afoguem ou sejam levados embora. Nos esgotos, eles têm contato com produtos alquímicos e todo tipo de dejetos. Ficam deformados e ainda mais ferozes que o normal.</p><p>Qualquer um pode ser pego por um deles, então repasse para todas as pessoas que você conhece.</p><h3>Subtexto</h3><p>A lenda com o subtexto mais óbvio: os \"dragões do esgoto\" criados por Khenzarr.</p><p style=\"font-size:0.85em\">Dica de @UUID[JournalEntry.XcmDgIGXAd8bEICV]{Arco 2 · Aventura 5 · Túneis Famintos}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "oA0RB5qJEnBEKARG",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.oA0RB5qJEnBEKARG"
+    },
+    {
+      "name": "Linha Narrativa 1 · Caos em Valkaria",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>A tripulação da Roca continua no plano de destruir o tempo; o espaço de masmorra continua opcional. A diferença do Arco 1 é a complexidade: conspirações, tramoias da nobreza e a manipulação das mentes de toda Valkaria.</p>\n\t\t\t\t<p>Ao chegar, o grupo encontra a cidade tomada pelo crime, pela insegurança e pela violência. Talvez já tenha uma dica do Arco 1: membros interrogados da Companhia dos Irmãos diziam que Paollus estava cada vez mais brutal e imprevisível. Essa derrocada é representada pelas regras de Lei &amp; Ordem.</p>\n\t\t\t\t<h2>O objetivo: dinheiro e poder</h2>\n\t\t\t\t<p>Ghorskander deve conseguir o apoio incondicional e a subserviência da nobreza valkariana para o Dr. Vesper, que precisa de uma riqueza inimaginável para o aparato que destruirá o tempo (ainda mais se os heróis impediram o acesso ao metal arco-íris no Arco 1). A calamidade torna a população violenta, os aventureiros inúteis e a Rainha-Imperatriz impotente; a nobreza rejeita o Reinado e segue Vesper, que oferece segurança, prazeres irrestritos e a promessa de \"parar o tempo\".</p>\n\t\t\t\t<h2>As engrenagens</h2>\n\t\t\t\t<ul><li><b>Os Avatares do Futuro Eterno:</b> um culto secreto restrito à nobreza, para atrair famílias à ilha de Galrasia com seus recursos, deixando fortunas e influência nas mãos de Vesper.</li><li><b>Os golens de Lakshrimi:</b> a teóloga de bordo da Roca, infiltrada numa família nobre, substitui jovens nobres por golens que lhe obedecem. Quando uma jovem nobre descobriu parte da conspiração, os golens motivaram as famílias a ir para Galrasia. (@UUID[JournalEntry.LiXyUJgxNcdKRfJG]{Arco 2 · Aventura 6 · Baile de Debutantes Sangrento}; @UUID[Actor.bx4gNb8bEGMaWCuy]{Lakshrimi, Replicoide Duquesa Alfraye}.)</li><li><b>Os Imagodutos:</b> máquinas mágicas em lugares de extrema insegurança, desigualdade e ódio que captam, moldam, potencializam e disseminam os pensamentos mais violentos, num círculo vicioso. (@UUID[JournalEntry.ve6ZkVzWuSqYtEjF]{Arco 2 · Aventura 4 · Massacre na Taverna dos Maníacos} e @UUID[JournalEntry.XcmDgIGXAd8bEICV]{Arco 2 · Aventura 5 · Túneis Famintos}.)</li><li><b>As pinturas:</b> pichações e imagens com técnicas e tintas especiais que bloqueiam os poderes dos aventureiros. O efeito não é mágico, é psicológico: heróis viram covardes, rebeldes viram conformistas. (@UUID[JournalEntry.nPpSP5zc8qiBHoEf]{Arco 2 · Aventura 1 · Os Aventureiros de Stremtol}.)</li><li><b>A nova ciência:</b> fazer os pensamentos tomarem forma material, sem magia, somada aos estudos dos lagartos-terror de Galrasia. No ápice do caos, os Imagodutos materializam um lagarto-terror modificado, gigantesco, que ataca a cidade. (@UUID[JournalEntry.ACmPgunnkzf8QZzE]{Arco 2 · Aventura 7 · O Ataque do Mecano-Lagarto-Terror de 50 Metros de Altura}.)</li></ul>\n\t\t\t\t<p>O plano é desnecessariamente complexo de propósito: conspirações dentro de conspirações. Cada aventura tem uma caixa explicando onde se encaixa. Basta lembrar: <b>Valkaria está decaindo ao caos; quando chegar lá, um dinossauro enorme será formado a partir dos pensamentos e emoções dos valkarianos.</b></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ce3mIBRK49vJqvZB",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.ce3mIBRK49vJqvZB"
+    },
+    {
+      "name": "Linha Narrativa 2 · Espaço de Masmorra",
+      "type": "text",
+      "sort": 310,
+      "text": {
+        "content": "<p>Muito mais simples que no Arco 1: existe uma masmorra dentro da estátua de Valkaria, mesmo depois da libertação da deusa. Ela esconde tesouros e, segundo boatos, concede autoconhecimento a seus desbravadores. Explorar ou não fica a cargo dos jogadores. Veja @UUID[JournalEntry.22Op5exQi20Xri3p]{Arco 2 · O Labirinto Liberto}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "uFD6L1QSwmsLiSJH",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.uFD6L1QSwmsLiSJH"
+    },
+    {
+      "name": "Ghorskander",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p><b>ND 12 · Vilão final do segundo arco.</b> Ficha: @UUID[Actor.4dckFPb5GhKUw9XA]{Ghorskander}.</p>\n\t\t\t\t<p>Oficial médico e de ciências da Roca, em pé de igualdade com Vesper, a quem via como um agitador egomaníaco. Pragmático e materialista, estudou medicina porque sempre haveria demanda num gog'magogue. Via a Capitã Ygda como uma chefe de guilda, os tripulantes como colegas, e só reivindicava dinheiro e conforto. Achava Lakshrimi uma inconveniência.</p>\n\t\t\t\t<p>Foi o único que votou por entregar o Cofre Encarnatório à Ploigoníada. Respeitou a maioria, mas não viveu as memórias dos gnomos e confidenciava à Capitã que deviam denunciar a Roca. A mudança veio quando Vesper pediu ajuda nas pesquisas sobre corpo e alma: diante das cobaias, percebeu que ouro e luxo não valem nada se tudo tem fim. Visitou o Cofre com Lakshrimi, viveu as vidas de vários gnomos e começou um relacionamento com ela (apaixonada; para ele, um experimento social). Passou a ver Vesper como mestre, incentivou o assassinato da Capitã quando ela os denunciou e não questionou a revelação sobre o fim do tempo: a realidade era só mais uma cobaia.</p>\n\t\t\t\t<p>Em Arton, acompanhou Vesper a Salistick. Ao reencontrar Lakshrimi em Valkaria, convenceu-a a sacrificar o próprio corpo, e encarou com frieza a transferência da mente e da alma dela. Hoje os procedimentos nas cobaias são um prazer por si só. O fim do tempo é, antes de tudo, um triunfo pessoal: eternizar seu deleite. Vê todos como extensões da própria vontade.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "tQFNyEGx6cV81744",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.tQFNyEGx6cV81744"
+    },
+    {
+      "name": "Torgo",
+      "type": "text",
+      "sort": 410,
+      "text": {
+        "content": "<p><b>ND 10 · Capanga recorrente.</b> Ficha: @UUID[Actor.Br4x9AQEDrReuGGv]{Torgo (Arco 2)}.</p>\n\t\t\t\t<p>Provavelmente destruído no fim do Arco 1 (ou convencido a largar Vesper e destruído por ele), o golem gorila está de volta: a Roca usa seus vários corpos como bucha de canhão. Em Valkaria sua participação é menos marcante (não tem perfil para conspiração sutil), mas ainda é uma pedra no sapato.</p>\n\t\t\t\t<p>Sua principal função no Arco 2 é fazer os jogadores perceberem que ele só pode ser redimido ou libertado com acesso às suas memórias ou \"alma\". Convencê-lo ou derrotá-lo só faz com que volte.</p>\n\t\t\t\t<p><i>Se você conhece a referência do nome \"Torgo\", deve estar escutando a música na sua cabeça...</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "WsskuHMJJr7cAsFa",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.WsskuHMJJr7cAsFa"
+    },
+    {
+      "name": "Os Avatares do Futuro Eterno",
+      "type": "text",
+      "sort": 420,
+      "text": {
+        "content": "<p>Os pergaminhos podem ser achados ao longo das investigações. Os membros são exclusivamente altos nobres. Use-os para dar a sensação de que a nobreza está sendo manipulada e que há vários planos para desestabilizá-la, para introduzir a ilha de <b>Galrasia</b> (o Arco 3) e para o tom anacrônico e \"moderno\" de Valkaria.</p>\n\t\t\t\t<h2>Sopa de letrinhas</h2>\n\t\t\t\t<p>As siglas e jargões imitam cultos da vida real. A finalidade é convencer os nobres a seguir o Dr. Vesper:</p>\n\t\t\t\t<ul><li><b>Libertar-se do Ciclo de Espera Dolorosa (CED):</b> entregar-se a qualquer prazer imediatamente.</li><li><b>Reconhecer os Mecanismos de Supressão da Felicidade (MSF):</b> abandonar a moralidade e a empatia.</li><li><b>Renegar os Portadores de Paciência Punitiva (PPP):</b> afastar-se de todos que apontam a maldade disso.</li><li><b>Rumar ao paraíso artoniano:</b> isolar-se com Vesper em Galrasia.</li></ul>\n\t\t\t\t<p>Uma nobreza que não tolera esperar, só deseja o hedonismo e não se importa com ninguém é exatamente quem pode financiar o plano-mestre. O Pergaminho 4 também prepara o terreno dos Imagodutos: três horas por noite de pensamentos de raiva e destruição.</p>\n\t\t\t\t<h2>Investigando a seita</h2>\n\t\t\t\t<p>Peça testes de Investigação (o livro não dá CD) ou deixe o grupo conversar com NPCs que tenham contato com a nobreza: Wynstar, Drelene, os Goblins da Gazeta do Reinado, o Avatar da Cidade, os moradores de Stremtol e outros. Então revele que <b>as famílias que tiveram contato com os Avatares deixaram Valkaria</b>. Use famílias deste arco (principalmente da Aventura 6) ou crie as suas.</p>\n\t\t\t\t<p>Os documentos estão em @UUID[JournalEntry.FAJV0Du0dhvShky4]{Arco 2 · Documentos da Trama}; revele com @UUID[Macro.YEEl8lUck2xa9n6w]{Valkaria · Documentos da Trama}. O <b>Diário Científico de Ghorskander</b> aparece em lugares muito ligados ao plano, como o laboratório de Khenzarr e a Casa de Repouso Millicent, para o grupo entender aos poucos a nova ciência e manter Ghorskander presente, já que só o encontrará no fim do arco.</p>\n\t\t\t\t<ol><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.lJ7JHjcD2rbeZ6fH]{Pergaminho 1 · Convite} <i>(A data do convite é de três anos atrás.)</i></li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.fRUQagoTV5OhK1qW]{Pergaminho 2 · Traços de Pessoas Negativas}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.HrrFrIKXithrtK8G]{Pergaminho 3 · Missões dos Avatares}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.Us928FxNieRBhgbl]{Pergaminho 4 · Exclusivo do 4° Degrau}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.D8EYR5yBHSmt2ksX]{Pergaminho 5 · Bem-Vindo ao 5° Degrau}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.84PTMjFG968XJ3tM]{Diário de Ghorskander · Entrada 1}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.n0j7xN6iB4dBVr28]{Diário de Ghorskander · Entrada 2}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.R4JhALVMb4P1VZqJ]{Diário de Ghorskander · Entrada 3}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.ql5o85xkPCQ10i1x]{Diário de Ghorskander · Entrada 4}</li><li>@UUID[JournalEntry.FAJV0Du0dhvShky4.JournalEntryPage.MyTiXZwtOkhmoZd4]{Diário de Ghorskander · Entrada 5}</li></ol>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Swa54Gfh4ae9jSz1",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.Swa54Gfh4ae9jSz1"
+    },
+    {
+      "name": "Cronologia e Níveis",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p>Não há ordem fixa: o grupo examina o Quadro de Casos da Guarita da Praia e escolhe os casos e a ordem. O arco é feito para não dar tempo de jogar tudo: Lei &amp; Ordem o encerra antes.</p>\n\t\t\t\t<p>A Aventura 0 não dá nível; as Aventuras 1 a 6 dão um nível cada. Começando no 7º, o grupo poderia chegar ao 13º, mas a maioria não joga todas: maneje os níveis para que o grupo <b>termine o arco no 13º nível</b>. Na mesa original: quatro aventuras (11º), um nível extra por vencer os principais desafios do Labirinto Liberto, incluindo o monstro final (12º na Aventura 7) e o 13º ao terminar. O Arco 3 começa no 13º.</p>\n\t\t\t\t<h2>Ordem presumida das aventuras</h2>\n\t\t\t\t<ul><li><b>Aventura 0:</b> não concede nível (pouco mais que um combate e alguma interpretação)</li><li><b>Aventuras 1 e 2:</b> nível 7</li><li><b>Aventuras 3 e 4:</b> nível 8</li><li><b>Aventura 5:</b> nível 9</li><li><b>Aventura 6:</b> nível 10</li><li><b>Labirinto Liberto:</b> sempre igual, presume 11º nível (há desafios mortais e outros fáceis)</li><li><b>Aventura 7:</b> não diminua a dificuldade: sem chance, o grupo tenta sair vivo e salvar NPCs</li></ul>\n\t\t\t\t<p>Ordem presumida, sem ajustes: escolha entre as Aventuras 1 e 2 no nível 7, entre a 3 e a 4 no nível 8, depois a 5 e a 6. Com os níveis 7 a 13 do arco, o grupo deve terminar no 13º nível (o Arco 3 começa nele). O lembrete do nível presumido está no início de cada aventura.</p>\n\t\t\t\t<h2>Adaptando ao nível dos personagens</h2>\n\t\t\t\t<ul><li><b>Vários oponentes:</b> aumente ou diminua a quantidade de criaturas para que o ND do encontro seja o nível do grupo.</li><li><b>Um único oponente:</b> +1 ou –1 em todos os testes e rolagens de dano e +10 ou –10 PV por nível de diferença.</li></ul>\n\t\t\t\t<p>Esses ajustes não são totalmente precisos e dependem do seu julgamento. Leve em conta a experiência dos jogadores e a composição do grupo. O Labirinto Liberto não se ajusta, e a Aventura 7 não deve ficar mais fácil. Use @UUID[Macro.HCDY803TUidNbtFr]{Arco 2 · Ajustar ao Nível}.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "sZeSJyCpojHc7Pvk",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.sZeSJyCpojHc7Pvk"
+    },
+    {
+      "name": "Simplificando",
+      "type": "text",
+      "sort": 510,
+      "text": {
+        "content": "<p>Se o Arco 2 parecer complexo demais:</p>\n\t\t\t\t<ul><li>Esqueça o contador de Lei &amp; Ordem.</li><li>Não apresente todos os casos do quadro: só as Aventuras 1, 3, 4 e 5. A Aventura 2 exige \"roubar\" e brincar com as regras; a 6 tem um ambiente intrincado e cheio de NPCs no Palácio do Coração Florido.</li><li>Elimine a subtrama dos nobres substituídos por golens (já que não vão jogar a Aventura 6).</li><li>Se ainda houver variáveis demais, elimine a regra de atividades em Valkaria.</li></ul>\n\t\t\t\t<p>O autor recomenda não simplificar: aproveite tudo, sem se preocupar com erros, confusões ou inconsistências. Mas, se não for divertido para você, descarte o que quiser.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "POiU76LpL4h680yn",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.POiU76LpL4h680yn"
+    },
+    {
+      "name": "Linha do Tempo sem os Heróis",
+      "type": "text",
+      "sort": 520,
+      "text": {
+        "content": "<p>Os personagens não são obrigados a fazer nada: podem ignorar missões, falhar e até morrer, e a campanha segue. Não há momento fixo para cada acontecimento (na mesa original, o arco durou 6 meses, por causa da trama pessoal de Ayla). Descreva Valkaria de acordo com as aventuras que o grupo não resolver. Exemplo: sem a Mini-Aventura Irmandade Máxima, há uma guerra de irmandades; mas, com a Aventura 1 resolvida, há heróis para impedir o massacre de inocentes e a destruição da Guarita da Praia. Algumas aventuras protegem pouco: a Aventura 2 não impede nada, e a 5 revela os Imagodutos sem impedir que sejam usados.</p>\n\t\t\t\t<ol><li>Chegada de Ghorskander e Lakshrimi à cidade. <i>(antes da chegada do grupo)</i></li><li>Ghorskander transfere a consciência de Lakshrimi para um golem, e ela se esconde num espaço entre as dimensões. <i>(antes da chegada do grupo)</i></li><li>Os Avatares do Futuro Eterno começam a recrutar nobres. <i>(antes da chegada do grupo)</i></li><li>Primeiros assassinatos no Baile da Primavera; a Duquesa Alfraye cancela os próximos bailes. <i>(antes da chegada do grupo)</i></li><li>Ghorskander ensina Khenzarr. <i>(antes da chegada do grupo)</i></li><li>Algumas famílias nobres deixam Valkaria. <i>(antes da chegada do grupo)</i></li><li>Madame Margebell aprende técnicas de pintura de doutrinação. <i>(antes da chegada do grupo)</i></li><li>Ghorskander opera Tryphne e lhe ensina a operar outros prisioneiros. <i>(antes da chegada do grupo)</i></li><li>Aldanna é \"educada\" por Madame Margebell e deixa seu grupo de aventureiros. <i>(antes da chegada do grupo)</i></li><li>Os dragões do esgoto começam a fazer vítimas na Baixa Vila de Lena. <i>(antes da chegada do grupo)</i></li><li>Ghorskander instala Imagodutos em vários pontos de Valkaria. <i>(antes da chegada do grupo)</i></li><li>Calliko é internado na Casa de Repouso Millicent. <i>(antes da chegada do grupo)</i></li><li>Chegada dos personagens jogadores a Valkaria. <i>(antes da chegada do grupo)</i></li><li>A violência em Valkaria aumenta cada vez mais. <i>(Lei & Ordem)</i></li><li>Aventureiros começam a se ver incapazes de usar seus poderes e capacidades especiais. <i>(Aventura 1)</i></li><li>As mortes na Baixa Vila de Lena aumentam. <i>(Aventura 5)</i></li><li>Vladmir Mors é preso pelos crimes e vai parar na Rocha Cinzenta. <i>(Aventura 5)</i></li><li>A Rocha Cinzenta é quase toda dominada pela Companhia dos Irmãos e vira uma fortaleza onde os criminosos recebem implantes de cristal rosado para manter poderes e habilidades. <i>(Aventura 3)</i></li><li>Brigas gigantescas e cada vez mais violentas forçam a Terceira Opção a fechar as portas. <i>(Aventura 4)</i></li><li>As partituras de Calliko continuam circulando, agora pela cidade inteira. <i>(Aventura 4)</i></li><li>Paollus executa um membro da Casa Blasanov, uma irmandade rival, e provoca uma guerra de irmandades. As mortes de criminosos e inocentes chegam às centenas. <i>(Mini-Aventura 2 (Irmandade Máxima); com a Aventura 1 resolvida, há heróis para evitar o massacre)</i></li><li>A Xerife Mathilda Nolt tenta intervir na guerra criminosa. <i>(Mini-Aventura 2)</i></li><li>Uma retaliação da Companhia dos Irmãos destrói a Guarita da Praia e mata a maior parte dos detetives. A reforma da Guarda parece um fracasso total. <i>(Mini-Aventura 2; a Aventura 1 resolvida evita a destruição da Guarita)</i></li><li>Aventureiros tentam tomar a lei nas próprias mãos, mas se veem indefesos frente a criminosos e até a turbas de plebeus furiosos. <i>(Aventura 1)</i></li><li>A nobreza exige uma intervenção de Shivara. O Exército do Reinado toma as ruas, e logo começam excessos e explosões de violência dos \"pacificadores\".</li><li>Pressionada, a Academia Arcana envia representantes para defender a população, mas eles não conseguem usar magia em Valkaria. Vários morrem. <i>(Aventura 1)</i></li><li>Valkaria é tomada por uma guerra urbana de todos contra todos: irmandades, Exército, aventureiros, cidadãos e guardas. Alguns heróis famosos tentam intervir e são mortos.</li><li>O mecano-lagarto-terror se materializa na capital e pisoteia as ruas. Ninguém é capaz de detê-lo. Shivara intervém pessoalmente, é derrotada e quase morre. <i>(Aventura 7)</i></li><li>Depois de espalhar destruição, o mecano-lagarto-terror deixa Valkaria e desaparece nas planícies de Deheon. A reconstrução será longa e custosa; talvez a cidade nunca mais seja a mesma. <i>(Aventura 7)</i></li><li>A maior parte da nobreza perde a confiança em Shivara e no Reinado, abandona a capital e se junta ao Dr. Vesper, que, com recursos praticamente ilimitados e o apoio de muitas das pessoas mais influentes do mundo, põe seu plano em prática com tranquilidade. <i>(Aventuras 6 e 7)</i></li></ol>\n\t\t\t\t<p>Acompanhe com @UUID[Macro.DUMkhhUIMrzB1UAk]{Valkaria · Linha do Tempo}. <i>As ligações entre acontecimentos e aventuras são uma leitura deste módulo; veja o guia do gerador.</i></p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "dKpJJGdcjoaGMORu",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!0cUCMWtfxsj62prj.dKpJJGdcjoaGMORu"
+    }
+  ],
+  "_key": "!journal!0cUCMWtfxsj62prj"
+}

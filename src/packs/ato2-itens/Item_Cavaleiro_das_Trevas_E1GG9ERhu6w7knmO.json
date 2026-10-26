@@ -1,0 +1,71 @@
+{
+  "name": "Cavaleiro das Trevas",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "vigTrevas"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> Você recebe <b>visão no escuro</b> e pode usar <b>Ataque Furtivo</b> contra criaturas sob qualquer condição de medo, mesmo que não estejam desprevenidas nem flanqueadas. Quando desfere um acerto crítico ou Ataque Furtivo, pode gastar <b>1 PM</b> para ignorar a imunidade a críticos e/ou a ataques furtivos da criatura.</p><p><b>Pré-requisitos:</b> treinado em Furtividade, Intimidação e Luta, Ataque Furtivo.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "E1GG9ERhu6w7knmO",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!E1GG9ERhu6w7knmO"
+}

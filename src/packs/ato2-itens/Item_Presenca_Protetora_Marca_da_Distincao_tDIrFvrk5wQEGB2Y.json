@@ -1,0 +1,71 @@
+{
+  "name": "Presença Protetora (Marca da Distinção)",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/distincao.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "marcaCavaleiro"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Cavaleiro da Redenção.</i> Qualquer aliado se sente mais seguro nas proximidades de um Cavaleiro da Redenção. O efeito da sua <b>Égide Sagrada</b> se estende para aliados em <b>alcance curto</b> (e não apenas adjacentes).</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "passive",
+      "custo": 0,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "tDIrFvrk5wQEGB2Y",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!tDIrFvrk5wQEGB2Y"
+}

@@ -1,0 +1,371 @@
+{
+  "name": "Arco 2 · O Labirinto Liberto",
+  "folder": "rk4gkEiO6AeE6b5C",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto"
+    }
+  },
+  "_id": "22Op5exQi20Xri3p",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "name": "Guia do Mestre",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h2>Resumo</h2>\n\t\t\t\t<p>Depois da Libertação de Valkaria, algumas câmaras do grande labirinto dentro da estátua perderam parte da conexão divina e ficaram mais perto de Hyninn. Rachaduras, infestações e \"acasos\" criaram um <b>espaço de masmorra</b> dentro da estátua, e três complexos foram arrastados para lá: um de <b>Hyninn</b>, um de <b>Tanna-Toh</b> e um de <b>Azgher</b>, ligados por passagens. É \"o Labirinto Liberto\".</p>\n\t\t\t\t<p>O Labirinto não tolera missões grandiosas: grupos altruístas (destruir um mal, achar um artefato, honrar Valkaria) ficam presos até morrer. Quem entra por <b>ambição</b> (riquezas, itens, curiosidade, vencer o Labirinto porque ele está lá) se dá melhor. A outra recompensa é o <b>autoconhecimento</b>: o Labirinto guarda informações sobre os próprios aventureiros. Espalhe isso como boato; mistérios de histórico podem ter resposta só aqui. Na mesa original, a busca pela mãe de Kiki foi o empurrão.</p>\n\t\t\t\t<p>As três masmorras não são lineares: são caminhos opcionais até o objetivo final, o covil do dragão vermelho <b>Chama Funesta</b>, atrás de uma porta que só as três <b>Chaves Tríplices</b> abrem. Dá para entrar por qualquer das três entradas, sair, descansar e voltar.</p>\n\t\t\t\t<h2>Estilo anos 70</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Carga, rações, tochas e óleo contados de verdade, e tudo pago e anotado na ficha. A contabilidade é dos jogadores: um cuida das tochas, outro das rações, outro dos segmentos.</li>\n\t\t\t\t\t<li>Encontros devem ser <b>vencidos</b>, não necessariamente combatidos. Os habitantes têm objetivos e uma tabela de reações.</li>\n\t\t\t\t\t<li>Enigmas são para os <b>jogadores</b>. Se o jogador da bárbara decifrou o código, deixe-o falar.</li>\n\t\t\t\t\t<li>Não é a Libertação de Valkaria nem o palco para os heróis parecerem invencíveis: é só uma masmorra. O cavaleiro pomposo pode ser arremessado por uma armadilha e a ladina espertalhona enganada por um duplo.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Sequência de rolagens</h2>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Achar uma entrada: @UUID[Macro.pFI01FxdGar2w9Cm]{Labirinto · Busca pela Entrada}. Resolver o desafio da entrada: @UUID[Macro.Wc7uyuW5uD2E2qkW]{Labirinto · Entradas}.</li>\n\t\t\t\t\t<li>Ligue @UUID[Macro.mf5Vnp0twY9Fdr0y]{Labirinto · Escuridão} na cena.</li>\n\t\t\t\t\t<li>Em toda sala sem criaturas definidas: @UUID[Macro.LhmOfm5eB1F2BfBJ]{Labirinto · Exploração} (1d20 + ruído em @UUID[RollTable.NN7Csyh57lGHIDrM]{Encontros no Labirinto Liberto}, reação em @UUID[RollTable.2kkCfNpp9VpOm7l0]{Reações no Labirinto Liberto}, tokens ocultos e segmentos de cena).</li>\n\t\t\t\t\t<li>Armadilhas e perigos fixos: @UUID[Macro.TqatJIxg31VBYwnV]{Labirinto · Armadilhas} e @UUID[Macro.r4T90uVkBaFkBapO]{Labirinto · Tesouro Infinito}. Habilidades das criaturas: @UUID[Macro.5S1fNE5WFyakRbwA]{Labirinto · Criaturas}.</li>\n\t\t\t\t\t<li>Desafios: @UUID[Macro.pxeCoBhiJ8nCmO8f]{Labirinto · Enxadrista}, @UUID[Macro.npnUMF6LyLHJrCaF]{Labirinto · Laboratório de Poções}, @UUID[Macro.FB9bhvpPcBiwrXV3]{Labirinto · Prensa de Tanna-Toh} e @UUID[Macro.ctSxAqBRqxKvP9aM]{Labirinto · Progresso e Chaves} (chaves, Helladarion, matemáticos, genealogia, cabra-cega).</li>\n\t\t\t\t</ol>\n\t\t\t\t<h2>Fichas</h2>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Errantes: @UUID[Actor.Deccv5oux4qNdLtJ]{Mirminoide Soldado}, @UUID[Actor.FDSg8pz4FXitxfHK]{Trilha Mirminoide}, @UUID[Actor.hvx0A68QFUKTG0YV]{Mantor}, @UUID[Actor.UGs9JqcMsnszp6ot]{Aurumvorax}, @UUID[Actor.3nMXU7P2iNUqVDF6]{Metaliano}, @UUID[Actor.nFJHxuV2LzTnwxcH]{Tigre-de-Hyninn}, @UUID[Actor.CdXuc5KU2FXEgpJY]{Tigre-de-Hyninn Primordial}.</li>\n\t\t\t\t\t<li>Hyninn: @UUID[Actor.o9yjGqGd2jWhD9Lz]{Mímico da Estante}, @UUID[Actor.aV4c5tszRqt5HSr0]{Duplo Prisioneiro}. Tanna-Toh: @UUID[Actor.WwZaSVNFMAQDFvPx]{Anônimo} (×3), @UUID[Actor.9BfdWBGcUbtfWUMx]{Rarvnaak}, @UUID[Actor.GihMEHUpSupA9vlk]{Bibliotecário} (×4). Azgher: @UUID[Actor.ZrWwnePA5EvEELcf]{Bulette}, @UUID[Actor.KbtMAtaUkCa07sUC]{Múmia Real Sar-Allan} (×6), @UUID[Actor.86H61XA5dSPAmX3n]{Rei Sar-Allan (Senhor das Múmias)}. Covil: @UUID[Actor.7usOvS1RHYTV5ChC]{Chama Funesta}.</li>\n\t\t\t\t\t<li>Itens: @UUID[Item.Fxmw9plyZ87Qd5EQ]{Espada da Galáxia}, @UUID[Item.Nv3hv1LCBGgQTqKI]{Chave Tríplice 1}, @UUID[Item.3E9ff7DMcoyt37Bf]{Chave Tríplice 2}, @UUID[Item.eco7KFy6d5TpjGbh]{Chave Tríplice 3}, @UUID[Item.CG2isgKQq3M37gSM]{História e Genealogia dos Nobres de Halak-Tûr}, @UUID[Item.G4nS81EEX7HcAKZX]{Armadilha da Cabra-Cega}. Parceiros: @UUID[Item.jtt93eEjCcfivy2Y]{Carregador} e @UUID[Item.7tTfU5liXnJCNKjY]{Besta de Carga}.</li>\n\t\t\t\t</ul>\n\t\t\t\t<h2>Tesouros</h2>\n\t\t\t\t<p>Todo tesouro por ND é rolado na Tabela 8-1 (Tormenta20, pp. 328-329). O covil de Chama Funesta garante <b>dois itens mágicos</b>; a campanha quer itens mágicos rolados ao acaso, então permita recursos para rolar de novo e trocas com NPCs (Blixto, Felicia Daratramm, nobres), mas não deixe escolher itens.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "wva84WLmHFVQptmL",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.wva84WLmHFVQptmL"
+    },
+    {
+      "name": "Regras da Masmorra",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h3>Luz e escuridão</h3>\n\t\t\t\t<p>Escuridão total. Luz mágica e mundana funcionam <b>normalmente</b>; <b>visão no escuro e na penumbra não funcionam</b> (truque de Hyninn). Não descreva nada além do que a luz mostra: fora dela, o personagem está <b>cego</b>. A maioria das fontes de luz dura uma cena.</p>\n\t\t\t\t<h3>Ruído</h3>\n\t\t\t\t<p>Conhecimento, Ofício (engenheiro) ou Sobrevivência CD 15 revelam que qualquer ruído atrai monstros. Depois do primeiro inimigo atraído assim, quem é treinado nessas perícias percebe sozinho; os outros, Inteligência CD 10.</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Silencioso (–1):</b> sem falar, metade do deslocamento e Furtividade CD 20 de todos.</li>\n\t\t\t\t\t<li><b>Padrão (+0):</b> conversa baixa, passos normais.</li>\n\t\t\t\t\t<li><b>Barulhento (+2):</b> falar alto, discutir, Música de bardo, arrombar porta ou baú na força.</li>\n\t\t\t\t\t<li><b>Estrondoso (+5):</b> várias habilidades barulhentas, uma Bola de Fogo numa porta trancada.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Combate é barulhento ou estrondoso; combates muito táticos (Ataque Furtivo, magias que calam os inimigos) podem ser padrão, nunca silenciosos. A besta de carga sobe uma categoria.</p>\n\t\t\t\t<h3>Encontros e reações</h3>\n\t\t\t\t<p>Criaturas com covil (ninho dos mirminoides, o mímico...) estão sempre lá, se vivas. Em toda sala sem criaturas definidas, role 1d20 + ruído em @UUID[RollTable.NN7Csyh57lGHIDrM]{Encontros no Labirinto Liberto}. Ao encontrar um habitante cuja ação a sala não descreve, role em @UUID[RollTable.2kkCfNpp9VpOm7l0]{Reações no Labirinto Liberto}: <b>1d6 + Carisma</b> do personagem mais próximo (o menor, em empate). Se o grupo notou primeiro e dialogou: teste social (Diplomacia, Enganação ou Intimidação), cada 5 pontos vale um resultado.</p>\n\t\t\t\t<p>Mirminoides e metalianos usam a tabela, mas o grupo precisa decifrar a linguagem não verbal deles. Aurumvorax, mantor e tigres usam a tabela e fogem nos resultados de conversa ou colaboração (os tigres ignoram também resultados que descrevam reações visíveis em detalhes). Só existem <b>dois metalianos</b>: um fixo na Sala 18 de Hyninn, outro na tabela; se os dois já apareceram, ignore novas aparições.</p>\n\t\t\t\t<h3>Duração de cenas: segmentos</h3>\n\t\t\t\t<p>Uma cena dura <b>6 segmentos</b> (\"risquinhos\" que um jogador anota). O Mestre avisa cada segmento:</p>\n\t\t\t\t<ul>\n\t\t\t\t\t<li><b>Ação curta (1):</b> passar por um corredor (conta ao sair), explorar um corredor (Investigação, Percepção atrás da porta, rastros).</li>\n\t\t\t\t\t<li><b>Ação longa (2):</b> passar por uma sala, explorar uma sala, cuidados prolongados, identificar um item, montar acampamento.</li>\n\t\t\t\t\t<li><b>Ação muito longa (6):</b> algumas horas, uma manhã, tarde ou noite.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Ao fim da cena, efeitos de cena terminam e as luzes precisam ser renovadas.</p>\n\t\t\t\t<h3>Recursos</h3>\n\t\t\t\t<p>Cada noite de sono exige uma ração por personagem (e parceiro); sem rações, Fome e Sede (Tormenta20, p. 319). Falhar por 5 ou mais em Ladinagem para abrir fechaduras <b>quebra a gazua</b> (sem gazua, quebra a fechadura, que não abre mais com Ladinagem). Corda deixada presa não volta.</p>\n\t\t\t\t<h3>Carregadores</h3>\n\t\t\t\t<p>@UUID[Item.jtt93eEjCcfivy2Y]{Carregador} e @UUID[Item.7tTfU5liXnJCNKjY]{Besta de Carga}: parceiros contratados pela exploração inteira por T$ 90 (iniciante), T$ 450 (veterano) ou T$ 900 (mestre, exceção para seguradores de tochas). Coadjuvantes já vistos, ou criados pelos jogadores com nome e personalidade, custam metade. Decida se são vulneráveis em combates e armadilhas (na mesa original eram efetivamente imortais).</p>\n\t\t\t\t<h3>Magia no Labirinto</h3>\n\t\t\t\t<p>Teletransporte e magias para burlar o Labirinto não funcionam, nem para entrar ou sair. Adivinhação funciona, mas não contra a escuridão nem para ver através de portas e paredes: Lendas e Histórias sim, Vidência na sala seguinte não.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "ndwZjgmaxmYxr4ak",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.ndwZjgmaxmYxr4ak"
+    },
+    {
+      "name": "Chegando ao Labirinto",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<p>Na mesa original, o grupo sabia que a mãe de Kiki estava em Valkaria e concluiu que havia uma masmorra na cidade. O difícil é saber onde fica e diferenciá-la das outras masmorras da capital.</p>\n\t\t\t\t<h3>Achar uma entrada</h3>\n\t\t\t\t<p>Com a localização aproximada, teste estendido aberto de <b>Investigação</b>: CD 20, <b>7 sucessos</b>, +2 na CD a cada teste. Outras perícias justificáveis valem, mas não repetem (só Investigação). Cada teste leva meio dia. Cada falha custa <b>1d4 PM</b>, que só voltam ao achar a entrada ou ao fim da aventura; uma falha total deixa os personagens <b>alquebrados</b> pela mesma duração e o teste recomeça. Pode incluir encontros em Valkaria enquanto procuram. Outras ideias (delegar, mapas, perguntar ao Helladarion na Biblioteca das Duas Deusas) podem dispensar o teste; cada NPC contatado pode valer um sucesso. Use @UUID[Macro.pFI01FxdGar2w9Cm]{Labirinto · Busca pela Entrada}.</p>\n\t\t\t\t<h3>Quem conhece o Labirinto</h3>\n\t\t\t\t<ul>\n\t\t\t\t\t<li>Wynstar (só com um Alvará de Exploração de Masmorras Urbanas).</li>\n\t\t\t\t\t<li>Os goblins da Gazeta do Reinado.</li>\n\t\t\t\t\t<li>Anatole (30% de chance de informação errada).</li>\n\t\t\t\t\t<li>O Avatar da Cidade (vale três sucessos).</li>\n\t\t\t\t\t<li>Qualquer membro do Clube de Cavalheiros.</li>\n\t\t\t\t\t<li>Justine, Berthun, Torzogh Meio-Machado, Brunhilda e Janara.</li>\n\t\t\t\t\t<li>Tilliann (apaziguado com bastante interpretação).</li>\n\t\t\t\t\t<li>Aldanna Elbannise (só se tirada do torpor mental).</li>\n\t\t\t\t</ul>\n\t\t\t\t<h3>As três entradas</h3>\n\t\t\t\t<p>Cada uma ligada a um deus, sem símbolos explícitos. Personagens treinados em Religião têm direito a um teste (peça mesmo que ninguém pense nisso): <b>25</b> revela algo divino; <b>30</b> dá uma dica a interpretar; <b>40</b> revela o deus. O desafio continua sendo dos jogadores. Use @UUID[Macro.Wc7uyuW5uD2E2qkW]{Labirinto · Entradas}.</p>\n\t\t\t\t<h4>Entrada de Hyninn</h4><p>Uma rachadura na estátua leva a um túnel e a uma antessala quadrada e exígua, totalmente escura, com uma porta de ferro e pedra e duas estátuas esguias. Uma delas diz: <i>\"Fomos colocados aqui por todos os deuses do Panteão. Nossa missão é guardar o Labirinto Liberto. Somos opostos, pois um de nós sempre fala a verdade. Vocês podem fazer apenas uma pergunta para cada um de nós. Se apontarem aquele que sempre fala a verdade, poderão passar.\"</i></p><p class=\"secret\"><b>Dica (Religião 30):</b> As feições das estátuas são alongadas: focinhos de raposa.<br><b>Solução:</b> Tudo que a estátua disse é mentira: foram esculpidas por devotos de Hyninn, não são opostas, nenhuma fala a verdade, dá para perguntar quanto quiser e apontar a \"verdadeira\" não abre nada. A solução é contrariar as regras e <b>arrombar a porta</b> (porta de ferro: Defesa 8, RD 10, 100 PV, Ladinagem CD 30). Grupos respeitosos e solenes, que nunca desafiam as estátuas, não passam.<br><b>Chegada:</b> Área de Entrada A (Sala 1 de Hyninn).</p><h4>Entrada de Tanna-Toh</h4><p>A porta de uma casa num beco vira um túnel de quilômetros até uma câmara quadrada com paredes, chão e teto cobertos de escritos antigos (Conhecimento CD 30 ou Compreensão: língua antiga de Lamnor, a história da Rainha Barda que trouxe a escrita). No centro, uma enorme corneta de bronze, muda. Em valkar, no meio das palavras: <b>SOME GRANDE FOGO / RECUSE SEUS PRIMEIROS</b>.</p><p class=\"secret\"><b>Dica (Religião 30):</b> Os escritos cobrem todas as superfícies: é um lugar do conhecimento. Religião percebe que \"some grande fogo\" não tem significado religioso.<br><b>Solução:</b> É um anagrama, e nenhum meio mágico o resolve: <b>CONFESSEM UM SEGREDO E IRÃO PROSSEGUIR</b>. Cada personagem fala um segredo sobre si em voz alta dentro da corneta; quando todos falarem, uma parede se abre. Se o grupo achar chato, permita um teste estendido; ou tente outra entrada.<br><b>Chegada:</b> Área de Entrada B (Sala 1 de Tanna-Toh).</p><h4>Entrada de Azgher</h4><p>Uma boca de lobo numa ruela escura vira uma passagem cada vez mais larga e clara. Em quase uma hora, um salão iluminado pelo ouro das decorações, hieróglifos e um sol imenso. Uma balança de ouro pende por causa de uma pedra escura e opaca; aos pés, uma bandeja de pepitas. A inscrição: <i>\"Nenhum mortal está livre do pecado aos olhos de Azgher. Cada um deve confessar um pecado único. Juntos, todos os pecados devem se equilibrar com toda a escuridão que existe em Arton.\"</i></p><p class=\"secret\"><b>Dica (Religião 30):</b> O que parece um símbolo de Khalmyr (a balança) é de Azgher: pecados contra as Obrigações & Restrições do Deus-Sol.<br><b>Solução:</b> Religião CD 20 revela o sentido e a lista de pecados (sem os pontos). Cada personagem confessa uma quebra das O&R de Azgher (mesmo sem ser devoto) e põe uma pepita. Cada pecado só pode ser confessado uma vez. Leve vale 1, médio 2, grave 3; a balança equilibra com <b>10 pontos</b>. Lado mais pesado: pedras escuras e opacas; mais leve: douradas; equilibrada: ambas cinzentas e reluzentes, e o sol se desfaz num mecanismo que revela a entrada.<br><b>Chegada:</b> Área de Entrada C (Sala 1 de Azgher).</p>\n\t\t\t\t<h4>Hierarquia de pecados de Azgher</h4>\n\t\t\t\t<p class=\"secret\"><b>Leves (1):</b> não agradecer ao sol, não doar ouro, mostrar o rosto. <b>Médios (2):</b> roubar ouro, esconder a verdade, mentir/enganar, ajudar ladrões e trapaceiros. <b>Graves (3):</b> ser inclemente, praticar o mal/combater o bem, cultuar Tenebra.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "S2PuI0qut3qRo2NT",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.S2PuI0qut3qRo2NT"
+    },
+    {
+      "name": "Masmorra de Hyninn",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<p><i>Apertada, labiríntica, úmida e cheia de rachaduras: a mais \"típica\" das três.</i></p>\n\t\t\t\t<h3>Sala 1 · Área de Entrada A</h3><p>Uma escadaria num espaço exíguo, aberto para os dois lados. Não é saída: não abre pelo lado de dentro.</p>\n\t\t\t\t<h3>Sala 2 · Passagem para Tanna-Toh</h3><p>Sala aberta, parcialmente tomada de escombros.</p><p>Um círculo mágico no chão brilha com luz roxa. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Tanna-Toh; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 5 de Tanna-Toh.</p>\n\t\t\t\t<h3>Sala 3 · Covil do Mímico</h3><p>Uma grande e vistosa estante de livros: @UUID[Actor.o9yjGqGd2jWhD9Lz]{Mímico da Estante}. Os títulos mudam para os mais atraentes a cada vítima.</p>\n\t\t\t\t<h3>Sala 4 · A \"Prisão\" do Duplo</h3><p>Porta de ferro trancada (Defesa 8, RD 10, 100 PV, CD 25; derrubar é estrondoso). Dentro, acorrentado e indefeso, alguém do passado do grupo: @UUID[Actor.aV4c5tszRqt5HSr0]{Duplo Prisioneiro}. Enganação +34 para se passar pela pessoa.</p>\n\t\t\t\t<h3>Salas 5 e 6 · Ninho dos Mirminoides</h3><p>A passagem central da masmorra, defendida com a vida. Não atacam à primeira vista, mas ficam extremamente agressivos se o espaço for violado. Passam ao largo das armadilhas. Temem os metalianos.</p><p><b>Armadilha: Abismo da Morte</b> (ND 8). O chão se abre numa área de 6m de lado: queda de 30m (20d6) sobre estacas (2d8+10). Reflexos CD 30 evita. Atletismo CD 25 para escalar de volta. Sobrevivência CD 30 mostra que os mirminoides evitam certas áreas (–5 na CD de Reflexos). Ativar é um ruído barulhento. Detectar: Investigação/Ladinagem CD 30.</p><p><b>Criaturas:</b> @UUID[Actor.FDSg8pz4FXitxfHK]{Trilha Mirminoide} e @UUID[Actor.Deccv5oux4qNdLtJ]{Mirminoide Soldado} ×4. <b>Tesouro:</b> ND 10 ×2 (uma rolagem em dinheiro em cada baú, ignorando resultados menores que 15).</p>\n\t\t\t\t<h3>Sala 7 · Passagem-Truque</h3><p>Sala trancada que parece só esconder um buraco para um túnel. Percepção CD 15: um rugido baixo vem de dentro. O truque é duplo: o túnel não tem armadilha e leva ao tesouro da Sala 16.</p><p><b>Porta:</b> porta de ferro (Defesa 8, RD 10, 100 PV, CD 25; derrubar é ruído estrondoso).</p>\n\t\t\t\t<h3>Sala 8 · Armadilha de Pedra Porosa</h3><p>Parece só uma parede irregular. Lá dentro, esqueletos de um humano, um qareen e um goblin, ladinos ou bardos (sinal do tipo de armadilha), e o tesouro que deixaram.</p><p><b>Armadilha: Armadilha de Pedra Porosa</b> (ND 6). A parede quebradiça tem RD 5 e 70 PV (quebrar é ruído barulhento). Quem entra completamente faz Reflexos CD 25: passa, nota o desabamento e salta para fora; falha, fica preso no escuro. Ladinagem não abre; Percepção ou Investigação CD 25 (mais penalidades de escuridão) mostra que outra parede é da mesma pedra porosa. Quem a quebra cai direto na névoa da Sala 9 (Reflexos com –5). Detectar: Percepção/Investigação CD 25 (a parede tem cor e textura diferentes).</p><p><b>Tesouro:</b> ND 6 (três rolagens, só itens).</p>\n\t\t\t\t<h3>Salas 9 e 13 · Névoa Transportadora</h3><p>Tomadas de névoa: impossível enxergar qualquer detalhe, mesmo com Percepção ou Investigação.</p><p><b>Armadilha: Névoa Transportadora</b>. Quem entra faz Reflexos ou Vontade CD 25; falha leva da Sala 9 para a 13 (ou da 13 para a 9). Não dá para falhar de propósito. Cada personagem só é transportado uma vez, em qualquer das salas. O duplo tenta ficar com o lado mais fraco. Continue rolando encontros para os separados. Detectar: Misticismo CD 40 revela que o espaço está parcialmente em outro Plano.</p>\n\t\t\t\t<h3>Sala 10 · Sala do Enxadrista</h3><p>Porta de ferro trancada. Dentro, uma mesinha com tabuleiro e um hynne de aparência indistinta, um construto planar do Reino de Hyninn: <i>\"Eu sou o Enxadrista e só existo para o xadrez. Se quiserem uma pista, entre só um de vocês!\"</i> Só cabe um (ou dois Pequenos, ou uma sílfide), de porta fechada.</p><p>Três testes opostos (Guerra, Jogatina, Nobreza ou outra; roubar é Ladinagem) contra Ladinagem +15 do Enxadrista; quem vencer dois ganha. Cada teste vencido dá uma pista de @UUID[RollTable.86L0V6PKXKVyx3tC]{Pistas do Enxadrista}; cada teste perdido tira 10 PM (ou 10 PV, sem PM) de um companheiro do lado de fora, sorteado. Revanches à vontade. Use @UUID[Macro.pxeCoBhiJ8nCmO8f]{Labirinto · Enxadrista}.</p>\n\t\t\t\t<h3>Sala 11 · Passagem para Azgher</h3><p>Sala aberta, nada notável.</p><p>Um círculo mágico no chão brilha com luz amarela. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Azgher; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 6 de Azgher.</p>\n\t\t\t\t<h3>Sala 12 · Armadilha Dupla (ou Tripla)</h3><p>Quase um corredor: Runas de Aceleração nos extremos noroeste e sudeste (passagens para perto das Salas 17 e 11), ambas empurrando para o meio, onde fica a Runa de Desintegração.</p><p><b>Armadilha: Runa de Aceleração</b> (ND 1). Uma criatura em alcance curto é arremessada 9m na direção em que se movia; batendo numa parede ou objeto sólido, sofre 1d6 de impacto por 1,5m percorrido. Fortitude CD 20 reduz a distância à metade. Na Sala 12, as duas runas empurram para o meio da sala: quem é empurrado não tem teste de Investigação para notar a Runa de Desintegração e a ativa automaticamente. Detectar: Investigação/Ladinagem CD 20.</p><p><b>Armadilha: Runa de Desintegração</b> (ND 10). Uma criatura em alcance curto sofre 10d12 de essência; Fortitude CD 30 reduz para 2d12. Se os PV forem a 0 ou menos, qualquer que seja o teste, a criatura é desintegrada (só sobra pó). Detectar: Investigação/Ladinagem CD 30.</p>\n\t\t\t\t<h3>Sala 14 · Armadilha da Cabra-Cega</h3><p>Aparentemente vazia. Manchas que escorreram pela pedra (não é sangue) e garranchos em valkar, um por cima do outro. Ofício (escriba) ou Inteligência CD 20: escritos de alguém que não enxergava, apagados por algo. Inteligência CD 15 revela as frases: <i>\"Não vá para a esquerda\"</i> (falando da Sala 13), <i>\"Não se aproxime\"</i> e <i>\"Reto, esquerda, direita, escada\"</i> (o oposto, para chegar à Sala 15).</p><p><b>Armadilha: Símbolo da Cegueira/Surdez (cabra-cega)</b> (ND 8). Ativada por proximidade (até voando): todas as criaturas em alcance curto ficam cegas e surdas até descansar 8 horas, mesmo as imunes; Fortitude CD 30 anula; não pode ser dissipada. Afeta os habitantes também (por isso nunca há encontro aqui). Ácido escorre por toda a sala: 1d4 na primeira rodada, 1d6, 1d8, 1d10, 1d12, 1d20 na sexta e mais 1d20 por rodada depois. Quem não foi afetado pode guiar os outros. Força CD 15 ou Ladinagem CD 25 para levar o mecanismo. Detectar: Investigação/Ladinagem CD 30.</p><p>Misticismo, Religião ou similar: não é uma armadilha comum, não pode ser anulada por efeitos que anulam magia, e experimentos mostram que afeta os habitantes. É a ferramenta contra os bibliotecários: @UUID[Item.G4nS81EEX7HcAKZX]{Armadilha da Cabra-Cega}.</p>\n\t\t\t\t<h3>Sala 15 · Escadaria</h3><p>Uma escada desce ao subnível.</p>\n\t\t\t\t<h3>Sala 16 · Truque Inofensivo</h3><p>Ampla e danificada, acessível pela Sala 7 e por uma passagem na 17. Manchas de \"sangue\", ossos, rugido baixo e cheiro de pelo: um covil perigoso... de brincadeira. Um engenho faz o ruído, ervas imitam o cheiro, os ossos são de gesso e o sangue é tinta (Cura, Ofício alquimista, Percepção ou Sobrevivência CD 30). Atrás de um pedregulho, perto da máquina: <i>\"Surpresa!\"</i>. Bem típico de Hyninn.</p><p><b>Tesouro:</b> ND 10 (uma rolagem em dinheiro ignorando 1 a 10, uma rolagem em itens).</p>\n\t\t\t\t<h3>Sala 17 · Antecâmara do Tesouro</h3><p>Passagem sem nada de especial, boa para descansar antes de abrir a porta da Sala 19.</p>\n\t\t\t\t<h3>Sala 18 · Troféus do Metaliano</h3><p>Um beco sem saída decorado com crânios de humanos, elfos, hynne, kliren e outros, cabeças de mirminoides e uma pele de mantor. Guerra, Religião ou Sobrevivência CD 20: não é altar, é sala de troféus. Uma cadeira improvisada, riquezas e equipamentos em ordem, e escritos entalhados numa língua desconhecida (Compreensão revela).</p><p>Se o grupo não fez ruído acima de padrão e não achou o metaliano de outro jeito, @UUID[Actor.3nMXU7P2iNUqVDF6]{Metaliano} está aqui, invisível. Não tolera intrusos no seu minúsculo domínio, mas pode conversar. <b>Tesouro:</b> ND 9 (só itens).</p>\n\t\t\t\t<h3>Sala 19 · Armadilha de Tesouro Infinito</h3><p>Pesada porta de ferro com baixos-relevos de raposas, adagas e bufões (Defesa 10, RD 10, 200 PV, CD 35). Atrás, ouro do chão ao teto, que desaba e não para de jorrar. Percepção, Ladinagem ou Misticismo CD 25: é infinito. O ouro é verdadeiro, mas some quando sai da masmorra.</p><p><b>Tesouro Infinito:</b> Reflexos CD 30 a cada rodada na sala; falha, agarrado; uma rodada inteira agarrado, submerso (sufocamento). Atletismo CD 25 (ação completa) sobe um passo (submerso → agarrado → livre); falhar por 5 ou mais: fatigado, exausto, inconsciente.</p><p>Fechar a porta é Força estendida (CD 20, 3 sucessos) em <b>10 rodadas</b>. Depois disso, a cada 10 rodadas mais uma sala é tomada (terreno difícil; a anterior fica interditada). Desintegrar ouro dá uma rodada a mais. A única forma de deter a torrente é um @UUID[Actor.UGs9JqcMsnszp6ot]{Aurumvorax} devorando o ouro até a saída: uma caverna com uma porta e um pedestal com a @UUID[Item.Nv3hv1LCBGgQTqKI]{Chave Tríplice 1}. Dali se sai para Valkaria e se volta à masmorra. Use @UUID[Macro.r4T90uVkBaFkBapO]{Labirinto · Tesouro Infinito}.</p>\n\t\t\t\t<h2>Subnível de Hyninn</h2>\n\t\t\t\t<p>Uma única caverna enorme, só pela Sala 15: cristais, ruínas de masmorras antigas, restos de exploradores, marcas de fogueira. Sem armadilhas nem criaturas (monstros que já lutam com os heróis podem segui-los, mas nenhum desce por conta). Feito para descansar, interpretar e recuperar forças antes do covil; escuridão e fome continuam valendo. É o lugar ideal para o NPC ou a informação que o grupo busca (na mesa original, Kizadrinni Odello, a mãe de Kiki, quase transformada em monstro errante).</p>\n\t\t\t\t<p>Uma porta dupla de metal com três fechaduras, cercada de cristais, que nada abre além das três Chaves Tríplices: leva ao covil do dragão. @UUID[Macro.ctSxAqBRqxKvP9aM]{Labirinto · Progresso e Chaves} › abrir a porta.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "TDBYo3Oj3cWOwrea",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.TDBYo3Oj3cWOwrea"
+    },
+    {
+      "name": "Masmorra de Tanna-Toh",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<p><i>Menos labiríntica: os caminhos levam a uma área central. Extremamente seca e em ótimo estado.</i></p>\n\t\t\t\t<h3>Sala 1 · Área de Entrada B</h3><p>Retangular, sem nada marcante. Porta de madeira ao norte, passagem estreita a leste e outra, para um pórtico, ao sul. A entrada não serve de saída.</p>\n\t\t\t\t<h3>Sala 2 · Laboratório de Poções</h3><p>Pelo sul, um corredor com esqueletos de três aventureiros e frascos estilhaçados. Um laboratório de alquimia mágica com tubos de cristal e torneiras. Oito substâncias rotuladas em valkar: cápsulas de magia, substrato de sangue, ectopasta, suco de sapiência, raspas de ouro, pó de adamante, água e óleo. Ofício (alquimista) CD 30: PM, PV, atributos, perícias, sorte e Defesa; água dilui em poções, óleo em óleos.</p><p>Quem é treinado em Conhecimento ou Ofício (alquimista) pode preparar. A dificuldade é <b>2d20 + 1d20 por ingrediente</b> (água e óleo não contam), rolada só quando a poção é usada. Até dois ajudantes. Não dá para escolher 10. Cada poção a mais na mesma pessoa soma 1d20 e anula a anterior. Máximo de <b>10 poções</b>.</p><p><b>Cápsulas de magia:</b> 1d8 PM temporários / perde 1d8 PM / perde 2d8 PM. <b>Substrato de sangue:</b> 1d12 PV temporários / perde 1d12 / perde 2d12. <b>Ectopasta:</b> +1 num atributo do jogador (1 dia) / –1 num do Mestre / –1 em dois. <b>Suco de sapiência:</b> +5 em duas perícias (1 dia) / –5 / –10. <b>Raspas de ouro:</b> rola de novo três testes (1 dia) / obrigado a rolar de novo três / seis. <b>Pó de adamante:</b> +5 na Defesa (1 dia) / –5 / –10. (Sucesso / falha / falha por 10 ou mais.)</p><p>Perdas de PV e PM se curam normalmente; penalidades, 1 por dia (atributos) ou 2 por dia (perícias e Defesa). A obrigação de rolar de novo só acaba quando todos os testes forem rolados. Use @UUID[Macro.npnUMF6LyLHJrCaF]{Labirinto · Laboratório de Poções}.</p>\n\t\t\t\t<h3>Sala 3 · Passagem Exígua</h3><p>Parte de um corredor bloqueado por desabamento, alargado sem função prática: um lugar defensável para descansar sozinho ou em dupla, com afrescos de oásis, quartos e castelos. Porta de madeira reforçada ao norte (Defesa 8, RD 5, 30 PV, CD 20). A leste, parede desabada: Investigação ou Ofício CD 20 mostra que dá para tirar as pedras sem Força, mas é ruído estrondoso.</p>\n\t\t\t\t<h3>Sala 4 · Covil dos Anônimos</h3><p>Aberta ao norte e a leste: um baú, ossos das vítimas e uma prateleira com os livros das vidas dos mortos-vivos (histórias genéricas, ninguém que o grupo conheça). Os anônimos não saem nem perseguem, mas atacam quem entra; os outros habitantes os temem e podem fazer acordos. Não esqueça a Aura de Oblívio (@UUID[Macro.5S1fNE5WFyakRbwA]{Labirinto · Criaturas}).</p><p>Um círculo mágico no chão brilha com luz vermelha. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Hyninn; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 2 de Hyninn. Um corredor parcialmente desabado leva ao norte; um túnel no centro leva à Sala 8.</p><p><b>Criaturas:</b> @UUID[Actor.WwZaSVNFMAQDFvPx]{Anônimo} ×3. <b>Tesouro:</b> ND 8 (uma rolagem em dinheiro ignorando 1 a 10).</p>\n\t\t\t\t<h3>Sala 5 · Passagem para Hyninn</h3><p>Quadrada e vazia.</p><p>Um círculo mágico no chão brilha com luz vermelha. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Hyninn; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 2 de Hyninn.</p>\n\t\t\t\t<h3>Sala 6 · Prensa</h3><p>A sala principal, no centro: uma máquina imensa de alavancas e engrenagens. Quem tem experiência com máquinas avançadas percebe sozinho que é uma prensa; os outros, Conhecimento CD 25. Conhecimento ou Ofício (engenhoqueiro) CD 25: também encaderna livros. Páginas e capas estão prontas; a única capa diz <i>História e Fatos sobre Arton</i>.</p><p>Duas portas de metal sem tranca, impossíveis de arrombar (Religião ou Misticismo CD 25: algo muito importante atrás delas). O livro precisa de <b>10 cadernos</b>, cada um com uma informação; há 15 verdadeiros e 20 falsos. Os jogadores escolhem sem testes e sem consultar o cenário. Livro com algum caderno falso: <b>–2 em todos os testes de perícia</b> enquanto estiverem no Labirinto (cumulativo; sai ao deixar o Labirinto e voltar). Só verdades: as portas se abrem.</p><p>Mostre o handout <i>Cadernos da Prensa</i>. Use @UUID[Macro.FB9bhvpPcBiwrXV3]{Labirinto · Prensa de Tanna-Toh}. Porta de madeira reforçada (Defesa 8, RD 5, PV 30, CD 20).</p>\n\t\t\t\t<h3>Sala 7 · Câmara do Helladarion</h3><p>Só pela porta de metal da prensa. Ar úmido e puro, limo, uma brisa sem janela e ecos de vozes: a câmara existe aqui e na Caverna do Saber, na Supremacia Purista. É o próprio Helladarion, o sumo-sacerdote de Tanna-Toh, um enorme globo de cristal:</p><p><i>\"Bem-vindos, exploradores. Para que não desperdicem suas perguntas, direi claramente que, sim, sou o Helladarion, o sumo-sacerdote de Tanna-Toh. Estou aqui, no lugar onde me encontram, e também na Caverna do Saber. Talvez esteja em outros lugares além disso. Como o representante da Deusa do Conhecimento, eu me disponho a responder a suas perguntas. Mas, por minha presença apenas parcial, somente serei capaz de responder a uma pergunta de cada um de vocês. Então escolham com sabedoria o conhecimento que desejam.\"</i> Ao longe, uma voz feminina: <i>\"Com quem ele está falando?\"</i></p><p><b>Uma pergunta por personagem</b>, sem exceções (perguntas desperdiçadas contam). Imagine se a informação estaria com algum clérigo de Tanna-Toh já morto: sobre aventureiros, provavelmente; sobre o passado de Arton, quase certo; em bibliotecas ou estudos, sim; íntimo ou secreto (paradeiro de um parente), provavelmente não; totalmente oculto (últimas palavras de quem morreu sozinho, sentimentos), não.</p><p><b>Sabe:</b> a identidade de todos os tripulantes da Roca; Skerry, o mundo destroçado dos kliren, e a Ploigoníada; descrições básicas (não soluções) das aventuras 1, 2, 4 e 6; heróis, nobres e criminosos notórios. <b>Não sabe:</b> o paradeiro dos nobres desaparecidos; o plano final do Dr. Vesper; as reais capacidades do metal arco-íris; o que aconteceu com Paollus e o \"caos\" que vai tomar Valkaria. Não seja pão-duro: é a hora de desvendar a tripulação da Roca.</p><p>@UUID[Macro.ctSxAqBRqxKvP9aM]{Labirinto · Progresso e Chaves} conta as perguntas.</p>\n\t\t\t\t<h3>Sala 8 · Passagem</h3><p>Vazia e depredada: a saída do túnel da Sala 4. Uma escadaria curta e uma porta de ferro para a área final.</p><p><b>Porta:</b> porta de ferro (Defesa 8, RD 10, 100 PV, CD 25; derrubar é ruído estrondoso).</p>\n\t\t\t\t<h3>Sala 9 · Ligação</h3><p>Longo corredor com alcovas, entre a prensa, a Sala 10 e a área final. Covil de um caçador invisível que só espera alguém aparecer: @UUID[Actor.9BfdWBGcUbtfWUMx]{Rarvnaak}. Quando o grupo entra, sorteie a presa (@UUID[Macro.5S1fNE5WFyakRbwA]{Labirinto · Criaturas}).</p>\n\t\t\t\t<h3>Sala 10 · Passagem para Azgher</h3><p>Formato recortado, pedaços de árvores ressequidas enraizadas na pedra (Sobrevivência: plantas de oásis do Deserto da Perdição).</p><p>Um círculo mágico no chão brilha com luz amarela. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Azgher; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 4 de Azgher.</p><p>Passagem aberta para a Ligação e uma porta de ferro para a área final. <b>Porta:</b> porta de ferro (Defesa 8, RD 10, 100 PV, CD 25; derrubar é ruído estrondoso).</p>\n\t\t\t\t<h3>Sala 11 · Biblioteca Proibida</h3><p>Toda uma área de prateleiras, um dos maiores tesouros do tipo em Arton, patrulhada por @UUID[Actor.GihMEHUpSupA9vlk]{Bibliotecário} ×4. Qualquer criatura senciente ou objeto que entre é visto e alvejado na hora pelas rajadas dos olhos, como arcos voltaicos, sem decisão nem demora. Detectam e destroem construtos e objetos usados para se infiltrar.</p><p><b>Como burlar:</b> dano em área fora da vista (várias magias e acelerante, mas destrói o tesouro); esconder-se atrás de uma saída e puxar um por vez sem objetos físicos; entrar, bater por uma rodada, aguentar as rajadas e recuar (válido, mas consome recursos e atrai monstros; saindo da masmorra, eles se curam). O jeito inteligente é a <b>cabra-cega</b> de Hyninn: posicionada com os bibliotecários no raio, eles só resistem com 13+ no d20 (permita aprimorar a CD). Cegos, basta caminhar e saquear.</p><p>Atrás de uma das mesas de estudo, a @UUID[Item.3E9ff7DMcoyt37Bf]{Chave Tríplice 2} e uma passagem para o mundo exterior. <b>Tesouro:</b> duas rolagens em dinheiro para ND 12 (ignore resultados sem tesouro; descreva como livros vendáveis em Valkaria) e uma em itens para ND 13 (todos são livros: poções viram fragmentos que se desfazem ao ler, itens superiores são tomos herméticos, item mágico é um livro que se desfaz e materializa o item). E o @UUID[Item.CG2isgKQq3M37gSM]{História e Genealogia dos Nobres de Halak-Tûr}, necessário no último desafio de Azgher.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "rY0rOuEPd6YfKs8s",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.rY0rOuEPd6YfKs8s"
+    },
+    {
+      "name": "Masmorra de Azgher",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<p><i>Quente, depredada e cheia de decorações, com areia fina no chão. Conhecimento, Religião ou ligação com Halak-Tûr: é uma grande tumba de nobres. Enquanto Hyninn tem charadas e Tanna-Toh tem respostas, Azgher é um teste de resiliência.</i></p>\n\t\t\t\t<h3>Sala 1 · Área de Entrada C</h3><p>Entrada grandiosa: escadaria, área elevada, duas estátuas de guerreiros do deserto, vasos e colunas; outra escadaria larga desce à Sala 2. Ar quente e seco; Percepção CD 20: vibrações sutis (os bulettes). Dois @UUID[Actor.UGs9JqcMsnszp6ot]{Aurumvorax} devoram ouro e atacam na hora, querendo o ouro do grupo. <b>Tesouro:</b> ND 9 (uma rolagem em dinheiro).</p>\n\t\t\t\t<h3>Sala 2 · Salão Principal (metade sul)</h3><p>A antiga área de adoração. Religião CD 25 (devotos de Azgher passam sozinhos): uma tumba suntuosa do Deserto da Perdição, a prova final de que o Labirinto une estruturas de outros lugares. Um grande desabamento divide o salão: Sobrevivência ou Ofício CD 25 mostra que foi proposital, para separar duas armadilhas terríveis. Uma imagem de Azgher no teto, dividida: quando o primeiro passa por baixo, o único olho visível se acende.</p><p><b>Armadilha: Símbolo da Morte</b> (ND 8). O olho de Azgher no teto se acende quando o primeiro passa por baixo: criaturas em alcance curto ficam com –1 PV; Fortitude CD 30 reduz para 10d6 de trevas. Devotos de Azgher são imunes. Invisíveis, quem passa em Furtividade CD 30 e quem se passa por habitante não ativam. Desarmar exige equipamento de escalada e Acrobacia ou Atletismo para chegar ao teto. Detectar: Investigação/Ladinagem CD 30.</p><p>Porta para a Sala 3 na parede sul. <b>Porta:</b> porta de ferro (Defesa 8, RD 10, 100 PV, CD 25; derrubar é ruído estrondoso).</p>\n\t\t\t\t<h3>Sala 3 · Tumbas dos Servos</h3><p>Um corredor de nichos com as urnas dos servos de mais prestígio, que viraram decoração. Os espíritos são hostis.</p><p><b>Armadilha: Lamento dos Servos</b>. Vozes dos servos falam de traição, solidão e angústia. Vontade CD 25 a cada rodada na sala; falha perde 1d6 PM. Quem não ouve (surdo, Silêncio) não é afetado. Detectar: —.</p><p><b>Porta:</b> porta de ferro (Defesa 8, RD 10, 100 PV, CD 25; derrubar é ruído estrondoso).</p>\n\t\t\t\t<h3>Sala 4 · Tumba dos Matemáticos</h3><p>Três matemáticos que projetaram a tumba, enterrados vivos depois de contar os segredos. Na parede sul, numa língua antiga do deserto (Conhecimento CD 20): <i>\"Três matemáticos criaram este lugar. Para conhecer o que apenas eles conhecem, provem que suas mentes são dignas.\"</i></p><p><i>\"Quando Azgher despontou de manhã, um mercador abriu sua tenda para vender ovos. Para seu primeiro freguês ele vendeu metade de seus ovos, e meio ovo a mais. Para seu segundo freguês ele vendeu metade dos ovos que lhe restavam, e meio ovo a mais. Para seu terceiro freguês ele vendeu metade dos ovos que lhe restavam, e meio ovo a mais. Ele então fechou a tenda e voltou para casa, pois não tinha mais ovos para vender. Quantos ovos ele tinha quando abriu a tenda?\"</i></p><p><span class=\"secret\"><b>Resposta: 7</b> (4, depois 2, depois 1). Azgher não gosta de charadas: ovos são ovos crus. Quem é treinado em Religião sabe disso. Se empacarem, sigam e resolvam entre sessões (os tesouros viram flashback).</span></p><p>Resolvido: <i>\"Os nobres do Deserto da Perdição exigem ser reconhecidos. Apenas quem conhece sua linhagem será poupado de sua fúria.\"</i> Os sarcófagos se abrem com o tesouro. Um círculo mágico no chão brilha com luz roxa. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Tanna-Toh; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 10 de Tanna-Toh. Há uma múmia inerte deixada por um explorador e uma porta secreta a oeste para os túneis (Investigação CD 20 ou Percepção CD 25).</p><p>Portas: ferro (como as outras) e pedra porosa (Defesa 8, RD 5, PV 20, CD 20; derrubar é barulhento). <b>Tesouro:</b> ND 10 ×3 (duas rolagens em dinheiro, uma em itens). @UUID[Macro.ctSxAqBRqxKvP9aM]{Labirinto · Progresso e Chaves} confere a resposta.</p>\n\t\t\t\t<h3>Sala 5 · Túnel Sudoeste</h3><p>Túnel natural, chão de areia fofa, beco sem saída com jarros quebrados e um buraco fundo. Sobrevivência CD 25: um monstro escavador; CD 30: um bulette. <b>Criaturas:</b> @UUID[Actor.ZrWwnePA5EvEELcf]{Bulette} ×1d6–1; perdendo, fogem pelo túnel para as Salas 6 ou 9.</p>\n\t\t\t\t<h3>Túneis dos Bulettes</h3><p>Buracos nas Salas 5, 6 e 9 levam a qualquer uma delas. Apertados: só um Pequeno ou maior por vez, em fila. Sobrevivência CD 25 para se orientar (falha: buraco aleatório); o mesmo teste mostra dois caminhos, norte e nordeste. Sempre que entram, <b>50%</b> de chance de um bulette atacar o primeiro ou o último da fila em investida e fugir; só o atacado reage. Magia exige Misticismo de quem é Pequeno ou maior; armas de uma mão ou maiores têm –5. Uma jornada inteira conta como <b>duas salas</b> para tochas e consumíveis.</p><p><i>Esquivando-se da aventura:</i> 1d6–1 pode dar zero, de propósito. Se não quiser desperdiçar os monstros, ruído barulhento ou maior nas Salas 5, 6 e 9 atrai 1d4 bulettes, que não rolam reação. Use @UUID[Macro.LhmOfm5eB1F2BfBJ]{Labirinto · Exploração} › túneis.</p>\n\t\t\t\t<h3>Sala 6 · Túnel da Fonte</h3><p>Túnel natural muito usado pelos devotos, com um buraco para os túneis e um altar com uma fonte de água (aparentemente) límpida.</p><p><b>Armadilha: Fonte da Desidratação</b>. Beber até se saciar conta como um dia de rações (só direto da fonte). Mas na primeira vez a desidratação chega em 1d6 horas: só uma ração extra a anula (duas rações nesse dia). A cada gole a mais, falha automática contra fome e sede: fatigado, exausto, inconsciente; um gole a mais inconsciente mata. A água não pode ser purificada, e o efeito ruim vale guardada. Devotos de Azgher são imunes ao efeito ruim. Detectar: —.</p><p>Um círculo mágico no chão brilha com luz vermelha. Misticismo CD 25: passagem mágica; Religião CD 25: símbolos de Hyninn; Misticismo CD 35: não foi feito de propósito, formou-se pela influência dos deuses e do espaço de masmorra. Entrar no círculo leva à Sala 11 de Hyninn.</p><p>O túnel acaba numa porta de pedra (Defesa 8, RD 10, 100 PV, CD 25; estrondoso). <b>Criaturas:</b> @UUID[Actor.ZrWwnePA5EvEELcf]{Bulette} ×1d6–1.</p>\n\t\t\t\t<h3>Sala 7 · Cemitério de Heróis</h3><p>Vasos e urnas, uma porta de pedra ao norte e duas escadarias curtas para a Sala 8. Três sarcófagos sem tranca nem armadilha, com a inscrição <i>\"Aqui há tesouros que você talvez não queira possuir\"</i>. Dentro, os restos mumificados <b>dos próprios aventureiros</b>.</p><p><b>Armadilha: Cemitério de Heróis</b>. Três sarcófagos: \"Aqui há tesouros que você talvez não queira possuir\". Cada jogador rola 1d20; o mais baixo aparece mumificado na primeira tumba aberta, depois o segundo e o terceiro (só quem pode morrer naturalmente). Quem se vê assiste a seu pior destino: Vontade CD 25 ou perde 1d8 PM. As múmias respondem perguntas, sempre a verdade. Detectar: —.</p><p>Mostre o pior destino plausível de cada um, ligado ao passado, histórico ou objetivos pessoais (nunca aos vilões ou à trama principal): a paladina leal que morre lutando contra os amigos que traiu, o arcanista ambicioso esquecido numa aldeia. Os corpos respondem a qualquer pergunta, sempre a verdade e nada que um sucesso futuro desminta; tudo de pior é culpa deles. É um ponto de virada para as pendências pessoais.</p>\n\t\t\t\t<h3>Sala 8 · Salão Principal (metade norte)</h3><p>O centro da masmorra, quase todo tomado de escombros. A mesma imagem de Azgher no teto, com o olho que se acende. Role um encontro aqui: a presença de criaturas fazia parte da armadilha dupla (Insanidade e Morte), e os monstros errantes não a ativam.</p><p><b>Armadilha: Símbolo da Insanidade</b> (ND 6). Criaturas em alcance curto ficam confusas permanentemente; Vontade CD 30 evita. Invisíveis e Furtividade CD 30 não ativam. Role um encontro aqui: os monstros errantes não ativam a armadilha. Detectar: Investigação/Ladinagem CD 30.</p>\n\t\t\t\t<h3>Sala 9 · Túnel Nordeste</h3><p>Depósito das urnas dos mortos menos valorizados (criminosos e infiéis). Poças de água potável, sem efeito de regras. Um buraco para os túneis. Ao sul, uma porta secreta para a Sala 10 (Investigação CD 20 ou Percepção CD 25; pedra porosa: Defesa 8, RD 5, 20 PV, CD 20). <b>Criaturas:</b> @UUID[Actor.ZrWwnePA5EvEELcf]{Bulette} ×1d6–1.</p>\n\t\t\t\t<h3>Sala 10 · Cemitério de Reis</h3><p>O local de repouso dos reis do Deserto da Perdição: um grande sarcófago, outros sarcófagos, estátuas e um altar com muito ouro. O sarcófago se abre e @UUID[Actor.86H61XA5dSPAmX3n]{Rei Sar-Allan (Senhor das Múmias)} se ergue com @UUID[Actor.KbtMAtaUkCa07sUC]{Múmia Real Sar-Allan} ×6, reis e rainhas; atacam sem diálogo. O rei lamenta: <i>\"Quem sou eu? De onde venho? A quem pertenço?\"</i></p><p>Não perseguem quem sai sem atacá-las, mas os gemidos são um ruído estrondoso que atrai monstros para a Sala 8. Os heróis não têm chance neste nível: a saída é recitar a linhagem dos reis sar-allan (o livro de Tanna-Toh). Com a resposta, voltam ao repouso e o rei fecha o sarcófago por dentro.</p><p><b>Tesouro:</b> ND 12 ×2 (uma rolagem em dinheiro e uma em itens) e a @UUID[Item.eco7KFy6d5TpjGbh]{Chave Tríplice 3}. @UUID[Macro.ctSxAqBRqxKvP9aM]{Labirinto · Progresso e Chaves} › genealogia.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "7PeZOjoUGvK1eTAe",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.7PeZOjoUGvK1eTAe"
+    },
+    {
+      "name": "Covil do Dragão",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<p>A última masmorra: o covil de um dragão vermelho adulto, @UUID[Actor.7usOvS1RHYTV5ChC]{Chama Funesta}, tragado das Montanhas Sanguinárias. Uma caverna imensa de teto altíssimo, onde ele voa; ele repousa sobre o tesouro numa plataforma em meio a um rio de lava, diante de uma pequena rede de túneis. Restos de aventureiros antigos e um monumento tosco erguido por servos. As saídas largas para o céu desabaram; ele não cabe nos corredores e perdeu a forma bípede.</p>\n\t\t\t\t<p>Virou um monstro cuja única função é guardar a câmara. Não precisa comer (mas tem fome de aventureiros), continua inteligente e astuto, mas não aceita diálogo nem aliança e não pode ser enganado: os aventureiros estão ali para roubar o tesouro, e pela lógica da masmorra provavelmente estão mesmo. <b>A batalha é inevitável.</b> Habilidades na ficha e em @UUID[Macro.5S1fNE5WFyakRbwA]{Labirinto · Criaturas} (Sopro, Imposição Avassaladora).</p>\n\t\t\t\t<p>Vencido o dragão, as paredes desabam e abrem um túnel até a saída, no nível do chão, aos pés da estátua de Valkaria.</p>\n\t\t\t\t<p><b>Tesouro:</b> ND 12, quatro rolagens em dinheiro, duas em itens e <b>dois itens mágicos médios</b> (role como se tivesse saído \"item mágico\" na Tabela 8-1). Mais 4 peças de couro de dragão (CD 26 para extrair).</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "nEHnhd78qPxpWPBr",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.nEHnhd78qPxpWPBr"
+    },
+    {
+      "name": "Handouts · Cadernos da Prensa",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<p><i>Encadernem 10 cadernos para o livro História e Fatos sobre Arton.</i></p>\n\t\t\t\t<ol><li>A caravana dos exilados de Lamnor foi guiada por Roramar Pruss, que teve visões proféticas ainda na infância.</li><li>A Rainha-Imperatriz Shivara ficou anos desaparecida durante a Guerra Artoniana.</li><li>A palavra escrita foi uma dádiva de Tanna-Toh.</li><li>A Marcha de Arsenal foi detida quando aventureiros se infiltraram em seu Kishinauros ainda em movimento e surpreenderam o vilão.</li><li>O reino de Salistick foi amaldiçoado pelos deuses quando seu primeiro regente se recusou a construir um templo ao Panteão.</li><li>Os puristas se revelaram depois que Shivara foi raptada pelos finntroll.</li><li>O Rio dos Deuses recebe este nome porque representava a fronteira quando o continente foi dividido entre Khalmyr e Nimb, numa disputa ancestral.</li><li>A primeira civilização humana de Arton foi o Império Manzirr, mais tarde desfeito em vários reinos durante a Grande Batalha.</li><li>Thwor Khoshkothruk nasceu durante uma noite que durou um dia inteiro.</li><li>A rivalidade entre Vectorius e Talude começou quando Vectorius foi expulso da Academia Arcana.</li><li>Dahllan são capazes de se comunicar com animais.</li><li>O Rei-Imperador Thormy foi aventureiro em sua juventude.</li><li>O Dragão da Tormenta só foi derrotado pela união de arquimagos e do próprio Dragão-Rei Sckhar.</li><li>Quando um deus maior cai ou morre, o restante do Panteão se reúne para decidir quem ocupará o lugar vago, já que sempre deve haver vinte.</li><li>A cidade-fortaleza de Khalifor foi batizada em homenagem a Khalil, que comandou uma expedição ao norte.</li><li>O caçador de recompensas Crânio Negro roubou a espada Rhumnam dos anões de Doherimm.</li><li>Sir Orion Drake descobriu que apenas o poder da fé artoniana era capaz de derrotar a Tormenta.</li><li>Os elfos chegaram a Arton vindos do Reino de Glórienn.</li><li>A cidade fora da lei de Smokestone fica em algum lugar de Namalkah.</li><li>No início de tudo, havia o Nada e o Vazio.</li><li>O arquimago Reynard foi o primeiro a travar contato com os Lordes da Tormenta.</li><li>Kallyadranoch exige que seus devotos paguem tributo em ouro ou sacrifícios.</li><li>Os hynne foram criados quando Hyninn roubou um pedaço da essência dos humanos (por isso são tão pequenos).</li><li>Megalokk corrompeu as criações de Allihanna para dar origem aos primeiros monstros.</li><li>Quando a Tormenta recaiu sobre Arton pela primeira vez, a estátua de Valkaria chorou lágrimas de sangue.</li><li>A Caravana dos Exilados de Lamnor se perdeu durante anos após a traição do alto clérigo de Ghondriann.</li><li>Sszzaas tramou para assassinar Khalmyr através dos Rubis da Virtude.</li><li>Dragões nunca formaram sociedades ou civilizações.</li><li>As sereias são capazes de se comunicar com animais aquáticos.</li><li>As fadas foram criadas a partir de um sonho de Wynna, após ouvir os sussurros de Nimb.</li><li>Antes de ser Rainha-Imperatriz, Shivara foi monarca de Trebuck e Bielefeld.</li><li>Elfos e anões se enfrentaram na Guerra da Flecha e do Machado.</li><li>Os elfos foram criados por Glórienn como um aperfeiçoamento das fadas de Wynna.</li><li>A vida em Arton surgiu a partir de uma lágrima de Lena.</li><li>Os Rubis da Virtude foram criados como sugestão de Nimb, cada um contendo o poder de um dos deuses maiores do Panteão.</li></ol>\n\t\t\t\t<p class=\"secret\"><b>Verdadeiros:</b> 1, 2, 3, 11, 12, 13, 15, 18, 20, 22, 24, 28, 30, 34, 35. <b>Falsos:</b> 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 19, 21, 23, 25, 26, 27, 29, 31, 32, 33.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "hC5o6iqWxWqTeVSW",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.hC5o6iqWxWqTeVSW"
+    },
+    {
+      "name": "Handouts · Achados",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<h3>Pistas do Enxadrista</h3>\n\t\t\t\t<p><i>\"Sempre que tiver vantagem, você ganha uma das rimas. Podem parecer bobagem, mas são minhas obras-primas!\"</i></p>\n\t\t\t\t<ol><li>\"No centro deste labirinto, há uma escadaria. Se quisesse ficar dormindo, é para lá que eu iria!\"</li><li>\"Atrás de uma porta fechada há um buraco gritante. Se seguirem a trilha escavada, acharão tesouro abundante!\"</li><li>\"Não importa a lombada, nem toda história é lida. Às vezes, com uma dentada, dos livros viramos comida!\"</li><li>\"Invisíveis na masmorra andam caça e caçador. Não enfrente, apenas corra! Um é medo e outro é horror.\"</li><li>\"Amarelo leva ao sol e o roxo, à sabedoria. De um, precisam de um bicho e da outra, uma dinastia.\"</li><li>\"Três masmorras têm riquezas. Para alguns, já é o fim. Mas a última proeza é vencer o carmesim.\"</li><li>\"Na masmorra estão amigos, um falso e um de verdade. Esqueçam os seus umbigos e não façam caridade!\"</li><li>\"Não tenho mais a contar, isso é tudo que posso dizer! Se quiserem ainda jogar, será por puro prazer!\"</li><li>\"Admito, era cilada. Há mais uma dica da trilha. Para a masmorra letrada, levem uma armadilha.\"</li></ol>\n\t\t\t\t<p class=\"secret\">Sem ninguém para resgatar, troque a 7ª por \"Na masmorra, não há amigos, só tramoias e maldade. Esqueçam os seus umbigos e não façam caridade!\" Significados: <b>1.</b> A escadaria da Sala 15 de Hyninn leva ao subnível, o lugar mais seguro para descansar (e à porta do covil). <b>2.</b> A Sala 7 (passagem-truque): o túnel não tem armadilha e leva ao tesouro da Sala 16. <b>3.</b> O mímico da estante (Sala 3). <b>4.</b> O rarvnaak (caçador invisível) e o metaliano. <b>5.</b> Os círculos: amarelo leva a Azgher, roxo a Tanna-Toh. Azgher precisa de um bicho (o aurumvorax para o Tesouro Infinito); Tanna-Toh, de uma dinastia (o livro da genealogia para as múmias). <b>6.</b> As três masmorras guardam riquezas, mas o objetivo final é o dragão vermelho. <b>7.</b> O duplo (o amigo falso) e quem o grupo veio resgatar (o de verdade). <b>8.</b> Acabaram as pistas. <b>9.</b> Levar a armadilha da cabra-cega (Sala 14) para a Biblioteca Proibida.</p>\n\t\t\t\t<h3>Escritos do Metaliano (Sala 18 de Hyninn, com Compreensão)</h3>\n\t\t\t\t<blockquote><p><i>Sei que é meu dever estar aqui e cumpro esse dever com honra. Mas não sem sofrimento. Espero que meu sacrifício faça diferença.</i></p>\n\t\t\t\t<p><i>Nunca pensei que pudesse odiar um lugar tanto quanto odeio este labirinto!</i></p>\n\t\t\t\t<p><i>Às vezes parece estranho que exista um infinito lá fora. Um espaço que pode ser explorado sem limites. Parece bom demais. Um mundo sem paredes.</i></p>\n\t\t\t\t<p><i>Lembrar torna tudo pior. Não devo lembrar de minha vida anterior. Este é meu dever. Não importa que seja tortura. É o meu dever.</i></p>\n\t\t\t\t<p><i>Por que estou aqui? Quem me impôs esta tarefa?</i></p></blockquote>\n\t\t\t\t<h3>Garranchos da Sala 14 de Hyninn</h3>\n\t\t\t\t<blockquote><p><i>Não vá para a esquerda.</i> · <i>Não se aproxime.</i> · <i>Reto, esquerda, direita, escada.</i></p></blockquote>\n\t\t\t\t<h3>Metalianos</h3>\n\t\t\t\t<p>Criados por Marcelo Cassaro nos anos 1980 para aventuras de ficção científica (veja o romance <i>Espada da Galáxia</i>). Na mesa original, Arius fez contato amistoso com os dois e buscou a Espada da Galáxia: algumas das cenas mais inusitadas do Arco 2. Conduza a interação com a ânsia pela liberdade, a devoção à imperatriz e a paranoia racial deles; se não tiver material, peça ao jogador interessado que traga.</p>",
+        "format": 1,
+        "markdown": ""
+      },
+      "_id": "Hhx9yBgeez4iewsA",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {
+        "caption": ""
+      },
+      "video": {},
+      "src": null,
+      "category": null,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!journal.pages!22Op5exQi20Xri3p.Hhx9yBgeez4iewsA"
+    }
+  ],
+  "_key": "!journal!22Op5exQi20Xri3p"
+}

@@ -1,0 +1,143 @@
+{
+  "name": "Espada da Galáxia",
+  "type": "arma",
+  "img": "systems/tormenta20/icons/itens/equipamentos/espada-longa.webp",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "espada"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p>Metal superdenso desconhecido em Arton, de fio monofilamento: forjada em hidrogênio metálico, <b>ignora todo tipo de redução de dano</b>. Pesada demais para humanos comuns: só personagens com <b>Força 10 ou mais</b> podem usá-la. Virtualmente indestrutível; conta como artefato para efeitos que destroem ou alteram objetos.</p><p>O metaliano invoca a espada de qualquer lugar do mesmo Plano com uma ação de movimento, e quase sempre prefere destruí-la (Detonação Final) a deixá-la com inimigos. Obter uma de modo pacífico deve exigir muita interpretação, rolagens excelentes e ótimas ideias (Arius precisou de três resultados acima de 50).</p><p>Não é mágica, mas pode receber melhorias e encantos, só de um armeiro de patamar lendário, depois de meses ou anos de estudo. Nunca recebe materiais especiais nem melhorias que aumentem margem de ameaça ou multiplicador de crítico.</p><p><i>Mudanças galáticas:</i> a versão de Guerra Artoniana é mais fraca. Se preferir, use os números daqui nas mãos dos metalianos e a versão de Guerra Artoniana nas mãos de um jogador.</p>",
+      "unidentified": ""
+    },
+    "equipado": 1,
+    "qtd": 1,
+    "criticoM": 17,
+    "criticoX": 2,
+    "alcance": "",
+    "proficiencia": "marcial",
+    "proposito": "corpo-a-corpo",
+    "empunhadura": "uma",
+    "rolls": [
+      {
+        "name": "Ataque",
+        "key": "ataque0",
+        "type": "ataque",
+        "parts": [
+          [
+            "1d20",
+            "",
+            ""
+          ],
+          [
+            "luta",
+            "for",
+            ""
+          ],
+          [
+            "0",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      },
+      {
+        "name": "Dano",
+        "key": "dano1",
+        "type": "dano",
+        "parts": [
+          [
+            "4d12",
+            "corte",
+            ""
+          ],
+          [
+            "",
+            "",
+            ""
+          ]
+        ],
+        "versatil": "",
+        "adaptavel": ""
+      }
+    ],
+    "equipado2": {
+      "type": "hand",
+      "slot": 0
+    },
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "espacos": 0,
+    "peso": 0,
+    "preco": 0,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "consume": {
+      "amount": 0,
+      "mpMultiplier": false,
+      "target": "",
+      "type": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "ataques": 0,
+    "tipoUso": "sim",
+    "propriedades": {},
+    "size": "normal"
+  },
+  "folder": "qUAXig9rIqdl4g0D",
+  "_id": "Fxmw9plyZ87Qd5EQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!Fxmw9plyZ87Qd5EQ"
+}

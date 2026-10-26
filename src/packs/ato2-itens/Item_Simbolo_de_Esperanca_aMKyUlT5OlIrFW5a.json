@@ -1,0 +1,71 @@
+{
+  "name": "Símbolo de Esperança",
+  "type": "poder",
+  "img": "systems/tormenta20/icons/poderes/concedidos-trevas.webp",
+  "folder": "XNzLm250YRR0hBOW",
+  "flags": {
+    "world": {
+      "fdt": "a2apendices",
+      "fdtRole": "vigSimbolo"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><i>Vigilante Mascarado.</i> No início de uma cena, ou sempre que reduzir um inimigo a 0 PV com um ataque corpo a corpo, vestindo o traje das sombras, você pode gastar <b>3 PM</b> para inspirar os aliados em alcance curto: você e eles recebem <b>+2 na Defesa e em testes de resistência</b> até o fim da cena, e a próxima habilidade que cada aliado usar na cena custa <b>–1 PM</b>.</p><p><b>Pré-requisito:</b> Cavaleiro das Trevas.</p>",
+      "unidentified": ""
+    },
+    "tipo": "distincao",
+    "subtipo": "",
+    "ativacao": {
+      "execucao": "free",
+      "custo": 3,
+      "qtd": "",
+      "condicao": "",
+      "special": ""
+    },
+    "alcance": "short",
+    "area": "",
+    "duracao": {
+      "value": 0,
+      "units": "inst",
+      "special": ""
+    },
+    "resistencia": {
+      "pericia": "",
+      "atributo": "",
+      "bonus": 0,
+      "txt": ""
+    },
+    "rolls": [],
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "range": {
+      "units": "",
+      "value": 0
+    },
+    "efeito": ""
+  },
+  "_id": "aMKyUlT5OlIrFW5a",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [],
+  "_key": "!items!aMKyUlT5OlIrFW5a"
+}

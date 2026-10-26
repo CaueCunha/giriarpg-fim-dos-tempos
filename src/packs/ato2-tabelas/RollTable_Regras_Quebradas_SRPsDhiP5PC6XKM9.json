@@ -1,0 +1,303 @@
+{
+  "name": "Regras Quebradas",
+  "img": "systems/tormenta20/icons/itens/gerais/diario.webp",
+  "folder": "w8LnWOMM2AE550Qk",
+  "flags": {
+    "world": {
+      "fdt": "a2av6"
+    }
+  },
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Em princípio, cada resultado só acontece uma vez.",
+  "_id": "SRPsDhiP5PC6XKM9",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Usa drogas.",
+      "description": "Loranth está envolvido de alguma forma.",
+      "_id": "ris77UGtgpFvxPHF",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.ris77UGtgpFvxPHF"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Vai investigar um barulho estranho.",
+      "description": "",
+      "_id": "x1nyUNH6rrQ6DF1j",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.x1nyUNH6rrQ6DF1j"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Diz \"Já volto\".",
+      "description": "",
+      "_id": "3Pv1CfOrq2l31fle",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.3Pv1CfOrq2l31fle"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Faz sexo.",
+      "description": "Role outra vítima: os dois morrem (ou o \"parceiro\" é um replicoide). Com Archibald, é uma brincadeira cruel de outro nobre.",
+      "_id": "KeMAI2bWJrl3OZnU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.KeMAI2bWJrl3OZnU"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Intimida ou ameaça outro personagem.",
+      "description": "",
+      "_id": "uRUGaUcEazktFG1T",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.uRUGaUcEazktFG1T"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Registra tudo num diário, porque \"o resto do mundo precisa saber\".",
+      "description": "",
+      "_id": "dPAZspWlTlqPD0CX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.dPAZspWlTlqPD0CX"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Acusa outro personagem de ser o assassino.",
+      "description": "",
+      "_id": "MqC3hCutuSRGFmgv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.MqC3hCutuSRGFmgv"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Diz que o assassino não existe ou já está morto.",
+      "description": "\"Nenhum assassino poderia ter sobrevivido a isso!\"",
+      "_id": "g5AghP3OQ4MNAAfM",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.g5AghP3OQ4MNAAfM"
+    },
+    {
+      "type": "text",
+      "range": [
+        9,
+        9
+      ],
+      "weight": 1,
+      "name": "Diz que não tem medo do assassino.",
+      "description": "",
+      "_id": "jubPTwEfgXX5vvmU",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.jubPTwEfgXX5vvmU"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        10
+      ],
+      "weight": 1,
+      "name": "Conta ou lê uma história de terror.",
+      "description": "Aproveite para usar uma lenda urbana.",
+      "_id": "HcczMkDYeUL22fjc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!SRPsDhiP5PC6XKM9.HcczMkDYeUL22fjc"
+    }
+  ],
+  "_key": "!tables!SRPsDhiP5PC6XKM9"
+}

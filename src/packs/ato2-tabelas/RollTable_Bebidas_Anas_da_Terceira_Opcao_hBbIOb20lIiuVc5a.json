@@ -1,0 +1,249 @@
+{
+  "name": "Bebidas Anãs da Terceira Opção",
+  "img": "systems/tormenta20/icons/itens/gerais/caneca.webp",
+  "folder": "COHWWhbLHiOgL7SX",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Para quando alguém pede \"a da casa\" ou Click escolhe a rodada.",
+  "_id": "hBbIOb20lIiuVc5a",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Cerveja Barbas de Heredrimm",
+      "description": "CD 15, T$ 20. Forte, de espuma amarela e sabor adstringente. Fornece +1d6 em um teste à sua escolha até o fim do dia.",
+      "_id": "oRHPiHgU4MlObMnZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.oRHPiHgU4MlObMnZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Cerveja Beluhga",
+      "description": "CD 20, T$ 45. Opaca e esbranquiçada, espuma azul no caneco, leve sabor mentolado. Fornece redução de fogo 5.",
+      "_id": "gF0JFGlAhf4zvHpv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.gF0JFGlAhf4zvHpv"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Cerveja do Escavador",
+      "description": "CD 20, T$ 36. Prestigiosa em Doherimm, rara na superfície. Fornece +1 em Força, mas –3m de deslocamento.",
+      "_id": "XSBNX4ky86TZOWFD",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.XSBNX4ky86TZOWFD"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Cerveja Rangedente",
+      "description": "CD 20, T$ 60. Viscosa e gosmenta, prepara as tripas para sofrimentos maiores. Fornece +2 em Fortitude.",
+      "_id": "2yHpFqR1DkmVQsQX",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.2yHpFqR1DkmVQsQX"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Destilado Limpa-Ventas",
+      "description": "CD 15, T$ 20. Amarelo e opaco, com um inesperado sabor picante. Fornece redução de frio 5.",
+      "_id": "Pc8PxlEul2GBIka3",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.Pc8PxlEul2GBIka3"
+    },
+    {
+      "type": "text",
+      "range": [
+        6,
+        6
+      ],
+      "weight": 1,
+      "name": "Destilado Tuku'tu",
+      "description": "CD 20, T$ 36. Quente e amargo, inflama as veias e acelera o coração. Fornece +2 em Reflexos.",
+      "_id": "zLBB2TtTUSwFjJZp",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.zLBB2TtTUSwFjJZp"
+    },
+    {
+      "type": "text",
+      "range": [
+        7,
+        7
+      ],
+      "weight": 1,
+      "name": "Licor Bafo de Elfa",
+      "description": "CD 15, T$ 20. Leve, suave e adocicado; parece nem ter álcool, até algumas doses \"inofensivas\". Fornece +2 em Misticismo.",
+      "_id": "qTfluIvKmUnDDau4",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.qTfluIvKmUnDDau4"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        8
+      ],
+      "weight": 1,
+      "name": "Cerveja Água-de-Sangue",
+      "description": "CD 15, T$ 20. Amarga e avermelhada, aumenta a concentração e a determinação. Fornece +2 em Vontade.",
+      "_id": "ijgDs50jJJ5cqLFw",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!hBbIOb20lIiuVc5a.ijgDs50jJJ5cqLFw"
+    }
+  ],
+  "_key": "!tables!hBbIOb20lIiuVc5a"
+}

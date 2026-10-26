@@ -1,0 +1,31 @@
+{
+  "name": "Mini 1 · Cobrador em Combate",
+  "type": "script",
+  "img": "systems/tormenta20/icons/ameacas/golem-de-ferro.png",
+  "folder": "VoP5yNFLRc5qcoqs",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n(async function macroCobrador() {\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Cobrador em Combate\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"turno\">Início do turno: cura acelerada 5</option>\n\t\t\t\t\t<option value=\"direitos\">Ler Seus Direitos no alvo (3 PM, Fortitude CD 28)</option>\n\t\t\t\t\t<option value=\"negar\">Negar Recurso no alvo (3 PM, Vontade CD 28)</option>\n\t\t\t\t\t<option value=\"imobilizar\">Imobilizar o alvo (7 PM, Vontade CD 28)</option>\n\t\t\t\t\t<option value=\"silencio\">Silêncio nos alvos (3 PM)</option>\n\t\t\t\t\t<option value=\"analisar\">Analisar Suspeito (+2 contra o alvo até o fim do dia)</option>\n\t\t\t\t\t<option value=\"falar\">O Cobrador fala</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>O alvo é a criatura que ele deve caçar (atordoado em vez de pasmo)</label><input type=\"checkbox\" name=\"devedor\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Habilidade negada</label><input type=\"text\" name=\"habilidade\" placeholder=\"ex.: Ataque Furtivo, Bola de Fogo\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cob = game.actors.find((a) => a.getFlag(\"world\", \"fdt\") === \"a2mini1\" && a.getFlag(\"world\", \"fdtRole\") === \"cobrador\");\n\t\tif (!cob) return ui.notifications.warn(\"O Cobrador não foi encontrado (rode o gerador da Mini-Aventura 1).\");\n\t\tconst alvos = [...game.user.targets].filter((t) => t.actor);\n\t\tconst rolls = [];\n\t\tconst cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };\n\t\tconst salvar = async (a, k) => { const r = await new Roll(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0}`).evaluate(); rolls.push(r); return r.total; };\n\t\tconst gastar = async (n) => {\n\t\t\tconst pm = Number(cob.system.attributes.pm.value) || 0;\n\t\t\tif (pm < n) return false;\n\t\t\tawait cob.update({ \"system.attributes.pm.value\": pm - n });\n\t\t\treturn true;\n\t\t};\n\t\tlet html = \"<h3>Cobrador da Ploigoníada</h3>\";\n\t\tif (res.acao === \"turno\") {\n\t\t\tconst pv = cob.system.attributes.pv;\n\t\t\tconst novo = Math.min(Number(pv.max) || 400, (Number(pv.value) || 0) + 5);\n\t\t\tawait cob.update({ \"system.attributes.pv.value\": novo });\n\t\t\thtml += `<p>Cura acelerada: <b>${novo} PV</b>.</p>`;\n\t\t} else if (res.acao === \"falar\") {\n\t\t\tconst FALAS = [\"\\\"Vocês estão em dívida com a Ploigoníada. Para pagá-la, apresentem o valor previamente combinado. Para morrer, por favor continuem lutando.\\\"\",\n\t\t\t\t\"\\\"A resistência ao pagamento foi registrada e será acrescida ao montante devido.\\\"\",\n\t\t\t\t\"\\\"Este procedimento segue a cláusula 7, parágrafo único, do contrato de trabalho da Roca.\\\"\",\n\t\t\t\t\"\\\"Sua reclamação será encaminhada ao setor responsável. O prazo de resposta é de 90 anos.\\\"\"];\n\t\t\tconst r = await new Roll(`1d${FALAS.length}`).evaluate();\n\t\t\thtml += `<p><i>${FALAS[r.total - 1]}</i></p>`;\n\t\t\treturn ChatMessage.create({ content: html, speaker: ChatMessage.getSpeaker({ actor: cob }) });\n\t\t} else {\n\t\t\tif (!alvos.length) return ui.notifications.warn(\"Mire os alvos.\");\n\t\t\tconst CUSTO = { direitos: 3, negar: 3, imobilizar: 7, silencio: 3, analisar: 0 };\n\t\t\tif (!(await gastar(CUSTO[res.acao]))) return ui.notifications.warn(`O Cobrador não tem ${CUSTO[res.acao]} PM.`);\n\t\t\tconst lista = [];\n\t\t\tfor (const t of res.acao === \"silencio\" ? alvos : alvos.slice(0, 1)) {\n\t\t\t\tconst a = t.actor;\n\t\t\t\tif (res.acao === \"direitos\") {\n\t\t\t\t\tconst r = await salvar(a, \"fort\");\n\t\t\t\t\tconst c = res.devedor ? \"atordoado\" : \"pasmo\";\n\t\t\t\t\tif (r < 28) await cond(a, c);\n\t\t\t\t\tlista.push(`<li>${t.name}: Fortitude ${r}, ${r >= 28 ? \"resiste\" : `<b>${c} por 1 rodada</b>`}.</li>`);\n\t\t\t\t} else if (res.acao === \"negar\") {\n\t\t\t\t\tconst r = await salvar(a, \"vont\");\n\t\t\t\t\tlista.push(`<li>${t.name}: Vontade ${r}, ${r >= 28 ? \"resiste\" : `não pode usar <b>${res.habilidade || \"a habilidade escolhida\"}</b> até o fim da cena`}.</li>`);\n\t\t\t\t} else if (res.acao === \"imobilizar\") {\n\t\t\t\t\tconst r = await salvar(a, \"vont\");\n\t\t\t\t\tawait cond(a, r >= 28 ? \"lento\" : \"paralisado\");\n\t\t\t\t\tlista.push(`<li>${t.name}: Vontade ${r}, <b>${r >= 28 ? \"lento\" : \"paralisado\"}</b>. Ação completa por rodada para um novo teste de Vontade CD 28; passando, liberta-se.</li>`);\n\t\t\t\t} else if (res.acao === \"silencio\") {\n\t\t\t\t\tawait cond(a, \"surdo\");\n\t\t\t\t\tlista.push(`<li>${t.name}: <b>surdo</b> e sem lançar magias enquanto estiver na esfera.</li>`);\n\t\t\t\t} else {\n\t\t\t\t\tlista.push(`<li>${t.name}: analisado. O Cobrador recebe +2 em testes de perícia contra ele até o fim do dia (marque na janela de rolagem).</li>`);\n\t\t\t\t}\n\t\t\t}\n\t\t\thtml += `<p>${{ direitos: \"<b>Ler Seus Direitos</b> (movimento).\", negar: \"<b>Negar Recurso</b> (movimento).\", imobilizar: \"<b>Imobilizar</b> (padrão).\", silencio: \"<b>Silêncio</b> (padrão, sustentada): esfera de 6m em alcance médio.\", analisar: \"<b>Analisar Suspeito</b> (completa).\" }[res.acao]} PM: ${cob.system.attributes.pm.value}.</p><ul>${lista.join(\"\")}</ul>`;\n\t\t}\n\t\tChatMessage.create({ content: html, rolls });\n\t})();",
+  "_id": "DFuaTGhepCj5VSRE",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!DFuaTGhepCj5VSRE"
+}

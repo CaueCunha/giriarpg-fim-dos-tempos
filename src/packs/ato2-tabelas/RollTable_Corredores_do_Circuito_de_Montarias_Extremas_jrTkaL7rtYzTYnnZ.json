@@ -1,0 +1,169 @@
+{
+  "name": "Corredores do Circuito de Montarias Extremas",
+  "img": "systems/tormenta20/icons/ameacas/aranha-gigante.png",
+  "folder": "b3vxiEIhZtMUiT3A",
+  "flags": {
+    "world": {
+      "fdt": "a2encontros",
+      "fdtRole": "corredores"
+    }
+  },
+  "formula": "1d5",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Cada ginete tem Cavalgar 1d20+10 (role o valor uma vez por corrida). Cinco testes de Cavalgar; vence o maior total.",
+  "_id": "jrTkaL7rtYzTYnnZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Bebê Corisco",
+      "description": "o lefou com seu zangão do pesadelo",
+      "_id": "XCKDrtRU297H8uIW",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jrTkaL7rtYzTYnnZ.XCKDrtRU297H8uIW"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Jallillah",
+      "description": "a dahllan com seu galhada macho",
+      "_id": "uzShTnMLPzoRL4NN",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jrTkaL7rtYzTYnnZ.uzShTnMLPzoRL4NN"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Cherb",
+      "description": "o hynne com seu tausideros",
+      "_id": "CiyIZxTYRYqKefZO",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jrTkaL7rtYzTYnnZ.CiyIZxTYRYqKefZO"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Hollan",
+      "description": "o anão com sua aranha gigante",
+      "_id": "scwNdcv5TrQEFCVp",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jrTkaL7rtYzTYnnZ.scwNdcv5TrQEFCVp"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        5
+      ],
+      "weight": 1,
+      "name": "Veliette",
+      "description": "a humana com sua abelha-grifo",
+      "_id": "x3nC9UDGfVBlKk6h",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!jrTkaL7rtYzTYnnZ.x3nC9UDGfVBlKk6h"
+    }
+  ],
+  "_key": "!tables!jrTkaL7rtYzTYnnZ"
+}

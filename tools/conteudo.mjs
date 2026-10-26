@@ -12,7 +12,7 @@ export const ATOS = [
 		rotulo: "Ato 1 · Colinas Centrais",
 		cor: "#7a5a2a",
 		geradores: [
-			// Av1 (Tragam-me a Cabeça de Bartram Zonnar) ainda não tem gerador.
+			"av1-cabeca-de-bartram",
 			"av2-lefou-adolescente",
 			"a1-guloseimas-gronko",
 			"av3-cultistas-puristas",
@@ -31,8 +31,19 @@ export const ATOS = [
 		geradores: [
 			"a2-av0-valkaria",
 			"a2-av1-stremtol",
-			"a2-av2-vectora"
-			// Av3 a Av7 ainda não têm gerador.
+			"a2-av2-vectora",
+			"a2-av3-rocha-cinzenta",
+			"a2-av4-taverna-maniacos",
+			"a2-av5-tuneis-famintos",
+			"a2-av6-baile-debutantes",
+			"a2-av7-mecano-lagarto-terror",
+			"a2-mini1-ruas-de-cobica",
+			"a2-mini2-irmandade-maxima",
+			"a2-labirinto-liberto",
+			"a2-encontros-valkaria",
+			"a2-ruas-valkaria",
+			"a2-lendas-linhas",
+			"a2-apendices"
 		]
 	},
 	{

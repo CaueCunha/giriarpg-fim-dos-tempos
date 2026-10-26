@@ -1,0 +1,31 @@
+{
+  "name": "Mini 1 · Andar e Bater",
+  "type": "script",
+  "img": "systems/tormenta20/icons/itens/equipamentos/marreta.webp",
+  "folder": "VoP5yNFLRc5qcoqs",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1"
+    }
+  },
+  "command": "// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n(async function macroRua() {\n\t\tconst NOMES = { guerreiro: \"Guerreiro\", clerigo: \"Clérigo\", cacador: \"Caçador\", ladino: \"Ladino\", mago: \"Mago\", cavaleiro: \"Cavaleiro\" };\n\t\tconst TIPOS = Object.keys(NOMES);\n\t\tconst pjs = game.actors.filter((a) => a.type === \"character\" && a.hasPlayerOwner);\n\t\tconst nivelMedio = pjs.length ? Math.round(pjs.reduce((s, a) => s + (Number(a.system.attributes?.nivel?.value) || 9), 0) / pjs.length) : 9;\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Andar e Bater\" },\n\t\t\tcontent: `<div class=\"form-group\"><label>O que fazer</label><select name=\"acao\">\n\t\t\t\t\t<option value=\"montar\">Montar os grupos de aventureiros-capangas</option>\n\t\t\t\t\t<option value=\"derrotado\">Um capanga foi derrotado (20% de comida)</option>\n\t\t\t\t\t<option value=\"item\">O selecionado apanha um item especial (1d12)</option>\n\t\t\t\t\t<option value=\"dinheiro\">Os heróis mostram o \"dinheiro\" do resgate</option></select></div>\n\t\t\t\t<div class=\"form-group\"><label>Personagens</label><input type=\"number\" name=\"pjs\" value=\"${pjs.length || 4}\" min=\"1\"></div>\n\t\t\t\t<div class=\"form-group\"><label>Nível médio</label><input type=\"number\" name=\"nivel\" value=\"${Math.max(1, nivelMedio)}\" min=\"1\"></div>`,\n\t\t\tok: { label: \"OK\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst rolls = [];\n\t\tconst rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };\n\t\tconst meus = (role) => game.items.find((i) => i.getFlag(\"world\", \"fdt\") === \"a2mini1\" && i.getFlag(\"world\", \"fdtRole\") === role);\n\t\tconst ator = (role) => game.actors.find((a) => a.getFlag(\"world\", \"fdt\") === \"a2mini1\" && a.getFlag(\"world\", \"fdtRole\") === role);\n\t\tconst link = (d, nome) => (d ? `@UUID[${d.uuid}]{${d.name}}` : nome);\n\t\tif (res.acao === \"montar\") {\n\t\t\tconst n = Math.max(1, Number(res.pjs) || 4);\n\t\t\tconst nivel = Math.max(1, Number(res.nivel) || 9);\n\t\t\tconst grupos = 4 + Math.max(0, nivel - 9);\n\t\t\tlet html = `<h3>Andar e Bater</h3><p>${grupos} grupos de ${n + 2} aventureiros-capangas ao longo da rua coberta. Uma vez dentro, só dá para ir em frente. Um capanga ataca quem chegar a 5 quadrados. A função deles é atrasar e gastar recursos.</p><ol>`;\n\t\t\tlet total = 0;\n\t\t\tlet comItem = 0;\n\t\t\tfor (let g = 0; g < grupos; g++) {\n\t\t\t\tconst membros = [];\n\t\t\t\tfor (let i = 0; i < n + 2; i++) {\n\t\t\t\t\tconst tipo = TIPOS[(await rolar(\"1d6\")) - 1];\n\t\t\t\t\ttotal += 1;\n\t\t\t\t\tlet extra = \"\";\n\t\t\t\t\tif ((await rolar(\"1d5\")) === 1) {\n\t\t\t\t\t\tconst it = meus(`especial-${await rolar(\"1d12\")}`);\n\t\t\t\t\t\textra = ` com ${link(it, \"item especial\")}`;\n\t\t\t\t\t\tcomItem += 1;\n\t\t\t\t\t}\n\t\t\t\t\tmembros.push(`${link(ator(tipo), NOMES[tipo])}${extra}`);\n\t\t\t\t}\n\t\t\t\thtml += `<li>${membros.join(\", \")}</li>`;\n\t\t\t}\n\t\t\thtml += `</ol><p>${total} capangas, ${comItem} com itens especiais. Ajuste se o item não fizer sentido para a classe. Depois, a porta do galpão abre sem teste: o Cobrador espera lá dentro.</p>`;\n\t\t\treturn ChatMessage.create({ whisper: ChatMessage.getWhisperRecipients(\"GM\"), content: html, rolls });\n\t\t}\n\t\tif (res.acao === \"derrotado\") {\n\t\t\tconst d = await rolar(\"1d10\");\n\t\t\tlet html = `<h3>Capanga derrotado</h3><p>1d10 = ${d}: `;\n\t\t\tif (d <= 2) {\n\t\t\t\tconst c = meus(`comida-${await rolar(\"1d8\")}`);\n\t\t\t\thtml += `cai ao lado dele: <b>${link(c, \"uma comida especial\")}</b>. Comer é uma ação completa; desfaz-se em 3 rodadas. (As regras de contratação terceirizada da Ploigoníada devem obrigar os lanches.)</p>`;\n\t\t\t\tconst tk = canvas.tokens.controlled.find((t) => t.actor?.type === \"character\");\n\t\t\t\tif (c && tk) {\n\t\t\t\t\tawait tk.actor.createEmbeddedDocuments(\"Item\", [c.toObject()]);\n\t\t\t\t\thtml += `<p>${tk.name} apanha a comida.</p>`;\n\t\t\t\t}\n\t\t\t} else html += \"nenhuma comida.</p>\";\n\t\t\treturn ChatMessage.create({ content: html, rolls });\n\t\t}\n\t\tif (res.acao === \"item\") {\n\t\t\tconst tk = canvas.tokens.controlled.find((t) => t.actor);\n\t\t\tif (!tk) return ui.notifications.warn(\"Selecione quem apanha o item.\");\n\t\t\tconst ja = tk.actor.items.find((i) => String(i.getFlag(\"world\", \"fdtRole\") ?? \"\").startsWith(\"especial-\"));\n\t\t\tif (ja) return ui.notifications.warn(`${tk.name} já empunha ${ja.name}: um item por vez (medida de segurança da Ploigoníada).`);\n\t\t\tconst it = meus(`especial-${await rolar(\"1d12\")}`);\n\t\t\tif (it) await tk.actor.createEmbeddedDocuments(\"Item\", [it.toObject()]);\n\t\t\treturn ChatMessage.create({ rolls, content: `<h3>Item especial</h3><p>${tk.name} apanha ${link(it, \"um item especial\")}. Cinco usos; desfaz-se se não for empunhado por 3 rodadas.</p>` });\n\t\t}\n\t\tChatMessage.create({ content: \"<h3>O dinheiro do resgate</h3><p>Se os heróis mostrarem o dinheiro (ou algo que passe por ele), os aventureiros-capangas deixam o grupo passar. Ilusões e falsificações podem funcionar com eles; com o Cobrador, que tem Visão da Justiça, não.</p>\" });\n\t})();",
+  "_id": "EiTl4mGiTzFjajqK",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "author": null,
+  "scope": "global",
+  "_key": "!macros!EiTl4mGiTzFjajqK"
+}

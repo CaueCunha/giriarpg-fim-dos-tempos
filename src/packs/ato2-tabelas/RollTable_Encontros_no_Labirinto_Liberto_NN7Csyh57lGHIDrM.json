@@ -1,0 +1,385 @@
+{
+  "name": "Encontros no Labirinto Liberto",
+  "img": "icons/svg/eye.svg",
+  "folder": "PbGWXyMgNaRbkTIB",
+  "flags": {
+    "world": {
+      "fdt": "a2labirinto",
+      "fdtRole": "encontros"
+    }
+  },
+  "formula": "1d20",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Em toda sala sem criaturas definidas, role 1d20 + ruído (silencioso –1, padrão +0, barulhento +2, estrondoso +5). Resultados acima de 20 só saem pelo ruído: use a macro Exploração. Só existem dois metalianos; se os dois já apareceram, ignore novas aparições.",
+  "_id": "NN7Csyh57lGHIDrM",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        4
+      ],
+      "weight": 4,
+      "name": "Nada.",
+      "description": "",
+      "_id": "IHa87HhFRVcB2wKS",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.IHa87HhFRVcB2wKS"
+    },
+    {
+      "type": "text",
+      "range": [
+        5,
+        7
+      ],
+      "weight": 3,
+      "name": "1d6 mirminoides soldados.",
+      "description": "",
+      "_id": "aB92GkUP0HurWZk0",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.aB92GkUP0HurWZk0"
+    },
+    {
+      "type": "text",
+      "range": [
+        8,
+        9
+      ],
+      "weight": 2,
+      "name": "Mantor.",
+      "description": "",
+      "_id": "VO2ypkbwcA7y8EUD",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.VO2ypkbwcA7y8EUD"
+    },
+    {
+      "type": "text",
+      "range": [
+        10,
+        11
+      ],
+      "weight": 2,
+      "name": "1d3 aurumvorax.",
+      "description": "",
+      "_id": "Be3GDp9R3WtMhbZc",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.Be3GDp9R3WtMhbZc"
+    },
+    {
+      "type": "text",
+      "range": [
+        12,
+        14
+      ],
+      "weight": 3,
+      "name": "1d6 mirminoides soldados e uma trilha mirminoide.",
+      "description": "",
+      "_id": "xL9H9IZClvQS8qB2",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.xL9H9IZClvQS8qB2"
+    },
+    {
+      "type": "text",
+      "range": [
+        15,
+        16
+      ],
+      "weight": 2,
+      "name": "Metaliano.",
+      "description": "",
+      "_id": "M702pB03sl0LmfwE",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.M702pB03sl0LmfwE"
+    },
+    {
+      "type": "text",
+      "range": [
+        17,
+        18
+      ],
+      "weight": 2,
+      "name": "1d4 tigres-de-Hyninn.",
+      "description": "",
+      "_id": "FhJIMOtVlnHHDpHu",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.FhJIMOtVlnHHDpHu"
+    },
+    {
+      "type": "text",
+      "range": [
+        19,
+        19
+      ],
+      "weight": 1,
+      "name": "1d4 aurumvorax e 1d6 mirminoides.",
+      "description": "",
+      "_id": "E4c1kgcAS17QUlGa",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.E4c1kgcAS17QUlGa"
+    },
+    {
+      "type": "text",
+      "range": [
+        20,
+        20
+      ],
+      "weight": 1,
+      "name": "2 tigres-de-Hyninn e um tigre-de-Hyninn primordial.",
+      "description": "",
+      "_id": "qKFj6N6YEaqTslNJ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.qKFj6N6YEaqTslNJ"
+    },
+    {
+      "type": "text",
+      "range": [
+        21,
+        21
+      ],
+      "weight": 1,
+      "name": "1d6 mirminoides soldados, mantor e tigre-de-Hyninn primordial.",
+      "description": "",
+      "_id": "r8GoQKvDKlZ2JVja",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.r8GoQKvDKlZ2JVja"
+    },
+    {
+      "type": "text",
+      "range": [
+        22,
+        22
+      ],
+      "weight": 1,
+      "name": "Metaliano.",
+      "description": "",
+      "_id": "2gSSPUP2aBEJknTZ",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.2gSSPUP2aBEJknTZ"
+    },
+    {
+      "type": "text",
+      "range": [
+        23,
+        23
+      ],
+      "weight": 1,
+      "name": "1d6 mirminoides soldados, 2 trilhas mirminoides e 1d3 aurumvorax.",
+      "description": "",
+      "_id": "o8CNWtl7Yq827NQv",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.o8CNWtl7Yq827NQv"
+    },
+    {
+      "type": "text",
+      "range": [
+        24,
+        25
+      ],
+      "weight": 2,
+      "name": "Metaliano e 2 tigres-de-Hyninn primordiais.",
+      "description": "",
+      "_id": "HkalZdOMEjTIwmvr",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!NN7Csyh57lGHIDrM.HkalZdOMEjTIwmvr"
+    }
+  ],
+  "_key": "!tables!NN7Csyh57lGHIDrM"
+}

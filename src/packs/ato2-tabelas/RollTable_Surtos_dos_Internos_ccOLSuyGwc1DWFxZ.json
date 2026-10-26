@@ -1,0 +1,141 @@
+{
+  "name": "Surtos dos Internos",
+  "img": "systems/tormenta20/icons/poderes/ameacas/insanidade-tormenta.webp",
+  "folder": "COHWWhbLHiOgL7SX",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    }
+  },
+  "formula": "1d4",
+  "replacement": true,
+  "displayRoll": true,
+  "description": "Quando alguém falha por 5 ou mais no teste de apaziguar um interno, a manifestação se fortalece.",
+  "_id": "ccOLSuyGwc1DWFxZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "results": [
+    {
+      "type": "text",
+      "range": [
+        1,
+        1
+      ],
+      "weight": 1,
+      "name": "Surto de Fúria",
+      "description": "O monstro recebe +5 em testes de ataque e rolagens de dano por 1 rodada.",
+      "_id": "K00svG1nZI2YqPM8",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!ccOLSuyGwc1DWFxZ.K00svG1nZI2YqPM8"
+    },
+    {
+      "type": "text",
+      "range": [
+        2,
+        2
+      ],
+      "weight": 1,
+      "name": "Surto de Euforia",
+      "description": "No próximo turno, o monstro recebe uma ação padrão adicional.",
+      "_id": "HREjImbHHmpEDq84",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!ccOLSuyGwc1DWFxZ.HREjImbHHmpEDq84"
+    },
+    {
+      "type": "text",
+      "range": [
+        3,
+        3
+      ],
+      "weight": 1,
+      "name": "Surto Psíquico",
+      "description": "Cada personagem sofre 2d12 de dano psíquico (Vontade CD 25 reduz à metade).",
+      "_id": "KDDDdqheyqiycIXI",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!ccOLSuyGwc1DWFxZ.KDDDdqheyqiycIXI"
+    },
+    {
+      "type": "text",
+      "range": [
+        4,
+        4
+      ],
+      "weight": 1,
+      "name": "Surto de Adrenalina",
+      "description": "O monstro recupera 30 PV.",
+      "_id": "oegZJ5lWJKDArgvs",
+      "img": null,
+      "documentUuid": null,
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!tables.results!ccOLSuyGwc1DWFxZ.oegZJ5lWJKDArgvs"
+    }
+  ],
+  "_key": "!tables!ccOLSuyGwc1DWFxZ"
+}

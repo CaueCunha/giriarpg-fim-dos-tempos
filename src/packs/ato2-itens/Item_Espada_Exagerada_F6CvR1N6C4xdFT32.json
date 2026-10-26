@@ -1,0 +1,163 @@
+{
+  "name": "Espada Exagerada",
+  "type": "equipamento",
+  "img": "systems/tormenta20/icons/itens/equipamentos/montante.webp",
+  "system": {
+    "description": {
+      "value": "<p>Grande demais até para duas mãos, mas é uma arma comum e pode ser empunhada com uma só. <b>+1d10 no dano corpo a corpo.</b></p><p><b>Item efêmero da Ploigoníada.</b> Cinco usos (a quantidade conta os usos, inclusive os dos capangas). Largado e não apanhado por 3 rodadas, ou não empunhado ativamente por 3 rodadas, se desfaz. Não pode ser guardado. Um personagem só empunha um destes itens por vez. Quem empunha usa as próprias estatísticas de ataque, modificadas pelo item.</p>",
+      "unidentified": ""
+    },
+    "qtd": 5,
+    "preco": 0,
+    "peso": 0,
+    "espacos": 1,
+    "source": "",
+    "origin": "",
+    "tags": [],
+    "rolltags": [],
+    "automationtags": [],
+    "chatFlavor": "",
+    "chatGif": "",
+    "carregado": true,
+    "pv": {
+      "value": 0,
+      "max": 0
+    },
+    "rd": 0,
+    "ativacao": {
+      "custo": 0,
+      "condicao": "",
+      "execucao": "passive",
+      "qtd": "",
+      "special": ""
+    },
+    "upgrades": {
+      "itemType": [],
+      "improvement": [],
+      "material": [],
+      "enchantment": [],
+      "curse": [],
+      "innovation": [],
+      "melhoria1": "",
+      "melhoria2": "",
+      "melhoria3": "",
+      "melhoria4": "",
+      "materialEspecial1": "",
+      "encanto1": "",
+      "encanto2": "",
+      "encanto3": "",
+      "enableAutoUpgrades": true
+    },
+    "rolls": [],
+    "equipado": false,
+    "equipado2": {
+      "slot": 0,
+      "type": "body"
+    },
+    "armadura": {
+      "maxAtr": 0,
+      "penalidade": 0,
+      "value": 0
+    },
+    "tipo": "leve"
+  },
+  "folder": "iCDqx60IYdnmDhD0",
+  "flags": {
+    "world": {
+      "fdt": "a2mini1",
+      "fdtRole": "especial-1"
+    }
+  },
+  "_id": "F6CvR1N6C4xdFT32",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "effects": [
+    {
+      "name": "Espada exagerada (+1d10)",
+      "img": "systems/tormenta20/icons/itens/equipamentos/montante.webp",
+      "type": "base",
+      "transfer": true,
+      "disabled": true,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "statuses": [],
+      "flags": {
+        "world": {
+          "fdt": "a2mini1"
+        }
+      },
+      "system": {
+        "changes": [
+          {
+            "key": "dano",
+            "value": "1d10",
+            "type": "add",
+            "phase": "initial",
+            "priority": null
+          }
+        ],
+        "onuse": true,
+        "abilityUse": {
+          "types": [
+            "attack"
+          ],
+          "names": [],
+          "automatic": false,
+          "aumenta": false,
+          "custo": 0,
+          "description": ""
+        },
+        "identifier": "",
+        "targets": [],
+        "status": null,
+        "aura": {
+          "isAura": false,
+          "range": 0,
+          "behaviors": null
+        },
+        "upgrade": {
+          "type": null,
+          "itemType": []
+        }
+      },
+      "_id": "een9xXxsE8I5pGQE",
+      "origin": null,
+      "tint": "#ffffff",
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "sort": 0,
+      "_stats": {
+        "coreVersion": "14.366",
+        "systemId": "tormenta20",
+        "systemVersion": "1.6.4",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_key": "!items.effects!F6CvR1N6C4xdFT32.een9xXxsE8I5pGQE"
+    }
+  ],
+  "_key": "!items!F6CvR1N6C4xdFT32"
+}
