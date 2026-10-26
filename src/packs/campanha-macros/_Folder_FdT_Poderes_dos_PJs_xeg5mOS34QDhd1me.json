@@ -1,0 +1,27 @@
+{
+  "name": "FdT · Poderes dos PJs",
+  "type": "Macro",
+  "color": "#3f6b4a",
+  "flags": {
+    "world": {
+      "fdt": "fdtpoderes"
+    }
+  },
+  "_id": "xeg5mOS34QDhd1me",
+  "description": "",
+  "folder": null,
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!xeg5mOS34QDhd1me"
+}

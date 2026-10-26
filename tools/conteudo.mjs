@@ -50,7 +50,7 @@ export const ATOS = [
 		id: "campanha",
 		rotulo: "Campanha (o grupo e utilidades)",
 		cor: "#3f6b4a",
-		geradores: ["fdt-grupo"],
+		geradores: ["fdt-grupo", "fdt-poderes-pjs"],
 		/** Macros avulsas: o arquivo inteiro (ou o comando) vira o comando da macro. */
 		macros: [
 			{

@@ -376,14 +376,16 @@
 
 ## Campanha (o grupo e utilidades)
 
-- `campanha-itens`: 23 documento(s), 1 pasta(s)
-- `campanha-diarios`: 1 documento(s), 1 pasta(s)
-- `campanha-macros`: 7 documento(s), 1 pasta(s)
+- `campanha-itens`: 25 documento(s), 2 pasta(s)
+- `campanha-diarios`: 2 documento(s), 2 pasta(s)
+- `campanha-macros`: 11 documento(s), 2 pasta(s)
 
-### Ligações com o sistema (0)
+### Ligações com o sistema (2)
 
 | Dono | Item | Tipo | O que foi feito |
 |---|---|---|---|
+| (item) | Mordida | arma | ficha do livro + origem no sistema |
+| (item) | Cauda | arma | ficha do livro + origem no sistema |
 
 ### Avisos do Foundry simulado (0)
 
