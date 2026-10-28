@@ -50,7 +50,8 @@ test("versão do module.json acompanha o package.json e o link de download", () 
 	const pkg = JSON.parse(fs.readFileSync(path.join(RAIZ, "package.json"), "utf8"));
 	assert.equal(m.version, pkg.version);
 	assert.equal(m.id, MODULO);
-	assert.match(m.manifest, /\/releases\/latest\/download\/module\.json$/);
+	// o Foundry baixa sem login: manifesto e zip vêm do repo público de releases
+	assert.equal(m.manifest, "https://github.com/CaueCunha/giriarpg-fim-dos-tempos-releases/releases/latest/download/module.json");
 	assert.ok(m.download.endsWith(`/releases/download/v${m.version}/module.zip`), m.download);
 	const lang = JSON.parse(fs.readFileSync(path.join(RAIZ, "lang/pt-BR.json"), "utf8"));
 	const usadas = [...fs.readFileSync(path.join(RAIZ, "scripts/fdt.mjs"), "utf8").matchAll(/i18n\.(?:localize|format)\("([^"]+)"/g)].map((x) => x[1]);

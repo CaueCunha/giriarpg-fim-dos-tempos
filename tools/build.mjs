@@ -170,6 +170,8 @@ export function escreverManifesto(packsPorAto) {
 	const pkg = JSON.parse(fs.readFileSync(path.join(RAIZ, "package.json"), "utf8"));
 	const versao = pkg.version;
 	const repo = "https://github.com/CaueCunha/giriarpg-fim-dos-tempos";
+	// o repo do código é privado; manifesto e zip ficam no repo público só de releases
+	const releases = "https://github.com/CaueCunha/giriarpg-fim-dos-tempos-releases";
 	const manifesto = {
 		id: MODULO,
 		title: "Fim dos Tempos · Campanha (Tormenta20)",
@@ -184,10 +186,10 @@ export function escreverManifesto(packsPorAto) {
 		packs: [],
 		packFolders: [{ name: "Fim dos Tempos", sorting: "m", color: "#6b2f2f", packs: [], folders: [] }],
 		flags: { [MODULO]: { atos: {} } },
-		url: repo,
-		manifest: `${repo}/releases/latest/download/module.json`,
-		download: `${repo}/releases/download/v${versao}/module.zip`,
-		readme: `${repo}#readme`,
+		url: releases,
+		manifest: `${releases}/releases/latest/download/module.json`,
+		download: `${releases}/releases/download/v${versao}/module.zip`,
+		readme: `${releases}#readme`,
 		bugs: `${repo}/issues`
 	};
 	for (const ato of ATOS) {
