@@ -18,7 +18,7 @@ Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.
 2. Em **URL do Manifesto**, cole o link abaixo e clique em **Instalar**:
 
    ```
-   https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/latest/download/module.json
+   https://github.com/CaueCunha/giriarpg-fim-dos-tempos-releases/releases/latest/download/module.json
    ```
 
 3. Entre no mundo da campanha e ative o módulo em **Configurações do Jogo › Gerenciar Módulos**.
@@ -27,7 +27,7 @@ Quando sair uma versão nova, o botão **Atualizar** do Foundry baixa a nova ver
 
 ### Instalação manual
 
-Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-fim-dos-tempos/releases/latest). Descompacte-o em `Data/modules/giriarpg-fim-dos-tempos/`, de modo que o `module.json` fique direto nessa pasta, e reinicie o Foundry.
+Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-fim-dos-tempos-releases/releases/latest). Descompacte-o em `Data/modules/giriarpg-fim-dos-tempos/`, de modo que o `module.json` fique direto nessa pasta, e reinicie o Foundry.
 
 ## Usando na mesa
 
@@ -123,3 +123,5 @@ Todas as aventuras, mini-aventuras e masmorras dos dois atos já têm gerador, a
 ### Versões
 
 Para lançar uma versão, suba o `version` no `package.json`, rode `npm run build` (que atualiza o `module.json`) e faça merge na `main`. Aí o GitHub Actions compila os compêndios e publica a release `vX.Y.Z` com o `module.json` e o `module.zip`. O link do manifesto passa a apontar para ela.
+
+O repositório do código é privado, e o Foundry baixa o manifesto e o zip sem login. Por isso a release vai para o repositório público [`giriarpg-fim-dos-tempos-releases`](https://github.com/CaueCunha/giriarpg-fim-dos-tempos-releases), que só guarda as releases. O workflow usa o secret `RELEASES_TOKEN`, um token *fine-grained* com **Contents: Read and write** só nesse repositório. Uma cópia da release também fica no próprio repo, como histórico.

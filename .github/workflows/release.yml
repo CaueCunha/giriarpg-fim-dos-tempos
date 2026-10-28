@@ -25,7 +25,27 @@ jobs:
           mkdir -p dist
           zip -r dist/module.zip module.json scripts styles lang packs assets README.md
           cp module.json dist/module.json
-      - name: Publicar release
+      # O Foundry baixa manifesto e zip sem login, então eles vão para o repo
+      # público de releases (o mesmo do campo "download" do module.json).
+      - name: Publicar no repo público de releases
+        env:
+          GH_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Falta o secret RELEASES_TOKEN (token com Contents: write no repo de releases)."
+            exit 1
+          fi
+          VERSAO="v$(node -p "require('./module.json').version")"
+          DESTINO="$(node -p "new URL(require('./module.json').download).pathname.split('/').slice(1, 3).join('/')")"
+          MANIFESTO="$(node -p "require('./module.json').manifest")"
+          if gh release view "$VERSAO" -R "$DESTINO" >/dev/null 2>&1; then
+            gh release upload "$VERSAO" dist/module.json dist/module.zip --clobber -R "$DESTINO"
+          else
+            gh release create "$VERSAO" dist/module.json dist/module.zip -R "$DESTINO" --title "Fim dos Tempos $VERSAO" --notes "Instale pelo manifesto: $MANIFESTO"
+          fi
+      # Cópia no próprio repo, como histórico. Enquanto ele ainda for público,
+      # também é o que leva as instalações antigas para o manifesto novo.
+      - name: Publicar no próprio repo
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -33,5 +53,5 @@ jobs:
           if gh release view "$VERSAO" >/dev/null 2>&1; then
             gh release upload "$VERSAO" dist/module.json dist/module.zip --clobber
           else
-            gh release create "$VERSAO" dist/module.json dist/module.zip --title "Fim dos Tempos $VERSAO" --notes "Instale pelo manifesto: https://github.com/${{ github.repository }}/releases/latest/download/module.json"
+            gh release create "$VERSAO" dist/module.json dist/module.zip --title "Fim dos Tempos $VERSAO" --notes "Manifesto: $(node -p "require('./module.json').manifest")"
           fi
