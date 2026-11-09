@@ -187,7 +187,7 @@ export function montarPacks(porAto, historico = {}) {
 			const fontes = (doAto.Folder ?? []).filter((f) => f.type === p.documento);
 			for (const f of fontes) if (usadas.has(f._id)) for (let pai = fontes.find((x) => x._id === f.folder); pai; pai = fontes.find((x) => x._id === pai.folder)) usadas.add(pai._id);
 			for (const f of fontes.filter((x) => usadas.has(x._id))) {
-				pastas.push({ ...deepClone(f), _id: idPasta(f._id), folder: f.folder ? idPasta(f.folder) : raiz._id, flags: { ...deepClone(f.flags ?? {}), [MODULO]: { ato: ato.id } } });
+				pastas.push({ ...deepClone(f), color: ato.cor, _id: idPasta(f._id), folder: f.folder ? idPasta(f.folder) : raiz._id, flags: { ...deepClone(f.flags ?? {}), [MODULO]: { ato: ato.id } } });
 			}
 			for (const d of lista) {
 				const out = linksParaCompendio(deepClone(d), packDe);

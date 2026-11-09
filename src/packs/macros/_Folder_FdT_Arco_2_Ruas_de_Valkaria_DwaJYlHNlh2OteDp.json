@@ -1,7 +1,7 @@
 {
   "name": "FdT · Arco 2 · Ruas de Valkaria",
   "type": "Macro",
-  "color": "#7a5c3e",
+  "color": "#2f4a6b",
   "flags": {
     "world": {
       "fdt": "a2ruas"

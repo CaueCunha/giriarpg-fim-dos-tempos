@@ -1,7 +1,7 @@
 {
   "name": "FdT · Arco 1 · Guloseimas do Gronko",
   "type": "Item",
-  "color": "#8a4a6a",
+  "color": "#7a5a2a",
   "flags": {
     "world": {
       "fdt": "a1guloseimas"

@@ -1,7 +1,7 @@
 {
   "name": "FdT · Arco 2 · Av5 · Túneis Famintos",
   "type": "Actor",
-  "color": "#3d4a2e",
+  "color": "#2f4a6b",
   "flags": {
     "world": {
       "fdt": "a2av5"
