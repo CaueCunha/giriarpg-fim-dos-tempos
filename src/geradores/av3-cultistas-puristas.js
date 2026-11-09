@@ -666,7 +666,7 @@
 
 	async function macroRitual() {
 		const maquina = game.actors.find((a) => a.getFlag("world", "fdtRole") === "maquina");
-		if (!maquina) return ui.notifications.error("Ator da Máquina de Purificação não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!maquina) return ui.notifications.error("Ator da Máquina de Purificação não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const atual = maquina.system.resources.primary.value;
 		const FASES = [
 			"<b>Rodada 1.</b> Lorelei ergue os braços e entoa a oração: <i>\"Valkaria, remova a sujeira deste amaldiçoado! Um de seus filhos se oferece como ícone de sua perfeição! Que sua pele esconda a feiura, que seus ossos moldem a carne deformada, que sua mente elimine a depravação! Torne-o perfeito, minha mãe! Torne-o humano!\"</i>",

@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Poderes dos PJs",
+  "type": "JournalEntry",
+  "color": "#3f6b4a",
+  "flags": {
+    "world": {
+      "fdt": "fdtpoderes"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha"
+    }
+  },
+  "_id": "MLkuc12hORteZmBX",
+  "description": "",
+  "folder": "4GerYlsa0fUZgSJr",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!MLkuc12hORteZmBX"
+}

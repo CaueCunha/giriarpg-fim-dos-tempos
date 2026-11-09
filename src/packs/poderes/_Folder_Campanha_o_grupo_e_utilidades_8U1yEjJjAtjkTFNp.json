@@ -1,0 +1,27 @@
+{
+  "_id": "8U1yEjJjAtjkTFNp",
+  "name": "Campanha (o grupo e utilidades)",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 300000,
+  "color": "#3f6b4a",
+  "description": "",
+  "flags": {
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha"
+    }
+  },
+  "_key": "!folders!8U1yEjJjAtjkTFNp",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

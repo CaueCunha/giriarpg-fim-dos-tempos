@@ -1,201 +1,422 @@
 /**
  * Fim dos Tempos · módulo da campanha (Foundry v14 + Tormenta20 1.6.x)
  *
- * O conteúdo fica nos compêndios do módulo (Ato 1 · Colinas Centrais, Ato 2 · Valkaria e Campanha).
- * As macros da campanha procuram atores, tabelas, diários e outras macros no MUNDO pelas marcas
- * flags.world.fdt/fdtRole, então o conteúdo precisa ser importado para o mundo. Este script:
- *   - oferece a importação quando o mundo ainda não tem o conteúdo (ou quando há versão nova);
- *   - põe o botão "Fim dos Tempos" no topo da aba de Compêndios e um item em Configurações;
- *   - expõe game.modules.get("giriarpg-fim-dos-tempos").api.
+ * O conteúdo fica nos compêndios do módulo, um por tipo (Ameaças e NPCs, Poderes, Itens, Diários, Tabelas e
+ * Macros), com uma pasta por ato e as pastas das aventuras dentro. NADA vai para o mundo sozinho:
+ *   - o Mestre arrasta do compêndio o que quiser, ou usa "Puxar do compêndio" para trazer aventuras inteiras
+ *     (só cria o que falta, com os mesmos IDs, e nunca mexe no que já está no mundo);
+ *   - "Atualizar do compêndio" lista os documentos do mundo que vieram do módulo e mudaram numa versão nova.
+ *     Cada documento tem uma assinatura (scripts/assinatura.mjs) e o compêndio guarda as de todas as versões
+ *     publicadas. Documento do mundo igual a alguma delas pode ser atualizado (vem marcado); diferente de
+ *     todas foi editado à mão e fica como está.
  *
- * Importar de novo apaga e recria só o que tem as mesmas marcas, com os mesmos IDs (tokens já
- * colocados em cenas continuam ligados). O contador de Lei & Ordem e a ficha do grupo sobrevivem.
+ * As macros da campanha procuram atores, tabelas, diários e outras macros no MUNDO pelas marcas
+ * flags.world.fdt/fdtRole: puxe a aventura antes de usar as macros dela.
  */
-const MODULO = "giriarpg-fim-dos-tempos";
-const TIPOS = ["Actor", "Item", "JournalEntry", "RollTable", "Macro"];
+import { MODULO, PRESERVAR, assinatura } from "./assinatura.mjs";
 
-/** Valores que sobrevivem a uma reimportação. Mantenha igual a tools/conteudo.mjs. */
-export const PRESERVAR = [
-	{ documento: "Actor", role: "leiordem", caminhos: ["system.resources"] },
-	{ documento: "JournalEntry", role: "grupo", caminhos: ["flags.world.fdtGrupo"] }
-];
+export { PRESERVAR };
+
+const TIPOS = ["Actor", "Item", "JournalEntry", "RollTable", "Macro"];
+const CAMPOS_INDICE = [`flags.${MODULO}`, "flags.world.fdt", "flags.world.fdtRole", "folder"];
 
 const modulo = () => game.modules.get(MODULO);
 const colecao = (tipo) => game.collections?.get?.(tipo) ?? { Actor: game.actors, Item: game.items, JournalEntry: game.journal, RollTable: game.tables, Macro: game.macros, Folder: game.folders }[tipo];
 const classe = (tipo) => CONFIG[tipo]?.documentClass ?? globalThis[tipo];
 const marca = (d) => d?.flags?.world?.fdt ?? d?.getFlag?.("world", "fdt");
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const nomeTipo = (t, n = 2) => {
+	const k = `DOCUMENT.${t}${n > 1 ? "s" : ""}`;
+	const s = game.i18n?.localize?.(k);
+	return s && s !== k ? s : t;
+};
+const RE_COMP = new RegExp(`Compendium\\.${MODULO.replace(/-/g, "\\-")}\\.([A-Za-z0-9_-]+)\\.(Actor|Item|JournalEntry|RollTable|Macro)\\.([A-Za-z0-9]{16})`, "g");
 
-/** Atos descritos no module.json (flags do módulo). */
+/** Compêndios do módulo. */
+export const packs = () => game.packs.filter((p) => p.metadata?.packageName === MODULO);
+
+/** Atos descritos no module.json. */
 export function atos() {
-	const m = modulo();
-	const info = m?.flags?.[MODULO]?.atos ?? {};
-	return Object.entries(info).map(([id, a]) => ({ id, rotulo: a.rotulo, packs: (a.packs ?? []).map((p) => game.packs.get(`${MODULO}.${p}`)).filter(Boolean) }));
+	const info = modulo()?.flags?.[MODULO]?.atos ?? {};
+	return Object.entries(info).map(([id, a]) => ({ id, rotulo: a.rotulo }));
 }
 
-const importados = () => {
-	try {
-		return game.settings.get(MODULO, "importado") ?? {};
-	} catch {
-		return {};
-	}
-};
+/* ------------------------------------------------------------------------ */
+/* Catálogo: o que há nos compêndios e o que já está no mundo               */
+/* ------------------------------------------------------------------------ */
 
 /**
- * Importa os atos escolhidos para o mundo.
- * @param {string[]} ids              ids dos atos (ato1, ato2, campanha)
- * @param {object}   [o]
- * @param {"perguntar"|"substituir"|"faltando"} [o.modo]  o que fazer se o conteúdo já existe
- * @returns {Promise<{criados: number, apagados: number, mantidos: number}|null>}
+ * Entradas dos compêndios, com o ato e a aventura (nome da pasta) de cada uma.
+ * @returns {Promise<{pack, tipo: string, id: string, uuid: string, nome: string, marca: string, ato: string, aventura: string, assinatura: string, assinaturas: string[], antigo: string}[]>}
  */
-export async function importar(ids, { modo = "perguntar" } = {}) {
-	if (!game.user.isGM) {
-		ui.notifications.error("Só o Mestre pode importar o conteúdo do Fim dos Tempos.");
-		return null;
-	}
-	const escolhidos = atos().filter((a) => ids.includes(a.id));
-	if (!escolhidos.length) {
-		ui.notifications.warn("Nenhum ato escolhido para importar.");
-		return null;
-	}
-
-	// 1. Carrega os compêndios
-	const lotes = [];
-	for (const ato of escolhidos) {
-		for (const pack of ato.packs) {
-			const docs = await pack.getDocuments();
-			lotes.push({ ato, pack, tipo: pack.documentName, docs, pastas: [...pack.folders.values()] });
-		}
-	}
-	const marcas = new Set(lotes.flatMap((l) => [...l.docs, ...l.pastas].map(marca)).filter(Boolean));
-	const idsNovos = new Set(lotes.flatMap((l) => [...l.docs, ...l.pastas].map((d) => d.id)));
-
-	// 2. O que já existe no mundo (mesma marca ou mesmo id)
-	const nossos = (d) => marcas.has(marca(d)) || idsNovos.has(d.id);
-	const existentes = Object.fromEntries(TIPOS.map((t) => [t, colecao(t).filter(nossos)]));
-	const pastasExistentes = game.folders.filter(nossos);
-	const total = Object.values(existentes).reduce((n, l) => n + l.length, 0);
-
-	if (total && modo === "perguntar") {
-		const lista = TIPOS.filter((t) => existentes[t].length).map((t) => `<li>${existentes[t].length} ${game.i18n.localize(`DOCUMENT.${t}s`) === `DOCUMENT.${t}s` ? t : game.i18n.localize(`DOCUMENT.${t}s`)}</li>`).join("");
-		modo = await foundry.applications.api.DialogV2.wait({
-			window: { title: "Fim dos Tempos: conteúdo já importado" },
-			position: { width: 460 },
-			content: `<p>O mundo já tem <b>${total}</b> documentos destes atos:</p><ul>${lista}</ul>
-				<p><b>Substituir</b> apaga e recria tudo com a versão do módulo (edições feitas nesses documentos se perdem).
-				O contador de Lei &amp; Ordem e a ficha do grupo são mantidos, e tokens em cenas continuam ligados.</p>
-				<p><b>Só o que falta</b> não mexe no que já existe.</p>`,
-			buttons: [
-				{ action: "substituir", label: "Substituir", icon: "fa-solid fa-rotate", default: true },
-				{ action: "faltando", label: "Só o que falta", icon: "fa-solid fa-plus" },
-				{ action: "cancelar", label: "Cancelar", icon: "fa-solid fa-xmark" }
-			]
-		});
-		if (!modo || modo === "cancelar") return null;
-	}
-	if (modo === "perguntar") modo = "substituir";
-
-	// 3. Guarda o que sobrevive à reimportação
-	const guardado = [];
-	if (modo === "substituir") {
-		for (const p of PRESERVAR) {
-			const doc = existentes[p.documento]?.find((d) => d.getFlag("world", "fdtRole") === p.role);
-			if (!doc) continue;
-			const fonte = doc.toObject();
-			guardado.push({ ...p, valores: p.caminhos.map((c) => [c, foundry.utils.getProperty(fonte, c)]).filter(([, v]) => v !== undefined) });
-		}
-	}
-
-	// 4. Apaga (substituir) ou descobre o que pular (faltando)
-	let apagados = 0;
-	let mantidos = 0;
-	const pular = new Set();
-	if (modo === "substituir") {
-		for (const t of TIPOS) {
-			const lista = existentes[t].map((d) => d.id);
-			if (lista.length) await classe(t).deleteDocuments(lista);
-			apagados += lista.length;
-		}
-		const pastas = pastasExistentes.map((f) => f.id);
-		if (pastas.length) await classe("Folder").deleteDocuments(pastas);
-	} else {
-		for (const t of TIPOS) for (const d of existentes[t]) pular.add(d.id), pular.add(`${t}|${marca(d)}|${d.name}`);
-		for (const f of pastasExistentes) pular.add(f.id);
-		mantidos = total;
-	}
-
-	// 5. Pastas (pais antes dos filhos) e documentos, com os mesmos IDs do compêndio
-	const todasPastas = lotes.flatMap((l) => l.pastas).filter((f) => !pular.has(f.id) && !game.folders.get(f.id));
-	const profundidade = (f) => {
-		let n = 0;
-		let p = f.folder;
-		while (p && n < 10) {
-			n++;
-			p = p.folder;
-		}
-		return n;
-	};
-	todasPastas.sort((a, b) => profundidade(a) - profundidade(b));
-	if (todasPastas.length) await classe("Folder").createDocuments(todasPastas.map((f) => f.toObject()), { keepId: true });
-
-	let criados = 0;
-	for (const l of lotes) {
-		const dados = l.docs
-			.filter((d) => !pular.has(d.id) && !pular.has(`${l.tipo}|${marca(d)}|${d.name}`))
-			.map((d) => {
-				const o = d.toObject();
-				o._stats ??= {};
-				o._stats.compendiumSource ??= d.uuid;
-				return o;
+export async function catalogo() {
+	const out = [];
+	for (const pack of packs()) {
+		const indice = await pack.getIndex({ fields: CAMPOS_INDICE });
+		const pasta = (id) => pack.folders?.get?.(id);
+		for (const e of indice) {
+			const f = foundry.utils.getProperty(e, `flags.${MODULO}`) ?? {};
+			let p = pasta(e.folder);
+			// a aventura é a pasta logo abaixo da pasta do ato
+			while (p?.folder && (p.folder.folder ?? null)) p = p.folder;
+			const aventura = p && p.folder ? p.name : "";
+			out.push({
+				pack,
+				tipo: pack.documentName,
+				id: e._id,
+				uuid: e.uuid ?? `Compendium.${pack.collection}.${pack.documentName}.${e._id}`,
+				nome: e.name,
+				marca: foundry.utils.getProperty(e, "flags.world.fdt"),
+				role: foundry.utils.getProperty(e, "flags.world.fdtRole"),
+				ato: f.ato ?? "",
+				aventura,
+				assinatura: f.assinatura,
+				assinaturas: f.assinaturas ?? [],
+				antigo: f.antigo
 			});
-		if (!dados.length) continue;
-		const r = await classe(l.tipo).createDocuments(dados, { keepId: true });
-		criados += r.length;
+		}
 	}
-
-	// 6. Devolve os valores guardados
-	for (const g of guardado) {
-		const doc = colecao(g.documento).find((d) => marcas.has(marca(d)) && d.getFlag("world", "fdtRole") === g.role);
-		if (doc && g.valores.length) await doc.update(Object.fromEntries(g.valores));
-	}
-
-	const reg = importados();
-	for (const a of escolhidos) reg[a.id] = modulo()?.version ?? "?";
-	await game.settings.set(MODULO, "importado", reg);
-
-	const nomes = escolhidos.map((a) => a.rotulo).join(", ");
-	ui.notifications.info(`Fim dos Tempos: ${criados} documentos importados (${nomes}).${apagados ? ` ${apagados} substituídos.` : ""}${mantidos ? ` ${mantidos} já existiam e foram mantidos.` : ""}`);
-	Hooks.callAll(`${MODULO}.importado`, { atos: escolhidos.map((a) => a.id), criados, apagados, mantidos });
-	return { criados, apagados, mantidos };
+	return out;
 }
 
-/** Janela de escolha dos atos. */
-export async function abrirImportador() {
-	if (!game.user.isGM) return ui.notifications.warn("Só o Mestre pode importar o conteúdo do Fim dos Tempos.");
-	const lista = atos();
-	if (!lista.length) return ui.notifications.error("Fim dos Tempos: nenhum compêndio do módulo foi encontrado.");
-	const reg = importados();
-	const versao = modulo()?.version;
-	const linhas = lista
+/**
+ * Liga cada documento do mundo à entrada do compêndio de onde veio: pela origem gravada (`_stats.compendiumSource`,
+ * também dos compêndios antigos por ato), pelo mesmo ID (importação com IDs) ou pela marca + tipo + nome (mundos que
+ * rodaram os geradores antigos).
+ * @returns {Map<string, Document>} uuid do compêndio → documento do mundo
+ */
+export function noMundo(cat) {
+	const porId = new Map(cat.map((c) => [`${c.tipo}|${c.id}`, c]));
+	const porNome = new Map();
+	for (const c of cat) {
+		const k = `${c.tipo}|${c.marca}|${c.nome}`;
+		porNome.set(k, porNome.has(k) ? null : c);
+	}
+	const mapa = new Map();
+	for (const tipo of TIPOS) {
+		for (const d of colecao(tipo) ?? []) {
+			const fonte = d._stats?.compendiumSource ?? "";
+			const m = fonte.match(new RegExp(`^Compendium\\.${MODULO.replace(/-/g, "\\-")}\\.[^.]+\\.${tipo}\\.([A-Za-z0-9]{16})$`));
+			const c = (m && porId.get(`${tipo}|${m[1]}`)) || porId.get(`${tipo}|${d.id}`) || (marca(d) ? porNome.get(`${tipo}|${marca(d)}|${d.name}`) : null);
+			if (c && !mapa.has(c.uuid)) mapa.set(c.uuid, d);
+		}
+	}
+	return mapa;
+}
+
+/** Troca links para o compêndio do módulo pelo documento do mundo, quando ele existe (id do compêndio → id do mundo). */
+function linksParaMundo(dados, idsNoMundo) {
+	const trocar = (s) => s.replace(RE_COMP, (m, _pack, tipo, id) => (idsNoMundo.has(`${tipo}|${id}`) ? `${tipo}.${idsNoMundo.get(`${tipo}|${id}`)}` : m));
+	const visitar = (o, k) => {
+		if (typeof o === "string") return k === "compendiumSource" ? o : trocar(o);
+		if (Array.isArray(o)) return o.map((x) => visitar(x));
+		if (!o || typeof o !== "object") return o;
+		for (const [ck, v] of Object.entries(o)) o[ck] = visitar(v, ck);
+		return o;
+	};
+	return visitar(dados);
+}
+
+/** id do compêndio → id do mundo, para todos os documentos do módulo que estão no mundo. */
+const idsDoMundo = (cat, mapa) => new Map(cat.filter((c) => mapa.has(c.uuid)).map((c) => [`${c.tipo}|${c.id}`, mapa.get(c.uuid).id]));
+
+/* ------------------------------------------------------------------------ */
+/* Puxar do compêndio (só o que falta)                                       */
+/* ------------------------------------------------------------------------ */
+
+/** Pasta do mundo para uma pasta do compêndio: a mesma (pelo ID) se já existe; senão cria, com o pai antes. */
+async function pastaNoMundo(pastaComp) {
+	if (!pastaComp) return null;
+	const existente = game.folders.get(pastaComp.id);
+	if (existente) return existente.id;
+	const pai = pastaComp.folder ? await pastaNoMundo(pastaComp.folder) : null;
+	const dados = pastaComp.toObject();
+	dados.folder = pai;
+	const [nova] = await classe("Folder").createDocuments([dados], { keepId: true });
+	return nova?.id ?? null;
+}
+
+/**
+ * Traz para o mundo o que ainda não está nele. Nunca substitui nem apaga nada.
+ * @param {object} filtro
+ * @param {string[]} [filtro.atos]       atos inteiros (ato1, ato2, campanha)
+ * @param {string[]} [filtro.aventuras]  "ato|nome da pasta da aventura"
+ * @returns {Promise<{criados: number, existentes: number}|null>}
+ */
+export async function puxar({ atos: idsAtos = [], aventuras = [] } = {}) {
+	if (!game.user.isGM) {
+		ui.notifications.error("Só o Mestre pode puxar o conteúdo do Fim dos Tempos.");
+		return null;
+	}
+	const cat = await catalogo();
+	const escolhidos = cat.filter((c) => idsAtos.includes(c.ato) || aventuras.includes(`${c.ato}|${c.aventura}`));
+	if (!escolhidos.length) {
+		ui.notifications.warn("Nada escolhido para puxar.");
+		return null;
+	}
+	const mapa = noMundo(cat);
+	const faltam = escolhidos.filter((c) => !mapa.has(c.uuid));
+	const existentes = escolhidos.length - faltam.length;
+
+	// IDs: os do compêndio, se estiverem livres no mundo (os links e as macros contam com eles)
+	const ids = idsDoMundo(cat, mapa);
+	for (const c of faltam) if (!colecao(c.tipo).get(c.id)) ids.set(`${c.tipo}|${c.id}`, c.id);
+
+	let criados = 0;
+	for (const tipo of TIPOS) {
+		const lista = faltam.filter((c) => c.tipo === tipo);
+		if (!lista.length) continue;
+		const dados = [];
+		const comId = [];
+		for (const c of lista) {
+			const doc = await c.pack.getDocument(c.id);
+			if (!doc) continue;
+			const o = linksParaMundo(doc.toObject(), ids);
+			o.folder = await pastaNoMundo(doc.folder ?? null);
+			o._stats ??= {};
+			o._stats.compendiumSource = c.uuid;
+			if (ids.get(`${tipo}|${c.id}`) === c.id) comId.push(o);
+			else {
+				delete o._id;
+				dados.push(o);
+			}
+		}
+		if (comId.length) criados += (await classe(tipo).createDocuments(comId, { keepId: true })).length;
+		if (dados.length) criados += (await classe(tipo).createDocuments(dados)).length;
+	}
+	ui.notifications.info(`Fim dos Tempos: ${criados} documento(s) puxado(s) do compêndio.${existentes ? ` ${existentes} já estavam no mundo e ficaram como estão.` : ""}`);
+	Hooks.callAll(`${MODULO}.puxado`, { criados, existentes });
+	return { criados, existentes };
+}
+
+/** Janela: escolha das aventuras (por ato) que vão para o mundo. */
+export async function abrirPuxar() {
+	if (!game.user.isGM) return ui.notifications.warn("Só o Mestre pode puxar o conteúdo do Fim dos Tempos.");
+	const cat = await catalogo();
+	if (!cat.length) return ui.notifications.error("Fim dos Tempos: nenhum compêndio do módulo foi encontrado.");
+	const mapa = noMundo(cat);
+	const grupos = new Map();
+	for (const c of cat) {
+		const k = `${c.ato}|${c.aventura}`;
+		if (!grupos.has(k)) grupos.set(k, { ato: c.ato, aventura: c.aventura, total: 0, noMundo: 0 });
+		const g = grupos.get(k);
+		g.total++;
+		if (mapa.has(c.uuid)) g.noMundo++;
+	}
+	const chaves = [...grupos.keys()];
+	const blocos = atos()
 		.map((a) => {
-			const n = a.packs.reduce((t, p) => t + (p.index?.size ?? 0), 0);
-			const estado = reg[a.id] ? (reg[a.id] === versao ? `importado (v${esc(reg[a.id])})` : `importado v${esc(reg[a.id])}, há v${esc(versao)}`) : "ainda não importado";
-			return `<div class="form-group"><label class="checkbox"><input type="checkbox" name="${esc(a.id)}" checked> ${esc(a.rotulo)}</label>
-				<p class="hint">${n} documentos · ${estado}</p></div>`;
+			const linhas = chaves
+				.map((k, i) => ({ k, i, g: grupos.get(k) }))
+				.filter(({ g }) => g.ato === a.id)
+				.map(({ i, g }) => {
+					const falta = g.total - g.noMundo;
+					const estado = !falta ? "já está toda no mundo" : g.noMundo ? `${falta} de ${g.total} faltando` : `${g.total} documento(s)`;
+					return `<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="a${i}"${falta ? "" : " disabled"}> ${esc(g.aventura || "Avulsos")} <span class="hint">(${estado})</span></label>`;
+				})
+				.join("");
+			return linhas ? `<fieldset><legend>${esc(a.rotulo)}</legend>${linhas}</fieldset>` : "";
 		})
 		.join("");
 	const escolha = await foundry.applications.api.DialogV2.wait({
-		window: { title: "Fim dos Tempos: importar para o mundo", icon: "fa-solid fa-hourglass-half" },
-		position: { width: 460 },
-		content: `<p>Importa ameaças, itens, diários, tabelas e macros dos compêndios do módulo para o mundo, nas mesmas pastas dos geradores.
-			As macros da campanha só funcionam com o conteúdo importado.</p>${linhas}`,
+		window: { title: "Fim dos Tempos: puxar do compêndio", icon: "fa-solid fa-hourglass-half" },
+		position: { width: 520 },
+		content: `<p>Marque as aventuras que quer no mundo. Só o que <b>falta</b> é criado, nas pastas do compêndio e com os mesmos IDs.
+			O que já está no mundo (inclusive o que você corrigiu) não é tocado. Para um documento só, arraste-o do compêndio.</p>
+			<div style="max-height:60vh;overflow-y:auto">${blocos}</div>`,
+		rejectClose: false,
 		buttons: [
-			{ action: "importar", label: "Importar", icon: "fa-solid fa-file-import", default: true, callback: (ev, button) => Object.entries(new foundry.applications.ux.FormDataExtended(button.form).object).filter(([, v]) => v === true).map(([k]) => k) },
+			{
+				action: "puxar",
+				label: "Puxar",
+				icon: "fa-solid fa-file-import",
+				default: true,
+				callback: (ev, button) => {
+					const fd = new foundry.applications.ux.FormDataExtended(button.form).object;
+					return chaves.filter((_, i) => fd[`a${i}`] === true);
+				}
+			},
 			{ action: "cancelar", label: "Cancelar", icon: "fa-solid fa-xmark" }
 		]
 	});
 	if (!Array.isArray(escolha)) return null;
-	return importar(escolha);
+	return puxar({ aventuras: escolha });
+}
+
+/* ------------------------------------------------------------------------ */
+/* Atualizar do compêndio (opcional, sem tocar no que foi editado)           */
+/* ------------------------------------------------------------------------ */
+
+/**
+ * Documentos do mundo que vieram do módulo e cuja versão no compêndio mudou.
+ * @returns {Promise<{doc: Document, entrada: object, estado: "desatualizado"|"editado"}[]>}
+ */
+export async function procurarAtualizacoes() {
+	const cat = await catalogo();
+	const mapa = noMundo(cat);
+	const out = [];
+	for (const c of cat) {
+		const doc = mapa.get(c.uuid);
+		if (!doc || !c.assinatura) continue;
+		const minha = assinatura(doc.toObject(), c.tipo);
+		if (minha === c.assinatura) continue;
+		out.push({ doc, entrada: c, estado: c.assinaturas.includes(minha) ? "desatualizado" : "editado" });
+	}
+	return out;
+}
+
+/**
+ * Troca um documento do mundo pela versão do compêndio, com o mesmo ID (tokens em cenas continuam ligados).
+ * Ficam: pasta, ordem, permissões, flags de outros módulos e os valores de PRESERVAR.
+ */
+export async function atualizarDocumento(doc, entrada, ids) {
+	const comp = await entrada.pack.getDocument(entrada.id);
+	if (!comp) throw new Error(`${entrada.uuid} não encontrado`);
+	const antigo = doc.toObject();
+	const novo = linksParaMundo(comp.toObject(), ids ?? new Map());
+	novo._id = doc.id;
+	novo.folder = antigo.folder ?? null;
+	novo.sort = antigo.sort;
+	novo.ownership = antigo.ownership;
+	const outros = Object.fromEntries(Object.entries(antigo.flags ?? {}).filter(([k]) => !["world", "tormenta20", MODULO].includes(k)));
+	novo.flags = { ...outros, ...(novo.flags ?? {}) };
+	novo._stats ??= {};
+	novo._stats.compendiumSource = entrada.uuid;
+	const role = antigo.flags?.world?.fdtRole;
+	for (const p of PRESERVAR) {
+		if (p.documento !== entrada.tipo || p.role !== role) continue;
+		for (const c of p.caminhos) {
+			const v = foundry.utils.getProperty(antigo, c);
+			if (v !== undefined) foundry.utils.setProperty(novo, c, v);
+		}
+	}
+	await classe(entrada.tipo).deleteDocuments([doc.id]);
+	const [criado] = await classe(entrada.tipo).createDocuments([novo], { keepId: true });
+	return criado;
+}
+
+/**
+ * Atualiza os documentos escolhidos. Só aceita os que não foram editados.
+ * @param {object} [o]
+ * @param {boolean} [o.confirmar=true]  false atualiza todos os não editados, sem janela
+ * @returns {Promise<{atualizados: number, editados: number, falhas: object[]}|null>}
+ */
+export async function atualizar({ confirmar = true } = {}) {
+	if (!game.user.isGM) {
+		ui.notifications.error("Só o Mestre pode atualizar o conteúdo do Fim dos Tempos.");
+		return null;
+	}
+	const lista = await procurarAtualizacoes();
+	const editados = lista.filter((p) => p.estado === "editado");
+	if (!lista.length) {
+		ui.notifications.info("Fim dos Tempos: o que está no mundo já é a versão atual do compêndio.");
+		return { atualizados: 0, editados: 0, falhas: [] };
+	}
+	let escolhidos = lista.filter((p) => p.estado === "desatualizado");
+	if (confirmar) {
+		const linhas = (estado) =>
+			lista
+				.map((p, i) => ({ p, i }))
+				.filter(({ p }) => p.estado === estado)
+				.map(({ p, i }) => {
+					const onde = [atos().find((a) => a.id === p.entrada.ato)?.rotulo, p.entrada.aventura].filter(Boolean).join(" › ");
+					return `<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="d${i}"${estado === "desatualizado" ? " checked" : " disabled"}> ${esc(p.doc.name)} <span class="hint">(${esc(nomeTipo(p.entrada.tipo, 1))}${onde ? ` · ${esc(onde)}` : ""})</span></label>`;
+				})
+				.join("");
+		const desat = linhas("desatualizado");
+		const edit = linhas("editado");
+		const escolha = await foundry.applications.api.DialogV2.wait({
+			window: { title: "Fim dos Tempos: atualizar do compêndio", icon: "fa-solid fa-rotate" },
+			position: { width: 560 },
+			content: `<p>Documentos do mundo que vieram do módulo e mudaram na versão nova. Os marcados são trocados pela versão do compêndio, com o mesmo ID
+				(tokens nas cenas continuam ligados); pasta, permissões, Lei &amp; Ordem e a ficha do grupo ficam como estão.</p>
+				<div style="max-height:55vh;overflow-y:auto">
+				${desat ? `<fieldset><legend>Sem alteração sua (${lista.length - editados.length})</legend>${desat}</fieldset>` : "<p>Nenhum documento sem alteração para atualizar.</p>"}
+				${edit ? `<fieldset><legend>Editados por você: ficam como estão (${editados.length})</legend><p class="hint">Se quiser a versão nova de algum deles, arraste-a do compêndio.</p>${edit}</fieldset>` : ""}
+				</div>`,
+			rejectClose: false,
+			buttons: [
+				{
+					action: "ok",
+					label: "Atualizar marcados",
+					icon: "fa-solid fa-rotate",
+					default: true,
+					callback: (ev, button) => {
+						const fd = new foundry.applications.ux.FormDataExtended(button.form).object;
+						return lista.filter((p, i) => p.estado === "desatualizado" && fd[`d${i}`] === true);
+					}
+				},
+				{ action: "cancelar", label: "Cancelar", icon: "fa-solid fa-xmark" }
+			]
+		});
+		if (!Array.isArray(escolha)) return null;
+		escolhidos = escolha;
+	}
+
+	const cat = await catalogo();
+	const ids = idsDoMundo(cat, noMundo(cat));
+	const falhas = [];
+	let atualizados = 0;
+	for (const p of escolhidos) {
+		try {
+			await atualizarDocumento(p.doc, p.entrada, ids);
+			atualizados++;
+		} catch (erro) {
+			console.error(erro);
+			falhas.push({ nome: p.doc.name, erro: erro.message });
+		}
+	}
+	const ficaram = lista.length - editados.length - escolhidos.length;
+	await ChatMessage.create({
+		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
+		speaker: { alias: "Fim dos Tempos" },
+		content:
+			`<h3>Atualização do compêndio (v${esc(modulo()?.version)})</h3><p><b>${atualizados}</b> documento(s) atualizado(s)` +
+			`${falhas.length ? `, ${falhas.length} falha(s)` : ""}${ficaram ? `; ${ficaram} desmarcado(s) ficaram como estavam` : ""}.</p>` +
+			(editados.length ? `<p>Editados por você e mantidos (${editados.length}): ${editados.map((p) => esc(p.doc.name)).join(", ")}.</p>` : "") +
+			(falhas.length ? `<ul>${falhas.map((f) => `<li>${esc(f.nome)}: ${esc(f.erro)}</li>`).join("")}</ul>` : "")
+	});
+	ui.notifications.info(`Fim dos Tempos: ${atualizados} documento(s) atualizado(s).${editados.length ? ` ${editados.length} editado(s) por você ficaram como estão.` : ""}`);
+	Hooks.callAll(`${MODULO}.atualizado`, { atualizados, editados: editados.length, falhas });
+	return { atualizados, editados: editados.length, falhas };
+}
+
+export const abrirAtualizar = () => atualizar({ confirmar: true });
+
+/** Os dois caminhos numa janela só (botão da aba de Compêndios). */
+export async function abrirMenu() {
+	if (!game.user.isGM) return null;
+	const acao = await foundry.applications.api.DialogV2.wait({
+		window: { title: "Fim dos Tempos", icon: "fa-solid fa-hourglass-half" },
+		position: { width: 440 },
+		content: `<p><b>Puxar do compêndio</b> traz aventuras inteiras para o mundo (só o que falta).</p>
+			<p><b>Atualizar do compêndio</b> mostra o que mudou na versão nova do módulo; nada que você editou é tocado.</p>`,
+		rejectClose: false,
+		buttons: [
+			{ action: "puxar", label: "Puxar do compêndio", icon: "fa-solid fa-file-import", default: true },
+			{ action: "atualizar", label: "Atualizar do compêndio", icon: "fa-solid fa-rotate" }
+		]
+	});
+	if (acao === "puxar") return abrirPuxar();
+	if (acao === "atualizar") return abrirAtualizar();
+	return null;
+}
+
+/* ------------------------------------------------------------------------ */
+/* UUIDs antigos (compêndios por ato até a v0.16)                           */
+/* ------------------------------------------------------------------------ */
+
+/** Redireciona `Compendium.<mod>.ato1-ameacas.Actor.X` para o compêndio novo. */
+export async function registrarRedirecionamentos() {
+	const red = CONFIG.compendium?.uuidRedirects;
+	if (!red || typeof red !== "object") return 0;
+	let n = 0;
+	for (const c of await catalogo()) {
+		if (!c.antigo) continue;
+		red[`Compendium.${MODULO}.${c.antigo}.${c.tipo}.${c.id}`] ??= c.uuid;
+		n++;
+	}
+	return n;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -203,10 +424,9 @@ export async function abrirImportador() {
 /* ------------------------------------------------------------------------ */
 
 Hooks.once("init", () => {
-	game.settings.register(MODULO, "importado", { scope: "world", config: false, type: Object, default: {} });
-	game.settings.register(MODULO, "oferecer", {
-		name: "Oferecer a importação ao abrir o mundo",
-		hint: "Quando o mundo ainda não tem o conteúdo do módulo, ou quando sai uma versão nova, o Mestre vê a janela de importação ao entrar.",
+	game.settings.register(MODULO, "avisarVersao", {
+		name: "Avisar quando houver melhorias",
+		hint: "Quando sai uma versão nova do módulo, o Mestre recebe no chat (uma vez) quantos documentos do mundo têm melhorias no compêndio. Nada é mudado sem a macro FdT · Atualizar do compêndio.",
 		scope: "world",
 		config: true,
 		type: Boolean,
@@ -218,39 +438,70 @@ Hooks.once("init", () => {
 
 	const Base = foundry.applications?.api?.ApplicationV2;
 	if (Base) {
-		class Importador extends Base {
-			render() {
-				abrirImportador();
-				return this;
+		const menu = (chave, abrir, dados) => {
+			class Janela extends Base {
+				render() {
+					abrir();
+					return this;
+				}
 			}
-		}
-		game.settings.registerMenu(MODULO, "importador", {
-			name: "Importar conteúdo",
-			label: "Importar para o mundo",
-			hint: "Ameaças, itens, diários, tabelas e macros do Ato 1, do Ato 2 e da campanha.",
-			icon: "fa-solid fa-file-import",
-			type: Importador,
-			restricted: true
+			game.settings.registerMenu(MODULO, chave, { ...dados, type: Janela, restricted: true });
+		};
+		menu("puxar", () => abrirPuxar(), {
+			name: "Puxar do compêndio",
+			label: "Puxar aventuras",
+			hint: "Traz para o mundo as aventuras escolhidas. Só cria o que falta; nada é substituído.",
+			icon: "fa-solid fa-file-import"
+		});
+		menu("atualizar", () => abrirAtualizar(), {
+			name: "Atualizar do compêndio",
+			label: "Ver atualizações",
+			hint: "Lista o que mudou na versão nova. Só os documentos que você não editou podem ser atualizados, e só os que você marcar.",
+			icon: "fa-solid fa-rotate"
 		});
 	}
 
 	const m = modulo();
-	if (m) m.api = { importar, abrirImportador, atos, PRESERVAR };
+	if (m) {
+		m.api = {
+			puxar,
+			abrirPuxar,
+			atualizar,
+			abrirAtualizar,
+			procurarAtualizacoes,
+			atualizarDocumento,
+			abrirMenu,
+			catalogo,
+			atos,
+			assinatura,
+			PRESERVAR,
+			// nomes antigos (macro "FdT · Importar conteúdo do módulo" das versões até a 0.16)
+			abrirImportador: abrirPuxar,
+			importar: (ids) => puxar({ atos: ids })
+		};
+	}
 });
 
 Hooks.once("ready", async () => {
+	await registrarRedirecionamentos();
 	if (!game.user.isGM || (game.users.activeGM && game.users.activeGM !== game.user)) return;
 	if (game.settings.get(MODULO, "automacoesPJs")) {
 		const auto = game.macros.find((m) => marca(m) === "fdtpoderes" && m.getFlag("world", "fdtRole") === "pjsAutomacoes");
 		await auto?.execute({ auto: true });
 	}
-	if (!game.settings.get(MODULO, "oferecer")) return;
+	// Versão nova: só um aviso no chat, nada muda no mundo
 	const versao = modulo()?.version;
-	const reg = importados();
-	const faltando = atos().filter((a) => reg[a.id] !== versao);
-	if (!faltando.length || game.settings.get(MODULO, "avisado") === versao) return;
+	if (!game.settings.get(MODULO, "avisarVersao") || game.settings.get(MODULO, "avisado") === versao) return;
 	await game.settings.set(MODULO, "avisado", versao);
-	await abrirImportador();
+	const lista = await procurarAtualizacoes();
+	if (!lista.length) return;
+	const desat = lista.filter((p) => p.estado === "desatualizado").length;
+	await ChatMessage.create({
+		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
+		speaker: { alias: "Fim dos Tempos" },
+		content: `<p><b>Fim dos Tempos v${esc(versao)}</b>: ${desat} documento(s) do mundo têm melhorias no compêndio${lista.length - desat ? ` e ${lista.length - desat} que você editou ficam como estão` : ""}.
+			Nada foi mudado. Para escolher o que atualizar, rode a macro <i>FdT · Atualizar do compêndio</i> ou use o botão <i>Fim dos Tempos</i> na aba de Compêndios.</p>`
+	});
 });
 
 Hooks.on("renderCompendiumDirectory", (app, html) => {
@@ -260,8 +511,8 @@ Hooks.on("renderCompendiumDirectory", (app, html) => {
 	const botao = document.createElement("button");
 	botao.type = "button";
 	botao.className = "fdt-importar";
-	botao.innerHTML = '<i class="fa-solid fa-hourglass-half"></i> Fim dos Tempos: importar';
-	botao.addEventListener("click", () => abrirImportador());
+	botao.innerHTML = '<i class="fa-solid fa-hourglass-half"></i> Fim dos Tempos';
+	botao.addEventListener("click", () => abrirMenu());
 	const alvo = raiz.querySelector(".header-actions") ?? raiz.querySelector(".directory-header") ?? raiz;
 	alvo.append(botao);
 });

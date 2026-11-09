@@ -1,0 +1,35 @@
+{
+  "_id": "NA94pGM0RrKOYCgI",
+  "name": "FdT · Atualizar do compêndio",
+  "type": "script",
+  "img": "icons/svg/upgrade.svg",
+  "scope": "global",
+  "command": "// Lista o que mudou no compêndio e atualiza só o que você marcar (o que foi editado à mão fica como está).\ngame.modules.get(\"giriarpg-fim-dos-tempos\")?.api?.abrirAtualizar();",
+  "folder": "X3cwRjrdatABr37x",
+  "flags": {
+    "world": {
+      "fdt": "fdtcampanha",
+      "fdtRole": "atualizador"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha",
+      "antigo": "campanha-macros",
+      "assinatura": "bfcfe349",
+      "assinaturas": [
+        "bfcfe349"
+      ]
+    }
+  },
+  "_key": "!macros!NA94pGM0RrKOYCgI",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

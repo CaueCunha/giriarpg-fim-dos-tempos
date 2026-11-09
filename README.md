@@ -1,12 +1,12 @@
 # Fim dos Tempos · módulo para Foundry VTT
 
-Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do Foundry VTT: ameaças, itens, diários, tabelas e macros com automação. Cada ato tem seus próprios compêndios.
+Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do Foundry VTT: ameaças, poderes, itens, diários, tabelas e macros com automação. Os compêndios ficam na pasta **Fim dos Tempos** da aba de Compêndios, um por tipo, com uma pasta por ato e as pastas das aventuras dentro:
 
-| Compêndios | Ameaças e NPCs | Itens | Diários | Tabelas | Macros |
-|---|---:|---:|---:|---:|---:|
-| **Ato 1 · Colinas Centrais** (Av1 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas) | 139 | 90 | 9 | 15 | 49 |
-| **Ato 2 · Valkaria** (Av0 Valkaria, Av1 Stremtol, Av2 Conexão Vectora, Av3 Fuga da Rocha Cinzenta, Av4 Massacre na Taverna dos Maníacos, Av5 Túneis Famintos, Av6 Baile de Debutantes Sangrento, Av7 O Ataque do Mecano-Lagarto-Terror, Mini 1 Ruas de Cobiça, Mini 2 Irmandade Máxima, O Labirinto Liberto, Encontros em Valkaria, As Ruas Traiçoeiras de Valkaria, Lendas Urbanas e Linhas Narrativas, Apêndices) | 167 | 145 | 16 | 28 | 76 |
-| **Campanha** (regras de grupo, Poderes de Grupo, revisão dos poderes dos PJs, utilidades) | | 25 | 2 | | 11 |
+| Compêndio | Ato 1 · Colinas Centrais | Ato 2 · Valkaria | Campanha |
+|---|---|---|---|
+| **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas**, **Macros** | Av1 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas | Av0 a Av7, Mini 1 e 2, O Labirinto Liberto, Encontros, Ruas Traiçoeiras, Lendas Urbanas, Apêndices | regras de grupo, Poderes de Grupo, revisão dos poderes dos PJs, utilidades |
+
+A contagem de cada compêndio está em [`build/relatorio.md`](build/relatorio.md).
 
 Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.
 
@@ -31,25 +31,31 @@ Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-
 
 ## Usando na mesa
 
-As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso o conteúdo precisa ser importado dos compêndios para o mundo.
+**Nada vai para o mundo sozinho.** O módulo só oferece os compêndios, e você escolhe o que entra no mundo:
 
-- Na primeira vez que o Mestre abre o mundo com o módulo ativo, aparece a janela **Fim dos Tempos: importar para o mundo**. Marque os atos que quiser e clique em **Importar**.
-- Para importar depois, há três caminhos:
-  - o botão **Fim dos Tempos: importar**, no topo da aba de Compêndios;
-  - a opção em **Configurações › Fim dos Tempos**;
-  - a macro **FdT · Importar conteúdo do módulo**, no compêndio Campanha.
-- O conteúdo vai para as mesmas pastas que os geradores criavam.
+- **Um documento:** arraste-o do compêndio para a barra lateral (ou para a cena, no caso de ameaças).
+- **Uma aventura inteira:** use **Puxar do compêndio**. Ele fica no botão **Fim dos Tempos**, no topo da aba de Compêndios, em **Configurações › Fim dos Tempos** e na macro **FdT · Puxar do compêndio**. Marque as aventuras e ele cria só o que falta, nas pastas do compêndio (Ato › aventura) e com os mesmos IDs, para os links dos diários e as macros funcionarem. O que já está no mundo nunca é substituído.
 
-Se o mundo já tem o conteúdo (de uma importação anterior ou dos geradores antigos), o importador pergunta o que fazer:
+As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso, puxe a aventura antes de usar as macros dela. Se faltar alguma coisa, a macro avisa.
 
-- **Substituir** apaga e recria os documentos com a versão do módulo. Os IDs não mudam, então os tokens já colocados nas cenas continuam ligados aos seus atores. O contador de **Lei & Ordem** de Valkaria e a ficha **FdT · O Grupo** são mantidos. Edições feitas à mão nos documentos importados se perdem.
-- **Só o que falta** cria apenas o que não está no mundo e não mexe no resto.
+### Versões novas: atualizar só o que você quiser
 
-Quando sai uma versão nova do módulo, o Mestre vê a oferta de importação uma vez. Ela pode ser desligada em **Configurações › Fim dos Tempos**.
+Quando sai uma versão nova, o Foundry atualiza os compêndios, mas o mundo não muda. O Mestre recebe uma mensagem no chat, uma vez só, dizendo quantos documentos do mundo têm melhorias. O aviso pode ser desligado em **Configurações › Fim dos Tempos**.
+
+**Atualizar do compêndio** (no mesmo botão, nas configurações e na macro **FdT · Atualizar do compêndio**) lista os documentos do mundo que vieram do módulo e mudaram:
+
+- **Sem alteração sua:** o documento é igual a alguma versão já publicada do módulo. Ele vem marcado e você desmarca o que não quiser trocar.
+- **Editado por você:** o documento não bate com nenhuma versão publicada, então foi corrigido à mão. Ele aparece travado e **fica como está**. Se quiser a versão nova de um deles, arraste-a do compêndio.
+
+Para saber isso, cada documento leva uma **assinatura** do conteúdo que pode ser corrigido (nome, imagem, dados da ficha, efeitos, itens, páginas, resultados, comando). O compêndio guarda as assinaturas de todas as versões publicadas desde a v0.1.0. O que muda sozinho na mesa não conta como edição: PV e PM atuais, efeitos ligados ou desligados, pasta, permissões, o contador de Lei & Ordem e a ficha do grupo.
+
+A atualização troca o documento pela versão do compêndio com o **mesmo ID**, então os tokens nas cenas continuam ligados. Pasta, ordem, permissões, flags de outros módulos, **Lei & Ordem** e **FdT · O Grupo** ficam como estavam. No fim, o chat mostra o que foi atualizado e o que ficou.
+
+**Vindo da v0.16 ou anterior:** o conteúdo que o importador antigo trouxe para o mundo é reconhecido pelo ID, pela origem ou pela marca e nome (mundos dos geradores antigos). Os endereços antigos dos compêndios (`ato1-ameacas`, `ato2-itens`...) são redirecionados para os novos. Edições feitas **dentro do compêndio do módulo** (destravado) se perdem em qualquer atualização do Foundry, porque ele troca a pasta do módulo inteira. Antes de atualizar, traga essas correções para o mundo.
 
 ### Poderes dos PJs
 
-Depois de importar a Campanha, selecione os tokens dos PJs e rode **PJs · Corrigir poderes**. A macro lista os poderes quebrados nas fichas (efeitos no formato antigo, chaves em branco, ataques dentro de poderes...), corrige o que estiver marcado e guarda uma cópia para desfazer. Ligue também **PJs · Automações** (Temeroso e Provocação Petulante). O diário **FdT · Poderes dos PJs** tem a revisão de cada personagem, e o guia está em [`docs/geradores/fdt-poderes-pjs.md`](docs/geradores/fdt-poderes-pjs.md).
+Depois de puxar a Campanha, selecione os tokens dos PJs e rode **PJs · Corrigir poderes**. A macro lista os poderes quebrados nas fichas (efeitos no formato antigo, chaves em branco, ataques dentro de poderes...), corrige o que estiver marcado e guarda uma cópia para desfazer. Ligue também **PJs · Automações** (Temeroso e Provocação Petulante). O diário **FdT · Poderes dos PJs** tem a revisão de cada personagem, e o guia está em [`docs/geradores/fdt-poderes-pjs.md`](docs/geradores/fdt-poderes-pjs.md).
 
 ### Ligação com o sistema
 
@@ -91,16 +97,18 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
   - compilação de todas as macros;
   - sorteio de todas as tabelas.
 - **Pacote:** os compêndios são compilados em LevelDB e extraídos de volta, e o resultado é comparado com as fontes.
-- **Importador:**
-  - oferta ao abrir o mundo;
-  - botão na aba de Compêndios;
-  - jogador sem permissão;
-  - Substituir com IDs, Lei & Ordem, ficha do grupo e tokens preservados;
-  - Só o que falta;
-  - Cancelar;
-  - atos independentes.
+- **Puxar e atualizar:**
+  - abrir o mundo não importa nada;
+  - o botão da aba de Compêndios puxa só a aventura marcada, nas pastas do compêndio;
+  - puxar de novo só cria o que falta;
+  - links do compêndio funcionam no compêndio e viram links do mundo ao puxar;
+  - o que foi puxado é igual ao compêndio;
+  - a atualização troca só o marcado e não editado, e preserva Lei & Ordem, grupo, pasta e tokens;
+  - cancelar não muda nada;
+  - jogador não puxa nem atualiza;
+  - o aviso de versão nova aparece uma vez e não muda nada.
 
-**Limite importante:** é uma simulação, não o Foundry de verdade. A interface (fichas, canvas, animações, arrastar e soltar) não é testada. Antes de usar na sessão, vale abrir o mundo uma vez, importar e rodar algumas macros.
+**Limite importante:** é uma simulação, não o Foundry de verdade. A interface (fichas, canvas, animações, arrastar e soltar) não é testada. Antes de usar na sessão, vale abrir o mundo uma vez, puxar uma aventura e rodar algumas macros.
 
 ## Desenvolvimento
 
@@ -110,6 +118,7 @@ O conteúdo nasce dos **geradores** em [`src/geradores/`](src/geradores), as mes
 |---|---|
 | `npm run build` | Roda os geradores no Foundry simulado, liga o conteúdo ao sistema e fixa IDs estáveis. Grava as fontes JSON em `src/packs/`, o `module.json` e `build/relatorio.md`, e compila os compêndios em `packs/`. |
 | `npm run pack` | Só compila `src/packs/` em `packs/` (LevelDB). |
+| `node tools/historico.mjs` | Recalcula `src/historico.json` (as assinaturas de cada documento em todas as versões commitadas). O build acrescenta a assinatura atual sozinho; só é preciso rodar isto se a função de `scripts/assinatura.mjs` mudar. |
 | `npm run pack -- --extrair` | Extrai `packs/` para `build/extraido/`, para conferência. |
 
 Para incluir uma aventura nova:

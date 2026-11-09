@@ -19,7 +19,7 @@ const SORTEIOS = Number(process.env.FDT_SORTEIOS ?? 6);
 
 const mundo = await criarMundo({ semente: "macros" });
 await carregarModulo(mundo);
-await mundo.game.modules.get(MODULO).api.importar(["ato1", "ato2", "campanha"], { modo: "substituir" });
+await mundo.game.modules.get(MODULO).api.puxar({ atos: ["ato1", "ato2", "campanha"] });
 await prepararMesa(mundo, { alvoNpc: false });
 const pjs = mundo.game.actors.filter((a) => a.type === "character");
 
@@ -68,7 +68,7 @@ async function rodar(macro, politica, rotulo) {
 	return { rotulo, problemas: problemas(mundo, { avisos: true }), dialogos: [...mundo.dialogos] };
 }
 
-const macros = mundo.game.macros.contents.filter((m) => m.getFlag("world", "fdtRole") !== "importador");
+const macros = mundo.game.macros.contents.filter((m) => !["importador", "atualizador"].includes(m.getFlag("world", "fdtRole")));
 
 test("o módulo tem macros para testar", () => {
 	assert.ok(macros.length >= 50, `só ${macros.length} macros`);

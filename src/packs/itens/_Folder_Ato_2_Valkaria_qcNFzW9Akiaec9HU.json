@@ -1,0 +1,27 @@
+{
+  "_id": "qcNFzW9Akiaec9HU",
+  "name": "Ato 2 · Valkaria",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "color": "#2f4a6b",
+  "description": "",
+  "flags": {
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato2"
+    }
+  },
+  "_key": "!folders!qcNFzW9Akiaec9HU",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

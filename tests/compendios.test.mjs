@@ -52,21 +52,26 @@ test("compêndios têm o formato do foundryvtt-cli", () => {
 	}
 });
 
-test("module.json descreve os compêndios por ato", () => {
+test("module.json descreve os compêndios por tipo, com pastas por ato", () => {
 	assert.equal(m.id, MODULO);
-	const atos = m.flags[MODULO].atos;
-	assert.deepEqual(Object.keys(atos).sort(), ["ato1", "ato2", "campanha"]);
-	const nomes = new Set(m.packs.map((p) => p.name));
-	for (const [id, a] of Object.entries(atos)) {
-		for (const n of a.packs) {
-			assert.ok(nomes.has(n), `${id} cita o compêndio ${n}, que não está em packs`);
-			assert.equal(m.packs.find((p) => p.name === n).flags[MODULO].ato, id);
-		}
-	}
-	const naPasta = (pf) => pf.flatMap((f) => [...(f.packs ?? []), ...naPasta(f.folders ?? [])]);
-	assert.deepEqual(naPasta(m.packFolders).sort(), [...nomes].sort(), "packFolders deve conter todos os compêndios");
+	assert.deepEqual(Object.keys(m.flags[MODULO].atos).sort(), ["ato1", "ato2", "campanha"]);
+	const nomes = m.packs.map((p) => p.name);
+	assert.deepEqual(nomes, ["ameacas", "poderes", "itens", "diarios", "tabelas", "macros"]);
+	assert.deepEqual(m.packFolders.flatMap((f) => f.packs ?? []).sort(), [...nomes].sort(), "packFolders deve conter todos os compêndios");
 	for (const p of m.packs) assert.equal(p.path, `packs/${p.name}`);
 	for (const f of [...m.esmodules, ...m.styles, ...m.languages.map((l) => l.path)]) assert.ok(fs.existsSync(f), `${f} não existe`);
+	for (const p of packs) {
+		const raizes = p.pastas.filter((f) => !f.folder);
+		assert.ok(raizes.every((f) => f.flags?.[MODULO]?.ato), `${p.name}: pasta de cima sem ato`);
+		for (const d of p.docs) {
+			assert.ok(d.folder, `${p.name}: ${d.name} fora das pastas`);
+			const f = d.flags?.[MODULO] ?? {};
+			assert.match(f.assinatura ?? "", /^[0-9a-f]{8}$/, `${p.name}: ${d.name} sem assinatura`);
+			assert.equal(f.assinaturas?.at(-1), f.assinatura, `${p.name}: ${d.name}: a última assinatura deve ser a atual`);
+		}
+		if (p.name === "poderes") assert.ok(p.docs.every((d) => d.type === "poder"));
+		if (p.name === "itens") assert.ok(p.docs.every((d) => d.type !== "poder"));
+	}
 });
 
 test("imagens do sistema e do módulo existem", () => {
@@ -102,7 +107,7 @@ await carregarModulo(mundo);
 
 test("todo documento passa pelos modelos de dados sem perder campos", async () => {
 	limparRegistros(mundo);
-	await mundo.game.modules.get(MODULO).api.importar(["ato1", "ato2", "campanha"], { modo: "substituir" });
+	await mundo.game.modules.get(MODULO).api.puxar({ atos: ["ato1", "ato2", "campanha"] });
 	await mundo.aguardarOcioso();
 	assert.deepEqual(problemas(mundo, { avisos: true }), []);
 	for (const p of packs) {

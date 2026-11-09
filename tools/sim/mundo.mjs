@@ -666,7 +666,15 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 		_entradaIndice(d) {
 			return { _id: d._id, name: d.name, type: d.type, img: d.img, folder: d.folder ?? null, uuid: `Compendium.${this.collection}.${this.documentName}.${d._id}`, system: d.system };
 		}
-		async getIndex() {
+		async getIndex({ fields = [] } = {}) {
+			// como no Foundry: os campos pedidos entram no índice
+			for (const [id, e] of this.index.entries()) {
+				const src = this._fontes.get(id);
+				for (const f of fields) {
+					const v = U.getProperty(src, f);
+					if (v !== undefined) U.setProperty(e, f, U.deepClone(v));
+				}
+			}
 			return this.index;
 		}
 		async getDocument(id) {

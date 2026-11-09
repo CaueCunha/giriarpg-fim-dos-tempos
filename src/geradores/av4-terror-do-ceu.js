@@ -574,7 +574,7 @@
 
 	async function macroAtaqueDoCeu() {
 		const harpia = game.actors.find((a) => a.getFlag("world", "fdtRole") === "harpia");
-		if (!harpia) return ui.notifications.error("Ator da Harpia não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!harpia) return ui.notifications.error("Ator da Harpia não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const atual = harpia.system.resources.primary.value;
 		const FASES = [
 			"<b>Rodada 1 · Aproximação.</b> Uma luz cegante surge no céu e desce sobre a fazenda. Todos na área ficam <b>cegos</b> (ação de movimento ou 1 PM para reduzir a ofuscado por 1 rodada). Só a Harpia age: <b>Canhão de Fogo</b>. <b>Dois cães do inferno</b> saltam. Quatro bandoleiros e dois cães já estão em solo (Percepção CD 20 para notá-los).",
@@ -797,7 +797,7 @@
 
 	async function macroElemental() {
 		const torgo = game.actors.find((a) => a.getFlag("world", "fdtRole") === "torgo");
-		if (!torgo) return ui.notifications.error("Torgo não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!torgo) return ui.notifications.error("Torgo não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const res = await foundry.applications.api.DialogV2.prompt({
 			window: { title: "Elemental Elétrico" },
 			content: `<p>Dano <b>mágico de eletricidade</b> que Torgo sofreria (antes da RD):</p>

@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Arco 2 · Av1 · Os Aventureiros de Stremtol",
+  "type": "Actor",
+  "color": "#5a4a6b",
+  "flags": {
+    "world": {
+      "fdt": "a2av1"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato2"
+    }
+  },
+  "_id": "dFUqC2yA37mT8WyT",
+  "description": "",
+  "folder": "SPYeOL26fagy7MFr",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!dFUqC2yA37mT8WyT"
+}

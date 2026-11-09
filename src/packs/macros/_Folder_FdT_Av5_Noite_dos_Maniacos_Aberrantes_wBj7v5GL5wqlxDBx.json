@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Av5 · Noite dos Maníacos Aberrantes",
+  "type": "Macro",
+  "color": "#5a2a4a",
+  "flags": {
+    "world": {
+      "fdt": "av5"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato1"
+    }
+  },
+  "_id": "wBj7v5GL5wqlxDBx",
+  "description": "",
+  "folder": "yH753jiCg75s952H",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!wBj7v5GL5wqlxDBx"
+}
