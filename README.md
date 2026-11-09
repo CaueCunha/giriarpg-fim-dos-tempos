@@ -38,6 +38,17 @@ Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-
 
 As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso, puxe a aventura antes de usar as macros dela. Se faltar alguma coisa, a macro avisa.
 
+### Limpar do mundo
+
+**Limpar do mundo** (no botão **Fim dos Tempos**, em **Configurações › Fim dos Tempos** e na macro **FdT · Limpar do mundo**) apaga do mundo o conteúdo do módulo, para você puxar do compêndio só o que precisar. Por padrão:
+
+- apaga itens e poderes, diários, tabelas e macros; ameaças e NPCs só se você marcar (tokens nas cenas perdem a ficha);
+- **não apaga o que você editou** (o que não bate com nenhuma versão publicada), a não ser que você marque;
+- mantém **Lei & Ordem** e a ficha **FdT · O Grupo**;
+- antes de apagar, guarda uma cópia num compêndio do mundo por tipo (*FdT · Cópia AAAA-MM-DD · Diários*...).
+
+Itens nas fichas dos personagens e documentos que não são do módulo nunca são tocados. As pastas do módulo que ficam vazias são removidas.
+
 ### Versões novas: atualizar só o que você quiser
 
 Quando sai uma versão nova, o Foundry atualiza os compêndios, mas o mundo não muda. O Mestre recebe uma mensagem no chat, uma vez só, dizendo quantos documentos do mundo têm melhorias. O aviso pode ser desligado em **Configurações › Fim dos Tempos**.
@@ -106,7 +117,8 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
   - a atualização troca só o marcado e não editado, e preserva Lei & Ordem, grupo, pasta e tokens;
   - cancelar não muda nada;
   - jogador não puxa nem atualiza;
-  - o aviso de versão nova aparece uma vez e não muda nada.
+  - o aviso de versão nova aparece uma vez e não muda nada;
+  - limpar do mundo apaga só o não editado, guarda cópia, mantém atores, Lei & Ordem, grupo e fichas dos PJs, e apaga as pastas vazias.
 
 **Limite importante:** é uma simulação, não o Foundry de verdade. A interface (fichas, canvas, animações, arrastar e soltar) não é testada. Antes de usar na sessão, vale abrir o mundo uma vez, puxar uma aventura e rodar algumas macros.
 

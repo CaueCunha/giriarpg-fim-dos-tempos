@@ -68,7 +68,7 @@ async function rodar(macro, politica, rotulo) {
 	return { rotulo, problemas: problemas(mundo, { avisos: true }), dialogos: [...mundo.dialogos] };
 }
 
-const macros = mundo.game.macros.contents.filter((m) => !["importador", "atualizador"].includes(m.getFlag("world", "fdtRole")));
+const macros = mundo.game.macros.contents.filter((m) => !["importador", "atualizador", "limpador"].includes(m.getFlag("world", "fdtRole")));
 
 test("o módulo tem macros para testar", () => {
 	assert.ok(macros.length >= 50, `só ${macros.length} macros`);

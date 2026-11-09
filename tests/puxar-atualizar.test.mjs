@@ -225,3 +225,62 @@ test("versão nova avisa no chat uma vez e não muda nada", async () => {
 	assert.equal(mundo.chat.length, 0, "avisou de novo na mesma versão");
 	mundo.encerrar();
 });
+
+test("limpar do mundo: apaga o que não foi editado, guarda cópia e mantém editados, atores, Lei & Ordem e grupo", async () => {
+	const mundo = await criarMundo({ semente: "fdt-limpar" });
+	await carregarModulo(mundo);
+	await api(mundo).puxar({ atos: ["ato2", "campanha"] });
+	const atores = mundo.game.actors.size;
+	const grupo = papel(mundo, "journal", "grupo");
+	await grupo.setFlag("world", "fdtGrupo", { membros: ["abc"], pm: 7 });
+	const diario = mundo.game.journal.find((j) => j.getFlag("world", "fdt") && j.id !== grupo.id);
+	await diario.update({ name: "Diário corrigido" });
+	// item de fora do módulo e item numa ficha: nunca entram
+	const meu = await globalThis.Item.create({ name: "Item meu", type: "tesouro" });
+	const pj = await mundo.criarPJ("Rak", { nivel: 3 });
+	const poder = mundo.game.items.find((i) => i.getFlag("world", "fdt") && i.type === "poder");
+	await pj.createEmbeddedDocuments("Item", [poder.toObject()]);
+
+	limparRegistros(mundo);
+	mundo.politica = politicaRoteiro([{ botao: "limpar" }]);
+	const r = await api(mundo).abrirLimpar();
+	assert.deepEqual(problemas(mundo, { avisos: true }), []);
+	assert.ok(r.apagados > 50, `apagou ${r.apagados}`);
+	assert.ok(mundo.game.items.get(meu.id), "apagou um item que não é do módulo");
+	assert.equal(pj.items.filter((i) => i.name === poder.name).length, 1, "mexeu na ficha do PJ");
+	assert.equal(mundo.game.actors.size, atores + 1, "atores só saem se marcar");
+	assert.equal(mundo.game.journal.contents.map((j) => j.name).sort().join("|"), [diario.name, grupo.name].sort().join("|"), "devia sobrar só o editado e o grupo");
+	assert.equal(mundo.game.items.filter((i) => i.getFlag("world", "fdt")).length, 0);
+	assert.equal(mundo.game.tables.size, 0);
+	assert.equal(mundo.game.macros.filter((m) => m.getFlag("world", "fdt")).length, 0);
+	// cópia num compêndio do mundo
+	const copias = mundo.game.packs.filter((p) => p.metadata.packageType === "world");
+	assert.ok(copias.length >= 3, "faltou a cópia");
+	const total = copias.reduce((n, p) => n + p.index.size, 0);
+	assert.equal(total, r.apagados, "a cópia devia ter tudo o que foi apagado");
+	// pastas vazias do módulo saíram; as dos atores ficaram
+	assert.equal(mundo.game.folders.filter((f) => f.type === "RollTable").length, 0, "sobrou pasta vazia");
+	assert.ok(mundo.game.folders.some((f) => f.type === "Actor"), "apagou pasta de atores");
+
+	// puxar de novo traz o que saiu
+	const p = await api(mundo).puxar({ atos: ["ato2"] });
+	assert.ok(p.criados > 0);
+	assert.ok(mundo.game.tables.size > 0);
+	mundo.encerrar();
+});
+
+test("limpar com tudo marcado apaga também atores e editados; cancelar não apaga nada", async () => {
+	const mundo = await criarMundo({ semente: "fdt-limpar-tudo" });
+	await carregarModulo(mundo);
+	await api(mundo).puxar({ atos: ["ato1"] });
+	const antes = doModulo(mundo);
+	mundo.politica = politicaRoteiro([{ botao: "cancelar" }]);
+	assert.equal(await api(mundo).abrirLimpar(), null);
+	assert.equal(doModulo(mundo), antes);
+	await mundo.game.actors.find((a) => a.getFlag("world", "fdt")).update({ name: "Editado" });
+	const r = await api(mundo).limpar({ tipos: ["Actor", "Item", "JournalEntry", "RollTable", "Macro"], incluirEditados: true, copia: false });
+	assert.equal(r.apagados, antes);
+	assert.equal(doModulo(mundo), 0);
+	assert.equal(mundo.game.folders.size, 0, "sobrou pasta do módulo");
+	mundo.encerrar();
+});

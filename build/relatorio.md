@@ -381,7 +381,7 @@
 - Poderes: 23 documento(s)
 - Itens: 2 documento(s)
 - Diários: 2 documento(s)
-- Macros: 12 documento(s)
+- Macros: 13 documento(s)
 
 ### Ligações com o sistema (2)
 
@@ -400,5 +400,5 @@
 - `itens` (Itens): 150 documento(s), 25 pasta(s)
 - `diarios` (Diários): 27 documento(s), 29 pasta(s)
 - `tabelas` (Tabelas): 43 documento(s), 20 pasta(s)
-- `macros` (Macros): 137 documento(s), 29 pasta(s)
+- `macros` (Macros): 138 documento(s), 29 pasta(s)
 
