@@ -383,6 +383,153 @@ export async function atualizar({ confirmar = true } = {}) {
 
 export const abrirAtualizar = () => atualizar({ confirmar: true });
 
+/* ------------------------------------------------------------------------ */
+/* Limpar do mundo                                                            */
+/* ------------------------------------------------------------------------ */
+
+const ROTULO_TIPO = { Actor: "Ameaças e NPCs", Item: "Itens e poderes", JournalEntry: "Diários", RollTable: "Tabelas", Macro: "Macros" };
+
+/**
+ * Documentos do mundo que são do Fim dos Tempos (vieram do compêndio ou dos geradores, pela marca flags.world.fdt).
+ * `editado`: não bate com nenhuma versão publicada (ou não existe mais no compêndio), então pode ter correção sua.
+ * @returns {Promise<{doc: Document, tipo: string, editado: boolean, preservado: boolean}[]>}
+ */
+export async function procurarParaLimpar() {
+	const cat = await catalogo();
+	const mapa = noMundo(cat);
+	const entradaDe = new Map();
+	for (const c of cat) if (mapa.has(c.uuid)) entradaDe.set(mapa.get(c.uuid), c);
+	const out = [];
+	for (const tipo of TIPOS) {
+		for (const doc of colecao(tipo) ?? []) {
+			const c = entradaDe.get(doc);
+			if (!c && !marca(doc)) continue;
+			const editado = !c || !c.assinaturas.includes(assinatura(doc.toObject(), tipo));
+			const role = doc.getFlag?.("world", "fdtRole") ?? doc.flags?.world?.fdtRole;
+			const preservado = PRESERVAR.some((p) => p.documento === tipo && p.role === role);
+			out.push({ doc, tipo, editado, preservado });
+		}
+	}
+	return out;
+}
+
+/** Guarda uma cópia dos documentos num compêndio do mundo por tipo ("FdT · Cópia AAAA-MM-DD · Diários"). */
+async function guardarCopia(lista) {
+	const Comp = foundry.documents?.collections?.CompendiumCollection ?? globalThis.CompendiumCollection;
+	if (!Comp?.createCompendium) throw new Error("este Foundry não cria compêndios por script");
+	const data = new Date().toISOString().slice(0, 10);
+	const criados = [];
+	for (const tipo of TIPOS) {
+		const docs = lista.filter((l) => l.tipo === tipo).map((l) => l.doc);
+		if (!docs.length) continue;
+		let label = `FdT · Cópia ${data} · ${ROTULO_TIPO[tipo]}`;
+		for (let n = 2; game.packs.some((p) => p.metadata?.label === label); n++) label = `FdT · Cópia ${data} (${n}) · ${ROTULO_TIPO[tipo]}`;
+		const pack = await Comp.createCompendium({ label, type: tipo });
+		const dados = docs.map((d) => ({ ...d.toObject(), folder: null }));
+		await classe(tipo).createDocuments(dados, { pack: pack.collection, keepId: true });
+		criados.push(label);
+	}
+	return criados;
+}
+
+/** Apaga as pastas do mundo que ficaram vazias e eram do Fim dos Tempos (das aventuras, dos atos ou "FdT · ..."). */
+async function apagarPastasVazias() {
+	const doModulo = new Set(packs().flatMap((p) => [...(p.folders?.keys?.() ?? [])]));
+	const nomesAtos = new Set(atos().map((a) => a.rotulo));
+	const nossa = (f) => doModulo.has(f.id) || nomesAtos.has(f.name) || /^FdT · /.test(f.name ?? "") || !!f.flags?.[MODULO] || !!f.flags?.world?.fdt;
+	let apagadas = 0;
+	for (let volta = 0; volta < 5; volta++) {
+		const vazias = game.folders.filter((f) => nossa(f) && TIPOS.includes(f.type) && !colecao(f.type).some((d) => (d.folder?.id ?? d.folder) === f.id) && !game.folders.some((g) => (g.folder?.id ?? g.folder) === f.id));
+		if (!vazias.length) break;
+		await classe("Folder").deleteDocuments(vazias.map((f) => f.id));
+		apagadas += vazias.length;
+	}
+	return apagadas;
+}
+
+/**
+ * Tira do mundo o conteúdo do Fim dos Tempos, para o Mestre puxar só o que quiser do compêndio.
+ * @param {object} [o]
+ * @param {string[]} [o.tipos]              padrão: itens, diários, tabelas e macros (atores só se pedir)
+ * @param {boolean}  [o.incluirEditados]    apaga também o que foi editado à mão (padrão: não)
+ * @param {boolean}  [o.manterPreservados]  mantém Lei & Ordem e a ficha do grupo (padrão: sim)
+ * @param {boolean}  [o.copia]              guarda uma cópia num compêndio do mundo antes (padrão: sim)
+ */
+export async function limpar({ tipos = ["Item", "JournalEntry", "RollTable", "Macro"], incluirEditados = false, manterPreservados = true, copia = true } = {}) {
+	if (!game.user.isGM) {
+		ui.notifications.error("Só o Mestre pode limpar o conteúdo do Fim dos Tempos.");
+		return null;
+	}
+	const todos = await procurarParaLimpar();
+	const lista = todos.filter((l) => tipos.includes(l.tipo) && (incluirEditados || !l.editado) && !(manterPreservados && l.preservado));
+	if (!lista.length) {
+		ui.notifications.info("Fim dos Tempos: nada para limpar com essas opções.");
+		return { apagados: 0, mantidos: todos.length, pastas: 0, copias: [] };
+	}
+	const copias = copia ? await guardarCopia(lista) : [];
+	let apagados = 0;
+	for (const tipo of TIPOS) {
+		const ids = lista.filter((l) => l.tipo === tipo).map((l) => l.doc.id);
+		if (ids.length) apagados += (await classe(tipo).deleteDocuments(ids)).length;
+	}
+	const pastas = await apagarPastasVazias();
+	const mantidos = todos.length - lista.length;
+	await ChatMessage.create({
+		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
+		speaker: { alias: "Fim dos Tempos" },
+		content:
+			`<h3>Limpeza do mundo</h3><p><b>${apagados}</b> documento(s) apagado(s) e ${pastas} pasta(s) vazia(s) removida(s); ${mantidos} mantido(s).</p>` +
+			(copias.length ? `<p>Cópia guardada em: ${copias.map(esc).join(", ")}.</p>` : "") +
+			`<p>Para trazer de volta, arraste do compêndio ou use <i>FdT · Puxar do compêndio</i>.</p>`
+	});
+	ui.notifications.info(`Fim dos Tempos: ${apagados} documento(s) apagado(s), ${mantidos} mantido(s).`);
+	Hooks.callAll(`${MODULO}.limpo`, { apagados, mantidos, pastas, copias });
+	return { apagados, mantidos, pastas, copias };
+}
+
+/** Janela da limpeza: tipos, editados, Lei & Ordem/grupo e cópia. */
+export async function abrirLimpar() {
+	if (!game.user.isGM) return ui.notifications.warn("Só o Mestre pode limpar o conteúdo do Fim dos Tempos.");
+	const todos = await procurarParaLimpar();
+	if (!todos.length) return ui.notifications.info("Fim dos Tempos: o mundo não tem conteúdo do módulo.");
+	const linhas = TIPOS.map((t) => {
+		const l = todos.filter((x) => x.tipo === t);
+		if (!l.length) return "";
+		const ed = l.filter((x) => x.editado).length;
+		const aviso = t === "Actor" ? ' <span class="hint">(tokens nas cenas perdem a ficha)</span>' : "";
+		return `<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="t${t}"${t === "Actor" ? "" : " checked"}> ${ROTULO_TIPO[t]}: ${l.length - ed} sem alteração${ed ? `, ${ed} editado(s)` : ""}${aviso}</label>`;
+	}).join("");
+	const editados = todos.filter((x) => x.editado);
+	const escolha = await foundry.applications.api.DialogV2.wait({
+		window: { title: "Fim dos Tempos: limpar do mundo", icon: "fa-solid fa-broom" },
+		position: { width: 540 },
+		content: `<p>Apaga do mundo o conteúdo do Fim dos Tempos, para você puxar do compêndio só o que precisar. Os itens nas fichas dos personagens não são tocados.</p>
+			<fieldset><legend>O que apagar</legend>${linhas}</fieldset>
+			<fieldset><legend>Proteções</legend>
+				<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="editados"> Apagar também os que você editou (${editados.length})</label>
+				${editados.length ? `<p class="hint">Editados: ${editados.slice(0, 30).map((x) => esc(x.doc.name)).join(", ")}${editados.length > 30 ? "..." : ""}</p>` : ""}
+				<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="preservados" checked> Manter Lei &amp; Ordem e a ficha do grupo</label>
+				<label class="checkbox" style="display:flex;gap:.4em"><input type="checkbox" name="copia" checked> Guardar uma cópia num compêndio do mundo antes de apagar</label>
+			</fieldset>`,
+		rejectClose: false,
+		buttons: [
+			{
+				action: "limpar",
+				label: "Apagar do mundo",
+				icon: "fa-solid fa-broom",
+				callback: (ev, button) => {
+					const fd = new foundry.applications.ux.FormDataExtended(button.form).object;
+					return { tipos: TIPOS.filter((t) => fd[`t${t}`] === true), incluirEditados: fd.editados === true, manterPreservados: fd.preservados === true, copia: fd.copia === true };
+				}
+			},
+			{ action: "cancelar", label: "Cancelar", icon: "fa-solid fa-xmark", default: true }
+		]
+	});
+	if (!escolha || typeof escolha !== "object") return null;
+	if (!escolha.tipos.length) return ui.notifications.warn("Nenhum tipo marcado.");
+	return limpar(escolha);
+}
+
 /** Os dois caminhos numa janela só (botão da aba de Compêndios). */
 export async function abrirMenu() {
 	if (!game.user.isGM) return null;
@@ -390,13 +537,16 @@ export async function abrirMenu() {
 		window: { title: "Fim dos Tempos", icon: "fa-solid fa-hourglass-half" },
 		position: { width: 440 },
 		content: `<p><b>Puxar do compêndio</b> traz aventuras inteiras para o mundo (só o que falta).</p>
-			<p><b>Atualizar do compêndio</b> mostra o que mudou na versão nova do módulo; nada que você editou é tocado.</p>`,
+			<p><b>Atualizar do compêndio</b> mostra o que mudou na versão nova do módulo; nada que você editou é tocado.</p>
+			<p><b>Limpar do mundo</b> tira do mundo o conteúdo do módulo (com cópia e sem tocar no que você editou, se não pedir).</p>`,
 		rejectClose: false,
 		buttons: [
 			{ action: "puxar", label: "Puxar do compêndio", icon: "fa-solid fa-file-import", default: true },
-			{ action: "atualizar", label: "Atualizar do compêndio", icon: "fa-solid fa-rotate" }
+			{ action: "atualizar", label: "Atualizar do compêndio", icon: "fa-solid fa-rotate" },
+			{ action: "limpar", label: "Limpar do mundo", icon: "fa-solid fa-broom" }
 		]
 	});
+	if (acao === "limpar") return abrirLimpar();
 	if (acao === "puxar") return abrirPuxar();
 	if (acao === "atualizar") return abrirAtualizar();
 	return null;
@@ -459,6 +609,12 @@ Hooks.once("init", () => {
 			hint: "Lista o que mudou na versão nova. Só os documentos que você não editou podem ser atualizados, e só os que você marcar.",
 			icon: "fa-solid fa-rotate"
 		});
+		menu("limpar", () => abrirLimpar(), {
+			name: "Limpar do mundo",
+			label: "Limpar conteúdo",
+			hint: "Apaga do mundo o conteúdo do módulo para você puxar só o que quiser. Guarda uma cópia e não toca no que você editou, a não ser que você marque.",
+			icon: "fa-solid fa-broom"
+		});
 	}
 
 	const m = modulo();
@@ -470,6 +626,9 @@ Hooks.once("init", () => {
 			abrirAtualizar,
 			procurarAtualizacoes,
 			atualizarDocumento,
+			limpar,
+			abrirLimpar,
+			procurarParaLimpar,
 			abrirMenu,
 			catalogo,
 			atos,

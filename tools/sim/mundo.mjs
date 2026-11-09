@@ -703,6 +703,29 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 		async importDocument(doc, o = {}) {
 			return this.documentClass.create(doc.toObject(), o);
 		}
+		/** createDocuments(..., { pack }): grava no compêndio (sem validar além do construtor). */
+		async criar(Cls, data, { keepId = false } = {}) {
+			if (this.locked) throw new Error(`O compêndio ${this.collection} está travado`);
+			const out = [];
+			for (const d0 of data) {
+				const d = U.deepClone(typeof d0?.toObject === "function" ? d0.toObject() : d0);
+				if (!keepId || !d._id || this._fontes.has(d._id)) d._id = U.randomID();
+				this._fontes.set(d._id, d);
+				this.index.set(d._id, this._entradaIndice(d));
+				out.push(await this.getDocument(d._id));
+			}
+			return out;
+		}
+		/** Como no Foundry: cria um compêndio do mundo. */
+		static async createCompendium(meta) {
+			const name = meta.name ?? String(meta.label).toLowerCase().normalize("NFD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+			const id = `world.${name}`;
+			if (packs.has(id)) throw new Error(`O compêndio ${id} já existe`);
+			const p = new CompendiumCollection({ id, name, label: meta.label, type: meta.type, packageName: "world", packageType: "world" });
+			p.locked = false;
+			packs.set(id, p);
+			return p;
+		}
 	}
 	mundo.CompendiumCollection = CompendiumCollection;
 

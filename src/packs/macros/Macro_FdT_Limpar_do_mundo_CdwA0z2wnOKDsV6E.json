@@ -1,0 +1,35 @@
+{
+  "_id": "CdwA0z2wnOKDsV6E",
+  "name": "FdT · Limpar do mundo",
+  "type": "script",
+  "img": "icons/svg/trash.svg",
+  "scope": "global",
+  "command": "// Apaga do mundo o conteúdo do Fim dos Tempos para você puxar só o que quiser do compêndio.\n// Guarda uma cópia num compêndio do mundo e não apaga o que você editou, a não ser que você marque.\ngame.modules.get(\"giriarpg-fim-dos-tempos\")?.api?.abrirLimpar();",
+  "folder": "X3cwRjrdatABr37x",
+  "flags": {
+    "world": {
+      "fdt": "fdtcampanha",
+      "fdtRole": "limpador"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha",
+      "antigo": "campanha-macros",
+      "assinatura": "29d7a295",
+      "assinaturas": [
+        "29d7a295"
+      ]
+    }
+  },
+  "_key": "!macros!CdwA0z2wnOKDsV6E",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

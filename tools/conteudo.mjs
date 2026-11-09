@@ -66,6 +66,12 @@ export const ATOS = [
 				role: "atualizador"
 			},
 			{
+				comando: '// Apaga do mundo o conteúdo do Fim dos Tempos para você puxar só o que quiser do compêndio.\n// Guarda uma cópia num compêndio do mundo e não apaga o que você editou, a não ser que você marque.\ngame.modules.get("giriarpg-fim-dos-tempos")?.api?.abrirLimpar();',
+				nome: "FdT · Limpar do mundo",
+				img: "icons/svg/trash.svg",
+				role: "limpador"
+			},
+			{
 				arquivo: "poder-combate-defensivo",
 				nome: "Poder · Combate Defensivo",
 				img: "systems/tormenta20/icons/poderes/combate.webp",
