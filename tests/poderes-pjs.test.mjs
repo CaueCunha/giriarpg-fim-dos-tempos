@@ -10,7 +10,7 @@ import { politicaRoteiro } from "../tools/sim/dialogos.mjs";
 
 const mundo = await criarMundo({ semente: "poderes-pjs" });
 await carregarModulo(mundo);
-await mundo.game.modules.get(MODULO).api.importar(["campanha"], { modo: "substituir" });
+await mundo.game.modules.get(MODULO).api.puxar({ atos: ["campanha"] });
 await mundo.criarCena("Poderes");
 const macro = (role) => mundo.game.macros.find((m) => m.getFlag("world", "fdtRole") === role);
 

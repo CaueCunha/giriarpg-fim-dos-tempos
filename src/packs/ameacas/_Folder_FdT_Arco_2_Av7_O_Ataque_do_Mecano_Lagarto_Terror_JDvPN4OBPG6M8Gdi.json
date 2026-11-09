@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Arco 2 · Av7 · O Ataque do Mecano-Lagarto-Terror",
+  "type": "Actor",
+  "color": "#7a4a1e",
+  "flags": {
+    "world": {
+      "fdt": "a2av7"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato2"
+    }
+  },
+  "_id": "JDvPN4OBPG6M8Gdi",
+  "description": "",
+  "folder": "SPYeOL26fagy7MFr",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!JDvPN4OBPG6M8Gdi"
+}

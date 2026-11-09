@@ -2,11 +2,12 @@
 
 ## Ato 1 · Colinas Centrais
 
-- `ato1-ameacas`: 139 documento(s), 9 pasta(s)
-- `ato1-itens`: 90 documento(s), 10 pasta(s)
-- `ato1-diarios`: 9 documento(s), 9 pasta(s)
-- `ato1-tabelas`: 15 documento(s), 7 pasta(s)
-- `ato1-macros`: 49 documento(s), 9 pasta(s)
+- Ameaças e NPCs: 139 documento(s)
+- Poderes: 47 documento(s)
+- Itens: 43 documento(s)
+- Diários: 9 documento(s)
+- Tabelas: 15 documento(s)
+- Macros: 49 documento(s)
 
 ### Ligações com o sistema (122)
 
@@ -140,11 +141,12 @@
 
 ## Ato 2 · Valkaria
 
-- `ato2-ameacas`: 167 documento(s), 13 pasta(s)
-- `ato2-itens`: 145 documento(s), 13 pasta(s)
-- `ato2-diarios`: 16 documento(s), 15 pasta(s)
-- `ato2-tabelas`: 28 documento(s), 13 pasta(s)
-- `ato2-macros`: 76 documento(s), 15 pasta(s)
+- Ameaças e NPCs: 167 documento(s)
+- Poderes: 40 documento(s)
+- Itens: 105 documento(s)
+- Diários: 16 documento(s)
+- Tabelas: 28 documento(s)
+- Macros: 76 documento(s)
 
 ### Ligações com o sistema (220)
 
@@ -376,9 +378,10 @@
 
 ## Campanha (o grupo e utilidades)
 
-- `campanha-itens`: 25 documento(s), 2 pasta(s)
-- `campanha-diarios`: 2 documento(s), 2 pasta(s)
-- `campanha-macros`: 11 documento(s), 2 pasta(s)
+- Poderes: 23 documento(s)
+- Itens: 2 documento(s)
+- Diários: 2 documento(s)
+- Macros: 12 documento(s)
 
 ### Ligações com o sistema (2)
 
@@ -389,4 +392,13 @@
 
 ### Avisos do Foundry simulado (0)
 
+
+## Compêndios
+
+- `ameacas` (Ameaças e NPCs): 306 documento(s), 24 pasta(s)
+- `poderes` (Poderes): 110 documento(s), 16 pasta(s)
+- `itens` (Itens): 150 documento(s), 25 pasta(s)
+- `diarios` (Diários): 27 documento(s), 29 pasta(s)
+- `tabelas` (Tabelas): 43 documento(s), 20 pasta(s)
+- `macros` (Macros): 137 documento(s), 29 pasta(s)
 

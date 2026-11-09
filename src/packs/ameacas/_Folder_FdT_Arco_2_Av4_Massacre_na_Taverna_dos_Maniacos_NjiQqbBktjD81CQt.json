@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Arco 2 · Av4 · Massacre na Taverna dos Maníacos",
+  "type": "Actor",
+  "color": "#5b2a4a",
+  "flags": {
+    "world": {
+      "fdt": "a2av4"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato2"
+    }
+  },
+  "_id": "NjiQqbBktjD81CQt",
+  "description": "",
+  "folder": "SPYeOL26fagy7MFr",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!NjiQqbBktjD81CQt"
+}

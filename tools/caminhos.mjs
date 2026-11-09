@@ -8,3 +8,5 @@ export const T20_COMMIT = "9e88b3186683c438f89968ea153315f85958e3d2";
 export const GERADORES = path.join(RAIZ, "src", "geradores");
 export const FONTE_PACKS = path.join(RAIZ, "src", "packs");
 export const PACKS = path.join(RAIZ, "packs");
+/** Assinaturas de todas as versões publicadas de cada documento (para a atualização opcional). */
+export const HISTORICO = path.join(RAIZ, "src", "historico.json");

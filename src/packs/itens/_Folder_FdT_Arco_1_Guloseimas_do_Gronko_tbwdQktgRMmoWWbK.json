@@ -1,0 +1,30 @@
+{
+  "name": "FdT · Arco 1 · Guloseimas do Gronko",
+  "type": "Item",
+  "color": "#8a4a6a",
+  "flags": {
+    "world": {
+      "fdt": "a1guloseimas"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "ato1"
+    }
+  },
+  "_id": "tbwdQktgRMmoWWbK",
+  "description": "",
+  "folder": "YsmuItVv6KOworw8",
+  "sorting": "a",
+  "sort": 0,
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  },
+  "_key": "!folders!tbwdQktgRMmoWWbK"
+}

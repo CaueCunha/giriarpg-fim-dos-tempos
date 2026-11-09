@@ -859,7 +859,7 @@
 
 	async function macroNoite() {
 		const forte = game.actors.find((a) => a.getFlag("world", "fdtRole") === "forte");
-		if (!forte) return ui.notifications.error("Ator do Forte não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!forte) return ui.notifications.error("Ator do Forte não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const HORAS = [
 			["18:00", "<b>1ª Onda · Invasão de Bandoleiros</b> (combate). 40 bandoleiros, 4 cães do inferno e 4 irmãos da Companhia. 20 escalam a paliçada (3 rodadas, desprevenidos), 20 abrem buracos em duplas. No início de cada rodada, cada abertura solta um cão (até 4); depois os irmãos, 1 por rodada por abertura. <b>Vitória:</b> derrotar todos os cães e irmãos mais 30 bandoleiros."],
 			["19:00", "<b>Discurso de Syvarian.</b> Ele aparece de escafandro completo, fora do alcance, tira o elmo e revela o relógio na testa. Deixe o grupo conversar e arrancar revelações com testes (veja o diário). Matá-lo ou feri-lo gravemente agora começa a 2ª onda na hora."],
@@ -1046,7 +1046,7 @@
 
 	async function macroBombardeio() {
 		const onda = game.actors.find((a) => a.getFlag("world", "fdtRole") === "bombardeio");
-		if (!onda) return ui.notifications.error("Ator do Bombardeio não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!onda) return ui.notifications.error("Ator do Bombardeio não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);
 		const rodada = onda.system.resources.primary.value;
 		const res = await foundry.applications.api.DialogV2.prompt({
@@ -1126,7 +1126,7 @@
 
 	async function macroHorda() {
 		const horda = game.actors.find((a) => a.getFlag("world", "fdtRole") === "horda");
-		if (!horda) return ui.notifications.error("Ator da Horda não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!horda) return ui.notifications.error("Ator da Horda não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);
 		const pv = horda.system.attributes.pv;
 		const tempestade = horda.effects.find((e) => e.name.startsWith("Tempestade Rubra"));
@@ -1194,7 +1194,7 @@
 
 	async function macroTentaculos() {
 		const tent = game.actors.find((a) => a.getFlag("world", "fdtRole") === "tentaculos");
-		if (!tent) return ui.notifications.error("Ator dos Tentáculos não encontrado (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!tent) return ui.notifications.error("Ator dos Tentáculos não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const alvos = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);
 		const res = await foundry.applications.api.DialogV2.prompt({
 			window: { title: "Tentáculos Lefeu" },
@@ -1241,7 +1241,7 @@
 
 	async function macroAbrigos() {
 		const abrigos = game.actors.filter((a) => a.getFlag("world", "fdtRole") === "abrigo");
-		if (!abrigos.length) return ui.notifications.error("Atores de abrigo não encontrados (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!abrigos.length) return ui.notifications.error("Atores de abrigo não encontrados (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const opcoes = abrigos.map((a) => `<option value="${a.id}">${a.name} · ${a.system.attributes.pv.value} PV</option>`).join("");
 		const res = await foundry.applications.api.DialogV2.prompt({
 			window: { title: "Abrigos dos Inocentes" },

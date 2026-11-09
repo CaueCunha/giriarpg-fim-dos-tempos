@@ -1495,7 +1495,7 @@
 		} else if (res.acao === "tributo") {
 			const tokens = canvas.tokens.controlled.filter((t) => t.actor);
 			const tabela = game.tables.find((t) => t.getFlag("world", "fdtRole") === "memoriasTemplo");
-			if (!tokens.length || !tabela) return ui.notifications.warn("Selecione quem paga o tributo (e importe o conteúdo do módulo Fim dos Tempos).");
+			if (!tokens.length || !tabela) return ui.notifications.warn("Selecione quem paga o tributo (e puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 			html = "<h3>O Tributo da Cabeça de Gnomo</h3><p><i>\"Aquele que deseja prosseguir por estes corredores deve pagar o tributo. Entregue uma de suas lembranças mais caras e receba uma das nossas.\"</i></p><ul>";
 			for (const t of tokens) {
 				const { roll, results } = await tabela.roll();

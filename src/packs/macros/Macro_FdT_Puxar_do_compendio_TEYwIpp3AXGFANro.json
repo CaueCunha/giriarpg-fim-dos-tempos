@@ -1,0 +1,35 @@
+{
+  "_id": "TEYwIpp3AXGFANro",
+  "name": "FdT · Puxar do compêndio",
+  "type": "script",
+  "img": "icons/svg/download.svg",
+  "scope": "global",
+  "command": "// Puxa do compêndio para o mundo só as aventuras escolhidas (nada é substituído).\ngame.modules.get(\"giriarpg-fim-dos-tempos\")?.api?.abrirPuxar();",
+  "folder": "X3cwRjrdatABr37x",
+  "flags": {
+    "world": {
+      "fdt": "fdtcampanha",
+      "fdtRole": "importador"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha",
+      "antigo": "campanha-macros",
+      "assinatura": "170c845c",
+      "assinaturas": [
+        "170c845c"
+      ]
+    }
+  },
+  "_key": "!macros!TEYwIpp3AXGFANro",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

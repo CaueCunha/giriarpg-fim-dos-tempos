@@ -932,7 +932,7 @@
 		const gaspar = game.actors.find((a) => a.getFlag("world", "fdtRole") === "gaspar");
 		const zardu = game.actors.find((a) => a.getFlag("world", "fdtRole") === "zardu");
 		const pj = canvas.tokens.controlled[0]?.actor;
-		if (!gaspar || !zardu) return ui.notifications.error("Atores de Gaspar e Zardu não encontrados (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!gaspar || !zardu) return ui.notifications.error("Atores de Gaspar e Zardu não encontrados (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		if (!pj) return ui.notifications.warn("Selecione o token do personagem que está argumentando.");
 		const res = await foundry.applications.api.DialogV2.prompt({
 			window: { title: "Convencer Gaspar" },
@@ -964,7 +964,7 @@
 		const zarduTok = canvas.tokens.placeables.find((t) => papel(t) === "zardu");
 		const copias = canvas.tokens.placeables.filter((t) => papel(t) === "zardu-copia");
 		const modelo = game.actors.find((a) => a.getFlag("world", "fdtRole") === "zardu-copia");
-		if (!zarduTok || !modelo) return ui.notifications.error("Coloque o token de Zardu na cena (e importe o conteúdo do módulo Fim dos Tempos).");
+		if (!zarduTok || !modelo) return ui.notifications.error("Coloque o token de Zardu na cena (e puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const gs = canvas.grid.size;
 
 		if (!copias.length) {
@@ -1000,7 +1000,7 @@
 		const papel = (t) => t.actor?.getFlag("world", "fdtRole");
 		const bhuluk = canvas.tokens.controlled.find((t) => papel(t) === "bhuluk") ?? canvas.tokens.placeables.find((t) => papel(t) === "bhuluk");
 		const modelo = game.actors.find((a) => a.getFlag("world", "fdtRole") === "enxame");
-		if (!bhuluk || !modelo) return ui.notifications.error("Coloque o token de Bhuluk na cena (e importe o conteúdo do módulo Fim dos Tempos).");
+		if (!bhuluk || !modelo) return ui.notifications.error("Coloque o token de Bhuluk na cena (e puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const r = await new Roll("1d4+1").evaluate();
 		const gs = canvas.grid.size;
 		const offs = [[2, 0], [-2, 0], [0, 2], [0, -2], [2, 2], [-2, -2], [2, -2], [-2, 2]];
@@ -1016,7 +1016,7 @@
 
 	async function macroRedefinicao() {
 		const tabela = game.tables.find((t) => t.getFlag("world", "fdt") === "av2" && t.name === "Redefinição de Caminhos");
-		if (!tabela) return ui.notifications.error("Tabela não encontrada (importe o conteúdo do módulo Fim dos Tempos).");
+		if (!tabela) return ui.notifications.error("Tabela não encontrada (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).");
 		const atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);
 		if (!atores.length) return tabela.draw();
 		for (const a of atores) await tabela.draw({ messageData: { speaker: ChatMessage.getSpeaker({ actor: a }) } });

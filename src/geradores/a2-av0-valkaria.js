@@ -381,7 +381,7 @@
 			secondary: { label: "Provas nesta aventura (máx. 5)", value: loAntigo?.secondary?.value ?? 0, max: 5 }
 		},
 		bio: p("<b>Ator de apoio, não vai para o mapa.</b> Guarda o contador de Lei &amp; Ordem do Arco 2 e as provas da aventura atual. Use a macro <i>Lei &amp; Ordem</i>.",
-			"Reimportar o módulo (ou rodar o gerador de novo) mantém o valor atual."),
+			"Atualizar pelo módulo (macro FdT · Atualizar do compêndio) ou rodar o gerador de novo mantém o valor atual."),
 		items: [
 			poder("Lei & Ordem (regra)", "icons/svg/book.svg",
 				p("Começa em <b>20</b> e cai <b>1 por sessão</b> (sessões muito curtas ou atípicas podem não contar, decidido fora do jogo; devem ser poucas).",
