@@ -33,5 +33,5 @@ jobs:
           if gh release view "$VERSAO" >/dev/null 2>&1; then
             gh release upload "$VERSAO" dist/module.json dist/module.zip --clobber
           else
-            gh release create "$VERSAO" dist/module.json dist/module.zip --title "Fim dos Tempos $VERSAO" --notes "Instale pelo manifesto: https://github.com/${{ github.repository }}/releases/latest/download/module.json"
+            gh release create "$VERSAO" dist/module.json dist/module.zip --title "Giria T20 - Fim dos Tempos (Campanha) $VERSAO" --notes "Instale pelo manifesto: https://github.com/${{ github.repository }}/releases/latest/download/module.json"
           fi

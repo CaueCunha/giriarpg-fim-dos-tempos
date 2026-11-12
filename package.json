@@ -1,9 +1,9 @@
 {
   "name": "giriarpg-fim-dos-tempos",
   "private": true,
-  "version": "0.18.1",
+  "version": "0.18.2",
   "type": "module",
-  "description": "Módulo Foundry VTT da campanha Fim dos Tempos (Tormenta20)",
+  "description": "Giria T20 - Fim dos Tempos (Campanha): módulo Foundry VTT da campanha Fim dos Tempos (Tormenta20)",
   "scripts": {
     "setup": "node tools/baixar-sistema.mjs",
     "build": "node tools/build.mjs",

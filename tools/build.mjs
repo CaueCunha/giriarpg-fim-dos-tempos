@@ -233,7 +233,7 @@ export function escreverManifesto(packs) {
 	const repo = "https://github.com/CaueCunha/giriarpg-fim-dos-tempos";
 	const manifesto = {
 		id: MODULO,
-		title: "Fim dos Tempos · Campanha (Tormenta20)",
+		title: "Giria T20 - Fim dos Tempos (Campanha)",
 		description:
 			"<p>Conteúdo da campanha <b>Fim dos Tempos</b> para o sistema Tormenta20: ameaças, poderes, itens, diários, tabelas e macros do Ato 1 (Colinas Centrais) e do Ato 2 (Valkaria), além das regras de grupo. Nada é importado sozinho: puxe dos compêndios o que precisar. A macro <i>FdT · Atualizar do compêndio</i> traz as melhorias de versões novas só para o que você não editou.</p>",
 		version: versao,
@@ -251,7 +251,7 @@ export function escreverManifesto(packs) {
 			system: "tormenta20",
 			ownership: { PLAYER: "NONE", ASSISTANT: "OWNER" }
 		})),
-		packFolders: [{ name: "Fim dos Tempos", sorting: "m", color: "#6b2f2f", packs: packs.map((p) => p.nome) }],
+		packFolders: [{ name: "Giria T20 - Fim dos Tempos (Campanha)", sorting: "m", color: "#6b2f2f", packs: packs.map((p) => p.nome) }],
 		flags: { [MODULO]: { atos: Object.fromEntries(ATOS.map((a) => [a.id, { rotulo: a.rotulo }])) } },
 		url: repo,
 		manifest: `${repo}/releases/latest/download/module.json`,
