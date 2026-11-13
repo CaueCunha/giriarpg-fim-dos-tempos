@@ -13,7 +13,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { criarMundo } from "./sim/mundo.mjs";
 import { ATOS, PACKS, MODULO } from "./conteudo.mjs";
-import { assinatura } from "../scripts/assinatura.mjs";
+import { assinatura, comTokenPadrao } from "../scripts/assinatura.mjs";
 import { ligarAoSistema, indiceSistema } from "./ligar-sistema.mjs";
 import { RAIZ, GERADORES, FONTE_PACKS, HISTORICO } from "./caminhos.mjs";
 import { deepClone } from "./sim/utils.mjs";
@@ -41,6 +41,7 @@ export async function capturarAto(ato, { semente } = {}) {
 		for (const tipo of Object.keys(COLECAO)) {
 			docs[tipo] = mundo.colecoes[tipo].contents.map((d) => d.toObject());
 		}
+		for (const a of docs.Actor) padronizarToken(a);
 		for (const [i, m] of (ato.macros ?? []).entries()) {
 			docs.Macro.push({
 				_id: `${i + 1}x`,
@@ -57,6 +58,12 @@ export async function capturarAto(ato, { semente } = {}) {
 	} finally {
 		mundo.encerrar();
 	}
+}
+
+/** Token padrão (scripts/assinatura.mjs) em toda ameaça/NPC, para valer a todos os geradores. */
+export function padronizarToken(actor) {
+	if (actor.type === "npc") actor.prototypeToken = comTokenPadrao(actor.prototypeToken);
+	return actor;
 }
 
 /* ------------------------------------------------------------------------ */

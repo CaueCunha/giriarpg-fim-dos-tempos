@@ -14,6 +14,7 @@ import { criarMundo, carregarModulo, problemas, limparRegistros, manifesto, MODU
 import { lerPackFonte } from "../tools/sim/sistema.mjs";
 import { FONTE_PACKS, T20_DIR } from "../tools/caminhos.mjs";
 import { getProperty } from "../tools/sim/utils.mjs";
+import { correcaoToken } from "../scripts/assinatura.mjs";
 
 const m = manifesto();
 const packs = m.packs.map((p) => ({ ...p, ...lerPackFonte(path.join(FONTE_PACKS, p.name)) }));
@@ -172,4 +173,18 @@ test("tabelas sorteiam", async () => {
 		assert.ok(r.results.length > 0, `${t.name} não sorteou nada (fórmula ${t.formula})`);
 	}
 	mundo.encerrar();
+});
+
+test("toda ameaça/NPC vem com o token padrão (nome ao passar o mouse, visão, barras PV e PM)", () => {
+	const atores = packs.filter((p) => p.type === "Actor").flatMap((p) => p.docs).filter((d) => d.type === "npc");
+	assert.ok(atores.length > 0);
+	for (const a of atores) {
+		const t = a.prototypeToken ?? {};
+		assert.equal(t.displayName, 30, `${a.name}: displayName`);
+		assert.equal(t.displayBars, 40, `${a.name}: displayBars`);
+		assert.equal(t.bar1?.attribute, "attributes.pv", `${a.name}: barra 1`);
+		assert.equal(t.bar2?.attribute, "attributes.pm", `${a.name}: barra 2`);
+		assert.equal(t.sight?.enabled, true, `${a.name}: visão`);
+		assert.deepEqual(correcaoToken(t), {}, `${a.name}: fora do TOKEN_PADRAO (Bar Brawl)`);
+	}
 });

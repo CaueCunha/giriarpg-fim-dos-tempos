@@ -21,8 +21,8 @@
     "name": "Mabel LeBlanc",
     "actorLink": true,
     "disposition": 0,
-    "displayName": 20,
-    "displayBars": 20,
+    "displayName": 30,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.pv"
     },
@@ -33,6 +33,37 @@
     },
     "sight": {
       "enabled": true
+    },
+    "bar2": {
+      "attribute": "attributes.pm"
+    },
+    "flags": {
+      "barbrawl": {
+        "resourceBars": {
+          "bar1": {
+            "id": "bar1",
+            "order": 0,
+            "attribute": "attributes.pv",
+            "mincolor": "#FF0000",
+            "maxcolor": "#80FF00",
+            "position": "bottom-inner",
+            "gmVisibility": -1,
+            "ownerVisibility": 50,
+            "otherVisibility": 0
+          },
+          "bar2": {
+            "id": "bar2",
+            "order": 1,
+            "attribute": "attributes.pm",
+            "mincolor": "#000080",
+            "maxcolor": "#80B3FF",
+            "position": "top-inner",
+            "gmVisibility": -1,
+            "ownerVisibility": 50,
+            "otherVisibility": 0
+          }
+        }
+      }
     }
   },
   "system": {

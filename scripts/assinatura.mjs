@@ -14,6 +14,55 @@
  */
 export const MODULO = "giriarpg-fim-dos-tempos";
 
+/**
+ * Token padrão de toda ameaça/NPC (type "npc") do módulo. O build aplica no protótipo de cada ator, e o módulo
+ * reaplica ao criar o ator ou o token no mundo (vence o padrão do mundo e o do Bar Brawl) e, ao abrir o mundo,
+ * corrige o que já está lá. Nome, arte, tamanho, disposição e vínculo continuam os da ameaça.
+ *   - nome ao passar o mouse para qualquer um (30), barras sempre para o dono (40), visão ligada;
+ *   - barra 1 = PV, barra 2 = PM. Bar Brawl: as duas barras vão explícitas, senão ele cria a barra 2 copiando
+ *     as cores da 1. PV embaixo (vermelho→verde), PM em cima (azul).
+ */
+export const TOKEN_PADRAO = Object.freeze({
+	displayName: 30,
+	displayBars: 40,
+	sight: { enabled: true },
+	bar1: { attribute: "attributes.pv" },
+	bar2: { attribute: "attributes.pm" },
+	flags: {
+		barbrawl: {
+			resourceBars: {
+				bar1: { id: "bar1", order: 0, attribute: "attributes.pv", mincolor: "#FF0000", maxcolor: "#80FF00", position: "bottom-inner", gmVisibility: -1, ownerVisibility: 50, otherVisibility: 0 },
+				bar2: { id: "bar2", order: 1, attribute: "attributes.pm", mincolor: "#000080", maxcolor: "#80B3FF", position: "top-inner", gmVisibility: -1, ownerVisibility: 50, otherVisibility: 0 }
+			}
+		}
+	}
+});
+
+const ehObjeto = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+const folhas = (o, pre = "") => Object.entries(o).flatMap(([k, v]) => (ehObjeto(v) ? folhas(v, `${pre}${k}.`) : [[`${pre}${k}`, v]]));
+const pegar = (o, caminho) => caminho.split(".").reduce((x, k) => (ehObjeto(x) ? x[k] : undefined), o);
+const fundir = (base, extra) => {
+	const out = ehObjeto(base) ? structuredClone(base) : {};
+	for (const [k, v] of Object.entries(extra)) out[k] = ehObjeto(v) ? fundir(out[k], v) : v;
+	return out;
+};
+
+/** É uma ameaça/NPC do módulo? (dados crus ou documento) */
+export const ehAmeacaDoModulo = (d) => {
+	const src = d?._source ?? d;
+	return src?.type === "npc" && !!(src.flags?.world?.fdt || src.flags?.[MODULO]);
+};
+
+/** O token (de protótipo ou de cena) com o padrão aplicado por cima, mantendo o resto. */
+export const comTokenPadrao = (token) => fundir(token ?? {}, TOKEN_PADRAO);
+
+/** Só os campos do padrão que estão diferentes no token, em chaves com ponto (vazio = já está certo). */
+export function correcaoToken(token) {
+	const out = {};
+	for (const [k, v] of folhas(TOKEN_PADRAO)) if (pegar(token ?? {}, k) !== v) out[k] = v;
+	return out;
+}
+
 /** Valores que a mesa muda e que sobrevivem a uma atualização. Mantenha igual a tools/conteudo.mjs. */
 export const PRESERVAR = [
 	{ documento: "Actor", role: "leiordem", caminhos: ["system.resources"] },

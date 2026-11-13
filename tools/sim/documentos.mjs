@@ -624,6 +624,13 @@ export function criarClasses(mundo) {
 			return mundo.op(() => this._aplicarUpdate(changes, operation));
 		}
 
+		/** Como no Foundry: funde as mudanças na fonte sem gravar (usado nos ganchos preCreate). */
+		updateSource(changes = {}) {
+			U.mergeObject(this._source, U.expandObject(U.deepClone(changes)), { performDeletions: true });
+			this.prepareData?.();
+			return changes;
+		}
+
 		async _aplicarUpdate(changes, operation = {}) {
 			if (changes instanceof Document) changes = changes.toObject();
 			changes = U.expandObject(U.deepClone(changes));
