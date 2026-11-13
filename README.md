@@ -86,6 +86,8 @@ Os guias de cada aventura estão em [`docs/geradores/`](docs/geradores).
 
 Retratos e tokens feitos para a campanha ficam em [`assets/`](assets), separados por aventura (por enquanto: Lefou Adolescente, Cultistas Puristas Devem Morrer e O Terror que Veio do Céu). Os geradores apontam para eles (`modules/giriarpg-fim-dos-tempos/assets/...`), e os NPCs sem ficha no livro ganham um ator de apoio só com a arte (ou uma página de imagem no diário), prontas para **Mostrar aos Jogadores**.
 
+Toda ameaça e NPC já vem com o token configurado: nome visível ao passar o mouse (qualquer um), visão ligada, PV na barra 1 e PM na barra 2, sempre visíveis ao dono. O sistema T20 pinta a barra 2 de azul. Isso é aplicado no build (`tools/build.mjs`, `padronizarToken`), então vale para todo gerador, inclusive os novos.
+
 ## Testes
 
 ```bash

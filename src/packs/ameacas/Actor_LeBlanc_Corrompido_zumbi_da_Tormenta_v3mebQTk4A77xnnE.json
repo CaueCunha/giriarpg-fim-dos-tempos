@@ -744,14 +744,14 @@
   "prototypeToken": {
     "flags": {},
     "name": "LeBlanc Corrompido (zumbi da Tormenta)",
-    "displayName": 0,
+    "displayName": 30,
     "width": 1,
     "height": 1,
     "lockRotation": false,
     "rotation": 0,
     "actorLink": false,
     "disposition": -1,
-    "displayBars": 0,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.pv"
     },

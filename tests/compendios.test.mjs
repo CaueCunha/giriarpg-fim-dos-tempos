@@ -173,3 +173,16 @@ test("tabelas sorteiam", async () => {
 	}
 	mundo.encerrar();
 });
+
+test("toda ameaça/NPC vem com o token padrão (nome ao passar o mouse, visão, barras PV e PM)", () => {
+	const atores = packs.filter((p) => p.type === "Actor").flatMap((p) => p.docs).filter((d) => d.type === "npc");
+	assert.ok(atores.length > 0);
+	for (const a of atores) {
+		const t = a.prototypeToken ?? {};
+		assert.equal(t.displayName, 30, `${a.name}: displayName`);
+		assert.equal(t.displayBars, 40, `${a.name}: displayBars`);
+		assert.equal(t.bar1?.attribute, "attributes.pv", `${a.name}: barra 1`);
+		assert.equal(t.bar2?.attribute, "attributes.pm", `${a.name}: barra 2`);
+		assert.equal(t.sight?.enabled, true, `${a.name}: visão`);
+	}
+});

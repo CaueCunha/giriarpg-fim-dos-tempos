@@ -41,6 +41,7 @@ export async function capturarAto(ato, { semente } = {}) {
 		for (const tipo of Object.keys(COLECAO)) {
 			docs[tipo] = mundo.colecoes[tipo].contents.map((d) => d.toObject());
 		}
+		for (const a of docs.Actor) padronizarToken(a);
 		for (const [i, m] of (ato.macros ?? []).entries()) {
 			docs.Macro.push({
 				_id: `${i + 1}x`,
@@ -57,6 +58,28 @@ export async function capturarAto(ato, { semente } = {}) {
 	} finally {
 		mundo.encerrar();
 	}
+}
+
+/**
+ * Token padrão de todas as ameaças e NPCs, aplicado aqui para valer a todos os geradores:
+ * nome visível ao passar o mouse (qualquer um), visão ligada e barras sempre visíveis ao dono,
+ * com PV na barra 1 e PM na barra 2. O sistema T20 desenha a barra 2 em azul e a 1 do verde ao vermelho
+ * (module/canvas/token.mjs, _drawHPBar), então a cor do PM vem da posição da barra.
+ * Nome, arte, tamanho, disposição e vínculo continuam vindo do gerador.
+ */
+export const TOKEN_PADRAO = {
+	displayName: 30, // CONST.TOKEN_DISPLAY_MODES.HOVER: "Ao passar o mouse (qualquer um)"
+	displayBars: 40, // CONST.TOKEN_DISPLAY_MODES.OWNER: "Sempre (dono)"
+	bar1: { attribute: "attributes.pv" },
+	bar2: { attribute: "attributes.pm" }
+};
+
+export function padronizarToken(actor) {
+	if (actor.type !== "npc") return actor;
+	const t = (actor.prototypeToken ??= {});
+	Object.assign(t, deepClone(TOKEN_PADRAO));
+	t.sight = { ...(t.sight ?? {}), enabled: true };
+	return actor;
 }
 
 /* ------------------------------------------------------------------------ */

@@ -738,14 +738,14 @@
   "prototypeToken": {
     "flags": {},
     "name": "Ganchador do Templo",
-    "displayName": 50,
+    "displayName": 30,
     "width": 2,
     "height": 2,
     "lockRotation": false,
     "rotation": 0,
     "actorLink": false,
     "disposition": -1,
-    "displayBars": 0,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.pv"
     },
