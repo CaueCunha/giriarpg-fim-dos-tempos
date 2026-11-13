@@ -740,14 +740,14 @@
   "prototypeToken": {
     "flags": {},
     "name": "Grifo dos Cavaleiros",
-    "displayName": 0,
+    "displayName": 30,
     "width": 2,
     "height": 2,
     "lockRotation": false,
     "rotation": 0,
     "actorLink": false,
     "disposition": -1,
-    "displayBars": 0,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.pv"
     },

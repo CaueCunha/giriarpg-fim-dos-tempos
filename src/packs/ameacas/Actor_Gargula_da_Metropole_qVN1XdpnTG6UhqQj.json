@@ -24,8 +24,8 @@
     "name": "Gárgula da Metrópole",
     "actorLink": false,
     "disposition": -1,
-    "displayName": 20,
-    "displayBars": 20,
+    "displayName": 30,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.pv"
     },
@@ -36,6 +36,9 @@
     },
     "sight": {
       "enabled": true
+    },
+    "bar2": {
+      "attribute": "attributes.pm"
     }
   },
   "system": {
