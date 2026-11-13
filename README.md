@@ -86,7 +86,7 @@ Os guias de cada aventura estão em [`docs/geradores/`](docs/geradores).
 
 Retratos e tokens feitos para a campanha ficam em [`assets/`](assets), separados por aventura (por enquanto: Lefou Adolescente, Cultistas Puristas Devem Morrer e O Terror que Veio do Céu). Os geradores apontam para eles (`modules/giriarpg-fim-dos-tempos/assets/...`), e os NPCs sem ficha no livro ganham um ator de apoio só com a arte (ou uma página de imagem no diário), prontas para **Mostrar aos Jogadores**.
 
-Toda ameaça e NPC já vem com o token configurado: nome visível ao passar o mouse (qualquer um), visão ligada, PV na barra 1 e PM na barra 2, sempre visíveis ao dono. O sistema T20 pinta a barra 2 de azul. Isso é aplicado no build (`tools/build.mjs`, `padronizarToken`), então vale para todo gerador, inclusive os novos.
+Toda ameaça e NPC já vem com o token configurado: nome visível ao passar o mouse (qualquer um), visão ligada, barras sempre visíveis ao dono, com PV embaixo (vermelho→verde) e PM em cima (azul), já nas barras do **Bar Brawl**. O padrão é uma constante só (`TOKEN_PADRAO` em `scripts/assinatura.mjs`): o build aplica em todo ator `npc`, e o módulo reaplica ao criar a ameaça ou o token no mundo, vencendo o padrão do mundo e o do Bar Brawl. Ao abrir o mundo, o Mestre corrige as ameaças do módulo que já estão nele e os tokens delas nas cenas (arte, nome e tamanho ficam; nada passa a contar como editado). Para desligar a correção, desmarque **Token padrão nas ameaças** nas configurações do módulo.
 
 ## Testes
 
