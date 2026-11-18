@@ -516,6 +516,9 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 					for (const r of d.rolls) if (r && !r._evaluated && r instanceof Roll) mundo.relatar({ documentName: "ChatMessage", name: "" }, "aviso", "rolls", r.formula, "rolagem não avaliada mandada ao chat");
 				}
 				if (typeof d.content !== "string" && d.content !== undefined) d.content = String(d.content);
+				// Como no Foundry: preCreateChatMessage recebe o documento e pode mexer na fonte (updateSource) ou cancelar.
+				const pre = { _source: d, flags: d.flags ?? {}, rolls: d.rolls ?? [], getFlag: (m, k) => d.flags?.[m]?.[k], updateSource: (c) => Object.assign(d, c) };
+				if (mundo.chamarHook("preCreateChatMessage", pre, d, operation, mundo.game.user.id) === false) return null;
 				const msg = { id: U.randomID(), ...d, timestamp: Date.now(), origem: mundo.contexto.atual };
 				mundo.chat.push(msg);
 				verificarLinks(d.content ?? "", `chat (${mundo.contexto.atual})`);

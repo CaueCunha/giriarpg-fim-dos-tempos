@@ -102,3 +102,27 @@ test("jogador em outro computador: a resposta volta por socket para quem rodou a
 	assert.equal(r.options.fdt.quem, "Jogador 1");
 	mundo.encerrar();
 });
+
+test("o dano do card não rola de novo no resumo da macro (nada duplicado no chat)", async () => {
+	const { mundo, api, pjs } = await mesa();
+	const pj = pjs[0].pj;
+	const dano = await new globalThis.Roll("2d12[psiquico]").evaluate();
+	const promessa = api.pedirTeste({ ator: pj, pericia: "vont", cd: 25, dano, metade: true });
+	await espera();
+	const [card] = cardsDe(mundo);
+	await api.responderTeste(card.flags[MODULO].teste.id);
+	const r = await promessa;
+	assert.equal(cardsDe(mundo).length, 1, "um card só");
+	assert.equal(mundo.chat.filter((m) => m.flags?.tormenta20?.rollTotal !== undefined).length, 1, "o jogador rola uma vez só");
+	// O resumo da macro costuma mandar as rolagens da cena (incluindo o dano que já foi no card).
+	const outra = await new globalThis.Roll("1d4").evaluate();
+	const resumo = await mundo.ChatMessage.create({ content: "<p>Surto Psíquico</p>", rolls: [dano, r, outra] });
+	assert.ok(!resumo.rolls.includes(dano), "o dano já mostrado no card sai do resumo");
+	assert.ok(resumo.rolls.includes(outra), "as outras rolagens ficam");
+	// Sem card (NPC), o dano não foi ao chat: fica no resumo.
+	const npcDano = await new globalThis.Roll("2d12").evaluate();
+	await api.pedirTeste({ ator: await mundo.classes.Actor.create({ name: "Ogro", type: "npc" }), pericia: "vont", dano: npcDano });
+	const resumo2 = await mundo.ChatMessage.create({ content: "<p>x</p>", rolls: [npcDano] });
+	assert.ok(resumo2.rolls.includes(npcDano));
+	mundo.encerrar();
+});

@@ -32,6 +32,8 @@ const NOMES = {
 	for: "Força", des: "Destreza", con: "Constituição", int: "Inteligência", sab: "Sabedoria", car: "Carisma"
 };
 const RESISTENCIAS = new Set(["fort", "refl", "vont"]);
+/** Marca nas opções do Roll: já foi ao chat no card de um teste. */
+const JA_NO_CHAT = "fdtNoCard";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const sinal = (n) => (n >= 0 ? `+${n}` : `${n}`);
@@ -159,6 +161,9 @@ export async function pedirTeste(opcoes = {}) {
 		rolls: danos,
 		flags: { [MODULO]: { teste: dados } }
 	});
+	// O dano já rolou (e o Dice So Nice já mostrou os dados) neste card: se a macro mandar a mesma rolagem
+	// de novo no resumo, ela sai de lá (ver tirarRepetidas), senão os dados aparecem rolando duas vezes.
+	for (const r of danos) if (r?.options) r.options[JA_NO_CHAT] = true;
 	const p = pendentes.get(id);
 	if (p) p.msg = msg;
 	Hooks.callAll(`${MODULO}.testePedido`, { id, ator, jogadores, dados });
@@ -242,6 +247,27 @@ function ligarCard(message, html) {
 	});
 }
 
+/** Lê as opções de uma rolagem da fonte da mensagem (Roll, objeto ou JSON). */
+function opcoesDe(r) {
+	if (!r) return null;
+	if (typeof r === "string") {
+		try {
+			return JSON.parse(r)?.options ?? null;
+		} catch {
+			return null;
+		}
+	}
+	return r.options ?? null;
+}
+
+/** Resumo de macro com uma rolagem que já foi ao chat num card de teste: tira a repetida (os dados não rolam duas vezes). */
+function tirarRepetidas(message) {
+	if (message?.flags?.[MODULO]?.teste) return;
+	const fonte = message?._source?.rolls ?? message?.rolls;
+	if (!Array.isArray(fonte) || !fonte.some((r) => opcoesDe(r)?.[JA_NO_CHAT])) return;
+	message.updateSource({ rolls: fonte.filter((r) => !opcoesDe(r)?.[JA_NO_CHAT]) });
+}
+
 export function registrarTestes() {
 	game.settings.register(MODULO, AJUSTE, {
 		name: "Os jogadores rolam os testes das macros",
@@ -252,6 +278,7 @@ export function registrarTestes() {
 		default: true
 	});
 	Hooks.on("renderChatMessageHTML", ligarCard);
+	Hooks.on("preCreateChatMessage", tirarRepetidas);
 }
 
 export function registrarSocket() {
