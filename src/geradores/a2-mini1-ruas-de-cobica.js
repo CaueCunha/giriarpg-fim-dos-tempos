@@ -19,6 +19,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-mini1-ruas-de-cobica.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2mini1";
@@ -528,10 +530,11 @@
 		if (!tokens.length) return ui.notifications.warn("Selecione os personagens.");
 		const rolls = [];
 		const linhas = [];
-		for (const t of tokens) {
-			const pe = t.actor.system.pericias ?? {};
-			const [k, v] = ["mist", "reli", "nobr"].map((x) => [x, Number(pe[x]?.value) || 0]).sort((a, b) => b[1] - a[1])[0];
-			const r = await new Roll(`1d20 + ${v}`).evaluate();
+		const melhorDe = (t) => ["mist", "reli", "nobr"].map((x) => [x, Number(t.actor.system.pericias?.[x]?.value) || 0]).sort((a, b) => b[1] - a[1])[0];
+		const testes = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: melhorDe(t)[0], titulo: "O contrato da Ploigoníada", motivo: "Misticismo, Religião ou Nobreza (a melhor)." })));
+		for (const [i, t] of tokens.entries()) {
+			const [k] = melhorDe(t);
+			const r = testes[i];
 			rolls.push(r);
 			linhas.push(`<li>${t.name} (${{ mist: "Misticismo", reli: "Religião", nobr: "Nobreza" }[k]}): ${r.total}.</li>`);
 		}
@@ -633,7 +636,7 @@
 		const alvos = [...game.user.targets].filter((t) => t.actor);
 		const rolls = [];
 		const cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };
-		const salvar = async (a, k) => { const r = await new Roll(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0}`).evaluate(); rolls.push(r); return r.total; };
+		const salvar = async (a, k, o = {}) => { const r = await fdtTeste(a, k, { cd: 28, ...o }); rolls.push(r); return r.total; };
 		const gastar = async (n) => {
 			const pm = Number(cob.system.attributes.pm.value) || 0;
 			if (pm < n) return false;
@@ -662,15 +665,15 @@
 			for (const t of res.acao === "silencio" ? alvos : alvos.slice(0, 1)) {
 				const a = t.actor;
 				if (res.acao === "direitos") {
-					const r = await salvar(a, "fort");
+					const r = await salvar(a, "fort", { titulo: "Ler Seus Direitos", falha: `${res.devedor ? "atordoado" : "pasmo"} por 1 rodada.` });
 					const c = res.devedor ? "atordoado" : "pasmo";
 					if (r < 28) await cond(a, c);
 					lista.push(`<li>${t.name}: Fortitude ${r}, ${r >= 28 ? "resiste" : `<b>${c} por 1 rodada</b>`}.</li>`);
 				} else if (res.acao === "negar") {
-					const r = await salvar(a, "vont");
+					const r = await salvar(a, "vont", { titulo: "Negar Recurso", falha: `não pode usar ${res.habilidade || "a habilidade escolhida"} até o fim da cena.` });
 					lista.push(`<li>${t.name}: Vontade ${r}, ${r >= 28 ? "resiste" : `não pode usar <b>${res.habilidade || "a habilidade escolhida"}</b> até o fim da cena`}.</li>`);
 				} else if (res.acao === "imobilizar") {
-					const r = await salvar(a, "vont");
+					const r = await salvar(a, "vont", { titulo: "Imobilizar", sucesso: "fica lento.", falha: "fica paralisado." });
 					await cond(a, r >= 28 ? "lento" : "paralisado");
 					lista.push(`<li>${t.name}: Vontade ${r}, <b>${r >= 28 ? "lento" : "paralisado"}</b>. Ação completa por rodada para um novo teste de Vontade CD 28; passando, liberta-se.</li>`);
 				} else if (res.acao === "silencio") {
@@ -715,7 +718,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Mini 1 · Mensagem da Ploigoníada", ICO.pergaminho, macroMensagem),

@@ -22,6 +22,8 @@
  * Veja o guia av5-maniacos-aberrantes.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av5";
@@ -912,8 +914,9 @@
 		const rolls = [];
 		let melhor = 0;
 		let html = `<h3>Aproximação</h3><p>${res.pericia === "guer" ? "Guerra" : "Percepção"} CD ${cd}</p><ul>`;
-		for (const a of atores) {
-			const r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();
+		const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: res.pericia, cd, titulo: "Aproximação", motivo: "Vale o melhor resultado do grupo." })));
+		for (const [i, a] of atores.entries()) {
+			const r = testes[i];
 			rolls.push(r);
 			melhor = Math.max(melhor, r.total);
 			html += `<li>${a.name}: <b>${r.total}</b></li>`;
@@ -942,9 +945,9 @@
 		let dados = 0;
 		let html = "<h3>Construindo Defesas</h3><ul>";
 		const lista = atores.length ? atores : [null];
+		const testes = await fdtTestes(lista.filter((a) => a && a.system.pericias?.[res.pericia]).map((a) => ({ ator: a, pericia: res.pericia, cd: 20, titulo: "Construindo Defesas", motivo: "CD 20 gera 1d4 de mana; cada 10 acima, +1d4." })));
 		for (const a of lista) {
-			const bonus = a ? (a.system.pericias?.[res.pericia]?.value ?? 0) : Number(res.bonus) || 0;
-			const r = await new Roll(`1d20 + ${bonus}`).evaluate();
+			const r = a && a.system.pericias?.[res.pericia] ? testes.shift() : await new Roll(`1d20 + ${a ? 0 : Number(res.bonus) || 0}`).evaluate();
 			rolls.push(r);
 			const d = r.total >= 20 ? 1 + Math.floor((r.total - 20) / 10) : 0;
 			dados += d;
@@ -978,8 +981,10 @@
 		const rolls = [];
 		const dias = await new Roll("1d6").evaluate();
 		rolls.push(dias);
-		const social = await new Roll(`1d20 + ${prof.system.pericias?.[res.social]?.value ?? 0}`).evaluate();
-		const tecnica = await new Roll(`1d20 + ${prof.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();
+		const [social, tecnica] = await fdtTestes([
+			{ ator: prof, pericia: res.social, cd: 20, titulo: "Treinando Parceiros: teste social" },
+			{ ator: prof, pericia: res.pericia, cd: 20, titulo: "Treinando Parceiros: técnica" }
+		]);
 		rolls.push(social, tecnica);
 		let html = `<h3>Treinando Parceiros</h3><p>Leva <b>${dias.total} dia(s)</b> (dia inteiro de trabalho).</p>
 			<ul><li>${res.social === "dipl" ? "Diplomacia" : "Conhecimento"}: <b>${social.total}</b> (CD 20) ${social.total >= 20 ? "✔️" : "❌"}</li>
@@ -1072,11 +1077,13 @@
 			const cd = res.perto ? 25 : 20;
 			const tipo = res.perto ? "perfuracao" : "impacto";
 			html = `<h3>Bombardeio · rodada ${Math.min(rodada + 1, 5)} de 5</h3><p>Reflexos CD ${cd}.</p><ul>`;
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();
+			const danos = await Promise.all(alvos.map(() => new Roll(`4d6[${tipo}]`).evaluate()));
+			const testes = await fdtTestes(alvos.map((a, i) => ({ ator: a, pericia: "refl", cd, dano: danos[i], titulo: "Bombardeio", sucesso: "se desvia, sem dano.", falha: `toma o dano${cd ? `; falhando por 10 ou mais, perde a ação` : ""}.` })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				if (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️ se desvia</li>`; continue; }
-				const d = await new Roll(`4d6[${tipo}]`).evaluate();
+				const d = danos[i];
 				rolls.push(d);
 				await a.applyDamageV2(d, 1);
 				const perdeAcao = r.total <= cd - 10;
@@ -1088,9 +1095,9 @@
 			const cd = (desarmar ? 25 : 15) + (Number(res.extra) || 0);
 			const pericia = desarmar ? "ladi" : null;
 			html = `<h3>${desarmar ? "Desarmar" : "Carregar"} o explosivo</h3><p>${desarmar ? "Ladinagem" : "Força"} CD ${cd}</p><ul>`;
-			for (const a of alvos) {
-				const bonus = desarmar ? (a.system.pericias?.[pericia]?.value ?? 0) : (a.system.atributos?.for?.value ?? 0);
-				const r = await new Roll(`1d20 + ${bonus}`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia, atributo: desarmar ? undefined : "for", cd, titulo: desarmar ? "Desarmar o explosivo" : "Carregar o explosivo" })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const falhaPor = cd - r.total;
 				let txt = r.total >= cd ? (desarmar ? "✔️ um sucesso (3 desarmam)" : "✔️ levou o explosivo para longe: desarmado") : "❌";
@@ -1105,13 +1112,15 @@
 		} else {
 			const n = Number(res.armados) || 0;
 			html = `<h3>Detonação</h3><p><b>${n}</b> explosivo(s) não desarmado(s): cada um destrói <b>8 quadrados</b> da paliçada.</p><ul>`;
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();
+			const danos = await Promise.all(alvos.map(() => Promise.all(Array.from({ length: n }, () => new Roll("10d6[impacto]").evaluate()))));
+			const testes = await fdtTestes(alvos.map((a, j) => ({ ator: a, pericia: "refl", cd: 20, dano: danos[j], metade: true, titulo: "Detonação" })));
+			for (const [j, a] of alvos.entries()) {
+				const r = testes[j];
 				rolls.push(r);
 				const ok = r.total >= 20;
 				let total = 0;
 				for (let i = 0; i < n; i++) {
-					const d = await new Roll("10d6[impacto]").evaluate();
+					const d = danos[j][i];
 					rolls.push(d);
 					await a.applyDamageV2(d, ok ? 0.5 : 1);
 					total += d.total;
@@ -1161,8 +1170,9 @@
 			html += "<p style=\"font-size:0.85em\">Efeitos de área causam +50% de dano na horda. Os zumbis têm +10 em testes de resistência e são imunes a crítico, ácido, eletricidade, fogo, frio, luz, trevas, veneno, paralisia, cansaço, metabolismo e metamorfose.</p>";
 		} else if (res.acao === "inicio") {
 			html = `<h3>Loucura da Horda · início do turno</h3><p>${res.save === "fort" ? "Fortitude" : "Vontade"} CD ${cd}.</p><ul>`;
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.[res.save]?.value ?? 0}`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: res.save, cd, titulo: "Loucura da Horda", falha: "perde 2 PM (ou um parceiro aleatório é ferido); sem PM, perde 1 parceiro." })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				if (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️</li>`; continue; }
 				const pm = a.system.attributes.pm;
@@ -1217,8 +1227,9 @@
 		} else if (res.acao === "agarrar") {
 			const cd = res.fosso ? 30 : 25;
 			html = `<h3>Agarrar dos Tentáculos</h3><p>Luta CD ${cd}.</p><ul>`;
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.luta?.value ?? 0}`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "luta", cd, titulo: "Agarrar dos Tentáculos", falha: "fica agarrado." })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= cd;
 				await a.toggleStatusEffect("agarrado", { active: !ok });
@@ -1302,7 +1313,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av5 · Noite no Inferno", "icons/svg/clockwork.svg", macroNoite),

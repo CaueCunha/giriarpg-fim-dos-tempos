@@ -290,15 +290,16 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 			const p = this.system.pericias?.[key];
 			if (!p) throw new Error(`Perícia "${key}" não existe em ${this.name}`);
 			const roll = await new Roll(`1d20 + ${p.value}`).evaluate();
-			if (options.message !== false) await roll.toMessage({ speaker: mundo.ChatMessage.getSpeaker({ actor: this }), flavor: key });
-			return roll;
+			// Como no Tormenta20: com mensagem, devolve a ChatMessage (rolls + flags.tormenta20.rollTotal); sem, o Roll.
+			if (options.message === false) return roll;
+			return mundo.ChatMessage.create({ speaker: mundo.ChatMessage.getSpeaker({ actor: this }), flavor: key, rolls: [roll], flags: { tormenta20: { rollTotal: roll.total } } });
 		}
 		async rollAtributo(key, options = {}) {
 			const a = this.system.atributos?.[key];
 			if (!a) throw new Error(`Atributo "${key}" não existe`);
 			const roll = await new Roll(`1d20 + ${a.value}`).evaluate();
-			if (options.message !== false) await roll.toMessage({ speaker: mundo.ChatMessage.getSpeaker({ actor: this }) });
-			return roll;
+			if (options.message === false) return roll;
+			return mundo.ChatMessage.create({ speaker: mundo.ChatMessage.getSpeaker({ actor: this }), rolls: [roll], flags: { tormenta20: { rollTotal: roll.total } } });
 		}
 	}
 

@@ -19,6 +19,8 @@
  * Veja o guia av45-plano-5-colinas.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av45";
@@ -437,8 +439,9 @@
 		const rolls = [];
 		let melhor = -99;
 		let html = `<h3>Examinar Malakias · ${t.nome}</h3><ul>`;
-		for (const a of atores) {
-			const r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0}`).evaluate();
+		const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: res.pericia, cd: t.cd, titulo: `Examinar Malakias · ${t.nome}` })));
+		for (const [i, a] of atores.entries()) {
+			const r = testes[i];
 			rolls.push(r);
 			melhor = Math.max(melhor, r.total);
 			html += `<li>${a.name}: <b>${r.total}</b> ${r.total >= t.cd ? "✔️" : "❌"}</li>`;
@@ -474,8 +477,9 @@
 		if (res.acao === "rolar") {
 			if (!atores.length) return ui.notifications.warn("Selecione quem segue o rastro.");
 			html += "<ul>";
-			for (const a of atores) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.sobr?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();
+			const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: "sobr", cd: 20, extra: Number(res.mod) || 0, titulo: "Rastro dos Mortos" })));
+			for (const [i, a] of atores.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
 				if (ok) estado.sucessos++; else estado.falhas++;
@@ -507,7 +511,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 4.5 · gerado por av45-plano-5.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 4.5 · gerado por av45-plano-5.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4.5 · Examinar Malakias", "icons/svg/eye.svg", macroExaminar),

@@ -22,6 +22,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-encontros-valkaria.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2encontros";
@@ -653,10 +655,12 @@
 		const val = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
 		const melhor = (a, ks) => ks.reduce((m, k) => (val(a, k) > val(a, m) ? k : m), ks[0]);
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
-		const testar = async (a, ks, cd) => {
+		// Teste de PJ: o jogador rola pelo card do chat.
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, { extra: mod, ...o }); rolls.push(r); return r; };
+		const testar = async (a, ks, cd, o = {}) => {
 			const k = melhor(a, ks);
-			const r = await rolar(`1d20 + ${val(a, k)} + ${mod}`);
-			return { k, r, ok: r.total >= cd, nat: r.dice[0]?.total };
+			const r = await teste(a, k, { cd: cd > 0 ? cd : null, ...o });
+			return { k, r, ok: r.total >= cd, nat: r.options?.fdt?.natural ?? r.dice?.[0]?.total };
 		};
 		const linha = (a, t, cd) => `${a.name} · ${D.pericias[t.k]} <b>${t.r.total}</b>${cd ? ` contra CD ${cd}` : ""}: ${t.ok ? "✔️" : "❌"}`;
 		const precisa = (n = 1) => {
@@ -693,7 +697,7 @@
 					const d = await rolar("5d6");
 					html += `<p>5d6 = <b>${d.total}</b> de impacto nos pilotos (Reflexos CD 20 reduz à metade):</p><ul>`;
 					for (const a of atores) {
-						const t = await testar(a, ["refl"], 20);
+						const t = await testar(a, ["refl"], 20, { dano: d, metade: true, titulo: "A explosão" });
 						const dano = t.ok ? Math.floor(d.total / 2) : d.total;
 						await a.applyDamageV2(await new Roll(`${dano}[impacto]`).evaluate(), 1);
 						html += `<li>${linha(a, t, 20)} → ${dano} de dano</li>`;
@@ -749,7 +753,7 @@
 				if (!precisa()) return;
 				const g = await rolar("1d20 + 10");
 				html = `<h3>Duelo de atuação</h3><p>Galswell: <b>${g.total}</b>.</p><ul>`;
-				for (const a of atores) { const t = await testar(a, ["atua"], g.total + 1); html += `<li>${linha(a, t)} ${t.ok ? "vence!" : "perde."}</li>`; }
+				for (const a of atores) { const t = await testar(a, ["atua"], g.total + 1, { titulo: "Duelo de atuação com Galswell" }); html += `<li>${linha(a, t)} ${t.ok ? "vence!" : "perde."}</li>`; }
 				html += "</ul>";
 				break;
 			}
@@ -805,7 +809,7 @@
 			case "gazeta": {
 				if (!precisa()) return;
 				const a = atores[0];
-				const r = await rolar(`1d20 + ${val(a, res.social)} + ${mod}`);
+				const r = await teste(a, res.social, { titulo: "Entrevista para a Gazeta do Reinado" });
 				const [, , v, txt] = D.gazeta.find(([de, ate]) => r.total >= de && r.total <= ate);
 				const k = res.afetada;
 				html = `<h3>Entrevista para a Gazeta do Reinado</h3><p>${a.name} · ${D.pericias[res.social]} <b>${r.total}</b>: ${txt}</p><p><b>${v > 0 ? "+" : ""}${v} em ${D.pericias[k]}</b> até o fim da aventura para os selecionados (apague o efeito no fim).</p>`;
@@ -820,7 +824,7 @@
 				html = "<h3>Intrusão de Silêncio Aberrante</h3><ul>";
 				for (const a of atores) {
 					const y = await rolar("1d20 + 15");
-					const t = await testar(a, ["vont"], y.total + 1);
+					const t = await testar(a, ["vont"], y.total + 1, { titulo: "Intrusão de Silêncio Aberrante", falha: "Yolana entra na sua mente." });
 					html += `<li>${a.name} · Vontade <b>${t.r.total}</b> contra Memética ${y.total}: ${t.ok ? "✔️ resiste" : "❌ Yolana entra: \"pichação mental\", e ela pode ler pensamentos e memórias"}</li>`;
 				}
 				html += "</ul>";
@@ -848,7 +852,7 @@
 				html = "<h3>Anatole, o empresário</h3><ul>";
 				for (const a of atores) {
 					const e = await rolar("1d20 + 12");
-					const t = await testar(a, ["intu"], e.total);
+					const t = await testar(a, ["intu"], e.total, { titulo: "Anatole, o empresário" });
 					html += `<li>${a.name} · Intuição <b>${t.r.total}</b> contra Enganação ${e.total}: ${t.ok ? "✔️ percebe que ele só ouve boatos em tavernas, como qualquer um" : "❌ acredita na lábia"}</li>`;
 				}
 				html += "</ul>";
@@ -863,8 +867,9 @@
 			case "clubeConvencer": {
 				if (!precisa()) return;
 				html = "<h3>Convencer os taxidermistas</h3><p>Os jogadores precisam dizer que sabem que há algo por trás da fachada.</p><ul>";
-				for (const a of atores) {
-					const r = await rolar(`1d20 + ${val(a, res.social)} + ${mod}`);
+				const testes = await Promise.all(atores.map((a) => teste(a, res.social, { cd: 25, titulo: "Convencer os taxidermistas" })));
+				for (const [i, a] of atores.entries()) {
+					const r = testes[i];
 					html += `<li>${a.name} · ${D.pericias[res.social]} <b>${r.total}</b> contra CD 25: ${r.total >= 25 ? "✔️ conduzido ao salão comunal" : "❌"}</li>`;
 				}
 				html += "</ul>";
@@ -881,7 +886,7 @@
 				if (!precisa()) return;
 				html = "<h3>Fuga do Clube de Cavalheiros</h3><p>Ninguém neste nível derrota os clientes. Cada herói testa a melhor entre Luta, Pontaria, Misticismo, Religião, Fortitude, Reflexos e Furtividade.</p><ul>";
 				for (const a of atores) {
-					const t = await testar(a, ["luta", "pont", "mist", "reli", "fort", "refl", "furt"], 0);
+					const t = await testar(a, ["luta", "pont", "mist", "reli", "fort", "refl", "furt"], 0, { titulo: "Fuga do Clube de Cavalheiros", motivo: "Use a sua melhor perícia; quanto maior, melhor a fuga." });
 					const [lim, txt] = D.clubeFuga.find(([l]) => t.r.total >= l);
 					const pv = a.system.attributes.pv;
 					const pm = a.system.attributes.pm;
@@ -897,8 +902,9 @@
 				if (!precisa()) return;
 				html = "<h3>Campanha para Justine</h3><ul>";
 				let soma = 0;
-				for (const a of atores) {
-					const r = await rolar(`1d20 + ${val(a, res.social)} + ${mod}`);
+				const testes = await Promise.all(atores.map((a) => teste(a, res.social, { titulo: "Campanha para Justine", motivo: "Os resultados do grupo somam votos." })));
+				for (const [i, a] of atores.entries()) {
+					const r = testes[i];
 					soma += r.total;
 					html += `<li>${a.name} · ${D.pericias[res.social]} <b>${r.total}</b></li>`;
 				}
@@ -919,7 +925,7 @@
 				const cd = t0.cd ?? 30;
 				if (t0.travado) { html = `<h3>Forja com Tilliann</h3><p>Uma tentativa já falhou: só depois de um novo encontro aleatório com ele, que retoma da CD ${cd} (o <i>Encontro na Cidade</i> destrava).</p>`; break; }
 				const a = atores[0];
-				const r = await rolar(`1d20 + ${val(a, res.social)} + ${mod}`);
+				const r = await teste(a, res.social, { cd, titulo: "Forja com Tilliann" });
 				const ok = r.total >= cd;
 				html = `<h3>Forja com Tilliann</h3><p>${a.name} · ${D.pericias[res.social]} <b>${r.total}</b> contra CD ${cd}: ${ok ? "✔️ ele ajuda: o item ganha uma melhoria extra que não conta no limite nem muda custo e CD (não pode ser material especial). Só vale para itens feitos pelos próprios personagens." : "❌ ele se perde nas arengas. Só tentam de novo noutro encontro aleatório."}</p>`;
 				est.tilliann = { ...t0, cd: ok ? cd + 5 : cd, travado: !ok };
@@ -963,6 +969,7 @@
 		const whisper = ChatMessage.getWhisperRecipients("GM");
 		const val = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
+		const teste = async (x, k, o = {}) => { const r = await fdtTeste(x, k, o); rolls.push(r); return r; };
 		const a = atores[0];
 		if (!a) return ui.notifications.warn("Selecione o token de quem participa (e, no lixão, o resto do grupo).");
 		let html = "";
@@ -973,7 +980,7 @@
 			let soma = 0;
 			html = `<h3>Circuito de Montarias Extremas</h3><p>${a.name} monta ${res.corisco ? "o zangão do pesadelo de Bebê Corisco" : "a própria montaria"} (Cavalgar ${bonus >= 0 ? "+" : ""}${bonus}). Rivais: ${rivais.map((r) => `${r.nome}, ${r.desc} (+${r.cav})`).join("; ")}.</p><table><tr><th>Teste</th><th>${a.name}</th>${rivais.map((r) => `<th>${r.nome}</th>`).join("")}</tr>`;
 			for (let i = 1; i <= 5; i++) {
-				const r = await rolar(`1d20 + ${bonus}`);
+				const r = await teste(a, "cava", { extra: bonus - val(a, "cava"), titulo: `Circuito de Montarias Extremas · teste ${i} de 5`, motivo: "Vence a maior soma dos cinco testes." });
 				soma += r.total;
 				const cel = [];
 				for (const x of rivais) { const y = await rolar(`1d20 + ${x.cav}`); x.soma += y.total; cel.push(y.total); }
@@ -985,13 +992,14 @@
 			else html += `<p>❌ Vence ${melhorRival.nome} (${melhorRival.soma}). ${a.name} perde a aposta de T$ 500${res.corisco ? " (Corisco não ajuda a pagar)" : ""}.</p>`;
 			if (res.corisco) { est.corisco = true; await game.user.setFlag("world", ESTADO, est); }
 		} else if (res.desafio === "lixao") {
-			const r = await rolar(`1d20 + ${val(a, "inve")} + ${Number(res.ajuda) || 0}`);
+			const r = await teste(a, "inve", { extra: Number(res.ajuda) || 0, titulo: "Depósito de Lixo de Valkaria", motivo: "Sem escolher 10 ou 20." });
 			const [, , txt] = D.lixo.find(([de, ate]) => r.total >= de && r.total <= ate);
 			html = `<h3>Depósito de Lixo de Valkaria</h3><p>${a.name} · Investigação <b>${r.total}</b> (sem escolher 10 ou 20): ${txt}</p><p>Fortitude de cada um (CD 20, +2 por teste anterior):</p><ul>`;
-			for (const x of atores) {
+			const forts = await Promise.all(atores.map((x) => teste(x, "fort", { cd: 20 + 2 * ((x.getFlag("world", "fdtLixao") ?? {}).testes ?? 0), titulo: "O fedor do lixão", falha: "contrai infecção do esgoto (Tormenta20, p. 318)." })));
+			for (const [i, x] of atores.entries()) {
 				const t = foundry.utils.deepClone(x.getFlag("world", "fdtLixao") ?? { testes: 0, turnos: 0 });
 				const cd = 20 + 2 * t.testes;
-				const f = await rolar(`1d20 + ${val(x, "fort")}`);
+				const f = forts[i];
 				t.testes++;
 				t.turnos++;
 				html += `<li>${x.name} · Fortitude <b>${f.total}</b> contra CD ${cd}: ${f.total >= cd ? "✔️" : "❌ contrai <b>infecção do esgoto</b> (<i>Tormenta20</i>, p. 318)"}. Fedor: <b>–${5 * t.turnos}</b> em perícias sociais.</li>`;
@@ -1037,7 +1045,7 @@
 				let r;
 				let y;
 				do {
-					r = await rolar(`1d20 + ${atk} + ${invest} - ${penal}`);
+					r = res.ataque ? await rolar(`1d20 + ${atk} + ${invest} - ${penal}`) : await teste(a, val(a, "pont") > val(a, "luta") ? "pont" : "luta", { extra: invest - penal, titulo: `Lutas Qualificatórias: contra ${nome}`, motivo: `Teste oposto contra o lutador (+${b}). Empate, rola de novo.` });
 					y = await rolar(`1d20 + ${b}`);
 				} while (r.total === y.total);
 				gastoPV += pvInv;
@@ -1057,7 +1065,7 @@
 			await a.update({ "system.attributes.pv.value": Math.max(0, (Number(pv.value) || 0) - gastoPV), "system.attributes.pm.value": Math.max(0, (Number(pm.value) || 0) - gastoPM) });
 			html += `<p>Gastos: ${gastoPV} PV e ${gastoPM} PM.</p>`;
 			if (venceu === lista.length) {
-				const t = await rolar(`1d20 + ${val(a, "atua")} + ${Number(res.glamour) || 0}`);
+				const t = await teste(a, "atua", { cd: 30, extra: Number(res.glamour) || 0, titulo: "Brilhar na arena", motivo: "Atuação + Glamour." });
 				html += `<p>Venceu as cinco! Atuação + Glamour <b>${t.total}</b> contra CD 30: ${t.total >= 30 ? "✔️ <b>escolhido!</b> Libera a atividade especial Luta na Arena de Valkaria." : "❌ venceu, mas sem brilho: os empresários não se impressionam."}</p>`;
 			} else html += `<p>Eliminado depois de ${venceu} vitória(s).</p>`;
 			est.lutadores = [];
@@ -1072,7 +1080,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Encontros em Valkaria · gerado por a2-encontros-valkaria.js\n${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 2 · Encontros em Valkaria · gerado por a2-encontros-valkaria.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
 	});
 	const ENC_MACRO = ENC.map(({ k, nome, tipo, resumo, mec, roles }) => ({ k, nome, tipo, resumo, mec, roles }));
 	const macros = await Macro.createDocuments([

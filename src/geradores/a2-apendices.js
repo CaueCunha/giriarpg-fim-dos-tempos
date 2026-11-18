@@ -18,6 +18,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-apendices.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2apendices";
@@ -232,7 +234,7 @@
 		const melhor = (a) => [...D.oficios, "nobr"].reduce((m, k) => (val(a, k) > val(a, m) ? k : m), "nobr");
 		const testar = async (a) => {
 			const k = melhor(a);
-			const r = await new Roll(`1d20 + ${val(a, k)}`).evaluate();
+			const r = await fdtTeste(a, k, { titulo: "Negócios", motivo: "Ofício ou Nobreza (a melhor perícia de quem cuida do negócio)." });
 			rolls.push(r);
 			return { k, r };
 		};
@@ -539,7 +541,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Apêndices · gerado por a2-apendices.js\n${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 2 · Apêndices · gerado por a2-apendices.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
 	});
 	const PERICIAS = { nobr: "Nobreza", alfa: "Ofício (alfaiate)", alqu: "Ofício (alquimista)", arme: "Ofício (armeiro)", arte: "Ofício (artesão)", cozi: "Ofício (cozinheiro)", enge: "Ofício (engenhoqueiro)" };
 	const macros = await Macro.createDocuments([

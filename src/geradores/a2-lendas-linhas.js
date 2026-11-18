@@ -19,6 +19,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-lendas-linhas.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2lendas";
@@ -293,10 +295,10 @@
 		if (res.acao === "investigar") {
 			const rolls = [];
 			const linhas = [];
-			for (const t of canvas.tokens?.controlled ?? []) {
-				const a = t.actor;
-				if (!a) continue;
-				const r = await new Roll(`1d20 + ${Number(a.system.pericias?.inve?.value) || 0}`).evaluate();
+			const atores = (canvas.tokens?.controlled ?? []).map((t) => t.actor).filter(Boolean);
+			const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: "inve", titulo: "Investigando os Avatares do Futuro Eterno" })));
+			for (const [i, a] of atores.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				linhas.push(`<li>${a.name} · Investigação <b>${r.total}</b></li>`);
 			}
@@ -441,7 +443,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Lendas Urbanas e Linhas Narrativas · gerado por a2-lendas-linhas.js\n${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 2 · Lendas Urbanas e Linhas Narrativas · gerado por a2-lendas-linhas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
 	});
 	const DICA = (n) => (n ? `Aventura ${n}` : "a trama geral de Ghorskander (os Imagodutos)");
 	const INVESTIGAR = "Peça testes de Investigação (o livro não dá CD) ou deixe o grupo conversar com NPCs que tenham contato com a nobreza: Wynstar, Drelene, os Goblins da Gazeta do Reinado, o Avatar da Cidade, os moradores de Stremtol e outros. Então revele que <b>as famílias que tiveram contato com os Avatares deixaram Valkaria</b>. Use famílias deste arco (principalmente da Aventura 6) ou crie as suas.";

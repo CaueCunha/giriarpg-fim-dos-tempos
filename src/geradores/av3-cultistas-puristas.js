@@ -20,6 +20,8 @@
  * Veja o guia av3-cultistas-puristas.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av3";
@@ -606,13 +608,15 @@
 		if (n === 4 && estado.filhoUsado) n = 5;
 		if (n === 4) estado.filhoUsado = true;
 		const rolls = [r];
-		const teste = async (pericia, cd) => {
-			const t = await new Roll(`1d20 + ${alvo.system.pericias?.[pericia]?.value ?? 0}`).evaluate();
+		// O dano em jogo é rolado antes, para aparecer no card do teste do jogador.
+		const teste = async (pericia, cd, o = {}) => {
+			const d = o.dano ? await new Roll(o.dano).evaluate() : null;
+			const t = await fdtTeste(alvo, pericia, { cd, dano: d, metade: o.metade, titulo: `Demais Habitantes: ${o.titulo}`, falha: o.falha, sucesso: o.sucesso });
 			rolls.push(t);
-			return { ok: t.total >= cd, total: t.total };
+			return { ok: t.total >= cd, total: t.total, dano: d };
 		};
 		const dano = async (formula, mult) => {
-			const d = await new Roll(formula).evaluate();
+			const d = typeof formula === "string" ? await new Roll(formula).evaluate() : formula;
 			rolls.push(d);
 			if (mult > 0) await alvo.applyDamageV2(d, mult);
 			return d.total;
@@ -623,35 +627,35 @@
 		switch (n) {
 			case 1: txt = "<b>Intervenção de Orlo!</b> O NPC mais próximo pode se mover e atacar como reação."; break;
 			case 2: {
-				const s = await teste("refl", 18);
-				const v = await dano("2d8[impacto]", s.ok ? 0.5 : 1);
+				const s = await teste("refl", 18, { titulo: "Coice!", dano: "2d8[impacto]", metade: true, falha: "dano total e caído." });
+				const v = await dano(s.dano, s.ok ? 0.5 : 1);
 				if (!s.ok) await status("caido");
 				txt = `<b>Coice!</b> Reflexos ${s.total} (CD 18) ${s.ok ? "✔️ metade do dano" : "❌ dano total e caído"}. Dano rolado: ${v}.`;
 				break;
 			}
 			case 3: {
-				const s = await teste("fort", 15);
+				const s = await teste("fort", 15, { titulo: "Dejetos!", sucesso: "enjoado por 1 rodada.", falha: "enjoado até o fim da cena." });
 				await status("enjoado");
 				txt = `<b>Dejetos!</b> Fortitude ${s.total} (CD 15): enjoado ${s.ok ? "por 1 rodada" : "até o fim da cena"}.`;
 				break;
 			}
 			case 4: txt = "<b>Filho corajoso!</b> Uma criança se lança contra o personagem. Ação padrão para afastá-la, ou 50% dos ataques acertam a criança (1 PV) até o fim da cena."; break;
 			case 5: {
-				const s = await teste("vont", 15);
+				const s = await teste("vont", 15, { titulo: "Impropérios!", falha: "desprevenido por 1 rodada." });
 				if (!s.ok) await status("desprevenido");
 				txt = `<b>Impropérios!</b> Vontade ${s.total} (CD 15) ${s.ok ? "✔️ ignora" : "❌ desprevenido por 1 rodada"}.`;
 				break;
 			}
 			case 6: {
-				const s = await teste("refl", 15);
-				const v = await dano("2d4[impacto]", s.ok ? 0.5 : 1);
+				const s = await teste("refl", 15, { titulo: "Apedrejamento!", dano: "2d4[impacto]", metade: true });
+				const v = await dano(s.dano, s.ok ? 0.5 : 1);
 				txt = `<b>Apedrejamento!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ metade" : "❌ dano total"}. Dano rolado: ${v}.`;
 				break;
 			}
 			case 7: {
-				const s = await teste("refl", 15);
+				const s = await teste("refl", 15, { titulo: "Vira-latas!", dano: "1d6[corte]", falha: "toma o dano e fica caído.", sucesso: "escapa." });
 				if (!s.ok) {
-					await dano("1d6[corte]", 1);
+					await dano(s.dano, 1);
 					await status("caido");
 				}
 				txt = `<b>Vira-latas!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ escapa" : "❌ 1d6 de corte e caído"}.`;
@@ -719,8 +723,9 @@
 		const cd = res.pericia === "ades" ? 20 : 15 + (atores.length - 1);
 		const rolls = [];
 		let html = `<h3>Infiltração em Dornbach</h3><p>CD ${cd}</p><ul>`;
-		for (const a of atores) {
-			const r = await new Roll(`1d20 + ${a.system.pericias?.[res.pericia]?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();
+		const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: res.pericia, cd, extra: Number(res.mod) || 0, titulo: "Infiltração em Dornbach", falha: res.pericia === "atle" ? "falhando por 5 ou mais, cai do telhado (1d6 de impacto)." : "" })));
+		for (const [i, a] of atores.entries()) {
+			const r = testes[i];
 			rolls.push(r);
 			const ok = r.total >= cd;
 			if (ok) estado.sucessos++; else estado.falhas++;
@@ -740,8 +745,9 @@
 		if (!alvos.length) return ui.notifications.warn("Mire (target) os não humanos inteligentes em alcance longo.");
 		const rolls = [];
 		let html = "<h3>Lampião Mecanomágico</h3><p>Vontade CD 20 (efeito mental). Quem falhar tem uma ação de movimento decidida por quem usa o lampião nesta rodada.</p><ul>";
-		for (const a of alvos) {
-			const r = await new Roll(`1d20 + ${a.system.pericias?.vont?.value ?? 0}`).evaluate();
+		const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "vont", cd: 20, titulo: "Lampião Mecanomágico", falha: "quem usa o lampião decide uma ação de movimento sua nesta rodada." })));
+		for (const [i, a] of alvos.entries()) {
+			const r = testes[i];
 			rolls.push(r);
 			const ok = r.total >= 20;
 			const efeito = a.effects.find((e) => e.getFlag("world", "fdtLampiao"));
@@ -766,7 +772,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av3 · Demais Habitantes", "icons/svg/village.svg", macroHabitantes),

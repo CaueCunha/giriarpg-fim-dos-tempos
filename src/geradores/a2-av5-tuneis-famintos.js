@@ -24,6 +24,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av5-tuneis-famintos.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av5";
@@ -515,7 +517,7 @@
 			if (res.acao === "infeccao") {
 				const pv = a.system.attributes.pv;
 				const ferido = pv.value < pv.max;
-				const r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}${ferido ? " - 5" : ""}`).evaluate();
+				const r = await fdtTeste(a, "fort", { cd: 15, extra: ferido ? -5 : 0, titulo: "Infecção do esgoto", motivo: ferido ? "Ferido: –5." : "", falha: "contrai infecção do esgoto (Tormenta20, p. 318)." });
 				rolls.push(r);
 				linhas.push(`${t.name}: Fortitude ${r.total}${ferido ? " (ferido, –5)" : ""} contra CD 15: ${r.total >= 15 ? "escapou." : "<b>contraiu infecção do esgoto</b> (Tormenta20, p. 318)."}`);
 				continue;
@@ -583,7 +585,9 @@
 		const a = tokens[0].actor;
 		const dias = k === "mapear" ? Math.max(0, Number(res.dias) || 0) : 0;
 		const dado = dias ? ["d4", "d6", "d8", "d10", "d12"][Math.min(4, dias - 1)] : "";
-		const r = await rolar(`1d20 + ${Number(a.system.pericias?.[pericia]?.value) || 0} + ${Number(res.ajuda) || 0}${dado ? ` - 1${dado}` : ""}`);
+		const penDias = dado ? await rolar(`1${dado}`) : null;
+		const r = await fdtTeste(a, pericia, { cd: t.cd, extra: (Number(res.ajuda) || 0) - (penDias?.total ?? 0), titulo: t.nome, motivo: penDias ? `–${penDias.total} (1${dado}) por ${dias} dia(s) fora.` : "" });
+		rolls.push(r);
 		const ok = r.total >= t.cd;
 		let html = `<h3>${t.nome}</h3><p>${tokens[0].name}: ${NOMES[pericia]} <b>${r.total}</b> contra CD ${t.cd}${dado ? ` (–1${dado} por ${dias} dia(s) fora)` : ""}${repetir ? " (rolagem repetida com a ajuda de Barba de Rato)" : ""}. ${ok ? "Sucesso." : "Falha."}</p>`;
 		if (ok) e.sucessos += 1;
@@ -663,7 +667,7 @@
 		const tk = canvas.tokens.controlled[0];
 		if (!tk?.actor) return ui.notifications.warn("Selecione quem segue o dragão.");
 		const k = res.pericia === "sobr" ? "sobr" : "furt";
-		const r = await new Roll(`1d20 + ${Number(tk.actor.system.pericias?.[k]?.value) || 0}`).evaluate();
+		const r = await fdtTeste(tk.actor, k, { titulo: `Seguir um Dragão · teste ${e.testes + 1}`, motivo: "Teste oposto contra a Percepção do dragão (+12)." });
 		const d = await new Roll("1d20 + 12").evaluate();
 		e.testes += 1;
 		const venceu = r.total > d.total;
@@ -723,11 +727,13 @@
 		let bonus = 0;
 		let html = "<h3>Porta do Laboratório</h3>";
 		if (ajuda) {
-			const h = await rolar(`1d20 + ${Number(ajuda.actor.system.atributos?.for?.value) || 0}`);
+			const h = await fdtTeste(ajuda.actor, null, { atributo: "for", cd: 10, titulo: "Porta do Laboratório: ajudar", sucesso: "+2 para quem força." });
+			rolls.push(h);
 			bonus = h.total >= 10 ? 2 : 0;
 			html += `<p>${ajuda.name} ajuda: ${h.total} ${bonus ? "(+2)" : "(sem bônus)"}.</p>`;
 		}
-		const r = await rolar(`1d20 + ${Number(forca.actor.system.atributos?.for?.value) || 0} + ${bonus}`);
+		const r = await fdtTeste(forca.actor, null, { atributo: "for", cd: 20, extra: bonus, titulo: "Porta do Laboratório" });
+		rolls.push(r);
 		const ok = r.total >= 20;
 		html += `<p>${forca.name}: Força <b>${r.total}</b> contra CD 20. ${ok ? "A porta cede um pouco." : "Falhou!"}</p>`;
 		if (!ok) {
@@ -785,7 +791,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av5 · Esgoto (fedor e infecção)", `${PA}/fumos-toxicos.webp`, macroEsgoto),

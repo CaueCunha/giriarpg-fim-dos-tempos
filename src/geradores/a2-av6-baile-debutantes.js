@@ -24,6 +24,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av6-baile-debutantes.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av6";
@@ -675,7 +677,9 @@
 			const tk = canvas.tokens.controlled[0];
 			if (!tk?.actor) return ui.notifications.warn("Selecione quem procura a passagem.");
 			const pericia = ["inve", "nobr", "reli"].includes(res.pericia) ? res.pericia : "inve";
-			const total = await rolar(`1d20 + ${Number(tk.actor.system.pericias?.[pericia]?.value) || 0}${res.viu ? " + 5" : ""}${res.devoto ? " + 2" : ""}`);
+			const tr = await fdtTeste(tk.actor, pericia, { cd: 30, extra: (res.viu ? 5 : 0) + (res.devoto ? 2 : 0), titulo: `Procurar passagem · ${COMODOS[origem]}`, motivo: "Ação completa." });
+			rolls.push(tr);
+			const total = tr.total;
 			html += `<p>${tk.name} gasta uma ação completa: <b>${total}</b> contra CD 30. ${total >= 30 ? "Encontrou uma passagem!" : "Não encontrou; só pode tentar de novo com alguma informação nova sobre esta passagem."}</p>`;
 			if (total < 30) return ChatMessage.create({ content: html, rolls });
 		}
@@ -728,6 +732,7 @@
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
 		const atr = (a, k) => Number(a.system.atributos?.[k]?.value) || 0;
+		const teste = async (a, k, o = {}) => { const ATR = ["for", "des", "con", "int", "sab", "car"]; const r = await fdtTeste(a, ATR.includes(k) ? null : k, { ...o, atributo: ATR.includes(k) ? k : undefined }); rolls.push(r); return r.total; };
 		const efeito = (a, name, changes, local = false) => a.createEmbeddedDocuments("ActiveEffect", [{
 			name, img: ICONE, type: "base",
 			flags: { world: { fdtBaile: true, fdtLocal: local } },
@@ -741,8 +746,10 @@
 		if (res.acao === "calor") {
 			const [x, y] = tokens;
 			if (!y) return ui.notifications.warn("Selecione as duas pessoas.");
-			const rx = await rolar(`1d20 + ${atr(x.actor, "car")}`);
-			const ry = await rolar(`1d20 + ${atr(y.actor, "car")}`);
+			const [rxR, ryR] = await fdtTestes([x, y].map((t) => ({ ator: t.actor, atributo: "car", cd: 10, titulo: "Calor do coração", motivo: "Os dois precisam passar." })));
+			rolls.push(rxR, ryR);
+			const rx = rxR.total;
+			const ry = ryR.total;
 			const ok = rx >= 10 && ry >= 10;
 			linhas.push(`${x.name}: ${rx}; ${y.name}: ${ry} (CD 10). ${ok ? "Despertam sentimentos românticos ou amizade profunda: sabem onde o outro está e recebem +2 em perícias em alcance curto." : "Nada desperta."}`);
 			if (ok) for (const t of [x, y]) await efeito(t.actor, `Calor do coração (${t === x ? y.name : x.name})`, [["system.pericias.*.bonus", "2"]]);
@@ -753,7 +760,7 @@
 			switch (res.acao) {
 			case "atrio": {
 				if (a.getFlag("world", "fdtAtrio")) { linhas.push(`${t.name}: já visitou o átrio neste baile.`); break; }
-				const r = await rolar(`1d20 + ${atr(a, "car")}`);
+				const r = await teste(a, "car", { cd: 15, titulo: "O átrio", sucesso: "+3 PM temporários." });
 				await a.setFlag("world", "fdtAtrio", true);
 				if (r >= 15) await a.update({ "system.attributes.pm.temp": (Number(a.system.attributes.pm?.temp) || 0) + 3 });
 				linhas.push(`${t.name}: Carisma ${r} (CD 15). ${r >= 15 ? "Inspirado: <b>+3 PM temporários</b>." : "Nada."}`);
@@ -787,12 +794,12 @@
 				linhas.push(`${t.name}: sem efeitos de lugar.`);
 				break;
 			case "musica": {
-				const r = await rolar(`1d20 + ${Number(a.system.pericias?.atua?.value) || 0} + 5`);
+				const r = await teste(a, "atua", { cd: 25, extra: 5, titulo: "A música do salão" });
 				linhas.push(`${t.name}: Atuação ${r} (CD 25). ${r >= 25 ? `Pode usar <b>${r}</b> no lugar de um teste de perícia no palácio até o fim do baile.` : "Sem efeito."}${r >= 30 ? " Com um instrumento dos bastidores, ele vira mágico (flauta fantasma)." : ""}`);
 				break;
 			}
 			case "galeria": {
-				const r = await rolar(`1d20 + ${atr(a, "sab")}`);
+				const r = await teste(a, "sab", { cd: 15, titulo: "A galeria", sucesso: "escolhe um poder concedido de Marah até o fim do baile." });
 				linhas.push(`${t.name}: Sabedoria ${r} (CD 15). ${r >= 15 ? "Escolhe um <b>poder concedido de Marah</b> para usar até o fim do baile." : "Nada."}`);
 				break;
 			}
@@ -852,7 +859,7 @@
 			if (!tem("Bebendo na adega")) await a.createEmbeddedDocuments("ActiveEffect", [ae("Bebendo na adega", [["system.pericias.dipl.bonus", "5"]])]);
 			const feitos = Number(a.getFlag("world", "fdtTestesAdega")) || 0;
 			const cd = 15 + 2 * feitos;
-			const r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}`).evaluate();
+			const r = await fdtTeste(a, "fort", { cd, titulo: "Bebendo na adega" });
 			rolls.push(r);
 			await a.setFlag("world", "fdtTestesAdega", feitos + 1);
 			let txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}. `;
@@ -890,8 +897,9 @@
 		const ICONE = "systems/tormenta20/icons/itens/itens-magicos/baralho-do-caos.webp";
 		const rolls = [];
 		const placar = [];
-		for (const t of tokens) {
-			const r = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.joga?.value) || 0}`).evaluate();
+		const jogadas = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: "joga", titulo: "Apostas no Baile", motivo: "Vence o maior resultado." })));
+		for (const [i, t] of tokens.entries()) {
+			const r = jogadas[i];
 			rolls.push(r);
 			placar.push({ t, total: r.total });
 		}
@@ -956,12 +964,16 @@
 			return ChatMessage.create({ content: html, rolls, whisper: gm });
 		}
 		if (res.acao === "seguir") {
-			const r = await rolar(`1d20 + ${pv("furt")}`);
+			const rr = await fdtTeste(tk.actor, "furt", { titulo: "Seguir um convidado", motivo: "Teste oposto contra a Percepção do convidado." });
+			rolls.push(rr);
+			const r = rr.total;
 			const d = await rolar("1d20 + 10");
 			html += `<p>${tk.name}: Furtividade <b>${r}</b> contra Percepção do convidado <b>${d}</b>. ${r > d ? "Segue sem ser notado. Lakshrimi e os replicoides só atacam se o herói estiver escondido, invisível ou disfarçado." : "Foi notado: o convidado não vai para onde ia sozinho."}</p>`;
 			return ChatMessage.create({ content: html, rolls });
 		}
-		const r = await rolar(`1d20 + ${pv("perc")}`);
+		const rr = await fdtTeste(tk.actor, "perc", { titulo: "Vigiar os nobres", motivo: "Teste oposto contra os truques deles (+20)." });
+		rolls.push(rr);
+		const r = rr.total;
 		const d = await rolar("1d20 + 20");
 		html += `<p>Os nobres tentam se livrar da vigilância (magia de comunicação, invisibilidade e truques: +20). ${tk.name}: Percepção <b>${r}</b> contra <b>${d}</b>. ${r >= d ? "Não conseguiram despistar." : "<b>Escaparam da vigilância!</b> Quem ficar sozinho vai quebrar alguma regra."}</p>`;
 		ChatMessage.create({ content: html, rolls });
@@ -998,8 +1010,9 @@
 		const dano = await new Roll("6d12").evaluate();
 		rolls.push(dano);
 		let html = `<h3>Gravação Estridente</h3><p>Grito de <b>${dano.total}</b> de dano psíquico num raio de 9m.</p><ul>`;
-		for (const t of alvos) {
-			const v = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.vont?.value) || 0}`).evaluate();
+		const vonts = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "vont", cd: 32, dano, metade: true, titulo: "Gravação Estridente" })));
+		for (const [i, t] of alvos.entries()) {
+			const v = vonts[i];
 			rolls.push(v);
 			const ok = v.total >= 32;
 			const valor = ok ? Math.floor(dano.total / 2) : dano.total;
@@ -1018,7 +1031,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av6 · Baile da Primavera (cenas e vítimas)", ICO.marah, macroBaile),

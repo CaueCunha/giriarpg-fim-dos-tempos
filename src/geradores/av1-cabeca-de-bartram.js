@@ -21,6 +21,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia av1-cabeca-de-bartram.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av1";
@@ -432,9 +434,10 @@
 		if (!tokens.length) return ui.notifications.warn("Selecione quem rastreia (e, se quiser, quem ajuda).");
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
 		const valor = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
 		if (res.acao === "colina") {
-			const r = await rolar(`1d20 + ${valor(tokens[0].actor, "sobr")}`);
+			const r = await teste(tokens[0].actor, "sobr", { cd: 12, titulo: "A colina calcinada" });
 			return ChatMessage.create({ rolls, content: `<h3>A colina calcinada</h3><p>Topo pedregoso com uma árvore retorcida, totalmente calcinado, como se um calor súbito e intenso tivesse deixado a marca. Mais gente esteve aqui e houve um combate: até um destreinado percebe. Bartram decididamente não é um guerreiro.</p>
 				<p>${tokens[0].name}: Sobrevivência <b>${r}</b> contra CD 12. ${r >= 12 ? "Bartram seguiu sozinho, nesta direção... e depois foi arrastado por um bando de criaturas bípedes." : "Não descobre a direção."}</p>` });
 		}
@@ -447,12 +450,12 @@
 		let bonus = 0;
 		const ajudante = tokens[1];
 		if (ajudante && (kAjuda === "sobr" || (!e.usadas.includes(kAjuda) && kAjuda !== k))) {
-			const a = await rolar(`1d20 + ${valor(ajudante.actor, kAjuda)}`);
+			const a = await teste(ajudante.actor, kAjuda, { cd: 10, titulo: "No Rastro: ajudar", sucesso: "+2 para quem rastreia." });
 			if (a >= 10) bonus = 2;
 			html += `<p>${ajudante.name} ajuda (${NOMES[kAjuda]}): ${a} contra CD 10, ${a >= 10 ? "+2" : "não ajuda"}.</p>`;
 			if (kAjuda !== "sobr") e.usadas.push(kAjuda);
 		} else if (ajudante) html += `<p>${ajudante.name} não pode ajudar com ${NOMES[kAjuda]} (já usada ou igual à de quem rastreia).</p>`;
-		const r = await rolar(`1d20 + ${valor(tokens[0].actor, k)}${bonus ? " + 2" : ""}`);
+		const r = await teste(tokens[0].actor, k, { cd, extra: bonus ? 2 : 0, titulo: `No Rastro · teste ${e.testes + 1}` });
 		if (k !== "sobr") e.usadas.push(k);
 		e.testes += 1;
 		const ok = r >= cd || !!res.social;
@@ -492,6 +495,7 @@
 		if (!res) return;
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
 		const orcs = canvas.tokens.placeables.filter((t) => t.actor?.getFlag("world", "fdt") === "av1" && t.actor.getFlag("world", "fdtRole") === "orc");
 		if (res.acao.startsWith("nomes")) {
 			const lista = res.acao === "nomes-bando" ? BANDO : EMBOSCADA.slice(1);
@@ -509,8 +513,10 @@
 			if (!pjs.length) return ui.notifications.warn("Selecione os personagens.");
 			const furt = await rolar("1d20");
 			const linhas = [];
-			for (const t of pjs) {
-				const r = await rolar(`1d20 + ${Number(t.actor.system.pericias?.perc?.value) || 0}`);
+			const testes = await fdtTestes(pjs.map((t) => ({ ator: t.actor, pericia: "perc", titulo: "Os heróis estão sendo observados", motivo: "Contra a Furtividade dos orcs." })));
+			rolls.push(...testes);
+			for (const [i, t] of pjs.entries()) {
+				const r = testes[i].total;
 				linhas.push(`<li>${t.name}: Percepção ${r} ${r >= furt ? "<b>nota os orcs</b> antes do ataque" : "não nota nada"}.</li>`);
 			}
 			return ChatMessage.create({ rolls, content: `<h3>Os heróis estão sendo observados</h3><p>Furtividade dos orcs: ${furt}.</p><ul>${linhas.join("")}</ul><p>Passando ou não, todos ouvem o ronco de um estômago e as palavras <b>"Carne fresca!"</b>. Os orcs atacam.</p>` });
@@ -518,8 +524,10 @@
 		if (res.acao === "furtividade") {
 			if (!pjs.length) return ui.notifications.warn("Selecione os personagens.");
 			const linhas = [];
-			for (const t of pjs) {
-				const r = await rolar(`1d20 + ${Number(t.actor.system.pericias?.furt?.value) || 0}`);
+			const testes = await fdtTestes(pjs.map((t) => ({ ator: t.actor, pericia: "furt", cd: 15, titulo: "As Colinas Têm Olhos" })));
+			rolls.push(...testes);
+			for (const [i, t] of pjs.entries()) {
+				const r = testes[i].total;
 				linhas.push(`<li>${t.name}: Furtividade ${r}, ${r >= 15 ? "se aproxima sem ser visto" : "<b>é visto</b>"}.</li>`);
 			}
 			return ChatMessage.create({ rolls, content: `<h3>As Colinas Têm Olhos</h3><p>Os orcs estão atentos ao canibalismo ritualístico (CD 15).</p><ul>${linhas.join("")}</ul>` });
@@ -550,7 +558,7 @@
 		if (!calma) {
 			if (!tk?.actor) return ui.notifications.warn("Selecione quem fala com ela.");
 			const k = res.pericia in NOME ? res.pericia : "dipl";
-			const r = await new Roll(`1d20 + ${Number(tk.actor.system.pericias?.[k]?.value) || 0}${res.respeito ? " + 5" : ""}${res.presente ? " + 2" : ""}`).evaluate();
+			const r = await fdtTeste(tk.actor, k, { cd: 15, extra: (res.respeito ? 5 : 0) + (res.presente ? 2 : 0), titulo: "Tanna-Toh, a Velha Orc" });
 			rolls.push(r);
 			calma = r.total >= 15;
 			html += `<p>${tk.name} (${NOME[k]}): <b>${r.total}</b> contra CD 15. ${calma ? "A anciã se acalma." : "Ela se encolhe, com medo; tente de outro jeito (ou traga os orcs)."}</p>`;
@@ -641,7 +649,7 @@
 		if (res.acao === "caldeirao") {
 			const tk = canvas.tokens.controlled[0];
 			if (!tk?.actor) return ui.notifications.warn("Selecione quem empurra o caldeirão.");
-			const r = await new Roll(`1d20 + ${Number(tk.actor.system.atributos?.for?.value) || 0}`).evaluate();
+			const r = await fdtTeste(tk.actor, null, { atributo: "for", cd: 15, titulo: "Empurrar o caldeirão", falha: "falhando por 5 ou mais, entorna o caldeirão sobre si (1d4 de ácido)." });
 			rolls.push(r);
 			html += `<p>${tk.name}: Força <b>${r.total}</b> contra CD 15. `;
 			if (r.total >= 15) html += `O caldeirão tomba e os vapores se dissipam (${await limpar()} efeitos removidos). Os nacos ainda funcionam.</p>`;
@@ -701,7 +709,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av1 · No Rastro (testes estendidos)", ICO.rastro, macroRastro),

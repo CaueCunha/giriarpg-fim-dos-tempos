@@ -19,6 +19,8 @@
  * não foi testado num Foundry rodando. Veja o guia av2-lefou-adolescente.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av2";
@@ -834,9 +836,11 @@
 			(a.effects.some((e) => !e.disabled && e.name.startsWith("Pesadelos da Tormenta")) ? 2 : 0);
 		const linhas = [];
 		const rolls = [];
-		for (const a of [...new Set(alvos)]) {
+		const unicos = [...new Set(alvos)];
+		const testes = await fdtTestes(unicos.map((a) => ({ ator: a, pericia: "vont", cd: 15, extra: bonusTormenta(a), titulo: "Um de Nós! Um de Nós!", motivo: "Kerok +5 e Sopa LeBlanc –2 entram sozinhos." })));
+		for (const [i, a] of unicos.entries()) {
 			const mod = (a.system.pericias?.vont?.value ?? 0) + bonusTormenta(a);
-			const r = await new Roll(`1d20 + ${mod}`).evaluate();
+			const r = testes[i];
 			rolls.push(r);
 			linhas.push({ a, total: r.total, falhou: r.total < 15, mod });
 		}
@@ -899,14 +903,19 @@
 		const ir = Number(res.ir) || 0;
 		const rolls = [];
 		let html = `<h3>${preset.nome}</h3><p>${pericia.toUpperCase()} CD ${cd}${ir ? ` · Ilusão ou Realidade ${ir > 0 ? "+5" : "–5"}` : ""}</p><ul>`;
-		for (const a of [...new Set(alvos)]) {
-			let mod = pericia === "int" ? (a.system.atributos?.int?.value ?? 0) : (a.system.pericias?.[pericia]?.value ?? 0);
+		const unicos = [...new Set(alvos)];
+		const ajustes = unicos.map((a) => {
+			let mod = 0;
 			const extras = [];
 			if (preset.tormenta && a.items.some((i) => i.name.startsWith("Bênção de Kerok"))) { mod += 5; extras.push("Kerok +5"); }
 			if (preset.tormenta && a.effects.some((e) => !e.disabled && e.name.startsWith("Pesadelos da Tormenta"))) { mod -= 2; extras.push("Sopa –2"); }
 			if (preset.zardu && a.items.some((i) => i.name.startsWith("Segredo de Ralphus"))) { mod += 5; extras.push("Ralphus +5"); }
-			mod += ir;
-			const r = await new Roll(`1d20 + ${mod}`).evaluate();
+			return { mod: mod + ir, extras };
+		});
+		const testes = await fdtTestes(unicos.map((a, i) => ({ ator: a, pericia: pericia === "int" ? null : pericia, atributo: pericia === "int" ? "int" : undefined, cd, extra: ajustes[i].mod, titulo: preset.nome, falha: preset.pm ? `perde ${preset.pm} PM.` : "" })));
+		for (const [i, a] of unicos.entries()) {
+			const { extras } = ajustes[i];
+			const r = testes[i];
 			rolls.push(r);
 			const ok = r.total >= cd;
 			let extra = "";
@@ -945,7 +954,7 @@
 			ok: { label: "Rolar", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }
 		});
 		if (!res) return;
-		const rp = await new Roll(`1d20 + ${pj.system.pericias[res.pericia].value} + ${Number(res.ajuda) || 0}`).evaluate();
+		const rp = await fdtTeste(pj, res.pericia, { extra: Number(res.ajuda) || 0, titulo: "Convencer Gaspar", motivo: "Teste oposto contra a Enganação de Zardu." });
 		const rz = await new Roll(`1d20 + ${zardu.system.pericias.enga.value}`).evaluate();
 		const venceu = rp.total > rz.total;
 		const atual = gaspar.system.resources.primary.value + (venceu ? 1 : 0);
@@ -1116,7 +1125,7 @@
 					flags: { world: { fdt: "av2", fdtTylora: true } },
 					system: { changes: [{ key: "system.modificadores.pericias.geral", value: `-${r.total}`, type: "add", phase: "initial", priority: null }] }
 				}]);
-				const f = await new Roll(`1d20 + ${alvo.system.pericias?.fort?.value ?? 0}`).evaluate();
+				const f = await fdtTeste(alvo, "fort", { cd: 15, titulo: "Veneno do chicote de Tylora", falha: "perde 1 PM." });
 				rolls.push(f);
 				if (f.total < 15) {
 					const pm = alvo.system.attributes.pm;
@@ -1137,7 +1146,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av2 · Automação (liga/desliga)", "icons/svg/clockwork.svg", macroAutomacao),

@@ -23,6 +23,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av3-rocha-cinzenta.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av3";
@@ -804,8 +806,9 @@
 			const a = t.actor;
 			const c = await rolar(`1d20 + ${CURA}`);
 			if (c.total < 25) { html += `<li>${t.name}: Cura ${c.total} (CD 25). <b>A cirurgia fracassou</b>; precisa de nova tentativa.</li>`; continue; }
-			const f = await rolar(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}`);
-			const nat = f.dice[0]?.total;
+			const f = await fdtTeste(a, "fort", { cd: 20, titulo: "Cirurgia: aguentar o implante", motivo: "1 natural, falha, sucesso (CD 20) ou 20 natural decidem o resultado." });
+			rolls.push(f);
+			const nat = f.options?.fdt?.natural ?? f.dice?.[0]?.total;
 			let cat = nat === 1 ? 0 : nat === 20 ? 3 : f.total >= 20 ? 2 : 1;
 			if (rebaixa) cat = Math.max(0, cat - 1);
 			const pv = a.system.attributes.pv;
@@ -906,9 +909,13 @@
 			if (!tokens.length) return ui.notifications.warn("Selecione os personagens que atravessam o pátio.");
 			let passaram = 0;
 			html += "<ul>";
-			for (const t of tokens) {
-				const luz = await rolar("1d4");
-				const r = await rolar(`1d20 + ${bonus(t.actor)}${disc ? " - 5" : ""}${luz.total === 1 ? " - 5" : ""}`);
+			const luzes = [];
+			for (const t of tokens) luzes.push(await rolar("1d4"));
+			const travessias = await fdtTestes(tokens.map((t, i) => ({ ator: t.actor, pericia: k, cd, extra: (disc ? -5 : 0) + (luzes[i].total === 1 ? -5 : 0), titulo: `Corrida para a Liberdade · ${EVENTOS[ev]}`, motivo: luzes[i].total === 1 ? "Uma luz mágica cruza o seu caminho (–5)." : "" })));
+			rolls.push(...travessias);
+			for (const [i, t] of tokens.entries()) {
+				const luz = luzes[i];
+				const r = travessias[i];
 				const passou = r.total >= cd;
 				if (passou) passaram += 1;
 				if (passou && disc) e.prontidao -= 1;
@@ -923,7 +930,8 @@
 			if (res.manual === "" || res.manual === undefined) {
 				const a = tokens[0]?.actor;
 				if (!a) return ui.notifications.warn("Selecione quem faz o teste, ou informe o resultado.");
-				const r = await rolar(`1d20 + ${bonus(a)}${disc ? " - 5" : ""}`);
+				const r = a.system.pericias?.[k] ? await fdtTeste(a, k, { cd, extra: disc ? -5 : 0, titulo: `Corrida para a Liberdade · ${EVENTOS[ev]}` }) : await new Roll(`1d20 + ${bonus(a)}${disc ? " - 5" : ""}`).evaluate();
+				rolls.push(r);
 				total = r.total;
 				quem = tokens[0].name;
 			}
@@ -983,17 +991,18 @@
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
 		const per = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r; };
 		e.semana += 1;
 		const cd = 30 + e.extra + (res.ferramentas ? 0 : 5);
 		let html = `<h3>Escavando um Túnel · semana ${e.semana}</h3>`;
 		let ajuda = 0;
 		if (ajud) {
-			const r = await rolar(`1d20 + ${per(ajud.actor, "atle")}`);
+			const r = await teste(ajud.actor, "atle", { titulo: "Escavando: ajudar", motivo: "Cada 10 no teste dá +2 para quem escava." });
 			ajuda = Math.floor(r.total / 10) * 2;
 			html += `<p>${ajud.name} ajuda: Atletismo ${r.total}, <b>+${ajuda}</b> (bônus dobrado).</p>`;
 		}
 		const plano = Number(res.plano) || 0;
-		const r = await rolar(`1d20 + ${per(esc.actor, "atle")} + ${ajuda} + ${plano}`);
+		const r = await teste(esc.actor, "atle", { cd, extra: ajuda + plano, titulo: `Escavando um Túnel · semana ${e.semana}`, falha: "imprevisto (CD +2)." });
 		const ok = r.total >= cd;
 		html += `<p>${esc.name}: Atletismo <b>${r.total}</b> contra CD ${cd}${res.ferramentas ? "" : " (sem ferramentas)"}: ${ok ? "<b>avança</b>" : "<b>imprevisto</b> (CD +2)"}.</p>`;
 		if (ok) e.sucessos += 1;
@@ -1001,7 +1010,7 @@
 		const oc = alvos[0];
 		if (oc) {
 			const cdO = e.suspeita ? 30 : 25;
-			const o = await rolar(`1d20 + ${per(oc.actor, res.ocultar)}`);
+			const o = await teste(oc.actor, res.ocultar, { cd: cdO, titulo: "Ocultar a escavação" });
 			if (o.total >= cdO) html += `<p>${oc.name} mantém a obra escondida (${o.total} contra CD ${cdO}).</p>`;
 			else {
 				e.suspeita += 1;
@@ -1018,7 +1027,7 @@
 			html += `<p><b>O túnel desaba!</b> Quem está dentro faz dois testes de Reflexos (CD ${cdR}).</p><ul>`;
 			for (const t of [esc, ajud].filter(Boolean)) {
 				let f = 0;
-				for (let i = 0; i < 2; i++) if ((await rolar(`1d20 + ${per(t.actor, "refl")}`)).total < cdR) f += 1;
+				for (let i = 0; i < 2; i++) if ((await teste(t.actor, "refl", { cd: cdR, titulo: `O túnel desaba! (teste ${i + 1} de 2)`, falha: "uma falha: perde metade dos PV e fica fatigado; duas: soterrado e morre." })).total < cdR) f += 1;
 				if (f === 1) {
 					const pv = t.actor.system.attributes.pv;
 					await t.actor.update({ "system.attributes.pv.value": pv.value - Math.ceil(pv.value / 2) });
@@ -1079,7 +1088,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av3 · Rocha Cinzenta (entrar/sair)", `${T20I}/itens/gerais/algemas.webp`, macroRocha),
