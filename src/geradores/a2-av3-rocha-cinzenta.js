@@ -763,7 +763,7 @@
 			const implante = a.effects.find((e) => e.getFlag("world", "fdtImplante"));
 			if (res.acao === "entrar") {
 				if (implante) { linhas.push(`${t.name}: tem o implante, mantém as habilidades.`); continue; }
-				await a.update({ "system.attributes.pm.value": 0 });
+				await fdtAplicar.ficha(a, { "system.attributes.pm.value": 0 }, `${t.name}: fica sem PM`);
 				if (!limites.length) await fdtAplicar.efeito(a, [LIMITES]);
 				linhas.push(`${t.name}: sem PM, sem magia, sem equipamento.`);
 			} else if (res.acao === "sair") {
@@ -819,15 +819,15 @@
 			const pv = a.system.attributes.pv;
 			let efeito;
 			if (cat === 0) {
-				await a.update({ "system.attributes.pv.value": -1 });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": -1 }, `${a.name}: fica com –1 PV`);
 				for (const s of ["inconsciente", "sangrando"]) if (!a.statuses?.has(s)) await fdtAplicar.status(a, s, { active: true });
 				efeito = "fica com <b>–1 PV, inconsciente e sangrando</b>; Tryphne não tem PM para impedir a morte.";
 			} else if (cat === 1) {
-				await a.update({ "system.attributes.pv.value": Math.min(pv.value, Math.ceil(pv.max / 2)) });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": { somar: 0, max: Math.ceil(pv.max / 2) } }, `${a.name}: fica com metade dos PV`);
 				if (!a.statuses?.has("debilitado")) await fdtAplicar.status(a, "debilitado", { active: true });
 				efeito = "acorda com <b>metade dos PV</b> (só voltam com descanso natural) e <b>debilitado</b> até recuperá-los.";
 			} else if (cat === 2) {
-				await a.update({ "system.attributes.pv.value": Math.min(pv.value, Math.ceil(pv.max / 2)) });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": { somar: 0, max: Math.ceil(pv.max / 2) } }, `${a.name}: fica com metade dos PV`);
 				efeito = "acorda com <b>metade dos PV</b> (só voltam com descanso natural).";
 			} else efeito = "acorda <b>sem nenhum efeito negativo</b>.";
 			const limites = a.effects.filter((e) => e.getFlag("world", "fdtRocha"));
@@ -965,7 +965,7 @@
 			await game.user.unsetFlag("world", CHAVE);
 		} else if (e.falhas >= 3) {
 			html += "<p><b>Falha total.</b> Um grupo grande de guardas subjuga todos: uma boa surra, 0 PV (sem sangrar), de volta às celas e vigiados. Esta fuga não pode mais ser tentada, e as outras formas de fuga ficam com CD +5.</p>";
-			for (const t of tokens) await t.actor.update({ "system.attributes.pv.value": 0 });
+			for (const t of tokens) await fdtAplicar.ficha(t.actor, { "system.attributes.pv.value": 0 }, `${t.name}: fica com 0 PV`);
 			await game.user.unsetFlag("world", CHAVE);
 		} else await game.user.setFlag("world", CHAVE, e);
 		ChatMessage.create({ content: html, rolls });
@@ -1035,7 +1035,7 @@
 				for (let i = 0; i < 2; i++) if ((await teste(t.actor, "refl", { cd: cdR, titulo: `O túnel desaba! (teste ${i + 1} de 2)`, falha: "uma falha: perde metade dos PV e fica fatigado; duas: soterrado e morre." })).total < cdR) f += 1;
 				if (f === 1) {
 					const pv = t.actor.system.attributes.pv;
-					await t.actor.update({ "system.attributes.pv.value": pv.value - Math.ceil(pv.value / 2) });
+					await fdtAplicar.perda(t.actor, Math.ceil(pv.value / 2), `${t.name}: perde metade dos PV (${Math.ceil(pv.value / 2)})`);
 					if (!t.actor.statuses?.has("fatigado")) await fdtAplicar.status(t.actor, "fatigado", { active: true });
 				}
 				html += `<li>${t.name}: ${f === 0 ? "escapa ileso" : f === 1 ? "escapa com ferimentos graves (metade dos PV, fatigado até recuperar)" : "<b>é soterrado e morre</b>"}.</li>`;

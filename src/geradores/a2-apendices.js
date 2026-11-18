@@ -454,7 +454,7 @@
 		const gastar = async (pm, nome) => {
 			const atual = Number(a.system.attributes?.pm?.value) || 0;
 			if (atual < pm) { ui.notifications.warn(`${a.name} não tem ${pm} PM para ${nome}.`); return false; }
-			await a.update({ "system.attributes.pm.value": atual - pm });
+			await fdtAplicar.pm(a, pm, `${a.name}: gasta ${pm} PM (${nome})`);
 			return true;
 		};
 		const precisa = (role, nome) => {
@@ -532,7 +532,7 @@
 			const r = await new Roll(`${2 + 2 * extra}d6[fogo]`).evaluate();
 			const alvos = [...(game.user.targets ?? [])].map((t) => t.actor).filter(Boolean);
 			for (const x of alvos) await fdtAplicar.dano(x, r, 1);
-			return ChatMessage.create({ rolls: [r], content: `<p>🔥 A ira de Thyatis: o inimigo resistiu à Provocação Petulante de <b>${a.name}</b> e sofre <b>${r.total} de fogo</b> (${1 + extra} PM${extra < Number(res.extra || 0) ? `; no máximo ${nCav - 1} PM extra(s) com ${nCav} poder(es)` : ""}).${alvos.length ? ` Aplicado em ${alvos.map((x) => x.name).join(", ")}.` : " Mire o inimigo para aplicar o dano."}</p>` });
+			return ChatMessage.create({ rolls: [r], content: `<p>🔥 A ira de Thyatis: o inimigo resistiu à Provocação Petulante de <b>${a.name}</b> e sofre <b>${r.total} de fogo</b> (${1 + extra} PM${extra < Number(res.extra || 0) ? `; no máximo ${nCav - 1} PM extra(s) com ${nCav} poder(es)` : ""}).${alvos.length ? ` O Mestre aplica em ${alvos.map((x) => x.name).join(", ")} pelo botão.` : " Mire o inimigo para o Mestre ter o botão de aplicar."}</p>` });
 		}
 		if (res.acao === "revoada") {
 			if (!precisa("cavRevoada", "Revoada da Fênix") || !(await gastar(2, "Revoada da Fênix"))) return;

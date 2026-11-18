@@ -603,8 +603,8 @@
 				for (const tk of tokens) {
 					const pv = await rolar(t.custo[0]);
 					const pm = await rolar(t.custo[1]);
-					const at = tk.actor.system.attributes;
-					await tk.actor.update({ "system.attributes.pv.value": at.pv.value - pv.total, "system.attributes.pm.value": Math.max(0, (Number(at.pm?.value) || 0) - pm.total) });
+					await fdtAplicar.perda(tk.actor, pv.total);
+					await fdtAplicar.pm(tk.actor, pm.total);
 					html += `<li>${tk.name}: –${pv.total} PV, –${pm.total} PM${k === "mapear" ? " (só voltam com descanso fora do esgoto)" : ""}.</li>`;
 				}
 				html += "</ul>";
@@ -783,7 +783,7 @@
 				const custo = res.acao === "ver2" ? 2 : 1;
 				const pm = Number(a.system.attributes?.pm?.value) || 0;
 				if (pm < custo) { linhas.push(`${t.name}: sem PM suficientes.`); continue; }
-				await a.update({ "system.attributes.pm.value": pm - custo });
+				await fdtAplicar.pm(a, custo, `${t.name}: gasta ${custo} PM`);
 				linhas.push(`${t.name} gasta uma ação de movimento e ${custo} PM: ignora a invisibilidade até o início do próximo turno.`);
 			}
 		}

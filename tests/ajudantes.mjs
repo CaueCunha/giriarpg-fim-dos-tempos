@@ -31,10 +31,19 @@ export async function carregarModulo(mundo, { dirPacks = FONTE_PACKS, ready = fa
 	mundo.chamarHook("setup");
 	// Os jogadores "clicam" no card dos testes pedidos pelas macros (testes.mjs): rola pela ficha e a macro continua.
 	// (mundo.responderTestes = false deixa os pedidos esperando, para o teste responder na mão.)
-	mundo.Hooks.on(`${MODULO}.testePedido`, ({ id }) => {
+	mundo.Hooks.on(`${MODULO}.testePedido`, ({ msg, pedido }) => {
 		mundo.testesPedidos = (mundo.testesPedidos ?? 0) + 1;
 		if (mundo.responderTestes === false) return;
-		Promise.resolve().then(() => mod.api.responderTeste(id));
+		// Cada "jogador" clica no botão Rolar da sua linha (com a primeira perícia oferecida).
+		Promise.resolve().then(async () => {
+			for (const [i, ln] of pedido.linhas.entries()) {
+				try {
+					await mod.api.testes._teste.clicarRolar(mundo.game.messages.get(msg.id) ?? msg, i, ln.pericias[0]);
+				} catch (erro) {
+					mundo.erros.push({ origem: `teste pedido "${pedido.titulo}" (${ln.nome}, ${ln.pericias[0]})`, erro });
+				}
+			}
+		});
 	});
 	if (ready) {
 		mundo.chamarHook("ready");

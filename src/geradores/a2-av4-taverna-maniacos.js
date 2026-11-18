@@ -738,7 +738,7 @@
 				rolls.push(r);
 				const pm = t.actor.system.attributes?.pm;
 				const novo = Math.max(0, (Number(pm?.value) || 0) - r.total);
-				await t.actor.update({ "system.attributes.pm.value": novo });
+				await fdtAplicar.pm(t.actor, r.total);
 				let txt = `${t.name}: –${r.total} PM (fica com ${novo})`;
 				if (novo === 0 && !e.congelados.includes(t.name)) {
 					e.congelados.push(t.name);
@@ -896,30 +896,26 @@
 						system: { changes: ["ataque", "dano"].map((t) => ({ key: `system.modificadores.${t}.geral`, value: "5", type: "add", phase: "initial", priority: null })) }
 					}]);
 				}
-				txt = `<b>Surto de Fúria:</b> +5 em ataque e dano por 1 rodada${monstros.length ? " (efeito aplicado)" : ""}.`;
+				txt = `<b>Surto de Fúria:</b> +5 em ataque e dano por 1 rodada${monstros.length ? " (botões do Mestre)" : ""}.`;
 			} else if (d.total === 2) txt = "<b>Surto de Euforia:</b> no próximo turno, o monstro tem uma ação padrão adicional.";
 			else if (d.total === 3) {
 				txt = "<b>Surto Psíquico:</b> 2d12 psíquico em cada personagem (Vontade CD 25 reduz à metade).<ul>";
 				const pjs = canvas.tokens.placeables.filter((x) => x.actor?.type === "character");
-				const danos = [];
-				for (const t of pjs) danos.push(await rolar("2d12"));
-				const vonts = await fdtTestes(pjs.map((t, i) => ({ ator: t.actor, pericia: "vont", cd: 25, dano: danos[i], metade: true, titulo: "Surto Psíquico" })));
+				// Um 2d12 para todos, como uma magia em área: o card leva o dano e o Mestre aplica pelos botões.
+				const dano = await new Roll("2d12[psiquico]").evaluate();
+				const vonts = await fdtTestes(pjs.map((t) => ({ ator: t.actor, pericia: "vont", cd: 25, dano, metade: true, titulo: "Surto Psíquico" })));
 				rolls.push(...vonts);
 				for (const [i, t] of pjs.entries()) {
-					const dano = danos[i];
 					const v = vonts[i];
 					const total = v.total >= 25 ? Math.floor(dano.total / 2) : dano.total;
-					const r = await new Roll(`${total}[psiquico]`).evaluate();
-					try { await fdtAplicar.dano(t.actor, r, 1); } catch (err) { console.warn(err); }
 					txt += `<li>${t.name}: Vontade ${v.total}, ${total} psíquico.</li>`;
 				}
 				txt += "</ul>";
 			} else {
 				for (const m of monstros) {
-					const pv = m.actor.system.attributes.pv;
-					await m.actor.update({ "system.attributes.pv.value": Math.min(pv.max, pv.value + 30) });
+					await fdtAplicar.curar(m.actor, 30);
 				}
-				txt = `<b>Surto de Adrenalina:</b> o monstro recupera 30 PV${monstros.length ? " (aplicado)" : ""}.`;
+				txt = `<b>Surto de Adrenalina:</b> o monstro recupera 30 PV${monstros.length ? " (botão do Mestre)" : ""}.`;
 			}
 			return `<p>Surto (1d4 = ${d.total}) na manifestação de ${interno.nome}: ${txt}</p>`;
 		};

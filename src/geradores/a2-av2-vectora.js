@@ -868,9 +868,9 @@
 				if (res.aplicar && res.truque === "sumico") {
 					for (const t of tokens) {
 						const pm = t.actor.system.attributes?.pm;
-						if (pm) await t.actor.update({ "system.attributes.pm.value": pm.max });
+						if (pm) await fdtAplicar.ficha(t.actor, { "system.attributes.pm.value": pm.max }, `${t.name}: recupera todos os PM`);
 					}
-					if (tokens.length) html += `<p>PM recuperados: ${tokens.map((t) => t.name).join(", ")}.</p>`;
+					if (tokens.length) html += `<p>PM recuperados (botões do Mestre): ${tokens.map((t) => t.name).join(", ")}.</p>`;
 				}
 				if (res.aplicar && res.truque === "monstro") {
 					const lo = game.actors.find((a) => a.getFlag("world", "fdtRole") === "leiordem");
@@ -946,17 +946,21 @@
 		const resultados = new Map();
 		const danosEv = new Map();
 		const pedidos = [];
+		// Um dano para todos, rolado uma vez (como uma magia em área); todos os testes vão num card só.
+		const danoComum = !atalho && extra.dano ? await new Roll(extra.dano).evaluate() : null;
 		for (const x of estado.parts) {
 			if (x.fora || x.espera > 0) continue;
 			const a = atorDe(x);
 			if (!a || !testes.length) continue;
 			const [k, cd] = testes.reduce((m, t) => (bonus(a, t[0]) - t[1] > bonus(a, m[0]) - m[1] ? t : m));
-			const dano = !atalho && extra.dano ? await new Roll(extra.dano).evaluate() : null;
+			const dano = danoComum;
 			if (dano) danosEv.set(x, dano);
-			pedidos.push({ x, k, cd, p: teste(a, k, { cd, extra: x.bonusCena, dano, titulo: `Perseguição · ${tipoEv}`, motivo: descEv, falha: atalho ? "avança só metade." : `avança só metade${extra.dano ? " e toma o dano" : ""}${extra.pm ? `, perde ${extra.pm} PM` : ""}.` }) });
+			pedidos.push({ x, k, cd, o: { ator: a, pericia: ATR.includes(k) ? null : k, atributo: ATR.includes(k) ? k : undefined, cd, extra: x.bonusCena, dano, evita: !!dano, titulo: `Perseguição · ${tipoEv}`, motivo: descEv, falha: atalho ? "avança só metade." : `avança só metade${extra.dano ? " e toma o dano" : ""}${extra.pm ? `, perde ${extra.pm} PM` : ""}.` } });
 		}
-		for (const { x, k, cd, p } of pedidos) {
-			const r = await p;
+		const respostas = await fdtTestes(pedidos.map((p) => p.o));
+		for (const [i, { x, k, cd }] of pedidos.entries()) {
+			const r = respostas[i];
+			rolls.push(r);
 			resultados.set(x, { ok: r.total >= cd, txt: `${NOMES[k]} ${r.total} ${r.total >= cd ? "✔️" : "❌"}` });
 		}
 		const todos = extra.todos && [...resultados].some(([x, r]) => x.lado === "p" && r.ok) ? extra.todos : 0;
@@ -985,15 +989,14 @@
 				} else if (!r0.ok) {
 					mult = 0.5;
 					if (extra.dano) {
+						// Com teste, o dano está no card (botão do Mestre); sem teste, vai no resumo.
 						const dano = danosEv.get(x) ?? (await rolar(extra.dano));
-						if (danosEv.has(x)) rolls.push(dano);
-						try { await fdtAplicar.dano(a, dano, 1); } catch (err) { console.warn(err); }
+						if (!danosEv.has(x)) await fdtAplicar.dano(a, dano, 1);
 						evTxt += ` (${dano.total} de dano)`;
 					}
 					if (extra.pm) {
 						const perda = await rolar(extra.pm);
-						const pm = a.system.attributes?.pm;
-						if (pm) await a.update({ "system.attributes.pm.value": Math.max(0, (Number(pm.value) || 0) - perda.total) });
+						await fdtAplicar.pm(a, perda.total);
 						evTxt += ` (–${perda.total} PM)`;
 					}
 					if (extra.queda) {
@@ -1096,7 +1099,7 @@
 			if (r.total <= limite) {
 				const pv = a.system.attributes.pv;
 				const novo = investida ? 0 : Math.max(0, pv.value - Math.ceil(pv.max / 2));
-				await a.update({ "system.attributes.pv.value": novo });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": novo }, `${t.name}: fica com ${novo} PV`);
 				feridos.push(`${t.name} (${r.total} ≤ ${limite}): ${novo <= 0 ? "<b>derrotado</b>" : `ferido, ${novo} PV`}`);
 			} else feridos.push(`${t.name} (${r.total} > ${limite}): ileso`);
 		}

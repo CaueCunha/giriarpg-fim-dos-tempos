@@ -38,16 +38,21 @@ Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-
 
 As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso, puxe a aventura antes de usar as macros dela. Se faltar alguma coisa, a macro avisa.
 
-### Testes dos PJs: o jogador rola
+### Testes no chat: o jogador rola, o Mestre aplica
 
-Quando uma macro da campanha pede um teste de um PJ (resistência, perícia ou atributo), **ela não rola por ele**. Ela manda ao chat um card com o teste, a CD, o **dano em jogo** (já rolado, com a metade quando passar) e o que acontece em caso de falha, e um botão **Rolar**. O jogador clica e rola pela própria ficha, com a janela de uso e os efeitos dele, como em qualquer teste do Tormenta20. A macro espera e continua com o resultado: aplica o dano, as condições e o resto. Quando vários PJs testam juntos, os cards saem todos de uma vez.
+As macros seguem o padrão de testes no chat do módulo Duelo de Dragões (`scripts/testes.mjs` usa o mesmo motor):
 
-- O Mestre também pode clicar no botão (jogador ausente ou com pressa).
-- NPCs e PJs **sem jogador conectado** continuam rolados pela macro.
-- Testes secretos (os que só o Mestre deve ver) continuam rolados pela macro.
-- Para voltar ao jeito antigo, desligue **Os jogadores rolam os testes das macros** em **Configurações › Giria T20 - Fim dos Tempos (Campanha)**.
+1. **Nenhuma macro rola teste de resistência nem aplica dano, condição ou efeito sozinha.**
+2. A macro manda ao chat **um card** com o dano já rolado **uma vez para todos**, como uma magia em área. A rolagem fica só no conteúdo (classe `roll--dano`), não em `rolls`, então os dados não aparecem duas vezes.
+3. O card tem um botão **Rolar** por personagem. O dono clica e rola pela própria ficha, com a janela de uso e os efeitos dele. O resultado volta ao Mestre pelo socket do módulo, e a macro continua.
+4. O Mestre aplica **dano, metade, condição ou efeito** por botões que só ele vê. O que a macro calcula depois do teste (PM, PV temporários, efeitos de uma cena) também vira botão, na mensagem da macro ou numa mensagem só para o Mestre.
+5. O card usa as classes `tormenta20 item-card`, e os botões ficam em linha como nos poderes do sistema.
 
-As macros que já estão no mundo recebem isso pelo **Atualizar do compêndio** (abaixo): as que você não editou vêm marcadas.
+O Mestre clica no botão dos NPCs e dos PJs sem jogador. Um ↻ no card deixa rolar de novo.
+
+Ficam de fora, de propósito: os placares de perigo (PV da horda e dos abrigos, Tempestade), testes secretos do Mestre, rolagens de NPCs contra os PJs, a manutenção das fichas (Corrigir poderes, Ajustar ao Nível, sincronizar o grupo), o gasto de PM dos próprios poderes (`spendMana`) e a automação do Temeroso.
+
+**As macros do mundo se atualizam sozinhas** quando o Mestre abre o mundo numa versão nova, inclusive as que foram puxadas dos compêndios ou postas na barra. Se você tinha editado uma, ela é atualizada do mesmo jeito, e a sua versão fica guardada numa cópia "(sua edição)" na pasta **Fim dos Tempos · Cópias das suas edições**.
 
 ### Limpar do mundo
 
@@ -110,6 +115,7 @@ npm test
 Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/README.md`](tools/sim/README.md)). A simulação usa os modelos de dados reais do Tormenta20, então cada documento é validado e limpo como o Foundry faria. Um campo que o Foundry descartaria em silêncio faz o teste falhar. Os testes cobrem:
 
 - **Macros (135):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
+- **Testes no chat:** o card (classes, `roll--dano` fora de `rolls`, um botão por personagem), o resultado pelo socket, os botões do Mestre aplicando uma vez só, nada aplicado antes do clique, nada repetido no chat e a atualização das macros com a cópia das editadas. Nas macros, cada "jogador" clica no botão do seu card.
 - **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar.
 - **Poderes dos PJs:** um PJ com os defeitos achados nas fichas da campanha passa por "PJs · Corrigir poderes"; o teste confere cada correção, que uma segunda passada não acha nada e que "Desfazer" devolve a ficha.
 - **Compêndios:**

@@ -555,7 +555,7 @@
 			const dar = Math.min(qtd, base.pm);
 			if (!a || !dar) return ui.notifications.warn("Não há PM suficientes na base.");
 			base.pm -= dar;
-			await a.update({ "system.attributes.pm.temp": (a.system.attributes.pm.temp || 0) + dar });
+			await fdtAplicar.ficha(a, { "system.attributes.pm.temp": { somar: dar } }, `${a.name}: +${dar} PM temporários (PM da base)`);
 			msg = `${a.name} usou <b>${dar} PM da base</b> (entraram como PM temporários e são gastos primeiro). Só vale enquanto estiver na base: se sair, tire o que sobrou.`;
 		}
 		await j.setFlag("world", "fdtGrupo", { ...e, base });
@@ -596,10 +596,11 @@
 			const valor = aliado.system.pericias[d.per].value;
 			const nome = CONFIG.T20.pericias[d.per].label;
 			await quem.spendMana(2);
-			const roll = await new Roll(`1d20 + ${valor}`).evaluate();
 			const cd = Number(d.cd) || null;
-			await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: quem }), flavor: `Conselhos Salvadores: ${nome} de ${quem.name} com o valor de ${aliado.name} (+${valor})${cd ? ` · CD ${cd} ${roll.total >= cd ? "✔️" : "❌"}` : ""}` });
-			return;
+			// O jogador rola pela ficha; o card soma a diferença para valer o bônus do aliado.
+			const proprio = Number(quem.system.pericias[d.per]?.value) || 0;
+			const roll = await fdtTeste(quem, d.per, { cd, extra: valor - proprio, titulo: `Conselhos Salvadores: ${nome}`, motivo: `${quem.name} usa o valor de ${aliado.name} (+${valor}).` });
+			return fala(`<p>Conselhos Salvadores: ${nome} de ${quem.name} com o valor de ${aliado.name} (+${valor}) = <b>${roll?.total ?? "?"}</b>${cd ? ` · CD ${cd} ${roll?.total >= cd ? "✔️" : "❌"}` : ""}</p>`);
 		}
 
 		if (d0.acao === "presenca") {
@@ -615,10 +616,10 @@
 			for (const a of part) {
 				await a.spendMana(2);
 				const velhos = a.effects.filter((e) => e.getFlag("world", "fdt") === FDT.TAG && e.name.startsWith("Presença Luminosa")).map((e) => e.id);
-				if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos);
+				if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos);
 				const changes = pericias.map((k) => ({ key: `system.pericias.${k}.bonus`, value: Math.max(maior[k] - (a.system.pericias[k]?.value ?? 0), 0), type: "add", phase: "initial", priority: null })).filter((c) => c.value > 0);
 				if (changes.length) {
-					await a.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(a, [{
 						name: "Presença Luminosa", img: "icons/magic/light/explosion-star-glow-silhouette.webp", type: "base",
 						duration: { expiry: "sceneEnd", units: "rounds", value: null },
 						flags: { world: { fdt: FDT.TAG } },
@@ -643,7 +644,7 @@
 				const n = part.length - 1;
 				const pv = 3 * patamar * n, pm = patamar * n;
 				const s = a.system.attributes;
-				await a.update({ "system.attributes.pv.temp": Math.max(s.pv.temp || 0, pv), "system.attributes.pm.temp": Math.max(s.pm.temp || 0, pm) });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.temp": { maior: pv }, "system.attributes.pm.temp": { maior: pm } }, `${a.name}: ${pv} PV e ${pm} PM temporários`);
 				linhas.push(`${a.name}: ${pv} PV e ${pm} PM temporários`);
 			}
 			return fala(`<h3>Conforto Familiar</h3><p>${linhas.join("<br>")}</p><p><small>PV/PM temporários não se acumulam: fica o maior valor.</small></p>`);
@@ -668,7 +669,7 @@
 			const linhas = [];
 			for (const a of part) {
 				const v = Math.min(cada, a.system.attributes.pv.max);
-				await a.update({ "system.attributes.pv.value": v });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": v }, `${a.name}: ${v} PV`);
 				linhas.push(`${a.name}: ${v} PV`);
 			}
 			return fala(`<h3>Espírito de União: fim da cena</h3><p>Total restante: ${total} PV, divididos igualmente.</p><p>${linhas.join("<br>")}</p>`);

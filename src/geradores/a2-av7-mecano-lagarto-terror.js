@@ -672,11 +672,11 @@
 					const faltaPv = (pv.max ?? 0) - (pv.value ?? 0);
 					if (faltaPv >= 10 || (pm.max ?? 0) - (pm.value ?? 0) < 2) {
 						const v = await rolar("4d8+4");
-						await t.actor.update({ "system.attributes.pv.value": Math.min(pv.max ?? 0, (pv.value ?? 0) + v) });
+						await fdtAplicar.curar(t.actor, v);
 						html += `<p>${t.name} recupera <b>${v} PV</b>.</p>`;
 					} else {
 						const v = await rolar("2d4");
-						await t.actor.update({ "system.attributes.pm.value": Math.min(pm.max ?? 0, (pm.value ?? 0) + v) });
+						await fdtAplicar.pm(t.actor, -v, `${t.name}: recupera ${v} PM`);
 						html += `<p>${t.name} recupera <b>${v} PM</b>.</p>`;
 					}
 				}
@@ -838,8 +838,7 @@
 		const alvosGrupo = canvas.tokens.controlled.filter((t) => t.actor);
 		const perderPm = async (a, f) => {
 			const v = await rolar(f);
-			const pm = a.system.attributes.pm;
-			await a.update({ "system.attributes.pm.value": Math.max(0, (pm.value ?? 0) - v) });
+			await fdtAplicar.pm(a, v);
 			return v;
 		};
 		const ferir = async (a, formula, tipo, meio = false) => {
@@ -866,16 +865,19 @@
 			if (!efeito) return "";
 			const [f, tipo, pericia, cdRes] = efeito;
 			const linhas = [];
-			for (const t of alvosGrupo) {
-				let meio = false;
-				let danoJa = f;
-				if (pericia) {
-					danoJa = await rolar(f);
-					const r = (await fdtTeste(t.actor, pericia, { cd: cdRes, dano: `${danoJa}[${tipo}]`, metade: true, titulo: "Efeito em todos" })).total;
-					meio = r >= cdRes;
+			if (pericia && alvosGrupo.length) {
+				// Um dano para todos, rolado uma vez: o card leva o dano (metade para quem passa) e o Mestre aplica pelos botões.
+				const danoJa = await rolar(f);
+				const rs = await fdtTestes(alvosGrupo.map((t) => ({ ator: t.actor, pericia, cd: cdRes, dano: `${danoJa}[${tipo}]`, metade: true, titulo: "Efeito em todos" })));
+				for (const [i, t] of alvosGrupo.entries()) {
+					const meio = rs[i].total >= cdRes;
+					linhas.push(`${t.name}: ${meio ? Math.floor(danoJa / 2) : danoJa}${meio ? " (metade)" : ""}`);
 				}
-				const v = await ferir(t.actor, danoJa, tipo, meio);
-				linhas.push(`${t.name}: ${v}${meio ? " (metade)" : ""}`);
+				return `<p>${linhas.join(" · ")}.</p>`;
+			}
+			for (const t of alvosGrupo) {
+				const v = await ferir(t.actor, f, tipo, false);
+				linhas.push(`${t.name}: ${v}`);
 			}
 			return linhas.length ? `<p>${linhas.join(" · ")}.</p>` : "";
 		};
@@ -948,8 +950,7 @@
 				const l = [];
 				for (const t of alvosGrupo) {
 					const v = await rolar("1d4");
-					const pm = t.actor.system.attributes.pm;
-					await t.actor.update({ "system.attributes.pm.value": Math.min(pm.max ?? 0, (pm.value ?? 0) + v) });
+					await fdtAplicar.pm(t.actor, -v, `${t.name}: recupera ${v} PM`);
 					l.push(`${t.name} +${v} PM`);
 				}
 				html += `<p>${l.join(", ")}.</p>`;
@@ -960,8 +961,7 @@
 			}
 			if (estado.npcs.some((n) => n.nome.includes("Zymni"))) {
 				for (const t of alvosGrupo) {
-					const pv = t.actor.system.attributes.pv;
-					await t.actor.update({ "system.attributes.pv.value": Math.min(pv.max ?? 0, (pv.value ?? 0) + 10) });
+					await fdtAplicar.curar(t.actor, 10);
 				}
 				html += "<p>A Dra. Zymni, salva, cura <b>10 PV</b> de cada personagem.</p>";
 			}
@@ -1030,12 +1030,6 @@
 		const valor = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
 		const melhor = (a, ks) => ks.reduce((m, k) => (valor(a, k) > m.v ? { k, v: valor(a, k) } : m), { k: ks[0], v: valor(a, ks[0]) });
 		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
-		const titanico = async (a, formula, tipo) => {
-			const v = typeof formula === "number" ? formula : await rolar(formula);
-			const r = await new Roll(`${v}[${tipo}]`, {}, { rd: 999 }).evaluate();
-			try { await fdtAplicar.dano(a, r, 1); } catch (err) { console.warn(err); }
-			return v;
-		};
 		let html = "";
 		if (res.acao === "escalar" || res.acao === "sabotar") {
 			const tk = canvas.tokens.controlled[0];
@@ -1070,7 +1064,7 @@
 			else {
 				const pv = alvo.actor.system.attributes.pv;
 				const novo = ehArma ? 0 : Math.max(0, (pv.value ?? 0) - total);
-				await alvo.actor.update({ "system.attributes.pv.value": novo });
+				await fdtAplicar.ficha(alvo.actor, { "system.attributes.pv.value": novo }, `${alvo.name}: fica com ${novo} PV`);
 				html += ehArma ? `<p><b>${alvo.name} sabotado</b>: não dispara mais.</p>` : `<p>${alvo.name} perde <b>${total} PV</b> (${novo} restantes).${novo <= 0 ? " <b>Destruído!</b> Registre o segmento no <i>Caminho de Destruição</i> quando todos os pontos dele caírem." : ""}</p>`;
 			}
 			return ChatMessage.create({ content: html, rolls });
@@ -1078,57 +1072,64 @@
 		const alvos = [...game.user.targets].filter((t) => t.actor);
 		if (!alvos.length) return ui.notifications.warn("Mire as criaturas afetadas.");
 		const linhas = [];
+		// Cada ataque rola o dano uma vez para todos (como uma magia em área) e ignora RD (rd 999 na rolagem do card):
+		// o card leva os botões de dano e de condição, e o Mestre aplica.
+		const danoTitanico = async (f, tipo) => {
+			const r = await new Roll(`${f}[${tipo}]`, {}, { rd: 999 }).evaluate();
+			return r;
+		};
 		if (res.acao === "pisoteio") {
 			if (seg.pernas) html += "<p>As pernas estão desabilitadas: ninguém é pisoteado.</p>";
 			else {
 				const cd = 32 - red;
-				for (const t of alvos) {
-					const d = await rolar("12d6");
-					const r = await teste(t.actor, "refl", { cd, dano: `${d}[impacto]`, metade: true, titulo: "Pisoteio", motivo: "Ignora RD." });
-					const v = await titanico(t.actor, r >= cd ? Math.floor(d / 2) : d, "impacto");
-					linhas.push(`${t.name}: Reflexos ${r}, ${v} de impacto${r >= cd ? " (metade)" : ""}`);
+				const dano = await danoTitanico("12d6", "impacto");
+				const rs = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "refl", cd, dano, metade: true, titulo: "Pisoteio", motivo: "Ignora RD." })));
+				for (const [i, t] of alvos.entries()) {
+					rolls.push(rs[i]);
+					const r = rs[i].total;
+					linhas.push(`${t.name}: Reflexos ${r}, ${r >= cd ? Math.floor(dano.total / 2) : dano.total} de impacto${r >= cd ? " (metade)" : ""}`);
 				}
-				html += `<h3>Pisoteio</h3><p>12d6 de impacto, Reflexos CD ${cd} reduz à metade, ignora RD.</p>`;
+				html += `<h3>Pisoteio</h3><p>12d6 de impacto (<b>${dano.total}</b>), Reflexos CD ${cd} reduz à metade, ignora RD.</p>`;
 			}
 		}
 		if (res.acao === "cauda") {
 			if (seg.cauda) html += "<p>A cauda está desabilitada: não há golpe de cauda.</p>";
 			else {
 				const cd = 33 - red;
-				for (const t of alvos) {
-					const d = await rolar("8d6");
-					const r = await teste(t.actor, "refl", { cd, dano: `${d}[impacto]`, metade: true, titulo: "Golpe de Cauda", falha: "dano total e empurrado 1 hexágono para trás.", motivo: "Ignora RD." });
-					const v = await titanico(t.actor, r >= cd ? Math.floor(d / 2) : d, "impacto");
-					linhas.push(`${t.name}: Reflexos ${r}, ${v} de impacto${r >= cd ? " (metade)" : " e <b>empurrado 1 hexágono para trás</b>"}`);
+				const dano = await danoTitanico("8d6", "impacto");
+				const rs = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "refl", cd, dano, metade: true, titulo: "Golpe de Cauda", falha: "dano total e empurrado 1 hexágono para trás.", motivo: "Ignora RD." })));
+				for (const [i, t] of alvos.entries()) {
+					rolls.push(rs[i]);
+					const r = rs[i].total;
+					linhas.push(`${t.name}: Reflexos ${r}, ${r >= cd ? Math.floor(dano.total / 2) : dano.total} de impacto${r >= cd ? " (metade)" : " e <b>empurrado 1 hexágono para trás</b>"}`);
 				}
-				html += `<h3>Golpe de Cauda</h3><p>8d6 de impacto, Reflexos CD ${cd} reduz à metade e evita o empurrão, ignora RD.</p>`;
+				html += `<h3>Golpe de Cauda</h3><p>8d6 de impacto (<b>${dano.total}</b>), Reflexos CD ${cd} reduz à metade e evita o empurrão, ignora RD.</p>`;
 			}
 		}
 		if (res.acao === "sacudir") {
 			const cd = 33 - red;
-			for (const t of alvos) {
-				const m = melhor(t.actor, ["atle", "refl"]);
-				const v = await rolar("4d6");
-				const r = await teste(t.actor, m.k, { cd, dano: `${v}[impacto]`, titulo: "A cauda sacode", sucesso: "se segura, sem dano.", falha: `toma o dano; falhando por 5 ou mais, é arremessado (cai ${Math.max(0, Number(res.altura) || 0)}m).` });
-				if (r >= cd) { linhas.push(`${t.name}: ${NOME[m.k]} ${r}, se segura`); continue; }
-				const dano = await new Roll(`${v}[impacto]`).evaluate();
-				try { await fdtAplicar.dano(t.actor, dano, 1); } catch (err) { console.warn(err); }
-				linhas.push(`${t.name}: ${NOME[m.k]} ${r}, ${v} de impacto${r <= cd - 5 ? ` e <b>arremessado</b> (cai ${Math.max(0, Number(res.altura) || 0)}m)` : ""}`);
+			const dano = await danoTitanico("4d6", "impacto");
+			const ks = alvos.map((t) => melhor(t.actor, ["atle", "refl"]).k);
+			const rs = await fdtTestes(alvos.map((t, i) => ({ ator: t.actor, pericia: ks[i], cd, dano, evita: true, titulo: "A cauda sacode", sucesso: "se segura, sem dano.", falha: `toma o dano; falhando por 5 ou mais, é arremessado (cai ${Math.max(0, Number(res.altura) || 0)}m).` })));
+			for (const [i, t] of alvos.entries()) {
+				rolls.push(rs[i]);
+				const r = rs[i].total;
+				if (r >= cd) { linhas.push(`${t.name}: ${NOME[ks[i]]} ${r}, se segura`); continue; }
+				linhas.push(`${t.name}: ${NOME[ks[i]]} ${r}, ${dano.total} de impacto${r <= cd - 5 ? ` e <b>arremessado</b> (cai ${Math.max(0, Number(res.altura) || 0)}m)` : ""}`);
 			}
-			html += `<h3>A cauda sacode</h3><p>Atletismo ou Reflexos CD ${cd}: falha, 4d6 de impacto; falha por 5 ou mais, cai.</p>`;
+			html += `<h3>A cauda sacode</h3><p>Atletismo ou Reflexos CD ${cd}: falha, 4d6 de impacto (<b>${dano.total}</b>); falha por 5 ou mais, cai.</p>`;
 		}
 		if (res.acao === "descarga") {
 			const cd = 32 - red;
-			for (const t of alvos) {
-				const v = await rolar("4d6");
-				const r = await teste(t.actor, "refl", { cd, dano: `${v}[eletricidade]`, titulo: "Descargas das plataformas", sucesso: "evita tudo.", falha: "toma o dano e fica ofuscado por 1 rodada." });
+			const dano = await danoTitanico("4d6", "eletricidade");
+			const rs = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "refl", cd, dano, evita: true, titulo: "Descargas das plataformas", sucesso: "evita tudo.", falha: "toma o dano e fica ofuscado por 1 rodada.", falhaStatus: "ofuscado" })));
+			for (const [i, t] of alvos.entries()) {
+				rolls.push(rs[i]);
+				const r = rs[i].total;
 				if (r >= cd) { linhas.push(`${t.name}: Reflexos ${r}, evita`); continue; }
-				const dano = await new Roll(`${v}[eletricidade]`).evaluate();
-				try { await fdtAplicar.dano(t.actor, dano, 1); } catch (err) { console.warn(err); }
-				if (!t.actor.statuses?.has("ofuscado")) await fdtAplicar.status(t.actor, "ofuscado", { active: true });
-				linhas.push(`${t.name}: Reflexos ${r}, ${v} de eletricidade e <b>ofuscado</b>`);
+				linhas.push(`${t.name}: Reflexos ${r}, ${dano.total} de eletricidade e <b>ofuscado</b>`);
 			}
-			html += `<h3>Descargas das plataformas</h3><p>4d6 de eletricidade e ofuscado por 1 rodada (Reflexos CD ${cd} evita tudo).</p>`;
+			html += `<h3>Descargas das plataformas</h3><p>4d6 de eletricidade (<b>${dano.total}</b>) e ofuscado por 1 rodada (Reflexos CD ${cd} evita tudo).</p>`;
 		}
 		html += linhas.length ? `<ul>${linhas.map((l) => `<li>${l}</li>`).join("")}</ul>` : "";
 		ChatMessage.create({ content: html, rolls });
@@ -1198,18 +1199,17 @@
 		}
 		for (let n = 0; n < misseis; n++) {
 			const t = await sortear();
-			const d = await rolar("6d10");
-			const r = await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: `Míssil ${n + 1}`, falha: "dano total e –2 em todos os testes por 1 rodada." });
-			const ok = r >= 30 - red;
-			await aplicar(t.actor, ok ? Math.floor(d.total / 2) : d.total, "impacto", false);
-			if (!ok) await fdtAplicar.efeito(t.actor, [{
+			const d = await rolar("6d10[impacto]");
+			// O card leva o dano (metade para quem passa) e a penalidade para quem falha: o Mestre aplica pelos botões.
+			const r = await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: `Míssil ${n + 1}`, falha: "dano total e –2 em todos os testes por 1 rodada.", falhaEfeito: {
 				name: "Míssil (–2 em testes)",
 				img: "systems/tormenta20/icons/magias/explosao-de-chamas.webp",
 				type: "base",
 				duration: { value: 1, units: "rounds" },
 				flags: { world: { fdtMissil: true } },
 				system: { changes: [{ key: "system.pericias.*.bonus", value: "-2", type: "add", phase: "initial", priority: null }] }
-			}]);
+			} });
+			const ok = r >= 30 - red;
 			linhas.push(`Míssil ${n + 1} → ${t.name}: Reflexos ${r}, ${ok ? `${Math.floor(d.total / 2)} de impacto (metade)` : `${d.total} de impacto e <b>–2 em todos os testes</b> por 1 rodada`}.`);
 		}
 		for (let n = 0; n < garras; n++) {
@@ -1223,17 +1223,20 @@
 			linhas.push(`Garra ${n + 1}: ${atk.total}${nat >= 19 ? " <b>crítico</b>" : ""} contra todos, ${d.total} de corte (ignora RD) em: ${acertos.join(", ") || "ninguém"}.`);
 		}
 		if (pr.sopro) {
-			const d = await rolar("8d6");
+			// Um sopro para todos (ignora RD): com teste, o card leva o dano; de frente (sem teste), os botões vão no resumo.
+			const d = await new Roll("8d6[essencia]", {}, { rd: 999 }).evaluate();
 			const seis = d.dice[0]?.results?.filter((x) => x.result === 6).length ?? 0;
-			for (const t of alvos) {
-				const r = res.frente ? 0 : await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: "Sopro", motivo: "Ignora RD.", falha: seis ? `dano total e perde ${seis} PM.` : "dano total." });
+			const rs = res.frente ? [] : await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "refl", cd: 30 - red, dano: d, metade: true, titulo: "Sopro", motivo: "Ignora RD.", falha: seis ? `dano total e perde ${seis} PM.` : "dano total." })));
+			rolls.push(...rs);
+			for (const [i, t] of alvos.entries()) {
+				const r = res.frente ? 0 : rs[i].total;
 				const ok = !res.frente && r >= 30 - red;
-				await aplicar(t.actor, ok ? Math.floor(d.total / 2) : d.total, "essencia", true);
+				if (res.frente) await aplicar(t.actor, d.total, "essencia", true);
 				let extra = "";
 				if (!ok && seis) {
 					const pm = t.actor.system.attributes.pm;
 					const novo = Math.max(0, (pm.value ?? 0) - seis);
-					await t.actor.update({ "system.attributes.pm.value": novo });
+					await fdtAplicar.pm(t.actor, seis);
 					extra = `, perde ${seis} PM${novo === 0 ? " e entra em <b>frenesi</b> (só ataca fisicamente um alvo aleatório até recuperar 1 PM)" : ""}`;
 				}
 				linhas.push(`Sopro → ${t.name}: ${res.frente ? "de frente, falha" : `Reflexos ${r}`}, ${ok ? Math.floor(d.total / 2) : d.total} de essência${extra}.`);
@@ -1243,9 +1246,9 @@
 			const t = await sortear();
 			const d = await rolar("6d6");
 			await aplicar(t.actor, d.total, "luz", true);
-			const r = res.frente ? 0 : await resist(t.actor, "fort", { cd: 30 - red, titulo: `Raio ocular ${n + 1}`, motivo: `${d.total} de luz já aplicados.`, falha: "ofuscado por 1 rodada." });
+			const r = res.frente ? 0 : await resist(t.actor, "fort", { cd: 30 - red, titulo: `Raio ocular ${n + 1}`, motivo: `${d.total} de luz sem teste (botão no resumo); a Fortitude só evita a condição.`, falha: "ofuscado por 1 rodada.", falhaStatus: "ofuscado" });
 			const ok = !res.frente && r >= 30 - red;
-			if (!ok && !t.actor.statuses?.has("ofuscado")) await fdtAplicar.status(t.actor, "ofuscado", { active: true });
+			if (res.frente && !t.actor.statuses?.has("ofuscado")) await fdtAplicar.status(t.actor, "ofuscado", { active: true });
 			linhas.push(`Raio ocular ${n + 1} → ${t.name}: ${d.total} de luz${ok ? ` (Fortitude ${r}, evita a condição)` : " e <b>ofuscado</b> por 1 rodada"}.`);
 		}
 		ChatMessage.create({ content: `<h3>${pr.nome}</h3>${linhas.length ? `<ul>${linhas.map((l) => `<li>${l}</li>`).join("")}</ul>` : "<p>Nenhuma defesa ativa.</p>"}`, rolls });
@@ -1303,13 +1306,13 @@
 			if (res.acao === "laudano") {
 				const d = await rolar("8d8");
 				html += `<h3>Láudano Mentagênico</h3><p>Esfera de 3m: <b>${d}</b> de dano psíquico.</p>`;
-				for (const t of alvos) {
-					const v = await vont(t.actor, { titulo: "Láudano Mentagênico", dano: `${d}[psiquico]`, metade: true, falha: "dano total e alquebrado." });
+				// Um card para todos: dano (metade para quem passa) e alquebrado para quem falha, aplicados pelo Mestre.
+				const vs = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "vont", cd: 35, titulo: "Láudano Mentagênico", dano: `${d}[psiquico]`, metade: true, falha: "dano total e alquebrado.", falhaStatus: "alquebrado" })));
+				rolls.push(...vs);
+				for (const [i, t] of alvos.entries()) {
+					const v = vs[i].total;
 					const ok = v >= 35;
 					const valor = ok ? Math.floor(d / 2) : d;
-					const r = await new Roll(`${valor}[psiquico]`).evaluate();
-					try { await fdtAplicar.dano(t.actor, r, 1); } catch (err) { console.warn(err); }
-					if (!ok) await cond(t.actor, "alquebrado");
 					linhas.push(`${t.name}: Vontade ${v}, ${valor}${ok ? " (metade)" : " e <b>alquebrado</b>"}`);
 				}
 			}
@@ -1323,7 +1326,7 @@
 						flags: { world: { fdtInjetor: true } },
 						system: { changes: [{ key: "system.pericias.*.bonus", value: "-1", type: "add", phase: "initial", priority: null }] }
 					}]);
-					const n = t.actor.effects.filter((x) => x.getFlag("world", "fdtInjetor") || x.name.startsWith("Injetor")).length;
+					const n = t.actor.effects.filter((x) => x.getFlag("world", "fdtInjetor") || x.name.startsWith("Injetor")).length + 1;
 					linhas.push(`${t.name}: –${n} em testes de perícia até o fim da cena`);
 				}
 			}

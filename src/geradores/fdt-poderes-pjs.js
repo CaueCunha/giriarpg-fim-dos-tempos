@@ -644,24 +644,28 @@
 				if (!hostis(p, alvo) || distancia(p, alvo) > 9) continue;
 				const pa = p.actor;
 				const cd = 10 + Math.floor((Number(pa.system.attributes?.nivel?.value) || 1) / 2) + (Number(pa.system.atributos?.car?.value) || 0);
-				const r = await new Roll("1d20 + @v", { v: Number(alvo.actor.system.pericias?.vont?.value) || 0 }).evaluate();
-				const falhou = r.total < cd;
-				if (falhou) {
-					await alvo.actor.createEmbeddedDocuments("ActiveEffect", [{
-						name: `Provocado por ${pa.name}`,
-						img: "icons/skills/social/intimidation-impressing.webp",
-						type: "base",
-						duration: { value: 1, units: "rounds", expiry: "turnEnd" },
-						description: `<p>Qualquer ação hostil deste turno precisa ter ${esc(pa.name)} como alvo (Provocação Petulante).</p>`,
-						flags: { world: { fdtProvocado: pa.id } },
-						system: { changes: [] }
-					}]);
-				}
-				await ChatMessage.create({
-					speaker: { alias: "Provocação Petulante" },
-					rolls: [r],
-					content: `<p><b>${esc(alvo.name)}</b> começa o turno perto de <b>${esc(pa.name)}</b> e testa Vontade (CD ${cd}): <b>${r.total}</b>. ${falhou ? "Falhou: ações hostis deste turno precisam ter " + esc(pa.name) + " como alvo." : "Passou."}</p>`
-				});
+				// Card de teste: o dono do alvo rola Vontade; o Mestre aplica o efeito pelo botão.
+				const T = game.modules.get(MODULO)?.api?.testes;
+				if (!T) continue;
+				T.pedir({
+					titulo: "Provocação Petulante",
+					texto: `${esc(alvo.name)} começa o turno perto de ${esc(pa.name)}.`,
+					testes: [{ ator: alvo.actor, pericia: "vont", cd }],
+					falha: {
+						texto: `ações hostis deste turno precisam ter ${esc(pa.name)} como alvo.`,
+						efeito: {
+							name: `Provocado por ${pa.name}`,
+							img: "icons/skills/social/intimidation-impressing.webp",
+							type: "base",
+							duration: { value: 1, units: "rounds", expiry: "turnEnd" },
+							description: `<p>Qualquer ação hostil deste turno precisa ter ${esc(pa.name)} como alvo (Provocação Petulante).</p>`,
+							flags: { world: { fdtProvocado: pa.id } },
+							system: { changes: [] }
+						}
+					},
+					esperar: false,
+					speaker: { alias: "Provocação Petulante" }
+				}).catch((err) => console.warn(err));
 			}
 		}
 
@@ -782,7 +786,7 @@
 			ef.name = `${ef.name} (Mau Cheiro)`;
 			ef.duration = { value: dur.total, units: "rounds", expiry: "turnStart" };
 			ef.origin = a.uuid;
-			await x.createEmbeddedDocuments("ActiveEffect", [ef]);
+			await fdtAplicar.efeito(x, [ef]);
 			linhas.push(`${P.esc(t.name)}: ${r.total} · <b>enjoado por ${dur.total} rodada(s)</b>`);
 		}
 		await ChatMessage.create({

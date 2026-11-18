@@ -633,7 +633,7 @@
 			if (ev.testes) {
 				const [k, cd] = ev.testes.reduce((m, t) => (bonus(a, t[0]) - t[1] > bonus(a, m[0]) - m[1] ? t : m));
 				const danoEv = ev.dano && !ev.atalho ? await new Roll(ev.dano).evaluate() : null;
-				const r = await teste(a, k, { cd, dano: danoEv, titulo: `Perseguição · ${ev.nome}`, falha: ev.atalho ? "avança só metade." : `avança só metade${ev.dano ? " e toma o dano" : ""}${ev.perdeRodada ? " e perde a próxima rodada" : ""}.`, sucesso: ev.atalho ? "avança o dobro +5." : "" });
+				const r = await teste(a, k, { cd, dano: danoEv, evita: !!danoEv, titulo: `Perseguição · ${ev.nome}`, falha: ev.atalho ? "avança só metade." : `avança só metade${ev.dano ? " e toma o dano" : ""}${ev.perdeRodada ? " e perde a próxima rodada" : ""}.`, sucesso: ev.atalho ? "avança o dobro +5." : "" });
 				const ok = r.total >= cd;
 				evTxt = `${NOMES[k]} ${r.total} ${ok ? "✔️" : "❌"}`;
 				if (ev.atalho) {
@@ -644,7 +644,6 @@
 					if (ev.dano) {
 						const dano = danoEv;
 						rolls.push(dano);
-						try { await fdtAplicar.dano(a, dano, 1); } catch (e) { console.warn(e); }
 						evTxt += ` (${dano.total} de dano)`;
 					}
 					if (ev.penal) x.penal += ev.penal;

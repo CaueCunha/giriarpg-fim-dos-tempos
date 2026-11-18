@@ -551,7 +551,6 @@
 				const r = testes[i].total;
 				const metade = r >= 20;
 				const total = metade ? Math.floor(dano.total / 2) : dano.total;
-				try { await fdtAplicar.dano(t.actor, await new Roll(`${total}[fogo]`).evaluate(), 1); } catch (err) { console.warn(err); }
 				linhas.push(`<li>${t.name}: Reflexos ${r}, ${metade ? "metade" : "dano total"} (${total}).</li>`);
 			}
 			return `<p><b>O barril explode!</b> ${dano.total} de fogo em todos os quadrados adjacentes (Reflexos CD 20 reduz à metade). Restam ${e.barris} barris.</p>${linhas.length ? `<ul>${linhas.join("")}</ul>` : "<p>Mire as criaturas adjacentes para aplicar o dano.</p>"}`;
@@ -652,12 +651,12 @@
 		const CUSTO = { sopro: 11, campo: 4, nevoa: 3 };
 		const pm = Number(tk.actor.system.attributes.pm.value) || 0;
 		if (pm < CUSTO[res.acao]) return ui.notifications.warn(`${tk.name} não tem ${CUSTO[res.acao]} PM.`);
-		await tk.actor.update({ "system.attributes.pm.value": pm - CUSTO[res.acao] });
+		await fdtAplicar.pm(tk.actor, CUSTO[res.acao], `${tk.name}: gasta ${CUSTO[res.acao]} PM`);
 		const rolls = [];
 		let html = `<h3>${tk.name}</h3>`;
 		if (res.acao === "sopro") {
 			const alvos = [...game.user.targets].filter((t) => t.actor && t !== tk);
-			const dano = await new Roll("12d6+6").evaluate();
+			const dano = await new Roll("12d6+6[frio]").evaluate();
 			rolls.push(dano);
 			const linhas = [];
 			const testes = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "fort", cd: 24, dano, metade: true, titulo: `Sopro de ${tk.name}`, falha: "dano total e, se for Médio ou menor, caído." })));
@@ -680,14 +679,13 @@
 						}
 					}
 				}
-				try { await fdtAplicar.dano(t.actor, await new Roll(`${total}[frio]`).evaluate(), 1); } catch (err) { console.warn(err); }
 				linhas.push(`<li>${t.name}: Fortitude ${r.total}, ${passou ? "metade" : "dano total"} (${total} de frio)${extra}.</li>`);
 			}
 			html += `<p><b>Sopro das Uivantes:</b> cone de 9m, ${dano.total} de frio.</p>${linhas.length ? `<ul>${linhas.join("")}</ul>` : "<p>Mire os alvos no cone.</p>"}`;
 		}
 		if (res.acao === "campo") html += "<p><b>Campo de Força</b> (reação): RD 30 contra este dano. Devolva até 30 PV do dano que acabou de sofrer.</p>";
 		if (res.acao === "nevoa") html += "<p><b>Névoa:</b> nuvem de 6m de raio e 6m de altura em alcance curto. Camuflagem leve a até 1,5m, total a partir de 3m; os escolhidos pelo arcano enxergam através.</p>";
-		html += `<p>PM: ${tk.actor.system.attributes.pm.value}.</p>`;
+		html += `<p>PM: ${pm} − ${CUSTO[res.acao]} (botão do Mestre).</p>`;
 		ChatMessage.create({ content: html, rolls });
 	}
 

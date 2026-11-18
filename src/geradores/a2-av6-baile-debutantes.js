@@ -767,7 +767,7 @@
 				if (a.getFlag("world", "fdtAtrio")) { linhas.push(`${t.name}: já visitou o átrio neste baile.`); break; }
 				const r = await teste(a, "car", { cd: 15, titulo: "O átrio", sucesso: "+3 PM temporários." });
 				await a.setFlag("world", "fdtAtrio", true);
-				if (r >= 15) await a.update({ "system.attributes.pm.temp": (Number(a.system.attributes.pm?.temp) || 0) + 3 });
+				if (r >= 15) await fdtAplicar.ficha(a, { "system.attributes.pm.temp": { somar: 3 } }, `${a.name}: +3 PM temporários`);
 				linhas.push(`${t.name}: Carisma ${r} (CD 15). ${r >= 15 ? "Inspirado: <b>+3 PM temporários</b>." : "Nada."}`);
 				break;
 			}
@@ -817,7 +817,7 @@
 				linhas.push(`${t.name}: +5 em Atuação e Ofício (some o +5 de Ofício na rolagem).`);
 				break;
 			case "santuario":
-				await a.update({ "system.attributes.pm.temp": (Number(a.system.attributes.pm?.temp) || 0) + nivel });
+				await fdtAplicar.ficha(a, { "system.attributes.pm.temp": { somar: nivel } }, `${a.name}: +${nivel} PM temporários`);
 				linhas.push(`${t.name}: <b>+${nivel} PM temporários</b> até o fim do baile.`);
 				break;
 			default:
@@ -857,7 +857,7 @@
 			}
 			if (res.acao === "parar") {
 				const b = tem("Bebendo na adega");
-				if (b) await b.delete();
+				if (b) await fdtAplicar.tirarEfeito(a, [b.id], b.name);
 				linhas.push(`${t.name} para de beber: perde o +5 em Diplomacia (a embriaguez continua).`);
 				continue;
 			}
@@ -921,7 +921,7 @@
 		html += "</ul>";
 		const ganho = ap[2].map(([k, v]) => [k, String(-Number(v))]);
 		if (ganho.length) await fdtAplicar.efeito(venc.t.actor, [ae(`Aposta ganha: ${ap[0]}`, ganho)]);
-		html += `<p>${venc.t.name} recebe o que um apostador perdeu${ganho.length ? " (efeito aplicado)" : res.aposta === "talento" ? " (uma perícia treinada de um perdedor)" : ""}.</p>`;
+		html += `<p>${venc.t.name} recebe o que um apostador perdeu${ganho.length ? " (botão do Mestre)" : res.aposta === "talento" ? " (uma perícia treinada de um perdedor)" : ""}.</p>`;
 		ChatMessage.create({ content: html, rolls });
 	}
 
@@ -1012,18 +1012,16 @@
 		const alvos = [...game.user.targets].filter((t) => t.actor);
 		if (!alvos.length) return ui.notifications.warn("Mire as criaturas atingidas pelo grito.");
 		const rolls = [];
-		const dano = await new Roll("6d12").evaluate();
+		const dano = await new Roll("6d12[psiquico]").evaluate();
 		rolls.push(dano);
 		let html = `<h3>Gravação Estridente</h3><p>Grito de <b>${dano.total}</b> de dano psíquico num raio de 9m.</p><ul>`;
-		const vonts = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "vont", cd: 32, dano, metade: true, titulo: "Gravação Estridente" })));
+		// O card leva o dano (metade para quem passa) e o atordoado para quem falha: o Mestre aplica pelos botões.
+		const vonts = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "vont", cd: 32, dano, metade: true, titulo: "Gravação Estridente", falha: "dano total e atordoado por 1 rodada.", falhaStatus: "atordoado" })));
 		for (const [i, t] of alvos.entries()) {
 			const v = vonts[i];
 			rolls.push(v);
 			const ok = v.total >= 32;
 			const valor = ok ? Math.floor(dano.total / 2) : dano.total;
-			const r = await new Roll(`${valor}[psiquico]`).evaluate();
-			try { await fdtAplicar.dano(t.actor, r, 1); } catch (err) { console.warn(err); }
-			if (!ok && !t.actor.statuses?.has("atordoado")) await fdtAplicar.status(t.actor, "atordoado", { active: true });
 			html += `<li>${t.name}: Vontade ${v.total}. ${ok ? `Metade (${valor}).` : `${valor} e <b>atordoado</b> por 1 rodada.`}</li>`;
 		}
 		html += "</ul>";

@@ -645,15 +645,13 @@
 		const gastar = async (n) => {
 			const pm = Number(cob.system.attributes.pm.value) || 0;
 			if (pm < n) return false;
-			await cob.update({ "system.attributes.pm.value": pm - n });
+			await fdtAplicar.pm(cob, n, `${cob.name}: gasta ${n} PM`);
 			return true;
 		};
 		let html = "<h3>Cobrador da Ploigoníada</h3>";
 		if (res.acao === "turno") {
-			const pv = cob.system.attributes.pv;
-			const novo = Math.min(Number(pv.max) || 400, (Number(pv.value) || 0) + 5);
-			await cob.update({ "system.attributes.pv.value": novo });
-			html += `<p>Cura acelerada: <b>${novo} PV</b>.</p>`;
+			await fdtAplicar.curar(cob, 5, `${cob.name}: cura acelerada 5`);
+			html += `<p>Cura acelerada: <b>+5 PV</b> (botão do Mestre).</p>`;
 		} else if (res.acao === "falar") {
 			const FALAS = ["\"Vocês estão em dívida com a Ploigoníada. Para pagá-la, apresentem o valor previamente combinado. Para morrer, por favor continuem lutando.\"",
 				"\"A resistência ao pagamento foi registrada e será acrescida ao montante devido.\"",
@@ -670,16 +668,14 @@
 			for (const t of res.acao === "silencio" ? alvos : alvos.slice(0, 1)) {
 				const a = t.actor;
 				if (res.acao === "direitos") {
-					const r = await salvar(a, "fort", { titulo: "Ler Seus Direitos", falha: `${res.devedor ? "atordoado" : "pasmo"} por 1 rodada.` });
+					const r = await salvar(a, "fort", { titulo: "Ler Seus Direitos", falha: `${res.devedor ? "atordoado" : "pasmo"} por 1 rodada.`, falhaStatus: res.devedor ? "atordoado" : "pasmo" });
 					const c = res.devedor ? "atordoado" : "pasmo";
-					if (r < 28) await cond(a, c);
 					lista.push(`<li>${t.name}: Fortitude ${r}, ${r >= 28 ? "resiste" : `<b>${c} por 1 rodada</b>`}.</li>`);
 				} else if (res.acao === "negar") {
 					const r = await salvar(a, "vont", { titulo: "Negar Recurso", falha: `não pode usar ${res.habilidade || "a habilidade escolhida"} até o fim da cena.` });
 					lista.push(`<li>${t.name}: Vontade ${r}, ${r >= 28 ? "resiste" : `não pode usar <b>${res.habilidade || "a habilidade escolhida"}</b> até o fim da cena`}.</li>`);
 				} else if (res.acao === "imobilizar") {
-					const r = await salvar(a, "vont", { titulo: "Imobilizar", sucesso: "fica lento.", falha: "fica paralisado." });
-					await cond(a, r >= 28 ? "lento" : "paralisado");
+					const r = await salvar(a, "vont", { titulo: "Imobilizar", sucesso: "fica lento.", falha: "fica paralisado.", falhaStatus: "paralisado", aoPassar: { status: "lento" } });
 					lista.push(`<li>${t.name}: Vontade ${r}, <b>${r >= 28 ? "lento" : "paralisado"}</b>. Ação completa por rodada para um novo teste de Vontade CD 28; passando, liberta-se.</li>`);
 				} else if (res.acao === "silencio") {
 					await cond(a, "surdo");

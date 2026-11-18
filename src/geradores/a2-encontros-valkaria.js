@@ -699,12 +699,13 @@
 				}
 				html += "</ol>";
 				if (explodiu) {
-					const d = await rolar("5d6");
-					html += `<p>5d6 = <b>${d.total}</b> de impacto nos pilotos (Reflexos CD 20 reduz à metade):</p><ul>`;
-					for (const a of atores) {
-						const t = await testar(a, ["refl"], 20, { dano: d, metade: true, titulo: "A explosão" });
+					const d = await rolar("5d6[impacto]");
+					html += `<p>5d6 = <b>${d.total}</b> de impacto nos pilotos (Reflexos CD 20 reduz à metade; o Mestre aplica pelos botões do card):</p><ul>`;
+					const rs = await fdtTestes(atores.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano: d, metade: true, titulo: "A explosão" })));
+					for (const [i, a] of atores.entries()) {
+						rolls.push(rs[i]);
+						const t = { k: "refl", r: rs[i], ok: rs[i].total >= 20 };
 						const dano = t.ok ? Math.floor(d.total / 2) : d.total;
-						await fdtAplicar.dano(a, await new Roll(`${dano}[impacto]`).evaluate(), 1);
 						html += `<li>${linha(a, t, 20)} → ${dano} de dano</li>`;
 					}
 					html += "</ul><p>Gnuk volta à prancheta: a contagem de aperfeiçoamento recomeça.</p>";
@@ -895,8 +896,8 @@
 					const [lim, txt] = D.clubeFuga.find(([l]) => t.r.total >= l);
 					const pv = a.system.attributes.pv;
 					const pm = a.system.attributes.pm;
-					if (lim >= 25) await a.update({ "system.attributes.pv.value": Math.floor((Number(pv.value) || 0) / 2), "system.attributes.pm.value": Math.floor((Number(pm.value) || 0) / 2) });
-					else if (lim >= 15) await a.update({ "system.attributes.pv.value": 0, "system.attributes.pm.value": 0 });
+					if (lim >= 25) await fdtAplicar.ficha(a, { "system.attributes.pv.value": Math.floor((Number(pv.value) || 0) / 2), "system.attributes.pm.value": Math.floor((Number(pm.value) || 0) / 2) }, `${a.name}: fica com metade dos PV e PM`);
+					else if (lim >= 15) await fdtAplicar.ficha(a, { "system.attributes.pv.value": 0, "system.attributes.pm.value": 0 }, `${a.name}: fica com 0 PV e 0 PM`);
 					else await fdtAplicar.status(a, "morto", { active: true });
 					html += `<li>${a.name} · ${D.pericias[t.k]} <b>${t.r.total}</b>: ${txt}</li>`;
 				}
@@ -1065,9 +1066,8 @@
 				venceu++;
 			}
 			html += "</ol>";
-			const pv = a.system.attributes.pv;
-			const pm = a.system.attributes.pm;
-			await a.update({ "system.attributes.pv.value": Math.max(0, (Number(pv.value) || 0) - gastoPV), "system.attributes.pm.value": Math.max(0, (Number(pm.value) || 0) - gastoPM) });
+			await fdtAplicar.perda(a, gastoPV);
+			await fdtAplicar.pm(a, gastoPM);
 			html += `<p>Gastos: ${gastoPV} PV e ${gastoPM} PM.</p>`;
 			if (venceu === lista.length) {
 				const t = await teste(a, "atua", { cd: 30, extra: Number(res.glamour) || 0, titulo: "Brilhar na arena", motivo: "Atuação + Glamour." });

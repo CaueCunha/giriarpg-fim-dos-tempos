@@ -342,7 +342,31 @@ export class Roll {
 	}
 
 	toJSON() {
-		return { class: "Roll", formula: this.formula, total: this.total, evaluated: this._evaluated };
+		return {
+			class: "Roll",
+			formula: this.formula,
+			total: this.total,
+			evaluated: this._evaluated,
+			options: JSON.parse(JSON.stringify(this.options ?? {})),
+			terms: this.terms.map((t) => (t instanceof Die ? { results: t.results.map((r) => ({ ...r })) } : {}))
+		};
+	}
+
+	/** Como Roll.fromData: refaz a rolagem com os mesmos dados (o total não muda). */
+	static fromData(data = {}) {
+		const r = new this(data.formula ?? "0", {}, { ...(data.options ?? {}) });
+		if (data.evaluated === false) return r;
+		r.terms.forEach((t, i) => {
+			const prontos = data.terms?.[i]?.results;
+			if (t instanceof Die && prontos) {
+				t.evaluate = function () {
+					this.results = prontos.map((x) => ({ ...x }));
+					this._evaluated = true;
+					return this;
+				};
+			}
+		});
+		return r.evaluateSync();
 	}
 
 	clone() {

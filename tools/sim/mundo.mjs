@@ -520,7 +520,31 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 				const pre = { _source: d, flags: d.flags ?? {}, rolls: d.rolls ?? [], getFlag: (m, k) => d.flags?.[m]?.[k], updateSource: (c) => Object.assign(d, c) };
 				if (mundo.chamarHook("preCreateChatMessage", pre, d, operation, mundo.game.user.id) === false) return null;
 				const msg = { id: U.randomID(), ...d, timestamp: Date.now(), origem: mundo.contexto.atual };
+				// Como um ChatMessage: getFlag, update (com o gancho updateChatMessage) e delete.
+				Object.defineProperties(msg, {
+					_id: { get: () => msg.id, enumerable: false },
+					getFlag: { value: (m, k) => U.getProperty(msg.flags ?? {}, `${m}.${k}`), enumerable: false },
+					update: {
+						value: (changes = {}) =>
+							mundo.op(async () => {
+								const c = U.expandObject(U.deepClone(changes));
+								U.mergeObject(msg, c, { performDeletions: true });
+								if (typeof c.content === "string") verificarLinks(c.content, `chat (${mundo.contexto.atual})`);
+								mundo.chamarHook("updateChatMessage", msg, c, {}, mundo.game.user.id);
+								return msg;
+							}),
+						enumerable: false
+					},
+					delete: {
+						value: async () => {
+							mundo.colecoes.ChatMessage.delete(msg.id);
+							return msg;
+						},
+						enumerable: false
+					}
+				});
 				mundo.chat.push(msg);
+				mundo.colecoes.ChatMessage.set(msg.id, msg);
 				verificarLinks(d.content ?? "", `chat (${mundo.contexto.atual})`);
 				mundo.chamarHook("createChatMessage", msg, operation, mundo.game.user.id);
 				return msg;
@@ -1161,8 +1185,14 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 			const tk = token ?? mundo.canvas.tokens.controlled[0] ?? null;
 			const at = actor ?? tk?.actor ?? mestre.character ?? null;
 			const speaker = ChatMessage.getSpeaker({ actor: at, token: tk?.document });
-			ret = await mundo.op(() => fn.call(macro ?? {}, speaker, at, tk, mestre.character, scope, ...Object.values(scope)));
-			await mundo.aguardarOcioso();
+			mundo.profundidade = (mundo.profundidade ?? 0) + 1;
+			try {
+				ret = await mundo.op(() => fn.call(macro ?? {}, speaker, at, tk, mestre.character, scope, ...Object.values(scope)));
+			} finally {
+				mundo.profundidade--;
+			}
+			// Macro chamada por outra macro (m.execute()): quem espera o mundo ficar ocioso é a de fora.
+			if (!mundo.profundidade) await mundo.aguardarOcioso();
 		} catch (err) {
 			mundo.erros.push({ origem: nome, erro: err });
 		} finally {
