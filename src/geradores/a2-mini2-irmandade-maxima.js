@@ -18,6 +18,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-mini2-irmandade-maxima.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2mini2";
@@ -538,8 +540,10 @@
 			if (e.barris > 0) e.barris -= 1;
 			const dano = await rolar("6d6[fogo]");
 			const linhas = [];
-			for (const t of alvos) {
-				const r = (await rolar(`1d20 + ${Number(t.actor.system.pericias?.refl?.value) || 0}`)).total;
+			const testes = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "refl", cd: 20, dano, metade: true, titulo: "O barril explode!" })));
+			rolls.push(...testes);
+			for (const [i, t] of alvos.entries()) {
+				const r = testes[i].total;
 				const metade = r >= 20;
 				const total = metade ? Math.floor(dano.total / 2) : dano.total;
 				try { await t.actor.applyDamageV2(await new Roll(`${total}[fogo]`).evaluate(), 1); } catch (err) { console.warn(err); }
@@ -651,8 +655,9 @@
 			const dano = await new Roll("12d6+6").evaluate();
 			rolls.push(dano);
 			const linhas = [];
-			for (const t of alvos) {
-				const r = await new Roll(`1d20 + ${Number(t.actor.system.pericias?.fort?.value) || 0}`).evaluate();
+			const testes = await fdtTestes(alvos.map((t) => ({ ator: t.actor, pericia: "fort", cd: 24, dano, metade: true, titulo: `Sopro de ${tk.name}`, falha: "dano total e, se for Médio ou menor, caído." })));
+			for (const [i, t] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const passou = r.total >= 24;
 				let total = passou ? Math.floor(dano.total / 2) : dano.total;
@@ -718,7 +723,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Mini 2 · Paollus Bate à Porta", ICO.paollus, macroPaollus),

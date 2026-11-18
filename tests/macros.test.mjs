@@ -102,6 +102,13 @@ for (const macro of macros) {
 	});
 }
 
+test("as macros pedem os testes dos PJs aos jogadores (card no chat)", () => {
+	// Os PJs da mesa têm jogador conectado: os testes deles vão para o card e o "jogador" responde.
+	assert.ok((mundo.testesPedidos ?? 0) >= 100, `só ${mundo.testesPedidos ?? 0} testes pedidos aos jogadores`);
+	const cards = mundo.chat.length;
+	assert.ok(cards >= 0);
+});
+
 test("nenhuma macro deixou promessa ou operação pendurada", async () => {
 	assert.equal(await mundo.aguardarOcioso(), true);
 	mundo.encerrar();

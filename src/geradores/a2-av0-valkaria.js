@@ -21,6 +21,8 @@
  * Veja o guia a2-av0-valkaria.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av0";
@@ -579,6 +581,8 @@
 
 		const rolls = [];
 		const rolar = async (formula) => { const r = await new Roll(formula).evaluate(); rolls.push(r); return r; };
+		// Teste de PJ: o jogador rola pelo card do chat.
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k === "for" ? null : k, { ...o, atributo: k === "for" ? "for" : undefined }); rolls.push(r); return r; };
 
 		if (res.acao === "gargula") {
 			const garg = estado.parts.find((x) => atorDe(x)?.getFlag("world", "fdtRole") === "gargula");
@@ -623,7 +627,8 @@
 			let evTxt = "—";
 			if (ev.testes) {
 				const [k, cd] = ev.testes.reduce((m, t) => (bonus(a, t[0]) - t[1] > bonus(a, m[0]) - m[1] ? t : m));
-				const r = await rolar(`1d20 + ${bonus(a, k)}`);
+				const danoEv = ev.dano && !ev.atalho ? await new Roll(ev.dano).evaluate() : null;
+				const r = await teste(a, k, { cd, dano: danoEv, titulo: `Perseguição · ${ev.nome}`, falha: ev.atalho ? "avança só metade." : `avança só metade${ev.dano ? " e toma o dano" : ""}${ev.perdeRodada ? " e perde a próxima rodada" : ""}.`, sucesso: ev.atalho ? "avança o dobro +5." : "" });
 				const ok = r.total >= cd;
 				evTxt = `${NOMES[k]} ${r.total} ${ok ? "✔️" : "❌"}`;
 				if (ev.atalho) {
@@ -632,7 +637,8 @@
 				} else if (!ok) {
 					mult = 0.5;
 					if (ev.dano) {
-						const dano = await rolar(ev.dano);
+						const dano = danoEv;
+						rolls.push(dano);
 						try { await a.applyDamageV2(dano, 1); } catch (e) { console.warn(e); }
 						evTxt += ` (${dano.total} de dano)`;
 					}
@@ -645,7 +651,7 @@
 			const modDesl = semDesl ? 0 : Math.round(((desl - 9) / 1.5) * 2);
 			const penal = x.penal + (x.id === alvoBarnett ? penalBarnett : 0);
 			x.penal = 0;
-			const r = await rolar(`1d20 + ${bonus(a, "atle")} + ${modDesl + extra - penal}`);
+			const r = await teste(a, "atle", { extra: modDesl + extra - penal, titulo: `Perseguição · rodada ${estado.rodada}`, motivo: "Quanto avança nesta rodada." });
 			const avanca = Math.max(0, Math.floor(r.total * mult));
 			x.dist += avanca;
 			x.correu += 1;
@@ -656,7 +662,7 @@
 			if (x.correu > 1 + con) {
 				const cd = 15 + x.testesFort;
 				x.testesFort += 1;
-				const f = await rolar(`1d20 + ${bonus(a, "fort")}`);
+				const f = await teste(a, "fort", { cd, titulo: "Cansaço da perseguição", falha: "fica fatigado e sai da perseguição." });
 				if (f.total < cd) {
 					x.fora = true;
 					x.status = "fatigado";
@@ -697,7 +703,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 0 · gerado por a2-av0-valkaria.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 0 · gerado por a2-av0-valkaria.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Arco 2 · Lei & Ordem", "icons/svg/book.svg", macroLeiOrdem),

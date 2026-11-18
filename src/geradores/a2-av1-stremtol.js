@@ -19,6 +19,8 @@
  * Veja o guia a2-av1-stremtol.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av1";
@@ -659,8 +661,10 @@
 			if (!atores.length) return ui.notifications.warn("Selecione os tokens de quem investiga, ou informe o resultado.");
 			melhor = -99;
 			html += "<ul>";
-			for (const a of atores) {
-				const r = await new Roll(`1d20 + ${bonus(a, res.per)}`).evaluate();
+			const chave = (a) => (res.per === "ofic" ? Object.entries(a.system.pericias ?? {}).filter(([kk]) => kk.startsWith("ofi")).sort((x, y) => (Number(y[1]?.value) || 0) - (Number(x[1]?.value) || 0))[0]?.[0] : res.per);
+			const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: res.per === "int" ? null : chave(a), atributo: res.per === "int" ? "int" : undefined, titulo: `${CASAS[res.casa]} · ${NOMES_PERICIA[res.per]}`, motivo: "Vale o melhor resultado do grupo." })));
+			for (const [i, a] of atores.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				melhor = Math.max(melhor, r.total);
 				html += `<li>${a.name}: <b>${r.total}</b></li>`;
@@ -731,7 +735,7 @@
 			e.usados ??= [];
 			e.semHabilidades = !!res[`esgotou_${t.id}`];
 			const cd = 15 + 2 * e.testes;
-			const r = await new Roll(`1d20 + ${Number(a.system.pericias?.vont?.value) || 0} + ${res[`imune_${t.id}`] ? 5 : 0}`).evaluate();
+			const r = await fdtTeste(a, "vont", { cd, extra: res[`imune_${t.id}`] ? 5 : 0, titulo: `Pinturas Subliminares · ${sala[0]}` });
 			rolls.push(r);
 			e.testes += 1;
 			const destinatarios = [...game.users.filter((u) => u.isGM || a.testUserPermission(u, "OWNER")).map((u) => u.id)];
@@ -780,8 +784,10 @@
 		const percepcoes = res.modo === "procurados" ? [await rolar("1d20 + 12")] : await Promise.all(Array.from({ length: Math.max(1, Number(res.servos) || 1) }, () => rolar("1d20 + 5")));
 		html += `<p>Percepção dos servos: ${percepcoes.join(", ")}.</p><ul>`;
 		let algumVisto = false;
-		for (const t of tokens) {
-			const f = await rolar(`1d20 + ${Number(t.actor.system.pericias?.furt?.value) || 0}`);
+		const furtivos = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: "furt", titulo: "Infiltração na Escola", motivo: "Contra a Percepção dos servos." })));
+		rolls.push(...furtivos);
+		for (const [i, t] of tokens.entries()) {
+			const f = furtivos[i].total;
 			const visto = percepcoes.some((pp) => pp >= f);
 			algumVisto ||= visto;
 			html += `<li>${t.name}: Furtividade ${f} ${visto ? "<b>é visto!</b>" : "passa despercebido."}</li>`;
@@ -801,7 +807,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 1 · gerado por a2-av1-stremtol.js\n${prefixo}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 1 · gerado por a2-av1-stremtol.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${prefixo}(${fn.toString()})();`
 	});
 	const dadosPistas = `const PISTAS = ${JSON.stringify(PISTAS)};\nconst CASAS = ${JSON.stringify(CASAS)};\nconst NOMES_PERICIA = ${JSON.stringify(NOMES_PERICIA)};\n`;
 	const macros = await Macro.createDocuments([

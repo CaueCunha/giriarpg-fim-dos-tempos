@@ -19,6 +19,8 @@
  * Veja o guia av4-terror-do-ceu.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av4";
@@ -650,8 +652,9 @@
 			const dano = await new Roll("4d6[fogo]").evaluate();
 			rolls.push(dano);
 			html = `<h3>Canhão de Fogo</h3><p>Linha de 30m: <b>${dano.total}</b> de fogo. Reflexos CD 20 reduz à metade e evita em chamas.</p><ul>`;
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.refl?.value ?? 0}`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano, metade: true, titulo: "Canhão de Fogo", falha: "dano total e fica em chamas." })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
 				await a.applyDamageV2(dano, ok ? 0.5 : 1);
@@ -672,8 +675,9 @@
 		} else {
 			const pen = res.voando ? -5 : 0;
 			html = "<h3>Bater das Nadadeiras</h3><p>Cone de 9m. Ataques à distância no cone sofrem –5, chamas se apagam, névoa e fumaça se dispersam e avançar em direção à Harpia é terreno difícil.</p><ul>";
-			for (const a of alvos) {
-				const r = await new Roll(`1d20 + ${a.system.pericias?.fort?.value ?? 0} + ${pen}`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "fort", cd: 20, extra: pen, titulo: "Bater das Nadadeiras", falha: `empurrado 6m${res.colide ? " e bate em algo (1d6 de impacto)" : ""}.`, sucesso: "empurrado só 3m, sem dano." })));
+			for (const [i, a] of alvos.entries()) {
+				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
 				let extra = "";
@@ -719,12 +723,12 @@
 		const s = SIT[res.sit];
 		const rolls = [];
 		let html = `<h3>${s.nome}</h3><p>CD ${s.cd}</p><ul>`;
-		for (const a of atores) {
-			const per = res.troca || s.pericia;
-			const valor = s.atributo ? (a.system.atributos?.[s.atributo]?.value ?? 0) : (a.system.pericias?.[per]?.value ?? 0);
-			const desprev = a.statuses?.has?.("desprevenido");
-			const pen = res.timoneira && desprev ? -2 : 0;
-			const r = await new Roll(`1d20 + ${valor} + ${pen} + ${Number(res.mod) || 0}`).evaluate();
+		const per = res.troca || s.pericia;
+		const penDe = (a) => (res.timoneira && a.statuses?.has?.("desprevenido") ? -2 : 0);
+		const testes = await fdtTestes(atores.map((a) => ({ ator: a, pericia: s.atributo ? null : per, atributo: s.atributo, cd: s.cd, extra: penDe(a) + (Number(res.mod) || 0), titulo: s.nome })));
+		for (const [i, a] of atores.entries()) {
+			const pen = penDe(a);
+			const r = testes[i];
 			rolls.push(r);
 			const ok = r.total >= s.cd;
 			const falhaPor = s.cd - r.total;
@@ -780,7 +784,7 @@
 		});
 		if (!res) return;
 		if (res.zerar) { estado.sucessos = 0; estado.falhas = 0; }
-		const r = await new Roll(`1d20 + ${medico.system.pericias?.cura?.value ?? 0} + ${Number(res.mod) || 0}`).evaluate();
+		const r = await fdtTeste(medico, "cura", { cd: 25, extra: Number(res.mod) || 0, titulo: "Cirurgia do Implante", motivo: `Teste estendido: 3 sucessos antes de 3 falhas (${estado.sucessos} sucessos, ${estado.falhas} falhas até agora).` });
 		const rolls = [r];
 		if (r.total >= 25) estado.sucessos++; else estado.falhas++;
 		let html = `<h3>Cirurgia do Implante</h3><p>${medico.name}: Cura <b>${r.total}</b> (CD 25) ${r.total >= 25 ? "✔️" : "❌"}</p><p>Progresso: <b>${estado.sucessos}/3</b> sucessos, <b>${estado.falhas}/3</b> falhas.</p>`;
@@ -817,7 +821,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4 · Ataque do Céu", `${T20I}/magias/raio-solar.webp`, macroAtaqueDoCeu),

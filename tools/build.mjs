@@ -248,6 +248,7 @@ export function escreverManifesto(packs) {
 		authors: [{ name: "Cauê", url: "https://github.com/CaueCunha" }],
 		relationships: { systems: [{ id: "tormenta20", type: "system", compatibility: { minimum: "1.6.0" } }] },
 		esmodules: ["scripts/fdt.mjs"],
+		socket: true,
 		styles: ["styles/fdt.css"],
 		languages: [{ lang: "pt-BR", name: "Português (Brasil)", path: "lang/pt-BR.json" }],
 		packs: packs.map((p) => ({

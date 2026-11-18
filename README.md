@@ -38,6 +38,17 @@ Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-
 
 As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso, puxe a aventura antes de usar as macros dela. Se faltar alguma coisa, a macro avisa.
 
+### Testes dos PJs: o jogador rola
+
+Quando uma macro da campanha pede um teste de um PJ (resistência, perícia ou atributo), **ela não rola por ele**. Ela manda ao chat um card com o teste, a CD, o **dano em jogo** (já rolado, com a metade quando passar) e o que acontece em caso de falha, e um botão **Rolar**. O jogador clica e rola pela própria ficha, com a janela de uso e os efeitos dele, como em qualquer teste do Tormenta20. A macro espera e continua com o resultado: aplica o dano, as condições e o resto. Quando vários PJs testam juntos, os cards saem todos de uma vez.
+
+- O Mestre também pode clicar no botão (jogador ausente ou com pressa).
+- NPCs e PJs **sem jogador conectado** continuam rolados pela macro.
+- Testes secretos (os que só o Mestre deve ver) continuam rolados pela macro.
+- Para voltar ao jeito antigo, desligue **Os jogadores rolam os testes das macros** em **Configurações › Giria T20 - Fim dos Tempos (Campanha)**.
+
+As macros que já estão no mundo recebem isso pelo **Atualizar do compêndio** (abaixo): as que você não editou vêm marcadas.
+
 ### Limpar do mundo
 
 **Limpar do mundo** (no botão **Fim dos Tempos**, em **Configurações › Giria T20 - Fim dos Tempos (Campanha)** e na macro **FdT · Limpar do mundo**) apaga do mundo o conteúdo do módulo, para você puxar do compêndio só o que precisar. Por padrão:

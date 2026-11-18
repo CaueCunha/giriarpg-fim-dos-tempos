@@ -21,6 +21,8 @@
  * Veja o guia a1-especial-de-gatal.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a1gatal";
@@ -447,8 +449,11 @@
 			if (k === "ofic") return Math.max(0, ...Object.entries(a.system.pericias ?? {}).filter(([kk]) => kk.startsWith("ofi")).map(([, v]) => Number(v?.value) || 0));
 			return Number(a.system.pericias?.[k]?.value) || 0;
 		};
+		// "ofic" = o melhor Ofício do personagem
+		const chave = (a, k) => (k === "ofic" ? Object.entries(a.system.pericias ?? {}).filter(([kk]) => kk.startsWith("ofi")).sort((x, y) => (Number(y[1]?.value) || 0) - (Number(x[1]?.value) || 0))[0]?.[0] ?? k : k);
+		const teste = (a, k, o = {}) => (a.system.pericias?.[chave(a, k)] ? fdtTeste(a, chave(a, k), o) : new Roll(`1d20 + ${bonus(a, k)} + ${Number(o.extra) || 0}`).evaluate());
 		const ajuda = async (a, k) => {
-			const r = await new Roll(`1d20 + ${bonus(a, k)}`).evaluate();
+			const r = await teste(a, k, { cd: 10, titulo: "Especial de Gatal: ajudar", motivo: "CD 10 dá +1; cada 10 acima, +1 a mais." });
 			rolls.push(r);
 			const b = r.total >= 10 ? 1 + Math.floor((r.total - 10) / 10) : 0;
 			return { total: r.total, b };
@@ -503,7 +508,7 @@
 			const notas = [];
 			for (let i = 0; i < horasSi; i++) { const x = await ajuda(a, res.per); somaAjuda += x.b; notas.push(`${a.name} (hora extra) ${x.total} → +${x.b}`); }
 			for (const h of ajudantes) for (let i = 0; i < 1 + horasAjuda; i++) { const x = await ajuda(h, res.per); somaAjuda += x.b; notas.push(`${h.name} ${x.total} → +${x.b}`); }
-			const r = await new Roll(`1d20 + ${bonus(a, res.per)} + ${somaAjuda} + ${Number(res.mod) || 0}`).evaluate();
+			const r = await teste(a, res.per, { cd, extra: somaAjuda + (Number(res.mod) || 0), titulo: `Fabricando o presente de ${amigo.nome}` });
 			rolls.push(r);
 			est.horas[a.name] = (est.horas[a.name] ?? 0) + tempo + horasSi;
 			for (const h of ajudantes) est.horas[h.name] = (est.horas[h.name] ?? 0) + tempo + horasAjuda;
@@ -538,7 +543,7 @@
 			for (const h of ajudantes) { const x = await ajuda(h, res.per); somaAjuda += x.b; notas.push(`${h.name} ${x.total} → +${x.b}`); }
 			const extras = Math.max(0, pr.objetos.length - 3);
 			const fixos = 5 * extras + (res.combina ? 5 : 0) + (res.espirito ? 5 : 0) + (res.embrulho ? 5 : 0);
-			const r = await new Roll(`1d20 + ${bonus(a, res.per)} + ${fixos} + ${somaAjuda} + ${Number(res.mod) || 0}`).evaluate();
+			const r = await teste(a, res.per, { extra: fixos + somaAjuda + (Number(res.mod) || 0), titulo: `Entregando o presente de ${amigo.nome.split(",")[0]}`, motivo: `Fabricação ${pr.valor} + entrega precisa somar 80.` });
 			rolls.push(r);
 			const soma = pr.valor + r.total;
 			pr.entregue = true;
@@ -638,7 +643,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 1 · Especial de Gatal · gerado por a1-especial-de-gatal.js\n${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 1 · Especial de Gatal · gerado por a1-especial-de-gatal.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Gatal · Oficina de Gatal", "icons/svg/item-bag.svg", macroOficina, { amigos: AMIGOS, objetos: OBJETOS, pericias: PERICIAS, nomesPresentes: NOMES_PRESENTES }),

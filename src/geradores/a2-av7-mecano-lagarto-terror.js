@@ -22,6 +22,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av7-mecano-lagarto-terror.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av7";
@@ -836,7 +838,7 @@
 			return v;
 		};
 		const ferir = async (a, formula, tipo, meio = false) => {
-			const v = await rolar(formula);
+			const v = typeof formula === "number" ? formula : await rolar(formula);
 			const valor = meio ? Math.floor(v / 2) : v;
 			const r = await new Roll(`${valor}[${tipo}]`).evaluate();
 			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
@@ -861,11 +863,13 @@
 			const linhas = [];
 			for (const t of alvosGrupo) {
 				let meio = false;
+				let danoJa = f;
 				if (pericia) {
-					const r = await rolar(`1d20 + ${Number(t.actor.system.pericias?.[pericia]?.value) || 0}`);
+					danoJa = await rolar(f);
+					const r = (await fdtTeste(t.actor, pericia, { cd: cdRes, dano: `${danoJa}[${tipo}]`, metade: true, titulo: "Efeito em todos" })).total;
 					meio = r >= cdRes;
 				}
-				const v = await ferir(t.actor, f, tipo, meio);
+				const v = await ferir(t.actor, danoJa, tipo, meio);
 				linhas.push(`${t.name}: ${v}${meio ? " (metade)" : ""}`);
 			}
 			return linhas.length ? `<p>${linhas.join(" · ")}.</p>` : "";
@@ -904,7 +908,9 @@
 					const v = Number(a.system.pericias?.[k]?.value) || 0;
 					return v > m.v ? { k, v } : m;
 				}, { k: estado.pericias[0], v: Number(a.system.pericias?.[estado.pericias[0]]?.value) || 0 });
-				const total = await rolar(`1d20 + ${melhor.v}${bonus ? ` + ${bonus}` : ""}`);
+				const tr = await fdtTeste(a, melhor.k, { cd, extra: Number(bonus) || 0, titulo: sit.nome ?? "Teste do grupo" });
+				rolls.push(tr);
+				const total = tr.total;
 				if (total >= cd) { suc += 1; linhas.push(`<li>${t.name} (${NOME_PERICIA[melhor.k] ?? melhor.k}): ${total}, sucesso.</li>`); continue; }
 				fal += 1;
 				const efeitos = [];
@@ -1018,8 +1024,9 @@
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
 		const valor = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
 		const melhor = (a, ks) => ks.reduce((m, k) => (valor(a, k) > m.v ? { k, v: valor(a, k) } : m), { k: ks[0], v: valor(a, ks[0]) });
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
 		const titanico = async (a, formula, tipo) => {
-			const v = await rolar(formula);
+			const v = typeof formula === "number" ? formula : await rolar(formula);
 			const r = await new Roll(`${v}[${tipo}]`, {}, { rd: 999 }).evaluate();
 			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
 			return v;
@@ -1031,7 +1038,7 @@
 			if (res.acao === "escalar") {
 				const o = ONDE[res.onde] ?? ONDE.pernas;
 				const m = melhor(tk.actor, o.pericias);
-				const total = await rolar(`1d20 + ${m.v}`);
+				const total = await teste(tk.actor, m.k, { cd: o.cd, titulo: o.nome, falha: "falhando por 5 ou mais, perde terreno." });
 				const ok = total >= o.cd;
 				html += `<h3>${o.nome}</h3><p>${tk.name} (${NOME[m.k]}): <b>${total}</b> contra CD ${o.cd}. ${ok ? "Consegue." : total <= o.cd - 5 ? "Falha por 5 ou mais." : "Falha, mas não perde terreno."}</p>`;
 				if (!ok) {
@@ -1051,7 +1058,7 @@
 			const pericias = role === "missil" ? ["ladi"] : ["ladi", "enge"];
 			const m = melhor(tk.actor, pericias);
 			const cd = ehArma ? 30 : 25;
-			const total = await rolar(`1d20 + ${m.v}`);
+			const total = await teste(tk.actor, m.k, { cd, titulo: "Sabotagem", motivo: "Ação completa." });
 			html += `<h3>Sabotagem</h3><p>${tk.name} gasta uma ação completa (${NOME[m.k]}): <b>${total}</b> contra CD ${cd}.</p>`;
 			if (!alvo?.actor || !(role.startsWith("seg-") || ehArma)) html += "<p>Mire o token de um ponto fraco, ninho ou lança-mísseis para aplicar o resultado.</p>";
 			else if (total < cd) html += `<p>Não consegue sabotar ${alvo.name}.</p>`;
@@ -1071,8 +1078,9 @@
 			else {
 				const cd = 32 - red;
 				for (const t of alvos) {
-					const r = await rolar(`1d20 + ${valor(t.actor, "refl")}`);
-					const v = await titanico(t.actor, r >= cd ? "6d6" : "12d6", "impacto");
+					const d = await rolar("12d6");
+					const r = await teste(t.actor, "refl", { cd, dano: `${d}[impacto]`, metade: true, titulo: "Pisoteio", motivo: "Ignora RD." });
+					const v = await titanico(t.actor, r >= cd ? Math.floor(d / 2) : d, "impacto");
 					linhas.push(`${t.name}: Reflexos ${r}, ${v} de impacto${r >= cd ? " (metade)" : ""}`);
 				}
 				html += `<h3>Pisoteio</h3><p>12d6 de impacto, Reflexos CD ${cd} reduz à metade, ignora RD.</p>`;
@@ -1083,8 +1091,9 @@
 			else {
 				const cd = 33 - red;
 				for (const t of alvos) {
-					const r = await rolar(`1d20 + ${valor(t.actor, "refl")}`);
-					const v = await titanico(t.actor, r >= cd ? "4d6" : "8d6", "impacto");
+					const d = await rolar("8d6");
+					const r = await teste(t.actor, "refl", { cd, dano: `${d}[impacto]`, metade: true, titulo: "Golpe de Cauda", falha: "dano total e empurrado 1 hexágono para trás.", motivo: "Ignora RD." });
+					const v = await titanico(t.actor, r >= cd ? Math.floor(d / 2) : d, "impacto");
 					linhas.push(`${t.name}: Reflexos ${r}, ${v} de impacto${r >= cd ? " (metade)" : " e <b>empurrado 1 hexágono para trás</b>"}`);
 				}
 				html += `<h3>Golpe de Cauda</h3><p>8d6 de impacto, Reflexos CD ${cd} reduz à metade e evita o empurrão, ignora RD.</p>`;
@@ -1094,9 +1103,9 @@
 			const cd = 33 - red;
 			for (const t of alvos) {
 				const m = melhor(t.actor, ["atle", "refl"]);
-				const r = await rolar(`1d20 + ${m.v}`);
-				if (r >= cd) { linhas.push(`${t.name}: ${NOME[m.k]} ${r}, se segura`); continue; }
 				const v = await rolar("4d6");
+				const r = await teste(t.actor, m.k, { cd, dano: `${v}[impacto]`, titulo: "A cauda sacode", sucesso: "se segura, sem dano.", falha: `toma o dano; falhando por 5 ou mais, é arremessado (cai ${Math.max(0, Number(res.altura) || 0)}m).` });
+				if (r >= cd) { linhas.push(`${t.name}: ${NOME[m.k]} ${r}, se segura`); continue; }
 				const dano = await new Roll(`${v}[impacto]`).evaluate();
 				try { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
 				linhas.push(`${t.name}: ${NOME[m.k]} ${r}, ${v} de impacto${r <= cd - 5 ? ` e <b>arremessado</b> (cai ${Math.max(0, Number(res.altura) || 0)}m)` : ""}`);
@@ -1106,9 +1115,9 @@
 		if (res.acao === "descarga") {
 			const cd = 32 - red;
 			for (const t of alvos) {
-				const r = await rolar(`1d20 + ${valor(t.actor, "refl")}`);
-				if (r >= cd) { linhas.push(`${t.name}: Reflexos ${r}, evita`); continue; }
 				const v = await rolar("4d6");
+				const r = await teste(t.actor, "refl", { cd, dano: `${v}[eletricidade]`, titulo: "Descargas das plataformas", sucesso: "evita tudo.", falha: "toma o dano e fica ofuscado por 1 rodada." });
+				if (r >= cd) { linhas.push(`${t.name}: Reflexos ${r}, evita`); continue; }
 				const dano = await new Roll(`${v}[eletricidade]`).evaluate();
 				try { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
 				if (!t.actor.statuses?.has("ofuscado")) await t.actor.toggleStatusEffect("ofuscado", { active: true });
@@ -1161,7 +1170,7 @@
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
 		const sortear = async () => alvos[(await rolar(`1d${alvos.length}`)).total - 1];
 		const defesa = (a) => Number(a.system.attributes?.defesa?.value) || 10;
-		const resist = async (a, k) => (await rolar(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0}`)).total;
+		const resist = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
 		const aplicar = async (a, v, tipo, ignoraRd) => {
 			const r = await new Roll(`${v}[${tipo}]`, {}, ignoraRd ? { rd: 999 } : {}).evaluate();
 			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
@@ -1185,7 +1194,7 @@
 		for (let n = 0; n < misseis; n++) {
 			const t = await sortear();
 			const d = await rolar("6d10");
-			const r = await resist(t.actor, "refl");
+			const r = await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: `Míssil ${n + 1}`, falha: "dano total e –2 em todos os testes por 1 rodada." });
 			const ok = r >= 30 - red;
 			await aplicar(t.actor, ok ? Math.floor(d.total / 2) : d.total, "impacto", false);
 			if (!ok) await t.actor.createEmbeddedDocuments("ActiveEffect", [{
@@ -1212,7 +1221,7 @@
 			const d = await rolar("8d6");
 			const seis = d.dice[0]?.results?.filter((x) => x.result === 6).length ?? 0;
 			for (const t of alvos) {
-				const r = res.frente ? 0 : await resist(t.actor, "refl");
+				const r = res.frente ? 0 : await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: "Sopro", motivo: "Ignora RD.", falha: seis ? `dano total e perde ${seis} PM.` : "dano total." });
 				const ok = !res.frente && r >= 30 - red;
 				await aplicar(t.actor, ok ? Math.floor(d.total / 2) : d.total, "essencia", true);
 				let extra = "";
@@ -1229,7 +1238,7 @@
 			const t = await sortear();
 			const d = await rolar("6d6");
 			await aplicar(t.actor, d.total, "luz", true);
-			const r = res.frente ? 0 : await resist(t.actor, "fort");
+			const r = res.frente ? 0 : await resist(t.actor, "fort", { cd: 30 - red, titulo: `Raio ocular ${n + 1}`, motivo: `${d.total} de luz já aplicados.`, falha: "ofuscado por 1 rodada." });
 			const ok = !res.frente && r >= 30 - red;
 			if (!ok && !t.actor.statuses?.has("ofuscado")) await t.actor.toggleStatusEffect("ofuscado", { active: true });
 			linhas.push(`Raio ocular ${n + 1} → ${t.name}: ${d.total} de luz${ok ? ` (Fortitude ${r}, evita a condição)` : " e <b>ofuscado</b> por 1 rodada"}.`);
@@ -1255,7 +1264,7 @@
 		if (!res) return;
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
-		const vont = async (a) => rolar(`1d20 + ${Number(a.system.pericias?.vont?.value) || 0}`);
+		const vont = async (a, o = {}) => { const r = await fdtTeste(a, "vont", { cd: 35, ...o }); rolls.push(r); return r.total; };
 		const cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };
 		if (res.acao === "discurso") {
 			return ChatMessage.create({ content: `<h3>Ghorskander</h3><blockquote><p><i>"Vocês ainda não compreendem contra o que estão lutando. O Doutor Vesper revelou nossa missão sublime, a luta para destruir o tempo... Mas ainda assim ele foi modesto. [...] Carne e máquinas não são diferentes para mim."</i></p>
@@ -1280,7 +1289,7 @@
 			html += "<h3>Forma Final</h3><p>A cabeça de Ghorskander gira e uma enorme face de relógio toma o lugar do rosto. Os PV se tornam <b>145</b> e ele ganha <b>Mãos Independentes</b> até o fim da cena.</p>";
 			for (const t of alvos) {
 				if (t.actor === g) continue;
-				const v = await vont(t.actor);
+				const v = await vont(t.actor, { titulo: "Forma Final", falha: "abalado." });
 				if (v < 35) await cond(t.actor, "abalado");
 				linhas.push(`${t.name}: Vontade ${v}${v >= 35 ? ", resiste" : ", <b>abalado</b>"}`);
 			}
@@ -1290,7 +1299,7 @@
 				const d = await rolar("8d8");
 				html += `<h3>Láudano Mentagênico</h3><p>Esfera de 3m: <b>${d}</b> de dano psíquico.</p>`;
 				for (const t of alvos) {
-					const v = await vont(t.actor);
+					const v = await vont(t.actor, { titulo: "Láudano Mentagênico", dano: `${d}[psiquico]`, metade: true, falha: "dano total e alquebrado." });
 					const ok = v >= 35;
 					const valor = ok ? Math.floor(d / 2) : d;
 					const r = await new Roll(`${valor}[psiquico]`).evaluate();
@@ -1318,7 +1327,7 @@
 				for (const t of alvos) {
 					const injetado = t.actor.effects.some((x) => x.getFlag("world", "fdtInjetor") || x.name.startsWith("Injetor"));
 					if (!injetado) { linhas.push(`${t.name}: sem o injetor, não é afetado`); continue; }
-					const v = await vont(t.actor);
+					const v = await vont(t.actor, { titulo: "Tique-Taque Dominador", falha: "confuso." });
 					if (v < 35) await cond(t.actor, "confuso");
 					linhas.push(`${t.name}: Vontade ${v}${v >= 35 ? ", resiste" : ", <b>confuso</b>"}`);
 				}
@@ -1334,7 +1343,10 @@
 			if (res.acao === "maos") {
 				const t = alvos[0];
 				const a = await rolar("1d20 + 34");
-				const d = await rolar(`1d20 + ${Math.max(Number(t.actor.system.pericias?.luta?.value) || 0, Number(t.actor.system.pericias?.atle?.value) || 0)}`);
+				const kd = (Number(t.actor.system.pericias?.atle?.value) || 0) > (Number(t.actor.system.pericias?.luta?.value) || 0) ? "atle" : "luta";
+				const dr = await fdtTeste(t.actor, kd, { titulo: "Mãos Independentes", motivo: "Teste oposto contra o agarrar das mãos (+34).", falha: "agarrado pela garganta." });
+				rolls.push(dr);
+				const d = dr.total;
 				if (a > d) await cond(t.actor, "agarrado");
 				html += `<h3>Mãos Independentes</h3><p>As mãos flutuam até ${t.name}: agarrar ${a} contra ${d}. ${a > d ? "<b>Agarrado pela garganta</b>: condição terrível para lançar magias e começa a sufocar." : "Não agarram e voltam para Ghorskander."}</p>`;
 			}
@@ -1359,7 +1371,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 7 · gerado por a2-av7-mecano-lagarto-terror.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 7 · gerado por a2-av7-mecano-lagarto-terror.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av7 · Caminho de Destruição", ICO.pisotear, macroCaminho),

@@ -29,6 +29,13 @@ export async function carregarModulo(mundo, { dirPacks = FONTE_PACKS, ready = fa
 	await import(`${pathToFileURL(path.join(RAIZ, "scripts", "fdt.mjs")).href}?v=${++versaoScript}`);
 	mundo.chamarHook("init");
 	mundo.chamarHook("setup");
+	// Os jogadores "clicam" no card dos testes pedidos pelas macros (testes.mjs): rola pela ficha e a macro continua.
+	// (mundo.responderTestes = false deixa os pedidos esperando, para o teste responder na mão.)
+	mundo.Hooks.on(`${MODULO}.testePedido`, ({ id }) => {
+		mundo.testesPedidos = (mundo.testesPedidos ?? 0) + 1;
+		if (mundo.responderTestes === false) return;
+		Promise.resolve().then(() => mod.api.responderTeste(id));
+	});
 	if (ready) {
 		mundo.chamarHook("ready");
 		await mundo.aguardarOcioso();

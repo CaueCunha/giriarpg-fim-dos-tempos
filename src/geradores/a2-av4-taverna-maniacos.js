@@ -24,6 +24,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av4-taverna-maniacos.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av4";
@@ -578,6 +580,7 @@
 		const tokens = canvas.tokens.controlled.filter((t) => t.actor);
 		const alvo = [...game.user.targets][0];
 		const bonus = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r; };
 		const naoVivo = (a) => ["con", "mor"].includes(a.system.detalhes?.tipo) || /osteon|golem|construto|morto/i.test(a.items.find((i) => i.type === "raca")?.name ?? "");
 		let html = "";
 
@@ -614,7 +617,7 @@
 				else if (e.ninar) txt += "; a Canção de Ninar dispensa o teste de Vontade.";
 				else if (e.segurados.includes(t.id)) txt += "; está sendo segurado, dispensa o teste de Vontade.";
 				else {
-					const v = await rolar(`1d20 + ${bonus(a, "vont")}`);
+					const v = await teste(a, "vont", { cd: 20, titulo: "A música da briga", falha: "ataca um alvo aleatório (cada falha piora)." });
 					if (v.total >= 20) txt += `; Vontade ${v.total}: resiste.`;
 					else {
 						const n = Math.min(5, (e.falhas[a.id] ?? 0) + 1);
@@ -636,7 +639,7 @@
 		html = `<h3>Briga de Taverna · ${nome.split(" (")[0]}</h3>`;
 		let total = Number(res.manual);
 		const k = pericias.includes(res.pericia) ? res.pericia : pericias[0];
-		if (k && (res.manual === "" || res.manual === undefined)) total = (await rolar(`1d20 + ${bonus(ator.actor, k)}`)).total;
+		if (k && (res.manual === "" || res.manual === undefined)) total = (await teste(ator.actor, k, { cd: typeof cd === "number" ? cd : undefined, titulo: `Briga de Taverna · ${nome.split(" (")[0]}` })).total;
 		if (res.acao === "amizade") {
 			if (!alvo?.actor) return ui.notifications.warn("Mire o aliado com quem vai brigar \"na amizade\".");
 			const def = Number(alvo.actor.system.attributes?.defesa?.value) || 10;
@@ -712,7 +715,7 @@
 			const a = tokens[0]?.actor;
 			if (!a) return ui.notifications.warn("Selecione quem faz o teste, ou informe o resultado.");
 			if (e.congelados.includes(tokens[0].name)) return ui.notifications.warn(`${tokens[0].name} congelou e não pode mais testar.`);
-			const r = await new Roll(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0}`).evaluate();
+			const r = await fdtTeste(a, k, { cd: 20 + e.extra, titulo: "No palco" });
 			rolls.push(r);
 			total = r.total;
 			quem = tokens[0].name;
@@ -803,11 +806,12 @@
 		});
 		const rolls = [];
 		let html = `<h3>Uma rodada de ${nome}</h3><ul>`;
-		for (const t of tokens) {
+		const testes = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: "fort", cd: cdBase + 5 * (Number(t.actor.getFlag("world", "fdtDoses")) || 0), titulo: `Uma rodada de ${nome}` })));
+		for (const [i, t] of tokens.entries()) {
 			const a = t.actor;
 			const doses = Number(a.getFlag("world", "fdtDoses")) || 0;
 			const cd = cdBase + 5 * doses;
-			const r = await new Roll(`1d20 + ${Number(a.system.pericias?.fort?.value) || 0}`).evaluate();
+			const r = testes[i];
 			rolls.push(r);
 			await a.setFlag("world", "fdtDoses", doses + 1);
 			let txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}`;
@@ -891,9 +895,14 @@
 			} else if (d.total === 2) txt = "<b>Surto de Euforia:</b> no próximo turno, o monstro tem uma ação padrão adicional.";
 			else if (d.total === 3) {
 				txt = "<b>Surto Psíquico:</b> 2d12 psíquico em cada personagem (Vontade CD 25 reduz à metade).<ul>";
-				for (const t of canvas.tokens.placeables.filter((x) => x.actor?.type === "character")) {
-					const dano = await rolar("2d12");
-					const v = await rolar(`1d20 + ${Number(t.actor.system.pericias?.vont?.value) || 0}`);
+				const pjs = canvas.tokens.placeables.filter((x) => x.actor?.type === "character");
+				const danos = [];
+				for (const t of pjs) danos.push(await rolar("2d12"));
+				const vonts = await fdtTestes(pjs.map((t, i) => ({ ator: t.actor, pericia: "vont", cd: 25, dano: danos[i], metade: true, titulo: "Surto Psíquico" })));
+				rolls.push(...vonts);
+				for (const [i, t] of pjs.entries()) {
+					const dano = danos[i];
+					const v = vonts[i];
 					const total = v.total >= 25 ? Math.floor(dano.total / 2) : dano.total;
 					const r = await new Roll(`${total}[psiquico]`).evaluate();
 					try { await t.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
@@ -919,8 +928,10 @@
 		} else if (res.acao === "rio") {
 			if (!tokens.length) return ui.notifications.warn("Selecione quem caiu no rio de som.");
 			html = "<h3>Rio de Som</h3><ul>";
-			for (const t of tokens) {
-				const v = await rolar(`1d20 + ${Number(t.actor.system.pericias?.vont?.value) || 0}`);
+			const vonts = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: "vont", cd: 20, titulo: "Rio de Som", falha: "nesta rodada só pode cantar e tocar." })));
+			rolls.push(...vonts);
+			for (const [i, t] of tokens.entries()) {
+				const v = vonts[i];
 				html += `<li>${t.name}: Vontade ${v.total} ${v.total >= 20 ? "✔️ age normalmente." : "❌ nesta rodada só pode <b>cantar e tocar</b>."}</li>`;
 			}
 			html += "</ul>";
@@ -933,7 +944,9 @@
 			if (res.manual === "" || res.manual === undefined) {
 				const a = tokens[0]?.actor;
 				if (!a) return ui.notifications.warn("Selecione quem tenta apaziguar, ou informe o resultado.");
-				total = (await rolar(`1d20 + ${Number(a.system.pericias?.[k]?.value) || 0} + ${Number(res.ajuda) || 0}`)).total;
+				const r = await fdtTeste(a, k, { cd: interno.cd, extra: Number(res.ajuda) || 0, titulo: `Apaziguar ${interno.nome}` });
+				rolls.push(r);
+				total = r.total;
 				quem = tokens[0].name;
 			}
 			const ok = total >= interno.cd;
@@ -977,9 +990,11 @@
 			const tokens = canvas.tokens.controlled.filter((t) => t.actor);
 			if (!tokens.length) return ui.notifications.warn("Selecione quem trabalha no Imagoduto, ou informe o resultado.");
 			for (const t of tokens) {
-				const ofi = Object.values(t.actor.system.pericias ?? {}).find((p) => /engenhoq/i.test(p?.label ?? p?.nome ?? ""));
-				const b = res.bonus !== "" && res.bonus !== undefined ? Number(res.bonus) || 0 : Number(ofi?.value) || Number(t.actor.system.pericias?.ofi0?.value) || 0;
-				const r = await new Roll(`1d20 + ${b}`).evaluate();
+				const [kOfi, ofi] = Object.entries(t.actor.system.pericias ?? {}).find(([, p]) => /engenhoq/i.test(p?.label ?? p?.nome ?? "")) ?? [];
+				const manual = res.bonus !== "" && res.bonus !== undefined;
+				const kTeste = kOfi ?? (t.actor.system.pericias?.ofi0 ? "ofi0" : null);
+				const b = manual ? Number(res.bonus) || 0 : Number(ofi?.value) || Number(t.actor.system.pericias?.ofi0?.value) || 0;
+				const r = !manual && kTeste ? await fdtTeste(t.actor, kTeste, { cd: 30, titulo: "Imagoduto", motivo: "Ofício (engenhoqueiro)." }) : await new Roll(`1d20 + ${b}`).evaluate();
 				rolls.push(r);
 				if (r.total >= 30) ok += 1;
 				linhas.push(`${t.name}: ${r.total} ${r.total >= 30 ? "✔️" : "❌"}`);
@@ -1001,7 +1016,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4 · Briga de Taverna", "icons/skills/melee/unarmed-punch-fist.webp", macroBriga),

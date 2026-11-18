@@ -25,6 +25,8 @@
  * Veja o guia a1-encontros-colinas.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a1colinas";
@@ -681,7 +683,13 @@
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
 		const bon = (a, k) => (["for", "des", "con", "int", "sab", "car"].includes(k) ? Number(a.system.atributos?.[k]?.value) : Number(a.system.pericias?.[k]?.value)) || 0;
-		const teste = (a, k, extra = 0) => rolar(`1d20 + ${bon(a, k)} + ${extra}`);
+		// Teste de PJ: o jogador rola pelo card do chat (atributo ou perícia).
+		const teste = async (a, k, extra = 0, o = {}) => {
+			const atr = ["for", "des", "con", "int", "sab", "car"].includes(k);
+			const r = await fdtTeste(a, atr ? null : k, { ...o, atributo: atr ? k : undefined, extra });
+			rolls.push(r);
+			return r.total;
+		};
 		const atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);
 		const precisa = ["mungoDia", "cacadores"].includes(res.sit) ? 0 : 1;
 		if (atores.length < precisa) return ui.notifications.warn("Selecione o token de quem faz o teste.");
@@ -693,7 +701,7 @@
 			let v = 0;
 			html += "<ul>";
 			for (let i = 1; i <= 3; i++) {
-				const pj = await teste(a, "atua", mod);
+				const pj = await teste(a, "atua", mod, { titulo: `Duelo com Tolbert · rodada ${i}`, motivo: "Teste oposto contra a Atuação de Tolbert (+15). Vence quem ganhar 2 de 3." });
 				const t = await rolar("1d20 + 15");
 				if (pj > t) v++;
 				html += `<li>Rodada ${i}: ${a.name} ${pj} × Tolbert ${t} ${pj > t ? "✔️" : "❌"}</li>`;
@@ -715,7 +723,7 @@
 			let arlo = 0;
 			html += "<ul>";
 			for (let i = 0; i < 3 || (pj === arlo && i < 13); i++, cd += 5) {
-				const x = await teste(a, "pont", mod);
+				const x = await teste(a, "pont", mod, { cd, titulo: "Duelo de tiro com Arlo" });
 				const y = await rolar("1d20 + 10");
 				if (x >= cd) pj++;
 				if (y >= cd) arlo++;
@@ -734,7 +742,7 @@
 			for (const x of atores) {
 				const m = (est.mungo[x.name] ??= { doses: 0, falhas: 0 });
 				const cd = 15 + m.doses;
-				const r = await teste(x, "fort", mod);
+				const r = await teste(x, "fort", mod, { cd, titulo: "A bebida de Mungo Joe", sucesso: "+1 PM temporário.", falha: "enjoado por uma cena (na segunda falha, inconsciente por 1d12 horas)." });
 				m.doses++;
 				if (r >= cd) {
 					await x.update({ "system.attributes.pm.temp": (Number(x.system.attributes.pm?.temp) || 0) + 1 });
@@ -757,7 +765,7 @@
 		if (res.sit === "sereiasCanto") {
 			html += "<ul>";
 			for (const x of atores) {
-				const v = await teste(x, "vont", mod);
+				const v = await teste(x, "vont", mod, { titulo: "O canto das sereias", motivo: "Teste oposto contra a Atuação delas (+10)." });
 				const s = await rolar("1d20 + 10");
 				html += `<li>${x.name}: Vontade ${v} × Atuação ${s} ${v >= s ? "✔️ percebe que há algo errado" : "❌ quer se aproximar e acha que elas são amigáveis (Intuição também é oposta pela Atuação delas)"}</li>`;
 			}
@@ -765,15 +773,15 @@
 		}
 		if (res.sit === "sereiasAbordagem") {
 			const dis = await rolar("1d20 + 10");
-			const intu = await teste(a, "intu");
+			const intu = await teste(a, "intu", 0, { titulo: "Shanamarie distrai", motivo: "Teste oposto contra a Atuação dela (+10)." });
 			html += `<p>Shanamarie distrai ${a.name}: Atuação ${dis} × Intuição ${intu} ${dis > intu ? "❌ distraído" : "✔️ não se deixa distrair"}.</p>`;
-			const vont = await teste(a, "vont", mod);
+			const vont = await teste(a, "vont", mod, { cd: 14, titulo: `Shaylyne lança ${res.magia === "hipnotismo" ? "Hipnotismo" : "Sono"}`, falha: res.magia === "hipnotismo" ? "fascinado." : "dormindo." });
 			const hip = res.magia === "hipnotismo";
 			const caiu = vont < 14;
 			html += `<p>Shaylyne lança <b>${hip ? "Hipnotismo" : "Sono"}</b> (CD 14): Vontade ${vont} ${caiu ? `❌ <b>${hip ? "fascinado" : "dormindo"}</b>` : "✔️ resiste"}.</p>`;
 			if (caiu) await status(a, hip ? "fascinado" : "inconsciente");
 			const lad = await rolar("1d20 + 10");
-			const perc = caiu ? null : await teste(a, "perc", dis > intu ? -5 : 0);
+			const perc = caiu ? null : await teste(a, "perc", dis > intu ? -5 : 0, { titulo: "Shadolenn tenta o furto", motivo: "Teste oposto contra a Ladinagem dela (+10)." });
 			const roubou = caiu || lad > perc;
 			const bens = a.items.filter((i) => ["tesouro", "consumivel", "equipamento", "arma"].includes(i.type) && !i.system.equipado);
 			const alvo = bens.length ? bens[(await rolar(`1d${bens.length}`)) - 1] : null;
@@ -782,13 +790,13 @@
 		}
 
 		if (res.sit === "ladrao") {
-			const l = await teste(a, "ladi", mod);
+			const l = await teste(a, "ladi", mod, { titulo: "Roubar um rabo", motivo: "Teste oposto contra a Percepção do Ladrão de Rabos (+10)." });
 			const p = await rolar("1d20 + 10");
 			html += `<p>${a.name}: Ladinagem ${l} × Percepção ${p}. ${l > p ? "✔️ <b>Um rabo roubado!</b> O Ladrão de Rabos implora (a única vez em que fala em voz alta) e concede um <b>desejo</b> em troca: ele surge em até uma semana, distorcido de forma inofensiva (literal demais, ou numa versão primitiva e caipira)." : "❌ O Ladrão percebe e se afasta, ficando cada vez mais distante sem se mexer."}</p>`;
 		}
 
 		if (res.sit === "fortunata") {
-			const j = await teste(a, "joga", mod);
+			const j = await teste(a, "joga", mod, { titulo: "Apostando com Fortunata", motivo: "Teste oposto contra a Jogatina dela (+15)." });
 			const f = await rolar("1d20 + 15");
 			if (j > f) {
 				est.fortunata = (est.fortunata ?? 0) + 1;
@@ -814,7 +822,7 @@
 		if (res.sit === "cletusCabana") {
 			html += "<ul>";
 			for (const x of atores) {
-				const r = await teste(x, "fort", mod);
+				const r = await teste(x, "fort", mod, { cd: 15, titulo: "O cheiro da cabana de Cletus", falha: "enjoado." });
 				if (r < 15) await status(x, "enjoado");
 				html += `<li>${x.name}: Fortitude ${r} ${r >= 15 ? "✔️ aguenta o cheiro" : "❌ <b>enjoado</b>"}</li>`;
 			}
@@ -828,7 +836,7 @@
 		}
 
 		if (res.sit === "elmer") {
-			const r = await teste(a, res.per, mod);
+			const r = await teste(a, res.per, mod, { titulo: "Guiar o sonho de Elmer", motivo: "O livro não dá CD; sugestão: 20." });
 			const t = (await rolar("1d10")) * 100;
 			html += `<p>${a.name} tenta guiar o sonho de Elmer (${PER[res.per]} ${r}; o livro não dá CD, sugestão inferida: 20). Com achbuld, entra no sonho e pode trazer um objeto: até duas melhorias, ou <b>T$ ${t}</b>. Nada mágico, nada de riquezas enormes.</p>`;
 		}
@@ -840,7 +848,9 @@
 				const dupla = await rolar("1d20 + 10");
 				let melhor = -99;
 				let quem = "";
-				for (const x of atores) { const r = await teste(x, "inic"); if (r > melhor) { melhor = r; quem = x.name; } }
+				const inics = await fdtTestes(atores.map((x) => ({ ator: x, pericia: "inic", titulo: "Traição de Chèvre e Timm!", motivo: "Vale a melhor Iniciativa do grupo contra a da dupla." })));
+				rolls.push(...inics);
+				for (const [i, x] of atores.entries()) { const r = inics[i].total; if (r > melhor) { melhor = r; quem = x.name; } }
 				html += `<p>❌ <b>Traição!</b> Eles tentam levar algo que o grupo precisa, ou um NPC. Iniciativa: grupo ${atores.length ? `${melhor} (${quem})` : "(ninguém selecionado)"} × dupla ${dupla}. ${melhor > dupla ? "O grupo percebe a tempo." : "Somem numa explosão de fogo e fumaça antes que alguém reaja."}</p>`;
 			}
 		}
@@ -1010,11 +1020,19 @@
 		const ev = D.perseg.find(([lo, hi]) => evR >= lo && evR <= hi);
 		const t = ev[3];
 		let html = `<h3>Perseguição ao Diabo · rodada ${ps.rodada}</h3><p>Evento (${evR}): <b>${ev[2]}</b>${t ? ` · ${NOMES[t.teste]} CD ${t.cd}` : ""}.</p><ul>`;
-		const correr = async (nome, b, tb, tenta, ator, reg, con, fortB) => {
-			let dist = Math.max(0, await rolar(`1d20 + ${b}`));
+		// PJ (ator): o jogador rola pelo card; o Diabo (sem ator) rola aqui.
+		const testeDe = async (ator, k, bonusFixo, extra, o = {}) => {
+			if (!ator) return rolar(`1d20 + ${bonusFixo}`);
+			const atr = ["for", "des", "con", "int", "sab", "car"].includes(k);
+			const r = await fdtTeste(ator, atr ? null : k, { ...o, atributo: atr ? k : undefined, extra });
+			rolls.push(r);
+			return r.total;
+		};
+		const correr = async (nome, b, tb, tenta, ator, reg, con, fortB, ext = {}) => {
+			let dist = Math.max(0, await testeDe(ator, "atle", b, ext.atle, { titulo: `Perseguição ao Diabo · rodada ${ps.rodada}`, motivo: "Quanto avança nesta rodada." }));
 			let nota = `Atletismo ${dist}`;
 			if (t && (t.tipo === "obstaculo" || tenta)) {
-				const x = await rolar(`1d20 + ${tb}`);
+				const x = await testeDe(ator, t.teste, tb, ext.teste, { cd: t.cd, titulo: ev[2], falha: "avança só metade e sofre 1d6 de dano." });
 				const ok = x >= t.cd;
 				if (t.tipo === "atalho" && ok) dist *= 2;
 				else if (!ok) dist = Math.floor(dist / 2);
@@ -1030,7 +1048,7 @@
 			if (reg.rod > 1 + con) {
 				const cd = 15 + reg.fort;
 				reg.fort++;
-				const f = await rolar(`1d20 + ${fortB}`);
+				const f = await testeDe(ator, "fort", fortB, 0, { cd, titulo: "Cansaço da perseguição", falha: "fica fatigado e sai da perseguição." });
 				if (f < cd) {
 					reg.fora = true;
 					if (ator && !ator.statuses?.has("fatigado")) await ator.toggleStatusEffect("fatigado", { active: true });
@@ -1048,7 +1066,7 @@
 			const md = Math.round(((desl - 9) / 1.5) * 2);
 			const ern = ps.erneshia ? 4 : 0;
 			const tb = t ? bon(a, t.teste) + (t.teste === "perc" ? ern : 0) : 0;
-			await correr(reg.nome, bon(a, "atle") + md + ern, tb, res.atalho, a, reg, bon(a, "con"), bon(a, "fort"));
+			await correr(reg.nome, bon(a, "atle") + md + ern, tb, res.atalho, a, reg, bon(a, "con"), bon(a, "fort"), { atle: md + ern, teste: t?.teste === "perc" ? ern : 0 });
 		}
 		html += "</ul>";
 		const ativos = Object.values(ps.pjs).filter((x) => !x.fora);
@@ -1093,8 +1111,10 @@
 			const atingidos = funciona ? (alvos.length ? alvos : []) : [user];
 			if (funciona && !alvos.length) html += "<li>Sem alvo mirado: role o dano à mão.</li>";
 			const dano = await rolar(DANO[tipo]);
-			for (const a of atingidos) {
-				const salva = funciona ? (await rolar(`1d20 + ${Number(a.system.pericias?.refl?.value) || 0}`)).total : null;
+			const salvas = funciona ? await fdtTestes(atingidos.map((a) => ({ ator: a, pericia: "refl", cd, dano, metade: true, titulo: item.name, falha: tipo === "fogo" ? "dano total e em chamas." : "dano total." }))) : [];
+			rolls.push(...salvas);
+			for (const [i, a] of atingidos.entries()) {
+				const salva = funciona ? salvas[i].total : null;
 				const ok = salva !== null && salva >= cd;
 				await a.applyDamageV2(dano, ok ? 0.5 : 1);
 				if (tipo === "fogo" && !ok && !a.statuses?.has("emchamas")) await a.toggleStatusEffect("emchamas", { active: true });
@@ -1128,7 +1148,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(role),
-		command: `// Fim dos Tempos · Arco 1 · Colinas Centrais · gerado por a1-encontros-colinas.js\n${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 1 · Colinas Centrais · gerado por a1-encontros-colinas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
 	});
 	const slim = (e) => ({ k: e.k, nome: e.nome, tipo: e.tipo, roles: e.roles, resumo: e.resumo, mec: e.mec, uso: e.uso, qtd: e.qtd });
 	const macros = await Macro.createDocuments([

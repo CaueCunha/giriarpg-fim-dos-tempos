@@ -22,6 +22,8 @@
  * módulo giriarpg-fim-dos-tempos; veja o guia a2-av2-vectora.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av2";
@@ -797,7 +799,7 @@
 		if (res.manual === "" || res.manual === undefined) {
 			const a = atores[0];
 			if (!a) return ui.notifications.warn("Selecione o token do representante do grupo, ou informe o resultado.");
-			const r = await new Roll(`1d20 + ${Number(a.system.pericias?.[res.per]?.value) || 0}`).evaluate();
+			const r = await fdtTeste(a, res.per, { titulo: "Busca pelos elfos", motivo: "O representante do grupo faz o teste." });
 			rolls.push(r);
 			total = r.total;
 			quem = a.name;
@@ -925,6 +927,9 @@
 
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
+		// Teste de PJ: o jogador rola pelo card do chat (NPCs rolam aqui).
+		const ATR = ["for", "des", "con", "int", "sab", "car"];
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, ATR.includes(k) ? null : k, { ...o, atributo: ATR.includes(k) ? k : undefined }); rolls.push(r); return r; };
 		const NOMES = { int: "Inteligência", con: "Constituição", car: "Carisma", acro: "Acrobacia", mist: "Misticismo", sobr: "Sobrevivência", perc: "Percepção", dipl: "Diplomacia", refl: "Reflexos", ades: "Adestramento", atle: "Atletismo", pilo: "Pilotagem" };
 		const TABELA = estado.tipo === "aerea" ? EV_AEREA : EV_PE;
 		estado.rodada += 1;
@@ -934,12 +939,19 @@
 		let html = `<h3>Perseguição · rodada ${estado.rodada}</h3><p>Evento (${d.total}): <b>${tipoEv}</b>${testes.length ? ` · ${testes.map(([k, cd]) => `${NOMES[k]} CD ${cd}`).join(" ou ")}` : ""}. ${descEv}</p>`;
 		// Transeuntes prestativos: se um perseguidor passar, todos ganham +2.
 		const resultados = new Map();
+		const danosEv = new Map();
+		const pedidos = [];
 		for (const x of estado.parts) {
 			if (x.fora || x.espera > 0) continue;
 			const a = atorDe(x);
 			if (!a || !testes.length) continue;
 			const [k, cd] = testes.reduce((m, t) => (bonus(a, t[0]) - t[1] > bonus(a, m[0]) - m[1] ? t : m));
-			const r = await rolar(`1d20 + ${bonus(a, k)} + ${x.bonusCena}`);
+			const dano = !atalho && extra.dano ? await new Roll(extra.dano).evaluate() : null;
+			if (dano) danosEv.set(x, dano);
+			pedidos.push({ x, k, cd, p: teste(a, k, { cd, extra: x.bonusCena, dano, titulo: `Perseguição · ${tipoEv}`, motivo: descEv, falha: atalho ? "avança só metade." : `avança só metade${extra.dano ? " e toma o dano" : ""}${extra.pm ? `, perde ${extra.pm} PM` : ""}.` }) });
+		}
+		for (const { x, k, cd, p } of pedidos) {
+			const r = await p;
 			resultados.set(x, { ok: r.total >= cd, txt: `${NOMES[k]} ${r.total} ${r.total >= cd ? "✔️" : "❌"}` });
 		}
 		const todos = extra.todos && [...resultados].some(([x, r]) => x.lado === "p" && r.ok) ? extra.todos : 0;
@@ -968,7 +980,8 @@
 				} else if (!r0.ok) {
 					mult = 0.5;
 					if (extra.dano) {
-						const dano = await rolar(extra.dano);
+						const dano = danosEv.get(x) ?? (await rolar(extra.dano));
+						if (danosEv.has(x)) rolls.push(dano);
 						try { await a.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
 						evTxt += ` (${dano.total} de dano)`;
 					}
@@ -979,14 +992,14 @@
 						evTxt += ` (–${perda.total} PM)`;
 					}
 					if (extra.queda) {
-						const f = await rolar(`1d20 + ${bonus(a, "refl")}`);
+						const f = await teste(a, "refl", { cd: extra.queda, titulo: "Não cair do veículo", falha: "cai se estiver em veículo ou montaria." });
 						if (f.total < extra.queda) evTxt += ` · Reflexos ${f.total}: <b>cai se estiver em veículo ou montaria</b>`;
 					}
 				}
 			}
 			if (x.lado === "p" && todos) mod += todos;
 			const veiculo = x.lado === "p" && piloto;
-			const r = veiculo ? piloto : await rolar(`1d20 + ${bonus(a, x.lado === "p" ? estado.base : "atle")} + ${mod}`);
+			const r = veiculo ? piloto : await teste(a, x.lado === "p" ? estado.base : "atle", { extra: mod, titulo: `Perseguição · rodada ${estado.rodada}`, motivo: "Quanto avança nesta rodada." });
 			const avanca = Math.max(0, Math.floor((veiculo ? r.total + mod : r.total) * mult));
 			x.dist += avanca;
 			x.correu += 1;
@@ -996,7 +1009,7 @@
 			if (!veiculo && estado.tipo === "pe" && x.correu > 1 + con) {
 				const cd = 15 + x.testesFort;
 				x.testesFort += 1;
-				const f = await rolar(`1d20 + ${bonus(a, "fort")}`);
+				const f = await teste(a, "fort", { cd, titulo: "Cansaço da perseguição", falha: "fica fatigado e sai da perseguição." });
 				if (f.total < cd) {
 					x.fora = true;
 					x.status = "fatigado";
@@ -1111,6 +1124,7 @@
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r; };
 		const per = (a, k) => Number(a.system.pericias?.[k]?.value) || 0;
+		const teste = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r; };
 		const ainda = tokens.filter((t) => !roubos.some((r) => r.actor === t.actor.id));
 		const sortear = (l) => l[Math.floor(Math.random() * l.length)];
 		let html = "";
@@ -1124,7 +1138,7 @@
 			if (d.total === 4 || res.forcar) {
 				const alvo = sortear(tokens);
 				if (!alvo) return ui.notifications.warn("Selecione os personagens presentes.");
-				const p = await rolar(`1d20 + ${per(alvo.actor, "perc")}`);
+				const p = await teste(alvo.actor, "perc", { titulo: "Uma mão leve...", motivo: "Algo esbarra em você na correria." });
 				const l = await rolar(`1d20 + ${LADINAGEM}`);
 				if (p.total >= l.total) html += `<p>${alvo.name} sente a mão leve (Percepção ${p.total} contra Ladinagem ${l.total}) e <b>segura o que ia ser roubado</b>. Um vulto de manto escuro some na multidão.</p>`;
 				else {
@@ -1134,8 +1148,10 @@
 			} else html += "<p>Nada desta vez.</p>";
 		} else if (res.momento === "keenn") {
 			html = "<h3>Andrus · Campo de Keenn</h3><p>Percepção CD 25 nota um vulto a mais entre os combatentes, de manto escuro. Ele vai roubar <b>o medalhão de Janara</b>; Janara sozinha não percebe.</p><ul>";
-			for (const t of tokens) {
-				const p = await rolar(`1d20 + ${per(t.actor, "perc")}`);
+			const percs = await fdtTestes(tokens.map((t) => ({ ator: t.actor, pericia: "perc", cd: 25, titulo: "Campo de Keenn" })));
+			rolls.push(...percs);
+			for (const [i, t] of tokens.entries()) {
+				const p = percs[i];
 				html += `<li>${t.name}: Percepção ${p.total} ${p.total >= 25 ? "<b>nota o vulto</b> (uma rodada para agir; impedir: Ladinagem oposta, Andrus +" + LADINAGEM + ")" : "não nota"}</li>`;
 			}
 			html += "</ul>";
@@ -1144,7 +1160,7 @@
 			html = "<h3>Andrus · em queda livre</h3><p>Um vulto despenca como se tivesse se jogado de Vectora! Percepção CD 20 reconhece Andrus.</p>";
 			const alvo = tokens[0] ?? sortear(ainda);
 			if (alvo) {
-				const l1 = await rolar(`1d20 + ${per(alvo.actor, "ladi")}`);
+				const l1 = await teste(alvo.actor, "ladi", { titulo: "Andrus em queda livre", motivo: `Ladinagem oposta contra Andrus (+${LADINAGEM}).` });
 				const l2 = await rolar(`1d20 + ${LADINAGEM}`);
 				const objeto = res.objeto || "o baú com o simbionte (ou um item à escolha do Mestre)";
 				if (l1.total >= l2.total) html += `<p>${alvo.name} vence a Ladinagem oposta (${l1.total} contra ${l2.total}) e <b>não perde ${objeto}</b>. Andrus se balança num fio invisível e some.</p>`;
@@ -1187,7 +1203,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n${prefixo}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 2 · gerado por a2-av2-vectora.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${prefixo}(${fn.toString()})();`
 	});
 	const dadosEventos = `const EV_AEREA = ${JSON.stringify(EV_AEREA)};\nconst EV_PE = ${JSON.stringify(EV_PE)};\n`;
 	const macros = await Macro.createDocuments([

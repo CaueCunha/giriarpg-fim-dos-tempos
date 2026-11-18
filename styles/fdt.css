@@ -12,3 +12,26 @@
 	font-size: 0.85em;
 	opacity: 0.85;
 }
+/* Card de teste pedido por macro (o jogador clica para rolar) */
+.fdt-teste .fdt-teste-cab {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	border-bottom: 1px solid #7a5a2a;
+	margin-bottom: 4px;
+}
+.fdt-teste .fdt-teste-cab img {
+	flex: 0 0 36px;
+	border: none;
+}
+.fdt-teste .fdt-teste-cab h3 {
+	margin: 0;
+	border: none;
+}
+.fdt-teste .fdt-teste-dano {
+	border-left: 3px solid #8b1e1e;
+	padding-left: 6px;
+}
+.fdt-teste .fdt-teste-resultado {
+	font-size: 1.1em;
+}

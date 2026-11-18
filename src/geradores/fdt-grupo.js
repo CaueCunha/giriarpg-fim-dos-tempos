@@ -18,6 +18,8 @@
  * Veja o guia fdt-grupo.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "fdtgrupo";
@@ -681,7 +683,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · O Grupo · gerado por fdt-grupo.js\n${COMUM}\nawait (${fn.toString()})(FDT, typeof scope !== "undefined" ? scope : {});`
+		command: `// Fim dos Tempos · O Grupo · gerado por fdt-grupo.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${COMUM}\nawait (${fn.toString()})(FDT, typeof scope !== "undefined" ? scope : {});`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Grupo · Montar o Grupo", "icons/environment/settlement/tent.webp", macroMontar),

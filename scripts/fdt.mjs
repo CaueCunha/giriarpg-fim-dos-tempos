@@ -14,6 +14,7 @@
  * flags.world.fdt/fdtRole: puxe a aventura antes de usar as macros dela.
  */
 import { MODULO, PRESERVAR, assinatura, TOKEN_PADRAO, ehAmeacaDoModulo, comTokenPadrao, correcaoToken } from "./assinatura.mjs";
+import { pedirTeste, pedirTestes, responderTeste, jogadorRola, registrarTestes, registrarSocket } from "./testes.mjs";
 
 export { PRESERVAR };
 
@@ -634,6 +635,8 @@ Hooks.once("init", () => {
 	});
 	// Ligado pela macro "PJs · Automações" (Temeroso e Provocação Petulante); religa ao abrir o mundo.
 	game.settings.register(MODULO, "automacoesPJs", { scope: "world", config: false, type: Boolean, default: false });
+	// Testes dos PJs pedidos pelas macros: card no chat com botão para o jogador rolar.
+	registrarTestes();
 
 	const Base = foundry.applications?.api?.ApplicationV2;
 	if (Base) {
@@ -685,6 +688,10 @@ Hooks.once("init", () => {
 			PRESERVAR,
 			TOKEN_PADRAO,
 			corrigirTokens,
+			pedirTeste,
+			pedirTestes,
+			responderTeste,
+			jogadorRola,
 			// nomes antigos (macro "FdT · Importar conteúdo do módulo" das versões até a 0.16)
 			abrirImportador: abrirPuxar,
 			importar: (ids) => puxar({ atos: ids })
@@ -707,6 +714,7 @@ Hooks.once("setup", () => {
 });
 
 Hooks.once("ready", async () => {
+	registrarSocket();
 	await registrarRedirecionamentos();
 	if (!game.user.isGM || (game.users.activeGM && game.users.activeGM !== game.user)) return;
 	if (game.settings.get(MODULO, "corrigirTokens")) {

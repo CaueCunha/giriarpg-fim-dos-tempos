@@ -24,6 +24,8 @@
  * Foundry rodando. Veja o guia fdt-poderes-pjs.md.
  * ===================================================================== */
 (async () => {
+	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "fdtpoderes";
@@ -758,11 +760,11 @@
 		if (d.pm) await a.spendMana(2);
 		const rolls = [];
 		const linhas = [];
-		for (const t of testam) {
+		// PJs atingidos rolam pelo card do chat; NPCs, aqui.
+		const testes = await fdtTestes(testam.map((t) => ({ ator: t.actor, pericia: "fort", cd, extra: P.tem(t.actor, /^presentes de ssaazzaas/) ? 5 : 0, titulo: `Mau Cheiro de ${a.name}`, motivo: "Veneno.", falha: "enjoado por 1d6 rodadas.", sucesso: "imune por um dia." })));
+		for (const [i, t] of testam.entries()) {
 			const x = t.actor;
-			const bonus = Number(x.system.pericias?.fort?.value) || 0;
-			const veneno = P.tem(x, /^presentes de ssaazzaas/) ? 5 : 0;
-			const r = await new Roll("1d20 + @b + @v", { b: bonus, v: veneno }).evaluate();
+			const r = testes[i];
 			rolls.push(r);
 			if (r.total >= cd) {
 				await x.setFlag("world", "fdtMauCheiro", { ...(x.getFlag("world", "fdtMauCheiro") ?? {}), [a.id]: agora + 86400 });
@@ -858,7 +860,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS({ fdtRole: role }),
-		command: `// Fim dos Tempos · Poderes dos PJs · gerado por fdt-poderes-pjs.js\n${COMUM}\nawait (${fn.toString()})(P, typeof scope !== "undefined" ? scope : {});`
+		command: `// Fim dos Tempos · Poderes dos PJs · gerado por fdt-poderes-pjs.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${COMUM}\nawait (${fn.toString()})(P, typeof scope !== "undefined" ? scope : {});`
 	});
 	const macros = await Macro.createDocuments([
 		macro("PJs · Corrigir poderes", "icons/tools/smithing/anvil.webp", macroCorrigir, "pjsCorrigir"),
