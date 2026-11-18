@@ -19,7 +19,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "fdtgrupo";
@@ -550,7 +555,7 @@
 			const dar = Math.min(qtd, base.pm);
 			if (!a || !dar) return ui.notifications.warn("Não há PM suficientes na base.");
 			base.pm -= dar;
-			await a.update({ "system.attributes.pm.temp": (a.system.attributes.pm.temp || 0) + dar });
+			await fdtAplicar.ficha(a, { "system.attributes.pm.temp": { somar: dar } }, `${a.name}: +${dar} PM temporários (PM da base)`);
 			msg = `${a.name} usou <b>${dar} PM da base</b> (entraram como PM temporários e são gastos primeiro). Só vale enquanto estiver na base: se sair, tire o que sobrou.`;
 		}
 		await j.setFlag("world", "fdtGrupo", { ...e, base });
@@ -591,10 +596,11 @@
 			const valor = aliado.system.pericias[d.per].value;
 			const nome = CONFIG.T20.pericias[d.per].label;
 			await quem.spendMana(2);
-			const roll = await new Roll(`1d20 + ${valor}`).evaluate();
 			const cd = Number(d.cd) || null;
-			await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: quem }), flavor: `Conselhos Salvadores: ${nome} de ${quem.name} com o valor de ${aliado.name} (+${valor})${cd ? ` · CD ${cd} ${roll.total >= cd ? "✔️" : "❌"}` : ""}` });
-			return;
+			// O jogador rola pela ficha; o card soma a diferença para valer o bônus do aliado.
+			const proprio = Number(quem.system.pericias[d.per]?.value) || 0;
+			const roll = await fdtTeste(quem, d.per, { cd, extra: valor - proprio, titulo: `Conselhos Salvadores: ${nome}`, motivo: `${quem.name} usa o valor de ${aliado.name} (+${valor}).` });
+			return fala(`<p>Conselhos Salvadores: ${nome} de ${quem.name} com o valor de ${aliado.name} (+${valor}) = <b>${roll?.total ?? "?"}</b>${cd ? ` · CD ${cd} ${roll?.total >= cd ? "✔️" : "❌"}` : ""}</p>`);
 		}
 
 		if (d0.acao === "presenca") {
@@ -610,10 +616,10 @@
 			for (const a of part) {
 				await a.spendMana(2);
 				const velhos = a.effects.filter((e) => e.getFlag("world", "fdt") === FDT.TAG && e.name.startsWith("Presença Luminosa")).map((e) => e.id);
-				if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos);
+				if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos);
 				const changes = pericias.map((k) => ({ key: `system.pericias.${k}.bonus`, value: Math.max(maior[k] - (a.system.pericias[k]?.value ?? 0), 0), type: "add", phase: "initial", priority: null })).filter((c) => c.value > 0);
 				if (changes.length) {
-					await a.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(a, [{
 						name: "Presença Luminosa", img: "icons/magic/light/explosion-star-glow-silhouette.webp", type: "base",
 						duration: { expiry: "sceneEnd", units: "rounds", value: null },
 						flags: { world: { fdt: FDT.TAG } },
@@ -638,7 +644,7 @@
 				const n = part.length - 1;
 				const pv = 3 * patamar * n, pm = patamar * n;
 				const s = a.system.attributes;
-				await a.update({ "system.attributes.pv.temp": Math.max(s.pv.temp || 0, pv), "system.attributes.pm.temp": Math.max(s.pm.temp || 0, pm) });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.temp": { maior: pv }, "system.attributes.pm.temp": { maior: pm } }, `${a.name}: ${pv} PV e ${pm} PM temporários`);
 				linhas.push(`${a.name}: ${pv} PV e ${pm} PM temporários`);
 			}
 			return fala(`<h3>Conforto Familiar</h3><p>${linhas.join("<br>")}</p><p><small>PV/PM temporários não se acumulam: fica o maior valor.</small></p>`);
@@ -663,7 +669,7 @@
 			const linhas = [];
 			for (const a of part) {
 				const v = Math.min(cada, a.system.attributes.pv.max);
-				await a.update({ "system.attributes.pv.value": v });
+				await fdtAplicar.ficha(a, { "system.attributes.pv.value": v }, `${a.name}: ${v} PV`);
 				linhas.push(`${a.name}: ${v} PV`);
 			}
 			return fala(`<h3>Espírito de União: fim da cena</h3><p>Total restante: ${total} PV, divididos igualmente.</p><p>${linhas.join("<br>")}</p>`);
@@ -683,7 +689,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · O Grupo · gerado por fdt-grupo.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${COMUM}\nawait (${fn.toString()})(FDT, typeof scope !== "undefined" ? scope : {});`
+		command: `// Fim dos Tempos · O Grupo · gerado por fdt-grupo.js\n${usaFdt(fn) ? FDT_TESTE : ""}${COMUM}\n${chamar(fn, `(${codigo(fn)})(FDT, typeof scope !== "undefined" ? scope : {})`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Grupo · Montar o Grupo", "icons/environment/settlement/tent.webp", macroMontar),

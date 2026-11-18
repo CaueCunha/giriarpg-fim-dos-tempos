@@ -23,7 +23,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av5";
@@ -1077,15 +1082,14 @@
 			const cd = res.perto ? 25 : 20;
 			const tipo = res.perto ? "perfuracao" : "impacto";
 			html = `<h3>Bombardeio · rodada ${Math.min(rodada + 1, 5)} de 5</h3><p>Reflexos CD ${cd}.</p><ul>`;
-			const danos = await Promise.all(alvos.map(() => new Roll(`4d6[${tipo}]`).evaluate()));
-			const testes = await fdtTestes(alvos.map((a, i) => ({ ator: a, pericia: "refl", cd, dano: danos[i], titulo: "Bombardeio", sucesso: "se desvia, sem dano.", falha: `toma o dano${cd ? `; falhando por 10 ou mais, perde a ação` : ""}.` })));
+			// Um dano para todos, como uma magia em área; o Mestre aplica pelos botões do card.
+			const dano = await new Roll(`4d6[${tipo}]`).evaluate();
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd, dano, evita: true, titulo: "Bombardeio", sucesso: "se desvia, sem dano.", falha: `toma o dano${cd ? `; falhando por 10 ou mais, perde a ação` : ""}.` })));
 			for (const [i, a] of alvos.entries()) {
 				const r = testes[i];
 				rolls.push(r);
 				if (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️ se desvia</li>`; continue; }
-				const d = danos[i];
-				rolls.push(d);
-				await a.applyDamageV2(d, 1);
+				const d = dano;
 				const perdeAcao = r.total <= cd - 10;
 				html += `<li>${a.name}: <b>${r.total}</b> ❌ ${d.total} de ${tipo}${perdeAcao ? " e <b>perde a ação</b>" : ""}</li>`;
 			}
@@ -1112,22 +1116,17 @@
 		} else {
 			const n = Number(res.armados) || 0;
 			html = `<h3>Detonação</h3><p><b>${n}</b> explosivo(s) não desarmado(s): cada um destrói <b>8 quadrados</b> da paliçada.</p><ul>`;
-			const danos = await Promise.all(alvos.map(() => Promise.all(Array.from({ length: n }, () => new Roll("10d6[impacto]").evaluate()))));
-			const testes = await fdtTestes(alvos.map((a, j) => ({ ator: a, pericia: "refl", cd: 20, dano: danos[j], metade: true, titulo: "Detonação" })));
+			// Um 10d6 por explosivo, rolado uma vez para todos; o card mostra a soma e o Mestre aplica pelos botões.
+			const danos = await Promise.all(Array.from({ length: n }, () => new Roll("10d6[impacto]").evaluate()));
+			const total = danos.reduce((t, d) => t + d.total, 0);
+			const testes = n ? await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano: danos, metade: true, titulo: "Detonação" }))) : [];
 			for (const [j, a] of alvos.entries()) {
 				const r = testes[j];
 				rolls.push(r);
 				const ok = r.total >= 20;
-				let total = 0;
-				for (let i = 0; i < n; i++) {
-					const d = danos[j][i];
-					rolls.push(d);
-					await a.applyDamageV2(d, ok ? 0.5 : 1);
-					total += d.total;
-				}
 				html += `<li>${a.name}: Reflexos <b>${r.total}</b> (CD 20) ${ok ? "✔️ metade" : "❌ total"} de ${total}</li>`;
 			}
-			html += "</ul><p style=\"font-size:0.85em\">Só quem está adjacente aos explosivos sofre o dano. Dano já aplicado com RD.</p>";
+			html += "</ul><p style=\"font-size:0.85em\">Só quem está adjacente aos explosivos sofre o dano. O Mestre aplica pelos botões do card (a RD entra na hora).</p>";
 			await onda.update({ "system.resources.primary.value": 0 });
 		}
 		ChatMessage.create({ content: html, rolls });
@@ -1177,7 +1176,7 @@
 				if (r.total >= cd) { html += `<li>${a.name}: <b>${r.total}</b> ✔️</li>`; continue; }
 				const pm = a.system.attributes.pm;
 				if (pm.value >= 2) {
-					await a.update({ "system.attributes.pm.value": pm.value - 2 });
+					await fdtAplicar.pm(a, 2);
 					html += `<li>${a.name}: <b>${r.total}</b> ❌ perde <b>2 PM</b> (ou, por escolha do jogador, um parceiro aleatório é ferido)</li>`;
 				} else html += `<li>${a.name}: <b>${r.total}</b> ❌ sem PM: <b>perde 1 parceiro</b> automaticamente</li>`;
 			}
@@ -1227,12 +1226,12 @@
 		} else if (res.acao === "agarrar") {
 			const cd = res.fosso ? 30 : 25;
 			html = `<h3>Agarrar dos Tentáculos</h3><p>Luta CD ${cd}.</p><ul>`;
-			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "luta", cd, titulo: "Agarrar dos Tentáculos", falha: "fica agarrado." })));
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "luta", cd, titulo: "Agarrar dos Tentáculos", falha: "fica agarrado.", falhaStatus: "agarrado" })));
 			for (const [i, a] of alvos.entries()) {
 				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= cd;
-				await a.toggleStatusEffect("agarrado", { active: !ok });
+				if (ok && a.statuses?.has("agarrado")) await fdtAplicar.tirar(a, "agarrado");
 				html += `<li>${a.name}: <b>${r.total}</b> ${ok ? "✔️ escapa" : "❌ agarrado"}</li>`;
 			}
 			html += "</ul><p style=\"font-size:0.85em\">Atacar o tentáculo também solta: Defesa 23, Fort +12, Ref +11 e 25 PV por tentáculo.</p>";
@@ -1242,8 +1241,8 @@
 			for (const a of alvos) {
 				const d = await new Roll(`${2 * mult}d6[impacto] + ${2 * mult}d6[acido]`).evaluate();
 				rolls.push(d);
-				await a.applyDamageV2(d, 1);
-				html += `<li>${a.name}: <b>${d.total}</b> (impacto e ácido, já com RD)</li>`;
+				await fdtAplicar.dano(a, d, 1);
+				html += `<li>${a.name}: <b>${d.total}</b> (impacto e ácido; a RD entra quando o Mestre aplica)</li>`;
 			}
 			html += "</ul>";
 		}
@@ -1313,7 +1312,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 5 · gerado por av5-maniacos-aberrantes.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av5 · Noite no Inferno", "icons/svg/clockwork.svg", macroNoite),

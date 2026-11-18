@@ -25,7 +25,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av4";
@@ -610,7 +615,7 @@
 					let total = 0;
 					for (let i = 0; i < vezes[t.id]; i++) total += (await rolar(formula)).total;
 					const dano = await new Roll(`${total}[${r >= 5 ? "psiquico" : "impacto"}]`).evaluate();
-					try { await a.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
+					try { await fdtAplicar.dano(a, dano, 1); } catch (err) { console.warn(err); }
 					txt += `${total} de dano${vezes[t.id] > 1 ? ` (${vezes[t.id]} vezes, somado para a RD)` : ""}`;
 				} else txt += "sem dano nesta rodada";
 				if (naoVivo(a)) txt += "; não é vivo, a música não o afeta.";
@@ -733,7 +738,7 @@
 				rolls.push(r);
 				const pm = t.actor.system.attributes?.pm;
 				const novo = Math.max(0, (Number(pm?.value) || 0) - r.total);
-				await t.actor.update({ "system.attributes.pm.value": novo });
+				await fdtAplicar.pm(t.actor, r.total);
 				let txt = `${t.name}: –${r.total} PM (fica com ${novo})`;
 				if (novo === 0 && !e.congelados.includes(t.name)) {
 					e.congelados.push(t.name);
@@ -784,8 +789,8 @@
 			for (const t of tokens) {
 				const a = t.actor;
 				const fx = a.effects.filter((x) => x.getFlag("world", "fdtBebida"));
-				if (fx.length) await a.deleteEmbeddedDocuments("ActiveEffect", fx.map((x) => x.id));
-				for (const s of ["desprevenido", "inconsciente"]) if (a.statuses?.has(s)) await a.toggleStatusEffect(s, { active: false });
+				if (fx.length) await fdtAplicar.tirarEfeito(a, fx.map((x) => x.id));
+				for (const s of ["desprevenido", "inconsciente"]) if (a.statuses?.has(s)) await fdtAplicar.status(a, s, { active: false });
 				await a.unsetFlag("world", "fdtDoses");
 			}
 			return ChatMessage.create({ content: `<h3>Fim do dia</h3><p>${tokens.map((t) => t.name).join(", ")}: embriaguez e bebidas encerradas.</p>` });
@@ -816,22 +821,22 @@
 			await a.setFlag("world", "fdtDoses", doses + 1);
 			let txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}`;
 			if (beneficio) {
-				await a.createEmbeddedDocuments("ActiveEffect", [efeito(beneficio)]);
+				await fdtAplicar.efeito(a, [efeito(beneficio)]);
 				txt += `; ganha <i>${beneficio.name}</i>${nota ? ` (${nota})` : ""}`;
 			}
 			if (r.total >= cd) txt += ". Segura bem.";
 			else {
 				const atual = Math.max(0, ...a.effects.map((x) => Number(x.getFlag("world", "fdtBebida")) || 0));
 				const velhos = a.effects.filter((x) => (Number(x.getFlag("world", "fdtBebida")) || 0) > 0);
-				if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos.map((x) => x.id));
+				if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos.map((x) => x.id));
 				if (atual >= 2) {
-					if (!a.statuses?.has("inconsciente")) await a.toggleStatusEffect("inconsciente", { active: true });
-					await a.createEmbeddedDocuments("ActiveEffect", [efeito(NIVEL[2], 2)]);
+					if (!a.statuses?.has("inconsciente")) await fdtAplicar.status(a, "inconsciente", { active: true });
+					await fdtAplicar.efeito(a, [efeito(NIVEL[2], 2)]);
 					txt += ". Já estava bebum: <b>cai inconsciente</b> até o fim do dia.";
 				} else {
 					const n = atual + 1;
-					await a.createEmbeddedDocuments("ActiveEffect", [efeito(NIVEL[n], n)]);
-					if (n === 2 && !a.statuses?.has("desprevenido")) await a.toggleStatusEffect("desprevenido", { active: true });
+					await fdtAplicar.efeito(a, [efeito(NIVEL[n], n)]);
+					if (n === 2 && !a.statuses?.has("desprevenido")) await fdtAplicar.status(a, "desprevenido", { active: true });
 					txt += `. ${NIVEL[n].txt} até o fim do dia.`;
 				}
 			}
@@ -883,7 +888,7 @@
 			let txt = "";
 			if (d.total === 1) {
 				for (const m of monstros) {
-					await m.actor.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(m.actor, [{
 						name: "Surto de Fúria (+5)",
 						img: "systems/tormenta20/icons/poderes/ameacas/insanidade-tormenta.webp",
 						type: "base",
@@ -891,30 +896,26 @@
 						system: { changes: ["ataque", "dano"].map((t) => ({ key: `system.modificadores.${t}.geral`, value: "5", type: "add", phase: "initial", priority: null })) }
 					}]);
 				}
-				txt = `<b>Surto de Fúria:</b> +5 em ataque e dano por 1 rodada${monstros.length ? " (efeito aplicado)" : ""}.`;
+				txt = `<b>Surto de Fúria:</b> +5 em ataque e dano por 1 rodada${monstros.length ? " (botões do Mestre)" : ""}.`;
 			} else if (d.total === 2) txt = "<b>Surto de Euforia:</b> no próximo turno, o monstro tem uma ação padrão adicional.";
 			else if (d.total === 3) {
 				txt = "<b>Surto Psíquico:</b> 2d12 psíquico em cada personagem (Vontade CD 25 reduz à metade).<ul>";
 				const pjs = canvas.tokens.placeables.filter((x) => x.actor?.type === "character");
-				const danos = [];
-				for (const t of pjs) danos.push(await rolar("2d12"));
-				const vonts = await fdtTestes(pjs.map((t, i) => ({ ator: t.actor, pericia: "vont", cd: 25, dano: danos[i], metade: true, titulo: "Surto Psíquico" })));
+				// Um 2d12 para todos, como uma magia em área: o card leva o dano e o Mestre aplica pelos botões.
+				const dano = await new Roll("2d12[psiquico]").evaluate();
+				const vonts = await fdtTestes(pjs.map((t) => ({ ator: t.actor, pericia: "vont", cd: 25, dano, metade: true, titulo: "Surto Psíquico" })));
 				rolls.push(...vonts);
 				for (const [i, t] of pjs.entries()) {
-					const dano = danos[i];
 					const v = vonts[i];
 					const total = v.total >= 25 ? Math.floor(dano.total / 2) : dano.total;
-					const r = await new Roll(`${total}[psiquico]`).evaluate();
-					try { await t.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
 					txt += `<li>${t.name}: Vontade ${v.total}, ${total} psíquico.</li>`;
 				}
 				txt += "</ul>";
 			} else {
 				for (const m of monstros) {
-					const pv = m.actor.system.attributes.pv;
-					await m.actor.update({ "system.attributes.pv.value": Math.min(pv.max, pv.value + 30) });
+					await fdtAplicar.curar(m.actor, 30);
 				}
-				txt = `<b>Surto de Adrenalina:</b> o monstro recupera 30 PV${monstros.length ? " (aplicado)" : ""}.`;
+				txt = `<b>Surto de Adrenalina:</b> o monstro recupera 30 PV${monstros.length ? " (botão do Mestre)" : ""}.`;
 			}
 			return `<p>Surto (1d4 = ${d.total}) na manifestação de ${interno.nome}: ${txt}</p>`;
 		};
@@ -1016,7 +1017,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 4 · gerado por a2-av4-taverna-maniacos.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4 · Briga de Taverna", "icons/skills/melee/unarmed-punch-fist.webp", macroBriga),

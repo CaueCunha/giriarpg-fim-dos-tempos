@@ -26,7 +26,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a1templo";
@@ -754,7 +759,7 @@
 				for (const x of alvos) {
 					const d = await new Roll("1d8").evaluate();
 					rolls.push(d);
-					await x.update({ "system.attributes.pv.value": x.system.attributes.pv.value - d.total });
+					await fdtAplicar.perda(x, d.total);
 					html += `<p>${x.name} perde <b>${d.total} PV</b> (quedas, fadiga). Só recupera com descanso.</p>`;
 				}
 			}
@@ -976,7 +981,7 @@
 			rolls.push(r);
 			return r.total;
 		};
-		const perder = async (actor, n) => actor.update({ "system.attributes.pv.value": actor.system.attributes.pv.value - n });
+		const perder = async (actor, n) => fdtAplicar.perda(actor, n);
 		let html = `<h3>${a.nome}</h3><p>${a.efeito}</p><ul>`;
 		if (a.agua) {
 			const r = await new Roll("1d4").evaluate();
@@ -1000,7 +1005,6 @@
 				if (escapou) { html += `<li>${nome}: Iniciativa ${notas.join(", ")} → escapa do desabamento ✔️</li>`; continue; }
 				const v = await teste(ator, "refl", 0, { cd: 30, dano: danoComum, metade: true });
 				const ok = v >= 30;
-				await ator.applyDamageV2(danoComum, ok ? 0.5 : 1);
 				html += `<li>${nome}: falhou nas três fases (${notas.join(", ")}); Reflexos ${v} ${ok ? "✔️ metade" : "❌ dano total"}</li>`;
 				continue;
 			}
@@ -1008,10 +1012,8 @@
 				let txt = "";
 				for (let g = 1; g <= 2; g++) {
 					const d = await new Roll(a.dano).evaluate();
-					const v = await teste(ator, "refl", 0, { cd: a.res[1], dano: d, titulo: `${a.nome} · golpe ${g}`, sucesso: "evita o golpe." });
+					const v = await teste(ator, "refl", 0, { cd: a.res[1], dano: d, evita: true, titulo: `${a.nome} · golpe ${g}`, sucesso: "evita o golpe." });
 					if (v >= a.res[1]) { txt += ` golpe ${g}: Reflexos ${v} ✔️;`; continue; }
-					rolls.push(d);
-					await ator.applyDamageV2(d, 1);
 					txt += ` golpe ${g}: Reflexos ${v} ❌ ${d.total};`;
 				}
 				html += `<li>${nome}:${txt}</li>`;
@@ -1019,7 +1021,9 @@
 			}
 			const semTeste = a.ativador && res.ativ === t.id;
 			const [k, cd, modo] = a.res ?? [];
-			const v = semTeste || !k ? null : await teste(ator, k, 0, { cd, dano: danoComum ?? undefined, falha: a.perda ? `perde ${a.perda} PV por rodada.` : "" });
+			// Com dano em jogo, o card do teste leva os botões de dano (metade ou evita); sem teste, eles vão no resumo.
+			const comCard = !a.perda && !a.status && !!danoComum;
+			const v = semTeste || !k ? null : await teste(ator, k, 0, { cd, dano: comCard ? danoComum : undefined, metade: comCard && modo !== "evita", evita: comCard && modo === "evita", falha: a.perda ? `perde ${a.perda} PV por rodada.` : "" });
 			const ok = v !== null && v >= cd;
 			const rotulo = semTeste ? "ativou (sem teste)" : `${D.pericias[k]} ${v}`;
 			if (a.perda) {
@@ -1034,7 +1038,7 @@
 					await perder(ator, total);
 					html += `<li>${nome}: ${rotulo} ${ok ? "✔️" : "❌"} → perde <b>${total} PV</b> (${rodadas} rodada(s)${meia ? ", metade" : ""}).</li>`;
 				} else {
-					await ator.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(ator, [{
 						name: `${a.nome}${meia ? " (metade)" : ""}`,
 						img: a.ic,
 						type: "base",
@@ -1051,13 +1055,13 @@
 				if (ok) { html += `<li>${nome}: ${rotulo} ✔️ resiste</li>`; continue; }
 				const r = await new Roll(a.rodadasStatus).evaluate();
 				rolls.push(r);
-				await ator.toggleStatusEffect(a.status, { active: true });
+				await fdtAplicar.status(ator, a.status, { active: true });
 				html += `<li>${nome}: ${rotulo} ❌ <b>${a.status}</b> por ${r.total} rodada(s)</li>`;
 				continue;
 			}
 			const mult = modo === "evita" ? (ok ? 0 : 1) : (ok ? 0.5 : 1);
-			if (mult > 0) await ator.applyDamageV2(danoComum, mult);
-			if (a.cai && mult > 0) await ator.toggleStatusEffect("caido", { active: true });
+			if (mult > 0 && !(comCard && v !== null)) await fdtAplicar.dano(ator, danoComum, mult);
+			if (a.cai && mult > 0) await fdtAplicar.status(ator, "caido", { active: true });
 			html += `<li>${nome}: ${rotulo} ${ok ? (modo === "evita" ? "✔️ evita" : "✔️ metade") : "❌ dano total"}${a.cai && mult > 0 ? ", cai no fosso" : ""}</li>`;
 		}
 		html += "</ul>";
@@ -1164,7 +1168,7 @@
 					else {
 						const d = await new Roll("1d6[impacto]").evaluate();
 						rolls.push(d);
-						await a.applyDamageV2(d, 1);
+						await fdtAplicar.dano(a, d, 1);
 						txt += ` · Reflexos ${rf} ❌ <b>cai no rio</b> (${d.total} de dano). Os tiranos das águas e o cardume atacam!`;
 					}
 				}
@@ -1208,8 +1212,8 @@
 					else {
 						const d = await new Roll("1d6").evaluate();
 						rolls.push(d);
-						await a.toggleStatusEffect("inconsciente", { active: true });
-						await a.update({ "system.attributes.pv.value": a.system.attributes.pv.value - d.total });
+						await fdtAplicar.status(a, "inconsciente", { active: true });
+						await fdtAplicar.perda(a, d.total);
 						txt += ` · Fortitude ${total} contra CD ${cd} ❌ <b>inconsciente</b>, perde ${d.total} PV (e 1d6 por rodada até respirar)`;
 					}
 				}
@@ -1306,15 +1310,14 @@
 			html = "<h3>Frenesi Sangrento</h3><ul>";
 			for (const t of tiranos) {
 				const ef = t.actor.effects.find((e) => e.getFlag("world", "fdtFrenesi"));
-				if (res.hab === "frenesiFim") { if (ef) await ef.delete(); html += `<li>${t.name}: frenesi encerrado.</li>`; continue; }
+				if (res.hab === "frenesiFim") { if (ef) await fdtAplicar.tirarEfeito(t.actor, [ef.id], ef.name); html += `<li>${t.name}: frenesi encerrado.</li>`; continue; }
 				const n = (ef?.getFlag("world", "fdtFrenesi") ?? 0) + 1;
 				const changes = [
 					{ key: "system.modificadores.ataque.geral", value: String(2 * n), type: "add", phase: "initial", priority: null },
 					{ key: "system.modificadores.dano.geral", value: String(2 * n), type: "add", phase: "initial", priority: null }
 				];
 				const nomeEf = `Frenesi Sangrento +${2 * n}`;
-				if (ef) await ef.update({ name: nomeEf, "flags.world.fdtFrenesi": n, "system.changes": changes });
-				else await t.actor.createEmbeddedDocuments("ActiveEffect", [{ name: nomeEf, img: "icons/svg/blood.svg", type: "base", flags: { world: { fdt: "a1templo", fdtFrenesi: n } }, system: { changes } }]);
+				await fdtAplicar.trocar(t.actor, ef, { name: nomeEf, img: "icons/svg/blood.svg", type: "base", flags: { world: { fdt: "a1templo", fdtFrenesi: n } }, system: { changes } }, `${t.name}: ${nomeEf}`);
 				html += `<li>${t.name}: <b>+${2 * n}</b> em ataque e dano até o fim da cena.</li>`;
 			}
 			return ChatMessage.create({ content: html + "</ul>" });
@@ -1329,7 +1332,7 @@
 				const d = await new Roll(`2d6+${adulta ? 9 : 8}[acido]`).evaluate();
 				rolls.push(d);
 				html = `<h3>${fonte.name}: digestão</h3><p><b>${d.total}</b> de ácido em quem está engolido.</p><ul>`;
-				for (const t of presas) { await t.actor.applyDamageV2(d, 1); html += `<li>${t.name}</li>`; }
+				for (const t of presas) { await fdtAplicar.dano(t.actor, d, 1); html += `<li>${t.name}</li>`; }
 				html += "</ul><p style=\"font-size:0.85em\">Escapar: 10 de dano na membrana (Defesa 10). Núcleo: Defesa 12, ignora RD, dano dobrado.</p>";
 				return ChatMessage.create({ content: html, rolls });
 			}
@@ -1342,7 +1345,7 @@
 				const melhor = (Number(t.actor.system.pericias?.acro?.value) || 0) > (Number(t.actor.system.pericias?.luta?.value) || 0) ? "acro" : "luta";
 				const rd = await teste(t.actor, melhor, { titulo: `${fonte.name}: engolir`, motivo: `Teste oposto contra o agarrar da ameba (+${bonusAgarrar}).`, falha: "é engolido." });
 				if (ra.total < rd) { html += `<li>${t.name}: agarrar ${ra.total} contra ${rd} ✔️ não é engolido</li>`; continue; }
-				await t.actor.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(t.actor, [{
 					name: `Engolido (${fonte.name})`, img: "icons/svg/acid.svg", type: "base", statuses: ["agarrado"],
 					description: "Agarrado dentro da ameba. Sofre o ácido no início de cada turno dela.",
 					flags: { world: { fdt: "a1templo", fdtEngolido: fonte.id } }, system: { changes: [] }
@@ -1353,7 +1356,7 @@
 				else {
 					const f = await teste(t.actor, "fort", { cd, titulo: `${fonte.name}: paralisia`, falha: "paralisado por 1 minuto.", sucesso: "imune à paralisia por um dia." });
 					if (f >= cd) { txt += ` Fortitude ${f} ✔️ não fica paralisado (imune por um dia)`; await t.actor.setFlag("world", "fdtImuneAmeba", game.time.worldTime + 86400); }
-					else { txt += ` Fortitude ${f} ❌ <b>paralisado</b> por 1 minuto`; await t.actor.toggleStatusEffect("paralisado", { active: true }); }
+					else { txt += ` Fortitude ${f} ❌ <b>paralisado</b> por 1 minuto`; await fdtAplicar.status(t.actor, "paralisado", { active: true }); }
 				}
 				html += `<li>${t.name}: ${txt}</li>`;
 			}
@@ -1362,8 +1365,8 @@
 		if (res.hab === "expelir") {
 			for (const t of alvos) {
 				const ef = t.actor.effects.filter((e) => e.getFlag("world", "fdtEngolido"));
-				for (const e of ef) await e.delete();
-				await t.actor.toggleStatusEffect("caido", { active: true });
+				if (ef.length) await fdtAplicar.tirarEfeito(t.actor, ef.map((e) => e.id), "engolido");
+				await fdtAplicar.status(t.actor, "caido", { active: true });
 			}
 			return ChatMessage.create({ content: `<p>${alvos.map((t) => t.name).join(", ")} ${alvos.length > 1 ? "rompem" : "rompe"} a membrana e cai${alvos.length > 1 ? "m" : ""} na frente da ameba.</p>` });
 		}
@@ -1373,14 +1376,14 @@
 			rolls.push(d);
 			html = `<h3>Vômito Cáustico</h3><p><b>${d.total}</b> de ácido. Reflexos CD 18 reduz este dano e o da próxima rodada à metade.</p><ul>`;
 			for (const t of alvos) {
-				const v = await teste(t.actor, "refl", { cd: 18, dano: d, metade: true, titulo: "Vômito Cáustico", motivo: "Passar também reduz à metade o ácido da próxima rodada." });
-				const ok = v >= 18;
-				await t.actor.applyDamageV2(d, ok ? 0.5 : 1);
-				await t.actor.createEmbeddedDocuments("ActiveEffect", [{
+				// O card leva o dano e o ácido da próxima rodada (inteiro ou metade): o Mestre aplica pelos botões.
+				const residuo = (ok) => ({
 					name: `Vômito Cáustico (próxima rodada${ok ? ", metade" : ""})`, img: "icons/svg/acid.svg", type: "base", duration: { value: 1, units: "rounds" },
 					description: `${ok ? "1d4" : "2d4"} de ácido no início do próximo turno.`, flags: { world: { fdt: "a1templo" } },
 					system: { changes: [{ key: "danoContinuo", value: ok ? "1d4[acido]" : "2d4[acido]", type: "custom", phase: "initial", priority: null }] }
-				}]);
+				});
+				const v = await teste(t.actor, "refl", { cd: 18, dano: d, metade: true, titulo: "Vômito Cáustico", motivo: "Passar também reduz à metade o ácido da próxima rodada.", falhaEfeito: residuo(false), aoPassar: { efeito: residuo(true) } });
+				const ok = v >= 18;
 				html += `<li>${t.name}: Reflexos ${v} ${ok ? "✔️ metade" : "❌ dano total"}</li>`;
 			}
 			if (fonte?.actor) await fonte.actor.update({ "system.resources.primary.value": 0 });
@@ -1392,8 +1395,8 @@
 			for (const t of alvos) {
 				const v = await teste(t.actor, "fort", { cd: 19, titulo: "Bicada Petrificante", falha: "lento (se já estava lento, petrificado)." });
 				if (v >= 19) { html += `<li>${t.name}: Fortitude ${v} ✔️</li>`; continue; }
-				if (tem(t.actor, "lento")) { await t.actor.toggleStatusEffect("petrificado", { active: true }); html += `<li>${t.name}: Fortitude ${v} ❌ já estava lento: <b>PETRIFICADO</b> (permanente; efeitos que removem paralisia revertem).</li>`; }
-				else { await t.actor.toggleStatusEffect("lento", { active: true }); html += `<li>${t.name}: Fortitude ${v} ❌ <b>lento</b></li>`; }
+				if (tem(t.actor, "lento")) { await fdtAplicar.status(t.actor, "petrificado", { active: true }); html += `<li>${t.name}: Fortitude ${v} ❌ já estava lento: <b>PETRIFICADO</b> (permanente; efeitos que removem paralisia revertem).</li>`; }
+				else { await fdtAplicar.status(t.actor, "lento", { active: true }); html += `<li>${t.name}: Fortitude ${v} ❌ <b>lento</b></li>`; }
 			}
 			return ChatMessage.create({ content: html + "</ul>", rolls });
 		}
@@ -1408,7 +1411,7 @@
 				const v = await teste(t.actor, "fort", { cd: 17, titulo: "Ferrugem contra construto" });
 				if (v >= 17) { html += `<li>${t.name}: Fortitude ${v} ✔️</li>`; continue; }
 				const prox = tem(t.actor, "exausto") ? "paralisado" : tem(t.actor, "fatigado") ? "exausto" : "fatigado";
-				await t.actor.toggleStatusEffect(prox, { active: true });
+				await fdtAplicar.status(t.actor, prox, { active: true });
 				html += `<li>${t.name}: Fortitude ${v} ❌ <b>${prox}</b> (só reparos removem: estátuas do Templo, Ofício [artesão]).</li>`;
 			}
 			return ChatMessage.create({ content: html + "</ul>", rolls });
@@ -1418,11 +1421,10 @@
 			rolls.push(d);
 			html = `<h3>Cardume Carnívoro</h3><p><b>${d.total}</b> de corte (cada 6 somou +1d6: Morte por Mil Dentes).</p><ul>`;
 			for (const t of alvos) {
-				const antes = t.actor.system.attributes.pv.value;
-				await t.actor.applyDamageV2(d, 1);
-				const sofreu = antes - t.actor.system.attributes.pv.value;
-				if (sofreu >= 10) await t.actor.toggleStatusEffect("sangrando", { active: true });
-				html += `<li>${t.name}: sofreu ${sofreu}${sofreu >= 10 ? " · <b>sangrando</b>" : ""}</li>`;
+				await fdtAplicar.dano(t.actor, d, 1);
+				// Sangrando se sofrer 10 ou mais depois da RD: o botão aparece quando o dano rolado chega a 10.
+				if (d.total >= 10) await fdtAplicar.status(t.actor, "sangrando", { active: true });
+				html += `<li>${t.name}: ${d.total} de corte${d.total >= 10 ? " · <b>sangrando</b> se sofrer 10 ou mais depois da RD" : ""}</li>`;
 			}
 			return ChatMessage.create({ content: html + "</ul>", rolls });
 		}
@@ -1459,7 +1461,7 @@
 		const darEfeito = async (papeis, flag, dados) => {
 			for (const a of [...base(papeis), ...atoresDaCena(papeis)]) {
 				if (a.effects.some((e) => e.getFlag("world", flag))) continue;
-				await a.createEmbeddedDocuments("ActiveEffect", [{ ...dados, type: "base", flags: { world: { fdt: "a1templo", [flag]: true } } }]);
+				await fdtAplicar.efeito(a, [{ ...dados, type: "base", flags: { world: { fdt: "a1templo", [flag]: true } } }]);
 			}
 		};
 		const ch = (key, value) => ({ key, value: String(value), type: "add", phase: "initial", priority: null });
@@ -1484,7 +1486,7 @@
 				html += `<p style="font-size:0.85em">${r.total} tokens ocultos em volta de ${ref.name} (selecione um token na Sala da Estátua antes).</p>`;
 			}
 		} else if (res.acao === "alav2") {
-			for (const a of atoresDaCena(["mecanico"])) await a.update({ "system.attributes.pv.value": Math.min(a.system.attributes.pv.value, 10) });
+			for (const a of atoresDaCena(["mecanico"])) await fdtAplicar.ficha(a, { "system.attributes.pv.value": { somar: 0, max: 10 } }, `${a.name}: cai para 10 PV`);
 			await darEfeito(["mecanico"], "fdtAlavanca2", { name: "Encharcados (Alavanca 2)", img: `systems/tormenta20/icons/magias/controlar-agua.webp`, description: "Reduzidos a 10 PV; –5 em todos os testes e na Defesa.",
 				system: { changes: [ch("system.modificadores.pericias.geral", -5), ch("system.modificadores.ataque.geral", -5), ch("system.attributes.defesa.bonus", -5)] } });
 			await darEfeito(["tirano", "barao"], "fdtAlavanca2", { name: "Fortalecidos (Alavanca 2)", img: `systems/tormenta20/icons/magias/controlar-agua.webp`, description: "+3 em testes de ataque e na Defesa.",
@@ -1493,7 +1495,7 @@
 		} else if (res.acao === "desligar") {
 			for (const a of [...game.actors.filter((x) => x.getFlag("world", "fdt") === "a1templo"), ...canvas.tokens.placeables.map((t) => t.actor).filter(Boolean)]) {
 				const ids = a.effects.filter((e) => e.getFlag("world", "fdtAlavanca1") || e.getFlag("world", "fdtAlavanca2")).map((e) => e.id);
-				if (ids.length) await a.deleteEmbeddedDocuments("ActiveEffect", ids);
+				if (ids.length) await fdtAplicar.tirarEfeito(a, ids);
 			}
 			if (est.alav1 && game.time.worldTime - est.alav1 < 3600) ui.notifications.warn("Pelo livro, a Alavanca 1 não pode ser desativada antes de uma hora.");
 			delete est.alav1;
@@ -1628,7 +1630,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 1 · Templo do Vácuo · gerado por a1-templo-do-vacuo.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 1 · Templo do Vácuo · gerado por a1-templo-do-vacuo.js\n${usaFdt(fn) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}${chamar(fn, `(${codigo(fn)})(${dados ? "DADOS" : ""})`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Templo · Busca pelo Templo", "icons/svg/ruins.svg", macroBusca, { pericias: PERICIAS, entradas: ENTRADAS }),

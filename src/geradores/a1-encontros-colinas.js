@@ -26,7 +26,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a1colinas";
@@ -694,7 +699,7 @@
 		const precisa = ["mungoDia", "cacadores"].includes(res.sit) ? 0 : 1;
 		if (atores.length < precisa) return ui.notifications.warn("Selecione o token de quem faz o teste.");
 		const a = atores[0];
-		const status = async (ator, id) => { if (!ator.statuses?.has(id)) await ator.toggleStatusEffect(id, { active: true }); };
+		const status = async (ator, id) => { if (!ator.statuses?.has(id)) await fdtAplicar.status(ator, id, { active: true }); };
 		let html = `<h3>${SITS[res.sit].split(" (")[0]}</h3>`;
 
 		if (res.sit === "tolbert") {
@@ -745,7 +750,7 @@
 				const r = await teste(x, "fort", mod, { cd, titulo: "A bebida de Mungo Joe", sucesso: "+1 PM temporário.", falha: "enjoado por uma cena (na segunda falha, inconsciente por 1d12 horas)." });
 				m.doses++;
 				if (r >= cd) {
-					await x.update({ "system.attributes.pm.temp": (Number(x.system.attributes.pm?.temp) || 0) + 1 });
+					await fdtAplicar.ficha(x, { "system.attributes.pm.temp": { somar: 1 } }, `${x.name}: +1 PM temporário`);
 					html += `<li>${x.name}: Fortitude ${r} (CD ${cd}) ✔️ +1 PM temporário. "Bebo porque é líquido!"</li>`;
 				} else {
 					m.falhas++;
@@ -896,30 +901,28 @@
 			const nossos = a.effects.filter((e) => e.getFlag("world", "fdt") === TAG);
 			if (res.ef === "bencao" || res.ef === "perdicao") {
 				const oposto = nossos.filter((e) => e.getFlag("world", "fdtAbner"));
-				if (oposto.length) await a.deleteEmbeddedDocuments("ActiveEffect", oposto.map((e) => e.id));
+				if (oposto.length) await fdtAplicar.tirarEfeito(a, oposto.map((e) => e.id));
 				const s = res.ef === "bencao" ? 1 : -1;
-				await a.createEmbeddedDocuments("ActiveEffect", [efeito(res.ef === "bencao" ? "Bênção de Abner" : "Perdição de Abner", `systems/tormenta20/icons/magias/${res.ef === "bencao" ? "bencao" : "perdicao"}.webp`,
+				await fdtAplicar.efeito(a, [efeito(res.ef === "bencao" ? "Bênção de Abner" : "Perdição de Abner", `systems/tormenta20/icons/magias/${res.ef === "bencao" ? "bencao" : "perdicao"}.webp`,
 					[ch("system.modificadores.ataque.geral", s), ch("system.modificadores.dano.geral", s)], `${s > 0 ? "+1" : "–1"} em testes de ataque e rolagens de dano até o fim da próxima cena. Bênção e Perdição se anulam.`, { flags: { fdtAbner: true } })]);
 				html += `<li>${a.name}: ${s > 0 ? "abençoado (+1)" : "amaldiçoado (–1)"} até o fim da próxima cena.</li>`;
 			}
 			if (res.ef === "maldicao") {
-				await a.createEmbeddedDocuments("ActiveEffect", [efeito("Maldição de Raguria", "systems/tormenta20/icons/magias/rogar-maldicao.webp",
+				await fdtAplicar.efeito(a, [efeito("Maldição de Raguria", "systems/tormenta20/icons/magias/rogar-maldicao.webp",
 					[ch("system.modificadores.pericias.geral", -5), ch("system.modificadores.ataque.geral", -5), ch("system.attributes.movement.walk.value", 0.5, "multiply")],
 					"Rogar Maldição (debilidade e fraqueza): não pode se comunicar nem lançar magias, –5 em todos os testes e metade do deslocamento. Até o dia seguinte ou o fim da próxima cena relevante.")]);
 				html += `<li>${a.name}: amaldiçoado por Raguria, que sai levitando e gargalhando.</li>`;
 			}
 			if (res.ef === "ensopado") {
-				await a.createEmbeddedDocuments("ActiveEffect", [efeito("Ensopado de Raguria", "systems/tormenta20/icons/itens/gerais/panela.webp",
+				await fdtAplicar.efeito(a, [efeito("Ensopado de Raguria", "systems/tormenta20/icons/itens/gerais/panela.webp",
 					[ch("system.attributes.cd", 1)], "+1 na CD das magias arcanas (o efeito soma na CD geral da ficha; desligue para habilidades não arcanas). A critério do Mestre, bônus em Misticismo. Dura como um prato especial (um dia).")]);
 				html += `<li>${a.name}: em contato com seu lado místico (+1 CD).</li>`;
 			}
 			if (res.ef === "curar") {
 				const r = await new Roll("2d8+2").evaluate();
 				rolls.push(r);
-				const { value: antes, max } = a.system.attributes.pv;
-				const novo = Math.min(max, antes + r.total);
-				await a.update({ "system.attributes.pv.value": novo });
-				html += `<li>${a.name}: +${novo - antes} PV (${r.total} rolados).</li>`;
+				await fdtAplicar.curar(a, r.total);
+				html += `<li>${a.name}: recupera ${r.total} PV.</li>`;
 			}
 			if (res.ef === "cemiterio" || res.ef === "moeda") {
 				const reg = foundry.utils.deepClone(a.getFlag("world", "fdtCemiterio") ?? {});
@@ -930,7 +933,7 @@
 					await moeda.delete();
 					reg.moeda = res.atr;
 					await a.setFlag("world", "fdtCemiterio", reg);
-					await a.createEmbeddedDocuments("ActiveEffect", [efeito(`Moeda-Alma enterrada (+1 ${ATR[res.atr]})`, "systems/tormenta20/icons/itens/gerais/joia-familia.webp",
+					await fdtAplicar.efeito(a, [efeito(`Moeda-Alma enterrada (+1 ${ATR[res.atr]})`, "systems/tormenta20/icons/itens/gerais/joia-familia.webp",
 						[ch(`system.atributos.${res.atr}.bonus`, 1)], "A alma ganha de Tolbert repousa no Cemitério Errante: +1 no atributo, como uma noite ali (o livro não diz se é permanente).")]);
 					html += `<li>${a.name}: enterra a moeda: <b>+1 em ${ATR[res.atr]}</b>.</li>`;
 					continue;
@@ -941,11 +944,11 @@
 				await a.setFlag("world", "fdtCemiterio", reg);
 				const antigo = nossos.filter((e) => e.getFlag("world", "fdtNoite") === res.atr);
 				if (noites === 1) {
-					await a.createEmbeddedDocuments("ActiveEffect", [efeito(`Noite no Cemitério Errante (+1 ${ATR[res.atr]})`, "systems/tormenta20/icons/itens/gerais/terra-de-cemiterio.webp",
+					await fdtAplicar.efeito(a, [efeito(`Noite no Cemitério Errante (+1 ${ATR[res.atr]})`, "systems/tormenta20/icons/itens/gerais/terra-de-cemiterio.webp",
 						[ch(`system.atributos.${res.atr}.bonus`, 1)], "+1 no atributo por uma semana. Uma segunda noite torna o bônus permanente.", { flags: { fdtNoite: res.atr }, duration: { value: 604800, units: "seconds" } })]);
 					html += `<li>${a.name}: não recupera PM esta noite (melancolia), mas ganha <b>+1 em ${ATR[res.atr]}</b> por uma semana.</li>`;
 				} else if (noites === 2) {
-					if (antigo.length) await a.deleteEmbeddedDocuments("ActiveEffect", antigo.map((e) => e.id));
+					if (antigo.length) await fdtAplicar.tirarEfeito(a, antigo.map((e) => e.id));
 					await a.update({ [`system.atributos.${res.atr}.base`]: (Number(a.system.atributos[res.atr].base) || 0) + 1 });
 					html += `<li>${a.name}: segunda noite: o +1 em ${ATR[res.atr]} agora é <b>permanente</b> (somado ao valor base). Não recupera PM.</li>`;
 				} else html += `<li>${a.name}: mais uma noite de melancolia, sem PM recuperados (o bônus já é permanente).</li>`;
@@ -966,13 +969,13 @@
 				}
 				await a.setFlag("world", "fdtEbenezer", eb);
 				const marca = nossos.filter((e) => e.getFlag("world", "fdtEbenezer"));
-				if (marca.length) await a.deleteEmbeddedDocuments("ActiveEffect", marca.map((e) => e.id));
+				if (marca.length) await fdtAplicar.tirarEfeito(a, marca.map((e) => e.id));
 				const partes = [eb.bonus ? `+${eb.bonus} a gastar` : "", eb.rerrolagens ? `${eb.rerrolagens} rerrolagens do Mestre` : ""].filter(Boolean);
-				if (partes.length) await a.createEmbeddedDocuments("ActiveEffect", [efeito(`Profecia de Ebenezer: ${partes.join(", ")}`, "systems/tormenta20/icons/magias/premonicao.webp", [],
+				if (partes.length) await fdtAplicar.efeito(a, [efeito(`Profecia de Ebenezer: ${partes.join(", ")}`, "systems/tormenta20/icons/magias/premonicao.webp", [],
 					"Só um lembrete: não muda nenhum valor. Use a macro Bênçãos e Maldições para gastar.", { flags: { fdtEbenezer: true } })]);
 			}
 			if (res.ef === "remover") {
-				if (nossos.length) await a.deleteEmbeddedDocuments("ActiveEffect", nossos.map((e) => e.id));
+				if (nossos.length) await fdtAplicar.tirarEfeito(a, nossos.map((e) => e.id));
 				html += `<li>${a.name}: ${nossos.length} efeito(s) removido(s).</li>`;
 			}
 		}
@@ -1040,7 +1043,7 @@
 				if (!ok) {
 					const d = await rolar("1d6");
 					nota += `, ${d} de dano`;
-					if (ator) await ator.update({ "system.attributes.pv.value": ator.system.attributes.pv.value - d });
+					if (ator) await fdtAplicar.perda(ator, d, `${ator.name}: ${d} de dano`);
 				}
 			}
 			reg.pos += dist;
@@ -1051,7 +1054,7 @@
 				const f = await testeDe(ator, "fort", fortB, 0, { cd, titulo: "Cansaço da perseguição", falha: "fica fatigado e sai da perseguição." });
 				if (f < cd) {
 					reg.fora = true;
-					if (ator && !ator.statuses?.has("fatigado")) await ator.toggleStatusEffect("fatigado", { active: true });
+					if (ator && !ator.statuses?.has("fatigado")) await fdtAplicar.status(ator, "fatigado", { active: true });
 					nota += `; cansaço: Fortitude ${f} (CD ${cd}) ❌ <b>fatigado, fora</b>`;
 				} else nota += `; cansaço: Fortitude ${f} (CD ${cd}) ✔️`;
 			}
@@ -1111,29 +1114,29 @@
 			const atingidos = funciona ? (alvos.length ? alvos : []) : [user];
 			if (funciona && !alvos.length) html += "<li>Sem alvo mirado: role o dano à mão.</li>";
 			const dano = await rolar(DANO[tipo]);
-			const salvas = funciona ? await fdtTestes(atingidos.map((a) => ({ ator: a, pericia: "refl", cd, dano, metade: true, titulo: item.name, falha: tipo === "fogo" ? "dano total e em chamas." : "dano total." }))) : [];
+			const salvas = funciona ? await fdtTestes(atingidos.map((a) => ({ ator: a, pericia: "refl", cd, dano, metade: true, titulo: item.name, falha: tipo === "fogo" ? "dano total e em chamas." : "dano total.", falhaStatus: tipo === "fogo" ? "emchamas" : undefined }))) : [];
 			rolls.push(...salvas);
 			for (const [i, a] of atingidos.entries()) {
 				const salva = funciona ? salvas[i].total : null;
 				const ok = salva !== null && salva >= cd;
-				await a.applyDamageV2(dano, ok ? 0.5 : 1);
-				if (tipo === "fogo" && !ok && !a.statuses?.has("emchamas")) await a.toggleStatusEffect("emchamas", { active: true });
+				// Com teste, o card leva o dano e a condição; ao contrário (no próprio usuário), os botões vão no resumo.
+				if (!funciona) {
+					await fdtAplicar.dano(a, dano, 1);
+					if (tipo === "fogo") await fdtAplicar.status(a, "emchamas", { active: true });
+				}
 				html += `<li>${a.name}: ${dano.total} de dano${salva !== null ? ` (Reflexos ${salva} contra CD ${cd}${ok ? ", metade" : ""})` : " (no próprio usuário!)"}${tipo === "fogo" && !ok ? ", em chamas" : ""}.</li>`;
 			}
 		} else {
 			const quem = alvos[0] ?? user;
 			if (tipo === "balsamo") {
 				const r = await rolar("2d4");
-				const { value: antes, max } = quem.system.attributes.pv;
-				const novo = funciona ? Math.min(max, antes + r.total) : antes - r.total;
-				await quem.update({ "system.attributes.pv.value": novo });
-				html += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PV` : `<b>sofre ${r.total} de dano</b> com o emplastro`}.</li>`;
+				if (funciona) await fdtAplicar.curar(quem, r.total);
+				else await fdtAplicar.perda(quem, r.total);
+				html += `<li>${quem.name}: ${funciona ? `recupera ${r.total} PV` : `<b>sofre ${r.total} de dano</b> com o emplastro`}.</li>`;
 			} else if (tipo === "essencia") {
 				const r = await rolar("1d4");
-				const { value: antes, max } = quem.system.attributes.pm;
-				const novo = funciona ? Math.min(max, antes + r.total) : Math.max(0, antes - r.total);
-				await quem.update({ "system.attributes.pm.value": novo });
-				html += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PM` : `<b>perde ${antes - novo} PM</b> com o tônico`}.</li>`;
+				await fdtAplicar.pm(quem, funciona ? -r.total : r.total);
+				html += `<li>${quem.name}: ${funciona ? `recupera ${r.total} PM` : `<b>perde ${r.total} PM</b> com o tônico`}.</li>`;
 			}
 		}
 		const qtd = (Number(item.system.qtd) || 1) - 1;
@@ -1148,7 +1151,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(role),
-		command: `// Fim dos Tempos · Arco 1 · Colinas Centrais · gerado por a1-encontros-colinas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 1 · Colinas Centrais · gerado por a1-encontros-colinas.js\n${usaFdt(fn) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}${chamar(fn, `(${codigo(fn)})(${dados ? "DADOS" : ""})`)}`
 	});
 	const slim = (e) => ({ k: e.k, nome: e.nome, tipo: e.tipo, roles: e.roles, resumo: e.resumo, mec: e.mec, uso: e.uso, qtd: e.qtd });
 	const macros = await Macro.createDocuments([

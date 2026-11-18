@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av4";
@@ -624,8 +629,8 @@
 				nomes.push(`${a.name} (imune)`);
 				continue;
 			}
-			await a.toggleStatusEffect("cego", { active: escolha === "cegar" });
-			await a.toggleStatusEffect("ofuscado", { active: escolha === "proteger" });
+			await fdtAplicar.status(a, "cego", { active: escolha === "cegar" });
+			await fdtAplicar.status(a, "ofuscado", { active: escolha === "proteger" });
 			nomes.push(a.name);
 		}
 		const msg = { cegar: "fica <b>cego</b> pela luz", proteger: "protege os olhos e fica <b>ofuscado</b> por 1 rodada (ação de movimento ou 1 PM)", limpar: "sai da luz" }[escolha];
@@ -652,23 +657,21 @@
 			const dano = await new Roll("4d6[fogo]").evaluate();
 			rolls.push(dano);
 			html = `<h3>Canhão de Fogo</h3><p>Linha de 30m: <b>${dano.total}</b> de fogo. Reflexos CD 20 reduz à metade e evita em chamas.</p><ul>`;
-			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano, metade: true, titulo: "Canhão de Fogo", falha: "dano total e fica em chamas." })));
+			const chamas = {
+				name: "Incendiado (em chamas)",
+				img: "icons/magic/fire/flame-burning-embers-yellow.webp",
+				type: "base",
+				statuses: ["emchamas"],
+				description: "1d6 de fogo no início de cada turno. Ação padrão para apagar.",
+				flags: { world: { fdt: "av4", fdtChamas: true } },
+				system: { changes: [{ key: "danoContinuo", value: "1d6[fogo]", type: "custom", phase: "initial", priority: null }] }
+			};
+			// O card leva o dano (metade para quem passa) e o efeito em chamas para quem falha: o Mestre aplica pelos botões.
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano, metade: true, titulo: "Canhão de Fogo", falha: "dano total e fica em chamas.", falhaEfeito: chamas })));
 			for (const [i, a] of alvos.entries()) {
 				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
-				await a.applyDamageV2(dano, ok ? 0.5 : 1);
-				if (!ok && !a.effects.some((e) => e.getFlag("world", "fdtChamas"))) {
-					await a.createEmbeddedDocuments("ActiveEffect", [{
-						name: "Incendiado (em chamas)",
-						img: "icons/magic/fire/flame-burning-embers-yellow.webp",
-						type: "base",
-						statuses: ["emchamas"],
-						description: "1d6 de fogo no início de cada turno. Ação padrão para apagar.",
-						flags: { world: { fdt: "av4", fdtChamas: true } },
-						system: { changes: [{ key: "danoContinuo", value: "1d6[fogo]", type: "custom", phase: "initial", priority: null }] }
-					}]);
-				}
 				html += `<li>${a.name}: Reflexos <b>${r.total}</b> ${ok ? "✔️ metade" : "❌ dano total e em chamas"}</li>`;
 			}
 			html += "</ul>";
@@ -684,14 +687,14 @@
 				if (!ok && res.colide) {
 					const d = await new Roll("1d6[impacto]").evaluate();
 					rolls.push(d);
-					await a.applyDamageV2(d, 1);
+					await fdtAplicar.dano(a, d, 1);
 					extra = `, bate e sofre ${d.total} de impacto`;
 				}
 				html += `<li>${a.name}: Fortitude <b>${r.total}</b> ${ok ? "✔️ empurrado só 3m, sem dano" : `❌ empurrado 6m${extra}`}</li>`;
 			}
 			html += "</ul><p style=\"font-size:0.85em\">Mova os tokens à mão, para longe da Harpia.</p>";
 		}
-		ChatMessage.create({ content: html + "<p style=\"font-size:0.85em\">Dano já aplicado com RD.</p>", rolls });
+		ChatMessage.create({ content: html + "<p style=\"font-size:0.85em\">O Mestre aplica o dano pelos botões (a RD entra na hora).</p>", rolls });
 	}
 
 	async function macroBordo() {
@@ -737,9 +740,9 @@
 				case "piso": {
 					const treinado = a.system.pericias?.acro?.treinado;
 					if (ok) txt += " avança metade do deslocamento";
-					else if (falhaPor >= 5) { txt += " cai"; await a.toggleStatusEffect("caido", { active: true }); }
+					else if (falhaPor >= 5) { txt += " cai"; await fdtAplicar.status(a, "caido", { active: true }); }
 					else txt += " não avança";
-					if (!treinado) { txt += " · desprevenido (não treinado)"; await a.toggleStatusEffect("desprevenido", { active: true }); }
+					if (!treinado) { txt += " · desprevenido (não treinado)"; await fdtAplicar.status(a, "desprevenido", { active: true }); }
 					break;
 				}
 				case "escada": {
@@ -747,8 +750,8 @@
 					else if (falhaPor >= 5) {
 						const d = await new Roll("1d6[impacto]").evaluate();
 						rolls.push(d);
-						await a.applyDamageV2(d, 1);
-						await a.toggleStatusEffect("caido", { active: true });
+						await fdtAplicar.dano(a, d, 1);
+						await fdtAplicar.status(a, "caido", { active: true });
 						txt += ` cai: ${d.total} de impacto e caído`;
 					} else txt += " gasta 4,5m de deslocamento";
 					break;
@@ -810,8 +813,7 @@
 		});
 		if (!res) return;
 		const cura = Math.floor((Number(res.dano) || 0) / 2);
-		const pv = torgo.system.attributes.pv;
-		await torgo.update({ "system.attributes.pv.value": Math.min(pv.value + cura, pv.max) });
+		await fdtAplicar.curar(torgo, cura, `${torgo.name}: recupera ${cura} PV`);
 		ChatMessage.create({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \"Com carga elétrica\" do Olhar).</p>` });
 	}
 
@@ -821,7 +823,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4 · Ataque do Céu", `${T20I}/magias/raio-solar.webp`, macroAtaqueDoCeu),

@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2mini1";
@@ -635,20 +640,18 @@
 		if (!cob) return ui.notifications.warn("O Cobrador não foi encontrado (rode o gerador da Mini-Aventura 1).");
 		const alvos = [...game.user.targets].filter((t) => t.actor);
 		const rolls = [];
-		const cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };
+		const cond = async (a, c) => { if (!a.statuses?.has(c)) await fdtAplicar.status(a, c, { active: true }); };
 		const salvar = async (a, k, o = {}) => { const r = await fdtTeste(a, k, { cd: 28, ...o }); rolls.push(r); return r.total; };
 		const gastar = async (n) => {
 			const pm = Number(cob.system.attributes.pm.value) || 0;
 			if (pm < n) return false;
-			await cob.update({ "system.attributes.pm.value": pm - n });
+			await fdtAplicar.pm(cob, n, `${cob.name}: gasta ${n} PM`);
 			return true;
 		};
 		let html = "<h3>Cobrador da Ploigoníada</h3>";
 		if (res.acao === "turno") {
-			const pv = cob.system.attributes.pv;
-			const novo = Math.min(Number(pv.max) || 400, (Number(pv.value) || 0) + 5);
-			await cob.update({ "system.attributes.pv.value": novo });
-			html += `<p>Cura acelerada: <b>${novo} PV</b>.</p>`;
+			await fdtAplicar.curar(cob, 5, `${cob.name}: cura acelerada 5`);
+			html += `<p>Cura acelerada: <b>+5 PV</b> (botão do Mestre).</p>`;
 		} else if (res.acao === "falar") {
 			const FALAS = ["\"Vocês estão em dívida com a Ploigoníada. Para pagá-la, apresentem o valor previamente combinado. Para morrer, por favor continuem lutando.\"",
 				"\"A resistência ao pagamento foi registrada e será acrescida ao montante devido.\"",
@@ -665,16 +668,14 @@
 			for (const t of res.acao === "silencio" ? alvos : alvos.slice(0, 1)) {
 				const a = t.actor;
 				if (res.acao === "direitos") {
-					const r = await salvar(a, "fort", { titulo: "Ler Seus Direitos", falha: `${res.devedor ? "atordoado" : "pasmo"} por 1 rodada.` });
+					const r = await salvar(a, "fort", { titulo: "Ler Seus Direitos", falha: `${res.devedor ? "atordoado" : "pasmo"} por 1 rodada.`, falhaStatus: res.devedor ? "atordoado" : "pasmo" });
 					const c = res.devedor ? "atordoado" : "pasmo";
-					if (r < 28) await cond(a, c);
 					lista.push(`<li>${t.name}: Fortitude ${r}, ${r >= 28 ? "resiste" : `<b>${c} por 1 rodada</b>`}.</li>`);
 				} else if (res.acao === "negar") {
 					const r = await salvar(a, "vont", { titulo: "Negar Recurso", falha: `não pode usar ${res.habilidade || "a habilidade escolhida"} até o fim da cena.` });
 					lista.push(`<li>${t.name}: Vontade ${r}, ${r >= 28 ? "resiste" : `não pode usar <b>${res.habilidade || "a habilidade escolhida"}</b> até o fim da cena`}.</li>`);
 				} else if (res.acao === "imobilizar") {
-					const r = await salvar(a, "vont", { titulo: "Imobilizar", sucesso: "fica lento.", falha: "fica paralisado." });
-					await cond(a, r >= 28 ? "lento" : "paralisado");
+					const r = await salvar(a, "vont", { titulo: "Imobilizar", sucesso: "fica lento.", falha: "fica paralisado.", falhaStatus: "paralisado", aoPassar: { status: "lento" } });
 					lista.push(`<li>${t.name}: Vontade ${r}, <b>${r >= 28 ? "lento" : "paralisado"}</b>. Ação completa por rodada para um novo teste de Vontade CD 28; passando, liberta-se.</li>`);
 				} else if (res.acao === "silencio") {
 					await cond(a, "surdo");
@@ -718,7 +719,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Mini 1 · Mensagem da Ploigoníada", ICO.pergaminho, macroMensagem),

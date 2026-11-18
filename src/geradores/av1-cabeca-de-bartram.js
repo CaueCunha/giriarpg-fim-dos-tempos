@@ -22,7 +22,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av1";
@@ -600,51 +605,51 @@
 			let n = 0;
 			for (const t of canvas.tokens.placeables) {
 				const ids = t.actor?.effects.filter(ehRitual).map((x) => x.id) ?? [];
-				if (ids.length) { await t.actor.deleteEmbeddedDocuments("ActiveEffect", ids); n += ids.length; }
+				if (ids.length) { await fdtAplicar.tirarEfeito(t.actor, ids); n += ids.length; }
 			}
 			return n;
 		};
 		const pvBartram = () => Number(bartram?.system.attributes.pv.value) || 0;
 		const ferirBartram = async (n) => {
 			if (!bartram) return 0;
+			// O Mestre aplica a perda pelo botão; a mensagem já mostra como Bartram fica.
 			const novo = Math.max(0, pvBartram() - n);
-			await bartram.update({ "system.attributes.pv.value": novo });
+			await fdtAplicar.perda(bartram, n, `Bartram: perde ${n} PV (fica com ${novo})`);
 			return novo;
 		};
 		let html = "<h3>Ritual do Banquete</h3>";
 		if (res.acao === "desvios") {
 			const d = Number(res.desvios) || 0;
 			const pv = d === 0 ? 15 : d === 1 ? 10 : 0;
-			if (bartram) await bartram.update({ "system.attributes.pv.value": pv });
+			if (bartram) await fdtAplicar.ficha(bartram, { "system.attributes.pv.value": pv }, `Bartram: fica com ${pv} PV`);
 			html += `<p>${["<b>Nenhum desvio:</b> Bartram está ferido, mas sem risco de vida.", "<b>Um desvio</b> (o normal): muito ferido e sem alguns membros, mas dá para salvá-lo.", "<b>Dois ou mais desvios:</b> Bartram já foi devorado."][Math.min(d, 2)]}</p>`;
 			if (d < 2) html += "<p>Se o grupo chegar antes de ele ser devorado, pega o ritual pela metade: use <i>1ª rodada</i> quando o combate começar.</p>";
 		}
 		if (res.acao === "inicio") {
-			if (bartram) await bartram.update({ "system.attributes.pv.value": Math.min(pvBartram() || 20, 10) });
+			if (bartram) await fdtAplicar.ficha(bartram, { "system.attributes.pv.value": Math.min(pvBartram() || 20, 10) }, `Bartram: fica com ${Math.min(pvBartram() || 20, 10)} PV`);
 			await limpar();
 			let orcs = 0;
 			let herois = 0;
 			for (const t of canvas.tokens.placeables.filter((x) => x.actor)) {
 				const role = t.actor.getFlag("world", "fdtRole");
-				if (t.actor.getFlag("world", "fdt") === "av1" && ["orc", "khalmyr", "aharadak"].includes(role)) { await t.actor.createEmbeddedDocuments("ActiveEffect", [efeito("Ritual do Banquete (+1 ataque)", "1")]); orcs += 1; }
-				else if (t.actor.type === "character") { await t.actor.createEmbeddedDocuments("ActiveEffect", [efeito("Vapores do caldeirão (–1 ataque)", "-1")]); herois += 1; }
+				if (t.actor.getFlag("world", "fdt") === "av1" && ["orc", "khalmyr", "aharadak"].includes(role)) { await fdtAplicar.efeito(t.actor, [efeito("Ritual do Banquete (+1 ataque)", "1")]); orcs += 1; }
+				else if (t.actor.type === "character") { await fdtAplicar.efeito(t.actor, [efeito("Vapores do caldeirão (–1 ataque)", "-1")]); herois += 1; }
 			}
-			html += `<p>Aharadak corta a mão de Bartram: ele fica com <b>${pvBartram() || 10} PV</b> e sangra 1 PV por rodada. O caldeirão borbulha, soltando vapores nauseabundos.</p><p>Enquanto ele sangrar: orcs <b>+1</b> em ataques (${orcs} tokens) e heróis que respiram <b>–1</b> (${herois} tokens). Tire o efeito de quem não respira.</p>`;
+			html += `<p>Aharadak corta a mão de Bartram: ele fica com <b>${Math.min(pvBartram() || 20, 10)} PV</b> e sangra 1 PV por rodada. O caldeirão borbulha, soltando vapores nauseabundos.</p><p>Enquanto ele sangrar: orcs <b>+1</b> em ataques (${orcs} tokens) e heróis que respiram <b>–1</b> (${herois} tokens). Tire o efeito de quem não respira.</p>`;
 		}
 		if (res.acao === "rodada") {
 			const novo = await ferirBartram(1);
 			html += `<p>Bartram sangra: <b>${novo} PV</b>.</p>`;
-			if (bartram && novo <= 0) html += `<p><b>Bartram morreu.</b> O ritual se completa (${await limpar()} efeitos removidos).</p>`;
+			if (bartram && novo <= 0) html += `<p><b>Bartram morreu.</b> O ritual se completa (${await limpar()} efeito(s) para tirar nos botões).</p>`;
 		}
 		if (res.acao === "naco") {
 			const alvo = [...game.user.targets].find((t) => t.actor);
 			const novo = await ferirBartram(1);
 			if (alvo) {
-				const pv = alvo.actor.system.attributes.pv;
-				await alvo.actor.update({ "system.attributes.pv.temp": Math.max(Number(pv.temp) || 0, 5) });
+				await fdtAplicar.ficha(alvo.actor, { "system.attributes.pv.temp": { maior: 5 } }, `${alvo.name}: 5 PV temporários`);
 			}
 			html += `<p>Ação completa: Aharadak corta um naco de Bartram (<b>${novo} PV</b>) e atira para ${alvo ? alvo.name : "um orc"}, que perde a ação padrão e recebe <b>5 PV temporários</b>.</p>`;
-			if (bartram && novo <= 0) html += `<p><b>Bartram morreu.</b> (${await limpar()} efeitos removidos.)</p>`;
+			if (bartram && novo <= 0) html += `<p><b>Bartram morreu.</b> (${await limpar()} efeito(s) para tirar nos botões.)</p>`;
 		}
 		if (res.acao === "caldeirao") {
 			const tk = canvas.tokens.controlled[0];
@@ -652,15 +657,15 @@
 			const r = await fdtTeste(tk.actor, null, { atributo: "for", cd: 15, titulo: "Empurrar o caldeirão", falha: "falhando por 5 ou mais, entorna o caldeirão sobre si (1d4 de ácido)." });
 			rolls.push(r);
 			html += `<p>${tk.name}: Força <b>${r.total}</b> contra CD 15. `;
-			if (r.total >= 15) html += `O caldeirão tomba e os vapores se dissipam (${await limpar()} efeitos removidos). Os nacos ainda funcionam.</p>`;
+			if (r.total >= 15) html += `O caldeirão tomba e os vapores se dissipam (${await limpar()} efeito(s) para tirar nos botões). Os nacos ainda funcionam.</p>`;
 			else if (r.total <= 10) {
 				const d = await new Roll("1d4[acido]").evaluate();
 				rolls.push(d);
-				try { await tk.actor.applyDamageV2(d, 1); } catch (err) { console.warn(err); }
+				try { await fdtAplicar.dano(tk.actor, d, 1); } catch (err) { console.warn(err); }
 				html += `Falha por 5 ou mais: entorna o caldeirão sobre si mesmo, <b>${d.total} de ácido</b>.</p>`;
 			} else html += "O caldeirão não se mexe.</p>";
 		}
-		if (res.acao === "salvar") html += `<p>Bartram está a salvo e para de sangrar (${await limpar()} efeitos removidos). Sem ele, não há mais nacos. Ele não tem condições de falar: pode ser interrogado na próxima aventura.</p>`;
+		if (res.acao === "salvar") html += `<p>Bartram está a salvo e para de sangrar (${await limpar()} efeito(s) para tirar nos botões). Sem ele, não há mais nacos. Ele não tem condições de falar: pode ser interrogado na próxima aventura.</p>`;
 		ChatMessage.create({ content: html, rolls });
 	}
 
@@ -682,7 +687,7 @@
 		if (res.corrompido) {
 			const r = await new Roll("1[acido] + 1[eletricidade] + 1[fogo] + 1[frio] + 1[luz] + 1[trevas]").evaluate();
 			rolls.push(r);
-			try { await alvo.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+			try { await fdtAplicar.dano(alvo.actor, r, 1); } catch (err) { console.warn(err); }
 			return ChatMessage.create({ rolls, content: `<h3>Metal Arco-Íris</h3><p>Contra ${alvo.name}, corrompido nas Colinas: a essência de Tilliann rejeita a mácula. <b>+1 de cada elemento (+6)</b>, e o portador não pode ser alvo dos membros lefeu.</p>` });
 		}
 		const vulneravel = ELEMENTOS.filter((k) => rs[k]?.vulnerabilidade);
@@ -699,7 +704,7 @@
 		}
 		const r = await new Roll(`1[${tipo}]`).evaluate();
 		rolls.push(r);
-		try { await alvo.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+		try { await fdtAplicar.dano(alvo.actor, r, 1); } catch (err) { console.warn(err); }
 		ChatMessage.create({ rolls, content: `<h3>Metal Arco-Íris</h3><p>${alvo.name} sofre <b>+1 de ${NOME[tipo]}</b>${vulneravel.length ? " (vulnerável)" : ""}${res.lefeu ? ", apesar da imunidade lefeu a elementos" : ""}.</p>` });
 	}
 
@@ -709,7 +714,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 1 · Aventura 1 · gerado por av1-cabeca-de-bartram.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av1 · No Rastro (testes estendidos)", ICO.rastro, macroRastro),

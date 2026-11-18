@@ -25,7 +25,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "fdtpoderes";
@@ -639,24 +644,28 @@
 				if (!hostis(p, alvo) || distancia(p, alvo) > 9) continue;
 				const pa = p.actor;
 				const cd = 10 + Math.floor((Number(pa.system.attributes?.nivel?.value) || 1) / 2) + (Number(pa.system.atributos?.car?.value) || 0);
-				const r = await new Roll("1d20 + @v", { v: Number(alvo.actor.system.pericias?.vont?.value) || 0 }).evaluate();
-				const falhou = r.total < cd;
-				if (falhou) {
-					await alvo.actor.createEmbeddedDocuments("ActiveEffect", [{
-						name: `Provocado por ${pa.name}`,
-						img: "icons/skills/social/intimidation-impressing.webp",
-						type: "base",
-						duration: { value: 1, units: "rounds", expiry: "turnEnd" },
-						description: `<p>Qualquer ação hostil deste turno precisa ter ${esc(pa.name)} como alvo (Provocação Petulante).</p>`,
-						flags: { world: { fdtProvocado: pa.id } },
-						system: { changes: [] }
-					}]);
-				}
-				await ChatMessage.create({
-					speaker: { alias: "Provocação Petulante" },
-					rolls: [r],
-					content: `<p><b>${esc(alvo.name)}</b> começa o turno perto de <b>${esc(pa.name)}</b> e testa Vontade (CD ${cd}): <b>${r.total}</b>. ${falhou ? "Falhou: ações hostis deste turno precisam ter " + esc(pa.name) + " como alvo." : "Passou."}</p>`
-				});
+				// Card de teste: o dono do alvo rola Vontade; o Mestre aplica o efeito pelo botão.
+				const T = game.modules.get(MODULO)?.api?.testes;
+				if (!T) continue;
+				T.pedir({
+					titulo: "Provocação Petulante",
+					texto: `${esc(alvo.name)} começa o turno perto de ${esc(pa.name)}.`,
+					testes: [{ ator: alvo.actor, pericia: "vont", cd }],
+					falha: {
+						texto: `ações hostis deste turno precisam ter ${esc(pa.name)} como alvo.`,
+						efeito: {
+							name: `Provocado por ${pa.name}`,
+							img: "icons/skills/social/intimidation-impressing.webp",
+							type: "base",
+							duration: { value: 1, units: "rounds", expiry: "turnEnd" },
+							description: `<p>Qualquer ação hostil deste turno precisa ter ${esc(pa.name)} como alvo (Provocação Petulante).</p>`,
+							flags: { world: { fdtProvocado: pa.id } },
+							system: { changes: [] }
+						}
+					},
+					esperar: false,
+					speaker: { alias: "Provocação Petulante" }
+				}).catch((err) => console.warn(err));
 			}
 		}
 
@@ -777,7 +786,7 @@
 			ef.name = `${ef.name} (Mau Cheiro)`;
 			ef.duration = { value: dur.total, units: "rounds", expiry: "turnStart" };
 			ef.origin = a.uuid;
-			await x.createEmbeddedDocuments("ActiveEffect", [ef]);
+			await fdtAplicar.efeito(x, [ef]);
 			linhas.push(`${P.esc(t.name)}: ${r.total} · <b>enjoado por ${dur.total} rodada(s)</b>`);
 		}
 		await ChatMessage.create({
@@ -860,7 +869,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS({ fdtRole: role }),
-		command: `// Fim dos Tempos · Poderes dos PJs · gerado por fdt-poderes-pjs.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${COMUM}\nawait (${fn.toString()})(P, typeof scope !== "undefined" ? scope : {});`
+		command: `// Fim dos Tempos · Poderes dos PJs · gerado por fdt-poderes-pjs.js\n${usaFdt(fn) ? FDT_TESTE : ""}${COMUM}\n${chamar(fn, `(${codigo(fn)})(P, typeof scope !== "undefined" ? scope : {})`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("PJs · Corrigir poderes", "icons/tools/smithing/anvil.webp", macroCorrigir, "pjsCorrigir"),

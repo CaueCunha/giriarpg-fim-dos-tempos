@@ -21,7 +21,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av3";
@@ -611,25 +616,19 @@
 		// O dano em jogo é rolado antes, para aparecer no card do teste do jogador.
 		const teste = async (pericia, cd, o = {}) => {
 			const d = o.dano ? await new Roll(o.dano).evaluate() : null;
-			const t = await fdtTeste(alvo, pericia, { cd, dano: d, metade: o.metade, titulo: `Demais Habitantes: ${o.titulo}`, falha: o.falha, sucesso: o.sucesso });
+			// O card leva o dano e a condição da falha: o Mestre aplica pelos botões dele.
+			const t = await fdtTeste(alvo, pericia, { cd, dano: d, metade: o.metade, evita: o.evita, titulo: `Demais Habitantes: ${o.titulo}`, falha: o.falha, falhaStatus: o.falhaStatus, sucesso: o.sucesso });
 			rolls.push(t);
 			return { ok: t.total >= cd, total: t.total, dano: d };
 		};
-		const dano = async (formula, mult) => {
-			const d = typeof formula === "string" ? await new Roll(formula).evaluate() : formula;
-			rolls.push(d);
-			if (mult > 0) await alvo.applyDamageV2(d, mult);
-			return d.total;
-		};
-		const status = (id, ativo = true) => alvo.toggleStatusEffect?.(id, { active: ativo });
+		const status = (id, ativo = true) => fdtAplicar.status(alvo, id, { active: ativo });
 
 		let txt = "";
 		switch (n) {
 			case 1: txt = "<b>Intervenção de Orlo!</b> O NPC mais próximo pode se mover e atacar como reação."; break;
 			case 2: {
-				const s = await teste("refl", 18, { titulo: "Coice!", dano: "2d8[impacto]", metade: true, falha: "dano total e caído." });
-				const v = await dano(s.dano, s.ok ? 0.5 : 1);
-				if (!s.ok) await status("caido");
+				const s = await teste("refl", 18, { titulo: "Coice!", dano: "2d8[impacto]", metade: true, falha: "dano total e caído.", falhaStatus: "caido" });
+				const v = s.dano.total;
 				txt = `<b>Coice!</b> Reflexos ${s.total} (CD 18) ${s.ok ? "✔️ metade do dano" : "❌ dano total e caído"}. Dano rolado: ${v}.`;
 				break;
 			}
@@ -641,23 +640,18 @@
 			}
 			case 4: txt = "<b>Filho corajoso!</b> Uma criança se lança contra o personagem. Ação padrão para afastá-la, ou 50% dos ataques acertam a criança (1 PV) até o fim da cena."; break;
 			case 5: {
-				const s = await teste("vont", 15, { titulo: "Impropérios!", falha: "desprevenido por 1 rodada." });
-				if (!s.ok) await status("desprevenido");
+				const s = await teste("vont", 15, { titulo: "Impropérios!", falha: "desprevenido por 1 rodada.", falhaStatus: "desprevenido" });
 				txt = `<b>Impropérios!</b> Vontade ${s.total} (CD 15) ${s.ok ? "✔️ ignora" : "❌ desprevenido por 1 rodada"}.`;
 				break;
 			}
 			case 6: {
 				const s = await teste("refl", 15, { titulo: "Apedrejamento!", dano: "2d4[impacto]", metade: true });
-				const v = await dano(s.dano, s.ok ? 0.5 : 1);
+				const v = s.dano.total;
 				txt = `<b>Apedrejamento!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ metade" : "❌ dano total"}. Dano rolado: ${v}.`;
 				break;
 			}
 			case 7: {
-				const s = await teste("refl", 15, { titulo: "Vira-latas!", dano: "1d6[corte]", falha: "toma o dano e fica caído.", sucesso: "escapa." });
-				if (!s.ok) {
-					await dano(s.dano, 1);
-					await status("caido");
-				}
+				const s = await teste("refl", 15, { titulo: "Vira-latas!", dano: "1d6[corte]", evita: true, falha: "toma o dano e fica caído.", falhaStatus: "caido", sucesso: "escapa." });
 				txt = `<b>Vira-latas!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ escapa" : "❌ 1d6 de corte e caído"}.`;
 				break;
 			}
@@ -665,7 +659,7 @@
 		}
 		estado.proximo = (pjs.indexOf(alvoC) - 1 + pjs.length) % pjs.length;
 		await combat.setFlag("world", "fdtHabitantes", estado);
-		ChatMessage.create({ content: `<h3>Demais Habitantes · ${alvo.name}</h3><p>${txt}</p><p style="font-size:0.85em">Dano já aplicado com RD; condições marcadas no token.</p>`, rolls });
+		ChatMessage.create({ content: `<h3>Demais Habitantes · ${alvo.name}</h3><p>${txt}</p><p style="font-size:0.85em">O Mestre aplica o dano e as condições pelos botões do card.</p>`, rolls });
 	}
 
 	async function macroRitual() {
@@ -752,14 +746,14 @@
 			const ok = r.total >= 20;
 			const efeito = a.effects.find((e) => e.getFlag("world", "fdtLampiao"));
 			if (!ok && !efeito) {
-				await a.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(a, [{
 					name: "Hipnotizado pelo Lampião",
 					img: "systems/tormenta20/icons/itens/gerais/lampiao.webp",
 					type: "base",
 					description: "Quem usa o lampião decide uma ação de movimento por rodada. Sem ações completas. Novo teste a cada rodada.",
 					flags: { world: { fdt: "av3", fdtLampiao: true } }
 				}]);
-			} else if (ok && efeito) await efeito.delete();
+			} else if (ok && efeito) await fdtAplicar.tirarEfeito(a, [efeito.id], efeito.name);
 			html += `<li>${a.name}: <b>${r.total}</b> ${ok ? "✔️ resiste nesta rodada" : "❌ hipnotizado"}</li>`;
 		}
 		html += "</ul><p style=\"font-size:0.85em\">Passar não dá imunidade: rode de novo a cada rodada.</p>";
@@ -772,7 +766,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av3 · Demais Habitantes", "icons/svg/village.svg", macroHabitantes),

@@ -25,7 +25,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av5";
@@ -523,21 +528,21 @@
 				continue;
 			}
 			const velhos = a.effects.filter(ehFedor);
-			if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos.map((e) => e.id));
+			if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos.map((e) => e.id));
 			if (res.acao === "sair") {
-				if (a.statuses?.has("alquebrado")) await a.toggleStatusEffect("alquebrado", { active: false });
+				if (a.statuses?.has("alquebrado")) await fdtAplicar.status(a, "alquebrado", { active: false });
 				linhas.push(`${t.name}: sem fedor.`);
 				continue;
 			}
 			const lenco = res.acao === "lenco";
-			await a.createEmbeddedDocuments("ActiveEffect", [{
+			await fdtAplicar.efeito(a, [{
 				name: lenco ? "Fedor do esgoto com lenço (–1)" : "Fedor do esgoto (–2)",
 				img: "systems/tormenta20/icons/poderes/ameacas/fumos-toxicos.webp",
 				type: "base",
 				flags: { world: { fdtFedor: true } },
 				system: { changes: [{ key: "system.pericias.*.bonus", value: lenco ? "-1" : "-2", type: "add", phase: "initial", priority: null }] }
 			}]);
-			if (faro && !lenco && !a.statuses?.has("alquebrado")) await a.toggleStatusEffect("alquebrado", { active: true });
+			if (faro && !lenco && !a.statuses?.has("alquebrado")) await fdtAplicar.status(a, "alquebrado", { active: true });
 			linhas.push(`${t.name}: ${lenco ? "–1" : "–2"} em perícias${faro && !lenco ? " e <b>alquebrado</b> (faro)" : ""}.`);
 		}
 		ChatMessage.create({ content: `<h3>Esgoto de Valkaria</h3><ul>${linhas.map((l) => `<li>${l}</li>`).join("")}</ul>`, rolls });
@@ -598,8 +603,8 @@
 				for (const tk of tokens) {
 					const pv = await rolar(t.custo[0]);
 					const pm = await rolar(t.custo[1]);
-					const at = tk.actor.system.attributes;
-					await tk.actor.update({ "system.attributes.pv.value": at.pv.value - pv.total, "system.attributes.pm.value": Math.max(0, (Number(at.pm?.value) || 0) - pm.total) });
+					await fdtAplicar.perda(tk.actor, pv.total);
+					await fdtAplicar.pm(tk.actor, pm.total);
 					html += `<li>${tk.name}: –${pv.total} PV, –${pm.total} PM${k === "mapear" ? " (só voltam com descanso fora do esgoto)" : ""}.</li>`;
 				}
 				html += "</ul>";
@@ -741,7 +746,7 @@
 			for (const t of tokens) {
 				const d = await rolar("1d6");
 				const dano = await new Roll(`${d.total}[impacto]`).evaluate();
-				try { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
+				try { await fdtAplicar.dano(t.actor, dano, 1); } catch (err) { console.warn(err); }
 				html += `<li>${t.name}: ${d.total} de impacto.</li>`;
 			}
 			html += "</ul>";
@@ -771,14 +776,14 @@
 			const a = t.actor;
 			if (res.acao === "sumir" || res.acao === "aparecer") {
 				const fx = a.effects.find((e) => e.statuses?.has("invisivel") && e.name.startsWith("Invisível"));
-				if (fx) await fx.update({ disabled: res.acao === "aparecer" });
-				else if (a.statuses?.has("invisivel") !== (res.acao === "sumir")) await a.toggleStatusEffect("invisivel", { active: res.acao === "sumir" });
+				if (fx) await fdtAplicar.ligar(a, fx, res.acao === "sumir");
+				else if (a.statuses?.has("invisivel") !== (res.acao === "sumir")) await fdtAplicar.status(a, "invisivel", { active: res.acao === "sumir" });
 				linhas.push(`${t.name}: ${res.acao === "sumir" ? "invisível" : "visível"}.`);
 			} else {
 				const custo = res.acao === "ver2" ? 2 : 1;
 				const pm = Number(a.system.attributes?.pm?.value) || 0;
 				if (pm < custo) { linhas.push(`${t.name}: sem PM suficientes.`); continue; }
-				await a.update({ "system.attributes.pm.value": pm - custo });
+				await fdtAplicar.pm(a, custo, `${t.name}: gasta ${custo} PM`);
 				linhas.push(`${t.name} gasta uma ação de movimento e ${custo} PM: ignora a invisibilidade até o início do próximo turno.`);
 			}
 		}
@@ -791,7 +796,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 5 · gerado por a2-av5-tuneis-famintos.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av5 · Esgoto (fedor e infecção)", `${PA}/fumos-toxicos.webp`, macroEsgoto),

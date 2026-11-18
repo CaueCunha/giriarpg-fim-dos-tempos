@@ -22,7 +22,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av0";
@@ -628,7 +633,7 @@
 			if (ev.testes) {
 				const [k, cd] = ev.testes.reduce((m, t) => (bonus(a, t[0]) - t[1] > bonus(a, m[0]) - m[1] ? t : m));
 				const danoEv = ev.dano && !ev.atalho ? await new Roll(ev.dano).evaluate() : null;
-				const r = await teste(a, k, { cd, dano: danoEv, titulo: `Perseguição · ${ev.nome}`, falha: ev.atalho ? "avança só metade." : `avança só metade${ev.dano ? " e toma o dano" : ""}${ev.perdeRodada ? " e perde a próxima rodada" : ""}.`, sucesso: ev.atalho ? "avança o dobro +5." : "" });
+				const r = await teste(a, k, { cd, dano: danoEv, evita: !!danoEv, titulo: `Perseguição · ${ev.nome}`, falha: ev.atalho ? "avança só metade." : `avança só metade${ev.dano ? " e toma o dano" : ""}${ev.perdeRodada ? " e perde a próxima rodada" : ""}.`, sucesso: ev.atalho ? "avança o dobro +5." : "" });
 				const ok = r.total >= cd;
 				evTxt = `${NOMES[k]} ${r.total} ${ok ? "✔️" : "❌"}`;
 				if (ev.atalho) {
@@ -639,7 +644,6 @@
 					if (ev.dano) {
 						const dano = danoEv;
 						rolls.push(dano);
-						try { await a.applyDamageV2(dano, 1); } catch (e) { console.warn(e); }
 						evTxt += ` (${dano.total} de dano)`;
 					}
 					if (ev.penal) x.penal += ev.penal;
@@ -703,7 +707,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 0 · gerado por a2-av0-valkaria.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 0 · gerado por a2-av0-valkaria.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Arco 2 · Lei & Ordem", "icons/svg/book.svg", macroLeiOrdem),

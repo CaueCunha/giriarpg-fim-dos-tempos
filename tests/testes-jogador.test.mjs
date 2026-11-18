@@ -1,6 +1,6 @@
 /**
- * Testes pedidos pelas macros (scripts/testes.mjs): a macro manda um card ao chat com o teste, a CD e o dano
- * em jogo, o jogador clica e rola pela ficha, e a macro continua com o resultado.
+ * Testes no chat (scripts/testes.mjs, no padrão do Duelo de Dragões): a macro manda um card com o dano já rolado,
+ * cada dono clica em Rolar e rola pela ficha, o resultado volta ao Mestre (socket) e só ele aplica pelos botões.
  */
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -12,117 +12,156 @@ async function mesa() {
 	const mod = await carregarModulo(mundo);
 	mundo.responderTestes = false;
 	const pjs = await prepararMesa(mundo, { alvoNpc: false });
-	const npc = await mundo.classes.Actor.create({ name: "Bandido", type: "npc" });
-	return { mundo, api: mod.api, pjs, npc };
+	return { mundo, api: mod.api, T: mod.api.testes, pjs };
 }
-const cardsDe = (mundo) => mundo.chat.filter((m) => m.flags?.[MODULO]?.teste);
+const cardsDe = (mundo) => mundo.chat.filter((m) => m.flags?.[MODULO]?.pedido);
 const espera = () => new Promise((r) => setTimeout(r, 5));
+const pv = (a) => a.system.attributes.pv.value;
+const acaoDe = (msg, tipo, ator) => (msg.flags[MODULO].acoes ?? []).findIndex((a) => a.tipo === tipo && (!ator || a.ator === ator.uuid));
 
-test("PJ com jogador conectado: card com CD, dano e botão; a macro espera o jogador rolar", async () => {
-	const { mundo, api, pjs } = await mesa();
-	const pj = pjs[0].pj;
+test("card: classes do sistema, dano só no conteúdo (roll--dano), botão Rolar por personagem", async () => {
+	const { mundo, T, pjs } = await mesa();
 	const dano = await new globalThis.Roll("4d6[fogo]").evaluate();
 	let pronto = false;
-	const promessa = api.pedirTeste({ ator: pj, pericia: "refl", cd: 20, extra: 2, dano, metade: true, titulo: "Canhão de Fogo" }).then((r) => ((pronto = true), r));
-	await espera();
-	const [card] = cardsDe(mundo);
-	assert.ok(card, "o card não foi para o chat");
-	assert.match(card.content, /Canhão de Fogo/);
-	assert.match(card.content, /CD 20/);
-	assert.match(card.content, new RegExp(`Dano em jogo: <b>${dano.total}</b>`));
-	assert.match(card.content, /fdt-teste-rolar/);
-	assert.equal(card.rolls[0], dano, "a rolagem de dano vai junto no card");
-	assert.equal(pronto, false, "a macro não pode seguir antes do jogador rolar");
-
-	const resposta = await api.responderTeste(card.flags[MODULO].teste.id);
-	const r = await promessa;
-	const rolagem = mundo.chat.find((m) => m.flags?.tormenta20?.rollTotal !== undefined);
-	assert.ok(rolagem, "o jogador rola pela ficha (card do sistema)");
-	assert.equal(r.total, rolagem.flags.tormenta20.rollTotal + 2, "total = rolagem do jogador + extra da macro");
-	assert.equal(resposta.total, r.total);
-	assert.ok(r._evaluated);
-	assert.equal(typeof r.options.fdt.natural, "number");
-	assert.equal(await api.responderTeste(card.flags[MODULO].teste.id), null, "não rola duas vezes");
-	mundo.encerrar();
-});
-
-test("NPC, PJ sem jogador e a opção desligada: a macro rola sozinha, sem card", async () => {
-	const { mundo, api, pjs, npc } = await mesa();
-	const r1 = await api.pedirTeste({ ator: npc, pericia: "fort", cd: 15 });
-	assert.ok(r1._evaluated);
-	assert.equal(cardsDe(mundo).length, 0);
-
-	const orfao = await mundo.criarPJ("Sem Jogador", { nivel: 3 });
-	await api.pedirTeste({ ator: orfao, pericia: "vont" });
-	assert.equal(cardsDe(mundo).length, 0, "PJ sem jogador conectado");
-
-	await mundo.game.settings.set(MODULO, "testesDosJogadores", false);
-	const r3 = await api.pedirTeste({ ator: pjs[1].pj, atributo: "for", extra: 3 });
-	assert.ok(r3.total >= 4);
-	assert.equal(cardsDe(mundo).length, 0, "opção desligada");
-	mundo.encerrar();
-});
-
-test("vários PJs ao mesmo tempo: todos os cards saem antes de alguém rolar", async () => {
-	const { mundo, api, pjs } = await mesa();
-	const promessa = api.pedirTestes(pjs.map(({ pj }) => ({ ator: pj, pericia: "vont", cd: 15 })));
+	const promessa = T.pedir({ titulo: "Canhão de Fogo", testes: pjs.slice(0, 2).map(({ pj }) => ({ ator: pj, pericia: "refl", cd: 20 })), dano, sucesso: "metade" }).then((r) => ((pronto = true), r));
 	await espera();
 	const cards = cardsDe(mundo);
-	assert.equal(cards.length, pjs.length);
-	for (const c of [...cards].reverse()) await api.responderTeste(c.flags[MODULO].teste.id);
+	assert.equal(cards.length, 1, "um card só para todos");
+	const [card] = cards;
+	assert.match(card.content, /class="fdt-pedido tormenta20 item-card"/);
+	assert.match(card.content, /class="roll roll--dano"/);
+	assert.equal((card.rolls ?? []).length, 0, "a rolagem não vai em rolls");
+	assert.equal((card.content.match(/class="fdt-rolar"/g) ?? []).length, 2, "um botão Rolar por personagem");
+	assert.match(card.content, /CD 20/);
+	assert.equal(pronto, false, "a macro espera os jogadores");
+
+	for (const i of [0, 1]) await T._teste.clicarRolar(mundo.game.messages.get(card.id), i, "refl");
 	const rs = await promessa;
-	assert.equal(rs.length, pjs.length);
-	for (const r of rs) assert.ok(r._evaluated);
+	assert.equal(rs.length, 2);
+	assert.equal(mundo.chat.filter((m) => m.flags?.tormenta20?.rollTotal !== undefined).length, 2, "cada um rola pela ficha uma vez");
+	const fim = mundo.game.messages.get(card.id);
+	assert.ok(fim.flags[MODULO].pedido.fechado);
+	assert.equal(fim.flags[MODULO].acoes.filter((a) => a.tipo === "dano").length, 2, "um botão de dano para cada um");
+	for (const a of fim.flags[MODULO].acoes) assert.equal(a.mult, rs[a.linha].passou ? 0.5 : 1);
+	assert.match(fim.content, /fdt-acao fdt-mestre/, "botões só do Mestre");
+	assert.equal(await T._teste.clicarRolar(fim, 0, "refl"), null, "não rola duas vezes");
 	mundo.encerrar();
 });
 
-test("jogador em outro computador: a resposta volta por socket para quem rodou a macro", async () => {
-	const { mundo, api, pjs } = await mesa();
+test("nada é aplicado até o Mestre clicar; o botão aplica dano e condição uma vez", async () => {
+	const { mundo, T, pjs } = await mesa();
+	const pj = pjs[0].pj;
+	const antes = pv(pj);
+	const dano = await new globalThis.Roll("10[fogo]").evaluate();
+	const promessa = T.pedir({ titulo: "Armadilha", testes: [{ ator: pj, pericia: "refl", cd: 99 }], dano, sucesso: "evita", falha: { texto: "fica em chamas.", status: "emchamas" } });
+	await espera();
+	const [card] = cardsDe(mundo);
+	await T._teste.clicarRolar(card, 0, "refl");
+	const [r] = await promessa;
+	assert.equal(r.passou, false);
+	assert.equal(pv(pj), antes, "o teste não aplica nada sozinho");
+	assert.ok(!pj.statuses?.has?.("emchamas"));
+	let msg = mundo.game.messages.get(card.id);
+	await T._teste.executarAcao(msg, acaoDe(msg, "dano", pj));
+	assert.ok(pv(pj) < antes, "o botão de dano aplicou");
+	const depois = pv(pj);
+	msg = mundo.game.messages.get(card.id);
+	await T._teste.executarAcao(msg, acaoDe(msg, "dano", pj));
+	assert.equal(pv(pj), depois, "o mesmo botão não aplica duas vezes");
+	await T._teste.executarAcao(msg, acaoDe(msg, "status", pj));
+	assert.ok(pj.statuses.has("emchamas"), "o botão de condição aplicou");
+	mundo.encerrar();
+});
+
+test("atalho das macros (fdtTestes): pedidos com o mesmo título e dano vão num card, resultados na ordem", async () => {
+	const { mundo, T, pjs } = await mesa();
+	mundo.responderTestes = true;
+	const dano = await new globalThis.Roll("2d12[psiquico]").evaluate();
+	const rs = await T.lista(pjs.map(({ pj }) => ({ ator: pj, pericia: "vont", cd: 15, extra: 2, dano, metade: true, titulo: "Surto Psíquico" })));
+	assert.equal(cardsDe(mundo).length, 1);
+	assert.equal(rs.length, pjs.length);
+	const fichas = mundo.chat.filter((m) => m.flags?.tormenta20?.rollTotal !== undefined);
+	for (const [i, r] of rs.entries()) {
+		assert.ok(r._evaluated);
+		assert.equal(r.total, fichas[i].flags.tormenta20.rollTotal + 2, "total = rolagem do jogador + extra da macro");
+		assert.equal(typeof r.options.fdt.natural, "number");
+	}
+	// O resumo da macro leva as rolagens da cena: o dano e os totais já mostrados saem.
+	const outra = await new globalThis.Roll("1d4").evaluate();
+	const resumo = await mundo.ChatMessage.create({ content: "<p>resumo</p>", rolls: [dano, ...rs, outra] });
+	assert.deepEqual(resumo.rolls, [outra], "nada repetido no chat");
+	mundo.encerrar();
+});
+
+test("jogador em outro computador: rola pela ficha e o resultado volta ao Mestre pelo socket", async () => {
+	const { mundo, T, pjs } = await mesa();
 	const enviados = [];
 	let ouvinte = null;
 	mundo.game.socket = { on: (canal, fn) => { assert.equal(canal, `module.${MODULO}`); ouvinte = fn; }, emit: (canal, dados) => enviados.push(dados) };
 	mundo.chamarHook("ready");
 	await mundo.aguardarOcioso();
 	assert.ok(ouvinte, "o módulo escuta o socket");
-
-	// Clique num card que não foi pedido neste computador: rola e manda pelo socket.
-	const card = { flags: { [MODULO]: { teste: { id: "outroPC0000000001", ator: pjs[2].pj.uuid, pericia: "atle", extra: 1 } } } };
-	const resp = await api.responderTeste(card);
-	assert.equal(enviados.length, 1);
-	assert.equal(enviados[0].id, "outroPC0000000001");
-	assert.equal(enviados[0].total, resp.total);
-
-	// Quem pediu recebe a resposta pelo socket.
-	const promessa = api.pedirTeste({ ator: pjs[0].pj, pericia: "luta" });
+	const promessa = T.pedir({ titulo: "Medo", testes: [{ ator: pjs[1].pj, pericia: "vont", cd: 15 }] });
 	await espera();
-	const pedido = cardsDe(mundo).at(-1).flags[MODULO].teste;
-	ouvinte({ tipo: "teste", id: pedido.id, total: 17, natural: 12, quem: "Jogador 1" });
-	const r = await promessa;
-	assert.equal(r.total, 17);
-	assert.equal(r.options.fdt.quem, "Jogador 1");
+	const [card] = cardsDe(mundo);
+	// O jogador (dono do PJ, não Mestre) clica.
+	const mestre = mundo.usuario;
+	mundo.usuario = pjs[1].jog;
+	const dados = await T._teste.clicarRolar(card, 0, "vont");
+	mundo.usuario = mestre;
+	assert.equal(enviados.length, 1, "o resultado vai pelo socket");
+	assert.equal(enviados[0].tipo, "resultado");
+	assert.equal(enviados[0].total, dados.total);
+	assert.ok(!mundo.game.messages.get(card.id).flags[MODULO].pedido.linhas[0].feito, "o jogador não mexe no card");
+	// O Mestre recebe e anota.
+	ouvinte(enviados[0]);
+	const [r] = await promessa;
+	assert.equal(r.total, dados.total);
 	mundo.encerrar();
 });
 
-test("o dano do card não rola de novo no resumo da macro (nada duplicado no chat)", async () => {
-	const { mundo, api, pjs } = await mesa();
+test("coletor (fdtAplicar): as macros só deixam botões para o Mestre", async () => {
+	const { mundo, T, pjs } = await mesa();
 	const pj = pjs[0].pj;
-	const dano = await new globalThis.Roll("2d12[psiquico]").evaluate();
-	const promessa = api.pedirTeste({ ator: pj, pericia: "vont", cd: 25, dano, metade: true });
-	await espera();
-	const [card] = cardsDe(mundo);
-	await api.responderTeste(card.flags[MODULO].teste.id);
-	const r = await promessa;
-	assert.equal(cardsDe(mundo).length, 1, "um card só");
-	assert.equal(mundo.chat.filter((m) => m.flags?.tormenta20?.rollTotal !== undefined).length, 1, "o jogador rola uma vez só");
-	// O resumo da macro costuma mandar as rolagens da cena (incluindo o dano que já foi no card).
-	const outra = await new globalThis.Roll("1d4").evaluate();
-	const resumo = await mundo.ChatMessage.create({ content: "<p>Surto Psíquico</p>", rolls: [dano, r, outra] });
-	assert.ok(!resumo.rolls.includes(dano), "o dano já mostrado no card sai do resumo");
-	assert.ok(resumo.rolls.includes(outra), "as outras rolagens ficam");
-	// Sem card (NPC), o dano não foi ao chat: fica no resumo.
-	const npcDano = await new globalThis.Roll("2d12").evaluate();
-	await api.pedirTeste({ ator: await mundo.classes.Actor.create({ name: "Ogro", type: "npc" }), pericia: "vont", dano: npcDano });
-	const resumo2 = await mundo.ChatMessage.create({ content: "<p>x</p>", rolls: [npcDano] });
-	assert.ok(resumo2.rolls.includes(npcDano));
+	const antes = { pv: pv(pj), pm: pj.system.attributes.pm.value };
+	const A = T.coletor();
+	await A.dano(pj, await new globalThis.Roll("5[corte]").evaluate(), 1);
+	await A.pm(pj, 1);
+	await A.status(pj, "abalado", { active: true });
+	await A.efeito(pj, [{ name: "Teste", type: "base", system: { changes: [] } }]);
+	assert.equal(A.pendentes(), 4);
+	assert.equal(pv(pj), antes.pv);
+	assert.equal(pj.system.attributes.pm.value, antes.pm);
+	const msg = await A.enviar({ content: "<h3>Resumo</h3>" });
+	assert.match(msg.content, /fdt-acoes fdt-mestre/);
+	assert.equal(msg.flags[MODULO].acoes.length, 4);
+	for (const i of [0, 1, 2, 3]) await T._teste.executarAcao(mundo.game.messages.get(msg.id), i);
+	assert.ok(pv(pj) < antes.pv);
+	assert.equal(pj.system.attributes.pm.value, Math.max(0, antes.pm - 1));
+	assert.ok(pj.statuses.has("abalado"));
+	assert.ok(pj.effects.some((e) => e.name === "Teste"));
+	assert.equal(await A.fim("nada"), null, "sem pendências, fim não manda nada");
+	mundo.encerrar();
+});
+
+test("macros do mundo se atualizam sozinhas e as editadas ficam guardadas numa cópia", async () => {
+	const { mundo, api } = await mesa();
+	const pack = mundo.game.packs.get(`${MODULO}.macros`);
+	const [i1, i2] = pack.index.contents.slice(0, 2);
+	const m1 = await pack.getDocument(i1._id);
+	const m2 = await pack.getDocument(i2._id);
+	const fonte = (m) => ({ ...m.toObject(), _stats: { compendiumSource: m.uuid } });
+	// Uma igual a uma versão antiga do compêndio (sem edição) e outra editada pelo Mestre.
+	const [w1, w2] = await mundo.classes.Macro.createDocuments([fonte(m1), { ...fonte(m2), command: "// minha versão\nconsole.log(1);" }]);
+	await w1.update({ command: m1.command });
+	const r = await api.atualizarMacros({ rodada: "teste", forcar: true });
+	assert.equal(r.trocadas, 1, "só a editada difere do compêndio");
+	assert.equal(r.copias, 1);
+	assert.equal(mundo.game.macros.get(w2.id).command, m2.command, "a macro do mundo recebeu a versão nova");
+	const copia = mundo.game.macros.find((m) => m.name === `${m2.name} (sua edição)`);
+	assert.ok(copia, "cópia da edição");
+	assert.match(copia.command, /minha versão/);
+	assert.match(mundo.game.folders.get(copia.folder?.id ?? copia.folder)?.name ?? "", /Cópias das suas edições/);
+	assert.equal(await api.atualizarMacros({ rodada: "teste" }), null, "uma vez por rodada");
 	mundo.encerrar();
 });
