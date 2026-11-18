@@ -19,7 +19,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2mini2";
@@ -546,7 +551,7 @@
 				const r = testes[i].total;
 				const metade = r >= 20;
 				const total = metade ? Math.floor(dano.total / 2) : dano.total;
-				try { await t.actor.applyDamageV2(await new Roll(`${total}[fogo]`).evaluate(), 1); } catch (err) { console.warn(err); }
+				try { await fdtAplicar.dano(t.actor, await new Roll(`${total}[fogo]`).evaluate(), 1); } catch (err) { console.warn(err); }
 				linhas.push(`<li>${t.name}: Reflexos ${r}, ${metade ? "metade" : "dano total"} (${total}).</li>`);
 			}
 			return `<p><b>O barril explode!</b> ${dano.total} de fogo em todos os quadrados adjacentes (Reflexos CD 20 reduz à metade). Restam ${e.barris} barris.</p>${linhas.length ? `<ul>${linhas.join("")}</ul>` : "<p>Mire as criaturas adjacentes para aplicar o dano.</p>"}`;
@@ -581,7 +586,7 @@
 			if (!tk || !alvo) return ui.notifications.warn("Selecione quem espanta as pombas e mire o oponente.");
 			if (e.pombas <= 0) return ui.notifications.warn("Não sobrou nenhum bando de pombas.");
 			e.pombas -= 1;
-			await alvo.actor.createEmbeddedDocuments("ActiveEffect", [{
+			await fdtAplicar.efeito(alvo.actor, [{
 				name: "Pombas! (–5 Defesa e Reflexos)", img: "systems/tormenta20/icons/itens/gerais/aves.webp", type: "base",
 				duration: { value: 1, units: "rounds" },
 				system: { changes: [
@@ -620,11 +625,11 @@
 		if (res.acao === "explorar") html += `<p><b>Livre.</b> ${alvo.name} perde a ação padrão nesta rodada. Até o fim da rodada, <b>todos os ataques do Replicoide são Ataques Furtivos</b> (+6d6: marque na janela de ataque).</p>`;
 		if (res.acao === "sacrificio") html += `<p><b>Reação.</b> O Replicoide puxa ${alvo.name} para a frente: o comandado sofre o dano ou efeito no lugar dele. (Só um comandado em alcance curto que não tenha sido alvo do mesmo efeito.)</p>`;
 		if (res.acao === "vulnerabilidade") {
-			await alvo.actor.createEmbeddedDocuments("ActiveEffect", [fx("Vulnerabilidade criada (–5 Defesa)", [["system.attributes.defesa.bonus", "-5"]])]);
+			await fdtAplicar.efeito(alvo.actor, [fx("Vulnerabilidade criada (–5 Defesa)", [["system.attributes.defesa.bonus", "-5"]])]);
 			html += `<p><b>Reação.</b> O Replicoide abre mão do Ataque Furtivo: ${alvo.name} sofre <b>–5 na Defesa</b> até o fim da cena (apague o efeito ao fim da cena).</p>`;
 		}
 		if (res.acao === "embutido") {
-			if (!alvo.actor.statuses?.has("surpreendido")) await alvo.actor.toggleStatusEffect("surpreendido", { active: true });
+			if (!alvo.actor.statuses?.has("surpreendido")) await fdtAplicar.status(alvo.actor, "surpreendido", { active: true });
 			html += `<p>A pistola sai do braço do golem: ${alvo.name} fica <b>surpreendido</b> contra este ataque (só na primeira vez em cada cena). Tire a condição depois do ataque.</p>`;
 		}
 		ChatMessage.create({ content: html });
@@ -665,17 +670,17 @@
 				if (!passou) {
 					const tam = t.actor.system.tracos?.tamanho ?? "med";
 					if (["min", "peq", "med"].includes(tam)) {
-						if (!t.actor.statuses?.has("caido")) await t.actor.toggleStatusEffect("caido", { active: true });
+						if (!t.actor.statuses?.has("caido")) await fdtAplicar.status(t.actor, "caido", { active: true });
 						extra = ", <b>caído</b> e empurrado 6m";
 						if (res.parede) {
 							const pd = await new Roll("2d6").evaluate();
 							rolls.push(pd);
-							try { await t.actor.applyDamageV2(await new Roll(`${pd.total}[impacto]`).evaluate(), 1); } catch (err) { console.warn(err); }
+							try { await fdtAplicar.dano(t.actor, await new Roll(`${pd.total}[impacto]`).evaluate(), 1); } catch (err) { console.warn(err); }
 							extra += ` (bate na parede: +${pd.total} de impacto)`;
 						}
 					}
 				}
-				try { await t.actor.applyDamageV2(await new Roll(`${total}[frio]`).evaluate(), 1); } catch (err) { console.warn(err); }
+				try { await fdtAplicar.dano(t.actor, await new Roll(`${total}[frio]`).evaluate(), 1); } catch (err) { console.warn(err); }
 				linhas.push(`<li>${t.name}: Fortitude ${r.total}, ${passou ? "metade" : "dano total"} (${total} de frio)${extra}.</li>`);
 			}
 			html += `<p><b>Sopro das Uivantes:</b> cone de 9m, ${dano.total} de frio.</p>${linhas.length ? `<ul>${linhas.join("")}</ul>` : "<p>Mire os alvos no cone.</p>"}`;
@@ -723,7 +728,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 2 · gerado por a2-mini2-irmandade-maxima.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Mini 2 · Paollus Bate à Porta", ICO.paollus, macroPaollus),

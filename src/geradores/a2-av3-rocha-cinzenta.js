@@ -24,7 +24,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av3";
@@ -759,17 +764,17 @@
 			if (res.acao === "entrar") {
 				if (implante) { linhas.push(`${t.name}: tem o implante, mantém as habilidades.`); continue; }
 				await a.update({ "system.attributes.pm.value": 0 });
-				if (!limites.length) await a.createEmbeddedDocuments("ActiveEffect", [LIMITES]);
+				if (!limites.length) await fdtAplicar.efeito(a, [LIMITES]);
 				linhas.push(`${t.name}: sem PM, sem magia, sem equipamento.`);
 			} else if (res.acao === "sair") {
-				if (limites.length) await a.deleteEmbeddedDocuments("ActiveEffect", limites.map((e) => e.id));
+				if (limites.length) await fdtAplicar.tirarEfeito(a, limites.map((e) => e.id));
 				linhas.push(`${t.name}: fora das muralhas, habilidades de volta.`);
 			} else if (res.acao === "implante") {
-				if (limites.length) await a.deleteEmbeddedDocuments("ActiveEffect", limites.map((e) => e.id));
-				if (!implante) await a.createEmbeddedDocuments("ActiveEffect", [IMPLANTE]);
+				if (limites.length) await fdtAplicar.tirarEfeito(a, limites.map((e) => e.id));
+				if (!implante) await fdtAplicar.efeito(a, [IMPLANTE]);
 				linhas.push(`${t.name}: com o implante de cristal rosado.`);
 			} else {
-				if (implante) await a.deleteEmbeddedDocuments("ActiveEffect", [implante.id]);
+				if (implante) await fdtAplicar.tirarEfeito(a, [implante.id]);
 				linhas.push(`${t.name}: sem o implante.`);
 			}
 		}
@@ -815,20 +820,20 @@
 			let efeito;
 			if (cat === 0) {
 				await a.update({ "system.attributes.pv.value": -1 });
-				for (const s of ["inconsciente", "sangrando"]) if (!a.statuses?.has(s)) await a.toggleStatusEffect(s, { active: true });
+				for (const s of ["inconsciente", "sangrando"]) if (!a.statuses?.has(s)) await fdtAplicar.status(a, s, { active: true });
 				efeito = "fica com <b>–1 PV, inconsciente e sangrando</b>; Tryphne não tem PM para impedir a morte.";
 			} else if (cat === 1) {
 				await a.update({ "system.attributes.pv.value": Math.min(pv.value, Math.ceil(pv.max / 2)) });
-				if (!a.statuses?.has("debilitado")) await a.toggleStatusEffect("debilitado", { active: true });
+				if (!a.statuses?.has("debilitado")) await fdtAplicar.status(a, "debilitado", { active: true });
 				efeito = "acorda com <b>metade dos PV</b> (só voltam com descanso natural) e <b>debilitado</b> até recuperá-los.";
 			} else if (cat === 2) {
 				await a.update({ "system.attributes.pv.value": Math.min(pv.value, Math.ceil(pv.max / 2)) });
 				efeito = "acorda com <b>metade dos PV</b> (só voltam com descanso natural).";
 			} else efeito = "acorda <b>sem nenhum efeito negativo</b>.";
 			const limites = a.effects.filter((e) => e.getFlag("world", "fdtRocha"));
-			if (limites.length) await a.deleteEmbeddedDocuments("ActiveEffect", limites.map((e) => e.id));
+			if (limites.length) await fdtAplicar.tirarEfeito(a, limites.map((e) => e.id));
 			if (!a.effects.some((e) => e.getFlag("world", "fdtImplante"))) {
-				await a.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(a, [{
 					name: "Implante de Cristal Rosado",
 					img: "systems/tormenta20/icons/itens/gerais/po-de-cristal.webp",
 					type: "base",
@@ -1031,7 +1036,7 @@
 				if (f === 1) {
 					const pv = t.actor.system.attributes.pv;
 					await t.actor.update({ "system.attributes.pv.value": pv.value - Math.ceil(pv.value / 2) });
-					if (!t.actor.statuses?.has("fatigado")) await t.actor.toggleStatusEffect("fatigado", { active: true });
+					if (!t.actor.statuses?.has("fatigado")) await fdtAplicar.status(t.actor, "fatigado", { active: true });
 				}
 				html += `<li>${t.name}: ${f === 0 ? "escapa ileso" : f === 1 ? "escapa com ferimentos graves (metade dos PV, fatigado até recuperar)" : "<b>é soterrado e morre</b>"}.</li>`;
 			}
@@ -1060,7 +1065,7 @@
 			if (rodada && a.getFlag("world", "fdtAmigosCorredor") === rodada) { linhas.push(`${t.name}: já sofreu este dano nesta rodada.`); continue; }
 			const r = await new Roll(`2d6[${res.tipo}]`).evaluate();
 			rolls.push(r);
-			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+			try { await fdtAplicar.dano(a, r, 1); } catch (err) { console.warn(err); }
 			if (rodada) await a.setFlag("world", "fdtAmigosCorredor", rodada);
 			linhas.push(`${t.name}: <b>${r.total}</b> de ${res.tipo}.`);
 		}
@@ -1088,7 +1093,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 3 · gerado por a2-av3-rocha-cinzenta.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av3 · Rocha Cinzenta (entrar/sair)", `${T20I}/itens/gerais/algemas.webp`, macroRocha),

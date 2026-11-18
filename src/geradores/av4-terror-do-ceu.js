@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av4";
@@ -624,8 +629,8 @@
 				nomes.push(`${a.name} (imune)`);
 				continue;
 			}
-			await a.toggleStatusEffect("cego", { active: escolha === "cegar" });
-			await a.toggleStatusEffect("ofuscado", { active: escolha === "proteger" });
+			await fdtAplicar.status(a, "cego", { active: escolha === "cegar" });
+			await fdtAplicar.status(a, "ofuscado", { active: escolha === "proteger" });
 			nomes.push(a.name);
 		}
 		const msg = { cegar: "fica <b>cego</b> pela luz", proteger: "protege os olhos e fica <b>ofuscado</b> por 1 rodada (ação de movimento ou 1 PM)", limpar: "sai da luz" }[escolha];
@@ -657,9 +662,9 @@
 				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
-				await a.applyDamageV2(dano, ok ? 0.5 : 1);
+				await fdtAplicar.dano(a, dano, ok ? 0.5 : 1);
 				if (!ok && !a.effects.some((e) => e.getFlag("world", "fdtChamas"))) {
-					await a.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(a, [{
 						name: "Incendiado (em chamas)",
 						img: "icons/magic/fire/flame-burning-embers-yellow.webp",
 						type: "base",
@@ -684,7 +689,7 @@
 				if (!ok && res.colide) {
 					const d = await new Roll("1d6[impacto]").evaluate();
 					rolls.push(d);
-					await a.applyDamageV2(d, 1);
+					await fdtAplicar.dano(a, d, 1);
 					extra = `, bate e sofre ${d.total} de impacto`;
 				}
 				html += `<li>${a.name}: Fortitude <b>${r.total}</b> ${ok ? "✔️ empurrado só 3m, sem dano" : `❌ empurrado 6m${extra}`}</li>`;
@@ -737,9 +742,9 @@
 				case "piso": {
 					const treinado = a.system.pericias?.acro?.treinado;
 					if (ok) txt += " avança metade do deslocamento";
-					else if (falhaPor >= 5) { txt += " cai"; await a.toggleStatusEffect("caido", { active: true }); }
+					else if (falhaPor >= 5) { txt += " cai"; await fdtAplicar.status(a, "caido", { active: true }); }
 					else txt += " não avança";
-					if (!treinado) { txt += " · desprevenido (não treinado)"; await a.toggleStatusEffect("desprevenido", { active: true }); }
+					if (!treinado) { txt += " · desprevenido (não treinado)"; await fdtAplicar.status(a, "desprevenido", { active: true }); }
 					break;
 				}
 				case "escada": {
@@ -747,8 +752,8 @@
 					else if (falhaPor >= 5) {
 						const d = await new Roll("1d6[impacto]").evaluate();
 						rolls.push(d);
-						await a.applyDamageV2(d, 1);
-						await a.toggleStatusEffect("caido", { active: true });
+						await fdtAplicar.dano(a, d, 1);
+						await fdtAplicar.status(a, "caido", { active: true });
 						txt += ` cai: ${d.total} de impacto e caído`;
 					} else txt += " gasta 4,5m de deslocamento";
 					break;
@@ -821,7 +826,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av4 · Ataque do Céu", `${T20I}/magias/raio-solar.webp`, macroAtaqueDoCeu),

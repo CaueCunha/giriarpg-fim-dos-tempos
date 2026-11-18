@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2lendas";
@@ -408,7 +413,7 @@
 		// O PV máximo de NPC é um valor fixo da ficha: o ajuste muda o valor e guarda a diferença para desfazer.
 		for (const a of alvos) {
 			const velhos = a.effects.filter((e) => e.getFlag("world", "fdt") === TAG && e.getFlag("world", "fdtAjuste")).map((e) => e.id);
-			if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos);
+			if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos);
 			const antes = Number(a.getFlag("world", "fdtAjustePV")) || 0;
 			if (antes) {
 				const max = (Number(a.system.attributes?.pv?.max) || 0) - antes;
@@ -425,7 +430,7 @@
 			["system.modificadores.pericias.geral", dif]
 		];
 		for (const a of alvos) {
-			await a.createEmbeddedDocuments("ActiveEffect", [{
+			await fdtAplicar.efeito(a, [{
 				name: `Ajuste ao nível do grupo (${sinal(dif)})`, img: "icons/svg/upgrade.svg", type: "base",
 				description: `${sinal(dif)} em testes e rolagens de dano, ${sinal(dif * 10)} PV.`,
 				flags: { world: { fdt: TAG, fdtAjuste: true } },
@@ -443,7 +448,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Lendas Urbanas e Linhas Narrativas · gerado por a2-lendas-linhas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 2 · Lendas Urbanas e Linhas Narrativas · gerado por a2-lendas-linhas.js\n${usaFdt(fn) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}${chamar(fn, `(${codigo(fn)})(${dados ? "DADOS" : ""})`)}`
 	});
 	const DICA = (n) => (n ? `Aventura ${n}` : "a trama geral de Ghorskander (os Imagodutos)");
 	const INVESTIGAR = "Peça testes de Investigação (o livro não dá CD) ou deixe o grupo conversar com NPCs que tenham contato com a nobreza: Wynstar, Drelene, os Goblins da Gazeta do Reinado, o Avatar da Cidade, os moradores de Stremtol e outros. Então revele que <b>as famílias que tiveram contato com os Avatares deixaram Valkaria</b>. Use famílias deste arco (principalmente da Aventura 6) ou crie as suas.";

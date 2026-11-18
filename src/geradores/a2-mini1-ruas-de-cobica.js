@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2mini1";
@@ -635,7 +640,7 @@
 		if (!cob) return ui.notifications.warn("O Cobrador não foi encontrado (rode o gerador da Mini-Aventura 1).");
 		const alvos = [...game.user.targets].filter((t) => t.actor);
 		const rolls = [];
-		const cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };
+		const cond = async (a, c) => { if (!a.statuses?.has(c)) await fdtAplicar.status(a, c, { active: true }); };
 		const salvar = async (a, k, o = {}) => { const r = await fdtTeste(a, k, { cd: 28, ...o }); rolls.push(r); return r.total; };
 		const gastar = async (n) => {
 			const pm = Number(cob.system.attributes.pm.value) || 0;
@@ -718,7 +723,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Mini-Aventura 1 · gerado por a2-mini1-ruas-de-cobica.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Mini 1 · Mensagem da Ploigoníada", ICO.pergaminho, macroMensagem),

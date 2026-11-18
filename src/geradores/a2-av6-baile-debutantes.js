@@ -25,7 +25,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av6";
@@ -580,7 +585,7 @@
 			let n = 0;
 			for (const a of game.actors) {
 				const ids = a.effects.filter((x) => x.getFlag("world", "fdtBaile")).map((x) => x.id);
-				if (ids.length) { await a.deleteEmbeddedDocuments("ActiveEffect", ids); n += ids.length; }
+				if (ids.length) { await fdtAplicar.tirarEfeito(a, ids); n += ids.length; }
 			}
 			await game.user.setFlag("world", CHAVE, e);
 			return ChatMessage.create({ content: `<h3>Fim do Baile da Primavera</h3><p>Alfraye decreta o fim do baile: a <b>Aura de Paz</b> acaba e todos podem agir com hostilidade. Os efeitos do palácio terminam (${n} removidos).</p>` });
@@ -733,14 +738,14 @@
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
 		const atr = (a, k) => Number(a.system.atributos?.[k]?.value) || 0;
 		const teste = async (a, k, o = {}) => { const ATR = ["for", "des", "con", "int", "sab", "car"]; const r = await fdtTeste(a, ATR.includes(k) ? null : k, { ...o, atributo: ATR.includes(k) ? k : undefined }); rolls.push(r); return r.total; };
-		const efeito = (a, name, changes, local = false) => a.createEmbeddedDocuments("ActiveEffect", [{
+		const efeito = (a, name, changes, local = false) => fdtAplicar.efeito(a, [{
 			name, img: ICONE, type: "base",
 			flags: { world: { fdtBaile: true, fdtLocal: local } },
 			system: { changes: changes.map(([key, value]) => ({ key, value, type: "add", phase: "initial", priority: null })) }
 		}]);
 		const tirarLocal = async (a) => {
 			const ids = a.effects.filter((x) => x.getFlag("world", "fdtLocal")).map((x) => x.id);
-			if (ids.length) await a.deleteEmbeddedDocuments("ActiveEffect", ids);
+			if (ids.length) await fdtAplicar.tirarEfeito(a, ids);
 		};
 		const linhas = [];
 		if (res.acao === "calor") {
@@ -769,7 +774,7 @@
 			case "mascara": {
 				const m = MASCARAS[res.mascara] ?? MASCARAS.coroa;
 				const velhas = a.effects.filter((x) => x.name.startsWith("Máscara:")).map((x) => x.id);
-				if (velhas.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhas);
+				if (velhas.length) await fdtAplicar.tirarEfeito(a, velhas);
 				await efeito(a, `Máscara: ${m[0]}`, [[`system.pericias.${m[1]}.bonus`, "2"], m[2] ? [`system.pericias.${m[2]}.bonus`, "-2"] : ["system.modificadores.ataque.geral", "-2"]]);
 				linhas.push(`${t.name} veste a máscara <b>${m[0]}</b>.`);
 				break;
@@ -844,9 +849,9 @@
 			const tem = (n) => a.effects.find((x) => x.getFlag("world", "fdtAdega") === n);
 			if (res.acao === "manha") {
 				const ids = a.effects.filter((x) => x.getFlag("world", "fdtAdega")).map((x) => x.id);
-				if (ids.length) await a.deleteEmbeddedDocuments("ActiveEffect", ids);
+				if (ids.length) await fdtAplicar.tirarEfeito(a, ids);
 				await a.unsetFlag("world", "fdtTestesAdega");
-				if (a.statuses?.has("desprevenido")) await a.toggleStatusEffect("desprevenido", { active: false });
+				if (a.statuses?.has("desprevenido")) await fdtAplicar.status(a, "desprevenido", { active: false });
 				linhas.push(`${t.name}: sóbrio.`);
 				continue;
 			}
@@ -856,7 +861,7 @@
 				linhas.push(`${t.name} para de beber: perde o +5 em Diplomacia (a embriaguez continua).`);
 				continue;
 			}
-			if (!tem("Bebendo na adega")) await a.createEmbeddedDocuments("ActiveEffect", [ae("Bebendo na adega", [["system.pericias.dipl.bonus", "5"]])]);
+			if (!tem("Bebendo na adega")) await fdtAplicar.efeito(a, [ae("Bebendo na adega", [["system.pericias.dipl.bonus", "5"]])]);
 			const feitos = Number(a.getFlag("world", "fdtTestesAdega")) || 0;
 			const cd = 15 + 2 * feitos;
 			const r = await fdtTeste(a, "fort", { cd, titulo: "Bebendo na adega" });
@@ -865,11 +870,11 @@
 			let txt = `${t.name}: Fortitude ${r.total} contra CD ${cd}. `;
 			if (r.total >= cd) txt += "Aguenta firme.";
 			else if (!tem("Embriagado")) {
-				await a.createEmbeddedDocuments("ActiveEffect", [ae("Embriagado", [["system.modificadores.atributos.des", "-2"], ["system.modificadores.atributos.car", "-2"], ["system.pericias.dipl.bonus", "2"]])]);
+				await fdtAplicar.efeito(a, [ae("Embriagado", [["system.modificadores.atributos.des", "-2"], ["system.modificadores.atributos.car", "-2"], ["system.pericias.dipl.bonus", "2"]])]);
 				txt += "<b>Embriagado</b> (–2 em testes de Destreza e Carisma, exceto Diplomacia) até a manhã seguinte.";
 			} else if (!tem("Bebum")) {
-				await a.createEmbeddedDocuments("ActiveEffect", [ae("Bebum", [["system.modificadores.atributos.des", "-3"], ["system.modificadores.atributos.car", "-3"], ["system.pericias.dipl.bonus", "3"]])]);
-				if (!a.statuses?.has("desprevenido")) await a.toggleStatusEffect("desprevenido", { active: true });
+				await fdtAplicar.efeito(a, [ae("Bebum", [["system.modificadores.atributos.des", "-3"], ["system.modificadores.atributos.car", "-3"], ["system.pericias.dipl.bonus", "3"]])]);
+				if (!a.statuses?.has("desprevenido")) await fdtAplicar.status(a, "desprevenido", { active: true });
 				txt += "<b>Bebum</b>: desprevenido e –5 em testes de Destreza e Carisma (exceto Diplomacia).";
 			} else txt += "Já está bebum.";
 			linhas.push(txt);
@@ -908,14 +913,14 @@
 		const ae = (name, changes) => ({ name, img: ICONE, type: "base", flags: { world: { fdtBaile: true } }, system: { changes: changes.map(([key, value]) => ({ key, value, type: "add", phase: "initial", priority: null })) } });
 		let html = `<h3>Cassino · aposta de ${ap[0]}</h3><ol>${placar.map((x) => `<li>${x.t.name}: Jogatina ${x.total}</li>`).join("")}</ol><p><b>${venc.t.name}</b> vence a mesa.</p><ul>`;
 		for (const x of perdedores) {
-			if (ap[2].length) await x.t.actor.createEmbeddedDocuments("ActiveEffect", [ae(`Aposta perdida: ${ap[0]}`, ap[2])]);
-			if (res.aposta === "coracao" && !x.t.actor.statuses?.has("enfeiticado")) await x.t.actor.toggleStatusEffect("enfeiticado", { active: true });
+			if (ap[2].length) await fdtAplicar.efeito(x.t.actor, [ae(`Aposta perdida: ${ap[0]}`, ap[2])]);
+			if (res.aposta === "coracao" && !x.t.actor.statuses?.has("enfeiticado")) await fdtAplicar.status(x.t.actor, "enfeiticado", { active: true });
 			const vezes = Math.max(1, Math.floor(venc.total / Math.max(1, x.total)));
 			html += `<li>${x.t.name} perde: ${ap[1]}${res.aposta === "coracao" ? ` (por ${venc.t.name})` : ""}. O vencedor multiplicou a aposta ${vezes}×.</li>`;
 		}
 		html += "</ul>";
 		const ganho = ap[2].map(([k, v]) => [k, String(-Number(v))]);
-		if (ganho.length) await venc.t.actor.createEmbeddedDocuments("ActiveEffect", [ae(`Aposta ganha: ${ap[0]}`, ganho)]);
+		if (ganho.length) await fdtAplicar.efeito(venc.t.actor, [ae(`Aposta ganha: ${ap[0]}`, ganho)]);
 		html += `<p>${venc.t.name} recebe o que um apostador perdeu${ganho.length ? " (efeito aplicado)" : res.aposta === "talento" ? " (uma perícia treinada de um perdedor)" : ""}.</p>`;
 		ChatMessage.create({ content: html, rolls });
 	}
@@ -1017,8 +1022,8 @@
 			const ok = v.total >= 32;
 			const valor = ok ? Math.floor(dano.total / 2) : dano.total;
 			const r = await new Roll(`${valor}[psiquico]`).evaluate();
-			try { await t.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
-			if (!ok && !t.actor.statuses?.has("atordoado")) await t.actor.toggleStatusEffect("atordoado", { active: true });
+			try { await fdtAplicar.dano(t.actor, r, 1); } catch (err) { console.warn(err); }
+			if (!ok && !t.actor.statuses?.has("atordoado")) await fdtAplicar.status(t.actor, "atordoado", { active: true });
 			html += `<li>${t.name}: Vontade ${v.total}. ${ok ? `Metade (${valor}).` : `${valor} e <b>atordoado</b> por 1 rodada.`}</li>`;
 		}
 		html += "</ul>";
@@ -1031,7 +1036,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 6 · gerado por a2-av6-baile-debutantes.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av6 · Baile da Primavera (cenas e vítimas)", ICO.marah, macroBaile),

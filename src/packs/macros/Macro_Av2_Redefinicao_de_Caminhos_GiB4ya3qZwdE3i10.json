@@ -10,14 +10,15 @@
     "giriarpg-fim-dos-tempos": {
       "ato": "ato1",
       "antigo": "ato1-macros",
-      "assinatura": "211e9724",
+      "assinatura": "91eb92b2",
       "assinaturas": [
         "3f353104",
-        "211e9724"
+        "211e9724",
+        "91eb92b2"
       ]
     }
   },
-  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n(async function macroRedefinicao() {\n\t\tconst tabela = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"av2\" && t.name === \"Redefinição de Caminhos\");\n\t\tif (!tabela) return ui.notifications.error(\"Tabela não encontrada (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).\");\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return tabela.draw();\n\t\tfor (const a of atores) await tabela.draw({ messageData: { speaker: ChatMessage.getSpeaker({ actor: a }) } });\n\t})();",
+  "command": "// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\nawait (async function macroRedefinicao() {\n\t\tconst tabela = game.tables.find((t) => t.getFlag(\"world\", \"fdt\") === \"av2\" && t.name === \"Redefinição de Caminhos\");\n\t\tif (!tabela) return ui.notifications.error(\"Tabela não encontrada (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).\");\n\t\tconst atores = canvas.tokens.controlled.map((t) => t.actor).filter(Boolean);\n\t\tif (!atores.length) return tabela.draw();\n\t\tfor (const a of atores) await tabela.draw({ messageData: { speaker: ChatMessage.getSpeaker({ actor: a }) } });\n\t})();",
   "_id": "GiB4ya3qZwdE3i10",
   "sort": 0,
   "ownership": {

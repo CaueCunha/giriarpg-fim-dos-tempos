@@ -23,7 +23,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2av7";
@@ -841,7 +846,7 @@
 			const v = typeof formula === "number" ? formula : await rolar(formula);
 			const valor = meio ? Math.floor(v / 2) : v;
 			const r = await new Roll(`${valor}[${tipo}]`).evaluate();
-			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+			try { await fdtAplicar.dano(a, r, 1); } catch (err) { console.warn(err); }
 			return valor;
 		};
 		const matarNpcs = async (chances) => {
@@ -924,7 +929,7 @@
 				if (sit.falha.pm) efeitos.push(`perde ${await perderPm(a, sit.falha.pm)} PM`);
 				if (sit.falha.condicao) {
 					const c = COND[await rolar("1d4")];
-					if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true });
+					if (!a.statuses?.has(c)) await fdtAplicar.status(a, c, { active: true });
 					efeitos.push(`fica <b>${c}</b> até o fim da próxima rodada`);
 				}
 				if (enfurecido) efeitos.push(`o NPC enfurecido tira ${await ferir(a, "2d6", "perda")} PV`);
@@ -969,7 +974,7 @@
 		} else {
 			html += sit.fra.txt ? `<p>${sit.fra.txt}</p>` : "";
 			html += await todos(sit.fra.todos);
-			if (sit.fra.cond) for (const t of alvosGrupo) if (!t.actor.statuses?.has(sit.fra.cond)) await t.actor.toggleStatusEffect(sit.fra.cond, { active: true });
+			if (sit.fra.cond) for (const t of alvosGrupo) if (!t.actor.statuses?.has(sit.fra.cond)) await fdtAplicar.status(t.actor, sit.fra.cond, { active: true });
 			if (sit.fra.pm) for (const t of alvosGrupo) await perderPm(t.actor, sit.fra.pm);
 			if (sit.fra.abominacao) await game.user.setFlag("world", "fdtMecano", { ...mecano, abominacao: { ritmo: sit.fra.abominacao, desde: mecano.rodada ?? 0 } });
 			if (sit.fra.selvagem) {
@@ -1028,7 +1033,7 @@
 		const titanico = async (a, formula, tipo) => {
 			const v = typeof formula === "number" ? formula : await rolar(formula);
 			const r = await new Roll(`${v}[${tipo}]`, {}, { rd: 999 }).evaluate();
-			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+			try { await fdtAplicar.dano(a, r, 1); } catch (err) { console.warn(err); }
 			return v;
 		};
 		let html = "";
@@ -1107,7 +1112,7 @@
 				const r = await teste(t.actor, m.k, { cd, dano: `${v}[impacto]`, titulo: "A cauda sacode", sucesso: "se segura, sem dano.", falha: `toma o dano; falhando por 5 ou mais, é arremessado (cai ${Math.max(0, Number(res.altura) || 0)}m).` });
 				if (r >= cd) { linhas.push(`${t.name}: ${NOME[m.k]} ${r}, se segura`); continue; }
 				const dano = await new Roll(`${v}[impacto]`).evaluate();
-				try { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
+				try { await fdtAplicar.dano(t.actor, dano, 1); } catch (err) { console.warn(err); }
 				linhas.push(`${t.name}: ${NOME[m.k]} ${r}, ${v} de impacto${r <= cd - 5 ? ` e <b>arremessado</b> (cai ${Math.max(0, Number(res.altura) || 0)}m)` : ""}`);
 			}
 			html += `<h3>A cauda sacode</h3><p>Atletismo ou Reflexos CD ${cd}: falha, 4d6 de impacto; falha por 5 ou mais, cai.</p>`;
@@ -1119,8 +1124,8 @@
 				const r = await teste(t.actor, "refl", { cd, dano: `${v}[eletricidade]`, titulo: "Descargas das plataformas", sucesso: "evita tudo.", falha: "toma o dano e fica ofuscado por 1 rodada." });
 				if (r >= cd) { linhas.push(`${t.name}: Reflexos ${r}, evita`); continue; }
 				const dano = await new Roll(`${v}[eletricidade]`).evaluate();
-				try { await t.actor.applyDamageV2(dano, 1); } catch (err) { console.warn(err); }
-				if (!t.actor.statuses?.has("ofuscado")) await t.actor.toggleStatusEffect("ofuscado", { active: true });
+				try { await fdtAplicar.dano(t.actor, dano, 1); } catch (err) { console.warn(err); }
+				if (!t.actor.statuses?.has("ofuscado")) await fdtAplicar.status(t.actor, "ofuscado", { active: true });
 				linhas.push(`${t.name}: Reflexos ${r}, ${v} de eletricidade e <b>ofuscado</b>`);
 			}
 			html += `<h3>Descargas das plataformas</h3><p>4d6 de eletricidade e ofuscado por 1 rodada (Reflexos CD ${cd} evita tudo).</p>`;
@@ -1173,7 +1178,7 @@
 		const resist = async (a, k, o = {}) => { const r = await fdtTeste(a, k, o); rolls.push(r); return r.total; };
 		const aplicar = async (a, v, tipo, ignoraRd) => {
 			const r = await new Roll(`${v}[${tipo}]`, {}, ignoraRd ? { rd: 999 } : {}).evaluate();
-			try { await a.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+			try { await fdtAplicar.dano(a, r, 1); } catch (err) { console.warn(err); }
 		};
 		const linhas = [];
 		for (let n = 0; n < ninhos; n++) {
@@ -1197,7 +1202,7 @@
 			const r = await resist(t.actor, "refl", { cd: 30 - red, dano: d, metade: true, titulo: `Míssil ${n + 1}`, falha: "dano total e –2 em todos os testes por 1 rodada." });
 			const ok = r >= 30 - red;
 			await aplicar(t.actor, ok ? Math.floor(d.total / 2) : d.total, "impacto", false);
-			if (!ok) await t.actor.createEmbeddedDocuments("ActiveEffect", [{
+			if (!ok) await fdtAplicar.efeito(t.actor, [{
 				name: "Míssil (–2 em testes)",
 				img: "systems/tormenta20/icons/magias/explosao-de-chamas.webp",
 				type: "base",
@@ -1240,7 +1245,7 @@
 			await aplicar(t.actor, d.total, "luz", true);
 			const r = res.frente ? 0 : await resist(t.actor, "fort", { cd: 30 - red, titulo: `Raio ocular ${n + 1}`, motivo: `${d.total} de luz já aplicados.`, falha: "ofuscado por 1 rodada." });
 			const ok = !res.frente && r >= 30 - red;
-			if (!ok && !t.actor.statuses?.has("ofuscado")) await t.actor.toggleStatusEffect("ofuscado", { active: true });
+			if (!ok && !t.actor.statuses?.has("ofuscado")) await fdtAplicar.status(t.actor, "ofuscado", { active: true });
 			linhas.push(`Raio ocular ${n + 1} → ${t.name}: ${d.total} de luz${ok ? ` (Fortitude ${r}, evita a condição)` : " e <b>ofuscado</b> por 1 rodada"}.`);
 		}
 		ChatMessage.create({ content: `<h3>${pr.nome}</h3>${linhas.length ? `<ul>${linhas.map((l) => `<li>${l}</li>`).join("")}</ul>` : "<p>Nenhuma defesa ativa.</p>"}`, rolls });
@@ -1265,7 +1270,7 @@
 		const rolls = [];
 		const rolar = async (f) => { const r = await new Roll(f).evaluate(); rolls.push(r); return r.total; };
 		const vont = async (a, o = {}) => { const r = await fdtTeste(a, "vont", { cd: 35, ...o }); rolls.push(r); return r.total; };
-		const cond = async (a, c) => { if (!a.statuses?.has(c)) await a.toggleStatusEffect(c, { active: true }); };
+		const cond = async (a, c) => { if (!a.statuses?.has(c)) await fdtAplicar.status(a, c, { active: true }); };
 		if (res.acao === "discurso") {
 			return ChatMessage.create({ content: `<h3>Ghorskander</h3><blockquote><p><i>"Vocês ainda não compreendem contra o que estão lutando. O Doutor Vesper revelou nossa missão sublime, a luta para destruir o tempo... Mas ainda assim ele foi modesto. [...] Carne e máquinas não são diferentes para mim."</i></p>
 				<p><i>"Vocês escolhem estar limitados! Escolhem ser humanos, elfos ou anões! [...] Não percebem que podem ser tudo! Que podem ter tudo!"</i></p>
@@ -1282,9 +1287,9 @@
 		if (res.acao === "forma") {
 			const g = game.actors.find((a) => a.getFlag("world", "fdt") === "a2av7" && a.getFlag("world", "fdtRole") === "ghorskander");
 			if (g) {
-				await g.update({ "system.attributes.pv.value": 145 });
+				await fdtAplicar.ficha(g, { "system.attributes.pv.value": 145 }, `${g.name}: PV viram 145`);
 				const ef = g.effects.find((x) => x.name === "Forma Final");
-				if (ef) await ef.update({ disabled: false });
+				if (ef) await fdtAplicar.ligar(g, ef, true);
 			}
 			html += "<h3>Forma Final</h3><p>A cabeça de Ghorskander gira e uma enorme face de relógio toma o lugar do rosto. Os PV se tornam <b>145</b> e ele ganha <b>Mãos Independentes</b> até o fim da cena.</p>";
 			for (const t of alvos) {
@@ -1303,7 +1308,7 @@
 					const ok = v >= 35;
 					const valor = ok ? Math.floor(d / 2) : d;
 					const r = await new Roll(`${valor}[psiquico]`).evaluate();
-					try { await t.actor.applyDamageV2(r, 1); } catch (err) { console.warn(err); }
+					try { await fdtAplicar.dano(t.actor, r, 1); } catch (err) { console.warn(err); }
 					if (!ok) await cond(t.actor, "alquebrado");
 					linhas.push(`${t.name}: Vontade ${v}, ${valor}${ok ? " (metade)" : " e <b>alquebrado</b>"}`);
 				}
@@ -1311,7 +1316,7 @@
 			if (res.acao === "injetor") {
 				html += "<h3>Injetor Parasitário</h3>";
 				for (const t of alvos) {
-					await t.actor.createEmbeddedDocuments("ActiveEffect", [{
+					await fdtAplicar.efeito(t.actor, [{
 						name: "Injetor Parasitário (–1 em perícias)",
 						img: "systems/tormenta20/icons/poderes/ameacas/veneno.webp",
 						type: "base",
@@ -1371,7 +1376,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Aventura 7 · gerado por a2-av7-mecano-lagarto-terror.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Arco 2 · Aventura 7 · gerado por a2-av7-mecano-lagarto-terror.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av7 · Caminho de Destruição", ICO.pisotear, macroCaminho),

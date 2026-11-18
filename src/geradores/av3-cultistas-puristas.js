@@ -21,7 +21,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av3";
@@ -618,10 +623,10 @@
 		const dano = async (formula, mult) => {
 			const d = typeof formula === "string" ? await new Roll(formula).evaluate() : formula;
 			rolls.push(d);
-			if (mult > 0) await alvo.applyDamageV2(d, mult);
+			if (mult > 0) await fdtAplicar.dano(alvo, d, mult);
 			return d.total;
 		};
-		const status = (id, ativo = true) => alvo.toggleStatusEffect?.(id, { active: ativo });
+		const status = (id, ativo = true) => fdtAplicar.status(alvo, id, { active: ativo });
 
 		let txt = "";
 		switch (n) {
@@ -752,7 +757,7 @@
 			const ok = r.total >= 20;
 			const efeito = a.effects.find((e) => e.getFlag("world", "fdtLampiao"));
 			if (!ok && !efeito) {
-				await a.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(a, [{
 					name: "Hipnotizado pelo Lampião",
 					img: "systems/tormenta20/icons/itens/gerais/lampiao.webp",
 					type: "base",
@@ -772,7 +777,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 3 · gerado por av3-cultistas-puristas.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av3 · Demais Habitantes", "icons/svg/village.svg", macroHabitantes),

@@ -19,7 +19,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "a2apendices";
@@ -373,7 +378,7 @@
 		const grupo = sel.length ? sel : pjs;
 		for (const a of grupo) {
 			const velhos = a.effects.filter((e) => e.getFlag("world", "fdt") === TAG && e.getFlag("world", "fdtNegocio")).map((e) => e.id);
-			if (velhos.length) await a.deleteEmbeddedDocuments("ActiveEffect", velhos);
+			if (velhos.length) await fdtAplicar.tirarEfeito(a, velhos);
 		}
 		if (res.acao === "longe") return ChatMessage.create({ whisper, content: `<p>Benefícios dos negócios removidos de ${grupo.map((a) => a.name).join(", ")}. Voltam quando o grupo voltar a ter acesso ao negócio.</p>` });
 		const ks = [...new Set(todos.flatMap((x) => x.n.ativos))];
@@ -391,7 +396,7 @@
 				nomes.push(x.nome);
 			}
 			if (!changes.length) continue;
-			await a.createEmbeddedDocuments("ActiveEffect", [{
+			await fdtAplicar.efeito(a, [{
 				name: "Negócios do grupo", img: "icons/svg/item-bag.svg", type: "base",
 				description: `Benefícios de estruturas (não acumulam com outras estruturas, como dádivas, domínios e bases): ${nomes.join(", ")}. Valem enquanto houver acesso ao negócio e por até um mês depois.`,
 				flags: { world: { fdt: TAG, fdtNegocio: true } },
@@ -487,7 +492,7 @@
 		if (res.acao === "fimCena") {
 			for (const t of canvas.tokens?.placeables ?? []) {
 				const ids = t.actor?.effects.filter((e) => e.getFlag("world", "fdt") === TAG && e.getFlag("world", "fdtSimbolo")).map((e) => e.id) ?? [];
-				if (ids.length) await t.actor.deleteEmbeddedDocuments("ActiveEffect", ids);
+				if (ids.length) await fdtAplicar.tirarEfeito(t.actor, ids);
 			}
 			return ChatMessage.create({ whisper, content: "<p>Fim da cena: Símbolo de Esperança encerrado.</p>" });
 		}
@@ -495,7 +500,7 @@
 			if (!precisa("vigSimbolo", "Símbolo de Esperança") || !(await gastar(3, "Símbolo de Esperança"))) return;
 			const aliados = [a, ...[...(game.user.targets ?? [])].map((t) => t.actor).filter((x) => x && x !== a)];
 			for (const x of aliados) {
-				await x.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(x, [{
 					name: `Símbolo de Esperança (${a.name})`, img: "icons/svg/sun.svg", type: "base", description: "+2 na Defesa e em testes de resistência até o fim da cena. A próxima habilidade nesta cena custa –1 PM.",
 					flags: { world: { fdt: TAG, fdtSimbolo: true } },
 					system: { changes: [["system.attributes.defesa.bonus", 2], ["system.pericias.fort.bonus", 2], ["system.pericias.refl.bonus", 2], ["system.pericias.vont.bonus", 2]].map(([key, value]) => ({ key, value: String(value), type: "add", phase: "initial", priority: null })) }
@@ -526,7 +531,7 @@
 			if (!(await gastar(1 + extra, "Provocação Flamejante"))) return;
 			const r = await new Roll(`${2 + 2 * extra}d6[fogo]`).evaluate();
 			const alvos = [...(game.user.targets ?? [])].map((t) => t.actor).filter(Boolean);
-			for (const x of alvos) await x.applyDamageV2(r, 1);
+			for (const x of alvos) await fdtAplicar.dano(x, r, 1);
 			return ChatMessage.create({ rolls: [r], content: `<p>🔥 A ira de Thyatis: o inimigo resistiu à Provocação Petulante de <b>${a.name}</b> e sofre <b>${r.total} de fogo</b> (${1 + extra} PM${extra < Number(res.extra || 0) ? `; no máximo ${nCav - 1} PM extra(s) com ${nCav} poder(es)` : ""}).${alvos.length ? ` Aplicado em ${alvos.map((x) => x.name).join(", ")}.` : " Mire o inimigo para aplicar o dano."}</p>` });
 		}
 		if (res.acao === "revoada") {
@@ -541,7 +546,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Arco 2 · Apêndices · gerado por a2-apendices.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}(${fn.toString()})(${dados ? "DADOS" : ""});`
+		command: `// Fim dos Tempos · Arco 2 · Apêndices · gerado por a2-apendices.js\n${usaFdt(fn) ? FDT_TESTE : ""}${dados ? `const DADOS = ${JSON.stringify(dados)};\n` : ""}${chamar(fn, `(${codigo(fn)})(${dados ? "DADOS" : ""})`)}`
 	});
 	const PERICIAS = { nobr: "Nobreza", alfa: "Ofício (alfaiate)", alqu: "Ofício (alquimista)", arme: "Ofício (armeiro)", arte: "Ofício (artesão)", cozi: "Ofício (cozinheiro)", enge: "Ofício (engenhoqueiro)" };
 	const macros = await Macro.createDocuments([

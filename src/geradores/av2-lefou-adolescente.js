@@ -20,7 +20,12 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst fdtTeste = (ator, pericia, o = {}) => fdtApi?.pedirTeste ? fdtApi.pedirTeste({ ...o, ator, pericia }) : new Roll("1d20 + " + (Number((pericia ? ator.system.pericias?.[pericia] : ator.system.atributos?.[o.atributo])?.value) || 0) + " + " + (Number(o.extra) || 0)).evaluate();\nconst fdtTestes = (lista) => Promise.all(lista.map((o) => fdtTeste(o.ator, o.pericia, o)));\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
+	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
+	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());
+	const codigo = (fn) => (usaFdt(fn) ? fn.toString().replace(/\bChatMessage\.create\(/g, "fdtEnviar(") : fn.toString());
+	const chamar = (fn, chamada) => (usaFdt(fn) ? `try {\n\tawait ${chamada};\n} finally {\n\tawait fdtAplicar.fim();\n}` : `await ${chamada};`);
 	if (!game.user.isGM) return ui.notifications.error("Só o Mestre pode rodar este gerador.");
 
 	const TAG = "av2";
@@ -853,7 +858,7 @@
 		if (escolhido) {
 			html += `<p><b>${escolhido.a.name}</b> tirou o menor resultado e se junta à atração na próxima luta.${empate ? " <i>Empate no menor resultado: o mestre escolhe.</i>" : ""}</p>`;
 			if (!empate) {
-				await escolhido.a.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(escolhido.a, [{
 					name: "Um de Nós! (aberração do circo)",
 					img: "systems/tormenta20/icons/magias/sussurros-insanos.webp",
 					type: "base",
@@ -924,10 +929,10 @@
 				rolls.push(pr);
 				const pm = a.system.attributes.pm;
 				const novo = Math.max(0, pm.value - pr.total);
-				await a.update({ "system.attributes.pm.value": novo });
+				await fdtAplicar.pm(a, pr.total);
 				extra = ` · perdeu <b>${pr.total} PM</b> (${pm.value} → ${novo})`;
 				if (novo === 0 && res.preset === "chupa") {
-					await a.toggleStatusEffect?.("confuso", { active: true });
+					await fdtAplicar.status(a, "confuso", { active: true });
 					extra += " · <b>confuso</b>";
 				}
 			}
@@ -1078,10 +1083,10 @@
 			await actor.update({ "system.resources.primary.value": novo });
 			if (novo === 1) return ChatMessage.create({ content: "<p><b>Tylora fica ferida!</b> A penalidade do chicote cai para 1d4–1.</p>", rolls: [r], speaker: ChatMessage.getSpeaker({ actor }) });
 			const furia = actor.effects.find((e) => e.getFlag("world", "fdtFuria"));
-			if (furia) await furia.update({ disabled: false });
+			if (furia) await fdtAplicar.ligar(actor, furia, true);
 			for (const c of game.combat?.combatants ?? []) {
 				const velhos = c.actor?.effects.filter((e) => e.getFlag("world", "fdtTylora")).map((e) => e.id) ?? [];
-				if (velhos.length) await c.actor.deleteEmbeddedDocuments("ActiveEffect", velhos);
+				if (velhos.length) await fdtAplicar.tirarEfeito(c.actor, velhos);
 			}
 			ChatMessage.create({ content: "<p><b>Tylora cai!</b> O chupacabra uiva de fúria: <b>+2 em ataque e dano</b> até o fim da cena.</p>", rolls: [r], speaker: ChatMessage.getSpeaker({ actor }) });
 		})]);
@@ -1093,23 +1098,24 @@
 			const chupa = combat.combatant?.actor;
 			if (papel(chupa) !== "chupacabra") return;
 
-			// Drenar Sangue: quem estiver agarrado perde 1d6 PV; o chupacabra ganha PV temporários.
+			// Drenar Sangue: quem estiver agarrado perde 1d6 PV; o chupacabra ganha PV temporários (o Mestre aplica pelos botões).
+			try {
 			let drenado = 0;
 			for (const c of combat.combatants) {
 				const a = c.actor;
 				if (!a || a === chupa || !a.statuses?.has("agarrado")) continue;
 				const r = await new Roll("1d6").evaluate();
 				drenado += r.total;
-				await a.update({ "system.attributes.pv.value": a.system.attributes.pv.value - r.total });
-				ChatMessage.create({ content: `<p><b>Drenar Sangue:</b> ${a.name} perde <b>${r.total} PV</b>.</p>`, rolls: [r], speaker: ChatMessage.getSpeaker({ actor: chupa }) });
+				await fdtAplicar.perda(a, r.total);
+				await ChatMessage.create({ content: `<p><b>Drenar Sangue:</b> ${a.name} perde <b>${r.total} PV</b>.</p>`, rolls: [r], speaker: ChatMessage.getSpeaker({ actor: chupa }) });
 			}
-			if (drenado) await chupa.update({ "system.attributes.pv.temp": (chupa.system.attributes.pv.temp || 0) + drenado });
+			if (drenado) await fdtAplicar.ficha(chupa, { "system.attributes.pv.temp": { somar: drenado } }, `${chupa.name}: +${drenado} PV temporários`);
 
 			// Tylora: tira a penalidade antiga e aplica a nova no alvo mirado.
 			const tylora = chupa.system.resources.primary.value;
 			for (const c of combat.combatants) {
 				const velhos = c.actor?.effects.filter((e) => e.getFlag("world", "fdtTylora")).map((e) => e.id) ?? [];
-				if (velhos.length) await c.actor.deleteEmbeddedDocuments("ActiveEffect", velhos);
+				if (velhos.length) await fdtAplicar.tirarEfeito(c.actor, velhos);
 			}
 			if (tylora <= 0) return;
 			const alvo = [...game.user.targets].map((t) => t.actor).find((a) => a && a !== chupa);
@@ -1118,7 +1124,7 @@
 			const rolls = [r];
 			let html = `<p><b>Tylora</b> mira ${alvo.name}: <b>–${r.total}</b> em testes de perícia até o próximo turno do chupacabra.</p>`;
 			if (r.total > 0) {
-				await alvo.createEmbeddedDocuments("ActiveEffect", [{
+				await fdtAplicar.efeito(alvo, [{
 					name: `Chicote de Tylora (–${r.total})`,
 					img: "systems/tormenta20/icons/itens/equipamentos/chicote.webp",
 					type: "base",
@@ -1128,12 +1134,14 @@
 				const f = await fdtTeste(alvo, "fort", { cd: 15, titulo: "Veneno do chicote de Tylora", falha: "perde 1 PM." });
 				rolls.push(f);
 				if (f.total < 15) {
-					const pm = alvo.system.attributes.pm;
-					await alvo.update({ "system.attributes.pm.value": Math.max(0, pm.value - 1) });
+					await fdtAplicar.pm(alvo, 1);
 					html += `<p>Veneno do chicote: Fortitude <b>${f.total}</b> contra CD 15 ❌, perde <b>1 PM</b>.</p>`;
 				} else html += `<p>Veneno do chicote: Fortitude <b>${f.total}</b> contra CD 15 ✔️.</p>`;
 			}
-			ChatMessage.create({ content: html, rolls, speaker: ChatMessage.getSpeaker({ actor: chupa }) });
+			await ChatMessage.create({ content: html, rolls, speaker: ChatMessage.getSpeaker({ actor: chupa }) });
+			} finally {
+				await fdtAplicar.fim("Drenar Sangue e Tylora");
+			}
 		})]);
 
 		globalThis[CHAVE] = hooks;
@@ -1146,7 +1154,7 @@
 		img,
 		folder: pasta.Macro,
 		flags: FLAGS(),
-		command: `// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n${/fdtTestes?\(/.test(fn.toString()) ? FDT_TESTE : ""}(${fn.toString()})();`
+		command: `// Fim dos Tempos · Aventura 2 · gerado por av2-lefou-adolescente.js\n${usaFdt(fn) ? FDT_TESTE : ""}${chamar(fn, `(${codigo(fn)})()`)}`
 	});
 	const macros = await Macro.createDocuments([
 		macro("Av2 · Automação (liga/desliga)", "icons/svg/clockwork.svg", macroAutomacao),
