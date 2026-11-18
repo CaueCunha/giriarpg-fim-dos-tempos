@@ -657,23 +657,21 @@
 			const dano = await new Roll("4d6[fogo]").evaluate();
 			rolls.push(dano);
 			html = `<h3>Canhão de Fogo</h3><p>Linha de 30m: <b>${dano.total}</b> de fogo. Reflexos CD 20 reduz à metade e evita em chamas.</p><ul>`;
-			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano, metade: true, titulo: "Canhão de Fogo", falha: "dano total e fica em chamas." })));
+			const chamas = {
+				name: "Incendiado (em chamas)",
+				img: "icons/magic/fire/flame-burning-embers-yellow.webp",
+				type: "base",
+				statuses: ["emchamas"],
+				description: "1d6 de fogo no início de cada turno. Ação padrão para apagar.",
+				flags: { world: { fdt: "av4", fdtChamas: true } },
+				system: { changes: [{ key: "danoContinuo", value: "1d6[fogo]", type: "custom", phase: "initial", priority: null }] }
+			};
+			// O card leva o dano (metade para quem passa) e o efeito em chamas para quem falha: o Mestre aplica pelos botões.
+			const testes = await fdtTestes(alvos.map((a) => ({ ator: a, pericia: "refl", cd: 20, dano, metade: true, titulo: "Canhão de Fogo", falha: "dano total e fica em chamas.", falhaEfeito: chamas })));
 			for (const [i, a] of alvos.entries()) {
 				const r = testes[i];
 				rolls.push(r);
 				const ok = r.total >= 20;
-				await fdtAplicar.dano(a, dano, ok ? 0.5 : 1);
-				if (!ok && !a.effects.some((e) => e.getFlag("world", "fdtChamas"))) {
-					await fdtAplicar.efeito(a, [{
-						name: "Incendiado (em chamas)",
-						img: "icons/magic/fire/flame-burning-embers-yellow.webp",
-						type: "base",
-						statuses: ["emchamas"],
-						description: "1d6 de fogo no início de cada turno. Ação padrão para apagar.",
-						flags: { world: { fdt: "av4", fdtChamas: true } },
-						system: { changes: [{ key: "danoContinuo", value: "1d6[fogo]", type: "custom", phase: "initial", priority: null }] }
-					}]);
-				}
 				html += `<li>${a.name}: Reflexos <b>${r.total}</b> ${ok ? "✔️ metade" : "❌ dano total e em chamas"}</li>`;
 			}
 			html += "</ul>";
@@ -696,7 +694,7 @@
 			}
 			html += "</ul><p style=\"font-size:0.85em\">Mova os tokens à mão, para longe da Harpia.</p>";
 		}
-		ChatMessage.create({ content: html + "<p style=\"font-size:0.85em\">Dano já aplicado com RD.</p>", rolls });
+		ChatMessage.create({ content: html + "<p style=\"font-size:0.85em\">O Mestre aplica o dano pelos botões (a RD entra na hora).</p>", rolls });
 	}
 
 	async function macroBordo() {
@@ -815,8 +813,7 @@
 		});
 		if (!res) return;
 		const cura = Math.floor((Number(res.dano) || 0) / 2);
-		const pv = torgo.system.attributes.pv;
-		await torgo.update({ "system.attributes.pv.value": Math.min(pv.value + cura, pv.max) });
+		await fdtAplicar.curar(torgo, cura, `${torgo.name}: recupera ${cura} PV`);
 		ChatMessage.create({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \"Com carga elétrica\" do Olhar).</p>` });
 	}
 

@@ -750,7 +750,7 @@
 				const r = await teste(x, "fort", mod, { cd, titulo: "A bebida de Mungo Joe", sucesso: "+1 PM temporário.", falha: "enjoado por uma cena (na segunda falha, inconsciente por 1d12 horas)." });
 				m.doses++;
 				if (r >= cd) {
-					await x.update({ "system.attributes.pm.temp": (Number(x.system.attributes.pm?.temp) || 0) + 1 });
+					await fdtAplicar.ficha(x, { "system.attributes.pm.temp": { somar: 1 } }, `${x.name}: +1 PM temporário`);
 					html += `<li>${x.name}: Fortitude ${r} (CD ${cd}) ✔️ +1 PM temporário. "Bebo porque é líquido!"</li>`;
 				} else {
 					m.falhas++;
@@ -921,10 +921,8 @@
 			if (res.ef === "curar") {
 				const r = await new Roll("2d8+2").evaluate();
 				rolls.push(r);
-				const { value: antes, max } = a.system.attributes.pv;
-				const novo = Math.min(max, antes + r.total);
-				await a.update({ "system.attributes.pv.value": novo });
-				html += `<li>${a.name}: +${novo - antes} PV (${r.total} rolados).</li>`;
+				await fdtAplicar.curar(a, r.total);
+				html += `<li>${a.name}: recupera ${r.total} PV.</li>`;
 			}
 			if (res.ef === "cemiterio" || res.ef === "moeda") {
 				const reg = foundry.utils.deepClone(a.getFlag("world", "fdtCemiterio") ?? {});
@@ -1045,7 +1043,7 @@
 				if (!ok) {
 					const d = await rolar("1d6");
 					nota += `, ${d} de dano`;
-					if (ator) await ator.update({ "system.attributes.pv.value": ator.system.attributes.pv.value - d });
+					if (ator) await fdtAplicar.perda(ator, d, `${ator.name}: ${d} de dano`);
 				}
 			}
 			reg.pos += dist;
@@ -1116,29 +1114,29 @@
 			const atingidos = funciona ? (alvos.length ? alvos : []) : [user];
 			if (funciona && !alvos.length) html += "<li>Sem alvo mirado: role o dano à mão.</li>";
 			const dano = await rolar(DANO[tipo]);
-			const salvas = funciona ? await fdtTestes(atingidos.map((a) => ({ ator: a, pericia: "refl", cd, dano, metade: true, titulo: item.name, falha: tipo === "fogo" ? "dano total e em chamas." : "dano total." }))) : [];
+			const salvas = funciona ? await fdtTestes(atingidos.map((a) => ({ ator: a, pericia: "refl", cd, dano, metade: true, titulo: item.name, falha: tipo === "fogo" ? "dano total e em chamas." : "dano total.", falhaStatus: tipo === "fogo" ? "emchamas" : undefined }))) : [];
 			rolls.push(...salvas);
 			for (const [i, a] of atingidos.entries()) {
 				const salva = funciona ? salvas[i].total : null;
 				const ok = salva !== null && salva >= cd;
-				await fdtAplicar.dano(a, dano, ok ? 0.5 : 1);
-				if (tipo === "fogo" && !ok && !a.statuses?.has("emchamas")) await fdtAplicar.status(a, "emchamas", { active: true });
+				// Com teste, o card leva o dano e a condição; ao contrário (no próprio usuário), os botões vão no resumo.
+				if (!funciona) {
+					await fdtAplicar.dano(a, dano, 1);
+					if (tipo === "fogo") await fdtAplicar.status(a, "emchamas", { active: true });
+				}
 				html += `<li>${a.name}: ${dano.total} de dano${salva !== null ? ` (Reflexos ${salva} contra CD ${cd}${ok ? ", metade" : ""})` : " (no próprio usuário!)"}${tipo === "fogo" && !ok ? ", em chamas" : ""}.</li>`;
 			}
 		} else {
 			const quem = alvos[0] ?? user;
 			if (tipo === "balsamo") {
 				const r = await rolar("2d4");
-				const { value: antes, max } = quem.system.attributes.pv;
-				const novo = funciona ? Math.min(max, antes + r.total) : antes - r.total;
-				await quem.update({ "system.attributes.pv.value": novo });
-				html += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PV` : `<b>sofre ${r.total} de dano</b> com o emplastro`}.</li>`;
+				if (funciona) await fdtAplicar.curar(quem, r.total);
+				else await fdtAplicar.perda(quem, r.total);
+				html += `<li>${quem.name}: ${funciona ? `recupera ${r.total} PV` : `<b>sofre ${r.total} de dano</b> com o emplastro`}.</li>`;
 			} else if (tipo === "essencia") {
 				const r = await rolar("1d4");
-				const { value: antes, max } = quem.system.attributes.pm;
-				const novo = funciona ? Math.min(max, antes + r.total) : Math.max(0, antes - r.total);
-				await quem.update({ "system.attributes.pm.value": novo });
-				html += `<li>${quem.name}: ${funciona ? `recupera ${novo - antes} PM` : `<b>perde ${antes - novo} PM</b> com o tônico`}.</li>`;
+				await fdtAplicar.pm(quem, funciona ? -r.total : r.total);
+				html += `<li>${quem.name}: ${funciona ? `recupera ${r.total} PM` : `<b>perde ${r.total} PM</b> com o tônico`}.</li>`;
 			}
 		}
 		const qtd = (Number(item.system.qtd) || 1) - 1;

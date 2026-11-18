@@ -146,6 +146,7 @@ export function acoes() {
 		efeito: (ator, dados, rotulo) => add(novaAcao("efeito", ator, { dados, rotulo })),
 		tirarEfeito: (ator, ids, rotulo) => add(novaAcao("tirarEfeito", ator, { ids: [].concat(ids), efeitoNome: rotulo, rotulo: rotulo ? `${(ator?.actor ?? ator)?.name ?? ""}: tirar ${rotulo}` : undefined })),
 		pm: (ator, n, rotulo) => add(novaAcao("pm", ator, { total: Number(n) || 0, rotulo })),
+		trocar: (ator, efeito, dados, rotulo) => add(novaAcao("trocar", ator, { efeito: efeito?.id ?? efeito, dados, rotulo })),
 		ligar: (ator, efeito, ligado = true, rotulo) => add(novaAcao("ligar", ator, { efeito: efeito?.id ?? efeito, ligado, rotulo: rotulo ?? `${(ator?.actor ?? ator)?.name ?? ""}: ${ligado ? "ligar" : "desligar"} ${efeito?.name ?? "efeito"}` })),
 		ficha: (ator, mudancas, rotulo) => add(novaAcao("ficha", ator, { mudancas, rotulo })),
 		async enviar(dadosMsg = {}) {
@@ -193,6 +194,10 @@ async function aplicar(a) {
 	else if (a.tipo === "tirarEfeito") {
 		const ids = (a.ids ?? []).filter((id) => ator.effects.get(id));
 		if (ids.length) await ator.deleteEmbeddedDocuments("ActiveEffect", ids);
+	} else if (a.tipo === "trocar") {
+		const velho = ator.effects.get(a.efeito);
+		if (velho) await velho.delete();
+		await ator.createEmbeddedDocuments("ActiveEffect", [a.dados]);
 	} else if (a.tipo === "ligar") {
 		const ef = ator.effects.get(a.efeito);
 		if (ef) await ef.update({ disabled: !a.ligado });
@@ -253,8 +258,11 @@ export function coletor() {
 		/** toggleStatusEffect(id, { active }) → botão de pôr ou tirar a condição. */
 		status: async (ator, id, opcoes = {}) => {
 			if (!ator || !id) return;
-			if (opcoes?.active === false) anotar(A.tirar(ator, id));
-			else anotar(A.status(ator, id));
+			const tem = ator.statuses?.has?.(id);
+			// Sem botão inútil: não tira o que o ator não tem nem põe o que ele já tem.
+			if (opcoes?.active === false) {
+				if (tem !== false) anotar(A.tirar(ator, id));
+			} else if (tem !== true) anotar(A.status(ator, id));
 		},
 		tirar: async (ator, id, rotulo) => {
 			if (ator && id) anotar(A.tirar(ator, id, rotulo));
@@ -270,6 +278,12 @@ export function coletor() {
 			if (!ator || !lista.length) return;
 			const nome = rotulo ?? lista.map((id) => ator.effects?.get?.(id)?.name).filter(Boolean).join(", ") ?? "efeito";
 			anotar(A.tirarEfeito(ator, lista, nome || "efeito"));
+		},
+		/** Troca um efeito do ator por outro (ex.: Frenesi +2 vira +4): um botão só. */
+		trocar: async (ator, efeito, dados, rotulo) => {
+			if (!ator || !dados) return;
+			if (efeito) anotar(A.trocar(ator, efeito, dados, rotulo));
+			else anotar(A.efeito(ator, dados, rotulo));
 		},
 		/** Liga ou desliga um efeito que o ator já tem (ef.update({ disabled })). */
 		ligar: async (ator, efeito, ligado = true, rotulo) => {

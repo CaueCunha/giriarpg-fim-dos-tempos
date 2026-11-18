@@ -10,15 +10,16 @@
     "giriarpg-fim-dos-tempos": {
       "ato": "ato1",
       "antigo": "ato1-macros",
-      "assinatura": "61e0fad4",
+      "assinatura": "9f791dc5",
       "assinaturas": [
         "aab0a252",
         "af9604f2",
-        "61e0fad4"
+        "61e0fad4",
+        "9f791dc5"
       ]
     }
   },
-  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\nawait (async function macroElemental() {\n\t\tconst torgo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"torgo\");\n\t\tif (!torgo) return ui.notifications.error(\"Torgo não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Elemental Elétrico\" },\n\t\t\tcontent: `<p>Dano <b>mágico de eletricidade</b> que Torgo sofreria (antes da RD):</p>\n\t\t\t\t<div class=\"form-group\"><label>Dano</label><input type=\"number\" name=\"dano\" value=\"0\" autofocus></div>`,\n\t\t\tok: { label: \"Absorver\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cura = Math.floor((Number(res.dano) || 0) / 2);\n\t\tconst pv = torgo.system.attributes.pv;\n\t\tawait torgo.update({ \"system.attributes.pv.value\": Math.min(pv.value + cura, pv.max) });\n\t\tChatMessage.create({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \\\"Com carga elétrica\\\" do Olhar).</p>` });\n\t})();",
+  "command": "// Fim dos Tempos · Aventura 4 · gerado por av4-terror-do-ceu.js\nconst fdtApi = game.modules.get(\"giriarpg-fim-dos-tempos\")?.api;\nif (!fdtApi?.testes) throw new Error(\"Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.\");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\ntry {\n\tawait (async function macroElemental() {\n\t\tconst torgo = game.actors.find((a) => a.getFlag(\"world\", \"fdtRole\") === \"torgo\");\n\t\tif (!torgo) return ui.notifications.error(\"Torgo não encontrado (puxe a aventura do compêndio com a macro FdT · Puxar do compêndio).\");\n\t\tconst res = await foundry.applications.api.DialogV2.prompt({\n\t\t\twindow: { title: \"Elemental Elétrico\" },\n\t\t\tcontent: `<p>Dano <b>mágico de eletricidade</b> que Torgo sofreria (antes da RD):</p>\n\t\t\t\t<div class=\"form-group\"><label>Dano</label><input type=\"number\" name=\"dano\" value=\"0\" autofocus></div>`,\n\t\t\tok: { label: \"Absorver\", callback: (ev, button) => Object.fromEntries(new FormData(button.form)) }\n\t\t});\n\t\tif (!res) return;\n\t\tconst cura = Math.floor((Number(res.dano) || 0) / 2);\n\t\tawait fdtAplicar.curar(torgo, cura, `${torgo.name}: recupera ${cura} PV`);\n\t\tfdtEnviar({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \\\"Com carga elétrica\\\" do Olhar).</p>` });\n\t})();\n} finally {\n\tawait fdtAplicar.fim();\n}",
   "_id": "DVRLLIPXaQrhZebX",
   "sort": 0,
   "ownership": {

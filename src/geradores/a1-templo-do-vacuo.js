@@ -759,7 +759,7 @@
 				for (const x of alvos) {
 					const d = await new Roll("1d8").evaluate();
 					rolls.push(d);
-					await x.update({ "system.attributes.pv.value": x.system.attributes.pv.value - d.total });
+					await fdtAplicar.perda(x, d.total);
 					html += `<p>${x.name} perde <b>${d.total} PV</b> (quedas, fadiga). Só recupera com descanso.</p>`;
 				}
 			}
@@ -981,7 +981,7 @@
 			rolls.push(r);
 			return r.total;
 		};
-		const perder = async (actor, n) => actor.update({ "system.attributes.pv.value": actor.system.attributes.pv.value - n });
+		const perder = async (actor, n) => fdtAplicar.perda(actor, n);
 		let html = `<h3>${a.nome}</h3><p>${a.efeito}</p><ul>`;
 		if (a.agua) {
 			const r = await new Roll("1d4").evaluate();
@@ -1005,7 +1005,6 @@
 				if (escapou) { html += `<li>${nome}: Iniciativa ${notas.join(", ")} → escapa do desabamento ✔️</li>`; continue; }
 				const v = await teste(ator, "refl", 0, { cd: 30, dano: danoComum, metade: true });
 				const ok = v >= 30;
-				await fdtAplicar.dano(ator, danoComum, ok ? 0.5 : 1);
 				html += `<li>${nome}: falhou nas três fases (${notas.join(", ")}); Reflexos ${v} ${ok ? "✔️ metade" : "❌ dano total"}</li>`;
 				continue;
 			}
@@ -1013,10 +1012,8 @@
 				let txt = "";
 				for (let g = 1; g <= 2; g++) {
 					const d = await new Roll(a.dano).evaluate();
-					const v = await teste(ator, "refl", 0, { cd: a.res[1], dano: d, titulo: `${a.nome} · golpe ${g}`, sucesso: "evita o golpe." });
+					const v = await teste(ator, "refl", 0, { cd: a.res[1], dano: d, evita: true, titulo: `${a.nome} · golpe ${g}`, sucesso: "evita o golpe." });
 					if (v >= a.res[1]) { txt += ` golpe ${g}: Reflexos ${v} ✔️;`; continue; }
-					rolls.push(d);
-					await fdtAplicar.dano(ator, d, 1);
 					txt += ` golpe ${g}: Reflexos ${v} ❌ ${d.total};`;
 				}
 				html += `<li>${nome}:${txt}</li>`;
@@ -1024,7 +1021,9 @@
 			}
 			const semTeste = a.ativador && res.ativ === t.id;
 			const [k, cd, modo] = a.res ?? [];
-			const v = semTeste || !k ? null : await teste(ator, k, 0, { cd, dano: danoComum ?? undefined, falha: a.perda ? `perde ${a.perda} PV por rodada.` : "" });
+			// Com dano em jogo, o card do teste leva os botões de dano (metade ou evita); sem teste, eles vão no resumo.
+			const comCard = !a.perda && !a.status && !!danoComum;
+			const v = semTeste || !k ? null : await teste(ator, k, 0, { cd, dano: comCard ? danoComum : undefined, metade: comCard && modo !== "evita", evita: comCard && modo === "evita", falha: a.perda ? `perde ${a.perda} PV por rodada.` : "" });
 			const ok = v !== null && v >= cd;
 			const rotulo = semTeste ? "ativou (sem teste)" : `${D.pericias[k]} ${v}`;
 			if (a.perda) {
@@ -1061,7 +1060,7 @@
 				continue;
 			}
 			const mult = modo === "evita" ? (ok ? 0 : 1) : (ok ? 0.5 : 1);
-			if (mult > 0) await fdtAplicar.dano(ator, danoComum, mult);
+			if (mult > 0 && !(comCard && v !== null)) await fdtAplicar.dano(ator, danoComum, mult);
 			if (a.cai && mult > 0) await fdtAplicar.status(ator, "caido", { active: true });
 			html += `<li>${nome}: ${rotulo} ${ok ? (modo === "evita" ? "✔️ evita" : "✔️ metade") : "❌ dano total"}${a.cai && mult > 0 ? ", cai no fosso" : ""}</li>`;
 		}
@@ -1214,7 +1213,7 @@
 						const d = await new Roll("1d6").evaluate();
 						rolls.push(d);
 						await fdtAplicar.status(a, "inconsciente", { active: true });
-						await a.update({ "system.attributes.pv.value": a.system.attributes.pv.value - d.total });
+						await fdtAplicar.perda(a, d.total);
 						txt += ` · Fortitude ${total} contra CD ${cd} ❌ <b>inconsciente</b>, perde ${d.total} PV (e 1d6 por rodada até respirar)`;
 					}
 				}
@@ -1311,15 +1310,14 @@
 			html = "<h3>Frenesi Sangrento</h3><ul>";
 			for (const t of tiranos) {
 				const ef = t.actor.effects.find((e) => e.getFlag("world", "fdtFrenesi"));
-				if (res.hab === "frenesiFim") { if (ef) await ef.delete(); html += `<li>${t.name}: frenesi encerrado.</li>`; continue; }
+				if (res.hab === "frenesiFim") { if (ef) await fdtAplicar.tirarEfeito(t.actor, [ef.id], ef.name); html += `<li>${t.name}: frenesi encerrado.</li>`; continue; }
 				const n = (ef?.getFlag("world", "fdtFrenesi") ?? 0) + 1;
 				const changes = [
 					{ key: "system.modificadores.ataque.geral", value: String(2 * n), type: "add", phase: "initial", priority: null },
 					{ key: "system.modificadores.dano.geral", value: String(2 * n), type: "add", phase: "initial", priority: null }
 				];
 				const nomeEf = `Frenesi Sangrento +${2 * n}`;
-				if (ef) await ef.update({ name: nomeEf, "flags.world.fdtFrenesi": n, "system.changes": changes });
-				else await fdtAplicar.efeito(t.actor, [{ name: nomeEf, img: "icons/svg/blood.svg", type: "base", flags: { world: { fdt: "a1templo", fdtFrenesi: n } }, system: { changes } }]);
+				await fdtAplicar.trocar(t.actor, ef, { name: nomeEf, img: "icons/svg/blood.svg", type: "base", flags: { world: { fdt: "a1templo", fdtFrenesi: n } }, system: { changes } }, `${t.name}: ${nomeEf}`);
 				html += `<li>${t.name}: <b>+${2 * n}</b> em ataque e dano até o fim da cena.</li>`;
 			}
 			return ChatMessage.create({ content: html + "</ul>" });
@@ -1367,7 +1365,7 @@
 		if (res.hab === "expelir") {
 			for (const t of alvos) {
 				const ef = t.actor.effects.filter((e) => e.getFlag("world", "fdtEngolido"));
-				for (const e of ef) await e.delete();
+				if (ef.length) await fdtAplicar.tirarEfeito(t.actor, ef.map((e) => e.id), "engolido");
 				await fdtAplicar.status(t.actor, "caido", { active: true });
 			}
 			return ChatMessage.create({ content: `<p>${alvos.map((t) => t.name).join(", ")} ${alvos.length > 1 ? "rompem" : "rompe"} a membrana e cai${alvos.length > 1 ? "m" : ""} na frente da ameba.</p>` });
@@ -1378,14 +1376,14 @@
 			rolls.push(d);
 			html = `<h3>Vômito Cáustico</h3><p><b>${d.total}</b> de ácido. Reflexos CD 18 reduz este dano e o da próxima rodada à metade.</p><ul>`;
 			for (const t of alvos) {
-				const v = await teste(t.actor, "refl", { cd: 18, dano: d, metade: true, titulo: "Vômito Cáustico", motivo: "Passar também reduz à metade o ácido da próxima rodada." });
-				const ok = v >= 18;
-				await fdtAplicar.dano(t.actor, d, ok ? 0.5 : 1);
-				await fdtAplicar.efeito(t.actor, [{
+				// O card leva o dano e o ácido da próxima rodada (inteiro ou metade): o Mestre aplica pelos botões.
+				const residuo = (ok) => ({
 					name: `Vômito Cáustico (próxima rodada${ok ? ", metade" : ""})`, img: "icons/svg/acid.svg", type: "base", duration: { value: 1, units: "rounds" },
 					description: `${ok ? "1d4" : "2d4"} de ácido no início do próximo turno.`, flags: { world: { fdt: "a1templo" } },
 					system: { changes: [{ key: "danoContinuo", value: ok ? "1d4[acido]" : "2d4[acido]", type: "custom", phase: "initial", priority: null }] }
-				}]);
+				});
+				const v = await teste(t.actor, "refl", { cd: 18, dano: d, metade: true, titulo: "Vômito Cáustico", motivo: "Passar também reduz à metade o ácido da próxima rodada.", falhaEfeito: residuo(false), aoPassar: { efeito: residuo(true) } });
+				const ok = v >= 18;
 				html += `<li>${t.name}: Reflexos ${v} ${ok ? "✔️ metade" : "❌ dano total"}</li>`;
 			}
 			if (fonte?.actor) await fonte.actor.update({ "system.resources.primary.value": 0 });
@@ -1423,11 +1421,10 @@
 			rolls.push(d);
 			html = `<h3>Cardume Carnívoro</h3><p><b>${d.total}</b> de corte (cada 6 somou +1d6: Morte por Mil Dentes).</p><ul>`;
 			for (const t of alvos) {
-				const antes = t.actor.system.attributes.pv.value;
 				await fdtAplicar.dano(t.actor, d, 1);
-				const sofreu = antes - t.actor.system.attributes.pv.value;
-				if (sofreu >= 10) await fdtAplicar.status(t.actor, "sangrando", { active: true });
-				html += `<li>${t.name}: sofreu ${sofreu}${sofreu >= 10 ? " · <b>sangrando</b>" : ""}</li>`;
+				// Sangrando se sofrer 10 ou mais depois da RD: o botão aparece quando o dano rolado chega a 10.
+				if (d.total >= 10) await fdtAplicar.status(t.actor, "sangrando", { active: true });
+				html += `<li>${t.name}: ${d.total} de corte${d.total >= 10 ? " · <b>sangrando</b> se sofrer 10 ou mais depois da RD" : ""}</li>`;
 			}
 			return ChatMessage.create({ content: html + "</ul>", rolls });
 		}
@@ -1489,7 +1486,7 @@
 				html += `<p style="font-size:0.85em">${r.total} tokens ocultos em volta de ${ref.name} (selecione um token na Sala da Estátua antes).</p>`;
 			}
 		} else if (res.acao === "alav2") {
-			for (const a of atoresDaCena(["mecanico"])) await a.update({ "system.attributes.pv.value": Math.min(a.system.attributes.pv.value, 10) });
+			for (const a of atoresDaCena(["mecanico"])) await fdtAplicar.ficha(a, { "system.attributes.pv.value": { somar: 0, max: 10 } }, `${a.name}: cai para 10 PV`);
 			await darEfeito(["mecanico"], "fdtAlavanca2", { name: "Encharcados (Alavanca 2)", img: `systems/tormenta20/icons/magias/controlar-agua.webp`, description: "Reduzidos a 10 PV; –5 em todos os testes e na Defesa.",
 				system: { changes: [ch("system.modificadores.pericias.geral", -5), ch("system.modificadores.ataque.geral", -5), ch("system.attributes.defesa.bonus", -5)] } });
 			await darEfeito(["tirano", "barao"], "fdtAlavanca2", { name: "Fortalecidos (Alavanca 2)", img: `systems/tormenta20/icons/magias/controlar-agua.webp`, description: "+3 em testes de ataque e na Defesa.",

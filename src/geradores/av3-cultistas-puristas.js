@@ -616,15 +616,10 @@
 		// O dano em jogo é rolado antes, para aparecer no card do teste do jogador.
 		const teste = async (pericia, cd, o = {}) => {
 			const d = o.dano ? await new Roll(o.dano).evaluate() : null;
-			const t = await fdtTeste(alvo, pericia, { cd, dano: d, metade: o.metade, titulo: `Demais Habitantes: ${o.titulo}`, falha: o.falha, sucesso: o.sucesso });
+			// O card leva o dano e a condição da falha: o Mestre aplica pelos botões dele.
+			const t = await fdtTeste(alvo, pericia, { cd, dano: d, metade: o.metade, evita: o.evita, titulo: `Demais Habitantes: ${o.titulo}`, falha: o.falha, falhaStatus: o.falhaStatus, sucesso: o.sucesso });
 			rolls.push(t);
 			return { ok: t.total >= cd, total: t.total, dano: d };
-		};
-		const dano = async (formula, mult) => {
-			const d = typeof formula === "string" ? await new Roll(formula).evaluate() : formula;
-			rolls.push(d);
-			if (mult > 0) await fdtAplicar.dano(alvo, d, mult);
-			return d.total;
 		};
 		const status = (id, ativo = true) => fdtAplicar.status(alvo, id, { active: ativo });
 
@@ -632,9 +627,8 @@
 		switch (n) {
 			case 1: txt = "<b>Intervenção de Orlo!</b> O NPC mais próximo pode se mover e atacar como reação."; break;
 			case 2: {
-				const s = await teste("refl", 18, { titulo: "Coice!", dano: "2d8[impacto]", metade: true, falha: "dano total e caído." });
-				const v = await dano(s.dano, s.ok ? 0.5 : 1);
-				if (!s.ok) await status("caido");
+				const s = await teste("refl", 18, { titulo: "Coice!", dano: "2d8[impacto]", metade: true, falha: "dano total e caído.", falhaStatus: "caido" });
+				const v = s.dano.total;
 				txt = `<b>Coice!</b> Reflexos ${s.total} (CD 18) ${s.ok ? "✔️ metade do dano" : "❌ dano total e caído"}. Dano rolado: ${v}.`;
 				break;
 			}
@@ -646,23 +640,18 @@
 			}
 			case 4: txt = "<b>Filho corajoso!</b> Uma criança se lança contra o personagem. Ação padrão para afastá-la, ou 50% dos ataques acertam a criança (1 PV) até o fim da cena."; break;
 			case 5: {
-				const s = await teste("vont", 15, { titulo: "Impropérios!", falha: "desprevenido por 1 rodada." });
-				if (!s.ok) await status("desprevenido");
+				const s = await teste("vont", 15, { titulo: "Impropérios!", falha: "desprevenido por 1 rodada.", falhaStatus: "desprevenido" });
 				txt = `<b>Impropérios!</b> Vontade ${s.total} (CD 15) ${s.ok ? "✔️ ignora" : "❌ desprevenido por 1 rodada"}.`;
 				break;
 			}
 			case 6: {
 				const s = await teste("refl", 15, { titulo: "Apedrejamento!", dano: "2d4[impacto]", metade: true });
-				const v = await dano(s.dano, s.ok ? 0.5 : 1);
+				const v = s.dano.total;
 				txt = `<b>Apedrejamento!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ metade" : "❌ dano total"}. Dano rolado: ${v}.`;
 				break;
 			}
 			case 7: {
-				const s = await teste("refl", 15, { titulo: "Vira-latas!", dano: "1d6[corte]", falha: "toma o dano e fica caído.", sucesso: "escapa." });
-				if (!s.ok) {
-					await dano(s.dano, 1);
-					await status("caido");
-				}
+				const s = await teste("refl", 15, { titulo: "Vira-latas!", dano: "1d6[corte]", evita: true, falha: "toma o dano e fica caído.", falhaStatus: "caido", sucesso: "escapa." });
 				txt = `<b>Vira-latas!</b> Reflexos ${s.total} (CD 15) ${s.ok ? "✔️ escapa" : "❌ 1d6 de corte e caído"}.`;
 				break;
 			}
@@ -670,7 +659,7 @@
 		}
 		estado.proximo = (pjs.indexOf(alvoC) - 1 + pjs.length) % pjs.length;
 		await combat.setFlag("world", "fdtHabitantes", estado);
-		ChatMessage.create({ content: `<h3>Demais Habitantes · ${alvo.name}</h3><p>${txt}</p><p style="font-size:0.85em">Dano já aplicado com RD; condições marcadas no token.</p>`, rolls });
+		ChatMessage.create({ content: `<h3>Demais Habitantes · ${alvo.name}</h3><p>${txt}</p><p style="font-size:0.85em">O Mestre aplica o dano e as condições pelos botões do card.</p>`, rolls });
 	}
 
 	async function macroRitual() {
@@ -764,7 +753,7 @@
 					description: "Quem usa o lampião decide uma ação de movimento por rodada. Sem ações completas. Novo teste a cada rodada.",
 					flags: { world: { fdt: "av3", fdtLampiao: true } }
 				}]);
-			} else if (ok && efeito) await efeito.delete();
+			} else if (ok && efeito) await fdtAplicar.tirarEfeito(a, [efeito.id], efeito.name);
 			html += `<li>${a.name}: <b>${r.total}</b> ${ok ? "✔️ resiste nesta rodada" : "❌ hipnotizado"}</li>`;
 		}
 		html += "</ul><p style=\"font-size:0.85em\">Passar não dá imunidade: rode de novo a cada rodada.</p>";
