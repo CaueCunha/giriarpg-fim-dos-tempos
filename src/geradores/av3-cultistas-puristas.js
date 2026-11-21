@@ -12,7 +12,7 @@
  *        linha de tempo, ritual e desfecho.
  *      - Tabela "Demais Habitantes de Dornbach" (1d8).
  *      - Macros: Demais Habitantes, Ritual de Purificação, Infiltração em Dornbach,
- *        Lampião Mecanomágico.
+ *        Lampião Mecanomágico e Montar cenas dos mapas (cria as cenas com as imagens do módulo).
  *   3. Rodar de novo apaga (depois de confirmar) o que foi criado antes e recria tudo.
  *      Só são apagados documentos com a marca flags.world.fdt = "av3".
  *
@@ -760,6 +760,176 @@
 		ChatMessage.create({ content: html, rolls });
 	}
 
+	/* Macro: monta as cenas dos mapas da Av3 (imagens do módulo, grid, paredes, portas, luzes e notas do Mestre).
+	 * Coordenadas em pixels da cena (1 quadrado = 100 px = 1,5 m). As paredes foram traçadas à mão sobre as
+	 * imagens: confira no editor de paredes. Cenas que já existem não são tocadas, a não ser que o Mestre peça. */
+	async function macroCenas() {
+		const DIR = "modules/giriarpg-fim-dos-tempos/assets/arco1/av3-cultistas/mapas";
+		const TIPOS = {
+			parede: { move: 20, sight: 20, light: 20, sound: 20 },
+			janela: { move: 20, sight: 0, light: 0, sound: 10 },
+			cortina: { move: 0, sight: 20, light: 20, sound: 0 },
+			porta: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 0 },
+			grade: { move: 20, sight: 0, light: 0, sound: 0, door: 1, ds: 2 }
+		};
+		const LUZ = {
+			fogo: { bright: 3, dim: 7.5, color: "#ff8a3d", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 3 } },
+			fogueira: { bright: 4.5, dim: 9, color: "#ff7a2a", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 4 } },
+			vela: { bright: 1, dim: 3, color: "#ffb35c", alpha: 0.35, animation: { type: "torch", speed: 2, intensity: 2 } },
+			braseiro: { bright: 1.5, dim: 4.5, color: "#ffa040", alpha: 0.4, animation: { type: "torch", speed: 3, intensity: 3 } },
+			rubra: { bright: 1, dim: 3, color: "#ff3030", alpha: 0.5, animation: { type: "pulse", speed: 2, intensity: 3 } }
+		};
+		const CENAS = [
+			{
+				id: "chifre", nome: "Av3 · Dornbach · Taverna Chifre de Bode", arquivo: "chifre-de-bode", w: 10, h: 15, escuro: 0.5,
+				paredes: [
+					["parede", [60, 200, 280, 200, 280, 420, 660, 420, 660, 200, 905, 200, 905, 1500, 580, 1500]],
+					["porta", [580, 1500, 420, 1500]],
+					["parede", [420, 1500, 60, 1500, 60, 1150]],
+					["janela", [60, 1150, 60, 780]], ["parede", [60, 780, 60, 700]],
+					["janela", [60, 700, 60, 330]], ["parede", [60, 330, 60, 200]]
+				],
+				luzes: [["fogo", 470, 445], ["vela", 75, 487], ["vela", 75, 1185], ["vela", 890, 547], ["vela", 660, 832], ["vela", 660, 1372]],
+				notas: [
+					[780, 1000, "6 poções de Sono escondidas atrás do balcão"],
+					[470, 480, "Lareira: o chifre de bode cozido em lama"],
+					[500, 1420, "Entrada (porta posta pela macro; o mapa não mostra)"],
+					[250, 1420, "Cozinha, os 2 quartos de hóspede e o quarto de Zagar ficam fora deste mapa"]
+				]
+			},
+			{
+				id: "salao", nome: "Av3 · Dornbach · Salão Comunal", arquivo: "salao-comunal", w: 12, h: 18, escuro: 0.4,
+				paredes: [
+					["parede", [550, 1650, 70, 1650, 50, 1100, 55, 600, 75, 40, 1140, 40, 1165, 600, 1170, 1100, 1145, 1650, 650, 1650]],
+					["porta", [650, 1650, 550, 1650]]
+				],
+				luzes: [["fogueira", 623, 1090], ["vela", 437, 585], ["vela", 797, 585], ["vela", 437, 1112], ["vela", 797, 1112]],
+				notas: [
+					[620, 300, "Mesa dos anciãos (Orlo, Deron, Catagran, Bernice)"],
+					[620, 80, "Retrato na parede: desculpa para atrair não humanos"],
+					[230, 470, "Bandeja com pratos e talheres: alguém come escondido"],
+					[480, 940, "Alçapão 1: Intuição, Percepção e Reflexos CD 18 (p. 105). Cai na cela do subsolo"],
+					[765, 940, "Alçapão 2: Intuição, Percepção e Reflexos CD 18 (p. 105). Cai na cela do subsolo"],
+					[1040, 150, "Passagem escondida para o subsolo (Ofício pedreiro revela)"]
+				],
+				alcapoes: [[430, 890], [715, 890]]
+			},
+			{
+				id: "subsolo", nome: "Av3 · Dornbach · Subsolo do Salão", arquivo: "salao-comunal-subsolo", w: 16, h: 16, escuro: 0.85,
+				paredes: [
+					["parede", [200, 200, 1105, 200, 1105, 115, 1408, 115, 1408, 1488, 200, 1488, 200, 200]],
+					["parede", [1030, 500, 1150, 500]], ["parede", [1200, 775, 1408, 775]],
+					["parede", [200, 1040, 360, 1040]], ["grade", [360, 1040, 360, 1312]], ["parede", [360, 1312, 512, 1312, 512, 1488]],
+					["parede", [512, 1250, 592, 1250]], ["grade", [592, 1250, 960, 1250]], ["parede", [960, 1250, 1040, 1250, 1040, 1488]],
+					["parede", [1040, 1312, 1312, 1312]]
+				],
+				luzes: [["braseiro", 736, 232], ["vela", 864, 424], ["vela", 264, 480], ["vela", 424, 504], ["vela", 264, 1336], ["vela", 1280, 1160], ["rubra", 776, 1384]],
+				notas: [
+					[1230, 300, "Alojamento de Lorelei e dos 2 soldados"],
+					[750, 800, "Montagem da Máquina de Purificação"],
+					[280, 1240, "Cela de Andrisse (grade trancada)"],
+					[776, 1400, "Cela de quem cai do alçapão (grade trancada)"],
+					[1400, 1420, "Saída para a superfície: a máquina sobe às 22h"]
+				]
+			},
+			{
+				id: "carvalho", nome: "Av3 · Carvalho Oco das Dahllan", arquivo: "carvalho-oco", w: 14, h: 20, escuro: 0, dia: true,
+				paredes: [
+					["parede", [420, 530, 330, 460, 296, 340, 304, 220, 360, 124, 480, 84, 600, 110, 664, 190, 690, 300, 720, 390, 810, 396]],
+					["parede", [420, 530, 500, 610]], ["cortina", [500, 610, 690, 580]],
+					["parede", [930, 396, 940, 340, 970, 260, 990, 180, 1080, 124, 1200, 144, 1260, 220, 1260, 320, 1220, 420, 1140, 480, 1130, 540, 1170, 600, 1180, 700, 1120, 780, 1080, 800]],
+					["cortina", [1080, 800, 1120, 1060]],
+					["parede", [1120, 1060, 1150, 1080, 1120, 1150, 990, 1160, 940, 1200, 820, 1280]],
+					["parede", [550, 1120, 565, 1280, 660, 1280]],
+					["parede", [540, 1280, 510, 1330, 530, 1440, 530, 1560, 490, 1630, 380, 1660, 260, 1640, 150, 1600, 90, 1480, 80, 1380, 110, 1280, 220, 1220, 300, 1200]],
+					["cortina", [300, 1200, 540, 1280]],
+					["parede", [300, 1200, 260, 1100, 240, 940]], ["cortina", [240, 940, 250, 800]], ["parede", [250, 800, 300, 700, 430, 636, 500, 610]],
+					["parede", [740, 430, 756, 660]]
+				],
+				luzes: [],
+				notas: [
+					[870, 250, "Ponte de corda: Annabel dá o tiro de aviso daqui"],
+					[480, 260, "Quarto de Annabel"],
+					[1150, 230, "Quarto de Grena (a cama vazia de Andrisse)"],
+					[260, 1450, "Quarto de Astelle (estante, grimório)"],
+					[1060, 700, "Cozinha"],
+					[740, 1330, "Saída pelo chão, entre as raízes"]
+				]
+			}
+		];
+
+		const existentes = game.scenes.filter((s) => s.getFlag("world", "fdtCena"));
+		let recriar = false;
+		if (existentes.length) {
+			recriar = await foundry.applications.api.DialogV2.confirm({
+				window: { title: "Av3: cenas dos mapas" },
+				content: `<p>Já existem <b>${existentes.length}</b> cenas da Av3 criadas por esta macro.</p>
+					<p><b>Sim</b> apaga essas cenas e cria de novo (tokens, paredes e ajustes feitos à mão nelas se perdem).<br>
+					<b>Não</b> mantém as que existem e cria só as que faltam.</p>`
+			});
+			if (recriar) await Scene.deleteDocuments(existentes.map((s) => s.id));
+		}
+		const ja = new Set(recriar ? [] : existentes.map((s) => s.getFlag("world", "fdtCena")));
+		const diario = game.journal.find((j) => j.name?.startsWith("Aventura 3 ·"));
+		const criadas = [];
+		const pulei = [];
+		for (const c of CENAS) {
+			if (ja.has(c.id)) {
+				pulei.push(c.nome);
+				continue;
+			}
+			const src = `${DIR}/${c.arquivo}.webp`;
+			const walls = [];
+			for (const [tipo, p] of c.paredes) {
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [p[i], p[i + 1], p[i + 2], p[i + 3]], ...TIPOS[tipo] });
+			}
+			const dados = {
+				name: c.nome,
+				navigation: false,
+				width: c.w * 100,
+				height: c.h * 100,
+				padding: 0.1,
+				backgroundColor: "#111111",
+				grid: { type: 1, size: 100, distance: 1.5, units: "m" },
+				tokenVision: true,
+				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
+				walls,
+				lights: c.luzes.map(([t, x, y]) => ({ x, y, config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x, y, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				flags: { world: { fdtCena: c.id } }
+			};
+			const cena = await Scene.create(dados);
+			// v14: a imagem fica no nível (Level) da cena. Sem níveis (versões antigas), vai em background.
+			try {
+				const niveis = cena.levels;
+				if (niveis && niveis.size) await cena.updateEmbeddedDocuments("Level", [{ _id: niveis.contents[0].id, background: { src } }]);
+				else if (niveis) await cena.createEmbeddedDocuments("Level", [{ name: "Térreo", elevation: { bottom: 0, top: 20 }, background: { src } }]);
+				else await cena.update({ "background.src": src });
+			} catch (e) {
+				console.error(e);
+				ui.notifications.warn(`${c.nome}: não consegui pôr a imagem sozinho. Escolha ${src} nas configurações da cena.`);
+			}
+			// Alçapões como regiões ocultas (só o Mestre vê). Se a versão não aceitar, as notas já marcam o lugar.
+			if (c.alcapoes) {
+				try {
+					await cena.createEmbeddedDocuments("Region", c.alcapoes.map(([x, y], i) => ({
+						name: `Alçapão ${i + 1}`,
+						color: "#c0392b",
+						shapes: [{ type: "rectangle", x, y, width: 100, height: 100, rotation: 0, hole: false }]
+					})));
+				} catch (e) {
+					console.warn("Av3 · cenas: regiões dos alçapões não criadas", e);
+				}
+			}
+			criadas.push(cena);
+		}
+		const lista = criadas.map((s) => `<li>@UUID[${s.uuid}]{${s.name}}</li>`).join("");
+		ChatMessage.create({
+			whisper: [game.user.id],
+			content: `<h3>Av3 · Cenas dos mapas</h3>${criadas.length ? `<p>Criadas:</p><ul>${lista}</ul>` : "<p>Nenhuma cena nova.</p>"}${pulei.length ? `<p>Já existiam (não mexi): ${pulei.join(", ")}.</p>` : ""}<p style="font-size:0.85em">Grid de 1,5 m, paredes, portas, luzes e notas do Mestre. As paredes foram traçadas sobre as imagens: confira e ajuste no editor de paredes antes da sessão. As grades das celas começam trancadas.</p>`
+		});
+	}
+
 	const macro = (name, img, fn) => ({
 		name,
 		type: "script",
@@ -772,7 +942,8 @@
 		macro("Av3 · Demais Habitantes", "icons/svg/village.svg", macroHabitantes),
 		macro("Av3 · Ritual de Purificação", `${T20I}/itens/gerais/orbe-cristalina.webp`, macroRitual),
 		macro("Av3 · Infiltração em Dornbach", "icons/svg/mystery-man.svg", macroInfiltracao),
-		macro("Av3 · Lampião Mecanomágico", `${T20I}/itens/gerais/lampiao.webp`, macroLampiao)
+		macro("Av3 · Lampião Mecanomágico", `${T20I}/itens/gerais/lampiao.webp`, macroLampiao),
+		macro("Av3 · Montar cenas dos mapas", "icons/svg/house.svg", macroCenas)
 	]);
 	const linkMacro = (trecho) => {
 		const m = macros.find((x) => x.name.includes(trecho));
