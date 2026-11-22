@@ -424,7 +424,11 @@
 		tokenName: "Harpia",
 		role: "harpia",
 		link: true,
-		img: `${T20I}/magias/raio-solar.webp`,
+		img: `${ARTE}/harpia-token.webp`,
+		token: `${ARTE}/harpia-token.webp`,
+		// Colossal: "tão grande quanto um navio de guerra" (p. 121); o casco ocupa uns 11 quadrados de largura no mapa do convés.
+		tamanho: "col",
+		tokenSize: 11,
 		nd: 5,
 		cd: 20,
 		tipo: "ani",
@@ -434,7 +438,7 @@
 		def: 10,
 		recursos: { primary: { label: "Rodada do ataque", value: 0, max: 10 } },
 		bio: p(
-			"<b>Ator de apoio, não vai para o mapa como combatente.</b> Cada item é um perigo da Harpia com a CD e os botões de efeito. Mire os personagens antes de clicar nos botões do card.",
+			"<b>Ator de apoio, não é combatente.</b> O token (Colossal, 11×11 quadrados) serve para mostrar a Harpia pairando sobre a plantação: ponha elevação nele e uma luz branca forte com pulso para o brilho. Cada item é um perigo da Harpia com a CD e os botões de efeito. Mire os personagens antes de clicar nos botões do card.",
 			"Gog'magogue fêmea nascida em Arton, cega pelos captores e cortada todos os dias para que o sangue brilhante cegue os inimigos. Não tem nome; os \"bípedes\" a chamam de Harpia. Só deseja liberdade e sente que deve subir, cada vez mais alto.",
 			"Na primeira rodada da iniciativa, só a Harpia (o canhão) age e dois cães saltam. Bandoleiros e cães agem a partir da segunda rodada. Use a macro <i>Ataque do Céu</i> para avançar as rodadas."
 		),
