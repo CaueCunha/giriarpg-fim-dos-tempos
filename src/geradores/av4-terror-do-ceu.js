@@ -11,7 +11,7 @@
  *      - Diário com guia do mestre, aviso, família Gallobalt, investigação, o ataque,
  *        regras a bordo, a Harpia, a carta de Syvarian e o desfecho.
  *      - Macros: Ataque do Céu, Luz da Harpia, Turno da Harpia, Testes a Bordo,
- *        Cirurgia do Implante e Elemental Elétrico (Torgo).
+ *        Cirurgia do Implante, Elemental Elétrico (Torgo) e Montar cenas dos mapas (cria as cenas com as imagens do módulo).
  *   3. Rodar de novo apaga (depois de confirmar) o que foi criado antes e recria tudo.
  *      Só são apagados documentos com a marca flags.world.fdt = "av4".
  *
@@ -817,6 +817,185 @@
 		ChatMessage.create({ content: `<h3>Elemental Elétrico</h3><p>A eletricidade é absorvida pelo relógio no peito de ${torgo.name}: ele <b>recupera ${cura} PV</b>.</p><p>Até o fim do próximo turno, pancadas e Olhar Elétrico causam <b>+1d6 de eletricidade</b> (marque <i>Carga elétrica</i> na pancada; use a rolagem \"Com carga elétrica\" do Olhar).</p>` });
 	}
 
+	/* Macro: monta as cenas dos mapas da Av4 (imagens do módulo, grid, paredes, portas, luzes e notas do Mestre).
+	 * As coordenadas foram traçadas à mão sobre uma cópia reduzida de cada imagem; "k" converte para pixels da
+	 * cena (1 quadrado = 100 px = 1,5 m). Confira no editor de paredes. Cenas que já existem não são tocadas,
+	 * a não ser que o Mestre peça. */
+	async function macroCenas() {
+		const DIR = "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/mapas";
+		const TIPOS = {
+			parede: { move: 20, sight: 20, light: 20, sound: 20 },
+			janela: { move: 20, sight: 0, light: 0, sound: 10 },
+			mureta: { move: 20, sight: 0, light: 0, sound: 0 },
+			porta: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 0 }
+		};
+		const LUZ = {
+			lareira: { bright: 2, dim: 6, color: "#ff8a3d", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 3 } },
+			lampiao: { bright: 2, dim: 6, color: "#ffc070", alpha: 0.4, animation: { type: "torch", speed: 2, intensity: 2 } },
+			vela: { bright: 1, dim: 3, color: "#ffb35c", alpha: 0.35, animation: { type: "torch", speed: 2, intensity: 2 } }
+		};
+		const CENAS = [
+			{
+				id: "av4-fazenda", nome: "Av4 · Fazendas Gallobalt · Chegada", arquivo: "entrada-fazenda", w: 14, h: 21, k: 1.909, escuro: 0, dia: true,
+				paredes: [
+					["parede", [733, 128, 250, 128, 250, 360, 450, 360, 450, 578, 555, 578]],
+					["porta", [555, 578, 605, 578]],
+					["parede", [605, 578, 683, 578, 683, 522, 733, 522]]
+				],
+				luzes: [],
+				notas: [
+					[580, 610, "Porta do casarão: o interior é a cena do casarão"],
+					[130, 860, "Estrada da chegada (F2)"],
+					[50, 450, "Plantação de achbuld (detalhe na cena da plantação)"],
+					[580, 700, "Depósito de barris e ferramentas"]
+				]
+			},
+			{
+				id: "av4-casarao", nome: "Av4 · Fazendas Gallobalt · Casarão", arquivo: "casarao-gallobalt", w: 21, h: 12, k: 1.909, escuro: 0.3,
+				paredes: [
+					["parede", [83, 300, 83, 68, 122, 68, 122, 25, 220, 25, 220, 68, 318, 68, 318, 28, 688, 28, 688, 68, 890, 68, 890, 25, 985, 25, 985, 68, 1030, 68, 1030, 590, 690, 590, 690, 300, 540, 300]],
+					["porta", [540, 300, 475, 300]],
+					["parede", [475, 300, 265, 300]],
+					["janela", [265, 300, 260, 330, 250, 360, 160, 360, 140, 330, 100, 300]], ["parede", [100, 300, 83, 300]],
+					["parede", [320, 68, 320, 165]], ["porta", [320, 165, 320, 205]], ["parede", [320, 205, 320, 300]],
+					["parede", [688, 68, 688, 120]], ["porta", [688, 120, 688, 180]], ["parede", [688, 180, 688, 300]],
+					["parede", [750, 240, 750, 250]], ["porta", [750, 250, 750, 290]], ["parede", [750, 290, 750, 380]],
+					["porta", [750, 380, 750, 420]], ["parede", [750, 420, 750, 480]],
+					["parede", [750, 240, 1030, 240]], ["parede", [750, 362, 1030, 362]],
+					["porta", [695, 480, 745, 480]], ["parede", [745, 480, 1030, 480]],
+					["parede", [905, 480, 905, 520]], ["porta", [905, 520, 905, 560]], ["parede", [905, 560, 905, 590]],
+					["mureta", [95, 300, 95, 590, 530, 590]]
+				],
+				luzes: [["lareira", 170, 95], ["lareira", 937, 95], ["vela", 500, 160], ["vela", 890, 300], ["vela", 890, 420]],
+				notas: [
+					[200, 200, "Sala: o vinho de Nathanael"],
+					[500, 120, "Sala de jantar: acolhida e depoimentos (F2 e F3)"],
+					[880, 150, "Cozinha"],
+					[890, 300, "Quarto de Jansel e Vadrinne"],
+					[890, 420, "Quarto de Alon"],
+					[790, 540, "Escritório"],
+					[250, 480, "Quintal"],
+					[1000, 560, "Este mapa também serve para as outras duas casas da fazenda"]
+				]
+			},
+			{
+				id: "av4-plantacao", nome: "Av4 · Fazendas Gallobalt · Plantação de achbuld", arquivo: "plantacao-achbuld", w: 22, h: 32, k: 2.907, escuro: 0, dia: true,
+				paredes: [
+					["mureta", [0, 200, 205, 200, 205, 145]],
+					["mureta", [350, 0, 350, 268, 425, 268]], ["mureta", [545, 268, 677, 268]]
+				],
+				luzes: [],
+				notas: [
+					[100, 90, "Galpão de secagem"],
+					[520, 120, "Armazém da colheita"],
+					[380, 600, "Faixas queimadas: o rastro do Ataque do Céu (F3 e F5)"],
+					[380, 380, "F5 Contato Imediato: a Harpia paira sobre a plantação (macros Luz da Harpia, Ataque do Céu e Turno da Harpia)"],
+					[150, 330, "Vadrinne leva 5 rodadas para chegar da casa até aqui"],
+					[650, 900, "Fumaça das faixas queimadas"]
+				]
+			},
+			{
+				id: "av4-conves", nome: "Av4 · A Harpia · Convés", arquivo: "harpia-conves", w: 18, h: 27, k: 2.4557, escuro: 0.7,
+				paredes: [
+					["mureta", [367, 0, 415, 40, 445, 100, 470, 170, 540, 175, 570, 240, 585, 330, 590, 450, 590, 600, 580, 700, 555, 800, 520, 900, 470, 1020, 290, 1020, 240, 920, 195, 820, 160, 720, 145, 600, 145, 450, 150, 330, 165, 240, 195, 175, 265, 170, 290, 100, 320, 40, 367, 0]],
+					["parede", [335, 715, 335, 800]], ["parede", [410, 715, 410, 800]],
+					["parede", [230, 860, 335, 860]], ["parede", [410, 860, 525, 860]], ["parede", [370, 880, 370, 1020]]
+				],
+				luzes: [["lampiao", 370, 820], ["vela", 465, 770], ["vela", 300, 790]],
+				notas: [
+					[370, 400, "Canhão de Fogo: linha de 30 m, 4d6 de fogo, Reflexos CD 20 reduz à metade. 40 PV, RD 10; o artilheiro ganha +5 na Defesa"],
+					[370, 250, "Regras a bordo: piso escorregadio (CD 10), escadas contam 3 quadrados, armas de duas mãos −2 (macro Testes a Bordo)"],
+					[250, 590, "Escotilha: desce para os túneis e a estufa"],
+					[150, 420, "Escada de corda"],
+					[585, 420, "Escada de corda"],
+					[210, 735, "Guincho"],
+					[370, 525, "Emblema do relógio"],
+					[100, 900, "Nadadeiras: cone de 9 m, empurra 6 m"]
+				]
+			},
+			{
+				id: "av4-leme", nome: "Av4 · A Harpia · Ponte de comando", arquivo: "harpia-leme", w: 21, h: 12, k: 1.909, escuro: 0.6,
+				paredes: [
+					["parede", [318, 505, 318, 230, 360, 140]],
+					["janela", [360, 140, 440, 85, 545, 62, 650, 85, 730, 140]],
+					["parede", [730, 140, 772, 230, 772, 505, 700, 555, 620, 530, 590, 528]],
+					["porta", [590, 528, 500, 528]],
+					["parede", [500, 528, 470, 530, 390, 555, 318, 505]]
+				],
+				luzes: [["lampiao", 435, 165], ["lampiao", 650, 165]],
+				notas: [
+					[545, 300, "Timão: Pilotagem CD 25 para controlar a Harpia"],
+					[545, 450, "Luta final contra Torgo (F6)"],
+					[700, 240, "Luneta"],
+					[730, 380, "Painel de comando"]
+				]
+			}
+		];
+
+		const ids = new Set(CENAS.map((c) => c.id));
+		const existentes = game.scenes.filter((s) => ids.has(s.getFlag("world", "fdtCena")));
+		let recriar = false;
+		if (existentes.length) {
+			recriar = await foundry.applications.api.DialogV2.confirm({
+				window: { title: "Av4: cenas dos mapas" },
+				content: `<p>Já existem <b>${existentes.length}</b> cenas da Av4 criadas por esta macro.</p>
+					<p><b>Sim</b> apaga essas cenas e cria de novo (tokens, paredes e ajustes feitos à mão nelas se perdem).<br>
+					<b>Não</b> mantém as que existem e cria só as que faltam.</p>`
+			});
+			if (recriar) await Scene.deleteDocuments(existentes.map((s) => s.id));
+		}
+		const ja = new Set(recriar ? [] : existentes.map((s) => s.getFlag("world", "fdtCena")));
+		const diario = game.journal.find((j) => j.name?.startsWith("Aventura 4 ·"));
+		const criadas = [];
+		const pulei = [];
+		for (const c of CENAS) {
+			if (ja.has(c.id)) {
+				pulei.push(c.nome);
+				continue;
+			}
+			const src = `${DIR}/${c.arquivo}.webp`;
+			const W = c.w * 100;
+			const H = c.h * 100;
+			const px = (v, max) => Math.min(max, Math.max(0, Math.round(v * c.k)));
+			const walls = [];
+			for (const [tipo, p] of c.paredes) {
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [px(p[i], W), px(p[i + 1], H), px(p[i + 2], W), px(p[i + 3], H)], ...TIPOS[tipo] });
+			}
+			const dados = {
+				name: c.nome,
+				navigation: false,
+				width: W,
+				height: H,
+				padding: 0.1,
+				backgroundColor: "#111111",
+				grid: { type: 1, size: 100, distance: 1.5, units: "m" },
+				tokenVision: true,
+				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
+				walls,
+				lights: c.luzes.map(([t, x, y]) => ({ x: px(x, W), y: px(y, H), config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x: px(x, W), y: px(y, H), text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				flags: { world: { fdtCena: c.id } }
+			};
+			const cena = await Scene.create(dados);
+			// v14: a imagem fica no nível (Level) da cena. Sem níveis (versões antigas), vai em background.
+			try {
+				const niveis = cena.levels;
+				if (niveis && niveis.size) await cena.updateEmbeddedDocuments("Level", [{ _id: niveis.contents[0].id, background: { src } }]);
+				else if (niveis) await cena.createEmbeddedDocuments("Level", [{ name: "Térreo", elevation: { bottom: 0, top: 20 }, background: { src } }]);
+				else await cena.update({ "background.src": src });
+			} catch (e) {
+				console.error(e);
+				ui.notifications.warn(`${c.nome}: não consegui pôr a imagem sozinho. Escolha ${src} nas configurações da cena.`);
+			}
+			criadas.push(cena);
+		}
+		const lista = criadas.map((s) => `<li>@UUID[${s.uuid}]{${s.name}}</li>`).join("");
+		ChatMessage.create({
+			whisper: [game.user.id],
+			content: `<h3>Av4 · Cenas dos mapas</h3>${criadas.length ? `<p>Criadas:</p><ul>${lista}</ul>` : "<p>Nenhuma cena nova.</p>"}${pulei.length ? `<p>Já existiam (não mexi): ${pulei.join(", ")}.</p>` : ""}<p style="font-size:0.85em">Grid de 1,5 m, paredes, portas, luzes e notas do Mestre. As paredes foram traçadas sobre as imagens: confira e ajuste no editor de paredes antes da sessão. A amurada da Harpia e as cercas dos galpões são muretas (bloqueiam passagem, não a visão).</p>`
+		});
+	}
+
 	const macro = (name, img, fn) => ({
 		name,
 		type: "script",
@@ -831,7 +1010,8 @@
 		macro("Av4 · Turno da Harpia", `${T20I}/magias/explosao-de-chamas.webp`, macroTurnoHarpia),
 		macro("Av4 · Testes a Bordo", `${T20I}/itens/gerais/corda.webp`, macroBordo),
 		macro("Av4 · Cirurgia do Implante", `${T20I}/itens/gerais/po-de-cristal.webp`, macroCirurgia),
-		macro("Av4 · Elemental Elétrico (Torgo)", `${T20I}/magias/relampago.webp`, macroElemental)
+		macro("Av4 · Elemental Elétrico (Torgo)", `${T20I}/magias/relampago.webp`, macroElemental),
+		macro("Av4 · Montar cenas dos mapas", "icons/svg/house.svg", macroCenas)
 	]);
 	const linkMacro = (trecho) => {
 		const m = macros.find((x) => x.name.includes(trecho));

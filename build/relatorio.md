@@ -7,7 +7,7 @@
 - Itens: 43 documento(s)
 - Diários: 9 documento(s)
 - Tabelas: 15 documento(s)
-- Macros: 50 documento(s)
+- Macros: 51 documento(s)
 
 ### Ligações com o sistema (122)
 
@@ -400,5 +400,5 @@
 - `itens` (Itens): 150 documento(s), 25 pasta(s)
 - `diarios` (Diários): 27 documento(s), 29 pasta(s)
 - `tabelas` (Tabelas): 43 documento(s), 20 pasta(s)
-- `macros` (Macros): 139 documento(s), 29 pasta(s)
+- `macros` (Macros): 140 documento(s), 29 pasta(s)
 
