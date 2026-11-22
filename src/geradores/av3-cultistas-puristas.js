@@ -858,7 +858,8 @@
 			}
 		];
 
-		const existentes = game.scenes.filter((s) => s.getFlag("world", "fdtCena"));
+		const ids = new Set(CENAS.map((c) => c.id));
+		const existentes = game.scenes.filter((s) => ids.has(s.getFlag("world", "fdtCena")));
 		let recriar = false;
 		if (existentes.length) {
 			recriar = await foundry.applications.api.DialogV2.confirm({
