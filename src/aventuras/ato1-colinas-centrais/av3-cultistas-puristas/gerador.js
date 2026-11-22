@@ -880,9 +880,12 @@
 				continue;
 			}
 			const src = `${DIR}/${c.arquivo}.webp`;
+			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
+			const dx = Math.ceil(0.1 * c.w) * 100;
+			const dy = Math.ceil(0.1 * c.h) * 100;
 			const walls = [];
 			for (const [tipo, p] of c.paredes) {
-				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [p[i], p[i + 1], p[i + 2], p[i + 3]], ...TIPOS[tipo] });
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [p[i] + dx, p[i + 1] + dy, p[i + 2] + dx, p[i + 3] + dy], ...TIPOS[tipo] });
 			}
 			const dados = {
 				name: c.nome,
@@ -895,8 +898,8 @@
 				tokenVision: true,
 				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
 				walls,
-				lights: c.luzes.map(([t, x, y]) => ({ x, y, config: { ...LUZ[t] } })),
-				notes: c.notas.map(([x, y, text]) => ({ x, y, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				lights: c.luzes.map(([t, x, y]) => ({ x: x + dx, y: y + dy, config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x: x + dx, y: y + dy, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
 				flags: { world: { fdtCena: c.id } }
 			};
 			const cena = await Scene.create(dados);
@@ -916,7 +919,7 @@
 					await cena.createEmbeddedDocuments("Region", c.alcapoes.map(([x, y], i) => ({
 						name: `Alçapão ${i + 1}`,
 						color: "#c0392b",
-						shapes: [{ type: "rectangle", x, y, width: 100, height: 100, rotation: 0, hole: false }]
+						shapes: [{ type: "rectangle", x: x + dx, y: y + dy, width: 100, height: 100, rotation: 0, hole: false }]
 					})));
 				} catch (e) {
 					console.warn("Av3 · cenas: regiões dos alçapões não criadas", e);
