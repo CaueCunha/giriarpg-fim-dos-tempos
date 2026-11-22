@@ -40,7 +40,7 @@ test("compilar e extrair os compêndios devolve os mesmos documentos", async () 
 test("o script do módulo preserva os mesmos valores que o build", async () => {
 	// o script do módulo usa os globais do Foundry (Hooks, game...): carrega dentro do mundo simulado
 	const mundo = await criarMundo({ semente: "modulo" });
-	const { PRESERVAR: preservarModulo } = await import("../scripts/fdt.mjs?modulo-test");
+	const { PRESERVAR: preservarModulo } = await import("../scripts/main.mjs?modulo-test");
 	mundo.encerrar();
 	assert.deepEqual(preservarModulo, preservarBuild);
 });
@@ -53,6 +53,7 @@ test("versão do module.json acompanha o package.json e o link de download", () 
 	assert.match(m.manifest, /\/releases\/latest\/download\/module\.json$/);
 	assert.ok(m.download.endsWith(`/releases/download/v${m.version}/module.zip`), m.download);
 	const lang = JSON.parse(fs.readFileSync(path.join(RAIZ, "lang/pt-BR.json"), "utf8"));
-	const usadas = [...fs.readFileSync(path.join(RAIZ, "scripts/fdt.mjs"), "utf8").matchAll(/i18n\.(?:localize|format)\("([^"]+)"/g)].map((x) => x[1]);
+	const fontes = fs.readdirSync(path.join(RAIZ, "scripts")).filter((f) => f.endsWith(".mjs")).map((f) => fs.readFileSync(path.join(RAIZ, "scripts", f), "utf8")).join("\n");
+	const usadas = [...fontes.matchAll(/i18n\.(?:localize|format)\("([^"]+)"/g)].map((x) => x[1]);
 	for (const k of usadas) assert.ok(k.split(".").reduce((o, p) => o?.[p], lang) ?? lang[k], `tradução ${k} não existe`);
 });

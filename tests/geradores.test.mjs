@@ -1,5 +1,5 @@
 /**
- * Os geradores (src/geradores) são as macros que o Mestre já usava para criar o conteúdo direto no
+ * Os geradores (src/aventuras/<ato>/<aventura>/gerador.js) são as macros que o Mestre já usava para criar o conteúdo direto no
  * mundo. O build roda todos eles; aqui conferimos que cada ato roda limpo num mundo vazio, e que
  * rodar de novo (o Mestre confirma "recriar") substitui o conteúdo em vez de duplicar.
  */
