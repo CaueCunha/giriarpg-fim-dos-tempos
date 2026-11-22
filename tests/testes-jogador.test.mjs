@@ -146,7 +146,7 @@ test("coletor (fdtAplicar): as macros só deixam botões para o Mestre", async (
 
 test("macros do mundo se atualizam sozinhas e as editadas ficam guardadas numa cópia", async () => {
 	const { mundo, api } = await mesa();
-	const pack = mundo.game.packs.get(`${MODULO}.macros`);
+	const pack = mundo.game.packs.get(`${MODULO}.a1-av1-macros`);
 	const [i1, i2] = pack.index.contents.slice(0, 2);
 	const m1 = await pack.getDocument(i1._id);
 	const m2 = await pack.getDocument(i2._id);

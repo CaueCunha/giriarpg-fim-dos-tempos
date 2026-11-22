@@ -1,8 +1,9 @@
 /**
- * Build do módulo: roda os geradores (src/geradores) num Foundry simulado com o sistema
+ * Build do módulo: roda os geradores (src/aventuras/<ato>/<aventura>/gerador.js) num Foundry simulado com o sistema
  * Tormenta20 real (modelo de dados e compêndios), captura o que eles criam e grava:
- *   - src/packs/<pack>/*.json  fontes dos compêndios (formato do foundryvtt-cli, revisáveis no git)
- *   - module.json              com a lista de compêndios e pastas
+ *   - src/packs/<pack>/*.json  fontes dos compêndios, um por aventura e tipo (formato do foundryvtt-cli)
+ *   - module.json              com a lista de compêndios, as pastas da aba de Compêndios (ato › aventura)
+ *                              e, em flags, as pastas que o Puxar cria no mundo
  *   - build/relatorio.md       o que foi ligado ao sistema e qualquer aviso
  * Depois, "npm run pack" compila as fontes em packs/ (LevelDB), que é o que o Foundry lê.
  *
@@ -12,16 +13,16 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { criarMundo } from "./sim/mundo.mjs";
-import { ATOS, PACKS, MODULO } from "./conteudo.mjs";
+import { ATOS, PACKS, MODULO, arquivoGerador, arquivoDoAto, nomePack } from "./conteudo.mjs";
 import { assinatura, comTokenPadrao } from "../scripts/assinatura.mjs";
 import { ligarAoSistema, indiceSistema } from "./ligar-sistema.mjs";
-import { RAIZ, GERADORES, FONTE_PACKS, HISTORICO } from "./caminhos.mjs";
+import { RAIZ, FONTE_PACKS, HISTORICO } from "./caminhos.mjs";
 import { deepClone } from "./sim/utils.mjs";
 
 const COLECAO = { Actor: "actors", Item: "items", JournalEntry: "journal", RollTable: "tables", Macro: "macros", Folder: "folders" };
 const EMBUTIDOS = { Actor: { items: "Item", effects: "ActiveEffect" }, Item: { effects: "ActiveEffect" }, JournalEntry: { pages: "JournalEntryPage" }, RollTable: { results: "TableResult" } };
 
-const lerGerador = (nome) => fs.readFileSync(path.join(GERADORES, `${nome}.js`), "utf8");
+const lerGerador = (nome) => fs.readFileSync(arquivoGerador(nome), "utf8");
 
 /* ------------------------------------------------------------------------ */
 /* 1. Captura                                                                */
@@ -30,7 +31,14 @@ const lerGerador = (nome) => fs.readFileSync(path.join(GERADORES, `${nome}.js`),
 export async function capturarAto(ato, { semente } = {}) {
 	const mundo = await criarMundo({ semente: semente ?? ato.id });
 	try {
-		for (const g of ato.geradores) await mundo.executar(lerGerador(g), { nome: g });
+		// de qual aventura é cada pasta de cima (tipo|nome): a do gerador que a criou
+		const pastaDe = new Map();
+		const deCima = () => mundo.colecoes.Folder.contents.filter((f) => !(f.folder?.id ?? f.folder));
+		for (const g of ato.geradores) {
+			const antes = new Set(deCima().map((f) => f.id));
+			await mundo.executar(lerGerador(g), { nome: g });
+			for (const f of deCima()) if (!antes.has(f.id) && !pastaDe.has(`${f.type}|${f.name}`)) pastaDe.set(`${f.type}|${f.name}`, g);
+		}
 		const problemas = [
 			...mundo.erros.map((e) => `${e.origem}: ${e.erro?.message ?? e.erro}`),
 			...mundo.notificacoes.filter((n) => n.tipo === "error").map((n) => `${n.origem}: notificação de erro: ${n.msg}`),
@@ -49,15 +57,37 @@ export async function capturarAto(ato, { semente } = {}) {
 				type: "script",
 				img: m.img,
 				scope: "global",
-				command: m.comando ?? fs.readFileSync(path.join(GERADORES, `${m.arquivo}.js`), "utf8"),
+				command: m.comando ?? fs.readFileSync(arquivoDoAto(ato, m.arquivo), "utf8"),
 				folder: null,
 				flags: { world: { fdt: "fdtcampanha", fdtRole: m.role } }
 			});
 		}
-		return { docs, relatorio: mundo.relatorio.filter((r) => r.tipo !== "erro"), mundo };
+		return { docs, pastaDe, relatorio: mundo.relatorio.filter((r) => r.tipo !== "erro"), mundo };
 	} finally {
 		mundo.encerrar();
 	}
+}
+
+/**
+ * Aventura de cada documento: a do gerador que criou a pasta de cima dele. Documento sem pasta só pode ser macro
+ * avulsa do ato (vai para a aventura sem gerador, "ferramentas").
+ * @returns {Map<string, object>} _id → aventura
+ */
+export function aventuraDosDocs(ato, docs, pastaDe) {
+	const pastas = new Map((docs.Folder ?? []).map((f) => [f._id, f]));
+	const avulsa = ato.aventuras.find((a) => a.semGerador);
+	const out = new Map();
+	for (const p of PACKS) {
+		for (const d of docs[p.documento] ?? []) {
+			let f = pastas.get(d.folder);
+			while (f && pastas.get(f.folder)) f = pastas.get(f.folder);
+			const g = f ? pastaDe.get(`${f.type}|${f.name}`) : null;
+			const a = g ? ato.aventuras.find((x) => x.id === g) : !d.folder ? avulsa : null;
+			if (!a) throw new Error(`${ato.rotulo}: não sei de que aventura é ${p.documento} "${d.name}" (pasta ${f?.name ?? d.folder ?? "nenhuma"})`);
+			out.set(d._id, a);
+		}
+	}
+	return out;
 }
 
 /** Token padrão (scripts/assinatura.mjs) em toda ameaça/NPC, para valer a todos os geradores. */
@@ -168,48 +198,59 @@ export function linksParaCompendio(doc, packDe) {
 }
 
 /**
- * Monta os compêndios por tipo. Em cada um: uma pasta por ato e, dentro, as pastas das aventuras.
- * Cada documento leva em flags.<módulo>: o ato, o compêndio antigo (para redirecionar UUIDs) e as assinaturas
- * de todas as versões publicadas (a última é a atual).
- * @param {{ato: object, docs: object}[]} porAto
+ * Monta os compêndios: um por aventura e tipo, sem pastas dentro (como as revistas do Duelo de Dragões).
+ * As pastas que o Puxar cria no mundo (Ato › aventura, com os mesmos IDs de sempre) vão em `pastas` de cada
+ * compêndio; cada documento leva em flags.<módulo>: o ato, a aventura, a pasta do mundo, os compêndios onde já
+ * esteve (para redirecionar UUIDs antigos) e as assinaturas de todas as versões publicadas (a última é a atual).
+ * @param {{ato: object, docs: object, aventuraDe: Map<string, object>}[]} porAto
  */
 export function montarPacks(porAto, historico = {}) {
 	const packDe = new Map();
-	for (const { docs } of porAto) {
-		for (const p of PACKS) for (const d of (docs[p.documento] ?? []).filter(p.filtro ?? (() => true))) packDe.set(d._id, p.nome);
+	for (const { ato, docs, aventuraDe } of porAto) {
+		for (const p of PACKS) for (const d of (docs[p.documento] ?? []).filter(p.filtro ?? (() => true))) packDe.set(d._id, nomePack(ato, aventuraDe.get(d._id), p.nome));
 	}
 	const novoHistorico = structuredClone(historico);
 	const packs = [];
-	for (const p of PACKS) {
-		const pastas = [];
-		const docs = [];
-		for (const [i, { ato, docs: doAto }] of porAto.entries()) {
-			const lista = (doAto[p.documento] ?? []).filter(p.filtro ?? (() => true));
-			if (!lista.length) continue;
-			const raiz = { _id: idEstavel(`${MODULO}|pasta|${p.nome}|${ato.id}`), name: ato.rotulo, type: p.documento, folder: null, sorting: "a", sort: (i + 1) * 100000, color: ato.cor, description: "", flags: { [MODULO]: { ato: ato.id } } };
-			pastas.push(raiz);
-			// a mesma pasta de aventura pode estar em Poderes e em Itens: o segundo ganha outro ID
-			const idPasta = (id) => (p.nome === "poderes" ? idEstavel(`${MODULO}|poderes|${id}`) : id);
-			const usadas = new Set(lista.map((d) => d.folder).filter(Boolean));
-			const fontes = (doAto.Folder ?? []).filter((f) => f.type === p.documento);
-			for (const f of fontes) if (usadas.has(f._id)) for (let pai = fontes.find((x) => x._id === f.folder); pai; pai = fontes.find((x) => x._id === pai.folder)) usadas.add(pai._id);
-			for (const f of fontes.filter((x) => usadas.has(x._id))) {
-				pastas.push({ ...deepClone(f), color: ato.cor, _id: idPasta(f._id), folder: f.folder ? idPasta(f.folder) : raiz._id, flags: { ...deepClone(f.flags ?? {}), [MODULO]: { ato: ato.id } } });
-			}
-			for (const d of lista) {
-				const out = linksParaCompendio(deepClone(d), packDe);
-				out.folder = d.folder ? idPasta(d.folder) : raiz._id;
-				const atual = assinatura(out, p.documento);
-				const todas = [...(historico[d._id] ?? []).filter((x) => x !== atual), atual];
-				novoHistorico[d._id] = todas;
-				out.flags = { ...(out.flags ?? {}), [MODULO]: { ato: ato.id, antigo: `${ato.id}-${p.antigo}`, assinatura: atual, assinaturas: todas } };
-				docs.push(out);
+	for (const [i, { ato, docs: doAto, aventuraDe }] of porAto.entries()) {
+		for (const aventura of ato.aventuras) {
+			for (const p of PACKS) {
+				const lista = (doAto[p.documento] ?? []).filter(p.filtro ?? (() => true)).filter((d) => aventuraDe.get(d._id) === aventura);
+				if (!lista.length) continue;
+				// pasta do ato no mundo: o mesmo ID de quando os compêndios eram por tipo
+				const raiz = { _id: idEstavel(`${MODULO}|pasta|${p.nome}|${ato.id}`), name: ato.rotulo, type: p.documento, folder: null, sorting: "a", sort: (i + 1) * 100000, color: ato.cor, description: "", flags: { [MODULO]: { ato: ato.id } } };
+				// a mesma pasta de aventura pode estar em Poderes e em Itens: a de Poderes ganha outro ID
+				const idPasta = (id) => (p.nome === "poderes" ? idEstavel(`${MODULO}|poderes|${id}`) : id);
+				const fontes = (doAto.Folder ?? []).filter((f) => f.type === p.documento);
+				const usadas = new Set(lista.map((d) => d.folder).filter(Boolean));
+				for (const f of fontes) if (usadas.has(f._id)) for (let pai = fontes.find((x) => x._id === f.folder); pai; pai = fontes.find((x) => x._id === pai.folder)) usadas.add(pai._id);
+				const pastas = [raiz];
+				for (const f of fontes.filter((x) => usadas.has(x._id))) {
+					const { _stats, ...dados } = deepClone(f);
+					pastas.push({ ...dados, color: ato.cor, _id: idPasta(f._id), folder: f.folder ? idPasta(f.folder) : raiz._id, flags: { ...(dados.flags ?? {}), [MODULO]: { ato: ato.id } } });
+				}
+				const nome = nomePack(ato, aventura, p.nome);
+				const out = [];
+				for (const d of lista) {
+					const o = linksParaCompendio(deepClone(d), packDe);
+					o.folder = null;
+					const atual = assinatura(o, p.documento);
+					const todas = [...(historico[d._id] ?? []).filter((x) => x !== atual), atual];
+					novoHistorico[d._id] = todas;
+					o.flags = {
+						...(o.flags ?? {}),
+						[MODULO]: { ato: ato.id, aventura: aventura.id, pasta: d.folder ? idPasta(d.folder) : raiz._id, antigos: [`${ato.id}-${p.antigo}`, p.nome], assinatura: atual, assinaturas: todas }
+					};
+					out.push(o);
+				}
+				packs.push({ ...p, tipo: p.nome, nome, rotulo: `${rotuloCurto(aventura)} · ${p.rotulo}`, ato, aventura, pastas, docs: out });
 			}
 		}
-		if (docs.length) packs.push({ ...p, pastas, docs });
 	}
 	return { packs, historico: novoHistorico };
 }
+
+/** Prefixo do rótulo dos compêndios: "Av3", "Mini 1", "Templo do Vácuo"... (o que vem antes do primeiro " · "). */
+const rotuloCurto = (aventura) => aventura.rotulo.split(" · ")[0];
 
 export function escreverFontes(packs, versaoSistema) {
 	const saida = [];
@@ -217,15 +258,11 @@ export function escreverFontes(packs, versaoSistema) {
 	for (const p of packs) {
 		const dir = path.join(FONTE_PACKS, p.nome);
 		fs.mkdirSync(dir, { recursive: true });
-		for (const f of p.pastas) {
-			const out = comChaves(f, "Folder", null, [], versaoSistema);
-			fs.writeFileSync(path.join(dir, `_Folder_${slug(f.name)}_${f._id}.json`), `${JSON.stringify(out, null, 2)}\n`);
-		}
 		for (const d of p.docs) {
 			const out = comChaves(d, p.documento, null, [], versaoSistema);
 			fs.writeFileSync(path.join(dir, `${p.documento}_${slug(d.name)}_${d._id}.json`), `${JSON.stringify(out, null, 2)}\n`);
 		}
-		saida.push({ nome: p.nome, tipo: p.documento, rotulo: p.rotulo, documentos: p.docs.length, pastas: p.pastas.length });
+		saida.push({ nome: p.nome, tipo: p.documento, rotulo: p.rotulo, documentos: p.docs.length, ato: p.ato, aventura: p.aventura, pastas: p.pastas });
 	}
 	return saida;
 }
@@ -233,6 +270,23 @@ export function escreverFontes(packs, versaoSistema) {
 /* ------------------------------------------------------------------------ */
 /* 4. module.json                                                            */
 /* ------------------------------------------------------------------------ */
+
+/**
+ * Pastas da aba de Compêndios, como no Duelo de Dragões: o ato (o "patamar") e, dentro, uma pasta por aventura
+ * com os compêndios dela. Ex.: Giria T20 - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas
+ * Puristas › Av3 · Ameaças e NPCs.
+ */
+export function pastasDosCompendios(packs) {
+	return ATOS.map((ato) => ({
+		name: ato.rotuloCompendio ?? ato.rotulo,
+		sorting: "m",
+		color: ato.cor,
+		packs: [],
+		folders: ato.aventuras
+			.map((a) => ({ name: a.rotulo, sorting: "m", color: ato.cor, packs: packs.filter((p) => p.ato.id === ato.id && p.aventura.id === a.id).map((p) => p.nome) }))
+			.filter((f) => f.packs.length)
+	})).filter((f) => f.folders.length);
+}
 
 export function escreverManifesto(packs) {
 	const pkg = JSON.parse(fs.readFileSync(path.join(RAIZ, "package.json"), "utf8"));
@@ -247,7 +301,7 @@ export function escreverManifesto(packs) {
 		compatibility: { minimum: "14", verified: "14" },
 		authors: [{ name: "Cauê", url: "https://github.com/CaueCunha" }],
 		relationships: { systems: [{ id: "tormenta20", type: "system", compatibility: { minimum: "1.6.0" } }] },
-		esmodules: ["scripts/fdt.mjs"],
+		esmodules: ["scripts/main.mjs"],
 		socket: true,
 		styles: ["styles/fdt.css"],
 		languages: [{ lang: "pt-BR", name: "Português (Brasil)", path: "lang/pt-BR.json" }],
@@ -259,8 +313,14 @@ export function escreverManifesto(packs) {
 			system: "tormenta20",
 			ownership: { PLAYER: "NONE", ASSISTANT: "OWNER" }
 		})),
-		packFolders: [{ name: "Giria T20 - Fim dos Tempos (Campanha)", sorting: "m", color: "#6b2f2f", packs: packs.map((p) => p.nome) }],
-		flags: { [MODULO]: { atos: Object.fromEntries(ATOS.map((a) => [a.id, { rotulo: a.rotulo }])) } },
+		packFolders: [{ name: "Giria T20 - Fim dos Tempos (Campanha)", sorting: "m", color: "#6b2f2f", packs: [], folders: pastasDosCompendios(packs) }],
+		flags: {
+			[MODULO]: {
+				atos: Object.fromEntries(ATOS.map((a) => [a.id, { rotulo: a.rotulo }])),
+				// para o Puxar: de que ato e aventura é cada compêndio e as pastas que ele cria no mundo
+				packs: Object.fromEntries(packs.map((p) => [p.nome, { ato: p.ato.id, aventura: p.aventura.id, rotulo: p.aventura.rotulo, pastas: p.pastas }]))
+			}
+		},
 		url: repo,
 		manifest: `${repo}/releases/latest/download/module.json`,
 		download: `${repo}/releases/download/v${versao}/module.zip`,
@@ -282,13 +342,14 @@ async function main() {
 	let versaoSistema = "1.6.4";
 	for (const ato of ATOS) {
 		console.log(`» ${ato.rotulo}: ${ato.geradores.length} gerador(es)`);
-		const { docs, relatorio, mundo } = await capturarAto(ato);
+		const { docs, pastaDe, relatorio, mundo } = await capturarAto(ato);
 		versaoSistema = mundo.sistema.versao;
 		indice ??= indiceSistema(mundo.sistema.packs);
 		const semMarca = Object.entries(docs).flatMap(([t, l]) => l.filter((d) => !d.flags?.world?.fdt).map((d) => `${t} "${d.name}"`));
 		if (semMarca.length) throw new Error(`Documentos sem a marca flags.world.fdt: ${semMarca.join(", ")}`);
 		const ligacoes = ligarAoSistema(docs, indice, ato.id);
-		porAto.push({ ato, docs: estabilizarIds(docs) });
+		const estaveis = estabilizarIds(docs);
+		porAto.push({ ato, docs: estaveis, aventuraDe: aventuraDosDocs(ato, estaveis, pastaDe) });
 		linhas.push(`## ${ato.rotulo}`, "");
 		for (const p of PACKS) {
 			const n = (docs[p.documento] ?? []).filter(p.filtro ?? (() => true)).length;
@@ -307,7 +368,7 @@ async function main() {
 	const escritos = escreverFontes(packs, versaoSistema);
 	fs.writeFileSync(HISTORICO, `${JSON.stringify(Object.fromEntries(Object.entries(historico).sort(([a], [b]) => a.localeCompare(b))), null, "\t")}\n`);
 	linhas.push("## Compêndios", "");
-	for (const p of escritos) linhas.push(`- \`${p.nome}\` (${p.rotulo}): ${p.documentos} documento(s), ${p.pastas} pasta(s)`);
+	for (const p of escritos) linhas.push(`- \`${p.nome}\` (${p.rotulo}): ${p.documentos} documento(s)`);
 	linhas.push("");
 	const m = escreverManifesto(escritos);
 	fs.mkdirSync(path.join(RAIZ, "build"), { recursive: true });

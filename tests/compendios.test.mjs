@@ -12,7 +12,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { criarMundo, carregarModulo, problemas, limparRegistros, manifesto, MODULO } from "./ajudantes.mjs";
 import { lerPackFonte } from "../tools/sim/sistema.mjs";
-import { FONTE_PACKS, T20_DIR } from "../tools/caminhos.mjs";
+import { FONTE_PACKS, T20_DIR, RAIZ } from "../tools/caminhos.mjs";
+import { AVENTURAS, pastaAventura } from "../tools/conteudo.mjs";
 import { getProperty } from "../tools/sim/utils.mjs";
 import { correcaoToken } from "../scripts/assinatura.mjs";
 
@@ -53,25 +54,63 @@ test("compêndios têm o formato do foundryvtt-cli", () => {
 	}
 });
 
-test("module.json descreve os compêndios por tipo, com pastas por ato", () => {
+test("module.json: um compêndio por aventura e tipo, nas pastas Ato › aventura (como no Duelo de Dragões)", () => {
 	assert.equal(m.id, MODULO);
 	assert.deepEqual(Object.keys(m.flags[MODULO].atos).sort(), ["ato1", "ato2", "campanha"]);
 	const nomes = m.packs.map((p) => p.name);
-	assert.deepEqual(nomes, ["ameacas", "poderes", "itens", "diarios", "tabelas", "macros"]);
-	assert.deepEqual(m.packFolders.flatMap((f) => f.packs ?? []).sort(), [...nomes].sort(), "packFolders deve conter todos os compêndios");
-	for (const p of m.packs) assert.equal(p.path, `packs/${p.name}`);
+	assert.equal(new Set(nomes).size, nomes.length, "nomes de compêndio repetidos");
+	// pastas da aba de Compêndios: raiz › ato › aventura › compêndios (até 3 níveis, o limite do Foundry)
+	assert.equal(m.packFolders.length, 1);
+	const [raiz] = m.packFolders;
+	assert.deepEqual(raiz.packs, []);
+	assert.deepEqual(raiz.folders.map((f) => f.name), ["Ato 1 · Colinas Centrais", "Ato 2 · Valkaria", "Ferramentas gerais"]);
+	const nasPastas = [];
+	for (const ato of raiz.folders) {
+		assert.deepEqual(ato.packs, [], `${ato.name}: compêndio fora das pastas das aventuras`);
+		for (const av of ato.folders) {
+			assert.ok(!av.folders?.length, `${av.name}: pasta demais`);
+			assert.ok(av.packs.length, `${av.name}: pasta vazia`);
+			nasPastas.push(...av.packs);
+		}
+	}
+	assert.deepEqual(nasPastas.sort(), [...nomes].sort(), "packFolders deve conter todos os compêndios uma vez");
+	const info = m.flags[MODULO].packs;
+	for (const p of m.packs) {
+		assert.equal(p.path, `packs/${p.name}`);
+		assert.match(p.name, /^(a1|a2|geral)-[a-z0-9]+-(ameacas|poderes|itens|diarios|tabelas|macros)$/);
+		const i = info[p.name];
+		assert.ok(i?.ato && i?.aventura && i?.rotulo, `${p.name}: sem ato/aventura em flags.${MODULO}.packs`);
+		assert.ok(i.pastas.length >= 1 && !i.pastas[0].folder && i.pastas[0].flags?.[MODULO]?.ato === i.ato, `${p.name}: a primeira pasta deve ser a do ato`);
+		for (const f of i.pastas) {
+			assert.equal(f.type, p.type, `${p.name}: pasta ${f.name} de tipo ${f.type}`);
+			if (f.folder) assert.ok(i.pastas.some((x) => x._id === f.folder), `${p.name}: pasta ${f.name} dentro de pasta inexistente`);
+		}
+	}
 	for (const f of [...m.esmodules, ...m.styles, ...m.languages.map((l) => l.path)]) assert.ok(fs.existsSync(f), `${f} não existe`);
 	for (const p of packs) {
-		const raizes = p.pastas.filter((f) => !f.folder);
-		assert.ok(raizes.every((f) => f.flags?.[MODULO]?.ato), `${p.name}: pasta de cima sem ato`);
+		assert.equal(p.pastas.length, 0, `${p.name}: o compêndio não tem pastas dentro`);
+		const pastas = new Set(info[p.name].pastas.map((f) => f._id));
 		for (const d of p.docs) {
-			assert.ok(d.folder, `${p.name}: ${d.name} fora das pastas`);
+			assert.equal(d.folder ?? null, null, `${p.name}: ${d.name} numa pasta`);
 			const f = d.flags?.[MODULO] ?? {};
+			assert.ok(pastas.has(f.pasta), `${p.name}: ${d.name} sem a pasta do mundo`);
+			assert.equal(f.ato, info[p.name].ato);
+			assert.equal(f.aventura, info[p.name].aventura);
+			assert.ok(f.antigos?.length === 2, `${p.name}: ${d.name} sem os compêndios antigos`);
 			assert.match(f.assinatura ?? "", /^[0-9a-f]{8}$/, `${p.name}: ${d.name} sem assinatura`);
 			assert.equal(f.assinaturas?.at(-1), f.assinatura, `${p.name}: ${d.name}: a última assinatura deve ser a atual`);
 		}
-		if (p.name === "poderes") assert.ok(p.docs.every((d) => d.type === "poder"));
-		if (p.name === "itens") assert.ok(p.docs.every((d) => d.type !== "poder"));
+		if (p.name.endsWith("-poderes")) assert.ok(p.docs.every((d) => d.type === "poder"));
+		if (p.name.endsWith("-itens")) assert.ok(p.docs.every((d) => d.type !== "poder"));
+	}
+});
+
+test("cada aventura tem a sua pasta em src/aventuras, com o gerador e o guia", () => {
+	for (const a of AVENTURAS) {
+		const dir = pastaAventura(a);
+		assert.ok(fs.existsSync(dir), `${a.id}: falta ${dir}`);
+		if (!a.semGerador) assert.ok(fs.existsSync(path.join(dir, "gerador.js")), `${a.id}: falta gerador.js`);
+		if (a.assets) assert.ok(fs.existsSync(path.join(RAIZ, a.assets)), `${a.id}: falta ${a.assets}`);
 	}
 });
 

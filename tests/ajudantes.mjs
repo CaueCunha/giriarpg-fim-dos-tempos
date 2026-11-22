@@ -4,13 +4,13 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { criarMundo } from "../tools/sim/mundo.mjs";
 import { lerPackFonte } from "../tools/sim/sistema.mjs";
-import { RAIZ, FONTE_PACKS, GERADORES } from "../tools/caminhos.mjs";
-import { MODULO } from "../tools/conteudo.mjs";
+import { RAIZ, FONTE_PACKS } from "../tools/caminhos.mjs";
+import { MODULO, arquivoGerador } from "../tools/conteudo.mjs";
 
-export { criarMundo, RAIZ, GERADORES, MODULO };
+export { criarMundo, RAIZ, MODULO };
 
 export const manifesto = () => JSON.parse(fs.readFileSync(path.join(RAIZ, "module.json"), "utf8"));
-export const lerGerador = (nome) => fs.readFileSync(path.join(GERADORES, `${nome}.js`), "utf8");
+export const lerGerador = (nome) => fs.readFileSync(arquivoGerador(nome), "utf8");
 
 let versaoScript = 0;
 
@@ -26,7 +26,7 @@ export async function carregarModulo(mundo, { dirPacks = FONTE_PACKS, ready = fa
 		mundo.adicionarPack({ id: `${MODULO}.${p.name}`, name: p.name, label: p.label, type: p.type, packageName: MODULO, packageType: "module" }, docs, pastas);
 	}
 	mundo.instalar();
-	await import(`${pathToFileURL(path.join(RAIZ, "scripts", "fdt.mjs")).href}?v=${++versaoScript}`);
+	await import(`${pathToFileURL(path.join(RAIZ, "scripts", "main.mjs")).href}?v=${++versaoScript}`);
 	mundo.chamarHook("init");
 	mundo.chamarHook("setup");
 	// Os jogadores "clicam" no card dos testes pedidos pelas macros (testes.mjs): rola pela ficha e a macro continua.

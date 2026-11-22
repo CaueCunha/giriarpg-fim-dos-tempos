@@ -1,5 +1,5 @@
 /**
- * O módulo não importa nada sozinho (scripts/fdt.mjs):
+ * O módulo não importa nada sozinho (scripts/importador.mjs):
  *   - abrir o mundo não cria documentos;
  *   - "Puxar do compêndio" cria só o que falta, nas pastas Ato › aventura, com os IDs e os links do mundo;
  *   - "Atualizar do compêndio" troca só o que não foi editado e foi marcado; o editado fica como está;
@@ -65,7 +65,39 @@ test("o botão da aba de Compêndios puxa só a aventura marcada, nas pastas do 
 	assert.deepEqual([...marcas], ["av3"], "só a Av3 devia ter vindo");
 	const ator = mundo.game.actors.contents[0];
 	assert.equal(ator.folder?.folder?.name, "Ato 1 · Colinas Centrais", "a aventura devia ficar dentro da pasta do ato");
-	assert.match(ator._stats.compendiumSource, new RegExp(`^Compendium\\.${MODULO}\\.ameacas\\.Actor\\.${ator.id}$`), "puxado com o mesmo ID e a origem");
+	assert.match(ator._stats.compendiumSource, new RegExp(`^Compendium\\.${MODULO}\\.a1-av3-ameacas\\.Actor\\.${ator.id}$`), "puxado com o mesmo ID e a origem");
+	mundo.encerrar();
+});
+
+test("mundos das versões antigas (compêndios por ato ou por tipo) continuam ligados ao compêndio da aventura", async () => {
+	const mundo = await criarMundo({ semente: "fdt-antigos" });
+	await carregarModulo(mundo);
+	globalThis.CONFIG.compendium.uuidRedirects = {};
+	await api(mundo).puxar({ atos: ["ato1"] });
+	const total = doModulo(mundo);
+	const pastas = mundo.game.folders.map((f) => f.id).sort();
+	// como o mundo ficou na v0.24 (compêndios por tipo) e na v0.16 (por ato): a origem aponta para o compêndio antigo
+	const tipoAntigo = { Actor: "ameacas", Item: "itens", JournalEntry: "diarios", RollTable: "tabelas", Macro: "macros" };
+	let i = 0;
+	for (const c of ["actors", "items", "journal", "tables", "macros"]) {
+		for (const d of mundo.game[c].filter((x) => x.getFlag("world", "fdt"))) {
+			const [, , , tipo, id] = d._stats.compendiumSource.split(".");
+			const antigo = i++ % 2 ? tipoAntigo[tipo] : `ato1-${tipoAntigo[tipo]}`;
+			d._stats.compendiumSource = `Compendium.${MODULO}.${antigo}.${tipo}.${id}`;
+		}
+	}
+	assert.deepEqual((await api(mundo).procurarAtualizacoes()).map((p) => p.doc.name), [], "nada mudou de conteúdo");
+	const r = await api(mundo).puxar({ atos: ["ato1"] });
+	assert.equal(r.criados, 0, "puxar de novo não duplica o que veio dos compêndios antigos");
+	assert.equal(doModulo(mundo), total);
+	assert.deepEqual(mundo.game.folders.map((f) => f.id).sort(), pastas, "as pastas do mundo são as mesmas de antes");
+	// links antigos (@UUID[Compendium.<mod>.ameacas.Actor.X]) levam ao compêndio da aventura
+	mundo.chamarHook("ready");
+	await mundo.aguardarOcioso();
+	const red = globalThis.CONFIG.compendium.uuidRedirects;
+	const ator = mundo.game.actors.find((a) => a.getFlag("world", "fdt") === "av3");
+	assert.equal(red[`Compendium.${MODULO}.ameacas.Actor.${ator.id}`], `Compendium.${MODULO}.a1-av3-ameacas.Actor.${ator.id}`);
+	assert.equal(red[`Compendium.${MODULO}.ato1-ameacas.Actor.${ator.id}`], `Compendium.${MODULO}.a1-av3-ameacas.Actor.${ator.id}`);
 	mundo.encerrar();
 });
 
@@ -98,9 +130,9 @@ test("puxar de novo só recria o que falta e não mexe no editado", async () => 
 test("links do compêndio funcionam no compêndio e viram links do mundo ao puxar", async () => {
 	const mundo = await criarMundo({ semente: "fdt-links" });
 	await carregarModulo(mundo);
-	const diarios = mundo.game.packs.get(`${MODULO}.diarios`);
+	const diarios = mundo.game.packs.filter((p) => p.metadata.packageName === MODULO && p.documentName === "JournalEntry");
 	let links = 0;
-	for (const j of await diarios.getDocuments()) {
+	for (const j of (await Promise.all(diarios.map((p) => p.getDocuments()))).flat()) {
 		for (const pg of j.pages) {
 			const html = pg.text?.content ?? "";
 			links += (html.match(/@UUID\[Compendium\.giriarpg/g) ?? []).length;

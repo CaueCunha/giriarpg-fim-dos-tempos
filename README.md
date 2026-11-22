@@ -1,10 +1,16 @@
 # Giria T20 - Fim dos Tempos (Campanha) · módulo para Foundry VTT
 
-Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do Foundry VTT: ameaças, poderes, itens, diários, tabelas e macros com automação. Os compêndios ficam na pasta **Giria T20 - Fim dos Tempos (Campanha)** da aba de Compêndios, um por tipo, com uma pasta por ato e as pastas das aventuras dentro:
+Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do Foundry VTT: ameaças, poderes, itens, diários, tabelas e macros com automação. A organização segue a do módulo **Duelo de Dragões**: cada aventura tem os seus compêndios, dentro da pasta do ato, e a fonte de cada aventura (gerador, guia e artes) fica numa pasta só.
 
-| Compêndio | Ato 1 · Colinas Centrais | Ato 2 · Valkaria | Campanha |
-|---|---|---|---|
-| **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas**, **Macros** | Av1 a Av5, Templo do Vácuo, Especial de Gatal, encontros das Colinas | Av0 a Av7, Mini 1 e 2, O Labirinto Liberto, Encontros, Ruas Traiçoeiras, Lendas Urbanas, Apêndices | regras de grupo, Poderes de Grupo, revisão dos poderes dos PJs, utilidades |
+Na aba de Compêndios, tudo fica em **Giria T20 - Fim dos Tempos (Campanha)**:
+
+| Pasta | Aventuras (uma pasta cada) | Cor |
+|---|---|---|
+| Ato 1 · Colinas Centrais | Av1 a Av5, Av4.5, Guloseimas do Gronko, Templo do Vácuo, Especial de Gatal, Encontros nas Colinas Centrais | ocre |
+| Ato 2 · Valkaria | Av0 a Av7, Mini 1 e 2, O Labirinto Liberto, Encontros em Valkaria, Ruas de Valkaria, Lendas e Linhas Narrativas, Apêndices | azul |
+| Ferramentas gerais | O Grupo (regras e Poderes de Grupo), Poderes dos PJs, Ferramentas (Puxar, Atualizar, Limpar, Combate Defensivo) | ocre escuro |
+
+Dentro da pasta de cada aventura ficam só os compêndios dos tipos que ela tem: **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas** e **Macros**. Exemplo: **Giria T20 - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas › Av3 · Ameaças e NPCs** (compêndio `a1-av3-ameacas`). Os compêndios são só do Mestre.
 
 A contagem de cada compêndio está em [`build/relatorio.md`](build/relatorio.md).
 
@@ -78,11 +84,11 @@ Para saber isso, cada documento leva uma **assinatura** do conteúdo que pode se
 
 A atualização troca o documento pela versão do compêndio com o **mesmo ID**, então os tokens nas cenas continuam ligados. Pasta, ordem, permissões, flags de outros módulos, **Lei & Ordem** e **FdT · O Grupo** ficam como estavam. No fim, o chat mostra o que foi atualizado e o que ficou.
 
-**Vindo da v0.16 ou anterior:** o conteúdo que o importador antigo trouxe para o mundo é reconhecido pelo ID, pela origem ou pela marca e nome (mundos dos geradores antigos). Os endereços antigos dos compêndios (`ato1-ameacas`, `ato2-itens`...) são redirecionados para os novos. Edições feitas **dentro do compêndio do módulo** (destravado) se perdem em qualquer atualização do Foundry, porque ele troca a pasta do módulo inteira. Antes de atualizar, traga essas correções para o mundo.
+**Vindo de versões anteriores:** o conteúdo que já está no mundo é reconhecido pelo ID, pela origem ou pela marca e nome (mundos dos geradores antigos), e as pastas do mundo continuam as mesmas (Ato › aventura, com os mesmos IDs). Os endereços antigos dos compêndios, por ato até a v0.16 (`ato1-ameacas`, `ato2-itens`...) e por tipo da v0.17 à v0.24 (`ameacas`, `macros`...), são redirecionados para o compêndio da aventura (`a1-av3-ameacas`...), então os links dos diários e as origens dos documentos continuam valendo. Edições feitas **dentro do compêndio do módulo** (destravado) se perdem em qualquer atualização do Foundry, porque ele troca a pasta do módulo inteira. Antes de atualizar, traga essas correções para o mundo.
 
 ### Poderes dos PJs
 
-Depois de puxar a Campanha, selecione os tokens dos PJs e rode **PJs · Corrigir poderes**. A macro lista os poderes quebrados nas fichas (efeitos no formato antigo, chaves em branco, ataques dentro de poderes...), corrige o que estiver marcado e guarda uma cópia para desfazer. Ligue também **PJs · Automações** (Temeroso e Provocação Petulante). O diário **FdT · Poderes dos PJs** tem a revisão de cada personagem, e o guia está em [`docs/geradores/fdt-poderes-pjs.md`](docs/geradores/fdt-poderes-pjs.md).
+Depois de puxar a Campanha, selecione os tokens dos PJs e rode **PJs · Corrigir poderes**. A macro lista os poderes quebrados nas fichas (efeitos no formato antigo, chaves em branco, ataques dentro de poderes...), corrige o que estiver marcado e guarda uma cópia para desfazer. Ligue também **PJs · Automações** (Temeroso e Provocação Petulante). O diário **FdT · Poderes dos PJs** tem a revisão de cada personagem, e o guia está em [`src/aventuras/campanha/poderes-pjs/LEIA-ME.md`](src/aventuras/campanha/poderes-pjs/LEIA-ME.md).
 
 ### Ligação com o sistema
 
@@ -96,7 +102,7 @@ O relatório completo do que foi ligado está em [`build/relatorio.md`](build/re
 
 O que é próprio da campanha foi criado com efeitos e macros de automação: Poderes de Grupo, Lei & Ordem, Máquina de Purificação, Bombardeio, Oficina de Gatal, tributos do Templo e o resto.
 
-Os guias de cada aventura estão em [`docs/geradores/`](docs/geradores).
+O guia de cada aventura fica junto do gerador dela, em `src/aventuras/<ato>/<aventura>/LEIA-ME.md` (veja [Desenvolvimento](#desenvolvimento)).
 
 ### Artes
 
@@ -128,9 +134,10 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
 - **Macros (135):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
 - **Testes no chat:** o card (classes, `roll--dano` fora de `rolls`, um botão por personagem), o resultado pelo socket, os botões do Mestre aplicando uma vez só, nada aplicado antes do clique, nada repetido no chat e a atualização das macros com a cópia das editadas. Nas macros, cada "jogador" clica no botão do seu card.
 - **Cenas:** as macros dos mapas criam as quatro cenas da Av3 e as cinco da Av4 com imagem do módulo, grid de 1,5 m, paredes, luzes e notas dentro da cena; rodar de novo não duplica nem mexe nas cenas da outra aventura.
-- **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar.
+- **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar. Cada aventura tem a sua pasta em `src/aventuras`, com o gerador.
 - **Poderes dos PJs:** um PJ com os defeitos achados nas fichas da campanha passa por "PJs · Corrigir poderes"; o teste confere cada correção, que uma segunda passada não acha nada e que "Desfazer" devolve a ficha.
 - **Compêndios:**
+  - um compêndio por aventura e tipo, nas pastas Ato › aventura (como no Duelo de Dragões);
   - formato do `foundryvtt-cli` e IDs únicos;
   - validação de todos os documentos;
   - chaves de efeitos (cada uma existe na ficha ou é usada pelo próprio sistema);
@@ -141,7 +148,8 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
 - **Pacote:** os compêndios são compilados em LevelDB e extraídos de volta, e o resultado é comparado com as fontes.
 - **Puxar e atualizar:**
   - abrir o mundo não importa nada;
-  - o botão da aba de Compêndios puxa só a aventura marcada, nas pastas do compêndio;
+  - o botão da aba de Compêndios puxa só a aventura marcada, nas pastas Ato › aventura;
+  - mundos das versões antigas (compêndios por ato ou por tipo) continuam ligados: nada a atualizar, nada duplicado, as mesmas pastas e os links antigos redirecionados;
   - puxar de novo só cria o que falta;
   - links do compêndio funcionam no compêndio e viram links do mundo ao puxar;
   - o que foi puxado é igual ao compêndio;
@@ -155,19 +163,51 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
 
 ## Desenvolvimento
 
-O conteúdo nasce dos **geradores** em [`src/geradores/`](src/geradores), as mesmas macros-gerador da campanha.
+Como nas revistas do Duelo de Dragões, cada aventura tem a sua pasta de fonte:
+
+```
+src/aventuras/
+  ato1-colinas-centrais/
+    av3-cultistas-puristas/
+      gerador.js      o gerador (a mesma macro-gerador da campanha): a fonte do conteúdo
+      LEIA-ME.md      o guia da aventura no Foundry
+    ...
+  ato2-valkaria/
+    av3-rocha-cinzenta/ ...
+  campanha/
+    grupo/  poderes-pjs/  ferramentas/
+assets/<arco>/<aventura>/    retratos e tokens (webp) e, em mapas/, os mapas de batalha
+src/packs/<compêndio>/       fontes JSON dos compêndios, geradas pelo build (uma por aventura e tipo)
+```
+
+A lista das aventuras, com a pasta, a sigla dos compêndios (`a1-av3-...`), o nome na aba de Compêndios e a pasta das artes, fica em [`tools/conteudo.mjs`](tools/conteudo.mjs).
+
+### Arquivos do módulo
+
+- `module.json`: os compêndios, as pastas da aba de Compêndios e, em `flags`, as pastas que o Puxar cria no mundo.
+- `scripts/main.mjs`: ganchos, configurações e a API (`game.modules.get("giriarpg-fim-dos-tempos").api`).
+- `scripts/constantes.mjs`: constantes e ajudantes comuns.
+- `scripts/importador.mjs`: catálogo dos compêndios, Puxar, Atualizar, Limpar e os endereços antigos.
+- `scripts/tokens.mjs`: token padrão das ameaças.
+- `scripts/macros.mjs`: atualização única das macros do mundo.
+- `scripts/testes.mjs`: testes no chat (o jogador rola, o Mestre aplica).
+- `scripts/assinatura.mjs`: assinatura dos documentos e `TOKEN_PADRAO` (também usados pelo build).
+- `packs/`: os compêndios compilados (LevelDB), gerados na release.
+- `assets/`: artes e mapas.
+
+### Comandos
 
 | Comando | O que faz |
 |---|---|
-| `npm run build` | Roda os geradores no Foundry simulado, liga o conteúdo ao sistema e fixa IDs estáveis. Grava as fontes JSON em `src/packs/`, o `module.json` e `build/relatorio.md`, e compila os compêndios em `packs/`. |
+| `npm run build` | Roda os geradores no Foundry simulado, liga o conteúdo ao sistema e fixa IDs estáveis. Grava as fontes JSON em `src/packs/` (um compêndio por aventura e tipo), o `module.json` e `build/relatorio.md`, e compila os compêndios em `packs/`. |
 | `npm run pack` | Só compila `src/packs/` em `packs/` (LevelDB). |
 | `node tools/historico.mjs` | Recalcula `src/historico.json` (as assinaturas de cada documento em todas as versões commitadas). O build acrescenta a assinatura atual sozinho; só é preciso rodar isto se a função de `scripts/assinatura.mjs` mudar. |
 | `npm run pack -- --extrair` | Extrai `packs/` para `build/extraido/`, para conferência. |
 
 Para incluir uma aventura nova:
 
-1. Ponha o gerador em `src/geradores/`.
-2. Acrescente o nome dele no ato certo em [`tools/conteudo.mjs`](tools/conteudo.mjs).
+1. Crie `src/aventuras/<ato>/<aventura>/gerador.js` e o `LEIA-ME.md` dela. As artes vão em `assets/<arco>/<aventura>/` (mapas em `mapas/`).
+2. Acrescente a linha dela no ato certo em [`tools/conteudo.mjs`](tools/conteudo.mjs) (id, pasta, sigla, nome e artes).
 3. Rode `npm run build` e `npm test`.
 
 Todas as aventuras, mini-aventuras e masmorras dos dois atos já têm gerador, assim como a Tabela de Encontros, As Ruas Traiçoeiras de Valkaria (notáveis e Guarda), as Lendas Urbanas, as Linhas Narrativas e os Apêndices (negócios e distinções). Todos os capítulos gerais do Ato 2 estão no módulo.
