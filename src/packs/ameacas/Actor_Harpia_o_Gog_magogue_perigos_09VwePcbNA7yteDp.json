@@ -1,7 +1,7 @@
 {
   "name": "Harpia, o Gog'magogue (perigos)",
   "type": "npc",
-  "img": "systems/tormenta20/icons/magias/raio-solar.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/harpia-token.webp",
   "folder": "nwwpB8FdDEkZwYiT",
   "flags": {
     "world": {
@@ -11,9 +11,11 @@
     "giriarpg-fim-dos-tempos": {
       "ato": "ato1",
       "antigo": "ato1-ameacas",
-      "assinatura": "1f9f2acc",
+      "assinatura": "4aeb1c3a",
       "assinaturas": [
-        "1f9f2acc"
+        "1f9f2acc",
+        "1305674e",
+        "4aeb1c3a"
       ]
     }
   },
@@ -26,10 +28,10 @@
     "bar1": {
       "attribute": "attributes.pv"
     },
-    "width": 1,
-    "height": 1,
+    "width": 11,
+    "height": 11,
     "texture": {
-      "src": "systems/tormenta20/icons/magias/raio-solar.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/av4-terror/harpia-token.webp"
     },
     "sight": {
       "enabled": true
@@ -189,7 +191,7 @@
       "ataquesad": "",
       "equipamento": "",
       "biography": {
-        "value": "<p><b>Ator de apoio, não vai para o mapa como combatente.</b> Cada item é um perigo da Harpia com a CD e os botões de efeito. Mire os personagens antes de clicar nos botões do card.</p><p>Gog'magogue fêmea nascida em Arton, cega pelos captores e cortada todos os dias para que o sangue brilhante cegue os inimigos. Não tem nome; os \"bípedes\" a chamam de Harpia. Só deseja liberdade e sente que deve subir, cada vez mais alto.</p><p>Na primeira rodada da iniciativa, só a Harpia (o canhão) age e dois cães saltam. Bandoleiros e cães agem a partir da segunda rodada. Use a macro <i>Ataque do Céu</i> para avançar as rodadas.</p>",
+        "value": "<p><b>Ator de apoio, não é combatente.</b> O token (Colossal, 11×11 quadrados) serve para mostrar a Harpia pairando sobre a plantação: ponha elevação nele e uma luz branca forte com pulso para o brilho. Cada item é um perigo da Harpia com a CD e os botões de efeito. Mire os personagens antes de clicar nos botões do card.</p><p>Gog'magogue fêmea nascida em Arton, cega pelos captores e cortada todos os dias para que o sangue brilhante cegue os inimigos. Não tem nome; os \"bípedes\" a chamam de Harpia. Só deseja liberdade e sente que deve subir, cada vez mais alto.</p><p>Na primeira rodada da iniciativa, só a Harpia (o canhão) age e dois cães saltam. Bandoleiros e cães agem a partir da segunda rodada. Use a macro <i>Ataque do Céu</i> para avançar as rodadas.</p>",
         "public": ""
       },
       "origem": "",
@@ -197,7 +199,7 @@
       "movimento": ""
     },
     "tracos": {
-      "tamanho": "med",
+      "tamanho": "col",
       "ic": {
         "value": [],
         "custom": ""
