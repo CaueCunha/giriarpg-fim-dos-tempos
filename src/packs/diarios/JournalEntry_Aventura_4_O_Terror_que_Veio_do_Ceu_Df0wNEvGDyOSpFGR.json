@@ -8,10 +8,11 @@
     "giriarpg-fim-dos-tempos": {
       "ato": "ato1",
       "antigo": "ato1-diarios",
-      "assinatura": "55f64ec6",
+      "assinatura": "d00e55e3",
       "assinaturas": [
         "c60a09e5",
-        "55f64ec6"
+        "55f64ec6",
+        "d00e55e3"
       ]
     }
   },
@@ -228,7 +229,7 @@
       "type": "text",
       "sort": 600,
       "text": {
-        "content": "<ul>\n\t\t\t\t\t<li>Piso escorregadio: Acrobacia CD 10 para equilíbrio.</li>\n\t\t\t\t\t<li>Escadas entre deques custam 4,5m; Acrobacia CD 12 desce de graça; falha por 5+ é queda com 1d6 de impacto.</li>\n\t\t\t\t\t<li>Empurrado por uma abertura: Reflexos CD 15 para se segurar.</li>\n\t\t\t\t\t<li>Timoneira no comando: desprevenidos pelo piso sofrem –2 em perícias.</li>\n\t\t\t\t\t<li>Armas de duas mãos sofrem –2.</li>\n\t\t\t\t\t<li>Túnel colapsado: três testes de Força CD 25. Cordames: dois de Atletismo CD 15, às cegas; falha por 10+ é queda (Reflexos CD 20 evita).</li>\n\t\t\t\t\t<li>Leme: Pilotagem CD 25.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Deques selados hermeticamente (Conhecimento percebe), com cobertura de cristal e o símbolo do relógio da tripulação. Plantas por toda a ponte de comando e na estufa. Dentro da nave: 2 cães e 12 capangas, espalhados. Torgo é visto no primeiro deque e foge pelos cordames; espera na ponte com a timoneira.</p>",
+        "content": "<ul>\n\t\t\t\t\t<li>Piso escorregadio: Acrobacia CD 10 para equilíbrio.</li>\n\t\t\t\t\t<li>Escadas entre deques custam 4,5m; Acrobacia CD 12 desce de graça; falha por 5+ é queda com 1d6 de impacto.</li>\n\t\t\t\t\t<li>Empurrado por uma abertura: Reflexos CD 15 para se segurar.</li>\n\t\t\t\t\t<li>Timoneira no comando: desprevenidos pelo piso sofrem –2 em perícias.</li>\n\t\t\t\t\t<li>Armas de duas mãos sofrem –2.</li>\n\t\t\t\t\t<li>Túnel colapsado: três testes de Força CD 25. Cordames: dois de Atletismo CD 15, às cegas; falha por 10+ é queda (Reflexos CD 20 evita).</li>\n\t\t\t\t\t<li>Leme: Pilotagem CD 25.</li>\n\t\t\t\t</ul>\n\t\t\t\t<p>Deques selados hermeticamente (Conhecimento percebe), com cobertura de cristal e o símbolo do relógio da tripulação. Plantas por toda a ponte de comando e na estufa. Dentro da nave: 2 cães e 12 capangas, espalhados. Torgo é visto no primeiro deque e foge pelos cordames; espera na ponte com a timoneira.</p><p><b>Nesta mesa:</b> só dois mapas, o convés (primeiro deque) e a ponte de comando. O túnel entre os dois é o que os bandoleiros colapsam. O golpe com ação preparada do segundo deque acontece na entrada da ponte, e a luta final segue lá dentro.</p>",
         "format": 1,
         "markdown": ""
       },

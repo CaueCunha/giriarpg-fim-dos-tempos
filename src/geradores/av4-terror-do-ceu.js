@@ -905,7 +905,8 @@
 				notas: [
 					[370, 400, "Canhão de Fogo: linha de 30 m, 4d6 de fogo, Reflexos CD 20 reduz à metade. 40 PV, RD 10; o artilheiro ganha +5 na Defesa"],
 					[370, 250, "Regras a bordo: piso escorregadio (CD 10), escadas contam 3 quadrados, armas de duas mãos −2 (macro Testes a Bordo)"],
-					[250, 590, "Escotilha: desce para os túneis e a estufa"],
+					[250, 590, "Escotilha: túnel para a ponte de comando. Os bandoleiros colapsam o túnel: 3 testes de Força CD 25, ou ir por fora pelos cordames (2 testes de Atletismo CD 15, cego; falha por 10+ cai, Reflexos CD 20 evita)"],
+					[480, 300, "Primeiro deque: Torgo (o homem de mantos escuros) vê o grupo daqui e foge pelos cordames para a ponte"],
 					[150, 420, "Escada de corda"],
 					[585, 420, "Escada de corda"],
 					[210, 735, "Guincho"],
@@ -926,6 +927,7 @@
 				notas: [
 					[545, 300, "Timão: Pilotagem CD 25 para controlar a Harpia"],
 					[545, 450, "Luta final contra Torgo (F6)"],
+					[545, 520, "Entrada: Torgo espera aqui com uma ação preparada, dá um golpe e recua para o timão (o segundo deque do livro, adaptado). Percepção: vislumbres sob o manto"],
 					[700, 240, "Luneta"],
 					[730, 380, "Painel de comando"]
 				]
@@ -1104,7 +1106,7 @@
 					<li>Túnel colapsado: três testes de Força CD 25. Cordames: dois de Atletismo CD 15, às cegas; falha por 10+ é queda (Reflexos CD 20 evita).</li>
 					<li>Leme: Pilotagem CD 25.</li>
 				</ul>
-				<p>Deques selados hermeticamente (Conhecimento percebe), com cobertura de cristal e o símbolo do relógio da tripulação. Plantas por toda a ponte de comando e na estufa. Dentro da nave: 2 cães e 12 capangas, espalhados. Torgo é visto no primeiro deque e foge pelos cordames; espera na ponte com a timoneira.</p>`, 600),
+				<p>Deques selados hermeticamente (Conhecimento percebe), com cobertura de cristal e o símbolo do relógio da tripulação. Plantas por toda a ponte de comando e na estufa. Dentro da nave: 2 cães e 12 capangas, espalhados. Torgo é visto no primeiro deque e foge pelos cordames; espera na ponte com a timoneira.</p><p><b>Nesta mesa:</b> só dois mapas, o convés (primeiro deque) e a ponte de comando. O túnel entre os dois é o que os bandoleiros colapsam. O golpe com ação preparada do segundo deque acontece na entrada da ponte, e a luta final segue lá dentro.</p>`, 600),
 			pagina("A Harpia", `
 				<p>Gog'magogue fêmea nascida em Arton (e de algum modo sabe que isso está errado). Foi cegada para não revelar de onde os vilões operam e é cortada todos os dias para que o sangue brilhe. Não conhece kliren, nomes nem objetivos dos "bípedes". Só quer liberdade e sente que deve subir cada vez mais.</p>
 				<p>Quem fala com animais (ou Vadrinne) consegue contato. Quem entende de natureza nota que ela é viva e está em agonia.</p>
