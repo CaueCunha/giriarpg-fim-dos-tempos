@@ -962,10 +962,13 @@
 			const src = `${DIR}/${c.arquivo}.webp`;
 			const W = c.w * 100;
 			const H = c.h * 100;
+			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
+			const dx = Math.ceil(0.1 * c.w) * 100;
+			const dy = Math.ceil(0.1 * c.h) * 100;
 			const px = (v, max) => Math.min(max, Math.max(0, Math.round(v * c.k)));
 			const walls = [];
 			for (const [tipo, p] of c.paredes) {
-				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [px(p[i], W), px(p[i + 1], H), px(p[i + 2], W), px(p[i + 3], H)], ...TIPOS[tipo] });
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [px(p[i], W) + dx, px(p[i + 1], H) + dy, px(p[i + 2], W) + dx, px(p[i + 3], H) + dy], ...TIPOS[tipo] });
 			}
 			const dados = {
 				name: c.nome,
@@ -978,8 +981,8 @@
 				tokenVision: true,
 				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
 				walls,
-				lights: c.luzes.map(([t, x, y]) => ({ x: px(x, W), y: px(y, H), config: { ...LUZ[t] } })),
-				notes: c.notas.map(([x, y, text]) => ({ x: px(x, W), y: px(y, H), text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				lights: c.luzes.map(([t, x, y]) => ({ x: px(x, W) + dx, y: px(y, H) + dy, config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x: px(x, W) + dx, y: px(y, H) + dy, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
 				flags: { world: { fdtCena: c.id } }
 			};
 			const cena = await Scene.create(dados);

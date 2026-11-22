@@ -40,7 +40,10 @@ for (const { av, ids, semLuz } of AVENTURAS) {
 			assert.equal(d.grid.size, 100);
 			assert.equal(d.grid.distance, 1.5);
 			assert.ok(d.walls.length >= 5, `${d.name}: poucas paredes`);
-			const dentro = (x, y) => x >= 0 && y >= 0 && x <= d.width && y <= d.height;
+			// Coordenadas do canvas: a imagem começa depois da margem, que o Foundry arredonda para quadrados inteiros.
+			const dx = Math.ceil((d.padding * d.width) / 100) * 100;
+			const dy = Math.ceil((d.padding * d.height) / 100) * 100;
+			const dentro = (x, y) => x >= dx && y >= dy && x <= dx + d.width && y <= dy + d.height;
 			for (const w of d.walls) {
 				assert.equal(w.c.length, 4);
 				assert.ok(dentro(w.c[0], w.c[1]) && dentro(w.c[2], w.c[3]), `${d.name}: parede fora da cena ${w.c}`);
