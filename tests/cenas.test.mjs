@@ -17,7 +17,7 @@ const todas = () => mundo.game.scenes.filter((s) => s.getFlag("world", "fdtCena"
 const AVENTURAS = [
 	{ av: "Av3", ids: ["carvalho", "chifre", "dornbach", "dornbach-noite", "salao", "subsolo"], semLuz: ["carvalho", "dornbach"] },
 	{ av: "Av4", ids: ["av4-casarao", "av4-conves", "av4-fazenda", "av4-leme", "av4-plantacao"], semLuz: ["av4-fazenda", "av4-plantacao"] },
-	{ av: "Colinas", ids: ["colinas-duas-pedras", "colinas-duas-pedras-mina", "colinas-puristas", "colinas-sereias"], semLuz: ["colinas-duas-pedras", "colinas-sereias"] }
+	{ av: "Colinas", ids: ["colinas-desfiladeiro", "colinas-duas-pedras", "colinas-duas-pedras-mina", "colinas-encruzilhada", "colinas-puristas", "colinas-riacho", "colinas-sereias"], semLuz: ["colinas-desfiladeiro", "colinas-duas-pedras", "colinas-encruzilhada", "colinas-riacho", "colinas-sereias"] }
 ];
 
 for (const { av, ids, semLuz } of AVENTURAS) {

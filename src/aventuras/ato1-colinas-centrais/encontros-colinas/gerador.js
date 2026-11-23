@@ -1222,6 +1222,65 @@
 				]
 			},
 			{
+				id: "colinas-encruzilhada", nome: "Colinas · Trecho: encruzilhada com abrigo", arquivo: "colinas-encruzilhada", w: 28, h: 16, k: 2800 / 1344, escuro: 0, dia: true,
+				paredes: [
+					["parede", [650, 345, 640, 345, 640, 140, 865, 140, 865, 345, 720, 345]],
+					["mureta", [870, 195, 980, 95, 1110, 15]],
+					["mureta", [860, 430, 945, 378, 1060, 445, 1060, 500, 900, 600, 750, 520, 750, 475]],
+					["parede", [990, 60, 1040, 10, 1085, 40, 1080, 130, 1000, 150, 990, 60]],
+					["parede", [1000, 300, 1040, 268, 1085, 305, 1080, 360, 1010, 365, 1000, 300]],
+					["parede", [1344, 190, 1240, 230, 1130, 320, 1100, 420, 1120, 520, 1200, 560, 1344, 560]],
+					["parede", [830, 768, 840, 670, 950, 600, 1080, 590, 1200, 600, 1344, 600]],
+					["parede", [0, 310, 80, 330, 170, 430, 150, 520, 60, 600, 0, 620]]
+				],
+				luzes: [],
+				notas: [
+					[370, 240, "Placa da encruzilhada (sem nada escrito)"],
+					[750, 250, "Abrigo de pastor abandonado: a entrada fica na frente"],
+					[600, 260, "Bebedouro"],
+					[950, 490, "Curral de pedra vazio"],
+					[640, 450, "Encruzilhada: serve para os Cães das Colinas, o Diabo aparecendo de longe ou qualquer briga na estrada"]
+				]
+			},
+			{
+				id: "colinas-riacho", nome: "Colinas · Trecho: riacho e ponte", arquivo: "colinas-riacho", w: 28, h: 16, k: 2800 / 1344, escuro: 0, dia: true,
+				paredes: [
+					["parede", [0, 150, 90, 120, 155, 220, 180, 320, 140, 370, 60, 350, 0, 320]],
+					["parede", [480, 300, 560, 215, 625, 215, 635, 290, 560, 335, 480, 320, 480, 300]],
+					["parede", [305, 640, 400, 590, 450, 630, 440, 690, 360, 705, 310, 690, 305, 640]],
+					["parede", [1020, 110, 1060, 70, 1115, 90, 1115, 150, 1050, 165, 1020, 110]],
+					["parede", [885, 290, 945, 250, 1000, 265, 995, 325, 920, 330, 885, 290]],
+					["parede", [1015, 560, 1150, 455, 1220, 460, 1240, 540, 1160, 600, 1030, 600, 1015, 560]],
+					["parede", [20, 470, 60, 440, 105, 465, 100, 515, 40, 520, 20, 470]]
+				],
+				luzes: [],
+				notas: [
+					[800, 460, "Ponte de madeira sobre o riacho"],
+					[700, 300, "Riacho raso: terreno difícil"],
+					[400, 450, "Bifurcação da estrada"],
+					[1150, 320, "Estrada para o leste"]
+				]
+			},
+			{
+				id: "colinas-desfiladeiro", nome: "Colinas · Trecho: desfiladeiro", arquivo: "colinas-desfiladeiro", w: 28, h: 16, k: 2800 / 1344, escuro: 0.1, dia: true,
+				paredes: [
+					["mureta", [440, 0, 460, 120, 450, 240, 400, 330, 410, 450, 380, 530, 330, 560, 300, 700, 290, 768]],
+					["mureta", [610, 0, 620, 150, 600, 300, 600, 450, 590, 560, 600, 768]],
+					["mureta", [760, 0, 770, 200, 760, 350, 800, 450, 880, 520, 900, 650, 870, 768]],
+					["mureta", [820, 0, 830, 120, 880, 160, 960, 130, 1000, 90]],
+					["mureta", [1000, 0, 1030, 160, 1080, 300, 1140, 330, 1120, 420, 1090, 500, 1020, 560, 1000, 650, 1010, 768]]
+				],
+				luzes: [],
+				notas: [
+					[690, 150, "Ponte de corda sobre o desfiladeiro (Acrobacia para atravessar correndo)"],
+					[690, 330, "Ponte caída"],
+					[660, 620, "Carroça destruída, meio enterrada no entulho"],
+					[260, 300, "Corda amarrada na árvore: dá para descer pelo paredão (Atletismo)"],
+					[690, 450, "Fundo do desfiladeiro: as bordas são paredões (muretas); subir ou descer exige Atletismo"],
+					[870, 720, "Filete de água"]
+				]
+			},
+			{
 				id: "colinas-sereias", nome: "Colinas · Rio das Sereias", arquivo: "rio-sereias", w: 28, h: 16, k: 2800 / 1344, escuro: 0, dia: true,
 				paredes: [
 					["parede", [175, 470, 260, 410, 340, 415, 385, 480, 380, 550, 300, 565, 200, 540, 175, 470]],
@@ -1305,7 +1364,7 @@
 		const lista = criadas.map((s) => `<li>@UUID[${s.uuid}]{${s.name}}</li>`).join("");
 		ChatMessage.create({
 			whisper: [game.user.id],
-			content: `<h3>Encontros das Colinas · Cenas dos mapas</h3>${criadas.length ? `<p>Criadas:</p><ul>${lista}</ul>` : "<p>Nenhuma cena nova.</p>"}${pulei.length ? `<p>Já existiam (não mexi): ${pulei.join(", ")}.</p>` : ""}<p style="font-size:0.85em">Grid de 1,5 m, paredes, portas, luzes e notas do Mestre. As paredes foram traçadas sobre as imagens: confira no editor de paredes antes da sessão. O portão de Duas Pedras começa trancado (tábuas); a cerca, a carroça e o monte de pedras dos puristas são muretas (bloqueiam passagem, não a visão).</p>`
+			content: `<h3>Encontros das Colinas · Cenas dos mapas</h3>${criadas.length ? `<p>Criadas:</p><ul>${lista}</ul>` : "<p>Nenhuma cena nova.</p>"}${pulei.length ? `<p>Já existiam (não mexi): ${pulei.join(", ")}.</p>` : ""}<p style="font-size:0.85em">Grid de 1,5 m, paredes, portas, luzes e notas do Mestre. As paredes foram traçadas sobre as imagens: confira no editor de paredes antes da sessão. O portão de Duas Pedras começa trancado (tábuas); a cerca, a carroça e o monte de pedras dos puristas, o curral e as bordas do desfiladeiro são muretas (bloqueiam passagem, não a visão).</p>`
 		});
 	}
 
