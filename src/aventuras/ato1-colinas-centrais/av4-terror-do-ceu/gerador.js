@@ -899,7 +899,7 @@
 				]
 			},
 			{
-				id: "av4-conves", nome: "Av4 · A Harpia · Convés", arquivo: "harpia-conves", w: 18, h: 27, k: 2.4557, escuro: 0.7,
+				id: "av4-conves", nome: "Av4 · A Harpia · Convés", arquivo: "harpia-conves", w: 18, h: 27, k: 2.4557, grade: 50, escuro: 0.7,
 				paredes: [
 					["mureta", [367, 0, 415, 40, 445, 100, 470, 170, 540, 175, 570, 240, 585, 330, 590, 450, 590, 600, 580, 700, 555, 800, 520, 900, 470, 1020, 290, 1020, 240, 920, 195, 820, 160, 720, 145, 600, 145, 450, 150, 330, 165, 240, 195, 175, 265, 170, 290, 100, 320, 40, 367, 0]],
 					["parede", [335, 715, 335, 800]], ["parede", [410, 715, 410, 800]],
@@ -963,8 +963,10 @@
 			const W = c.w * 100;
 			const H = c.h * 100;
 			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
-			const dx = Math.ceil(0.1 * c.w) * 100;
-			const dy = Math.ceil(0.1 * c.h) * 100;
+			// Tamanho do quadrado em pixels: 100 por padrão; "grade: 50" dobra o número de quadrados sobre a mesma imagem.
+			const g = c.grade ?? 100;
+			const dx = Math.ceil((0.1 * c.w * 100) / g) * g;
+			const dy = Math.ceil((0.1 * c.h * 100) / g) * g;
 			const px = (v, max) => Math.min(max, Math.max(0, Math.round(v * c.k)));
 			const walls = [];
 			for (const [tipo, p] of c.paredes) {
@@ -977,7 +979,7 @@
 				height: H,
 				padding: 0.1,
 				backgroundColor: "#111111",
-				grid: { type: 1, size: 100, distance: 1.5, units: "m" },
+				grid: { type: 1, size: g, distance: 1.5, units: "m" },
 				tokenVision: true,
 				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
 				walls,

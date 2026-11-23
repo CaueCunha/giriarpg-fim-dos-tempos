@@ -114,7 +114,7 @@ Toda ameaça e NPC já vem com o token configurado: nome visível ao passar o mo
 
 Os mapas de batalha também ficam em `assets/`, na pasta `mapas` de cada aventura. Por enquanto existem os da Av3 (Cultistas Puristas: Carvalho Oco, Salão Comunal, subsolo do salão, Taverna Chifre de Bode e a aldeia de Dornbach de dia e na noite do ritual) e os da Av4 (O Terror que Veio do Céu: chegada às Fazendas Gallobalt, casarão, plantação de achbuld, convés e ponte de comando da Harpia). Depois de puxar o Ato 1, rode **Av3 · Montar cenas dos mapas** ou **Av4 · Montar cenas dos mapas**. Cada macro cria uma cena para cada mapa da sua aventura, com:
 
-- grid de 1,5 m;
+- grid de 1,5 m (o convés da Harpia usa quadrados de 50 px, o dobro de quadrados sobre a mesma imagem);
 - paredes, janelas, cortinas de musgo, muretas (amurada da Harpia, cercas dos galpões) e portas (as grades das celas da Av3 começam trancadas);
 - luzes de lareiras, fogueiras, lampiões e velas;
 - notas do Mestre ligadas ao diário da aventura (na Av3: alçapões, retrato, poções de Sono, celas e quartos; na Av4: quartos da família, faixas queimadas, Canhão de Fogo, regras a bordo, timão).
