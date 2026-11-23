@@ -252,6 +252,9 @@
 		data.folder = pasta.Actor;
 		data.flags = foundry.utils.mergeObject(data.flags ?? {}, FLAGS(o.role));
 		data.prototypeToken.name = o.tokenName ?? nome;
+		if (o.img) data.img = o.img;
+		if (o.token) data.prototypeToken.texture = { ...(data.prototypeToken.texture ?? {}), src: o.token };
+		if (o.lado) Object.assign(data.prototypeToken, { width: o.lado, height: o.lado });
 		data.system.detalhes ??= {};
 		data.system.detalhes.biography ??= { value: "", public: "" };
 		data.system.detalhes.biography.value = `${o.bio ?? ""}<hr>${data.system.detalhes.biography.value ?? ""}`;
@@ -262,42 +265,54 @@
 	/* 2. Dados (fonte única para atores, tabelas, macros e diário)         */
 	/* ------------------------------------------------------------------ */
 	const R = `${T20I}/racas`;
+	// Artes dos encontros: retrato (ficha) e token no frame de ameaça de T20 (tamanho do livro).
+	const ARTE_ENC = "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas";
+	const retrato = (n) => `${ARTE_ENC}/retratos/${n}.webp`;
+	const tokenEnc = (n) => `${ARTE_ENC}/tokens/${n}.webp`;
+	// role -> retrato (o token tem o nome do role; as sereias dividem a mesma arte)
+	const ARTES = { tolbert: "tolbert", abner: "abner", quimby: "quimby", gormaggor: "gormaggor", raguria: "raguria", arlo: "arlo", mungo: "mungo",
+		jonid: "jonid", ebenezer: "ebenezer", erneshia: "erneshia", diabo: "diabo", shanamarie: "sereias", shaylyne: "sereias", shadolenn: "sereias",
+		cletus: "cletus", reston: "reston", ladrao: "ladrao", elmer: "elmer", fortunata: "fortunata", purista: "puristas",
+		ayla: "ayla", ignis: "ignis", kiki: "kiki", rexthor: "rexthor", arius: "arius" };
+	const TOKEN_DE = { purista: "puristas" };
+	// Quadrados do token pelo tamanho (Grande 2, Enorme 3, Colossal 6)
+	const LADO = { gra: 2, eno: 3, col: 6 };
 	// tipo: "npc" viaja e pode se repetir; "parado" fica sempre no mesmo lugar; "local" é fixo
 	// (descoberto uma vez); "errante" pode surgir em qualquer lugar, quantas vezes for.
 	const ENC = [
-		{ k: "tolbert", nome: "Tolbert", tipo: "npc", roles: ["tolbert"], img: `${T20I}/itens/gerais/instrumento-musical.webp`,
+		{ k: "tolbert", nome: "Tolbert", tipo: "npc", roles: ["tolbert"], img: tokenEnc("tolbert"),
 			resumo: "Bardo de duas moedas sobre os olhos (por baixo, só buracos vazios). Cada moeda é uma alma, e ele tem várias outras numa bolsa. Desafia os personagens para um <b>duelo musical</b>: aposta uma alma, o personagem aposta a própria.",
 			mec: "Três testes de Atuação opostos contra Tolbert (+15). Quem perde a alma a entrega como moeda: não pode ser ressuscitado e não vai a nenhum Reino dos Deuses. Quem ganha tem uma \"alma extra\" (pode vender a alma sem consequências). Enterrar a moeda ganha no Cemitério Errante dá +1 num atributo, como uma noite lá (acumula, mas não no mesmo atributo).",
 			uso: "Testes dos Encontros → Duelo musical" },
-		{ k: "abner", nome: "Abner", tipo: "npc", roles: ["abner"], img: `${R}/qareen.webp`,
+		{ k: "abner", nome: "Abner", tipo: "npc", roles: ["abner"], img: tokenEnc("abner"),
 			resumo: "Adolescente qareen, pastor de Khalmyr totalmente fanático: quase tudo é \"uma bênção de Khalmyr\". Perturbado, mas inofensivo. Quer batizar os personagens sob Khalmyr.",
 			mec: "Abençoa quem é gentil ou concorda com ele; amaldiçoa e ameaça os hostis. Efeito básico de <b>Bênção</b> (+1 em ataque e dano) ou <b>Perdição</b> (–1), até o fim da próxima cena.",
 			uso: "Bênçãos e Maldições → Abner" },
-		{ k: "quimby", nome: "Quimby Ulysses Arronax", tipo: "npc", roles: ["quimby"], img: `${R}/anao.webp`,
+		{ k: "quimby", nome: "Quimby Ulysses Arronax", tipo: "npc", roles: ["quimby"], img: tokenEnc("quimby"),
 			resumo: "Anão vendedor de alquimia fajuta, numa carroça puxada por um gorloggh. Devoto de Hyninn: não engana além disso, mas solta \"nunca ouvi falar\" na conversa para achar outros devotos do Deus dos Ladrões.",
 			mec: "Todo item alquímico custa <b>metade do preço</b>. Ao usar, 1d6: par funciona; ímpar funciona ao contrário (ácido, fogo e granada atingem o usuário, bálsamo causa dano, essência drena PM). Para um devoto de Hyninn revelado, ele avisa dos itens e indica um depósito a algumas horas com dois bálsamos e duas essências de verdade (pede que reponha).",
 			uso: "Itens do Quimby + macro Alquimia do Quimby" },
-		{ k: "gormaggor", nome: "Gormaggor", tipo: "parado", roles: ["gormaggor"], img: "icons/svg/ruins.svg",
+		{ k: "gormaggor", nome: "Gormaggor", tipo: "parado", roles: ["gormaggor"], img: tokenEnc("gormaggor"),
 			resumo: "Gigante que parece uma colina. A criatura mais antiga e poderosa das Centrais (a única maravilha original), velho demais e cansado: dorme quase sempre, já se fundiu às colinas e tem um braço preso. Deixou cair o cachimbo (feito de dois carvalhos) e não tem energia para pegá-lo.",
 			mec: "Pôr o cachimbo na mão livre, enchê-lo (ele fuma quase qualquer planta) e acendê-lo conquista a amizade dele e uma fonte quase infinita (e tediosa) de informação: histórias do Herói Louco, o Diabo, o Cemitério. Lembra que \"há algum tempo\" o Herói Louco e o Rei Juiz passaram por ali. Com perspicácia: acordou quando a Tormenta começou a afetar as Colinas, e sente algo \"fazendo cócegas na terra\".",
 			uso: "Tabela Histórias do Herói Louco" },
-		{ k: "raguria", nome: "Raguria", tipo: "npc", roles: ["raguria"], img: `${R}/humano.webp`,
+		{ k: "raguria", nome: "Raguria", tipo: "npc", roles: ["raguria"], img: tokenEnc("raguria"),
 			resumo: "Bruxa caipira numa cabana afastada. Age como a \"bruxa má\" dos contos, mas não quer o mal dos personagens. Maligna, mas não perigosa se não for provocada. Conhece Cletus (não retribui a afeição dele) e sabe que \"algo ruim está se alastrando pelas Colinas\".",
 			mec: "Gentileza: um prato especial do livro básico (uma porção para cada) ou o <b>Ensopado de Rabo de Lagarto e Olho de Sapo</b> (+1 na CD de magias arcanas). Rudeza: <b>Rogar Maldição</b> num deles (não pode se comunicar nem lançar magias, –5 em todos os testes, metade do deslocamento, até o dia seguinte ou o fim da próxima cena relevante), e sai levitando e gargalhando.",
 			uso: "Bênçãos e Maldições → Raguria" },
-		{ k: "arlo", nome: "Arlo \"Olho de Leite\"", tipo: "npc", roles: ["arlo"], img: `${R}/humano.webp`,
+		{ k: "arlo", nome: "Arlo \"Olho de Leite\"", tipo: "npc", roles: ["arlo"], img: tokenEnc("arlo"),
 			resumo: "Caolho de olho leitoso, isolado, obcecado com sobrevivência. Acha que o Reinado vem tirar seus direitos e que \"algo sujo\" contamina as Centrais. Usa armas de pólvora. Dá informações do jeito mais paranoico possível e pode ajudar na caça ao Diabo.",
 			mec: "Concurso de tiro: o personagem e Arlo fazem três testes de Pontaria (CD 15, 20 e 25). Mais sucessos vence (Arlo tem +10). Empate: a CD continua subindo +5.",
 			uso: "Testes dos Encontros → Concurso de tiro" },
-		{ k: "mungo", nome: "Mungo Joe", tipo: "npc", roles: ["mungo"], img: `${T20I}/itens/gerais/bebida-comum.webp`,
+		{ k: "mungo", nome: "Mungo Joe", tipo: "npc", roles: ["mungo"], img: tokenEnc("mungo"),
 			resumo: "Alambiqueiro caipira de chapelão, jardineira, sem camisa, descalço, desdentado e alegre. Vende uma dose da bebida fortíssima por T$ 1. Simpatia: a primeira é de graça e ele bebe junto.",
 			mec: "Cada dose: Fortitude CD 15 (+1 por dose anterior no mesmo dia). Passou: +1 PM temporário. Falhou: enjoado por uma cena; na segunda falha, inconsciente por 1d12 horas.",
 			uso: "Testes dos Encontros → Dose do Mungo Joe" },
-		{ k: "puristas", nome: "Encontro de Puristas Caipiras", tipo: "npc", roles: ["purista"], img: `${T20I}/ameacas/recruta-supremacista.png`,
+		{ k: "puristas", nome: "Encontro de Puristas Caipiras", tipo: "npc", roles: ["purista"], img: tokenEnc("puristas"),
 			resumo: "Odiadores de não humanos que mal conhecem a ideologia purista, mas abraçaram tudo. Um pastor prega a \"palavra de Valkaria\". Humanos vistos são convidados; não humanos, atacados.",
 			mec: "Em combate, <b>8 recrutas puristas</b>. Não lutam até a morte: fogem se acharem que correm perigo (os não humanos têm \"vantagens injustas\"). Com eles, o panfleto (handout no diário).",
-			uso: "Encontro do Dia → colocar tokens", qtd: 8 },
-		{ k: "bode", nome: "O Homem-Bode", tipo: "npc", roles: ["jonid"], img: "icons/svg/mystery-man.svg",
+			uso: "Encontro do Dia → colocar token (o bando é um token Grande)", qtd: 1 },
+		{ k: "bode", nome: "O Homem-Bode", tipo: "npc", roles: ["jonid"], img: tokenEnc("jonid"),
 			resumo: "Druida alucinado que vive transformado em bode, com os bodes. Só se distingue de um bode com profundo conhecimento de animais ou flagrando-o ao acordar (volta à forma humana dormindo). Abordado, foge ou luta.",
 			mec: "Com extrema cautela e boas rolagens, conta que virou bode depois que a família morreu da \"doença misteriosa\" (mutações do Evento e corrupção da Tormenta). Nome: <b>Jonid</b>; família: Elmara, Savik e Diridda. Com sucesso extremo em testes sociais e boa interpretação, lança Curar Ferimentos (2d8+2) ou outra magia divina de 1º círculo.",
 			uso: "Bênçãos e Maldições → Curar Ferimentos" },
@@ -305,39 +320,39 @@
 			resumo: "Comunidade mineradora fechada pela Guilda dos Mineradores de Yuvalin há mais de 10 anos (tábuas no portão, placas oficiais). Quinquilharias, esqueletos de quem desafiou a Guilda e uma mina selada só com tiras de madeira. Fantasmas medrosos (Zadok, Draslo, Emeline, Aurinda) tentam afastar visitantes com armas fantasmagóricas; conversando, contam o que houve.",
 			mec: "Procurando na aldeia: duas rolagens de dinheiro e uma de itens na Tabela 8–1 (sempre ND 1). Na mina, uma <b>aparição</b> e um veio de <b>metal arco-íris</b>. Minerar ali atrai a ira da Guilda (que pode se aliar à Irmandade no fim do arco).",
 			uso: "Encontro do Dia → colocar tokens" },
-		{ k: "ebenezer", nome: "Ebenezer", tipo: "npc", roles: ["ebenezer"], img: `${T20I}/magias/premonicao.webp`,
+		{ k: "ebenezer", nome: "Ebenezer", tipo: "npc", roles: ["ebenezer"], img: tokenEnc("ebenezer"),
 			resumo: "Velho profeta herético de Thyatis. Oferece uma profecia para cada personagem, mas como aposta: se não se cumprir, Ebenezer errou e Thyatis lhe dá uma segunda chance; se se cumprir, o personagem terá de dar uma segunda chance a alguém. Ninguém é obrigado a aceitar.",
 			mec: "O Mestre decide a profecia, que se resolve dentro da aventura. Não se cumpriu: o personagem ganha <b>+20 para gastar</b> em testes na próxima aventura (+5 num, +2 noutro...). Cumpriu: o Mestre pode <b>rolar de novo cinco testes</b> contra ele até o fim do arco.",
 			uso: "Bênçãos e Maldições → Aposta de Ebenezer" },
-		{ k: "museu", nome: "O Museu de Coisas Quase Vivas", tipo: "local", roles: ["erneshia"], img: "icons/svg/bones.svg",
+		{ k: "museu", nome: "O Museu de Coisas Quase Vivas", tipo: "local", roles: ["erneshia"], img: tokenEnc("erneshia"),
 			resumo: "Museu de taxidermia de três andares. Dona Erneshia, acolhedora, cobra T$ 1 (qualquer simpatia vale entrada grátis). Misturas de bichos e criaturas do folclore: o coelho chifrudo, o meia-perna, o Ladrão de Rabos, um \"homem-bode\" recriado... e muitas recriações do Diabo das Colinas, cuja história ela conta com alegria.",
 			mec: "Na caçada ao Diabo, Erneshia pode ir junto como <b>parceira ajudante mestre</b> (+4 em Atletismo, Percepção e Sobrevivência).",
 			uso: "Perseguição ao Diabo → com Erneshia" },
-		{ k: "diabo", nome: "O Diabo das Colinas", tipo: "npc", roles: ["diabo"], img: "icons/svg/terror.svg",
+		{ k: "diabo", nome: "O Diabo das Colinas", tipo: "npc", roles: ["diabo"], img: tokenEnc("diabo"),
 			resumo: "Mito verdadeiro: criatura do tamanho de um anão, cabeça desproporcional, bocarra de dentes afiados, sempre sorrindo. O sétimo filho amaldiçoado ainda no ventre de um minerador avarento: nasceu não humano, matou a família e fugiu com o ouro. Aparece para viajantes e os convida a persegui-lo.",
 			mec: "Quem o avista é perseguido para sempre: ele reaparece em todo <b>resultado par</b> desta tabela, além do resultado normal. Perseguição: o Diabo começa com 20 quadrados de vantagem e tem +17 em tudo; se abrir 50, some. Capturado, revela a riqueza e passa a ficar perto do covil com o pote de ouro (Tabela 8–1, dinheiro ND 7, ignorando 1 a 10).",
 			uso: "Perseguição ao Diabo" },
-		{ k: "sereias", nome: "Shanamarie, Shaylyne e Shadolenn", tipo: "parado", roles: ["shanamarie", "shaylyne", "shadolenn"], img: `${R}/sereia.webp`,
+		{ k: "sereias", nome: "Shanamarie, Shaylyne e Shadolenn", tipo: "parado", roles: ["shanamarie", "shaylyne", "shadolenn"], img: tokenEnc("sereias"),
 			resumo: "Sereias do rio. Cantam para atrair aventureiros; quem se aproxima é roubado e, se resistir, afogado. Depois fogem nadando.",
 			mec: "Quem vê ou ouve: Vontade oposta à Atuação delas (+10). Falha não é magia: o personagem fica inclinado a se aproximar e acha que são amigáveis (Intuição também é oposta pela Atuação). Na aproximação, uma distrai (Atuação), outra lança Hipnotismo ou Sono (CD 14) e a terceira rouba (Furtividade e Ladinagem +10). Então nadam para longe (natação 12m).",
 			uso: "Testes dos Encontros → Canto e furto das sereias" },
-		{ k: "cletus", nome: "Cletus Rigby", tipo: "npc", roles: ["cletus"], img: `${R}/anao.webp`,
+		{ k: "cletus", nome: "Cletus Rigby", tipo: "npc", roles: ["cletus"], img: tokenEnc("cletus"),
 			resumo: "Anão mago caipira, numa torre periclitante de cabanas sobre cabanas, entulhada como a casa de um acumulador. Odeia pessoas e é ranzinza; só conversa depois de ganhar confiança aos poucos. Quando o grupo chega, está transformado num <b>gato</b>: se ninguém mexer em nada, deixa-os em paz; se mexerem, vira anão e xinga (em casos extremos, ataca, e o grupo dificilmente vence). A casa fica sobre muito metal arco-íris.",
 			mec: "Entrar exige Fortitude CD 15 (o cheiro): falha deixa enjoado. Um arcanista ou bardo que ganhe a confiança dele e <b>nunca o tenha ofendido</b> aprende uma magia arcana de 1º círculo. Sabe que a Tormenta se infiltra na terra, mas não vai fazer nada (os outros não perceberam? Idiotas!). Não sabe nada dos vilões.",
 			uso: "Testes dos Encontros → Cabana / Ofensas" },
-		{ k: "reston", nome: "Nada Mais que a Verdade Reston", tipo: "npc", roles: ["reston"], img: `${T20I}/itens/gerais/pergaminho.webp`,
+		{ k: "reston", nome: "Nada Mais que a Verdade Reston", tipo: "npc", roles: ["reston"], img: tokenEnc("reston"),
 			resumo: "Devota fundamentalista de Tanna-Toh compilando uma etnografia das Colinas. Pede que os heróis contem suas histórias e registra tudo. Não pode mentir e sofre até para omitir. Saiu de uma comunidade apocalíptica de fanáticos (hoje só esqueletos) com a desculpa da etnografia, e precisou fazê-la de verdade.",
 			mec: "Testes de Inteligência (+4) contra CD 10, 15 ou 20 para saber qualquer coisa da região. Já ouviu boatos do Cemitério Errante (não acredita) e conhece histórias do Herói Louco. Tem o <b>pergaminho do Evento</b> (handout): não dá, mas deixa copiar. Família: Nunca Esconderei Nada de Meus Irmãos (pai), A Mentira Faz a Deusa Chorar (mãe), Toda a Verdade (irmã).",
 			uso: "Testes dos Encontros → Nada Mais que a Verdade sabe?" },
-		{ k: "ladrao", nome: "O Ladrão de Rabos", tipo: "npc", roles: ["ladrao"], img: "icons/svg/eye.svg",
+		{ k: "ladrao", nome: "O Ladrão de Rabos", tipo: "npc", roles: ["ladrao"], img: tokenEnc("ladrao"),
 			resumo: "Mito verdadeiro: parece um cão sem pelos com vários rabos (de gambá, de cobra, de coiote...). Visto só de longe: fica mais distante, sem se mexer, quando alguém se aproxima. Só deixa ladrões chegarem perto (e, por eles, os colegas). Entidade que sussurra na mente e rouba rabos para dominar criaturas.",
 			mec: "Um \"ladrão\" (a critério do Mestre) pode roubar um rabo: Ladinagem oposta à Percepção dele (+10). Roubado, ele implora e concede um <b>desejo</b> em troca: surge em até uma semana, distorcido de forma inofensiva (literal demais, ou primitivo/caipira). Na mesa original, roubou o rabo do minotauro Arius e o controlou em certos momentos.",
 			uso: "Testes dos Encontros → Roubar um rabo" },
-		{ k: "elmer", nome: "Elmer", tipo: "parado", roles: ["elmer"], img: `${T20I}/ameacas/dragao-filhote.png`,
+		{ k: "elmer", nome: "Elmer", tipo: "parado", roles: ["elmer"], img: tokenEnc("elmer"),
 			resumo: "O dragão mendigo: peludo, comprido, asas de morcego e oito membros. Quer um tesouro, mas é preguiçoso e não é feroz. Pede moedas contando que é o único do seu tipo. Viciado em achbuld.",
 			mec: "Com moedas e simpatia, fala da plantação de achbuld dos Gallobalt (e tenta arrancar mais). Generosidade demais: vira uma peste que segue o grupo. Fazê-lo sonhar com algo específico (Atuação, Diplomacia ou outra perícia) e tomar achbuld com ele leva o personagem ao sonho, de onde pode trazer um objeto: até duas melhorias, ou 1d10 × 100 Tibares. Nada mágico nem riquezas enormes.",
 			uso: "Testes dos Encontros → Sonho de Elmer" },
-		{ k: "fortunata", nome: "Fortunata", tipo: "npc", roles: ["fortunata"], img: `${T20I}/itens/gerais/baralho.webp`,
+		{ k: "fortunata", nome: "Fortunata", tipo: "npc", roles: ["fortunata"], img: tokenEnc("fortunata"),
 			resumo: "Jogadora e clériga de Nimb (talvez um avatar do Deus do Caos). Propõe Wyrt, mas aposta em qualquer coisa, sobretudo no resultado das aventuras. Prefere apostar segredos a dinheiro. Diz que Ebenezer \"não passa de um charlatão\" e aposta na caçada ao Diabo, se houver.",
 			mec: "Jogatina +15. Na 1ª derrota, conta o segredo do tabuleiro. Na 2ª, conta do Cemitério Errante: quem ouve fica desorientado e \"perde\" algumas horas, e na próxima rolagem da tabela o grupo pode achar o Cemitério automaticamente. Depois disso, histórias do Herói Louco.",
 			uso: "Testes dos Encontros → Aposta com Fortunata" },
@@ -347,19 +362,19 @@
 			uso: "Bênçãos e Maldições → Noite no Cemitério" }
 	];
 	const ESPECIAIS = [
-		{ k: "ayla", nome: "Aylarianna Purpúrea (Ayla)", roles: ["ayla"], img: `${R}/silfide.webp`,
+		{ k: "ayla", nome: "Aylarianna Purpúrea (Ayla)", roles: ["ayla"], img: tokenEnc("ayla"),
 			resumo: "A fada mais honesta de Arton: caixeira-viajante alquimista. Bálsamos e venenos funcionam; elixir de crescer cabelo e poção de sumir verruga, não. Escondida desde que um cliente insatisfeito a acusou (a culpada é a \"irmã gêmea\" que ela \"tem\").",
 			mec: "Recruta revendedores para o <b>Empório Purpúrea</b> (funil invertido, não pirâmide!): kit de cosméticos de T$ 50 e T$ 10 por mês (pagos a Belinda, no Forte). O revendedor recruta NPCs (Diplomacia ou, francamente, Enganação), que compram dele o kit e pagam T$ 10 por mês até perceberem o golpe." },
-		{ k: "ignis", nome: "Ignis Crae", roles: ["ignis"], img: `${R}/golem.webp`,
+		{ k: "ignis", nome: "Ignis Crae", roles: ["ignis"], img: tokenEnc("ignis"),
 			resumo: "Golem de metal, paladino de Thyatis desde o nascimento, fundador da Ordem da Cavalaria da Redenção, que oferece recomeço a quem está no fundo do poço.",
 			mec: "Parceiro <b>guardião veterano</b> (+3 na Defesa) enquanto achar que o grupo segue os preceitos de Thyatis. Num rumo sombrio (vício, roubo, corrupção), tenta recrutá-los para a Ordem: serve de penitência a devotos que quebraram suas Obrigações & Restrições." },
-		{ k: "kiki", nome: "Kirzanaath \"Kiki\" Odello", roles: ["kiki"], img: `${R}/medusa.webp`,
+		{ k: "kiki", nome: "Kirzanaath \"Kiki\" Odello", roles: ["kiki"], img: tokenEnc("kiki"),
 			resumo: "Medusa barda atrás de histórias, cerveja e fama. Esconde a raça até confiar. Teme virar monstruosa e quer saber o que houve com a mãe (obcecada por um tema que nem ela conhecia, fugiu com a filha e foi levada por desconhecidos). Cozinheira e boa em \"ler\" pessoas.",
 			mec: "Parceira <b>ajudante veterana</b> (+2 em Atuação, Investigação e Ofício [cozinheiro]). Conta qualquer história do Herói Louco e prepara qualquer prato especial do livro básico sem custo. Fala da mãe e entra em negação." },
-		{ k: "rexthor", nome: "Rexthor", roles: ["rexthor"], img: `${R}/humano.webp`,
+		{ k: "rexthor", nome: "Rexthor", roles: ["rexthor"], img: tokenEnc("rexthor"),
 			resumo: "O campeão das profundezas: dos Ermos Púrpuras, escravizado e posto nas arenas de Wynlla, libertado por uma aposta de uma mulher misteriosa ao sobreviver ao Abismo. Confia nas \"Deusas\" da Sorte, do Azar e do Caos (Nimb). Ingênuo, leal e bondoso por trás da fachada de exercícios, lutas e indecência.",
 			mec: "Parceiro <b>fortão veterano</b>. Pode desafiar um combatente do grupo (sobretudo se houver magos) para um duelo \"amigável\": Defesa 18, 30 PV, +4 em resistências, Luta +10, 1d8+4 de impacto (a ficha dele já tem isso)." },
-		{ k: "arius", nome: "Arius Gorgonius Dubitatius", roles: ["arius"], img: `${R}/minotauro.webp`,
+		{ k: "arius", nome: "Arius Gorgonius Dubitatius", roles: ["arius"], img: tokenEnc("arius"),
 			resumo: "Minotauro nobre de Tiberus, mago, filósofo e devoto de Tanna-Toh. Afastado pelo pai para uma legião longínqua, partiu atrás de conhecimento e só volta quando provar que a força não é o único poder. Dois metros, cabelos loiros trançados, postura encurvada, inseguro e empolgado com saber novo.",
 			mec: "Dá qualquer informação ou pista à escolha do Mestre (Herói Louco, Templo do Vácuo, espaço de masmorra) e decifra idiomas desconhecidos, como a língua dos gnomos." },
 		{ k: "cacadores", nome: "Chèvre e Timm", roles: ["chevre", "timm"], img: `${R}/satiro.webp`,
@@ -397,7 +412,10 @@
 	// Habitantes que não são para lutar: ficha mínima, só para ter token e os bônus do livro.
 	const figura = async (role, name, img, bio, o = {}) => {
 		atores[role] = await criarNPC({
-			name, img, role, bio,
+			name, role, bio,
+			img: ARTES[role] ? retrato(ARTES[role]) : img,
+			token: ARTES[role] ? tokenEnc(role) : undefined,
+			tokenSize: o.tokenSize ?? LADO[o.tamanho],
 			tokenName: o.tokenName ?? name.split(/[,(]/)[0].trim(),
 			link: true,
 			disposition: o.disposition ?? NEUTRO,
@@ -441,7 +459,7 @@
 		pericias: { atle: 17, acro: 17, refl: 17, fort: 17, vont: 17, perc: 17, furt: 17, inic: 17, ades: 17, luta: 17, enga: 17, sobr: 17 },
 		atr: { for: 3, des: 5, con: 3, int: 1, sab: 3, car: 2 } });
 	for (const [r, n] of [["shanamarie", "Shanamarie"], ["shaylyne", "Shaylyne"], ["shadolenn", "Shadolenn"]]) {
-		await figura(r, `${n}, Sereia do Rio`, `${R}/sereia.webp`, bioDe(E.sereias), {
+		await figura(r, `${n}, Sereia do Rio`, `${R}/sereia.webp`, bioDe(E.sereias, `Ficha mínima (inferida): só para ter token e os bônus que o livro dá. Ajuste à vontade.<br><b>Token das três juntas</b> (Grande), para usar no lugar dos três: <code>${tokenEnc("sereias")}</code> (aba Token do token colocado).`), {
 			disposition: -1, swim: 12, walk: 6, raca: "Sereia",
 			pericias: { atua: 10, furt: 10, ladi: 10, vont: 6, perc: 6 },
 			items: [magia(r === "shaylyne" ? "Hipnotismo" : "Sono", `${T20I}/magias/${r === "shaylyne" ? "hipnotismo" : "sono"}.webp`, p("Vontade CD 14."), { exec: "action", alcance: "short", save: "Vontade CD 14" })] });
@@ -455,7 +473,7 @@
 	await figura("elmer", "Elmer, o Dragão Mendigo", `${T20I}/ameacas/dragao-filhote.png`, bioDe(E.elmer, "Ficha inferida: preguiçoso demais para lutar."), { tipo: "mon", tamanho: "gra", nd: 5, pv: 90, def: 20, fly: 12, pericias: { dipl: 8, enga: 10, perc: 8 } });
 	await figura("fortunata", "Fortunata, Clériga de Nimb", `${R}/humano.webp`, bioDe(E.fortunata), { pericias: { joga: 15, enga: 10, intu: 10 }, atr: { for: 0, des: 2, con: 1, int: 2, sab: 3, car: 4 } });
 
-	atores.purista = await clonarAmeaca("npoNBPUXKVObgYTY", "Recruta Purista Caipira", { role: "purista", bio: p(E.puristas.resumo, `<b>Mecânica:</b> ${E.puristas.mec}`) });
+	atores.purista = await clonarAmeaca("npoNBPUXKVObgYTY", "Bando de Puristas Caipiras", { role: "purista", img: retrato("puristas"), token: tokenEnc("puristas"), lado: 2, bio: p(E.puristas.resumo, `<b>Mecânica:</b> ${E.puristas.mec}`) });
 	atores.aparicao = await clonarAmeaca("MKKB4eECVXAjyvRy", "Aparição da Mina de Duas Pedras", { role: "aparicao", bio: p("Assombra a mina selada pela Guilda dos Mineradores de Yuvalin, na Cidade Fantasma de Duas Pedras. Os fantasmas da aldeia (Zadok, Draslo, Emeline, Aurinda) são outra coisa: medrosos, só tentam espantar visitantes.") });
 
 	await figura("ayla", "Aylarianna Purpúrea (Ayla)", `${R}/silfide.webp`, bioDe(E.ayla), { tamanho: "min", fly: 12, raca: "Sílfide", pericias: { enga: 12, dipl: 10, ofi0: 10 } });

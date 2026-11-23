@@ -1,7 +1,7 @@
 {
   "name": "Dona Erneshia, Taxidermista",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/erneshia.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "9c448a9a",
+      "assinatura": "c10d9e1e",
       "assinaturas": [
-        "9c448a9a"
+        "9c448a9a",
+        "c10d9e1e"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/erneshia.webp"
     },
     "sight": {
       "enabled": true

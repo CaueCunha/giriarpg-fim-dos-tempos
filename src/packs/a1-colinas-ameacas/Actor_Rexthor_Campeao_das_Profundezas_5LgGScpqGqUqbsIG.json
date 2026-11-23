@@ -1,7 +1,7 @@
 {
   "name": "Rexthor, Campeão das Profundezas",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/rexthor.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "c3c40ab6",
+      "assinatura": "2938572e",
       "assinaturas": [
-        "c3c40ab6"
+        "c3c40ab6",
+        "2938572e"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/rexthor.webp"
     },
     "sight": {
       "enabled": true

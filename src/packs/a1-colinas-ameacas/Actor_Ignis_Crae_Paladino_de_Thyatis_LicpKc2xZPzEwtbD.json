@@ -1,7 +1,7 @@
 {
   "name": "Ignis Crae, Paladino de Thyatis",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/golem.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/ignis.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "8b268adc",
+      "assinatura": "f928e94a",
       "assinaturas": [
-        "8b268adc"
+        "8b268adc",
+        "f928e94a"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/golem.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/ignis.webp"
     },
     "sight": {
       "enabled": true

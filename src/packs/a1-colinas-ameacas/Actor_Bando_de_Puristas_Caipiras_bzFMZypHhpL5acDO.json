@@ -1,7 +1,7 @@
 {
-  "name": "Recruta Purista Caipira",
+  "name": "Bando de Puristas Caipiras",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/recruta-supremacista.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/puristas.webp",
   "folder": null,
   "sort": 100001,
   "flags": {
@@ -25,9 +25,9 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "1e089d4b",
+      "assinatura": "17453109",
       "assinaturas": [
-        "1e089d4b"
+        "17453109"
       ]
     }
   },
@@ -767,10 +767,10 @@
         }
       }
     },
-    "name": "Recruta Purista Caipira",
+    "name": "Bando de Puristas Caipiras",
     "displayName": 30,
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 2,
     "lockRotation": false,
     "rotation": 0,
     "actorLink": false,
@@ -810,7 +810,7 @@
       "priority": 0
     },
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/recruta-supremacista.png",
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/puristas.webp",
       "tint": "#ffffff",
       "scaleX": 1,
       "scaleY": 1,
@@ -868,7 +868,7 @@
     "duplicateSource": null,
     "exportSource": null
   },
-  "_id": "am2Dr5u76gGdkEKN",
+  "_id": "bzFMZypHhpL5acDO",
   "items": [
     {
       "folder": "0V7x5o397UvG3xKP",
@@ -932,7 +932,7 @@
         "duplicateSource": null,
         "exportSource": null
       },
-      "_id": "VVzzBDJ0oyxt9h32",
+      "_id": "bYF97jxoAeipmTRq",
       "effects": [
         {
           "origin": "Item.uNwAhgYfnGrlr705",
@@ -947,7 +947,7 @@
             "expired": false
           },
           "disabled": true,
-          "_id": "cJj79g3ACbFaqZf9",
+          "_id": "tg7l11yXpAjdVZDv",
           "transfer": true,
           "_stats": {
             "coreVersion": "14.366",
@@ -1008,10 +1008,10 @@
           "start": null,
           "showIcon": 1,
           "folder": null,
-          "_key": "!actors.items.effects!am2Dr5u76gGdkEKN.VVzzBDJ0oyxt9h32.cJj79g3ACbFaqZf9"
+          "_key": "!actors.items.effects!bzFMZypHhpL5acDO.bYF97jxoAeipmTRq.tg7l11yXpAjdVZDv"
         }
       ],
-      "_key": "!actors.items!am2Dr5u76gGdkEKN.VVzzBDJ0oyxt9h32"
+      "_key": "!actors.items!bzFMZypHhpL5acDO.bYF97jxoAeipmTRq"
     },
     {
       "name": "Alabarda",
@@ -1170,12 +1170,12 @@
       },
       "folder": "brhICwdHcOUqvMPi",
       "sort": 4000000,
-      "_id": "LBIHsdcQG69I1jcq",
+      "_id": "lvIuwKPCVYbWjW6e",
       "effects": [],
-      "_key": "!actors.items!am2Dr5u76gGdkEKN.LBIHsdcQG69I1jcq"
+      "_key": "!actors.items!bzFMZypHhpL5acDO.lvIuwKPCVYbWjW6e"
     },
     {
-      "_id": "JYWHpjsEVGaqehMo",
+      "_id": "7zHvYG2PJktB8PGF",
       "name": "Cota de malha",
       "type": "equipamento",
       "img": "systems/tormenta20/icons/itens/equipamentos/cota-malha.webp",
@@ -1256,9 +1256,9 @@
       "folder": "rsvFZjPiYXV5s7IN",
       "sort": 125000,
       "effects": [],
-      "_key": "!actors.items!am2Dr5u76gGdkEKN.JYWHpjsEVGaqehMo"
+      "_key": "!actors.items!bzFMZypHhpL5acDO.7zHvYG2PJktB8PGF"
     }
   ],
   "effects": [],
-  "_key": "!actors!am2Dr5u76gGdkEKN"
+  "_key": "!actors!bzFMZypHhpL5acDO"
 }

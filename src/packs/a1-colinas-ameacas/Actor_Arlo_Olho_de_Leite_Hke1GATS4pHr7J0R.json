@@ -1,7 +1,7 @@
 {
   "name": "Arlo \"Olho de Leite\"",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/arlo.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "261503d7",
+      "assinatura": "629f0993",
       "assinaturas": [
-        "261503d7"
+        "261503d7",
+        "629f0993"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/arlo.webp"
     },
     "sight": {
       "enabled": true

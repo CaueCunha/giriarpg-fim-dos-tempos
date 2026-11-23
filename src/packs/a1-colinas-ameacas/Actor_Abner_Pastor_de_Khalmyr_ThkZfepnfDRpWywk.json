@@ -1,7 +1,7 @@
 {
   "name": "Abner, Pastor de Khalmyr",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/qareen.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/abner.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "aedb3d5e",
+      "assinatura": "b3bd40c6",
       "assinaturas": [
-        "aedb3d5e"
+        "aedb3d5e",
+        "b3bd40c6"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/qareen.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/abner.webp"
     },
     "sight": {
       "enabled": true

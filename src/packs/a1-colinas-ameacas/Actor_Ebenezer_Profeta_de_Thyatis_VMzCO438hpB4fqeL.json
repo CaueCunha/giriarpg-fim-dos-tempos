@@ -1,7 +1,7 @@
 {
   "name": "Ebenezer, Profeta de Thyatis",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/ebenezer.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "56c13e4f",
+      "assinatura": "fdab34ad",
       "assinaturas": [
-        "56c13e4f"
+        "56c13e4f",
+        "fdab34ad"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/ebenezer.webp"
     },
     "sight": {
       "enabled": true

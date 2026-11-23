@@ -9,12 +9,14 @@ Substitui, na prática, a tabela simples que a `av45-plano-5-colinas.js` cria (a
 | Tipo | Conteúdo |
 |---|---|
 | Habitantes | Tolbert, Abner, Quimby, Gormaggor, Raguria, Arlo, Mungo Joe, Jonid (Homem-Bode), Ebenezer, Dona Erneshia, o Diabo das Colinas, as sereias Shanamarie, Shaylyne e Shadolenn, Cletus Rigby, Nada Mais que a Verdade Reston, o Ladrão de Rabos, Elmer e Fortunata |
-| Do compêndio | Recruta Purista Caipira (8 no encontro) e Aparição da Mina de Duas Pedras |
+| Do compêndio | Bando de Puristas Caipiras (ficha do recruta purista, token Grande do bando; o livro fala em 8 recrutas) e Aparição da Mina de Duas Pedras |
 | Cães das Colinas | Ayla, Ignis, Kiki, Rexthor (com a ficha do duelo do livro), Arius, Chèvre e Timm |
 | Itens | Os 5 produtos fajutos do Quimby (meio preço), Ensopado de Raguria, Moeda-Alma de Tolbert, Metal Arco-Íris (unidade) |
 | Tabelas | Encontros nas Colinas Centrais (detalhada), Encontros Especiais, Perseguições nas Centrais, Histórias do Herói Louco, Coisas que Ofendem Cletus Rigby |
 | Diário | Guia, uma página por encontro (20 + 6 especiais), Perseguições nas Centrais e três handouts: panfleto purista, pergaminho do Evento e as histórias do Herói Louco |
 | Macros | Encontro do Dia, Testes dos Encontros, Bênçãos e Maldições, Perseguição ao Diabo, Alquimia do Quimby |
+
+**Artes:** cada habitante tem retrato (`assets/arco1/encontros-colinas/retratos/`) e token no frame de ameaça de T20 (`.../tokens/`), no tamanho do livro: Gormaggor 6×6, Elmer e o bando de puristas 2×2, o resto 1×1. As sereias também têm um token Grande das três juntas (`tokens/sereias.webp`), citado na ficha de cada uma. Os tokens saem do gerador `campanha/tokens/tokens.py` (pasta do projeto).
 
 ## Na mesa
 

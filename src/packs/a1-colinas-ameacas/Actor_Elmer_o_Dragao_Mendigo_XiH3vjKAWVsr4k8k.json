@@ -1,7 +1,7 @@
 {
   "name": "Elmer, o Dragão Mendigo",
   "type": "npc",
-  "img": "systems/tormenta20/icons/ameacas/dragao-filhote.png",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/elmer.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "3662bcb6",
+      "assinatura": "107bc9de",
       "assinaturas": [
-        "3662bcb6"
+        "3662bcb6",
+        "107bc9de"
       ]
     }
   },
@@ -31,10 +32,10 @@
     "bar1": {
       "attribute": "attributes.pv"
     },
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 2,
     "texture": {
-      "src": "systems/tormenta20/icons/ameacas/dragao-filhote.png"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/elmer.webp"
     },
     "sight": {
       "enabled": true

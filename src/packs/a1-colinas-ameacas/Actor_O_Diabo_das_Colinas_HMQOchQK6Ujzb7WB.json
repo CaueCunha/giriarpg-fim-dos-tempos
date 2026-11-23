@@ -1,7 +1,7 @@
 {
   "name": "O Diabo das Colinas",
   "type": "npc",
-  "img": "icons/svg/terror.svg",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/diabo.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "c3e445fa",
+      "assinatura": "5bb48538",
       "assinaturas": [
-        "c3e445fa"
+        "c3e445fa",
+        "5bb48538"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/terror.svg"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/diabo.webp"
     },
     "sight": {
       "enabled": true

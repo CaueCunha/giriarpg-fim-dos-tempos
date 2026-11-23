@@ -1,7 +1,7 @@
 {
   "name": "Jonid, o Homem-Bode",
   "type": "npc",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/jonid.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "29132c36",
+      "assinatura": "9b777c02",
       "assinaturas": [
-        "29132c36"
+        "29132c36",
+        "9b777c02"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/jonid.webp"
     },
     "sight": {
       "enabled": true

@@ -1,7 +1,7 @@
 {
   "name": "Tolbert, o Bardo das Almas",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/tolbert.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "29213d57",
+      "assinatura": "7599720d",
       "assinaturas": [
-        "29213d57"
+        "29213d57",
+        "7599720d"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/tolbert.webp"
     },
     "sight": {
       "enabled": true
