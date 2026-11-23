@@ -1,5 +1,5 @@
 /**
- * Macros "Av3 · Montar cenas dos mapas" e "Av4 · Montar cenas dos mapas": criam as cenas com as imagens do
+ * Macros "Montar cenas dos mapas" (Av3, Av4 e Encontros das Colinas): criam as cenas com as imagens do
  * módulo, grid de 1,5 m, paredes, portas, luzes e notas, tudo dentro dos limites da cena. Rodar de novo não
  * duplica as cenas, e a macro de uma aventura não mexe nas cenas da outra.
  */
@@ -16,7 +16,8 @@ const todas = () => mundo.game.scenes.filter((s) => s.getFlag("world", "fdtCena"
 
 const AVENTURAS = [
 	{ av: "Av3", ids: ["carvalho", "chifre", "dornbach", "dornbach-noite", "salao", "subsolo"], semLuz: ["carvalho", "dornbach"] },
-	{ av: "Av4", ids: ["av4-casarao", "av4-conves", "av4-fazenda", "av4-leme", "av4-plantacao"], semLuz: ["av4-fazenda", "av4-plantacao"] }
+	{ av: "Av4", ids: ["av4-casarao", "av4-conves", "av4-fazenda", "av4-leme", "av4-plantacao"], semLuz: ["av4-fazenda", "av4-plantacao"] },
+	{ av: "Colinas", ids: ["colinas-duas-pedras", "colinas-duas-pedras-mina", "colinas-puristas", "colinas-sereias"], semLuz: ["colinas-duas-pedras", "colinas-sereias"] }
 ];
 
 for (const { av, ids, semLuz } of AVENTURAS) {

@@ -1145,6 +1145,170 @@
 		ChatMessage.create({ content: `${html}</ul><p style="font-size:0.85em">${qtd > 0 ? `Restam ${qtd}.` : "Acabou."}</p>`, rolls });
 	}
 
+	async function macroCenas() {
+		const DIR = "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/mapas";
+		const TIPOS = {
+			parede: { move: 20, sight: 20, light: 20, sound: 20 },
+			mureta: { move: 20, sight: 0, light: 0, sound: 0 },
+			porta: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 0 },
+			tabuas: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 2 }
+		};
+		const LUZ = {
+			fogueira: { bright: 3, dim: 8, color: "#ff8a3d", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 3 } },
+			tocha: { bright: 1, dim: 4, color: "#ffb35c", alpha: 0.4, animation: { type: "torch", speed: 3, intensity: 3 } },
+			lampiao: { bright: 2, dim: 5, color: "#ffc070", alpha: 0.4, animation: { type: "torch", speed: 2, intensity: 2 } },
+			veio: { bright: 1, dim: 5, color: "#4fd8ff", alpha: 0.5, animation: { type: "pulse", speed: 2, intensity: 3 } },
+			fantasma: { bright: 0, dim: 4, color: "#7fffd4", alpha: 0.35, animation: { type: "ghost", speed: 2, intensity: 4 } }
+		};
+		// Coordenadas em pixels da arte original (1344 x 768); k converte para a cena (100 px por quadrado).
+		const CENAS = [
+			{
+				id: "colinas-puristas", nome: "Colinas · Encontro de Puristas Caipiras", arquivo: "puristas-caipiras", w: 28, h: 16, k: 2800 / 1344, escuro: 0, dia: true,
+				paredes: [
+					["parede", [585, 45, 660, 40, 705, 90, 710, 195, 640, 215, 590, 170, 585, 45]],
+					["parede", [875, 40, 925, 10, 965, 40, 970, 85, 900, 90, 875, 40]],
+					["parede", [1120, 215, 1190, 200, 1230, 260, 1220, 370, 1160, 400, 1105, 375, 1100, 300, 1120, 215]],
+					["parede", [1115, 450, 1210, 440, 1225, 540, 1220, 640, 1150, 690, 1080, 650, 1080, 580, 1115, 500, 1115, 450]],
+					["parede", [0, 560, 80, 545, 140, 580, 165, 660, 110, 700, 0, 690]],
+					["mureta", [190, 470, 230, 430, 305, 440, 320, 520, 260, 580, 195, 550, 190, 470]],
+					["mureta", [300, 505, 345, 480, 530, 630, 480, 690, 295, 600, 300, 505]]
+				],
+				luzes: [["fogueira", 650, 410], ["tocha", 752, 215]],
+				notas: [
+					[450, 200, "Palanque do pastor: a \"palavra de Valkaria\" (Resultado 8)"],
+					[660, 560, "Bancos: humanos são convidados a sentar; não humanos são atacados"],
+					[650, 450, "8 Recrutas Puristas Caipiras: não lutam até a morte e fogem pelas trilhas se correrem perigo"],
+					[990, 60, "Trilha de saída (norte)"],
+					[900, 735, "Trilha de saída (sul)"],
+					[420, 590, "Carroça: o panfleto dos puristas está aqui (handout no diário)"]
+				]
+			},
+			{
+				id: "colinas-duas-pedras", nome: "Colinas · Cidade Fantasma de Duas Pedras", arquivo: "duas-pedras", w: 35, h: 20, k: 3500 / 1344, escuro: 0.15, dia: true,
+				paredes: [
+					["parede", [300, 0, 290, 100, 265, 200, 270, 280, 255, 400, 215, 480, 215, 560, 270, 640, 290, 768]],
+					["parede", [950, 0, 985, 140, 1050, 190, 1060, 300, 1100, 350, 1080, 420, 1120, 470, 1110, 560, 1060, 620, 1080, 700, 1150, 768]],
+					["parede", [510, 185, 445, 185, 445, 10, 595, 10, 595, 185, 540, 185]], ["porta", [510, 185, 540, 185]],
+					["parede", [820, 190, 780, 190, 780, 10, 900, 10, 900, 190, 850, 190]], ["porta", [820, 190, 850, 190]],
+					["parede", [450, 375, 395, 375, 395, 195, 530, 195, 530, 375, 475, 375]], ["porta", [450, 375, 475, 375]],
+					["parede", [890, 380, 840, 380, 840, 195, 1000, 195, 1000, 380, 920, 380]], ["porta", [890, 380, 920, 380]],
+					["parede", [340, 585, 288, 585, 288, 405, 430, 405, 430, 585, 370, 585]], ["porta", [340, 585, 370, 585]],
+					["parede", [950, 590, 900, 590, 900, 405, 1040, 405, 1040, 590, 980, 590]], ["porta", [950, 590, 980, 590]],
+					["mureta", [395, 655, 645, 650]], ["tabuas", [645, 640, 730, 640]], ["mureta", [730, 655, 940, 640]]
+				],
+				luzes: [],
+				notas: [
+					[688, 610, "Portão fechado com tábuas e placas da Guilda dos Mineradores de Yuvalin"],
+					[690, 30, "Trilha para a mina (cena Duas Pedras · Mina)"],
+					[690, 380, "Busca na aldeia: 2 rolagens de dinheiro e 1 de itens na Tabela 8–1 (ND 1)"],
+					[520, 100, "Casas: quinquilharias e esqueletos de moradores que desafiaram a Guilda, há mais de 10 anos"],
+					[810, 480, "Os fantasmas (Zadok, Draslo, Emeline, Aurinda) têm medo de visitantes e tentam espantá-los com armas fantasmagóricas"],
+					[150, 300, "As duas pedras que dão nome à aldeia: rochedos nas duas pontas"]
+				]
+			},
+			{
+				id: "colinas-duas-pedras-mina", nome: "Colinas · Duas Pedras · Mina", arquivo: "duas-pedras-mina", w: 21, h: 12, k: 2100 / 1344, escuro: 0.9,
+				paredes: [
+					["parede", [420, 768, 400, 600, 400, 500, 470, 400, 540, 300, 580, 200, 600, 60, 610, 0]],
+					["parede", [700, 0, 720, 60, 760, 200, 840, 320, 870, 420, 900, 520, 940, 650, 960, 768]]
+				],
+				luzes: [["lampiao", 935, 190], ["veio", 665, 180], ["fantasma", 650, 380]],
+				notas: [
+					[665, 200, "Veio de metal arco-íris (item Metal Arco-Íris, unidade)"],
+					[650, 110, "Aparição da Mina de Duas Pedras"],
+					[650, 400, "Encontro com os fantasmas (Zadok, Draslo, Emeline, Aurinda): conversando, contam o que a Guilda fez"],
+					[660, 600, "Carrinho de mina e trilhos"],
+					[680, 740, "Entrada, vindo da aldeia"]
+				]
+			},
+			{
+				id: "colinas-sereias", nome: "Colinas · Rio das Sereias", arquivo: "rio-sereias", w: 28, h: 16, k: 2800 / 1344, escuro: 0, dia: true,
+				paredes: [
+					["parede", [175, 470, 260, 410, 340, 415, 385, 480, 380, 550, 300, 565, 200, 540, 175, 470]],
+					["parede", [540, 375, 600, 358, 630, 395, 610, 440, 560, 445, 540, 375]],
+					["parede", [925, 225, 965, 200, 1000, 230, 995, 275, 940, 275, 925, 225]],
+					["parede", [1060, 200, 1110, 185, 1140, 220, 1130, 260, 1075, 260, 1060, 200]],
+					["parede", [990, 340, 1020, 322, 1040, 350, 1030, 385, 995, 385, 990, 340]]
+				],
+				luzes: [],
+				notas: [
+					[585, 400, "Pedras das sereias: Shanamarie, Shaylyne e Shadolenn cantam (Vontade contra Atuação +10)"],
+					[1050, 290, "Pedras do meio do rio: daqui uma distrai, outra lança Hipnotismo ou Sono (CD 14) e a terceira rouba"],
+					[400, 300, "Água funda: só nadando; as sereias nadam 12 m e fogem rio abaixo depois do furto"],
+					[880, 480, "Ponte quebrada"],
+					[100, 260, "Trilha da margem"]
+				]
+			}
+		];
+
+		const ids = new Set(CENAS.map((c) => c.id));
+		const existentes = game.scenes.filter((s) => ids.has(s.getFlag("world", "fdtCena")));
+		let recriar = false;
+		if (existentes.length) {
+			recriar = await foundry.applications.api.DialogV2.confirm({
+				window: { title: "Encontros das Colinas: cenas dos mapas" },
+				content: `<p>Já existem <b>${existentes.length}</b> cenas dos Encontros das Colinas criadas por esta macro.</p>
+					<p><b>Sim</b> apaga essas cenas e cria de novo (tokens, paredes e ajustes feitos à mão nelas se perdem).<br>
+					<b>Não</b> mantém as que existem e cria só as que faltam.</p>`
+			});
+			if (recriar) await Scene.deleteDocuments(existentes.map((s) => s.id));
+		}
+		const ja = new Set(recriar ? [] : existentes.map((s) => s.getFlag("world", "fdtCena")));
+		const diario = game.journal.find((j) => j.getFlag("world", "fdtRole") === "diarioColinas");
+		const criadas = [];
+		const pulei = [];
+		for (const c of CENAS) {
+			if (ja.has(c.id)) {
+				pulei.push(c.nome);
+				continue;
+			}
+			const src = `${DIR}/${c.arquivo}.webp`;
+			const W = c.w * 100;
+			const H = c.h * 100;
+			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
+			const g = c.grade ?? 100;
+			const dx = Math.ceil((0.1 * c.w * 100) / g) * g;
+			const dy = Math.ceil((0.1 * c.h * 100) / g) * g;
+			const px = (v, max) => Math.min(max, Math.max(0, Math.round(v * c.k)));
+			const walls = [];
+			for (const [tipo, p] of c.paredes) {
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [px(p[i], W) + dx, px(p[i + 1], H) + dy, px(p[i + 2], W) + dx, px(p[i + 3], H) + dy], ...TIPOS[tipo] });
+			}
+			const dados = {
+				name: c.nome,
+				navigation: false,
+				width: W,
+				height: H,
+				padding: 0.1,
+				backgroundColor: "#111111",
+				grid: { type: 1, size: g, distance: 1.5, units: "m" },
+				tokenVision: true,
+				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
+				walls,
+				lights: c.luzes.map(([t, x, y]) => ({ x: px(x, W) + dx, y: px(y, H) + dy, config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x: px(x, W) + dx, y: px(y, H) + dy, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				flags: { world: { fdtCena: c.id } }
+			};
+			const cena = await Scene.create(dados);
+			// v14: a imagem fica no nível (Level) da cena. Sem níveis (versões antigas), vai em background.
+			try {
+				const niveis = cena.levels;
+				if (niveis && niveis.size) await cena.updateEmbeddedDocuments("Level", [{ _id: niveis.contents[0].id, background: { src } }]);
+				else if (niveis) await cena.createEmbeddedDocuments("Level", [{ name: "Térreo", elevation: { bottom: 0, top: 20 }, background: { src } }]);
+				else await cena.update({ "background.src": src });
+			} catch (e) {
+				console.error(e);
+				ui.notifications.warn(`${c.nome}: não consegui pôr a imagem sozinho. Escolha ${src} nas configurações da cena.`);
+			}
+			criadas.push(cena);
+		}
+		const lista = criadas.map((s) => `<li>@UUID[${s.uuid}]{${s.name}}</li>`).join("");
+		ChatMessage.create({
+			whisper: [game.user.id],
+			content: `<h3>Encontros das Colinas · Cenas dos mapas</h3>${criadas.length ? `<p>Criadas:</p><ul>${lista}</ul>` : "<p>Nenhuma cena nova.</p>"}${pulei.length ? `<p>Já existiam (não mexi): ${pulei.join(", ")}.</p>` : ""}<p style="font-size:0.85em">Grid de 1,5 m, paredes, portas, luzes e notas do Mestre. As paredes foram traçadas sobre as imagens: confira no editor de paredes antes da sessão. O portão de Duas Pedras começa trancado (tábuas); a cerca, a carroça e o monte de pedras dos puristas são muretas (bloqueiam passagem, não a visão).</p>`
+		});
+	}
+
 	const macro = (name, img, fn, dados = null, role = null) => ({
 		name,
 		type: "script",
@@ -1159,7 +1323,8 @@
 		macro("Colinas · Testes dos Encontros", "icons/svg/d20-black.svg", macroTestes, { historias: HISTORIAS, ofensas: OFENSAS, segredo: SEGREDO_TABULEIRO }),
 		macro("Colinas · Bênçãos e Maldições", `${T20I}/magias/rogar-maldicao.webp`, macroEfeitos),
 		macro("Colinas · Perseguição ao Diabo", "icons/svg/terror.svg", macroPerseguicao, { perseg: PERSEG }),
-		macro("Colinas · Alquimia do Quimby", `${T20I}/itens/gerais/bomba.webp`, macroQuimby)
+		macro("Colinas · Alquimia do Quimby", `${T20I}/itens/gerais/bomba.webp`, macroQuimby),
+		macro("Colinas · Montar cenas dos mapas", "icons/svg/house.svg", macroCenas)
 	]);
 	const linkMacro = (trecho) => {
 		const m = macros.find((x) => x.name.includes(trecho));

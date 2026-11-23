@@ -39,7 +39,7 @@ export const ATOS = [
 			av("av5-maniacos-aberrantes", "av5-maniacos-aberrantes", "av5", "Av5 · Noite dos Maníacos Aberrantes"),
 			av("a1-templo-do-vacuo", "templo-do-vacuo", "templo", "Templo do Vácuo"),
 			av("a1-especial-de-gatal", "especial-de-gatal", "gatal", "Especial de Gatal"),
-			av("a1-encontros-colinas", "encontros-colinas", "colinas", "Encontros nas Colinas Centrais")
+			av("a1-encontros-colinas", "encontros-colinas", "colinas", "Encontros nas Colinas Centrais", "assets/arco1/encontros-colinas")
 		]
 	},
 	{
