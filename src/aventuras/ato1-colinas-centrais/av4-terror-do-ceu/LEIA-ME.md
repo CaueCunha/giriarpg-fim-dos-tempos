@@ -11,7 +11,7 @@ Guia da macro `av4-terror-do-ceu.js` (Foundry v14, sistema Tormenta20 do Vizael 
 | Itens | Essência Abissal (do compêndio), Implante de Cristal de Vadrinne, Instruções de Syvarian a Torgo |
 | Diário | Guia do Mestre, aviso de Nathanael, família Gallobalt, investigação, o ataque, a bordo, a Harpia (com a fala de Torgo), instruções de Syvarian e desfecho |
 | Macros | Ataque do Céu, Luz da Harpia, Turno da Harpia, Testes a Bordo, Cirurgia do Implante, Elemental Elétrico (Torgo), Montar cenas dos mapas |
-| Cenas | Macro **Av4 · Montar cenas dos mapas**: chegada às Fazendas Gallobalt, casarão, plantação de achbuld, convés e ponte de comando da Harpia, com grid de 1,5 m, paredes, portas, muretas, luzes e notas do Mestre (imagens em `assets/arco1/av4-terror/mapas`). Confira as paredes no editor antes da sessão. |
+| Cenas | Macro **Av4 · Montar cenas dos mapas**: chegada às Fazendas Gallobalt, casarão, plantação de achbuld, convés e ponte de comando da Harpia, com grid de 1,5 m (o convés em quadrados de 50 px), paredes, portas, muretas, luzes e notas do Mestre (imagens em `assets/arco1/av4-terror/mapas`). Confira as paredes no editor antes da sessão. |
 
 ## Na mesa
 

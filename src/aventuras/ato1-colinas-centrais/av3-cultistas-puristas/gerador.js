@@ -927,8 +927,10 @@
 			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
 			const k = c.k ?? 1;
 			const q = (v) => Math.round(v * k);
-			const dx = Math.ceil(0.1 * c.w) * 100;
-			const dy = Math.ceil(0.1 * c.h) * 100;
+			// Tamanho do quadrado em pixels: 100 por padrão; "grade: 50" dobra o número de quadrados sobre a mesma imagem.
+			const g = c.grade ?? 100;
+			const dx = Math.ceil((0.1 * c.w * 100) / g) * g;
+			const dy = Math.ceil((0.1 * c.h * 100) / g) * g;
 			const walls = [];
 			for (const [tipo, p] of c.paredes) {
 				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [q(p[i]) + dx, q(p[i + 1]) + dy, q(p[i + 2]) + dx, q(p[i + 3]) + dy], ...TIPOS[tipo] });
@@ -940,7 +942,7 @@
 				height: c.h * 100,
 				padding: 0.1,
 				backgroundColor: "#111111",
-				grid: { type: 1, size: 100, distance: 1.5, units: "m" },
+				grid: { type: 1, size: g, distance: 1.5, units: "m" },
 				tokenVision: true,
 				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
 				walls,

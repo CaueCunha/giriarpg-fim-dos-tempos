@@ -37,12 +37,12 @@ for (const { av, ids, semLuz } of AVENTURAS) {
 			const src = d.background?.src;
 			assert.ok(src?.startsWith(`modules/${MODULO}/`), `${d.name}: sem imagem`);
 			assert.ok(fs.existsSync(src.slice(`modules/${MODULO}/`.length)), `${d.name}: ${src} não existe`);
-			assert.equal(d.grid.size, 100);
+			assert.equal(d.grid.size, id === "av4-conves" ? 50 : 100, `${d.name}: grid`);
 			assert.equal(d.grid.distance, 1.5);
 			assert.ok(d.walls.length >= 5, `${d.name}: poucas paredes`);
 			// Coordenadas do canvas: a imagem começa depois da margem, que o Foundry arredonda para quadrados inteiros.
-			const dx = Math.ceil((d.padding * d.width) / 100) * 100;
-			const dy = Math.ceil((d.padding * d.height) / 100) * 100;
+			const dx = Math.ceil((d.padding * d.width) / d.grid.size) * d.grid.size;
+			const dy = Math.ceil((d.padding * d.height) / d.grid.size) * d.grid.size;
 			const dentro = (x, y) => x >= dx && y >= dy && x <= dx + d.width && y <= dy + d.height;
 			for (const w of d.walls) {
 				assert.equal(w.c.length, 4);
