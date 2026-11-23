@@ -16,6 +16,7 @@ import { FONTE_PACKS, T20_DIR, RAIZ } from "../tools/caminhos.mjs";
 import { AVENTURAS, pastaAventura } from "../tools/conteudo.mjs";
 import { getProperty } from "../tools/sim/utils.mjs";
 import { correcaoToken } from "../scripts/assinatura.mjs";
+import PACOTES from "../scripts/pacotes.mjs";
 
 const m = manifesto();
 const packs = m.packs.map((p) => ({ ...p, ...lerPackFonte(path.join(FONTE_PACKS, p.name)) }));
@@ -74,12 +75,15 @@ test("module.json: um compêndio por aventura e tipo, nas pastas Ato › aventur
 		}
 	}
 	assert.deepEqual(nasPastas.sort(), [...nomes].sort(), "packFolders deve conter todos os compêndios uma vez");
-	const info = m.flags[MODULO].packs;
+	// O The Forge recusa manifestos grandes ("Size is too large"): as pastas ficam em scripts/pacotes.mjs.
+	assert.ok(fs.statSync(path.join(RAIZ, "module.json")).size < 60000, "module.json grande demais para o The Forge");
+	assert.equal(m.flags[MODULO].packs, undefined, "as pastas dos compêndios ficam em scripts/pacotes.mjs");
+	const info = PACOTES;
 	for (const p of m.packs) {
 		assert.equal(p.path, `packs/${p.name}`);
 		assert.match(p.name, /^(a1|a2|geral)-[a-z0-9]+-(ameacas|poderes|itens|diarios|tabelas|macros)$/);
 		const i = info[p.name];
-		assert.ok(i?.ato && i?.aventura && i?.rotulo, `${p.name}: sem ato/aventura em flags.${MODULO}.packs`);
+		assert.ok(i?.ato && i?.aventura && i?.rotulo, `${p.name}: sem ato/aventura em scripts/pacotes.mjs`);
 		assert.ok(i.pastas.length >= 1 && !i.pastas[0].folder && i.pastas[0].flags?.[MODULO]?.ato === i.ato, `${p.name}: a primeira pasta deve ser a do ato`);
 		for (const f of i.pastas) {
 			assert.equal(f.type, p.type, `${p.name}: pasta ${f.name} de tipo ${f.type}`);

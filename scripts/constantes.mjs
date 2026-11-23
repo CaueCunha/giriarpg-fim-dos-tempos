@@ -2,6 +2,7 @@
  * Constantes e ajudantes comuns do módulo (o mesmo papel do constantes.mjs do Duelo de Dragões).
  */
 import { MODULO } from "./assinatura.mjs";
+import PACOTES from "./pacotes.mjs";
 
 export { MODULO };
 
@@ -30,8 +31,8 @@ export function atos() {
 }
 
 /**
- * De que ato e aventura é um compêndio, e as pastas que o Puxar cria no mundo para ele (module.json,
- * flags.<módulo>.packs; o build grava). Vazio para compêndios de versões antigas.
+ * De que ato e aventura é um compêndio, e as pastas que o Puxar cria no mundo para ele (scripts/pacotes.mjs,
+ * que o build grava; o module.json ficou pequeno porque o The Forge recusa manifestos grandes). Vazio para compêndios de versões antigas.
  * @returns {{ato?: string, aventura?: string, rotulo?: string, pastas?: object[]}}
  */
-export const infoPack = (pack) => modulo()?.flags?.[MODULO]?.packs?.[pack?.metadata?.name] ?? {};
+export const infoPack = (pack) => PACOTES[pack?.metadata?.name] ?? modulo()?.flags?.[MODULO]?.packs?.[pack?.metadata?.name] ?? {};
