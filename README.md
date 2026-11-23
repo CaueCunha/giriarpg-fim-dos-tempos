@@ -112,7 +112,7 @@ Toda ameaça e NPC já vem com o token configurado: nome visível ao passar o mo
 
 ### Mapas e cenas
 
-Os mapas de batalha também ficam em `assets/`, na pasta `mapas` de cada aventura. Por enquanto existem os da Av3 (Cultistas Puristas: Carvalho Oco, Salão Comunal, subsolo do salão e Taverna Chifre de Bode) e os da Av4 (O Terror que Veio do Céu: chegada às Fazendas Gallobalt, casarão, plantação de achbuld, convés e ponte de comando da Harpia). Depois de puxar o Ato 1, rode **Av3 · Montar cenas dos mapas** ou **Av4 · Montar cenas dos mapas**. Cada macro cria uma cena para cada mapa da sua aventura, com:
+Os mapas de batalha também ficam em `assets/`, na pasta `mapas` de cada aventura. Por enquanto existem os da Av3 (Cultistas Puristas: Carvalho Oco, Salão Comunal, subsolo do salão, Taverna Chifre de Bode e a aldeia de Dornbach de dia e na noite do ritual) e os da Av4 (O Terror que Veio do Céu: chegada às Fazendas Gallobalt, casarão, plantação de achbuld, convés e ponte de comando da Harpia). Depois de puxar o Ato 1, rode **Av3 · Montar cenas dos mapas** ou **Av4 · Montar cenas dos mapas**. Cada macro cria uma cena para cada mapa da sua aventura, com:
 
 - grid de 1,5 m;
 - paredes, janelas, cortinas de musgo, muretas (amurada da Harpia, cercas dos galpões) e portas (as grades das celas da Av3 começam trancadas);
@@ -133,7 +133,7 @@ Os testes rodam num **Foundry v14 simulado**, sem servidor (veja [`tools/sim/REA
 
 - **Macros (135):** todas são executadas numa cena da aventura, em combate, com um PJ selecionado e um NPC como alvo. Cada uma roda com os valores padrão, com cada opção do primeiro menu do diálogo e com 6 rodadas de escolhas sorteadas. Depois de cada execução o combate avança turnos e um PJ sofre dano, para disparar os ganchos das automações. Falham exceções, `console.error`, documentos inválidos, campos descartados, links quebrados e rolagens não avaliadas.
 - **Testes no chat:** o card (classes, `roll--dano` fora de `rolls`, um botão por personagem), o resultado pelo socket, os botões do Mestre aplicando uma vez só, nada aplicado antes do clique, nada repetido no chat e a atualização das macros com a cópia das editadas. Nas macros, cada "jogador" clica no botão do seu card.
-- **Cenas:** as macros dos mapas criam as quatro cenas da Av3 e as cinco da Av4 com imagem do módulo, grid de 1,5 m, paredes, luzes e notas dentro da cena; rodar de novo não duplica nem mexe nas cenas da outra aventura.
+- **Cenas:** as macros dos mapas criam as seis cenas da Av3 e as cinco da Av4 com imagem do módulo, grid de 1,5 m, paredes, luzes e notas dentro da cena; rodar de novo não duplica nem mexe nas cenas da outra aventura.
 - **Geradores:** cada ato roda limpo num mundo vazio, e rodar de novo substitui em vez de duplicar. Cada aventura tem a sua pasta em `src/aventuras`, com o gerador.
 - **Poderes dos PJs:** um PJ com os defeitos achados nas fichas da campanha passa por "PJs · Corrigir poderes"; o teste confere cada correção, que uma segunda passada não acha nada e que "Desfazer" devolve a ficha.
 - **Compêndios:**
