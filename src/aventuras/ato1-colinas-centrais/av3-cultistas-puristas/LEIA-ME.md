@@ -12,7 +12,7 @@ Guia da macro `av3-cultistas-puristas.js` (Foundry v14, sistema Tormenta20 do Vi
 | Diário | Guia do Mestre, aviso do quadro, Dahllan Daninhas (o que dizem e o que é verdade), construções, linha de tempo hora a hora, ritual e desfecho |
 | Tabela | Demais Habitantes de Dornbach (1d8) |
 | Macros | Demais Habitantes, Ritual de Purificação, Infiltração em Dornbach, Lampião Mecanomágico, Montar cenas dos mapas |
-| Cenas | Macro **Av3 · Montar cenas dos mapas**: Carvalho Oco, Salão Comunal, subsolo do salão e Chifre de Bode, com grid de 1,5 m, paredes, portas, luzes e notas do Mestre (imagens em `assets/arco1/av3-cultistas/mapas`). Confira as paredes no editor antes da sessão. |
+| Cenas | Macro **Av3 · Montar cenas dos mapas**: Carvalho Oco, Salão Comunal, subsolo do salão, Chifre de Bode e a aldeia de Dornbach (de dia e na noite do ritual, com tochas na praça; a porta do templo disfarçado começa trancada), com grid de 1,5 m, paredes, portas, luzes e notas do Mestre (imagens em `assets/arco1/av3-cultistas/mapas`). Confira as paredes no editor antes da sessão. |
 
 ## Na mesa
 

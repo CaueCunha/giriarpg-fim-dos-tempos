@@ -770,8 +770,30 @@
 			janela: { move: 20, sight: 0, light: 0, sound: 10 },
 			cortina: { move: 0, sight: 20, light: 20, sound: 0 },
 			porta: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 0 },
-			grade: { move: 20, sight: 0, light: 0, sound: 0, door: 1, ds: 2 }
+			grade: { move: 20, sight: 0, light: 0, sound: 0, door: 1, ds: 2 },
+			tabuas: { move: 20, sight: 20, light: 20, sound: 20, door: 1, ds: 2 }
 		};
+		// Casa vista de fora: o contorno do telhado vira parede (esconde o interior) e a porta fica no meio da frente (embaixo).
+		const casa = (x0, y0, x1, y1, porta = "porta") => {
+			const m = Math.round((x0 + x1) / 2);
+			return [["parede", [m + 9, y1, x1, y1, x1, y0, x0, y0, x0, y1, m - 9, y1]], [porta, [m - 9, y1, m + 9, y1]]];
+		};
+		// Aldeia de Dornbach: coordenadas em pixels da arte original (1344 x 768); k converte para a cena de 70 x 40 quadrados.
+		const ALDEIA = [
+			...casa(0, 68, 100, 200), ...casa(135, 145, 200, 245), ...casa(262, 95, 425, 250), ...casa(487, 32, 620, 230),
+			...casa(720, 187, 925, 345), ...casa(965, 265, 1105, 480), ...casa(222, 320, 408, 428), ...casa(0, 270, 100, 450),
+			...casa(140, 440, 250, 615), ...casa(378, 450, 515, 640), ...casa(728, 440, 915, 655), ...casa(588, 590, 695, 760, "tabuas")
+		];
+		const NOTAS_ALDEIA = [
+			[822, 260, "Salão Comunal (interior e subsolo nas cenas próprias)"],
+			[315, 375, "Taverna Chifre de Bode (interior na cena própria)"],
+			[343, 170, "Oficina de Delmond"],
+			[1035, 370, "Moinho de Brixon e Arsace"],
+			[640, 675, "Templo do Panteão disfarçado de casa: porta e janelas tapadas com tábuas (a porta começa trancada)"],
+			[167, 195, "Celeiro"],
+			[895, 80, "Chiqueiro"],
+			[1060, 180, "Píer do rio"]
+		];
 		const LUZ = {
 			fogo: { bright: 3, dim: 7.5, color: "#ff8a3d", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 3 } },
 			fogueira: { bright: 4.5, dim: 9, color: "#ff7a2a", alpha: 0.45, animation: { type: "torch", speed: 3, intensity: 4 } },
@@ -855,6 +877,28 @@
 					[1060, 700, "Cozinha"],
 					[740, 1330, "Saída pelo chão, entre as raízes"]
 				]
+			},
+			{
+				id: "dornbach", nome: "Av3 · Dornbach · Aldeia (dia)", arquivo: "aldeia-dornbach", w: 70, h: 40, k: 7000 / 1344, escuro: 0, dia: true,
+				paredes: ALDEIA,
+				luzes: [],
+				notas: [
+					...NOTAS_ALDEIA,
+					[595, 400, "Praça ao lado do Salão: vendem grãos de dia; à noite, o ritual (cena da noite)"],
+					[60, 640, "Infiltração (p. 104): Furtividade CD 15, 5 sucessos antes de 3 falhas. Telhados: um teste pode ser Atletismo, falha por 5+ é 1d6 de queda; as casas são afastadas, não dá para cruzar só pelos telhados"],
+					[822, 380, "Ataque frontal: 6 guardas e aldeões; Lorelei e os 2 soldados saem do Salão em 1d4 rodadas"]
+				]
+			},
+			{
+				id: "dornbach-noite", nome: "Av3 · Dornbach · Praça do ritual (noite)", arquivo: "aldeia-dornbach", w: 70, h: 40, k: 7000 / 1344, escuro: 0.8,
+				paredes: ALDEIA,
+				luzes: [["fogueira", 595, 400], ["fogo", 500, 320], ["fogo", 690, 320], ["fogo", 500, 480], ["fogo", 690, 480], ["fogo", 822, 360], ["fogo", 315, 440], ["vela", 553, 240]],
+				notas: [
+					...NOTAS_ALDEIA,
+					[595, 400, "Máquina de Purificação: sobe do subsolo às 22h (ponha como tile). Ritual em 5 rodadas (p. 109): rodada 1 oração, rodada 2 relâmpago e sangue"],
+					[595, 470, "Toda a aldeia reunida; Lorelei, 2 soldados, 6 ajudantes e Torgo de mantos escuros. Cada dupla de ajudantes dá +5 a um inimigo"],
+					[315, 455, "Às 22h os aldeões podem atear fogo à taverna com os PJs trancados"]
+				]
 			}
 		];
 
@@ -881,11 +925,13 @@
 			}
 			const src = `${DIR}/${c.arquivo}.webp`;
 			// A margem (padding) da cena desloca a imagem: o Foundry arredonda a margem para quadrados inteiros.
+			const k = c.k ?? 1;
+			const q = (v) => Math.round(v * k);
 			const dx = Math.ceil(0.1 * c.w) * 100;
 			const dy = Math.ceil(0.1 * c.h) * 100;
 			const walls = [];
 			for (const [tipo, p] of c.paredes) {
-				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [p[i] + dx, p[i + 1] + dy, p[i + 2] + dx, p[i + 3] + dy], ...TIPOS[tipo] });
+				for (let i = 0; i + 3 < p.length; i += 2) walls.push({ c: [q(p[i]) + dx, q(p[i + 1]) + dy, q(p[i + 2]) + dx, q(p[i + 3]) + dy], ...TIPOS[tipo] });
 			}
 			const dados = {
 				name: c.nome,
@@ -898,8 +944,8 @@
 				tokenVision: true,
 				environment: { darknessLevel: c.escuro, globalLight: { enabled: !!c.dia } },
 				walls,
-				lights: c.luzes.map(([t, x, y]) => ({ x: x + dx, y: y + dy, config: { ...LUZ[t] } })),
-				notes: c.notas.map(([x, y, text]) => ({ x: x + dx, y: y + dy, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
+				lights: c.luzes.map(([t, x, y]) => ({ x: q(x) + dx, y: q(y) + dy, config: { ...LUZ[t] } })),
+				notes: c.notas.map(([x, y, text]) => ({ x: q(x) + dx, y: q(y) + dy, text, entryId: diario?.id ?? null, iconSize: 32, texture: { src: "icons/svg/book.svg" } })),
 				flags: { world: { fdtCena: c.id } }
 			};
 			const cena = await Scene.create(dados);

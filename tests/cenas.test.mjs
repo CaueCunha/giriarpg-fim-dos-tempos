@@ -15,7 +15,7 @@ await mundo.game.modules.get(MODULO).api.puxar({ atos: ["ato1"] });
 const todas = () => mundo.game.scenes.filter((s) => s.getFlag("world", "fdtCena"));
 
 const AVENTURAS = [
-	{ av: "Av3", ids: ["carvalho", "chifre", "salao", "subsolo"], semLuz: ["carvalho"] },
+	{ av: "Av3", ids: ["carvalho", "chifre", "dornbach", "dornbach-noite", "salao", "subsolo"], semLuz: ["carvalho", "dornbach"] },
 	{ av: "Av4", ids: ["av4-casarao", "av4-conves", "av4-fazenda", "av4-leme", "av4-plantacao"], semLuz: ["av4-fazenda", "av4-plantacao"] }
 ];
 
