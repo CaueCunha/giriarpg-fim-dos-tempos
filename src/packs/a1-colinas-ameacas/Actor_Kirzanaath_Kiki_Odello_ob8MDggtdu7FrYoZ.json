@@ -1,7 +1,7 @@
 {
   "name": "Kirzanaath \"Kiki\" Odello",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/medusa.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/kiki.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "f0edd128",
+      "assinatura": "baf19ab0",
       "assinaturas": [
-        "f0edd128"
+        "f0edd128",
+        "baf19ab0"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/medusa.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/kiki.webp"
     },
     "sight": {
       "enabled": true

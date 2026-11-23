@@ -1,7 +1,7 @@
 {
   "name": "Fortunata, Clériga de Nimb",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/fortunata.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "024f467e",
+      "assinatura": "2f0038c0",
       "assinaturas": [
-        "024f467e"
+        "024f467e",
+        "2f0038c0"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/fortunata.webp"
     },
     "sight": {
       "enabled": true

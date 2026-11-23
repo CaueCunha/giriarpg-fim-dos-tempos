@@ -1,7 +1,7 @@
 {
   "name": "Cletus Rigby, o Mago Caipira",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/anao.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/cletus.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "9881a37d",
+      "assinatura": "a10cdcab",
       "assinaturas": [
-        "9881a37d"
+        "9881a37d",
+        "a10cdcab"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/anao.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/cletus.webp"
     },
     "sight": {
       "enabled": true

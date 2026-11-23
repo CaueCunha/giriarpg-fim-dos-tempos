@@ -1,7 +1,7 @@
 {
   "name": "Nada Mais que a Verdade Reston",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/reston.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "64ab5706",
+      "assinatura": "cf33187e",
       "assinaturas": [
-        "64ab5706"
+        "64ab5706",
+        "cf33187e"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/reston.webp"
     },
     "sight": {
       "enabled": true

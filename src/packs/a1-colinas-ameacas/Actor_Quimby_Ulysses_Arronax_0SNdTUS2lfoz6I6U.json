@@ -1,7 +1,7 @@
 {
   "name": "Quimby Ulysses Arronax",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/anao.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/quimby.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "ca60904a",
+      "assinatura": "9664be64",
       "assinaturas": [
-        "ca60904a"
+        "ca60904a",
+        "9664be64"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/anao.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/quimby.webp"
     },
     "sight": {
       "enabled": true

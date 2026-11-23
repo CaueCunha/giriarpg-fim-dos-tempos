@@ -1,7 +1,7 @@
 {
   "name": "Arius Gorgonius Dubitatius",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/minotauro.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/arius.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "ac2fdb9e",
+      "assinatura": "28e98b78",
       "assinaturas": [
-        "ac2fdb9e"
+        "ac2fdb9e",
+        "28e98b78"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/minotauro.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/arius.webp"
     },
     "sight": {
       "enabled": true

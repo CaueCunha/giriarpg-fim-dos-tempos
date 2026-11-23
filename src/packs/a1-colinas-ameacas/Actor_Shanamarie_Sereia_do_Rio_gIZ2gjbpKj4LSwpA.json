@@ -1,7 +1,7 @@
 {
   "name": "Shanamarie, Sereia do Rio",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/sereia.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/sereias.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "4a7d89d8",
+      "assinatura": "b17a9c1d",
       "assinaturas": [
-        "4a7d89d8"
+        "4a7d89d8",
+        "b17a9c1d"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/sereia.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/shanamarie.webp"
     },
     "sight": {
       "enabled": true
@@ -194,7 +195,7 @@
       "ataquesad": "",
       "equipamento": "",
       "biography": {
-        "value": "<p>Sereias do rio. Cantam para atrair aventureiros; quem se aproxima é roubado e, se resistir, afogado. Depois fogem nadando.</p><p><b>Mecânica:</b> Quem vê ou ouve: Vontade oposta à Atuação delas (+10). Falha não é magia: o personagem fica inclinado a se aproximar e acha que são amigáveis (Intuição também é oposta pela Atuação). Na aproximação, uma distrai (Atuação), outra lança Hipnotismo ou Sono (CD 14) e a terceira rouba (Furtividade e Ladinagem +10). Então nadam para longe (natação 12m).</p><p>Ficha mínima (inferida): só para ter token e os bônus que o livro dá. Ajuste à vontade.</p>",
+        "value": "<p>Sereias do rio. Cantam para atrair aventureiros; quem se aproxima é roubado e, se resistir, afogado. Depois fogem nadando.</p><p><b>Mecânica:</b> Quem vê ou ouve: Vontade oposta à Atuação delas (+10). Falha não é magia: o personagem fica inclinado a se aproximar e acha que são amigáveis (Intuição também é oposta pela Atuação). Na aproximação, uma distrai (Atuação), outra lança Hipnotismo ou Sono (CD 14) e a terceira rouba (Furtividade e Ladinagem +10). Então nadam para longe (natação 12m).</p><p>Ficha mínima (inferida): só para ter token e os bônus que o livro dá. Ajuste à vontade.<br><b>Token das três juntas</b> (Grande), para usar no lugar dos três: <code>modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/sereias.webp</code> (aba Token do token colocado).</p>",
         "public": ""
       },
       "origem": "",

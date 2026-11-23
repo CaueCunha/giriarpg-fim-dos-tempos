@@ -14,9 +14,10 @@
         "ato1-diarios",
         "diarios"
       ],
-      "assinatura": "b2b5b1b1",
+      "assinatura": "5fc6d430",
       "assinaturas": [
-        "b2b5b1b1"
+        "b2b5b1b1",
+        "5fc6d430"
       ]
     }
   },
@@ -347,7 +348,7 @@
       "type": "text",
       "sort": 270,
       "text": {
-        "content": "<p><b>8 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Odiadores de não humanos que mal conhecem a ideologia purista, mas abraçaram tudo. Um pastor prega a \"palavra de Valkaria\". Humanos vistos são convidados; não humanos, atacados.</p>\n\t\t<h3>Mecânica</h3><p>Em combate, <b>8 recrutas puristas</b>. Não lutam até a morte: fogem se acharem que correm perigo (os não humanos têm \"vantagens injustas\"). Com eles, o panfleto (handout no diário).</p>\n\t\t<p><b>Fichas:</b> @UUID[Compendium.giriarpg-fim-dos-tempos.a1-colinas-ameacas.Actor.am2Dr5u76gGdkEKN]{Recruta Purista Caipira}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Encontro do Dia → colocar tokens.</p><p>Handout: <i>Panfleto dos Puristas Caipiras</i>.</p>",
+        "content": "<p><b>8 na tabela.</b> Viaja pelas Centrais: pode aparecer de novo.</p>\n\t\t<p>Odiadores de não humanos que mal conhecem a ideologia purista, mas abraçaram tudo. Um pastor prega a \"palavra de Valkaria\". Humanos vistos são convidados; não humanos, atacados.</p>\n\t\t<h3>Mecânica</h3><p>Em combate, <b>8 recrutas puristas</b>. Não lutam até a morte: fogem se acharem que correm perigo (os não humanos têm \"vantagens injustas\"). Com eles, o panfleto (handout no diário).</p>\n\t\t<p><b>Fichas:</b> @UUID[Compendium.giriarpg-fim-dos-tempos.a1-colinas-ameacas.Actor.bzFMZypHhpL5acDO]{Bando de Puristas Caipiras}</p>\n\t\t<p style=\"font-size:0.85em\"><b>No Foundry:</b> Encontro do Dia → colocar token (o bando é um token Grande).</p><p>Handout: <i>Panfleto dos Puristas Caipiras</i>.</p>",
         "format": 1,
         "markdown": ""
       },

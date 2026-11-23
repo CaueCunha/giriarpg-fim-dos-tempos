@@ -1,7 +1,7 @@
 {
   "name": "O Ladrão de Rabos",
   "type": "npc",
-  "img": "icons/svg/eye.svg",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/ladrao.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "b626152b",
+      "assinatura": "7fd375ab",
       "assinaturas": [
-        "b626152b"
+        "b626152b",
+        "7fd375ab"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/eye.svg"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/ladrao.webp"
     },
     "sight": {
       "enabled": true

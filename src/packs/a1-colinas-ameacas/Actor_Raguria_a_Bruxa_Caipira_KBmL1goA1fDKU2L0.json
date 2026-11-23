@@ -1,7 +1,7 @@
 {
   "name": "Raguria, a Bruxa Caipira",
   "type": "npc",
-  "img": "systems/tormenta20/icons/racas/humano.webp",
+  "img": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/retratos/raguria.webp",
   "folder": null,
   "flags": {
     "world": {
@@ -16,9 +16,10 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "50ed22eb",
+      "assinatura": "b22cbf11",
       "assinaturas": [
-        "50ed22eb"
+        "50ed22eb",
+        "b22cbf11"
       ]
     }
   },
@@ -34,7 +35,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/tormenta20/icons/racas/humano.webp"
+      "src": "modules/giriarpg-fim-dos-tempos/assets/arco1/encontros-colinas/tokens/raguria.webp"
     },
     "sight": {
       "enabled": true

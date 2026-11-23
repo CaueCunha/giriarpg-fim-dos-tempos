@@ -127,9 +127,9 @@
 | Shaylyne, Sereia do Rio | Hipnotismo | magia | magia do sistema + ficha do NPC |
 | Shadolenn, Sereia do Rio | Sono | magia | magia do sistema + ficha do NPC |
 | Cletus Rigby, o Mago Caipira | Bola de Fogo | magia | magia do sistema + ficha do NPC |
-| Recruta Purista Caipira | Lutar em Formação | poder | ficha do livro + origem no sistema |
-| Recruta Purista Caipira | Alabarda | arma | ficha do livro + origem no sistema |
-| Recruta Purista Caipira | Cota de malha | equipamento | ficha do livro + origem no sistema |
+| Bando de Puristas Caipiras | Lutar em Formação | poder | ficha do livro + origem no sistema |
+| Bando de Puristas Caipiras | Alabarda | arma | ficha do livro + origem no sistema |
+| Bando de Puristas Caipiras | Cota de malha | equipamento | ficha do livro + origem no sistema |
 | Aparição da Mina de Duas Pedras | Vulnerabilidade à Luz do Dia | poder | link para o sistema |
 | Aparição da Mina de Duas Pedras | Toque drenante | arma | link para o sistema |
 | (item) | Poção de Sono (estoque de Marwen) | consumivel | ficha do livro + origem no sistema |
