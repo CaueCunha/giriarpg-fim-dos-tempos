@@ -7,7 +7,7 @@
 - Itens: 43 documento(s)
 - Diários: 9 documento(s)
 - Tabelas: 15 documento(s)
-- Macros: 51 documento(s)
+- Macros: 52 documento(s)
 
 ### Ligações com o sistema (122)
 
@@ -441,7 +441,7 @@
 - `a1-colinas-itens` (Encontros nas Colinas Centrais · Itens): 8 documento(s)
 - `a1-colinas-diarios` (Encontros nas Colinas Centrais · Diários): 1 documento(s)
 - `a1-colinas-tabelas` (Encontros nas Colinas Centrais · Tabelas): 5 documento(s)
-- `a1-colinas-macros` (Encontros nas Colinas Centrais · Macros): 5 documento(s)
+- `a1-colinas-macros` (Encontros nas Colinas Centrais · Macros): 6 documento(s)
 - `a2-av0-ameacas` (Av0 · Ameaças e NPCs): 6 documento(s)
 - `a2-av0-itens` (Av0 · Itens): 3 documento(s)
 - `a2-av0-diarios` (Av0 · Diários): 1 documento(s)
