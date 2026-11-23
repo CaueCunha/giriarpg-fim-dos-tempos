@@ -316,9 +316,7 @@ export function escreverManifesto(packs) {
 		packFolders: [{ name: "Giria T20 - Fim dos Tempos (Campanha)", sorting: "m", color: "#6b2f2f", packs: [], folders: pastasDosCompendios(packs) }],
 		flags: {
 			[MODULO]: {
-				atos: Object.fromEntries(ATOS.map((a) => [a.id, { rotulo: a.rotulo }])),
-				// para o Puxar: de que ato e aventura é cada compêndio e as pastas que ele cria no mundo
-				packs: Object.fromEntries(packs.map((p) => [p.nome, { ato: p.ato.id, aventura: p.aventura.id, rotulo: p.aventura.rotulo, pastas: p.pastas }]))
+				atos: Object.fromEntries(ATOS.map((a) => [a.id, { rotulo: a.rotulo }]))
 			}
 		},
 		url: repo,
@@ -327,7 +325,12 @@ export function escreverManifesto(packs) {
 		readme: `${repo}#readme`,
 		bugs: `${repo}/issues`
 	};
-	fs.writeFileSync(path.join(RAIZ, "module.json"), `${JSON.stringify(manifesto, null, 2)}\n`);
+	// Compacto: o The Forge recusa manifestos grandes ("Size is too large"); por isso as pastas de cada compêndio
+	// ficam em scripts/pacotes.mjs, e não em flags do module.json.
+	fs.writeFileSync(path.join(RAIZ, "module.json"), `${JSON.stringify(manifesto)}\n`);
+	// Para o Puxar: de que ato e aventura é cada compêndio e as pastas que ele cria no mundo.
+	const info = Object.fromEntries(packs.map((p) => [p.nome, { ato: p.ato.id, aventura: p.aventura.id, rotulo: p.aventura.rotulo, pastas: p.pastas }]));
+	fs.writeFileSync(path.join(RAIZ, "scripts", "pacotes.mjs"), `// Gerado por tools/build.mjs: não edite à mão.\nexport default ${JSON.stringify(info)};\n`);
 	return manifesto;
 }
 
