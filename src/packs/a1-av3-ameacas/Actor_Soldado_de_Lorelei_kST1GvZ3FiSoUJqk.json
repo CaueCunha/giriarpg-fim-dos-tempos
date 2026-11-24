@@ -16,10 +16,11 @@
         "ato1-ameacas",
         "ameacas"
       ],
-      "assinatura": "e6240815",
+      "assinatura": "886465bd",
       "assinaturas": [
         "ba5d91a9",
-        "e6240815"
+        "e6240815",
+        "886465bd"
       ]
     }
   },
@@ -957,7 +958,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,
@@ -1173,7 +1174,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

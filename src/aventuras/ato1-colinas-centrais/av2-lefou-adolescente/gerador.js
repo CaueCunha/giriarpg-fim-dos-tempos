@@ -134,12 +134,14 @@
 	 * O ataque usa a perícia Luta do NPC (que já tem o bônus do livro) + ajuste, para que
 	 * condições como abalado e bônus globais de ataque contem automaticamente.
 	 */
+	/** Efeito de Uso que mora na própria arma: o T20 só o oferece ao atacar com ela se o tipo for "self" ("attack" vale para as OUTRAS armas do ator). */
+	const daArma = (effects) => effects.map((e) => (e.system?.onuse ? { ...e, system: { ...e.system, abilityUse: { ...e.system.abilityUse, types: ["self"] } } } : e));
 	const arma = (name, img, { ajuste = 0, dano, tipo, extra = [], critM = 20, critX = 2, desc = "", effects = [] }) => ({
 		name,
 		type: "arma",
 		img,
 		flags: FLAGS(),
-		effects,
+		effects: daArma(effects),
 		system: {
 			description: { value: desc },
 			equipado: 1,

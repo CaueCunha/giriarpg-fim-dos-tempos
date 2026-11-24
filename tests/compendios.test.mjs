@@ -231,3 +231,19 @@ test("toda ameaça/NPC vem com o token padrão (nome ao passar o mouse, visão, 
 		assert.deepEqual(correcaoToken(t), {}, `${a.name}: fora do TOKEN_PADRAO (Bar Brawl)`);
 	}
 });
+
+test("Efeito de Uso dentro de uma arma é do tipo \"self\" (senão o T20 não o oferece ao atacar com ela)", () => {
+	// item.mjs#_allApplicableOnUseEffects: efeito da própria arma conta como "self"; "attack" só vale nas OUTRAS armas do ator.
+	const erros = [];
+	const visitar = (doc, dono) => {
+		if (doc.type === "arma") {
+			for (const ef of doc.effects ?? []) {
+				const uso = ef.system?.abilityUse;
+				if (ef.system?.onuse && !uso?.types?.includes("self") && !uso?.names?.length) erros.push(`${dono}${doc.name} › ${ef.name}`);
+			}
+		}
+		for (const it of doc.items ?? []) visitar(it, `${doc.name} › `);
+	};
+	for (const p of packs) for (const d of p.docs) visitar(d, "");
+	assert.deepEqual(erros, []);
+});

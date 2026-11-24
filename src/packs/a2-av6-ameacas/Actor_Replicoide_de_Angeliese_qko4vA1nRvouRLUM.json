@@ -16,9 +16,10 @@
         "ato2-ameacas",
         "ameacas"
       ],
-      "assinatura": "bbc49bca",
+      "assinatura": "1bdd7034",
       "assinaturas": [
-        "bbc49bca"
+        "bbc49bca",
+        "1bdd7034"
       ]
     }
   },
@@ -965,7 +966,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

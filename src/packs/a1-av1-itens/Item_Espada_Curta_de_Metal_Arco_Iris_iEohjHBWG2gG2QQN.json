@@ -124,9 +124,10 @@
         "ato1-itens",
         "itens"
       ],
-      "assinatura": "aa070131",
+      "assinatura": "36a42151",
       "assinaturas": [
-        "aa070131"
+        "aa070131",
+        "36a42151"
       ]
     }
   },
@@ -179,7 +180,7 @@
         "onuse": true,
         "abilityUse": {
           "types": [
-            "attack"
+            "self"
           ],
           "names": [],
           "automatic": false,
@@ -252,7 +253,7 @@
         "onuse": true,
         "abilityUse": {
           "types": [
-            "attack"
+            "self"
           ],
           "names": [],
           "automatic": false,

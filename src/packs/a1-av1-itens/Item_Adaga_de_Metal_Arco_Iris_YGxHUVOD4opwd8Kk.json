@@ -124,9 +124,10 @@
         "ato1-itens",
         "itens"
       ],
-      "assinatura": "34bd6d8c",
+      "assinatura": "c5f056ec",
       "assinaturas": [
-        "34bd6d8c"
+        "34bd6d8c",
+        "c5f056ec"
       ]
     }
   },
@@ -179,7 +180,7 @@
         "onuse": true,
         "abilityUse": {
           "types": [
-            "attack"
+            "self"
           ],
           "names": [],
           "automatic": false,
@@ -252,7 +253,7 @@
         "onuse": true,
         "abilityUse": {
           "types": [
-            "attack"
+            "self"
           ],
           "names": [],
           "automatic": false,
