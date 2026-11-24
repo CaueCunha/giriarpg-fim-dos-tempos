@@ -16,9 +16,10 @@
         "ato2-ameacas",
         "ameacas"
       ],
-      "assinatura": "a3392c2c",
+      "assinatura": "cb38ce2a",
       "assinaturas": [
-        "a3392c2c"
+        "a3392c2c",
+        "cb38ce2a"
       ]
     }
   },
@@ -975,7 +976,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

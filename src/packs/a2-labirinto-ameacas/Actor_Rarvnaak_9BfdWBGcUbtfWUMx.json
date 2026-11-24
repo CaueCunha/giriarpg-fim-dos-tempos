@@ -16,9 +16,10 @@
         "ato2-ameacas",
         "ameacas"
       ],
-      "assinatura": "071c491d",
+      "assinatura": "09552755",
       "assinaturas": [
-        "071c491d"
+        "071c491d",
+        "09552755"
       ]
     }
   },
@@ -964,7 +965,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,
@@ -1044,7 +1045,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

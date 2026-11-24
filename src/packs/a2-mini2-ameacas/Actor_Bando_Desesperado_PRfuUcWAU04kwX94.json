@@ -16,9 +16,10 @@
         "ato2-ameacas",
         "ameacas"
       ],
-      "assinatura": "ca9e1127",
+      "assinatura": "e560fdfb",
       "assinaturas": [
-        "ca9e1127"
+        "ca9e1127",
+        "e560fdfb"
       ]
     }
   },
@@ -956,7 +957,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,
@@ -1172,7 +1173,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

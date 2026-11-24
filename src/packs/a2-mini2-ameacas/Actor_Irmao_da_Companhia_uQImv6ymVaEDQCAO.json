@@ -16,9 +16,10 @@
         "ato2-ameacas",
         "ameacas"
       ],
-      "assinatura": "cfad55c6",
+      "assinatura": "12240d52",
       "assinaturas": [
-        "cfad55c6"
+        "cfad55c6",
+        "12240d52"
       ]
     }
   },
@@ -956,7 +957,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,
@@ -1172,7 +1173,7 @@
             "onuse": true,
             "abilityUse": {
               "types": [
-                "attack"
+                "self"
               ],
               "names": [],
               "automatic": false,

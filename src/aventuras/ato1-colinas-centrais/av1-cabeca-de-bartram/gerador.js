@@ -136,12 +136,14 @@
 	});
 
 	/** Arma de NPC: usa a perícia do NPC (que já tem o bônus do livro) + ajuste. */
+	/** Efeito de Uso que mora na própria arma: o T20 só o oferece ao atacar com ela se o tipo for "self" ("attack" vale para as OUTRAS armas do ator). */
+	const daArma = (effects) => effects.map((e) => (e.system?.onuse ? { ...e, system: { ...e.system, abilityUse: { ...e.system.abilityUse, types: ["self"] } } } : e));
 	const arma = (name, img, { pericia = "luta", atributo = "for", proposito = "corpo-a-corpo", ajuste = 0, dano, tipo, extra = [], critM = 20, critX = 2, alcance = "", desc = "", effects = [] }) => ({
 		name,
 		type: "arma",
 		img,
 		flags: FLAGS(),
-		effects,
+		effects: daArma(effects),
 		system: {
 			description: { value: desc },
 			equipado: 1,
@@ -369,8 +371,8 @@
 	const armaArcoIris = (role, name, img, dano, tipo, desc, extra = {}) => itemDoc({
 		name, type: "arma", img,
 		effects: [
-			aoUsar("Metal arco-íris (+1 de elemento)", ICO.arcoiris, [["dano", "1"]], ["attack"]),
-			aoUsar("Contra corrompido das Colinas (+6)", ICO.arcoiris, [["dano", "6"]], ["attack"])
+			aoUsar("Metal arco-íris (+1 de elemento)", ICO.arcoiris, [["dano", "1"]], ["self"]),
+			aoUsar("Contra corrompido das Colinas (+6)", ICO.arcoiris, [["dano", "6"]], ["self"])
 		],
 		system: {
 			description: { value: p(desc) + METAL },
