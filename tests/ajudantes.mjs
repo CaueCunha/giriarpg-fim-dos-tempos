@@ -20,7 +20,7 @@ let versaoScript = 0;
  */
 export async function carregarModulo(mundo, { dirPacks = FONTE_PACKS, ready = false } = {}) {
 	const m = manifesto();
-	const mod = mundo.registrarModulo(MODULO, { version: m.version, title: m.title, flags: m.flags });
+	const mod = mundo.registrarModulo(MODULO, { version: m.version, title: m.title, flags: m.flags, packFolders: m.packFolders });
 	for (const p of m.packs) {
 		const { docs, pastas } = lerPackFonte(path.join(dirPacks, p.name));
 		mundo.adicionarPack({ id: `${MODULO}.${p.name}`, name: p.name, label: p.label, type: p.type, packageName: MODULO, packageType: "module" }, docs, pastas);

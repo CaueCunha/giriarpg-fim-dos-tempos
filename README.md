@@ -12,6 +12,8 @@ Na aba de Compêndios, tudo fica em **Giria T20 - Fim dos Tempos (Campanha)**:
 
 Dentro da pasta de cada aventura ficam só os compêndios dos tipos que ela tem: **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas** e **Macros**. Exemplo: **Giria T20 - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas › Av3 · Ameaças e NPCs** (compêndio `a1-av3-ameacas`). Os compêndios são só do Mestre.
 
+Quem cria e preenche essas pastas é o próprio módulo, quando o Mestre abre o mundo (o Foundry nem sempre as cria sozinho, por exemplo no The Forge). Cada compêndio é posto na pasta uma vez só: se você tirar um compêndio de lá, ele fica onde você deixou. Isso pode ser desligado em **Configurações › Giria T20 - Fim dos Tempos (Campanha) › Pasta dos compêndios**.
+
 A contagem de cada compêndio está em [`build/relatorio.md`](build/relatorio.md).
 
 Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.
