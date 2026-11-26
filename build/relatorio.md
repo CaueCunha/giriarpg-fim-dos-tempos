@@ -381,7 +381,7 @@
 - Poderes: 23 documento(s)
 - Itens: 2 documento(s)
 - Diários: 2 documento(s)
-- Macros: 13 documento(s)
+- Macros: 14 documento(s)
 
 ### Ligações com o sistema (2)
 
@@ -522,5 +522,5 @@
 - `geral-pjs-itens` (Poderes dos PJs · Itens): 2 documento(s)
 - `geral-pjs-diarios` (Poderes dos PJs · Diários): 1 documento(s)
 - `geral-pjs-macros` (Poderes dos PJs · Macros): 4 documento(s)
-- `geral-ferramentas-macros` (Ferramentas · Macros): 4 documento(s)
+- `geral-ferramentas-macros` (Ferramentas · Macros): 5 documento(s)
 

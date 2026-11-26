@@ -1,0 +1,40 @@
+{
+  "_id": "fFZXMBOuXbRj2s0H",
+  "name": "FdT · Pastas dos compêndios dos módulos",
+  "type": "script",
+  "img": "icons/svg/book.svg",
+  "scope": "global",
+  "command": "// Põe os compêndios SOLTOS dos outros módulos ativos numa pasta com o nome de cada módulo.\n// O que já está em alguma pasta não é mexido. Pode rodar de novo depois de instalar um módulo.\nconst api = game.modules.get(\"giriarpg-fim-dos-tempos\")?.api;\nconst r = await api?.organizarOutrosModulos();\nif (!r) return;\nconst lista = r.modulos.map((m) => `${m.titulo} (${m.compendios})`).join(\", \");\nui.notifications.info(r.compendios ? `${r.compendios} compêndio(s) organizados em pastas: ${lista}.` : \"Nenhum compêndio solto de outros módulos.\");",
+  "folder": null,
+  "flags": {
+    "world": {
+      "fdt": "fdtcampanha",
+      "fdtRole": "pastasModulos"
+    },
+    "giriarpg-fim-dos-tempos": {
+      "ato": "campanha",
+      "aventura": "ferramentas",
+      "pasta": "X3cwRjrdatABr37x",
+      "antigos": [
+        "campanha-macros",
+        "macros"
+      ],
+      "assinatura": "7f9bff37",
+      "assinaturas": [
+        "7f9bff37"
+      ]
+    }
+  },
+  "_key": "!macros!fFZXMBOuXbRj2s0H",
+  "_stats": {
+    "coreVersion": "14.366",
+    "systemId": "tormenta20",
+    "systemVersion": "1.6.4",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null
+  }
+}

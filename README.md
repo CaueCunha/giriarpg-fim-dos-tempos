@@ -14,6 +14,8 @@ Dentro da pasta de cada aventura ficam só os compêndios dos tipos que ela tem:
 
 Quem cria e preenche essas pastas é o próprio módulo, quando o Mestre abre o mundo (o Foundry nem sempre as cria sozinho, por exemplo no The Forge). Cada compêndio é posto na pasta uma vez só: se você tirar um compêndio de lá, ele fica onde você deixou. Isso pode ser desligado em **Configurações › Giria T20 - Fim dos Tempos (Campanha) › Pasta dos compêndios**.
 
+Para os **outros módulos** (aventuras oficiais, Armadilhas...), rode a macro **FdT · Pastas dos compêndios dos módulos** (compêndio Ferramentas gerais › Ferramentas): os compêndios soltos de cada módulo ativo vão para uma pasta com o nome dele, ou para as pastas que o próprio módulo declara. O que já está em alguma pasta não é mexido. Rode de novo depois de instalar um módulo novo.
+
 A contagem de cada compêndio está em [`build/relatorio.md`](build/relatorio.md).
 
 Requisitos: **Foundry VTT v14** e o sistema **Tormenta20** (Vizael) **1.6.x**.

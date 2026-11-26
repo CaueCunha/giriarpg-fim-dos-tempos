@@ -42,7 +42,7 @@ import {
 } from "./importador.mjs";
 import { corrigirTokens, registrarGanchosToken } from "./tokens.mjs";
 import { atualizarMacros } from "./macros.mjs";
-import { organizarCompendios } from "./pastas.mjs";
+import { organizarCompendios, organizarOutrosModulos } from "./pastas.mjs";
 
 export { PRESERVAR };
 
@@ -137,6 +137,7 @@ Hooks.once("init", () => {
 			corrigirTokens,
 			atualizarMacros,
 			organizarCompendios,
+			organizarOutrosModulos,
 			// testes no chat (scripts/testes.mjs); pedirTeste/pedirTestes são os nomes das macros da 0.21
 			testes: apiTestes,
 			pedirTeste,
