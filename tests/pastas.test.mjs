@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import { criarMundo, carregarModulo, manifesto, MODULO } from "./ajudantes.mjs";
 
 const m = manifesto();
-const RAIZ_NOME = "Giria T20 - Fim dos Tempos (Campanha)";
+const RAIZ_NOME = "T20 Giria - Fim dos Tempos (Campanha)";
 const config = (mundo) => mundo.game.settings.get("core", "compendiumConfiguration");
 const pastaDe = (mundo, nome) => mundo.game.folders.get(config(mundo)[`${MODULO}.${nome}`]?.folder);
 const caminho = (f) => {
@@ -105,6 +105,27 @@ test("macro dos outros módulos: compêndios soltos vão para uma pasta com o no
 		const n = mundo.game.folders.size;
 		assert.equal((await api.organizarOutrosModulos()).compendios, 0);
 		assert.equal(mundo.game.folders.size, n);
+	} finally {
+		mundo.encerrar();
+	}
+});
+
+test("a pasta com o nome antigo (Giria T20 - ...) é renomeada, sem criar outra", async () => {
+	const mundo = await criarMundo({ semente: "pastas-4" });
+	try {
+		await carregarModulo(mundo, { ready: true });
+		const raiz = mundo.game.folders.find((f) => f.type === "Compendium" && !f.folder);
+		const filhas = mundo.game.folders.filter((f) => f.type === "Compendium" && f.folder);
+		// como estava na v0.29/v0.30
+		const antigo = "Giria T20 - Fim dos Tempos (Campanha)";
+		await raiz.update({ name: antigo, [`flags.${MODULO}.pastaCompendio`]: antigo });
+		for (const f of filhas) await f.update({ [`flags.${MODULO}.pastaCompendio`]: f.getFlag(MODULO, "pastaCompendio").replace(RAIZ_NOME, antigo) });
+		const n = mundo.game.folders.size;
+		await mundo.game.modules.get(MODULO).api.organizarCompendios({ todos: true });
+		assert.equal(mundo.game.folders.size, n, "criou pasta nova em vez de renomear");
+		assert.equal(raiz.name, RAIZ_NOME);
+		assert.equal(caminho(pastaDe(mundo, m.packs[0].name))[0], RAIZ_NOME);
+		for (const f of filhas) assert.ok(f.getFlag(MODULO, "pastaCompendio").startsWith(`${RAIZ_NOME}/`));
 	} finally {
 		mundo.encerrar();
 	}

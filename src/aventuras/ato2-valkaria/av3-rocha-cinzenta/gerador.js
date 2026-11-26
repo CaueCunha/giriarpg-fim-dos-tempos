@@ -24,7 +24,7 @@
  * ===================================================================== */
 (async () => {
 	// Testes dos PJs: a macro pede, o jogador rola pelo card no chat (módulo; sem ele, a macro rola).
-	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo Giria T20 - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
+	const FDT_TESTE = 'const fdtApi = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nif (!fdtApi?.testes) throw new Error("Fim dos Tempos: ative o módulo T20 Giria - Fim dos Tempos (Campanha) para usar esta macro.");\nconst fdtTestes = (lista) => fdtApi.testes.lista(lista);\nconst fdtTeste = async (ator, pericia, o = {}) => (await fdtTestes([{ ...o, ator, pericia }]))[0];\nconst fdtAplicar = fdtApi.testes.coletor();\nconst fdtEnviar = (dados) => fdtAplicar.enviar(dados);\n';
 	// Macros que pedem testes ou aplicam algo: o prefixo acima entra no comando, a macro roda dentro de um try/finally
 	// (no fim, os botões que sobraram vão para o Mestre) e as mensagens dela levam os botões do Mestre (fdtEnviar).
 	const usaFdt = (fn) => /fdtTestes?\(|fdtAplicar|fdtEnviar/.test(fn.toString());

@@ -1,5 +1,5 @@
 /**
- * Giria T20 - Fim dos Tempos (Campanha) · módulo da campanha (Foundry v14 + Tormenta20 1.6.x)
+ * T20 Giria - Fim dos Tempos (Campanha) · módulo da campanha (Foundry v14 + Tormenta20 1.6.x)
  *
  * Organizado como o módulo do Duelo de Dragões:
  *   - main.mjs        ganchos, configurações e a API (game.modules.get("giriarpg-fim-dos-tempos").api)
@@ -7,7 +7,7 @@
  *   - importador.mjs  catálogo dos compêndios, Puxar, Atualizar, Limpar e os UUIDs antigos
  *   - tokens.mjs      token padrão das ameaças
  *   - macros.mjs      atualização única das macros do mundo
- *   - pastas.mjs      pastas da aba de Compêndios (Giria T20 - Fim dos Tempos › ato › aventura)
+ *   - pastas.mjs      pastas da aba de Compêndios (T20 Giria - Fim dos Tempos › ato › aventura)
  *   - testes.mjs      testes no chat (o jogador rola, o Mestre aplica)
  *   - assinatura.mjs  assinatura dos documentos e TOKEN_PADRAO (também usado pelo build)
  *
@@ -70,7 +70,7 @@ Hooks.once("init", () => {
 	});
 	game.settings.register(MODULO, "organizarCompendios", {
 		name: "Pasta dos compêndios",
-		hint: "Ao abrir o mundo, o Mestre põe os compêndios do módulo na pasta \"Giria T20 - Fim dos Tempos (Campanha)\" da aba de Compêndios, separados por ato e aventura. Cada compêndio é organizado uma vez: se você tirar um da pasta, ele fica onde você deixou.",
+		hint: "Ao abrir o mundo, o Mestre põe os compêndios do módulo na pasta \"T20 Giria - Fim dos Tempos (Campanha)\" da aba de Compêndios, separados por ato e aventura. Cada compêndio é organizado uma vez: se você tirar um da pasta, ele fica onde você deixou.",
 		scope: "world",
 		config: true,
 		type: Boolean,
@@ -186,7 +186,7 @@ Hooks.once("ready", async () => {
 	const desat = lista.filter((p) => p.estado === "desatualizado").length;
 	await ChatMessage.create({
 		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
-		speaker: { alias: "Giria T20 - Fim dos Tempos (Campanha)" },
+		speaker: { alias: "T20 Giria - Fim dos Tempos (Campanha)" },
 		content: `<p><b>Fim dos Tempos v${esc(versao)}</b>: ${desat} documento(s) do mundo têm melhorias no compêndio${lista.length - desat ? ` e ${lista.length - desat} que você editou ficam como estão` : ""}.
 			Nada foi mudado. Para escolher o que atualizar, rode a macro <i>FdT · Atualizar do compêndio</i> ou use o botão <i>Fim dos Tempos</i> na aba de Compêndios.</p>`
 	});
