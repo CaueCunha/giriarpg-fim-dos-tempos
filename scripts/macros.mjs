@@ -68,7 +68,7 @@ export async function atualizarMacros({ rodada = RODADA_MACROS, forcar = false }
 	if (trocadas)
 		await ChatMessage.create({
 			whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
-			speaker: { alias: "Giria T20 - Fim dos Tempos (Campanha)" },
+			speaker: { alias: "T20 Giria - Fim dos Tempos (Campanha)" },
 			content:
 				`<h3>Fim dos Tempos ${esc(rodada)}: macros atualizadas</h3><p>As macros do mundo (inclusive as que você puxou dos compêndios ou pôs na barra) ` +
 				`agora pedem os testes no chat: cada jogador clica no botão do seu personagem e rola, e você aplica o resultado pelos botões do card. ` +

@@ -1,8 +1,8 @@
-# Giria T20 - Fim dos Tempos (Campanha) · módulo para Foundry VTT
+# T20 Giria - Fim dos Tempos (Campanha) · módulo para Foundry VTT
 
 Este é o conteúdo da campanha **Fim dos Tempos** (Tormenta20) num módulo do Foundry VTT: ameaças, poderes, itens, diários, tabelas e macros com automação. A organização segue a do módulo **Duelo de Dragões**: cada aventura tem os seus compêndios, dentro da pasta do ato, e a fonte de cada aventura (gerador, guia e artes) fica numa pasta só.
 
-Na aba de Compêndios, tudo fica em **Giria T20 - Fim dos Tempos (Campanha)**:
+Na aba de Compêndios, tudo fica em **T20 Giria - Fim dos Tempos (Campanha)**:
 
 | Pasta | Aventuras (uma pasta cada) | Cor |
 |---|---|---|
@@ -10,9 +10,9 @@ Na aba de Compêndios, tudo fica em **Giria T20 - Fim dos Tempos (Campanha)**:
 | Ato 2 · Valkaria | Av0 a Av7, Mini 1 e 2, O Labirinto Liberto, Encontros em Valkaria, Ruas de Valkaria, Lendas e Linhas Narrativas, Apêndices | azul |
 | Ferramentas gerais | O Grupo (regras e Poderes de Grupo), Poderes dos PJs, Ferramentas (Puxar, Atualizar, Limpar, Combate Defensivo) | ocre escuro |
 
-Dentro da pasta de cada aventura ficam só os compêndios dos tipos que ela tem: **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas** e **Macros**. Exemplo: **Giria T20 - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas › Av3 · Ameaças e NPCs** (compêndio `a1-av3-ameacas`). Os compêndios são só do Mestre.
+Dentro da pasta de cada aventura ficam só os compêndios dos tipos que ela tem: **Ameaças e NPCs**, **Poderes**, **Itens**, **Diários**, **Tabelas** e **Macros**. Exemplo: **T20 Giria - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas › Av3 · Ameaças e NPCs** (compêndio `a1-av3-ameacas`). Os compêndios são só do Mestre.
 
-Quem cria e preenche essas pastas é o próprio módulo, quando o Mestre abre o mundo (o Foundry nem sempre as cria sozinho, por exemplo no The Forge). Cada compêndio é posto na pasta uma vez só: se você tirar um compêndio de lá, ele fica onde você deixou. Isso pode ser desligado em **Configurações › Giria T20 - Fim dos Tempos (Campanha) › Pasta dos compêndios**.
+Quem cria e preenche essas pastas é o próprio módulo, quando o Mestre abre o mundo (o Foundry nem sempre as cria sozinho, por exemplo no The Forge). Cada compêndio é posto na pasta uma vez só: se você tirar um compêndio de lá, ele fica onde você deixou. Isso pode ser desligado em **Configurações › T20 Giria - Fim dos Tempos (Campanha) › Pasta dos compêndios**.
 
 Para os **outros módulos** (aventuras oficiais, Armadilhas...), rode a macro **FdT · Pastas dos compêndios dos módulos** (compêndio Ferramentas gerais › Ferramentas): os compêndios soltos de cada módulo ativo vão para uma pasta com o nome dele, ou para as pastas que o próprio módulo declara. O que já está em alguma pasta não é mexido. Rode de novo depois de instalar um módulo novo.
 
@@ -44,7 +44,7 @@ Baixe o `module.zip` da [última versão](https://github.com/CaueCunha/giriarpg-
 **Nada vai para o mundo sozinho.** O módulo só oferece os compêndios, e você escolhe o que entra no mundo:
 
 - **Um documento:** arraste-o do compêndio para a barra lateral (ou para a cena, no caso de ameaças).
-- **Uma aventura inteira:** use **Puxar do compêndio**. Ele fica no botão **Fim dos Tempos**, no topo da aba de Compêndios, em **Configurações › Giria T20 - Fim dos Tempos (Campanha)** e na macro **FdT · Puxar do compêndio**. Marque as aventuras e ele cria só o que falta, nas pastas do compêndio (Ato › aventura) e com os mesmos IDs, para os links dos diários e as macros funcionarem. O que já está no mundo nunca é substituído.
+- **Uma aventura inteira:** use **Puxar do compêndio**. Ele fica no botão **Fim dos Tempos**, no topo da aba de Compêndios, em **Configurações › T20 Giria - Fim dos Tempos (Campanha)** e na macro **FdT · Puxar do compêndio**. Marque as aventuras e ele cria só o que falta, nas pastas do compêndio (Ato › aventura) e com os mesmos IDs, para os links dos diários e as macros funcionarem. O que já está no mundo nunca é substituído.
 
 As macros da campanha procuram as ameaças, as tabelas e os diários **no mundo**, pelas marcas que os geradores sempre usaram. Por isso, puxe a aventura antes de usar as macros dela. Se faltar alguma coisa, a macro avisa.
 
@@ -66,7 +66,7 @@ Ficam de fora, de propósito: os placares de perigo (PV da horda e dos abrigos, 
 
 ### Limpar do mundo
 
-**Limpar do mundo** (no botão **Fim dos Tempos**, em **Configurações › Giria T20 - Fim dos Tempos (Campanha)** e na macro **FdT · Limpar do mundo**) apaga do mundo o conteúdo do módulo, para você puxar do compêndio só o que precisar. Por padrão:
+**Limpar do mundo** (no botão **Fim dos Tempos**, em **Configurações › T20 Giria - Fim dos Tempos (Campanha)** e na macro **FdT · Limpar do mundo**) apaga do mundo o conteúdo do módulo, para você puxar do compêndio só o que precisar. Por padrão:
 
 - apaga itens e poderes, diários, tabelas e macros; ameaças e NPCs só se você marcar (tokens nas cenas perdem a ficha);
 - **não apaga o que você editou** (o que não bate com nenhuma versão publicada), a não ser que você marque;
@@ -77,7 +77,7 @@ Itens nas fichas dos personagens e documentos que não são do módulo nunca sã
 
 ### Versões novas: atualizar só o que você quiser
 
-Quando sai uma versão nova, o Foundry atualiza os compêndios, mas o mundo não muda. O Mestre recebe uma mensagem no chat, uma vez só, dizendo quantos documentos do mundo têm melhorias. O aviso pode ser desligado em **Configurações › Giria T20 - Fim dos Tempos (Campanha)**.
+Quando sai uma versão nova, o Foundry atualiza os compêndios, mas o mundo não muda. O Mestre recebe uma mensagem no chat, uma vez só, dizendo quantos documentos do mundo têm melhorias. O aviso pode ser desligado em **Configurações › T20 Giria - Fim dos Tempos (Campanha)**.
 
 **Atualizar do compêndio** (no mesmo botão, nas configurações e na macro **FdT · Atualizar do compêndio**) lista os documentos do mundo que vieram do módulo e mudaram:
 

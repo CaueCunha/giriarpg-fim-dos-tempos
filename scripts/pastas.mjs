@@ -1,5 +1,5 @@
 /**
- * Pastas da aba de Compêndios: "Giria T20 - Fim dos Tempos (Campanha)" › ato › aventura.
+ * Pastas da aba de Compêndios: "T20 Giria - Fim dos Tempos (Campanha)" › ato › aventura.
  *
  * O module.json declara as pastas em packFolders, mas o Foundry só as cria em alguns casos (na primeira vez que o
  * módulo é ativado no mundo, e não no The Forge nem em mundos onde o módulo já estava). Por isso, ao abrir o mundo,
@@ -27,7 +27,33 @@ function acharPasta(caminho, nome, mae, chave = "pastaCompendio") {
 	);
 }
 
+/** Nomes antigos da pasta raiz (o módulo se chamava "Giria T20 - Fim dos Tempos (Campanha)" até a v0.30). */
+const RAIZES_ANTIGAS = ["Giria T20 - Fim dos Tempos (Campanha)"];
+
+/** Renomeia a pasta raiz antiga (criada pelo módulo ou pelo Foundry) para o nome atual, sem mexer no conteúdo. */
+async function renomearRaiz(mod) {
+	const atual = lista(mod?.packFolders)[0]?.name;
+	if (!atual) return;
+	const pastas = game.folders.filter((f) => f.type === "Compendium");
+	for (const antigo of RAIZES_ANTIGAS) {
+		if (antigo === atual) continue;
+		const raiz = pastas.find((f) => !f.folder && f.name === antigo && (!f.getFlag?.(MODULO, "pastaCompendio") || f.getFlag(MODULO, "pastaCompendio") === antigo));
+		if (!raiz || pastas.some((f) => !f.folder && f.name === atual)) continue;
+		await raiz.update({ name: atual, [`flags.${MODULO}.pastaCompendio`]: atual });
+		// as filhas guardam o caminho a partir da raiz
+		const trocar = async (mae) => {
+			for (const f of game.folders.filter((x) => x.type === "Compendium" && x.folder?.id === mae.id)) {
+				const c = f.getFlag?.(MODULO, "pastaCompendio");
+				if (c?.startsWith(`${antigo}/`)) await f.update({ [`flags.${MODULO}.pastaCompendio`]: atual + c.slice(antigo.length) });
+				await trocar(f);
+			}
+		};
+		await trocar(raiz);
+	}
+}
+
 export async function organizarCompendios({ todos = false } = {}) {
+	await renomearRaiz(modulo());
 	return organizar(modulo(), { todos, registrar: true });
 }
 

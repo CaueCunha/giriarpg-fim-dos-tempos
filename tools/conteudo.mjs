@@ -5,7 +5,7 @@
  *
  * O build roda os geradores de cada ato num Foundry simulado, na ordem abaixo (a mesma do mega script), e grava
  * cada aventura nos compêndios dela: <ato>-<sigla>-<tipo> (ex.: a1-av3-ameacas), dentro da pasta da aventura na
- * aba de Compêndios (Giria T20 - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas).
+ * aba de Compêndios (T20 Giria - Fim dos Tempos (Campanha) › Ato 1 · Colinas Centrais › Av3 · Cultistas Puristas).
  *
  * Para incluir uma aventura nova: crie src/aventuras/<ato>/<pasta>/gerador.js (e o LEIA-ME.md), acrescente a
  * linha dela em `aventuras` e rode "npm run build".

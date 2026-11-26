@@ -348,7 +348,7 @@ export async function atualizar({ confirmar = true } = {}) {
 	const ficaram = lista.length - editados.length - escolhidos.length;
 	await ChatMessage.create({
 		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
-		speaker: { alias: "Giria T20 - Fim dos Tempos (Campanha)" },
+		speaker: { alias: "T20 Giria - Fim dos Tempos (Campanha)" },
 		content:
 			`<h3>Atualização do compêndio (v${esc(modulo()?.version)})</h3><p><b>${atualizados}</b> documento(s) atualizado(s)` +
 			`${falhas.length ? `, ${falhas.length} falha(s)` : ""}${ficaram ? `; ${ficaram} desmarcado(s) ficaram como estavam` : ""}.</p>` +
@@ -455,7 +455,7 @@ export async function limpar({ tipos = ["Item", "JournalEntry", "RollTable", "Ma
 	const mantidos = todos.length - lista.length;
 	await ChatMessage.create({
 		whisper: ChatMessage.getWhisperRecipients("GM").map((u) => u.id),
-		speaker: { alias: "Giria T20 - Fim dos Tempos (Campanha)" },
+		speaker: { alias: "T20 Giria - Fim dos Tempos (Campanha)" },
 		content:
 			`<h3>Limpeza do mundo</h3><p><b>${apagados}</b> documento(s) apagado(s) e ${pastas} pasta(s) vazia(s) removida(s); ${mantidos} mantido(s).</p>` +
 			(copias.length ? `<p>Cópia guardada em: ${copias.map(esc).join(", ")}.</p>` : "") +
@@ -513,7 +513,7 @@ export async function abrirLimpar() {
 export async function abrirMenu() {
 	if (!game.user.isGM) return null;
 	const acao = await foundry.applications.api.DialogV2.wait({
-		window: { title: "Giria T20 - Fim dos Tempos (Campanha)", icon: "fa-solid fa-hourglass-half" },
+		window: { title: "T20 Giria - Fim dos Tempos (Campanha)", icon: "fa-solid fa-hourglass-half" },
 		position: { width: 440 },
 		content: `<p><b>Puxar do compêndio</b> traz aventuras inteiras para o mundo (só o que falta).</p>
 			<p><b>Atualizar do compêndio</b> mostra o que mudou na versão nova do módulo; nada que você editou é tocado.</p>
