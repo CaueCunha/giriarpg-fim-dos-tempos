@@ -101,6 +101,12 @@ export const ATOS = [
 				role: "limpador"
 			},
 			{
+				comando: '// Põe os compêndios SOLTOS dos outros módulos ativos numa pasta com o nome de cada módulo.\n// O que já está em alguma pasta não é mexido. Pode rodar de novo depois de instalar um módulo.\nconst api = game.modules.get("giriarpg-fim-dos-tempos")?.api;\nconst r = await api?.organizarOutrosModulos();\nif (!r) return;\nconst lista = r.modulos.map((m) => `${m.titulo} (${m.compendios})`).join(", ");\nui.notifications.info(r.compendios ? `${r.compendios} compêndio(s) organizados em pastas: ${lista}.` : "Nenhum compêndio solto de outros módulos.");',
+				nome: "FdT · Pastas dos compêndios dos módulos",
+				img: "icons/svg/book.svg",
+				role: "pastasModulos"
+			},
+			{
 				arquivo: "ferramentas/poder-combate-defensivo.js",
 				nome: "Poder · Combate Defensivo",
 				img: "systems/tormenta20/icons/poderes/combate.webp",

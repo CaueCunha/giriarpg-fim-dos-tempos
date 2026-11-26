@@ -75,3 +75,37 @@ test("compêndio novo de uma versão futura entra na pasta; pastas já criadas p
 		mundo.encerrar();
 	}
 });
+
+test("macro dos outros módulos: compêndios soltos vão para uma pasta com o nome de cada módulo", async () => {
+	const mundo = await criarMundo({ semente: "pastas-3" });
+	try {
+		mundo.registrarModulo("aventura-x", { title: "Aventura - X" });
+		mundo.registrarModulo("arm", { title: "Giria T20 - Armadilhas", packFolders: [{ name: "Armadilhas", packs: ["a"] }] });
+		const pack = (mod, nome, label) => mundo.adicionarPack({ id: `${mod}.${nome}`, name: nome, label, type: "Item", packageName: mod, packageType: "module" }, [], []);
+		pack("aventura-x", "itens", "Itens");
+		pack("aventura-x", "ameacas", "Ameaças");
+		pack("arm", "a", "Armadilhas A");
+		pack("arm", "b", "Armadilhas B");
+		const ja = pack("aventura-x", "mapas", "Mapas");
+		await carregarModulo(mundo, { ready: true });
+		const minha = await mundo.game.folders.documentClass.create({ name: "Minha pasta", type: "Compendium" });
+		await mundo.game.settings.set("core", "compendiumConfiguration", { ...config(mundo), [ja.collection]: { folder: minha.id } });
+		const api = mundo.game.modules.get(MODULO).api;
+		const r = await api.organizarOutrosModulos();
+		assert.equal(r.compendios, 4);
+		const em = (id) => caminho(mundo.game.folders.get(config(mundo)[id]?.folder));
+		assert.deepEqual(em("aventura-x.itens"), ["Aventura - X"]);
+		assert.deepEqual(em("aventura-x.ameacas"), ["Aventura - X"]);
+		assert.deepEqual(em("arm.a"), ["Armadilhas"]);
+		assert.deepEqual(em("arm.b"), ["Giria T20 - Armadilhas"]);
+		assert.deepEqual(em("aventura-x.mapas"), ["Minha pasta"], "o que já tinha pasta ficou onde estava");
+		// os do Fim dos Tempos continuam na pasta dele
+		assert.equal(em(`${MODULO}.${m.packs[0].name}`)[0], RAIZ_NOME);
+		// rodar de novo não faz nada
+		const n = mundo.game.folders.size;
+		assert.equal((await api.organizarOutrosModulos()).compendios, 0);
+		assert.equal(mundo.game.folders.size, n);
+	} finally {
+		mundo.encerrar();
+	}
+});
