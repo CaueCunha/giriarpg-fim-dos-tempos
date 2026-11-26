@@ -7,6 +7,7 @@
  *   - importador.mjs  catálogo dos compêndios, Puxar, Atualizar, Limpar e os UUIDs antigos
  *   - tokens.mjs      token padrão das ameaças
  *   - macros.mjs      atualização única das macros do mundo
+ *   - pastas.mjs      pastas da aba de Compêndios (Giria T20 - Fim dos Tempos › ato › aventura)
  *   - testes.mjs      testes no chat (o jogador rola, o Mestre aplica)
  *   - assinatura.mjs  assinatura dos documentos e TOKEN_PADRAO (também usado pelo build)
  *
@@ -41,6 +42,7 @@ import {
 } from "./importador.mjs";
 import { corrigirTokens, registrarGanchosToken } from "./tokens.mjs";
 import { atualizarMacros } from "./macros.mjs";
+import { organizarCompendios } from "./pastas.mjs";
 
 export { PRESERVAR };
 
@@ -66,6 +68,16 @@ Hooks.once("init", () => {
 		type: Boolean,
 		default: true
 	});
+	game.settings.register(MODULO, "organizarCompendios", {
+		name: "Pasta dos compêndios",
+		hint: "Ao abrir o mundo, o Mestre põe os compêndios do módulo na pasta \"Giria T20 - Fim dos Tempos (Campanha)\" da aba de Compêndios, separados por ato e aventura. Cada compêndio é organizado uma vez: se você tirar um da pasta, ele fica onde você deixou.",
+		scope: "world",
+		config: true,
+		type: Boolean,
+		default: true
+	});
+	// Compêndios já postos na pasta neste mundo (ver pastas.mjs).
+	game.settings.register(MODULO, "compendiosOrganizados", { scope: "world", config: false, type: Array, default: [] });
 	// Ligado pela macro "PJs · Automações" (Temeroso e Provocação Petulante); religa ao abrir o mundo.
 	game.settings.register(MODULO, "automacoesPJs", { scope: "world", config: false, type: Boolean, default: false });
 	// Testes no chat: card com o dano e um botão Rolar por personagem; o Mestre aplica pelos botões.
@@ -124,6 +136,7 @@ Hooks.once("init", () => {
 			TOKEN_PADRAO,
 			corrigirTokens,
 			atualizarMacros,
+			organizarCompendios,
 			// testes no chat (scripts/testes.mjs); pedirTeste/pedirTestes são os nomes das macros da 0.21
 			testes: apiTestes,
 			pedirTeste,
@@ -142,6 +155,14 @@ Hooks.once("ready", async () => {
 	registrarSocket();
 	await registrarRedirecionamentos();
 	if (!game.user.isGM || (game.users.activeGM && game.users.activeGM !== game.user)) return;
+	if (game.settings.get(MODULO, "organizarCompendios")) {
+		try {
+			const { pastas, compendios } = await organizarCompendios();
+			if (compendios) console.log(`${MODULO} | ${compendios} compêndio(s) postos na pasta do módulo (${pastas} pasta(s) criadas)`);
+		} catch (e) {
+			console.error(`${MODULO} | pastas dos compêndios`, e);
+		}
+	}
 	if (game.settings.get(MODULO, "corrigirTokens")) {
 		const { atores, tokens } = await corrigirTokens();
 		if (atores || tokens) console.log(`${MODULO} | token padrão: ${atores} ameaça(s) e ${tokens} token(s) corrigidos`);

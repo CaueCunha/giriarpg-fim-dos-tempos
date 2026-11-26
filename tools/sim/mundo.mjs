@@ -794,7 +794,8 @@ export async function criarMundo({ semente = "fdt", usuario = "Mestre", gm = tru
 	const configuracoes = new Map([
 		["tormenta20.showDamageCards", "all"],
 		["tormenta20.automaticEffects", true],
-		["core.rollMode", "publicroll"]
+		["core.rollMode", "publicroll"],
+		["core.compendiumConfiguration", {}]
 	]);
 	const settings = {
 		register(scope, key, data) {
